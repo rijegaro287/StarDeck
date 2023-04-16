@@ -1,6 +1,7 @@
-<div class="w-50 mt-5 mx-auto">
-  <form [formGroup]="newCard">
+<div class="w-50 my-5 mx-auto">
+  <app-image-uploader [imageURL]="'../../../assets/images/card.png'"></app-image-uploader>
 
+  <form [formGroup]="newCard">
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
         <mat-label>Nombre</mat-label>

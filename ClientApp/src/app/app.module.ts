@@ -9,17 +9,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 
 import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
 import { AddCardComponent } from './Components/Admin/add-card/add-card.component';
 
+import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AdminMainComponent,
     AddCardComponent,
+    ImageUploaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,6 +56,7 @@ import { AddCardComponent } from './Components/Admin/add-card/add-card.component
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+@import '../../../../styles';
+
+.image-uploader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+
+}
+
+div {
+  position: relative;
+}
+
+.image {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 10%;
+  border: 0.3rem solid #dadada;
+}
+
+.badge {
+  position: absolute;
+  top: 15rem;
+  right: -1rem;
+  color: white;
+}

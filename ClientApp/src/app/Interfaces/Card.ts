@@ -6,7 +6,7 @@ type IType = 'UltraRare' | 'VeryRare' | 'Rare' | 'Normal' | 'Basic'
 interface ICard {
   id: string;
   name: string;
-  image: Blob;
+  image: File;
   energy: number;
   cost: number;
   type: IType;
