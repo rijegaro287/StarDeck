@@ -5,27 +5,41 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+
+import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
+import { AddCardComponent } from './Components/Admin/add-card/add-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    AdminMainComponent,
+    AddCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      // { path: '', redirectTo: '/login', pathMatch: 'full' },
+      // { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
+      {
+        path: 'admin',
+        component: AdminMainComponent,
+        // canActivate: [AdministratorGuard],
+        children: [
+          { path: '', redirectTo: 'add_card', pathMatch: 'full' },
+          { path: 'add_card', component: AddCardComponent },
+        ]
+      },
+      // {
+      //   path: 'player',
+      //   component: PlayerMainComponent,
+      //   // canActivate: [PlayerGuard],
+      //   children: [
+      //     { path: '', redirectTo: 'profile', pathMatch: 'full' },
+      //     { path: 'profile', component: PlayerProfileComponent },
+      //   ]
+      // },
     ])
   ],
   providers: [],

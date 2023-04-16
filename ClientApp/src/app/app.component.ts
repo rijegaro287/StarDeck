@@ -5,5 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'app';
+  title = 'StarDeck';
 }
+
+const apiURL = 'http://localhost:8080'
+
+export default AppComponent
+export { apiURL }
