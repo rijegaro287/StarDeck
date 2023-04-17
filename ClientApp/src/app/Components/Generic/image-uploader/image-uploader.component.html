@@ -1,0 +1,10 @@
+<div class="image-uploader">
+  <div>
+    <img id="input-image" class="image" [src]="imageURL">
+    <button class="badge" mat-mini-fab color="primary" (click)="fileInput.click()">
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <input #fileInput id="file-input" type="file" accept="image/*" hidden (change)="onImageChanged()">
+  </div>
+</div>
