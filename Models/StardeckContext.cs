@@ -122,6 +122,7 @@ public partial class StardeckContext : DbContext
                 .HasDefaultValueSql("true")
                 .HasColumnName("active");
             entity.Property(e => e.Battlecost).HasColumnName("battlecost");
+            entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Energy).HasColumnName("energy");
             entity.Property(e => e.Image).HasColumnName("image");
             entity.Property(e => e.Name)

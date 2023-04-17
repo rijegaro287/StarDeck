@@ -19,7 +19,7 @@ public partial class Account
 
     public bool? Active { get; set; } = true;
 
-    public long Avatar { get; set; }
+    public long Avatar { get; set; } = 0;
 
     public string? Config { get; set; }
 

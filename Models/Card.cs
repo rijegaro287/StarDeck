@@ -31,4 +31,6 @@ public partial class Card
     public int Type { get; set; }
 
     public string? Ability { get; set; }
+
+    public string? Description { get; set; }
 }
