@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { RequestService } from 'src/app/Services/request.service';
+import { CardService } from 'src/app/Services/card.service';
+
 import { ICard } from 'src/app/Interfaces/Card';
 
 @Component({
@@ -13,6 +16,8 @@ export class AddCardComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
+    private requestService: RequestService,
+    private cardService: CardService
   ) {
     this.newCard = this._formBuilder.group({
       name: ['', Validators.required],
@@ -38,18 +43,23 @@ export class AddCardComponent {
       active: true,
       skillID: 0,
       description: this.newCard.value.description,
-    }
+    };
 
     try {
-      this.validateCardForm(newCard)
-      // Send to server
+      this.validateCardForm(newCard);
+
+      this.cardService.addCard(newCard)
+        .then(response => {
+          console.log(response);
+          this.requestService.handleResponse(response);
+        });
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 
   generateCardID(): string {
-    return 'asdasd'
+    return 'asdasd';
   }
 
   validateCardForm(card: ICard): boolean {
