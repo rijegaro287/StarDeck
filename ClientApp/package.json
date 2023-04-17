@@ -27,6 +27,7 @@
     "@angular/router": "^15.2.7",
     "bootstrap": "^5.2.3",
     "oidc-client": "^1.11.5",
+    "random-web-token": "^2.2.1",
     "run-script-os": "^1.1.6",
     "rxjs": "~7.8.0"
   },
@@ -37,6 +38,7 @@
     "@types/jasmine": "~4.3.1",
     "@types/jasminewd2": "~2.0.10",
     "@types/node": "^18.15.11",
+    "@types/random-web-token": "^2.0.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.1",
     "karma-chrome-launcher": "~3.1.1",

@@ -1,7 +1,7 @@
-type IRace = ''
+type ICardRace = ''
 
 // Se pueden cambiar por otros (?)
-type IType = 'UltraRare' | 'VeryRare' | 'Rare' | 'Normal' | 'Basic'
+type ICardType = 'UltraRare' | 'VeryRare' | 'Rare' | 'Normal' | 'Basic'
 
 interface ICard {
   id: string;
@@ -9,15 +9,15 @@ interface ICard {
   image: File;
   energy: number;
   cost: number;
-  type: IType;
-  race: IRace;
+  type: ICardType;
+  race: ICardRace;
   active: boolean;
   skillID: number;
   description: string;
 }
 
 export {
-  IRace,
-  IType,
+  ICardRace,
+  ICardType,
   ICard
 }

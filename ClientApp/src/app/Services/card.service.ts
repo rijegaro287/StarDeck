@@ -15,8 +15,8 @@ export class CardService {
   constructor(private request: RequestService) { }
 
   // Cuando el API esté listo
-  // addCard = (assistant: ICard): Promise<IServerResponse> => {
-  //   return this.request.post(`${this.url}/add`, assistant);
+  // addCard = (card: ICard): Promise<IServerResponse> => {
+  //   return this.request.post(`${this.url}/add`, card);
   // }
 
   addCard = (card: ICard): Promise<IServerResponse> => {

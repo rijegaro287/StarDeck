@@ -1,3 +1,5 @@
+import * as random from "random-web-token";
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -33,17 +35,19 @@ export class AddCardComponent {
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
 
     const newCard: ICard = {
-      id: this.generateCardID(),
-      name: this.newCard.value.name,
+      id: random.genSync('medium+', 12),
+      name: this.newCard.value.name.toString(),
       image: fileInput.files![0],
-      energy: this.newCard.value.energy,
-      cost: this.newCard.value.cost,
-      type: this.newCard.value.type,
-      race: this.newCard.value.race,
+      energy: Number(this.newCard.value.energy),
+      cost: Number(this.newCard.value.cost),
+      type: this.newCard.value.type.toString(),
+      race: this.newCard.value.race.toString(),
       active: true,
       skillID: 0,
       description: this.newCard.value.description,
     };
+
+    console.log(newCard);
 
     try {
       this.validateCardForm(newCard);
@@ -58,11 +62,24 @@ export class AddCardComponent {
     }
   }
 
-  generateCardID(): string {
-    return 'asdasd';
-  }
+  validateCardForm(card: ICard): void {
+    Object.keys(card).forEach(key => {
+      if (card[key as keyof ICard] === '') {
+        throw new Error('Todos los campos son obligatorios');
+      }
+    });
 
-  validateCardForm(card: ICard): boolean {
-    return true;
+    if (card.name.length < 5 || card.name.length > 30) {
+      throw new Error('El nombre de la carta debe tener entre 5 y 30 caracteres');
+    }
+    if (card.description.length > 1000) {
+      throw new Error('La descripción de la carta debe tener como máximo 1000 caracteres');
+    }
+    if (card.energy < -100 || card.energy > 100) {
+      throw new Error('La energía de la carta debe ser un número entre -100 y 100');
+    }
+    if (card.cost < 0 || card.cost > 100) {
+      throw new Error('El costo de la carta debe ser un número entre 0 y 100');
+    }
   }
 }
