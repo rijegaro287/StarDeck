@@ -64,8 +64,11 @@ export class AddCardComponent {
 
   validateCardForm(card: ICard): void {
     Object.keys(card).forEach(key => {
-      if (card[key as keyof ICard] === '') {
-        throw new Error('Todos los campos son obligatorios');
+      const value = card[key as keyof ICard];
+      if (value === '' || value === null || value === undefined) {
+        if (key !== 'image') {
+          throw new Error('Todos los campos son obligatorios');
+        }
       }
     });
 
@@ -75,10 +78,10 @@ export class AddCardComponent {
     if (card.description.length > 1000) {
       throw new Error('La descripción de la carta debe tener como máximo 1000 caracteres');
     }
-    if (card.energy < -100 || card.energy > 100) {
+    if (isNaN(card.energy) || card.energy < -100 || card.energy > 100) {
       throw new Error('La energía de la carta debe ser un número entre -100 y 100');
     }
-    if (card.cost < 0 || card.cost > 100) {
+    if (isNaN(card.energy) || card.cost < 0 || card.cost > 100) {
       throw new Error('El costo de la carta debe ser un número entre 0 y 100');
     }
   }
