@@ -13,14 +13,17 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 
+import { LoginComponent } from './Components/Generic/login/login.component';
+import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
+
 import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
 import { AddCardComponent } from './Components/Admin/add-card/add-card.component';
 
-import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     AdminMainComponent,
     AddCardComponent,
     ImageUploaderComponent
@@ -31,8 +34,8 @@ import { ImageUploaderComponent } from './Components/Generic/image-uploader/imag
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      // { path: '', redirectTo: '/login', pathMatch: 'full' },
-      // { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
+      { path: '', redirectTo: '/login', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent /* , canActivate: [LoginGuard] */ },
       {
         path: 'admin',
         component: AdminMainComponent,
