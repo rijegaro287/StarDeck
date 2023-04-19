@@ -21,10 +21,19 @@ body {
 /* Provide sufficient contrast against white background */
 a {
   color: $primary;
+  text-decoration: none;
 }
 
 code {
   color: $secondary;
+}
+
+* {
+  font-family: 'Exo', sans-serif;
+}
+
+[_ngcontent-ng-cli-universal-c20] {
+  font-family: 'Material Icons' !important
 }
 
 html,
@@ -35,11 +44,4 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.btn-primary {
-  color: $text;
-  background-color: $primary;
-  border-color: $primary;
 }

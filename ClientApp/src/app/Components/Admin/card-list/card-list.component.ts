@@ -9,11 +9,11 @@ import { CardService } from 'src/app/Services/card.service';
 import { ICard } from 'src/app/Interfaces/Card';
 
 @Component({
-  selector: 'app-add-card',
-  templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.scss']
+  selector: 'app-card-list',
+  templateUrl: './card-list.component.html',
+  styleUrls: ['./card-list.component.scss']
 })
-export class AddCardComponent {
+export class CardListComponent {
   newCard: FormGroup;
 
   constructor(

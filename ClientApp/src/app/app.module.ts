@@ -10,14 +10,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './Components/Generic/login/login.component';
 import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
+import { NavbarComponent } from './Components/Generic/navbar/navbar.component';
 
 import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
-import { AddCardComponent } from './Components/Admin/add-card/add-card.component';
+import { CardListComponent } from './Components/Admin/card-list/card-list.component';
 
 
 @NgModule({
@@ -25,8 +27,9 @@ import { AddCardComponent } from './Components/Admin/add-card/add-card.component
     AppComponent,
     LoginComponent,
     AdminMainComponent,
-    AddCardComponent,
-    ImageUploaderComponent
+    CardListComponent,
+    ImageUploaderComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,8 +44,8 @@ import { AddCardComponent } from './Components/Admin/add-card/add-card.component
         component: AdminMainComponent,
         // canActivate: [AdministratorGuard],
         children: [
-          { path: '', redirectTo: 'add_card', pathMatch: 'full' },
-          { path: 'add_card', component: AddCardComponent },
+          { path: '', redirectTo: 'cards', pathMatch: 'full' },
+          { path: 'cards', component: CardListComponent },
         ]
       },
       // {
@@ -60,6 +63,7 @@ import { AddCardComponent } from './Components/Admin/add-card/add-card.component
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
