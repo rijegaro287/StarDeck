@@ -6,21 +6,24 @@ mat-card {
 }
 
 .card-container {
-  height: 15rem;
+  height: 16rem;
   display: flex;
   align-items: center;
   gap: 2rem;
+}
 
+.card-image,
+.card-info,
+.card-cost {
+  height: 13rem;
 }
 
 .card-image {
-  width: 12rem;
-  height: 12rem;
+  width: 13rem;
   border-radius: 1rem;
 }
 
 .card-info {
-  height: 12rem;
   overflow-y: scroll;
 
   .card-name {
@@ -44,10 +47,10 @@ mat-card {
 
 .card-cost {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .energy,
@@ -61,11 +64,11 @@ mat-card {
   width: 50%;
 
   i {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   span {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
