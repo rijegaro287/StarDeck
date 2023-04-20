@@ -9,5 +9,5 @@ public partial class Deck
 
     public string Deck1 { get; set; } = null!;
 
-    public virtual Account IdAccountNavigation { get; set; } = null!;
+    public virtual Account? IdAccountNavigation { get; set; }
 }

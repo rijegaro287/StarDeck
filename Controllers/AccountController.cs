@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Stardeck.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -24,6 +25,17 @@ namespace Stardeck.Controllers
         {
 
             return Ok(await context.Accounts.ToListAsync());
+        }
+        [HttpGet("{accountId}/cards")]
+        public async Task<IActionResult> GetCards(string accountId)
+        {
+            var deck = context.Decks.Find(accountId);
+            
+            Dictionary<string, int> dic =
+                JsonConvert.DeserializeObject<Dictionary<string, int>>(deck.Deck1);
+            if (dic == null) { return NotFound(); }
+            return Ok(dic);
+
         }
 
         // GET api/<AccountController>/5
@@ -74,6 +86,48 @@ namespace Stardeck.Controllers
 
         }
 
+        [HttpPost("/addCards")]
+
+        public async Task<IActionResult> addCards(string accountId, string cardId)
+        {
+            var deck=context.Decks.Find(accountId);
+            Dictionary<string, int> dic;
+            if (deck == null)
+            {
+                dic = new Dictionary<string, int>
+                {
+                    { cardId, 1 }
+                };
+                deck = new() { IdAccount=accountId, 
+                    Deck1=JsonConvert.SerializeObject(dic)};
+
+                context.Decks.Add(deck);
+                context.SaveChanges();
+                return Ok(dic);
+            }
+            else
+            {
+                dic = JsonConvert.DeserializeObject<Dictionary<string, int>>(deck.Deck1);
+                if (dic.ContainsKey(cardId))
+                {
+                    dic[cardId] = dic[cardId]+1;
+                    
+                    deck.Deck1 = JsonConvert.SerializeObject(dic);
+                    context.SaveChanges();
+                    return Ok("SUMA "+dic);
+                }
+                else
+                {
+                    dic.Add(cardId, 1);
+                    deck.Deck1= JsonConvert.SerializeObject(dic);
+                    context.SaveChanges();
+                    return Ok("AGREGA "+dic);
+                }
+                //return Ok(dic);
+            }
+        }
+
+
         // PUT api/<AccountController>/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, Account nAcc)
@@ -111,6 +165,42 @@ namespace Stardeck.Controllers
                 return Ok(acc);
             }
             return NotFound();
+        }
+
+
+        [HttpDelete("deleteCards")]
+        public async Task<IActionResult> Delete(string accountId, string cardId)
+        {
+            var deck = context.Decks.Find(accountId);
+            Dictionary<string, int> dic;
+            if (deck == null)
+            {
+                return NotFound("Deck no encontrado");
+            }
+            else
+            {
+                dic = JsonConvert.DeserializeObject<Dictionary<string, int>>(deck.Deck1);
+                if (dic.ContainsKey(cardId))
+                {
+                    if(dic[cardId] == 1)
+                    {
+                        dic.Remove(cardId);
+                        deck.Deck1 = JsonConvert.SerializeObject(dic);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        dic[cardId] = dic[cardId] - 1;
+
+                        deck.Deck1 = JsonConvert.SerializeObject(dic);
+                        context.SaveChanges();
+                    }
+                    
+                    return Ok(dic);
+                }
+                return NotFound("Deck no encontrado");
+            }
+            
         }
     }
 }
