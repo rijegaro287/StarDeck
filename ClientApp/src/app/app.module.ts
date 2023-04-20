@@ -11,6 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
 
@@ -20,6 +22,8 @@ import { NavbarComponent } from './Components/Generic/navbar/navbar.component';
 
 import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
 import { CardListComponent } from './Components/Admin/card-list/card-list.component';
+import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
+import { CardComponent } from './Components/Generic/card/card.component';
 
 
 @NgModule({
@@ -30,6 +34,8 @@ import { CardListComponent } from './Components/Admin/card-list/card-list.compon
     CardListComponent,
     ImageUploaderComponent,
     NavbarComponent,
+    CardFormComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -64,6 +70,8 @@ import { CardListComponent } from './Components/Admin/card-list/card-list.compon
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatCardModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

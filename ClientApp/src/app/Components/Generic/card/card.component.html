@@ -1,0 +1,25 @@
+<mat-card style="border-color: {{cardBorderColor}};">
+  <mat-card-content class="card-container">
+    <img class="card-image" src="../../../../assets/images/card.png" alt="Foto de carta">
+
+    <div class="card-info">
+      <h3 class="card-name">{{card.name}}</h3>
+      <p class="card-race">{{card.race}}</p>
+      <p class="card-description">{{card.description}}
+      </p>
+    </div>
+
+    <div class="card-cost">
+      <div class="energy">
+        <i class="bi bi-lightning-fill"></i>
+        <span>{{card.energy}}</span>
+      </div>
+
+      <div class="battle-points">
+        <i class="bi bi-fire"></i>
+        <span>{{card.cost}}</span>
+      </div>
+    </div>
+  </mat-card-content>
+
+</mat-card>

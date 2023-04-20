@@ -1,3 +1,4 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 /* You can add global styles to this file, and also import other style files */
 
 /* Paleta de colores */
@@ -8,6 +9,12 @@ $background_0: #303030;
 $background_1: #434343;
 $background_2: #696969;
 $text: #fff;
+
+$energy: #6988f0;
+$ultra-rare-card: #e6ce4a;
+$very-rare-card: #9a00d6;
+$rare-card: #4161f1;
+$common-card: #66e961;
 
 html {
   /* 1rem = 10px */
@@ -32,8 +39,12 @@ code {
   font-family: 'Exo', sans-serif;
 }
 
-[_ngcontent-ng-cli-universal-c20] {
-  font-family: 'Material Icons' !important
+mat-icon {
+  font-family: 'Material Icons' !important;
+
+  * {
+    font-family: 'Material Icons' !important
+  }
 }
 
 html,
@@ -44,4 +55,20 @@ body {
 
 body {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: $text;
+  font-family: 'Exo', sans-serif;
+}
+
+h1 {
+  color: $secondary
 }

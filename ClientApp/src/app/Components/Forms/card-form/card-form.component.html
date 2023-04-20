@@ -1,0 +1,57 @@
+<app-image-uploader [imageURL]="'../../../assets/images/card.png'"></app-image-uploader>
+
+<form [formGroup]="newCard">
+  <div class="row">
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" required>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Energía</mat-label>
+      <input matInput formControlName="energy" required>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Costo</mat-label>
+      <input matInput formControlName="cost" required>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Tipo</mat-label>
+      <mat-select matInput formControlName="type" required>
+        <mat-option value="UltraRare">Ultra rara</mat-option>
+        <mat-option value="VeryRare">Muy rara</mat-option>
+        <mat-option value="Rare">Rara</mat-option>
+        <mat-option value="Normal">Normal</mat-option>
+        <mat-option value="Basic">Básica</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Race</mat-label>
+      <mat-select matInput formControlName="race" required>
+        <mat-option value="UltraRare">Ultra rara</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+      <mat-label>Descripción</mat-label>
+      <textarea rows="3" matInput formControlName="description"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="onSubmit()">Crear carta</button>
+  </div>
+</form>

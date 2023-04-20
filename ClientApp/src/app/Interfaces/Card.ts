@@ -1,12 +1,11 @@
-type ICardRace = ''
+type ICardRace = 'Raza'
 
-// Se pueden cambiar por otros (?)
-type ICardType = 'UltraRare' | 'VeryRare' | 'Rare' | 'Normal' | 'Basic'
+type ICardType = 4 | 3 | 2 | 1 | 0
 
 interface ICard {
   id: string;
   name: string;
-  image: File;
+  image?: File;
   energy: number;
   cost: number;
   type: ICardType;
