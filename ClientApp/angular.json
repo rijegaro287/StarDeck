@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "Stardeck"
+  "defaultProject": "Stardeck",
+  "cli": {
+    "analytics": false
+  }
 }

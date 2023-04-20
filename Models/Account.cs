@@ -19,7 +19,7 @@ public partial class Account
 
     public bool? Active { get; set; } = true;
 
-    public long Avatar { get; set; } = 0;
+    public long Avatar { get; set; } 
 
     public string? Config { get; set; }
 
@@ -27,7 +27,7 @@ public partial class Account
 
     public long Coins { get; set; }
 
-    public virtual Avatar AvatarNavigation { get; set; } = null!;
+    public virtual Avatar? AvatarNavigation { get; set; }
 
     public virtual Deck? Deck { get; set; }
 
