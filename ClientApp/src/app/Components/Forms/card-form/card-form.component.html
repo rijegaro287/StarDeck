@@ -1,9 +1,11 @@
 <app-image-uploader [imageURL]="'../../../assets/images/card.png'"></app-image-uploader>
 
-<form [formGroup]="newCard">
+<!-- Se vincula el formulario de entrada con la interfaz -->
+<form [formGroup]="card">
   <div class="row">
     <mat-form-field appearance="outline" [hideRequiredMarker]="true">
       <mat-label>Nombre</mat-label>
+      <!-- El formControlName tiene que estar en el formulario -->
       <input matInput formControlName="name" required>
     </mat-form-field>
   </div>
@@ -26,11 +28,11 @@
     <mat-form-field appearance="outline" [hideRequiredMarker]="true">
       <mat-label>Tipo</mat-label>
       <mat-select matInput formControlName="type" required>
-        <mat-option value="UltraRare">Ultra rara</mat-option>
-        <mat-option value="VeryRare">Muy rara</mat-option>
-        <mat-option value="Rare">Rara</mat-option>
-        <mat-option value="Normal">Normal</mat-option>
-        <mat-option value="Basic">Básica</mat-option>
+        <mat-option value="4">Ultra rara</mat-option>
+        <mat-option value="3">Muy rara</mat-option>
+        <mat-option value="2">Rara</mat-option>
+        <mat-option value="1">Normal</mat-option>
+        <mat-option value="0">Básica</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
@@ -49,9 +51,5 @@
       <mat-label>Descripción</mat-label>
       <textarea rows="3" matInput formControlName="description"></textarea>
     </mat-form-field>
-  </div>
-
-  <div class="row">
-    <button mat-raised-button color="primary" (click)="onSubmit()">Crear carta</button>
   </div>
 </form>

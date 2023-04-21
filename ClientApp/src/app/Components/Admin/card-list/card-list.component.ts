@@ -1,12 +1,9 @@
-import * as random from "random-web-token";
-
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { RequestService } from 'src/app/Services/request.service';
-import { CardService } from 'src/app/Services/card.service';
+import { MatDialog } from "@angular/material/dialog";
 
 import { ICard } from 'src/app/Interfaces/Card';
+
+import { CardFormDialogComponent } from "src/app/Components/Dialogs/card-form-dialog/card-form-dialog.component";
 
 @Component({
   selector: 'app-card-list',
@@ -14,6 +11,7 @@ import { ICard } from 'src/app/Interfaces/Card';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
+  /** Contiene todas las cartas recibidas del servidor */
   cards: ICard[]
 
   ultraRareCards: ICard[]
@@ -22,7 +20,7 @@ export class CardListComponent implements OnInit {
   normalCards: ICard[]
   basicCards: ICard[]
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.cards = [
       {
         id: 'C-djieijdejidj',
@@ -141,11 +139,20 @@ export class CardListComponent implements OnInit {
     this.basicCards = []
   }
 
+  /** 
+   * Se filtran las cartas según su tipo
+   * Falta conectarlo al api**
+  */
   ngOnInit() {
     this.ultraRareCards = this.cards.filter(card => card.type === 4)
     this.veryRareCards = this.cards.filter(card => card.type === 3)
     this.rareCards = this.cards.filter(card => card.type === 2)
     this.normalCards = this.cards.filter(card => card.type === 1)
     this.basicCards = this.cards.filter(card => card.type === 0)
+  }
+
+  /** Abre el formulario de creación de carta*/
+  openDialog() {
+    const dialogRef = this.dialog.open(CardFormDialogComponent);
   }
 }

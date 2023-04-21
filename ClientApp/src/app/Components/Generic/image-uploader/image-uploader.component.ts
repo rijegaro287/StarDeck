@@ -13,7 +13,9 @@ export class ImageUploaderComponent {
   }
 
   onImageChanged() {
+    /** Selecciona el input de la imagen */
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
+    /** Muestra la imagen seleccionada con el input */
     const inputImage: HTMLImageElement = document.querySelector('#input-image')!;
 
     let newImageURL = this.imageURL

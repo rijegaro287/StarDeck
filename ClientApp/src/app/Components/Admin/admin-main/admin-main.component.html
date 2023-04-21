@@ -1,7 +1,12 @@
 <div class="w-100">
+  <!-- 
+    Hace que la barra de navegación siempre esté visible
+    en la página de administrador
+  -->
   <app-navbar [items]="navbarItems">
     <button class="play-button" mat-raised-button color="accent" (click)="onPlayClicked()">Jugar</button>
   </app-navbar>
 
+  <!-- Muestra la ruta que se seleccione en la barra -->
   <router-outlet></router-outlet>
 </div>
