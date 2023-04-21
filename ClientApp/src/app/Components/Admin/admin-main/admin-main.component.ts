@@ -8,13 +8,14 @@ import { INavbarItem } from 'src/app/Interfaces/Helpers';
   styleUrls: ['./admin-main.component.scss']
 })
 export class AdminMainComponent {
+  /** Contiene los elementos de la barra de navegación */
   navbarItems: INavbarItem[];
 
   constructor() {
     this.navbarItems = [
       {
-        description: 'Cartas',
-        link: '/'
+        description: 'Cartas', // Descripción del elemento
+        link: '/' // Ruta a la que redirige
       },
       {
         description: 'Territorios',
@@ -27,6 +28,10 @@ export class AdminMainComponent {
     ]
   }
 
+  /**
+    Se ejecuta al hacer click
+    sobre el botón de jugar
+  */
   onPlayClicked() {
     console.log('Play clicked');
 

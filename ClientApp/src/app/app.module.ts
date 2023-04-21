@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 
@@ -24,6 +25,7 @@ import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.com
 import { CardListComponent } from './Components/Admin/card-list/card-list.component';
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
+import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/card-form-dialog.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { CardComponent } from './Components/Generic/card/card.component';
     ImageUploaderComponent,
     NavbarComponent,
     CardFormComponent,
+    CardFormDialogComponent,
     CardComponent
   ],
   imports: [
@@ -71,7 +74,8 @@ import { CardComponent } from './Components/Generic/card/card.component';
     MatIconModule,
     MatToolbarModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

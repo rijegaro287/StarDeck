@@ -7,6 +7,7 @@ import { INavbarItem } from '../../../Interfaces/Helpers';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  /** Recibe los elementos de la barra como entrada */
   @Input() items: INavbarItem[];
 
   constructor() {
