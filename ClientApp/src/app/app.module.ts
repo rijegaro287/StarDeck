@@ -10,20 +10,35 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 
-import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
-import { AddCardComponent } from './Components/Admin/add-card/add-card.component';
-
+import { LoginComponent } from './Components/Generic/login/login.component';
 import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
+import { NavbarComponent } from './Components/Generic/navbar/navbar.component';
+
+import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
+import { CardListComponent } from './Components/Admin/card-list/card-list.component';
+import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
+import { CardComponent } from './Components/Generic/card/card.component';
+import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/card-form-dialog.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     AdminMainComponent,
-    AddCardComponent,
-    ImageUploaderComponent
+    CardListComponent,
+    ImageUploaderComponent,
+    NavbarComponent,
+    CardFormComponent,
+    CardFormDialogComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,15 +46,15 @@ import { ImageUploaderComponent } from './Components/Generic/image-uploader/imag
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      // { path: '', redirectTo: '/login', pathMatch: 'full' },
-      // { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
+      { path: '', redirectTo: '/login', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent /* , canActivate: [LoginGuard] */ },
       {
         path: 'admin',
         component: AdminMainComponent,
         // canActivate: [AdministratorGuard],
         children: [
-          { path: '', redirectTo: 'add_card', pathMatch: 'full' },
-          { path: 'add_card', component: AddCardComponent },
+          { path: '', redirectTo: 'cards', pathMatch: 'full' },
+          { path: 'cards', component: CardListComponent },
         ]
       },
       // {
@@ -57,6 +72,10 @@ import { ImageUploaderComponent } from './Components/Generic/image-uploader/imag
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

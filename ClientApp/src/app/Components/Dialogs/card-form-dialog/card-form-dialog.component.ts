@@ -3,17 +3,18 @@ import * as random from "random-web-token";
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { RequestService } from 'src/app/Services/request.service';
 import { CardService } from 'src/app/Services/card.service';
+import { RequestService } from 'src/app/Services/request.service';
 
-import { ICard } from 'src/app/Interfaces/Card';
+import { ICard, ICardType } from 'src/app/Interfaces/Card';
 
 @Component({
-  selector: 'app-add-card',
-  templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.css']
+  selector: 'app-card-form-dialog',
+  templateUrl: './card-form-dialog.component.html',
+  styleUrls: ['./card-form-dialog.component.scss']
 })
-export class AddCardComponent {
+export class CardFormDialogComponent {
+  /** Formulario de carta */
   newCard: FormGroup;
 
   constructor(
@@ -31,16 +32,19 @@ export class AddCardComponent {
     });
   }
 
+  /** Se ejecuta el presionar el botón de crear */
   onSubmit() {
+    /** Selecciona la foto */
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
 
+    /** Convierte todos los tipos de dato */
     const newCard: ICard = {
       id: random.genSync('medium+', 12),
       name: this.newCard.value.name.toString(),
       image: fileInput.files![0],
       energy: Number(this.newCard.value.energy),
       cost: Number(this.newCard.value.cost),
-      type: this.newCard.value.type.toString(),
+      type: Number(this.newCard.value.type) as ICardType,
       race: this.newCard.value.race.toString(),
       active: true,
       skillID: 0,
@@ -50,21 +54,29 @@ export class AddCardComponent {
     console.log(newCard);
 
     try {
+      /** Valida los datos ingresados */
       this.validateCardForm(newCard);
 
+      /** Envía la petición al servidor para que cree la carta */
       this.cardService.addCard(newCard)
         .then(response => {
           console.log(response);
           this.requestService.handleResponse(response);
         });
     } catch (error) {
+      /** Muestra una alerta en caso de error */
       alert(error);
     }
   }
 
-  validateCardForm(card: ICard): void {
-    Object.keys(card).forEach(key => {
-      const value = card[key as keyof ICard];
+  /**
+   * Valida que las entradas del formulario sean correctas
+   * @param newCard Carta a validar
+   * @throws Error si alguna entrada es incorrecta o no está llena
+   */
+  validateCardForm(newCard: ICard): void {
+    Object.keys(newCard).forEach(key => {
+      const value = newCard[key as keyof ICard];
       if (value === '' || value === null || value === undefined) {
         if (key !== 'image') {
           throw new Error('Todos los campos son obligatorios');
@@ -72,16 +84,16 @@ export class AddCardComponent {
       }
     });
 
-    if (card.name.length < 5 || card.name.length > 30) {
+    if (newCard.name.length < 5 || newCard.name.length > 30) {
       throw new Error('El nombre de la carta debe tener entre 5 y 30 caracteres');
     }
-    if (card.description.length > 1000) {
+    if (newCard.description.length > 1000) {
       throw new Error('La descripción de la carta debe tener como máximo 1000 caracteres');
     }
-    if (isNaN(card.energy) || card.energy < -100 || card.energy > 100) {
+    if (isNaN(newCard.energy) || newCard.energy < -100 || newCard.energy > 100) {
       throw new Error('La energía de la carta debe ser un número entre -100 y 100');
     }
-    if (isNaN(card.energy) || card.cost < 0 || card.cost > 100) {
+    if (isNaN(newCard.energy) || newCard.cost < 0 || newCard.cost > 100) {
       throw new Error('El costo de la carta debe ser un número entre 0 y 100');
     }
   }

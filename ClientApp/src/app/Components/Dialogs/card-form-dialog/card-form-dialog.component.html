@@ -1,0 +1,13 @@
+<div class="main-content">
+  <h2 mat-dialog-title>Crear nueva carta</h2>
+  <mat-dialog-content>
+    <!-- Se le pasa el formulario como entrada al componente -->
+    <app-card-form [card]="newCard" (cardSaved)="onSubmit()"></app-card-form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <div class="actions">
+      <button mat-flat-button color="primary" (click)="onSubmit()">Crear carta</button>
+      <button mat-flat-button color="warn" mat-dialog-close>Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+</div>
