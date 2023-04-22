@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Stardeck.Models;
 
-public partial class Deck
+public partial class Collection
 {
     public string IdAccount { get; set; } = null!;
 
-    public string Deck1 { get; set; } = null!;
+    public string Collection1 { get; set; } = null!;
 
     public virtual Account? IdAccountNavigation { get; set; }
 }

@@ -17,9 +17,9 @@ public partial class Account
 
     public string Password { get; set; } = null!;
 
-    public bool? Active { get; set; } = true;
+    public bool? Active { get; set; }
 
-    public long Avatar { get; set; } 
+    public long Avatar { get; set; }
 
     public string? Config { get; set; }
 
@@ -27,9 +27,9 @@ public partial class Account
 
     public long Coins { get; set; }
 
-    public virtual Avatar? AvatarNavigation { get; set; }
+    public virtual Avatar? AvatarNavigation { get; set; } 
 
-    public virtual Deck? Deck { get; set; }
+    public virtual Collection? Collection { get; set; }
 
     public virtual ICollection<Avatar> Avatars { get; set; } = new List<Avatar>();
 }

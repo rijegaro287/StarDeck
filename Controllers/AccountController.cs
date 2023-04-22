@@ -29,10 +29,10 @@ namespace Stardeck.Controllers
         [HttpGet("{accountId}/cards")]
         public async Task<IActionResult> GetCards(string accountId)
         {
-            var deck = context.Decks.Find(accountId);
-            
-            Dictionary<string, int> dic =
-                JsonConvert.DeserializeObject<Dictionary<string, int>>(deck.Deck1);
+            var collection = context.Collections.Find(accountId);
+            if (collection?.Collection1 == null) { return NotFound(); }
+            Dictionary<string, int>? dic =
+                JsonConvert.DeserializeObject<Dictionary<string, int>>(collection.Collection1);
             if (dic == null) { return NotFound(); }
             return Ok(dic);
 
@@ -44,7 +44,7 @@ namespace Stardeck.Controllers
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
             var acc = context.Accounts.Find(id);
-
+            
             if (acc == null)
             {
                 return NotFound();
@@ -90,36 +90,36 @@ namespace Stardeck.Controllers
 
         public async Task<IActionResult> addCards(string accountId, string cardId)
         {
-            var deck=context.Decks.Find(accountId);
-            Dictionary<string, int> dic;
-            if (deck == null)
+            var collection=context.Collections.Find(accountId);
+            Dictionary<string, int>? dic;
+            if (collection == null)
             {
                 dic = new Dictionary<string, int>
                 {
                     { cardId, 1 }
                 };
-                deck = new() { IdAccount=accountId, 
-                    Deck1=JsonConvert.SerializeObject(dic)};
+                collection = new() { IdAccount=accountId, 
+                    Collection1=JsonConvert.SerializeObject(dic)};
 
-                context.Decks.Add(deck);
+                context.Collections.Add(collection);
                 context.SaveChanges();
                 return Ok(dic);
             }
             else
             {
-                dic = JsonConvert.DeserializeObject<Dictionary<string, int>>(deck.Deck1);
+                dic = JsonConvert.DeserializeObject<Dictionary<string, int>>(collection.Collection1);
                 if (dic.ContainsKey(cardId))
                 {
                     dic[cardId] = dic[cardId]+1;
-                    
-                    deck.Deck1 = JsonConvert.SerializeObject(dic);
+
+                    collection.Collection1 = JsonConvert.SerializeObject(dic);
                     context.SaveChanges();
                     return Ok("SUMA "+dic);
                 }
                 else
                 {
                     dic.Add(cardId, 1);
-                    deck.Deck1= JsonConvert.SerializeObject(dic);
+                    collection.Collection1 = JsonConvert.SerializeObject(dic);
                     context.SaveChanges();
                     return Ok("AGREGA "+dic);
                 }
@@ -171,34 +171,34 @@ namespace Stardeck.Controllers
         [HttpDelete("deleteCards")]
         public async Task<IActionResult> Delete(string accountId, string cardId)
         {
-            var deck = context.Decks.Find(accountId);
-            Dictionary<string, int> dic;
-            if (deck == null)
+            var collection = context.Collections.Find(accountId);
+            Dictionary<string, int>? dic;
+            if (collection == null)
             {
-                return NotFound("Deck no encontrado");
+                return NotFound("Coleccion no encontrada");
             }
             else
             {
-                dic = JsonConvert.DeserializeObject<Dictionary<string, int>>(deck.Deck1);
+                dic = JsonConvert.DeserializeObject<Dictionary<string, int>>(collection.Collection1);
                 if (dic.ContainsKey(cardId))
                 {
                     if(dic[cardId] == 1)
                     {
                         dic.Remove(cardId);
-                        deck.Deck1 = JsonConvert.SerializeObject(dic);
+                        collection.Collection1 = JsonConvert.SerializeObject(dic);
                         context.SaveChanges();
                     }
                     else
                     {
                         dic[cardId] = dic[cardId] - 1;
 
-                        deck.Deck1 = JsonConvert.SerializeObject(dic);
+                        collection.Collection1 = JsonConvert.SerializeObject(dic);
                         context.SaveChanges();
                     }
                     
                     return Ok(dic);
                 }
-                return NotFound("Deck no encontrado");
+                return NotFound("Coleccion no encontrada");
             }
             
         }
