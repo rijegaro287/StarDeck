@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBar, MatSnackBarModule} from'@angular/material/snack-bar'
 
 import { AppComponent } from './app.component';
 
@@ -27,6 +28,7 @@ import { CardFormComponent } from './Components/Forms/card-form/card-form.compon
 import { CardComponent } from './Components/Generic/card/card.component';
 import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/card-form-dialog.component';
 
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
     NavbarComponent,
     CardFormComponent,
     CardFormDialogComponent,
-    CardComponent
+    CardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -57,6 +60,7 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
           { path: 'cards', component: CardListComponent },
         ]
       },
+      {path:'login', component:HomeComponent},
       // {
       //   path: 'player',
       //   component: PlayerMainComponent,
@@ -75,7 +79,8 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
     MatToolbarModule,
     MatCardModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

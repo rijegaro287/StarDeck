@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Stardeck.Models;
@@ -9,6 +10,7 @@ namespace Stardeck.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class AccountController : ControllerBase
     {
         private readonly StardeckContext context;
@@ -68,7 +70,7 @@ namespace Stardeck.Controllers
             }
 
             await context.SaveChangesAsync();
-            var accAux = new Account()
+            var accAux = new Account("{'rol':'User'}")
             {
                 Id = acc.Id,
                 Name = acc.Name,
@@ -76,7 +78,8 @@ namespace Stardeck.Controllers
                 Email= acc.Email,
                 Country= acc.Country,
                 Password= acc.Password,
-                Avatar= acc.Avatar
+                Avatar= acc.Avatar,
+                
 
             };
             await context.Accounts.AddAsync(accAux);

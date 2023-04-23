@@ -32,4 +32,6 @@ public partial class Account
     public virtual Collection? Collection { get; set; }
 
     public virtual ICollection<Avatar> Avatars { get; set; } = new List<Avatar>();
+
+
 }
