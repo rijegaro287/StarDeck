@@ -79,6 +79,7 @@ namespace Stardeck.Controllers
                 Country= acc.Country,
                 Password= acc.Password,
                 Avatar= acc.Avatar,
+                Config= acc.Config,
                 
 
             };
@@ -144,9 +145,11 @@ namespace Stardeck.Controllers
                 acc.Password = nAcc.Password;
                 acc.Active = nAcc.Active;
                 acc.Avatar= nAcc.Avatar;
-                acc.Config = nAcc.Config;
                 acc.Points = nAcc.Points;
                 acc.Coins = nAcc.Coins;
+                acc.Config = nAcc.Config;
+                nAcc.Serverconfig.main=acc.Serverconfig.main;
+                acc.Serverconfig = nAcc.Serverconfig;
 
                 await context.SaveChangesAsync();
                 return Ok(acc);
