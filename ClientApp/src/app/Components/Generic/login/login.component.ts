@@ -50,7 +50,10 @@ export class LoginComponent {
    */
   async Sig_In(data: ILoginData) {
     console.log(data);
+    var hash = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(data.Password));
+    data.Password =  Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("")
     let res = await this.service.login(data);
+
     if (res.status !== null) {
       sessionStorage.setItem("Nombre", <string>(data.Nickname));
       sessionStorage.setItem("Token", "True");

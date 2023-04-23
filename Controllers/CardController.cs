@@ -4,6 +4,7 @@ using Stardeck.Models;
 using System.Text.Json;
 using System.Xml.Linq;
 using System;
+using System.Text.RegularExpressions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -61,6 +62,11 @@ namespace Stardeck.Controllers
                 Description= card.Description
 
     };
+
+            while (!Regex.IsMatch(cardAux.Id, @"^C-[a-zA-Z0-9]{12}"))
+            {
+                cardAux.Id = string.Concat("C-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
+            }
             await context.Cards.AddAsync(cardAux);
             
             await context.SaveChangesAsync();
@@ -75,7 +81,6 @@ namespace Stardeck.Controllers
             var card = await context.Cards.FindAsync(id);
             if (card != null)
             {
-                card.Id = nCard.Id;
                 card.Name = nCard.Name;
                 card.Energy = nCard.Energy;
                 card.Battlecost = nCard.Battlecost;
