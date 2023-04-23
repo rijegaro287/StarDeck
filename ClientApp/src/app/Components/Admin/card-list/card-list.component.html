@@ -1,0 +1,53 @@
+<div class="main-content">
+  <h1>Lista de cartas</h1>
+
+  <div class="card-list-container">
+    <button class="add-button" mat-raised-button color="primary" (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+      <span>Crear carta</span>
+    </button>
+
+    <mat-tab-group class="card-list">
+      <mat-tab label="Ultra Rara">
+        <div class="list-grid">
+          <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+          <ng-container *ngFor="let card of ultraRareCards">
+            <app-card [card]="card" [cardBorderColor]="'#e6ce4a'"></app-card>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Muy Rara">
+        <div class="list-grid">
+          <ng-container *ngFor="let card of veryRareCards">
+            <app-card [card]="card" [cardBorderColor]="'#9a00d6'"></app-card>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Rara">
+        <div class="list-grid">
+          <ng-container *ngFor="let card of rareCards">
+            <app-card [card]="card" [cardBorderColor]="'#4161f1'"></app-card>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Normal">
+        <div class="list-grid">
+          <ng-container *ngFor="let card of normalCards">
+            <app-card [card]="card" [cardBorderColor]="'#66e961'"></app-card>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Básica">
+        <div class="list-grid">
+          <ng-container *ngFor="let card of basicCards">
+            <app-card [card]="card"></app-card>
+          </ng-container>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

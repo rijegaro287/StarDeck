@@ -21,11 +21,11 @@ public partial class StardeckContext : DbContext
 
     public virtual DbSet<Card> Cards { get; set; }
 
-    public virtual DbSet<Deck> Decks { get; set; }
+    public virtual DbSet<Collection> Collections { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=Stardeck;Username=Admin;Password=admin");
+        => optionsBuilder.UseNpgsql("Host=stardeck.postgres.database.azure.com;Database=Stardeck;Username=StardeckAdmin;Password=CE4101.1");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -108,7 +108,7 @@ public partial class StardeckContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("card_pkey");
 
-            entity.ToTable("card", tb => tb.HasComment("0-basica\n\n1-normal\n\n2-rara\n\n3-Muy Rara\n\n4-Ultra Rara"));
+            entity.ToTable("card", tb => tb.HasComment("0-basica\r\n\r\n1-normal\r\n\r\n2-rara\r\n\r\n3-Muy Rara\r\n\r\n4-Ultra Rara"));
 
             entity.Property(e => e.Id)
                 .HasMaxLength(14)
@@ -131,22 +131,22 @@ public partial class StardeckContext : DbContext
             entity.Property(e => e.Type).HasColumnName("type");
         });
 
-        modelBuilder.Entity<Deck>(entity =>
+        modelBuilder.Entity<Collection>(entity =>
         {
             entity.HasKey(e => e.IdAccount).HasName("deck_pkey");
 
-            entity.ToTable("deck");
+            entity.ToTable("collection");
 
             entity.Property(e => e.IdAccount)
                 .HasMaxLength(14)
                 .IsFixedLength()
                 .HasColumnName("id_account");
-            entity.Property(e => e.Deck1)
+            entity.Property(e => e.Collection1)
                 .HasColumnType("json")
-                .HasColumnName("deck");
+                .HasColumnName("collection");
 
-            entity.HasOne(d => d.IdAccountNavigation).WithOne(p => p.Deck)
-                .HasForeignKey<Deck>(d => d.IdAccount)
+            entity.HasOne(d => d.IdAccountNavigation).WithOne(p => p.Collection)
+                .HasForeignKey<Collection>(d => d.IdAccount)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("deck_account_fkey");
         });
