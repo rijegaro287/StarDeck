@@ -28,8 +28,6 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
 
-import { HomeComponent } from './Components/home/home.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +38,7 @@ import { HomeComponent } from './Components/home/home.component';
     NavbarComponent,
     CardFormComponent,
     CardFormDialogComponent,
-    CardComponent,
-    HomeComponent
+    CardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
