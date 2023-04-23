@@ -1,0 +1,81 @@
+@import '../../../../styles.scss';
+
+mat-card {
+  border: 3px solid $primary;
+  border-radius: 1.2rem;
+}
+
+.card-container {
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card-image,
+.card-info,
+.card-cost {
+  height: 13rem;
+}
+
+.card-image {
+  width: 13rem;
+  border-radius: 1rem;
+}
+
+.card-info {
+  overflow-y: scroll;
+
+  .card-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $secondary;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-race {
+    color: $text;
+    font-size: 1.8rem;
+  }
+
+  .card-description {
+    color: $text;
+    font-size: 1.6rem;
+    text-align: justify;
+  }
+}
+
+.card-cost {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.energy,
+.battle-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $text;
+  gap: 1.4rem;
+  width: 50%;
+
+  i {
+    font-size: 2.8rem;
+  }
+
+  span {
+    font-size: 1.6rem;
+  }
+}
+
+.energy i {
+  color: $energy;
+}
+
+.battle-points i {
+  color: $warning;
+}
