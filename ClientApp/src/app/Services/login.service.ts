@@ -22,11 +22,7 @@ export class LoginService {
 
   };
 
-  logout = (): void => {
-    let ans:string;
-    let res = this.request.put(this.url+"/logout", JSON.stringify({}));
-    res.then(x => ans=x.status);
-    sessionStorage.clear();
-    window.location.reload()
+  logout = (): Promise<IServerResponse> => {
+    return this.request.put(this.url+"/logout", JSON.stringify({}));
   }
 }
