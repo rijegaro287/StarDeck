@@ -6,7 +6,7 @@ mat-card {
 }
 
 .card-container {
-  height: 16rem;
+  height: 20rem;
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -15,16 +15,16 @@ mat-card {
 .card-image,
 .card-info,
 .card-cost {
-  height: 13rem;
+  height: 18rem;
 }
 
 .card-image {
-  width: 13rem;
+  width: 18rem;
   border-radius: 1rem;
 }
 
 .card-info {
-  overflow-y: scroll;
+  overflow-y: auto;
 
   .card-name {
     font-size: 2rem;
@@ -48,7 +48,7 @@ mat-card {
 .card-cost {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
 }

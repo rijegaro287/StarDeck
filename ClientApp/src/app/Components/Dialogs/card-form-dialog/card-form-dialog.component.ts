@@ -41,14 +41,15 @@ export class CardFormDialogComponent {
     const newCard: ICard = {
       id: random.genSync('medium+', 12),
       name: this.newCard.value.name.toString(),
-      image: fileInput.files![0],
+      // image: fileInput.files![0],
       energy: Number(this.newCard.value.energy),
-      cost: Number(this.newCard.value.cost),
-      type: Number(this.newCard.value.type) as ICardType,
-      race: this.newCard.value.race.toString(),
+      battlecost: Number(this.newCard.value.cost),
+      image: '',
       active: true,
-      skillID: 0,
-      description: this.newCard.value.description,
+      type: Number(this.newCard.value.type) as ICardType,
+      // race: this.newCard.value.race.toString(),
+      // ability: 0,
+      description: this.newCard.value.description
     };
 
     console.log(newCard);
@@ -61,7 +62,7 @@ export class CardFormDialogComponent {
       this.cardService.addCard(newCard)
         .then(response => {
           console.log(response);
-          this.requestService.handleResponse(response);
+          window.location.reload();
         });
     } catch (error) {
       /** Muestra una alerta en caso de error */
@@ -93,7 +94,7 @@ export class CardFormDialogComponent {
     if (isNaN(newCard.energy) || newCard.energy < -100 || newCard.energy > 100) {
       throw new Error('La energía de la carta debe ser un número entre -100 y 100');
     }
-    if (isNaN(newCard.energy) || newCard.cost < 0 || newCard.cost > 100) {
+    if (isNaN(newCard.energy) || newCard.battlecost < 0 || newCard.battlecost > 100) {
       throw new Error('El costo de la carta debe ser un número entre 0 y 100');
     }
   }

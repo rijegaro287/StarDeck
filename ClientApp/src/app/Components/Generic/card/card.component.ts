@@ -20,6 +20,6 @@ export class CardComponent implements OnChanges {
 
   /** Se ejecuta cuando se detecta que la entrada cambió */
   ngOnChanges(): void {
-    console.log(this.card);
+    // console.log(this.card);
   }
 }
