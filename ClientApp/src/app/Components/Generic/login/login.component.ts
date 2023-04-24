@@ -52,17 +52,20 @@ export class LoginComponent {
     console.log(data);
     var hash = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(data.Password));
     data.Password =  Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("")
-    let res = await this.service.login(data);
+    let res = <ILoginData><unknown>await this.service.login(data);
 
-    if (res.status !== null) {
+    if (res.Id !== null) {
       sessionStorage.setItem("Nombre", <string>(data.Nickname));
       sessionStorage.setItem("Token", "True");
-      sessionStorage.setItem("Rol", <string><unknown>res);
-      if (<string><unknown>res === "Admin") {
+      sessionStorage.setItem("Rol", <string>res.Rol);
+      sessionStorage.setItem("ID", <string>res.Id);
+      if (res.Rol === "Admin") {
         window.location.assign(this.baseurl + "/admin")
       } else {
         window.location.assign(this.baseurl + "/User")
       }
+    } else{
+      this.snackBar.open("Usuario o contraseña incorrectos")
     }
     console.log(res)
 

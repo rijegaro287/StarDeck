@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
 using System.Text;
@@ -25,6 +26,8 @@ public class LoginController : Controller
     {
         public string Nickname { get; set; }
         public string Password { get; set; }
+        public string? Rol { get; set; }
+        public string? Id { get; set; }
     }
     private readonly Stardeck.Models.StardeckContext _context;
 
@@ -78,8 +81,12 @@ public class LoginController : Controller
         }
         await Console.Out.WriteAsync(JsonSerializer.Serialize(
             HttpContext.Request.Cookies));
+        data.Password = "";
+        data.Rol = claims[1].Value;
+        data.Id = user.Id;
+
         var res = Ok(JsonSerializer.Serialize(
-            claims[1].Value)
+            data)
         );
         return res;
     }
