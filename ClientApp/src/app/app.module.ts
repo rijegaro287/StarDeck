@@ -34,6 +34,8 @@ import { CardComponent } from './Components/Generic/card/card.component';
 
 import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
+import { UserMainComponent } from './Components/User/user-main/user-main.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { SelectionCardComponent } from './Components/Register/selection-card/sel
     CardComponent,
     ImageUploaderComponent,
     RegisterAccountComponent,
-    SelectionCardComponent
+    SelectionCardComponent,
+    UserMainComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -70,9 +73,11 @@ import { SelectionCardComponent } from './Components/Register/selection-card/sel
       {
         path: "Register", children: [
           { path: 'account', data: { title: "Registro de Cuenta" }, component: RegisterAccountComponent },
-          { path: 'selection-card', data: { title: "Selecci�n de Cartas" }, component: SelectionCardComponent }
+          { path: 'selection-card', data: { title: "Seleccion de Cartas" }, component: SelectionCardComponent }
         ]
-      }
+      },
+      { path: "User", component: UserMainComponent}
+
       // {
       //   path: 'player',
       //   component: PlayerMainComponent,
