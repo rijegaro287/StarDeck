@@ -9,7 +9,7 @@ using System;
 
 namespace Stardeck.Controllers
 {
-    [Route("[controller]")]
+    [Route("cards")]
     [ApiController]
     public class CardController : ControllerBase
     {
@@ -24,6 +24,7 @@ namespace Stardeck.Controllers
 
         // GET: api/<CardController>
         [HttpGet]
+        [Route("get_all")]
         public async Task<IActionResult> Get()
         {
             
@@ -31,7 +32,8 @@ namespace Stardeck.Controllers
         }
 
         // GET api/<CardController>/5
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("get/{id}")]
         public async Task<IActionResult> Get(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
@@ -46,6 +48,7 @@ namespace Stardeck.Controllers
 
         // POST api/<CardController>
         [HttpPost]
+        [Route("add")]
         public async Task<IActionResult>Post([FromBody] CardImage card)
         {
             var cardAux = new Card()
