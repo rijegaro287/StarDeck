@@ -14,10 +14,7 @@ export class AccountService {
 
   constructor(private request: RequestService) { }
 
-  // Cuando el API esté listo
-  // addCard = (card: ICard): Promise<IServerResponse> => {
-  //   return this.request.post(`${this.url}/add`, card);
-  // }
+  
 
   addUser = (user: IAccount): Promise<IServerResponse> => {
     const response: IServerResponse = {

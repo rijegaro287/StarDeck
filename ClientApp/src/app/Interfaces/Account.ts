@@ -3,9 +3,9 @@ interface IAvatar {
   name: string;
   image: File;
 }
-interface IDeck {
+interface ICollection {
   idAccount: string;
-  deck: string;
+  collection: string;
 }
 
 interface IAccount {
@@ -20,13 +20,12 @@ interface IAccount {
   config: string;
   points: number;
   coins: number;
-  //avatarnavigation: IAvatar;
-  deck: IDeck;
+  collection: ICollection;
 
 }
 
 export {
   IAccount,
   IAvatar,
-  IDeck
+  ICollection
 }

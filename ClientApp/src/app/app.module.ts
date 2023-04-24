@@ -14,7 +14,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -31,7 +30,7 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
 
-import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
+
 import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
 
@@ -45,8 +44,7 @@ import { SelectionCardComponent } from './Components/Register/selection-card/sel
     NavbarComponent,
     CardFormComponent,
     CardFormDialogComponent,
-    CardComponent
-    AddCardComponent,
+    CardComponent,
     ImageUploaderComponent,
     RegisterAccountComponent,
     SelectionCardComponent
@@ -69,7 +67,7 @@ import { SelectionCardComponent } from './Components/Register/selection-card/sel
         ]
       },
       {
-        path: "register", children: [
+        path: "Register", children: [
           { path: 'account', data: { title: "Registro de Cuenta" }, component: RegisterAccountComponent },
           { path: 'selection-card', data: { title: "Selecci�n de Cartas" }, component: SelectionCardComponent }
         ]

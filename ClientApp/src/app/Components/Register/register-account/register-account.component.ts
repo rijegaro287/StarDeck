@@ -1,26 +1,49 @@
 import * as random from "random-web-token";
 
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AccountService } from 'src/app/Services/account.service';
 import { RequestService } from 'src/app/Services/request.service';
 
-import { IAccount, IDeck } from 'src/app/Interfaces/Account';
+import { IAccount, ICollection } from 'src/app/Interfaces/Account';
+import { LoginComponent } from "../../Generic/login/login.component";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-register-account',
   templateUrl: './register-account.component.html',
-  styleUrls: ['./register-account.component.css']
+  styleUrls: ['./register-account.component.scss']
 })
+
+/*
+ * Clase donde se exporta los elementos requeridos
+ */
 export class RegisterAccountComponent {
+  respuesta = {};
+  http: HttpClient;
+  router: Router | undefined;
+  baseurl: string;
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'withCredentials': 'true'
+    })
+  };
+  /* Formulario del Registro de Cuenta */
   newUser: FormGroup;
 
-  constructor(
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string,
     private _formBuilder: FormBuilder,
     private requestService: RequestService,
     private accountService: AccountService
   ) {
+    //Variables a utilizar
+    this.http = http;
+    this.baseurl = baseUrl
+    //Datos del formulario de Registro de Cuenta
     this.newUser = this._formBuilder.group({
       name: ['', Validators.required],
       nickname: ['', Validators.required],
@@ -33,9 +56,9 @@ export class RegisterAccountComponent {
   }
 
   createAccount() {
-    const initialDeck: IDeck = {
-      idAccount: 'JBCS',
-      deck: '{1,2,3,4,5,6}',
+    const initialCollection: ICollection = {
+      idAccount:'{C- ,C- ,C- ,C- ,C- ,C- }',
+      collection: '15',
 
     }
    
@@ -51,11 +74,12 @@ export class RegisterAccountComponent {
       config: 'user',
       points: 0,
       coins: 20,
-      deck: initialDeck,
+      collection: initialCollection,
       
     };
 
     console.log(newUser);
+    console.log(JSON.stringify(newUser));
 
     try {
       this.validateAccount(newUser);
@@ -68,6 +92,7 @@ export class RegisterAccountComponent {
     } catch (error) {
       alert(error);
     }
+    window.location.assign(this.baseurl + "Register/selection-card")
   }
 
   validateAccount(user: IAccount): void {
