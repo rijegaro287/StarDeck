@@ -36,7 +36,7 @@ namespace Stardeck.Controllers
             var collection = context.Collections.Find(accountId);
             if (collection?.Collection1 == null) { return NotFound(); }
             if (collection.Collectiondict == null) { return NotFound(); }
-            return Ok(collection.Collectiondict);
+            return Ok(collection.Collection1);
 
         }
 
@@ -89,9 +89,17 @@ namespace Stardeck.Controllers
             }
             
             await context.Accounts.AddAsync(accAux);
-
             await context.SaveChangesAsync();
-            return Ok(acc);
+
+            //Add initial cards
+            var cards = context.Cards.Where(x => x.Type == 0).ToList();
+            var ind = new Random();
+            for (int i = 0; i < 15; i++)
+            {
+                await this.addCards(accAux.Id, cards[ind.Next(cards.Count)].Id);
+            }
+
+            return Ok(accAux);
 
         }
 
