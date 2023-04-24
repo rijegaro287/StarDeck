@@ -32,19 +32,19 @@ public partial class Account
 
     [NotMapped]
     public ServerconfigutationDict<string, string>? Serverconfig;
-
+    [Serializable]
     public class ServerconfigutationDict<TKey, TValue> : Dictionary<TKey, TValue> where TKey : notnull
     {
         [NotMapped]
         [JsonIgnore]
-        public Account main { get; set; }
+        public Account? main { get; set; }
 
-        public ServerconfigutationDict(Account account)
+        public ServerconfigutationDict(Account account) => main = account;
+
+        protected ServerconfigutationDict(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext) : base(serializationInfo, streamingContext)
         {
-            main = account;
         }
-
-        public ServerconfigutationDict()
+        public ServerconfigutationDict():base()
         {
         }
 
@@ -57,10 +57,16 @@ public partial class Account
             set
             {
                 base[key] = value;
-                main.Config = JsonConvert.SerializeObject(this);
+                if (main!=null)
+                {
+                    
+                    main.Config = JsonConvert.SerializeObject(this);
+
+                }
             }
 
         }
+
 
     }
 }

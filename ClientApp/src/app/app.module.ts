@@ -9,12 +9,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 
@@ -28,7 +30,10 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
 
-import { HomeComponent } from './Components/home/home.component';
+// import { HomeComponent } from './Components/home/home.component';
+
+import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
+import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,9 @@ import { HomeComponent } from './Components/home/home.component';
     CardFormComponent,
     CardFormDialogComponent,
     CardComponent,
-    HomeComponent
+    ImageUploaderComponent,
+    RegisterAccountComponent,
+    SelectionCardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -60,6 +67,12 @@ import { HomeComponent } from './Components/home/home.component';
           { path: 'cards', component: CardListComponent },
         ]
       },
+      {
+        path: "Register", children: [
+          { path: 'account', data: { title: "Registro de Cuenta" }, component: RegisterAccountComponent },
+          { path: 'selection-card', data: { title: "Selecci�n de Cartas" }, component: SelectionCardComponent }
+        ]
+      }
       // {
       //   path: 'player',
       //   component: PlayerMainComponent,
@@ -75,6 +88,9 @@ import { HomeComponent } from './Components/home/home.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatGridListModule,
+    MatCheckboxModule,
+
     MatToolbarModule,
     MatCardModule,
     MatTabsModule,

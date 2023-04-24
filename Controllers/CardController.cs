@@ -4,12 +4,13 @@ using Stardeck.Models;
 using System.Text.Json;
 using System.Xml.Linq;
 using System;
+using System.Text.RegularExpressions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Stardeck.Controllers
 {
-    [Route("[controller]")]
+    [Route("cards")]
     [ApiController]
     public class CardController : ControllerBase
     {
@@ -24,6 +25,7 @@ namespace Stardeck.Controllers
 
         // GET: api/<CardController>
         [HttpGet]
+        [Route("get_all")]
         public async Task<IActionResult> Get()
         {
             
@@ -31,7 +33,8 @@ namespace Stardeck.Controllers
         }
 
         // GET api/<CardController>/5
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("get/{id}")]
         public async Task<IActionResult> Get(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
@@ -46,6 +49,7 @@ namespace Stardeck.Controllers
 
         // POST api/<CardController>
         [HttpPost]
+        [Route("add")]
         public async Task<IActionResult>Post([FromBody] CardImage card)
         {
             var cardAux = new Card()
@@ -61,6 +65,11 @@ namespace Stardeck.Controllers
                 Description= card.Description
 
     };
+
+            while (!Regex.IsMatch(cardAux.Id, @"^C-[a-zA-Z0-9]{12}"))
+            {
+                cardAux.Id = string.Concat("C-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
+            }
             await context.Cards.AddAsync(cardAux);
             
             await context.SaveChangesAsync();
@@ -75,7 +84,6 @@ namespace Stardeck.Controllers
             var card = await context.Cards.FindAsync(id);
             if (card != null)
             {
-                card.Id = nCard.Id;
                 card.Name = nCard.Name;
                 card.Energy = nCard.Energy;
                 card.Battlecost = nCard.Battlecost;
