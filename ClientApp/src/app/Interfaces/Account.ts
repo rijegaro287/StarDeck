@@ -15,13 +15,6 @@ interface IAccount {
   email: string;
   nationality: string;
   password: string;
-  active: boolean;
-  avatar: number;
-  config: string;
-  points: number;
-  coins: number;
-  collection: ICollection;
-
 }
 
 export {

@@ -56,11 +56,6 @@ export class RegisterAccountComponent {
   }
 
   createAccount() {
-    const initialCollection: ICollection = {
-      idAccount:'{C- ,C- ,C- ,C- ,C- ,C- }',
-      collection: '15',
-
-    }
    
     const newUser: IAccount = {
       id: 'U-'+ random.genSync('medium+', 12),
@@ -68,14 +63,7 @@ export class RegisterAccountComponent {
       nickname: this.newUser.value.nickname.toString(),
       email: this.newUser.value.email.toString(),
       nationality: this.newUser.value.nationality.toString(),
-      password: this.newUser.value.password.toString(),
-      avatar: 1,
-      active: true,
-      config: 'user',
-      points: 0,
-      coins: 20,
-      collection: initialCollection,
-      
+      password: this.newUser.value.password.toString()
     };
 
     console.log(newUser);
@@ -107,6 +95,9 @@ export class RegisterAccountComponent {
 
     if (this.newUser.value.password.toString() != this.newUser.value.passwordv.toString() ) {
       throw new Error('Las contraseñas no coinciden verifiquela e intente de nuevo');
+    }
+    if (this.newUser.value.term != true) {
+      throw new Error('Debe aceptar los terminos y condiciones del juego ');
     }
   }
 }
