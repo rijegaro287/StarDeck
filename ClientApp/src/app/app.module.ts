@@ -30,6 +30,7 @@ import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/c
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
 
+// import { HomeComponent } from './Components/home/home.component';
 
 import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';

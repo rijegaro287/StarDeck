@@ -1,3 +1,5 @@
+import { ICard } from "./Card";
+
 interface IServerResponse<T = any> {
   status: 'ok' | 'error';
   body?: T;
@@ -5,6 +7,9 @@ interface IServerResponse<T = any> {
   redirect?: string;
 }
 
+type ICardsResponse = IServerResponse<ICard[]>;
+
 export {
-  IServerResponse
+  IServerResponse,
+  ICardsResponse
 }
