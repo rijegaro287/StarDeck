@@ -78,7 +78,7 @@ export class LoginComponent {
   }
 
   Register() {
-    window.location.assign(this.baseurl + "Register")
+    window.location.assign(this.baseurl + "Register/account")
 
   }
 }

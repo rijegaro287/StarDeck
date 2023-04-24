@@ -1,0 +1,57 @@
+<div class="w-50 my-5 mx-auto">
+  <form [formGroup]="newUser">
+    <div class="row">
+      <h2>Registro de Cuenta </h2>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label color="primary">Nombre del jugador</mat-label>
+        <input matInput formControlName="name" required minlength="5" maxlength="30" >
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label color="primary">Apodo</mat-label>
+        <input matInput formControlName="nickname" required minlength="5" maxlength="30">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label color="primary">Correo</mat-label>
+        <input matInput formControlName="email" required>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label color="primary" >Nacionalidad</mat-label>
+        <input matInput formControlName="nationality" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label color="primary">Contraseña</mat-label>
+        <input matInput formControlName="password" required type="password" maxlength="8">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label color="primary">Confirmación de Contraseña</mat-label>
+        <input matInput formControlName="passwordv" required type="password" maxlength="8">
+      </mat-form-field>
+    </div>
+
+
+    <div class="row">
+      <mat-checkbox formControlName="term" color="warn" >Acepta términos de seguridad y privacidad de la empresa</mat-checkbox>
+    </div>
+
+    <div class="row">
+      <button mat-raised-button color="primary" (click)="createAccount() ">Crear Cuenta</button>
+    </div>
+
+  </form>
+</div>

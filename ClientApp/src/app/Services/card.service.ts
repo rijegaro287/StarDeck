@@ -4,15 +4,19 @@ import { apiURL } from '../app.component';
 import { RequestService } from './request.service';
 
 import { ICard } from '../Interfaces/Card';
-import { IServerResponse } from '../Interfaces/ServerResponse';
+import { ICardsResponse, IServerResponse } from '../Interfaces/ServerResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-  url = `${apiURL}/card`;
+  url = `${apiURL}/cards`;
 
   constructor(private request: RequestService) { }
+
+  getAllCards = (): Promise<ICardsResponse> => {
+    return this.request.get(`${this.url}/get_all`);
+  }
 
   // Cuando el API esté listo
   // addCard = (card: ICard): Promise<IServerResponse> => {
