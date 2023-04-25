@@ -66,7 +66,7 @@ export class RegisterAccountComponent {
   async createAccount() {
     const user: ILoginData =
     {
-      Nickname: this.newUser.value.nickname.toString(),
+      Email: this.newUser.value.email.toString(),
       Password: this.newUser.value.password.toString()
      }
 

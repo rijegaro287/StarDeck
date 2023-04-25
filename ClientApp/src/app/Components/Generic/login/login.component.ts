@@ -21,7 +21,7 @@ export class LoginComponent {
   router: Router | undefined;
   baseurl: string;
   login = new FormGroup({
-    Nickname: new FormControl(),
+    Email: new FormControl(),
     Password: new FormControl(),
   }
   );

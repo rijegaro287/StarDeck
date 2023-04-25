@@ -3,7 +3,7 @@
         <form (ngSubmit)="Sig_In(login.getRawValue())" [formGroup]="login" action="home.component.ts"
               class="form-signin" style="display: flex; flex-direction: column; ">
             <h1 class="text-center">Login</h1>
-            <input class="form-control" formControlName="Nickname" id="Usuario" placeholder="Usuario"
+            <input class="form-control" formControlName="Email" id="Usuario" placeholder="Usuario"
                    type="text" value="" required>
             <input class="form-control" formControlName="Password" id="Contraseña" placeholder="Contraseña" required />
             <button [disabled]="!login.valid" class="btn btn-lg btn-primary" id="Sig_in" type="submit">

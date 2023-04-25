@@ -27,7 +27,7 @@ export class LoginService {
     let res = <ILoginData><unknown> sign;
 
     if (res.Id !== null) {
-      sessionStorage.setItem("Nombre", <string>(login.Nickname));
+      sessionStorage.setItem("Nombre", <string>(login.Email));
       sessionStorage.setItem("Token", "True");
       sessionStorage.setItem("Rol", <string>res.Rol);
       sessionStorage.setItem("ID", <string>res.Id);

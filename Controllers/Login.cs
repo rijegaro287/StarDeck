@@ -24,7 +24,7 @@ public class LoginController : Controller
 {
     public class loginData
     {
-        public string Nickname { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
         public string? Rol { get; set; }
         public string? Id { get; set; }
@@ -97,7 +97,7 @@ public class LoginController : Controller
     private Models.Account? AuthenticateUser(loginData user)
     {
         //Debug to access with default user and password delete this in production
-        Models.Account? account = _context.Accounts.FirstOrDefault(x => x.Nickname == user.Nickname);
+        Models.Account? account = _context.Accounts.FirstOrDefault(x => x.Email == user.Email);
         if (account == null) { return null; }
         if (account.Password != user.Password) { return null; }
         return account;
