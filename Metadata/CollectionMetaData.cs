@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Configuration;
 using System.Runtime.Serialization;
+using static Stardeck.Models.Collection;
 
 namespace Stardeck.Models;
 [MetadataType(typeof(CollectionMetaData))]
@@ -10,34 +11,40 @@ namespace Stardeck.Models;
 
 public partial class Collection
 {
-    public Collection(string? collection1)
+    public Collection(string[]? collection1)
     {
         this.Collection1 = collection1;
-        if (this.Collection1 == "" | this.Collectiondict == null) { this.Collectiondict = new(this); return; }
-        this.Collectiondict = JsonConvert.DeserializeObject<CollectionDict<string, int>>(this.Collection1);
-        this.Collectiondict ??= new CollectionDict<string, int>();
+        if (this.Collection1.Count()<1 | this.Collectionlist == null) { this.Collectionlist = new(this); return; }
+        this.Collectionlist = new(collection1);
+        this.Collectionlist ??= new CollectionList();
+        this.Collectionlist.main = this;
     }
+
+    public Collection()
+    {
+    }
+
     [NotMapped]
-    public CollectionDict<string, int>? Collectiondict;
+    public CollectionList? Collectionlist;
     [Serializable]
-    public class CollectionDict<TKey, TValue> : Dictionary<TKey, TValue> where TKey : notnull
+    public class CollectionList : List<string> 
     {
         [NotMapped]
         [JsonIgnore]
         public Collection? main { get; set; }
-        public CollectionDict(Collection collection)
+        public CollectionList(Collection collection)
         {
             main = collection;
         }
-        public CollectionDict():base()
+        public CollectionList(string[] collection1):base(collection1)
+        {
+            
+        }
+        public CollectionList():base()
         {
         }
 
-        protected CollectionDict(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
-
-        public new TValue this[TKey key]
+        public new string this[int key]
         {
             get
             {
@@ -50,15 +57,31 @@ public partial class Collection
                 if (main != null)
                 {
 
-                    main.Collection1 = JsonConvert.SerializeObject(this);
+                    main.Collection1 = base.ToArray();
+                    
 
                 }
 
             }
         }
+        public new void Add(string value)
+        {
+            if(base.Contains(value)) return;
+            base.Add(value);
+            main.Collection1 = base.ToArray();
+
+        }
+
+        public new string Remove(string item){
+            base.Remove(item);
+
+                main.Collection1 = base.ToArray();
+
+            return item;
     }
 }
 public class CollectionMetaData
     {
     }
+}
 

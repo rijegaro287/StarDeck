@@ -142,7 +142,7 @@ public partial class StardeckContext : DbContext
                 .IsFixedLength()
                 .HasColumnName("id_account");
             entity.Property(e => e.Collection1)
-                .HasColumnType("json")
+                .HasColumnType("character(14)[]")
                 .HasColumnName("collection");
 
             entity.HasOne(d => d.IdAccountNavigation).WithOne(p => p.Collection)

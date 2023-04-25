@@ -35,7 +35,6 @@ namespace Stardeck.Controllers
         {
             var collection = context.Collections.Find(accountId);
             if (collection?.Collection1 == null) { return NotFound(); }
-            if (collection.Collectiondict == null) { return NotFound(); }
             return Ok(collection.Collection1);
 
         }
@@ -93,10 +92,12 @@ namespace Stardeck.Controllers
 
             //Add initial cards
             var cards = context.Cards.Where(x => x.Type == 0).ToList();
-            var ind = new Random();
+            var ran = new Random();
             for (int i = 0; i < 15; i++)
             {
-                await this.addCards(accAux.Id, cards[ind.Next(cards.Count)].Id);
+                var index = ran.Next(cards.Count);
+                await this.addCards(accAux.Id, cards[index].Id);
+                cards.RemoveAt(index);
             }
 
             return Ok(accAux);
@@ -110,27 +111,27 @@ namespace Stardeck.Controllers
             var collection=context.Collections.Find(accountId);
             if (collection == null)
             {
-                collection = new("{}") { IdAccount=accountId};
-                collection.Collectiondict[cardId] = 1;   
+                collection = new(new List<string>().ToArray())
+                {
+                    IdAccount=accountId
+                };
+                collection.Collectionlist.Add( cardId);   
                 context.Collections.Add(collection);
                 context.SaveChanges();
-                return Ok(collection.Collectiondict);
+                return Ok(collection.Collection1);
             }
             else
             {
                 {
-                    if (collection.Collectiondict.ContainsKey(cardId))
+                    if (collection.Collectionlist.Contains(cardId))
                     {
-                        collection.Collectiondict[cardId] += 1;
-
-                        context.SaveChanges();
-                        return Ok("SUMA " + collection.Collectiondict);
+                        return BadRequest("Ya en coleccion "+cardId);
                     }
                     else
                     {
-                        collection.Collectiondict.Add(cardId, 1);
+                        collection.Collectionlist.Add(cardId);
                         context.SaveChanges();
-                        return Ok("AGREGA " + collection.Collectiondict);
+                        return Ok("AGREGA " + collection.Collection1);
                     }
                 }
                 
@@ -191,21 +192,13 @@ namespace Stardeck.Controllers
             }
             else
             {
-                if (collection.Collectiondict.ContainsKey(cardId))
+                if (collection.Collection1.Contains(cardId))
                 {
-                    if(collection.Collectiondict[cardId] == 1)
-                    {
-                        collection.Collectiondict.Remove(cardId);
+                        collection.Collection1= collection.Collection1.Where(x=>x!=cardId).ToArray();
                         context.SaveChanges();
-                    }
-                    else
-                    {
-                        collection.Collectiondict[cardId]  -= 1;
-
-                        context.SaveChanges();
-                    }
                     
-                    return Ok(collection.Collectiondict);
+                    
+                    return Ok(collection.Collection1);
                 }
                 return NotFound("Coleccion no encontrada");
             }
