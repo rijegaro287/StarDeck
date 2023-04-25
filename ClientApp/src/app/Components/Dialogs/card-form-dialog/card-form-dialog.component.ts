@@ -37,6 +37,9 @@ export class CardFormDialogComponent {
   async onSubmit() {
     /** Selecciona la foto */
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
+    const fileList: FileList = fileInput.files!;
+
+    const imageString = fileList.length ? await this.helpers.fileToBase64(fileList[0]) : '';
 
     /** Convierte todos los tipos de dato */
     const newCard: ICard = {
@@ -44,7 +47,7 @@ export class CardFormDialogComponent {
       name: this.newCard.value.name.toString(),
       energy: Number(this.newCard.value.energy),
       battlecost: Number(this.newCard.value.cost),
-      image: await this.helpers.fileToBase64(fileInput.files![0]),
+      image: imageString,
       active: true,
       type: Number(this.newCard.value.type) as ICardType,
       // race: this.newCard.value.race.toString(),

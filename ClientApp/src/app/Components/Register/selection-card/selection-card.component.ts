@@ -6,7 +6,7 @@ import { AccountService } from 'src/app/Services/account.service';
 import { RequestService } from 'src/app/Services/request.service';
 
 import { ICollection } from 'src/app/Interfaces/Account';
-import {ICard } from 'src/app/Interfaces/Card';
+import { ICard } from 'src/app/Interfaces/Card';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 
@@ -35,8 +35,8 @@ export class SelectionCardComponent implements OnInit {
   cardSelected2: boolean;
   cardSelected3: boolean;
   respuesta = {};
- 
-  router: Router | undefined ;
+
+  router: Router | undefined;
   baseurl: string;
   httpOptions = {
     headers: new HttpHeaders({
@@ -49,14 +49,13 @@ export class SelectionCardComponent implements OnInit {
    * @param baseUrl variable para manejar la direccion de la pagina
    * @param accountService injector del service de cuenta para las peticiones
    */
-  constructor( @Inject('BASE_URL') baseUrl: string, private accountService: AccountService,)
-  {
+  constructor(@Inject('BASE_URL') baseUrl: string, private accountService: AccountService,) {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
     this.idCard = '';
     console.log(this.idAccount);
     this.baseurl = baseUrl;
-    this.collectionInitial=[]
+    this.collectionInitial = []
     this.cards = [];
     this.selectionCard1 = [];
     this.selectionCard2 = [];
@@ -89,14 +88,14 @@ export class SelectionCardComponent implements OnInit {
     //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
     await this.accountService.allCards()
       .then((cards) => {
-       
+
         //Cartas filtradas de tipo Rara y Basica
         let filteredCard = cards.filter(card => card.type === 1 || card.type === 2);
         //Cartas ordenadas aleatoriamente
         let randomCard = filteredCard.sort(() => Math.random() - 0.5)
         //Lista de cartas seleccionadas
         randomCard = randomCard.slice(0, 9);
-        
+
         //Asignar las cartas a seleccionar
         this.selectionCard1 = randomCard.slice(0, 2);
         console.log(this.selectionCard1)
@@ -104,9 +103,9 @@ export class SelectionCardComponent implements OnInit {
         console.log(this.selectionCard2)
         this.selectionCard3 = randomCard.slice(6, 8);
         console.log(this.selectionCard3)
-    
-      });    
-    }
+
+      });
+  }
 
   /**
    *Funcion que se llama cuando se da click en Aceptar 
@@ -121,7 +120,7 @@ export class SelectionCardComponent implements OnInit {
           console.log(response);
         });*/
     }
-    
+
 
     window.location.assign(this.baseurl + "login")
   }
@@ -131,7 +130,7 @@ export class SelectionCardComponent implements OnInit {
    * @param selection este numero indica en la ronda de cartas que el usuario selecciono 
    * @param selection este numero indica en la ronda de cartas que el usuario selecciono 
    * */
-  onSelect(card: ICard, selection:number) {
+  onSelect(card: ICard, selection: number) {
     switch (selection) {
       //Seleccion de la primer carta
       case 1:
@@ -156,8 +155,6 @@ export class SelectionCardComponent implements OnInit {
         break;
     }
     console.log(this.selectedCards);
-     
-
   }
 }
-  
+

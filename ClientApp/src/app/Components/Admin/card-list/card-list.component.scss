@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  overflow-y: auto;
 }
 
 .add-button {
@@ -26,14 +27,14 @@
 }
 
 .card-list {
-  width: 100%;
   height: 60vh;
-  overflow-y: scroll;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .list-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   padding: 2rem;
 }

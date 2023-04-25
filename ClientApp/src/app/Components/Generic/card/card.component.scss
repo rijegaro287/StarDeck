@@ -44,6 +44,7 @@ mat-card {
     color: $text;
     font-size: 1.6rem;
     text-align: justify;
+    overflow-wrap: break-word;
   }
 }
 
