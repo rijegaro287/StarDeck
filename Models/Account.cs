@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Stardeck.Models;
 
@@ -14,6 +15,7 @@ public partial class Account
     public string Email { get; set; } = null!;
 
     public string Country { get; set; } = null!;
+
 
     public string Password { get; set; } = null!;
 

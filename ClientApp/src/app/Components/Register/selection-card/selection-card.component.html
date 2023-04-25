@@ -1,79 +1,56 @@
-<div class="w-50 my-5 mx-auto">
+<div class="w-75 my-5 mx-auto">
   <div class="row">
-    <h2 color="accent">Selección de cartas </h2>
+    <h1>Selección de cartas </h1>
   </div>
   <div class="row">
-    <mat-label color="basic">Seleccione la primer carta</mat-label>
-    <mat-grid-list cols="3" rowHeight="1:1">
-      <div>
-        <mat-grid-tile>Carta 1</mat-grid-tile>
-      </div>
-      <div>
-        <mat-grid-tile>Carta 2</mat-grid-tile>
-      </div>
-      <div>
-        <mat-grid-tile>Carta 3</mat-grid-tile>
-      </div>
-    </mat-grid-list>
-  </div>
-  <div class="row">
-
-    <mat-label color="basic">Seleccione la segunda carta</mat-label>
-    <mat-grid-list cols="3" rowHeight="1:1">
-      <div>
-        <mat-grid-tile>Carta 1</mat-grid-tile>
-      </div>
-      <div>
-        <mat-grid-tile>Carta 2</mat-grid-tile>
-      </div>
-      <div>
-        <mat-grid-tile>Carta 3</mat-grid-tile>
-      </div>
-    </mat-grid-list>
-  </div>
-
-<div class="row">
-  <mat-label color="basic">Seleccione la tercer carta</mat-label>
-  <mat-grid-list cols="3" rowHeight="1:1">
-    <div>
-      <mat-grid-tile>Carta 1</mat-grid-tile>
-    </div>
-    <div>
-      <mat-grid-tile>Carta 2</mat-grid-tile>
-    </div>
-    <div>
-      <mat-grid-tile>Carta 3</mat-grid-tile>
-    </div>
-  </mat-grid-list>
-</div>
-
-
-<div class="row">
-  <hr color="#ffffff">
-  <mat-label>Cartas en su deck</mat-label>
-</div>
-
-<div class="row">
-  <mat-grid-list cols="3" rowHeight="5:1">
-    <div><mat-grid-tile>Carta 1</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 2</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 3</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 4</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 5</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 6</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 7</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 8</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 9</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 10</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 11</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 12</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 13</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 14</mat-grid-tile></div>
-    <div><mat-grid-tile>Carta 15</mat-grid-tile></div>
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
     
+    <h3>Seleccione la primer carta</h3>
+    <div class="selection-list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of selectionCard1">
+        <app-card [card]="card" [cardBorderColor]="'black'" (click)="onSelect(card,1)"></app-card>
+      </ng-container>
+    </div>
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+  </div>
+  <div class="row">
+    <hr style="height:4px;border-width:0;color:aquamarine;background-color:aquamarine">
+    <h3>Seleccione la segunda carta</h3>
+    <div class="selection-list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of selectionCard2">
+        <app-card [card]="card" [cardBorderColor]="'black'" (click)="onSelect(card,2)"></app-card>
+      </ng-container>
+    </div>
+    <hr style="height:4px;border-width:0;color:aquamarine;background-color:aquamarine">
+  </div>
 
-  </mat-grid-list>
+  <div class="row">
+    <hr style="height: 4px; border-width: 0; color: orangered; background-color: orangered">
+    <h3>Seleccione la tercer carta</h3>
+    <div class="selection-list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of selectionCard3">
+        <app-card [card]="card" [cardBorderColor]="'black'" (click)="onSelect(card,3)"></app-card>
+      </ng-container>
+    </div>
+    <hr style="height: 4px; border-width: 0; color: orangered; background-color: orangered ">
+  </div>
 
+
+<div class="row">
+  <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+  <h1>Cartas en su coleccion</h1>
+</div>
+
+<div class="row">
+  <div class="list-grid">
+    <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+    <ng-container *ngFor="let card of cards">
+      <app-card [card]="card" [cardBorderColor]="'black'"></app-card>
+    </ng-container>
+  </div>
 </div>
 
 <div class="row">

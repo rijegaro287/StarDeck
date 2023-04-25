@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Configuration;
+using System.Text.Json.Serialization;
 
 namespace Stardeck.Models;
 [MetadataType(typeof(AccountMetadata))]
@@ -36,7 +37,8 @@ public partial class Account
     public class ServerconfigutationDict<TKey, TValue> : Dictionary<TKey, TValue> where TKey : notnull
     {
         [NotMapped]
-        [JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        [Newtonsoft.Json.JsonIgnore]
         public Account? main { get; set; }
 
         public ServerconfigutationDict(Account account) => main = account;
@@ -69,6 +71,7 @@ public partial class Account
 
 
     }
+
 }
 
 
@@ -78,6 +81,10 @@ public class AccountMetadata
     [RegularExpression(@"^C-[a-zA-Z0-9]{12}")]
     [StringLength(maximumLength: 14, MinimumLength = 14)]
     public string Id { get; set; } = null!;
-    [EmailAddress]
+    [DataType(DataType.EmailAddress)]
     public string Email { get; set; } = null!;
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    [Newtonsoft.Json.JsonIgnore]
+    public string Password { get; set; } = null!;
 }

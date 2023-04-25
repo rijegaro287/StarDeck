@@ -1,7 +1,7 @@
 <div class="w-50 my-5 mx-auto">
   <form [formGroup]="newUser">
     <div class="row">
-      <h2>Registro de Cuenta </h2>
+      <h1>Registro de Cuenta </h1>
     </div>
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
@@ -46,7 +46,7 @@
 
 
     <div class="row">
-      <mat-checkbox formControlName="term" color="warn" >Acepta términos de seguridad y privacidad de la empresa</mat-checkbox>
+      <mat-checkbox (change)="onCheck()"  color="warn" required >Acepta términos y condiciones del juego de StarDeck</mat-checkbox>
     </div>
 
     <div class="row">
