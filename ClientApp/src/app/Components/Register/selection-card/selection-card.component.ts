@@ -91,22 +91,24 @@ export class SelectionCardComponent implements OnInit {
     //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
     await this.accountService.allCards()
       .then((cards) => {
-
+        cards.forEach((card) => {
+          card.borderColor = this.helpers.getCardBorderColor(card.type);
+        });
         //Cartas filtradas de tipo Rara y Basica
         let filteredCard = cards.filter(card => card.type === 1 || card.type === 2);
         //Cartas ordenadas aleatoriamente
         let randomCard = filteredCard.sort(() => Math.random() - 0.5)
+        console.log(randomCard);
         //Lista de cartas seleccionadas
-        randomCard = randomCard.slice(0, 9);
+        // randomCard = randomCard.slice(0, 9);
 
         //Asignar las cartas a seleccionar
-        this.selectionCard1 = randomCard.slice(0, 2);
+        this.selectionCard1 = randomCard.slice(0, 3);
         console.log(this.selectionCard1)
-        this.selectionCard2 = randomCard.slice(3, 5);
+        this.selectionCard2 = randomCard.slice(3, 6);
         console.log(this.selectionCard2)
-        this.selectionCard3 = randomCard.slice(6, 8);
+        this.selectionCard3 = randomCard.slice(6, 9);
         console.log(this.selectionCard3)
-
       });
   }
 
@@ -115,13 +117,14 @@ export class SelectionCardComponent implements OnInit {
    */
   createInitialCollection() {
     for (let i = 0; i <= 2; i++) {
-      this.idCard = this.selectedCards[i].id.toString()
+      this.idCard = this.selectedCards[i].id.toString();
       console.log(this.idCard)
       //Metodo de enviar cartas seleccionadas
       this.accountService.addCards(this.idAccount, this.idCard)
         .then(response => {
           console.log(response);
-        });
+        })
+        .catch(error => console.error(error));
     }
     window.location.assign(this.baseurl + "login")
   }
