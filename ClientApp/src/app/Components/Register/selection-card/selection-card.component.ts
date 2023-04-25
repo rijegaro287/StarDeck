@@ -3,11 +3,10 @@ import * as random from "random-web-token";
 import { Component, Inject, OnInit } from '@angular/core';
 
 import { AccountService } from 'src/app/Services/account.service';
-import { RequestService } from 'src/app/Services/request.service';
+import { HelpersService } from "src/app/Services/helpers.service";
 
-import { ICollection } from 'src/app/Interfaces/Account';
 import { ICard } from 'src/app/Interfaces/Card';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 
 @Component({
@@ -49,7 +48,9 @@ export class SelectionCardComponent implements OnInit {
    * @param baseUrl variable para manejar la direccion de la pagina
    * @param accountService injector del service de cuenta para las peticiones
    */
-  constructor(@Inject('BASE_URL') baseUrl: string, private accountService: AccountService,) {
+  constructor(@Inject('BASE_URL') baseUrl: string,
+    private accountService: AccountService,
+    protected helpers: HelpersService) {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
     this.idCard = '';
@@ -82,6 +83,7 @@ export class SelectionCardComponent implements OnInit {
       await this.accountService.getCard(this.collectionInitial[i])
         .then(card => {
           //Agregar las cartas a la lista principal de la coleccion del jugador para mostrarlas
+          card.borderColor = this.helpers.getCardBorderColor(card.type);
           this.cards.push(card);
 
         });
@@ -134,6 +136,7 @@ export class SelectionCardComponent implements OnInit {
       //Seleccion de la primer carta
       case 1:
         if (!this.cardSelected1) {
+          card.borderColor = 'white';
           this.selectedCards.push(card);
           this.cardSelected1 = true;
         }
@@ -141,6 +144,7 @@ export class SelectionCardComponent implements OnInit {
       //Seleccion de la segunda carta
       case 2:
         if (!this.cardSelected2) {
+          card.borderColor = 'white';
           this.selectedCards.push(card);
           this.cardSelected2 = true;
         }
@@ -148,6 +152,7 @@ export class SelectionCardComponent implements OnInit {
       //Seleccion de la tercer carta
       case 3:
         if (!this.cardSelected3) {
+          card.borderColor = 'white';
           this.selectedCards.push(card);
           this.cardSelected3 = true;
         }

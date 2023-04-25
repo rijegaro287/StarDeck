@@ -13,6 +13,7 @@ interface ICard {
   active?: boolean;
   ability?: number;
   description: string;
+  borderColor?: string;
 }
 
 export {
