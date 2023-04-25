@@ -14,7 +14,11 @@ public partial class Collection
   public Collection(string[]? collection1)
   {
     this.Collection1 = collection1;
-    if (this.Collection1.Count() < 1 | this.Collectionlist == null) { this.Collectionlist = new(this); return; }
+    if (this.Collection1.Count() < 1 | this.Collectionlist == null)
+    {
+      this.Collectionlist = new(this);
+      return;
+    }
     this.Collectionlist = new(collection1);
     this.Collectionlist ??= new CollectionList();
     this.Collectionlist.main = this;
@@ -28,7 +32,7 @@ public partial class Collection
     [NotMapped]
     [JsonIgnore]
     public Collection? main { get; set; }
-    public CollectionList(Collection collection)
+    public CollectionList(Collection collection) : base(collection.Collection1)
     {
       main = collection;
     }
@@ -63,7 +67,7 @@ public partial class Collection
     public new void Add(string value)
     {
       if (base.Contains(value)) return;
-      base.Add(value);
+      base.Insert(base.Count, value);
       main.Collection1 = base.ToArray();
 
     }
