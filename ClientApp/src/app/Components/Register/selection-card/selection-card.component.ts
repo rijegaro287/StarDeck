@@ -67,12 +67,13 @@ export class SelectionCardComponent implements OnInit {
   /**
    *Funcion que se ejecuta cuando se carga el componente
    * */
-  ngOnInit(): void {
+  async ngOnInit() {
     //Obtiene la coleccion de 15 cartas que le asigna el sistema
     this.accountService.cards(this.idAccount)
       .then(collection => {
         // Coleccion Inicial designada al jugador
-        this.collectionInitial = collection ;
+        this.collectionInitial = collection;
+        console.log(collection)
       });
 
     //Busca la informacion de la cartas que fueron asignadas
@@ -84,30 +85,24 @@ export class SelectionCardComponent implements OnInit {
         });
     }
     //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
-    this.accountService.allCards()
+    await this.accountService.allCards()
       .then((cards) => {
+       
         //Cartas filtradas de tipo Rara y Basica
         let filteredCard = cards.filter(card => card.type === 1 || card.type === 2);
         //Cartas ordenadas aleatoriamente
         let randomCard = filteredCard.sort(() => Math.random() - 0.5)
         //Lista de cartas seleccionadas
         randomCard = randomCard.slice(0, 9);
-        //Ciclo para asignar las cartas a seleccionar
-        for (let i = 0; i = 9; i++) {
-          if (i < 3) {
-            //Agrega las cartas en la ronda 1 para mostrarlas en pantalla
-            this.selectionCard1.push(randomCard[i]);
-          }
-          if (i > 3 && i < 5) {
-            //Agrega las cartas en la ronda 2 para mostrarlas en pantalla
-            this.selectionCard2.push(randomCard[i]);
-          }
-          if (i > 5) {
-            //Agrega las cartas en la ronda 3 para mostrarlas en pantalla
-            this.selectionCard3.push(randomCard[i]);
-          }
-
-        }
+        
+        //Asignar las cartas a seleccionar
+        this.selectionCard1 = randomCard.slice(0, 2);
+        console.log(this.selectionCard1)
+        this.selectionCard2 = randomCard.slice(3, 5);
+        console.log(this.selectionCard2)
+        this.selectionCard3 = randomCard.slice(6, 8);
+        console.log(this.selectionCard3)
+    
       });    
     }
 
@@ -116,6 +111,10 @@ export class SelectionCardComponent implements OnInit {
    */
   createInitialCollection() {
     //Metodo de enviar cartas seleccionadas
+    this.accountService.addUser(newUser)
+      .then(response => {
+        console.log(response);
+      });
 
     window.location.assign(this.baseurl + "login")
   }

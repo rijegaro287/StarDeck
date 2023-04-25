@@ -20,17 +20,21 @@ export class AccountService {
   addUser = (user: IAccount): Promise<any> => {
     return this.request.post(this.url,user);
   }
+  // Para añadir una nueva carta 
+  addCard = (IdUser: string, IdCard: string): Promise<any> => {
+    return this.request.post(IdUser,IdCard);
+  }
   //Para obtener la coleccion inicial dada
   cards = (Id:string): Promise<any> => {
     return this.request.get(`${this.url}/${Id}/cards`);
   }
   //Para obtener todas las cartas del juego
   allCards = (): Promise<ICard[]> => {
-    return this.request.get(`/cards/get_all`);
+    return this.request.get(`${apiURL}/cards/get_all`);
   }
   //Para obtener una carta especifica por id 
   getCard = (Id: string): Promise<any> => {
-    return this.request.get(`/cards/get_all/${Id}`);
+    return this.request.get(`${apiURL}/cards/get/${Id}`);
   }
   
 
