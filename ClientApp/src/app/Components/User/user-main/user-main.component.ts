@@ -3,22 +3,22 @@ import { Component } from '@angular/core';
 import { INavbarItem } from 'src/app/Interfaces/Helpers';
 
 @Component({
-  selector: 'app-admin-main',
-  templateUrl: './admin-main.component.html',
-  styleUrls: ['./admin-main.component.scss']
+  selector: 'app-user-main',
+  templateUrl: './user-main.component.html',
+  styleUrls: ['./user-main.component.scss']
 })
-export class AdminMainComponent {
+export class UserMainComponent {
   /** Contiene los elementos de la barra de navegación */
   navbarItems: INavbarItem[];
 
   constructor() {
     this.navbarItems = [
       {
-        description: 'Cartas', // Descripción del elemento
-        link: '/admin/cards' // Ruta a la que redirige
+        description: 'Escuadron', // Descripción del elemento
+        link: '/' // Ruta a la que redirige
       },
       {
-        description: 'Territorios',
+        description: 'Coleccion',
         link: '/'
       },
       {
@@ -34,5 +34,6 @@ export class AdminMainComponent {
   */
   onPlayClicked() {
     console.log('Play clicked');
+
   }
 }

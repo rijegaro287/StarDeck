@@ -48,25 +48,14 @@ export class LoginComponent {
    * Metodo donde se define la accion de atraer los datos para realizar las verificaciones correspondientes e iniciar sesion
    * @constructor metodo relacionado
    */
-  async Sig_In(data: ILoginData) {
-    console.log(data);
-    var hash = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(data.Password));
-    data.Password =  Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("")
-    let res = await this.service.login(data);
-
-    if (res.status !== null) {
-      sessionStorage.setItem("Nombre", <string>(data.Nickname));
-      sessionStorage.setItem("Token", "True");
-      sessionStorage.setItem("Rol", <string><unknown>res);
-      if (<string><unknown>res === "Admin") {
-        window.location.assign(this.baseurl + "/admin")
-      } else {
-        window.location.assign(this.baseurl + "/User")
-      }
+  public async Sig_In(data: ILoginData) {
+    await this.service.login(data);
+    let Rol = sessionStorage.getItem('Rol')
+    if (Rol === "Admin") {
+      window.location.assign(this.baseurl + "/admin")
+    } else {
+      window.location.assign(this.baseurl + "/User")
     }
-    console.log(res)
-
-
   }
 
   /**

@@ -13,7 +13,7 @@ interface IAccount {
   name: string;
   nickname: string;
   email: string;
-  nationality: string;
+  country: string;
   password: string;
 }
 
