@@ -49,14 +49,13 @@ export class LoginComponent {
    * @constructor metodo relacionado
    */
   public async Sig_In(data: ILoginData) {
-    this.service.login(data);
+    await this.service.login(data);
     let Rol = sessionStorage.getItem('Rol')
     if (Rol === "Admin") {
       window.location.assign(this.baseurl + "/admin")
     } else {
       window.location.assign(this.baseurl + "/User")
     }
-
   }
 
   /**
