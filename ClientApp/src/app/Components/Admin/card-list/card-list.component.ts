@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 
-import { ICard } from 'src/app/Interfaces/Card';
-
 import { CardFormDialogComponent } from "src/app/Components/Dialogs/card-form-dialog/card-form-dialog.component";
+
+import { CardService } from 'src/app/Services/card.service';
+import { HelpersService } from 'src/app/Services/helpers.service';
+
+import { ICard } from 'src/app/Interfaces/Card';
 
 @Component({
   selector: 'app-card-list',
@@ -20,117 +23,12 @@ export class CardListComponent implements OnInit {
   normalCards: ICard[]
   basicCards: ICard[]
 
-  constructor(public dialog: MatDialog) {
-    this.cards = [
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 4,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 4,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 4,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 4,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 4,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 3,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 2,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 1,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-      {
-        id: 'C-djieijdejidj',
-        name: 'Nombre de la carta',
-        // image: File,
-        energy: 123,
-        cost: 5000,
-        type: 0,
-        race: "Raza",
-        active: true,
-        skillID: 1,
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat explicabo quae eligendi expedita sit ut obcaecati, repellendus porro dolore eos iure iste saepe error facere in et officia maiores.Ab.'
-      },
-    ]
+  constructor(
+    private dialog: MatDialog,
+    private cardService: CardService,
+    protected helpers: HelpersService
+  ) {
+    this.cards = []
 
     this.ultraRareCards = []
     this.veryRareCards = []
@@ -140,15 +38,18 @@ export class CardListComponent implements OnInit {
   }
 
   /** 
-   * Se filtran las cartas según su tipo
-   * Falta conectarlo al api**
+   * Solicita todas las cartas al servidor 
+   * y las filtra según su tipo
   */
   ngOnInit() {
-    this.ultraRareCards = this.cards.filter(card => card.type === 4)
-    this.veryRareCards = this.cards.filter(card => card.type === 3)
-    this.rareCards = this.cards.filter(card => card.type === 2)
-    this.normalCards = this.cards.filter(card => card.type === 1)
-    this.basicCards = this.cards.filter(card => card.type === 0)
+    this.cardService.getAllCards()
+      .then((cards) => {
+        this.ultraRareCards = cards.filter(card => card.type === 4);
+        this.veryRareCards = cards.filter(card => card.type === 3);
+        this.rareCards = cards.filter(card => card.type === 2);
+        this.normalCards = cards.filter(card => card.type === 1);
+        this.basicCards = cards.filter(card => card.type === 0);
+      });
   }
 
   /** Abre el formulario de creación de carta*/

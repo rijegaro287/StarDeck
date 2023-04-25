@@ -104,9 +104,9 @@ namespace Stardeck.Controllers
 
         }
 
-        [HttpPost("/addCards")]
+        [HttpPost("/addCards/{accountId}")]
 
-        public async Task<IActionResult> addCards(string accountId, string cardId)
+        public async Task<IActionResult> addCards(string accountId,[FromBody] string cardId)
         {
             var collection=context.Collections.Find(accountId);
             if (collection == null)
