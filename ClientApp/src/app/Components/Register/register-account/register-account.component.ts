@@ -87,11 +87,11 @@ export class RegisterAccountComponent {
      
       this.validateAccount(newUser);
 
-      this.accountService.addUser(newUser)
+      await this.accountService.addUser(newUser)
         .then(response => {
           console.log(response);
         });
-      this.service.login(user)
+      await this.service.login(user)
       window.location.assign(this.baseurl + "Register/selection-card")
     } catch (error) {
       alert(error);

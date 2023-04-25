@@ -31,11 +31,7 @@ export class LoginService {
       sessionStorage.setItem("Token", "True");
       sessionStorage.setItem("Rol", <string>res.Rol);
       sessionStorage.setItem("ID", <string>res.Id);
-      if (res.Rol === "Admin") {
-        window.location.assign(this.baseUrl + "/admin")
-      } else {
-        window.location.assign(this.baseUrl + "/User")
-      }
+      
     } else {
       alert('Usuario o contraseña incorrecto')
     }
