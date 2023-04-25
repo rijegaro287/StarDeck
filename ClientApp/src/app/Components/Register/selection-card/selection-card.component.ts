@@ -70,7 +70,7 @@ export class SelectionCardComponent implements OnInit {
    * */
   async ngOnInit() {
     //Obtiene la coleccion de 15 cartas que le asigna el sistema
-    this.accountService.cards(this.idAccount)
+    await this.accountService.cards(this.idAccount)
       .then(collection => {
         // Coleccion Inicial designada al jugador
         this.collectionInitial = collection;
@@ -79,10 +79,11 @@ export class SelectionCardComponent implements OnInit {
 
     //Busca la informacion de la cartas que fueron asignadas
     for (let i = 0; i < this.collectionInitial.length; i++) {
-      this.accountService.getCard(this.collectionInitial[i])
+      await this.accountService.getCard(this.collectionInitial[i])
         .then(card => {
           //Agregar las cartas a la lista principal de la coleccion del jugador para mostrarlas
           this.cards.push(card);
+
         });
     }
     //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
@@ -114,14 +115,12 @@ export class SelectionCardComponent implements OnInit {
     for (let i = 0; i <= 2; i++) {
       this.idCard = this.selectedCards[i].id.toString()
       console.log(this.idCard)
-      /*//Metodo de enviar cartas seleccionadas
+      //Metodo de enviar cartas seleccionadas
       this.accountService.addCards(this.idAccount, this.idCard)
         .then(response => {
           console.log(response);
-        });*/
+        });
     }
-
-
     window.location.assign(this.baseurl + "login")
   }
   /**
