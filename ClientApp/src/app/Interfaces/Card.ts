@@ -5,7 +5,7 @@ type ICardType = 4 | 3 | 2 | 1 | 0
 interface ICard {
   id: string;
   name: string;
-  image?: string;
+  image: string;
   energy: number;
   battlecost: number;
   type: ICardType;

@@ -9,6 +9,7 @@ mat-card {
   height: 20rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
 }
 
@@ -24,6 +25,7 @@ mat-card {
 }
 
 .card-info {
+  width: 100%;
   overflow-y: auto;
 
   .card-name {

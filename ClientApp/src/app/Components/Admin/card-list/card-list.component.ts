@@ -4,6 +4,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { CardFormDialogComponent } from "src/app/Components/Dialogs/card-form-dialog/card-form-dialog.component";
 
 import { CardService } from 'src/app/Services/card.service';
+import { HelpersService } from 'src/app/Services/helpers.service';
 
 import { ICard } from 'src/app/Interfaces/Card';
 
@@ -23,8 +24,9 @@ export class CardListComponent implements OnInit {
   basicCards: ICard[]
 
   constructor(
-    public dialog: MatDialog,
+    private dialog: MatDialog,
     private cardService: CardService,
+    protected helpers: HelpersService
   ) {
     this.cards = []
 

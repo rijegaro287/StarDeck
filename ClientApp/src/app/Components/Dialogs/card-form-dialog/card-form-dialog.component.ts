@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CardService } from 'src/app/Services/card.service';
 import { RequestService } from 'src/app/Services/request.service';
+import { HelpersService } from "src/app/Services/helpers.service";
 
 import { ICard, ICardType } from 'src/app/Interfaces/Card';
 
@@ -19,8 +20,8 @@ export class CardFormDialogComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private requestService: RequestService,
-    private cardService: CardService
+    private cardService: CardService,
+    private helpers: HelpersService
   ) {
     this.newCard = this._formBuilder.group({
       name: ['', Validators.required],
@@ -33,7 +34,7 @@ export class CardFormDialogComponent {
   }
 
   /** Se ejecuta el presionar el botón de crear */
-  onSubmit() {
+  async onSubmit() {
     /** Selecciona la foto */
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
 
@@ -41,18 +42,15 @@ export class CardFormDialogComponent {
     const newCard: ICard = {
       id: random.genSync('medium+', 12),
       name: this.newCard.value.name.toString(),
-      // image: fileInput.files![0],
       energy: Number(this.newCard.value.energy),
       battlecost: Number(this.newCard.value.cost),
-      image: '',
+      image: await this.helpers.fileToBase64(fileInput.files![0]),
       active: true,
       type: Number(this.newCard.value.type) as ICardType,
       // race: this.newCard.value.race.toString(),
       // ability: 0,
       description: this.newCard.value.description
     };
-
-    console.log(newCard);
 
     try {
       /** Valida los datos ingresados */
