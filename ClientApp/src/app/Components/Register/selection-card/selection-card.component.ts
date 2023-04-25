@@ -18,6 +18,7 @@ import { Router } from "@angular/router";
 export class SelectionCardComponent implements OnInit {
   //---------------Variables a utilizar--------------
   idAccount: string;
+  idCard: string;
   //Coleccion asignada
   collectionInitial: [];
 
@@ -52,6 +53,7 @@ export class SelectionCardComponent implements OnInit {
   {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
+    this.idCard = '';
     console.log(this.idAccount);
     this.baseurl = baseUrl;
     this.collectionInitial=[]
@@ -110,11 +112,16 @@ export class SelectionCardComponent implements OnInit {
    *Funcion que se llama cuando se da click en Aceptar 
    */
   createInitialCollection() {
-    //Metodo de enviar cartas seleccionadas
-    this.accountService.addUser(newUser)
-      .then(response => {
-        console.log(response);
-      });
+    for (let i = 0; i <= 2; i++) {
+      this.idCard = this.selectedCards[i].id.toString()
+      console.log(this.idCard)
+      /*//Metodo de enviar cartas seleccionadas
+      this.accountService.addCards(this.idAccount, this.idCard)
+        .then(response => {
+          console.log(response);
+        });*/
+    }
+    
 
     window.location.assign(this.baseurl + "login")
   }

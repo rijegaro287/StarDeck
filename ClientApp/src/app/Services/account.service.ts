@@ -21,8 +21,8 @@ export class AccountService {
     return this.request.post(this.url,user);
   }
   // Para añadir una nueva carta 
-  addCard = (IdUser: string, IdCard: string): Promise<any> => {
-    return this.request.post(IdUser,IdCard);
+  addCards = (IdUser: string, IdCard: string): Promise<any> => {
+    return this.request.post(`${this.url}/addCards/${IdUser}`, IdCard);
   }
   //Para obtener la coleccion inicial dada
   cards = (Id:string): Promise<any> => {
