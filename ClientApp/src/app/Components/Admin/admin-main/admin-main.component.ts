@@ -15,7 +15,7 @@ export class AdminMainComponent {
     this.navbarItems = [
       {
         description: 'Cartas', // Descripción del elemento
-        link: '/' // Ruta a la que redirige
+        link: '/admin/cards' // Ruta a la que redirige
       },
       {
         description: 'Territorios',
@@ -34,6 +34,5 @@ export class AdminMainComponent {
   */
   onPlayClicked() {
     console.log('Play clicked');
-
   }
 }

@@ -14,21 +14,20 @@ export class CardService {
 
   constructor(private request: RequestService) { }
 
-  getAllCards = (): Promise<ICardsResponse> => {
+  getAllCards = (): Promise<ICard[]> => {
     return this.request.get(`${this.url}/get_all`);
   }
 
-  // Cuando el API esté listo
-  // addCard = (card: ICard): Promise<IServerResponse> => {
-  //   return this.request.post(`${this.url}/add`, card);
-  // }
-
   addCard = (card: ICard): Promise<IServerResponse> => {
-    const response: IServerResponse = {
-      status: 'ok',
-      message: 'Card created successfully',
-    }
-
-    return this.request.falseResponse(response);
+    return this.request.post(`${this.url}/add`, card);
   }
+
+  // addCard = (card: ICard): Promise<IServerResponse> => {
+  //   const response: IServerResponse = {
+  //     status: 'ok',
+  //     message: 'Card created successfully',
+  //   }
+
+  //   return this.request.falseResponse(response);
+  // }
 }

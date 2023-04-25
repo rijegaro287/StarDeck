@@ -12,7 +12,8 @@
         <div class="list-grid">
           <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
           <ng-container *ngFor="let card of ultraRareCards">
-            <app-card [card]="card" [cardBorderColor]="'#e6ce4a'"></app-card>
+            <app-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
           </ng-container>
         </div>
       </mat-tab>
@@ -20,7 +21,8 @@
       <mat-tab label="Muy Rara">
         <div class="list-grid">
           <ng-container *ngFor="let card of veryRareCards">
-            <app-card [card]="card" [cardBorderColor]="'#9a00d6'"></app-card>
+            <app-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
           </ng-container>
         </div>
       </mat-tab>
@@ -28,7 +30,8 @@
       <mat-tab label="Rara">
         <div class="list-grid">
           <ng-container *ngFor="let card of rareCards">
-            <app-card [card]="card" [cardBorderColor]="'#4161f1'"></app-card>
+            <app-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
           </ng-container>
         </div>
       </mat-tab>
@@ -36,7 +39,8 @@
       <mat-tab label="Normal">
         <div class="list-grid">
           <ng-container *ngFor="let card of normalCards">
-            <app-card [card]="card" [cardBorderColor]="'#66e961'"></app-card>
+            <app-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
           </ng-container>
         </div>
       </mat-tab>
@@ -44,7 +48,8 @@
       <mat-tab label="Básica">
         <div class="list-grid">
           <ng-container *ngFor="let card of basicCards">
-            <app-card [card]="card"></app-card>
+            <app-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
           </ng-container>
         </div>
       </mat-tab>
