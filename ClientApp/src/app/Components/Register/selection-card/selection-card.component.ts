@@ -124,7 +124,6 @@ export class SelectionCardComponent implements OnInit {
         .then(response => {
           console.log(response);
         })
-        .catch(error => console.error(error));
     }
     window.location.assign(this.baseurl + "login")
   }
