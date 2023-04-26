@@ -116,6 +116,9 @@ export class SelectionCardComponent implements OnInit {
    *Funcion que se llama cuando se da click en Aceptar 
    */
   async createInitialCollection() {
+    if (this.selectedCards.length < 3) {
+      return alert("Debe seleccionar 3 cartas");
+    }
     for (let i = 0; i <= 2; i++) {
       this.idCard = this.selectedCards[i].id.toString();
       console.log(this.idCard)

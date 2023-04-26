@@ -48,7 +48,7 @@ export class RegisterAccountComponent {
     this.http = http;
     this.baseurl = baseUrl
     this.term = false;
-    
+
     //Datos del formulario de Registro de Cuenta
     this.newUser = this._formBuilder.group({
       name: ['', Validators.required],
@@ -57,7 +57,7 @@ export class RegisterAccountComponent {
       nationality: ['', Validators.required],
       password: ['', Validators.required],
       passwordv: ['', Validators.required],
-     
+
     });
   }
   /*
@@ -68,10 +68,10 @@ export class RegisterAccountComponent {
     {
       Email: this.newUser.value.email.toString(),
       Password: this.newUser.value.password.toString()
-     }
+    }
 
     const newUser: IAccount = {
-      id: 'U-'+ random.genSync('medium+', 12),
+      id: 'U-' + random.genSync('medium+', 12),
       name: this.newUser.value.name.toString(),
       nickname: this.newUser.value.nickname.toString(),
       email: this.newUser.value.email.toString(),
@@ -84,7 +84,6 @@ export class RegisterAccountComponent {
     console.log(JSON.stringify(newUser));
 
     try {
-     
       this.validateAccount(newUser);
 
       await this.accountService.addUser(newUser)
@@ -97,7 +96,7 @@ export class RegisterAccountComponent {
       alert(error);
     }
 
-    
+
   }
   /*
    * Funcion para validar el checkbox de terminos y condiciones 
@@ -105,9 +104,9 @@ export class RegisterAccountComponent {
   onCheck() {
     this.term = !this.term;
     console.log(this.term)
-   
+
   }
-  
+
 
   /*
    *Funcion para validar los datos ingresados en el formulario
@@ -116,17 +115,27 @@ export class RegisterAccountComponent {
     Object.keys(user).forEach(key => {
       const value = user[key as keyof IAccount];
       if (value === '' || value === null || value === undefined) {
-          throw new Error('Sus datos están incompletos intente de nuevo');
+        throw new Error('Sus datos están incompletos, intente de nuevo');
       }
     });
 
-    if (this.newUser.value.password.toString() != this.newUser.value.passwordv.toString() ) {
-      throw new Error('Las contraseñas no coinciden verifiquela e intente de nuevo');
+    const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.newUser.value.email);
+    if (this.newUser.value.name.toString().length < 5 || this.newUser.value.name.toString().length > 30) {
+      throw new Error('El nombre debe contener entre 5 y 30 carácteres');
+    }
+    if (this.newUser.value.nickname.toString().length < 5 || this.newUser.value.nickname.toString().length > 30) {
+      throw new Error('El nickname debe contener entre 5 y 30 carácteres');
+    }
+    if (!validEmail) {
+      throw new Error("Ingrese una dirección de correo electrónico válida");
     }
     if (this.newUser.value.password.toString().length != 8) {
       throw new Error('La contraseña debe ser de 8 carácteres');
     }
-    if (this.term == false ) {
+    if (this.newUser.value.password.toString() != this.newUser.value.passwordv.toString()) {
+      throw new Error('Las contraseñas no coinciden verifiquela e intente de nuevo');
+    }
+    if (this.term == false) {
       throw new Error('Debe aceptar los terminos y condiciones del juego para continuar');
     }
   }
