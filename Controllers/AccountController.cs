@@ -132,7 +132,7 @@ namespace Stardeck.Controllers
           {
             collection.Collectionlist.Add(cardId);
             context.SaveChanges();
-            return Ok("AGREGA " + collection.Collection1);
+            return Ok();
           }
         }
 
