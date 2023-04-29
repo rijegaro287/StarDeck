@@ -35,5 +35,16 @@ public partial class Account
     [JsonIgnore]
     public virtual Collection? Collection { get; set; }
     [JsonIgnore]
+    public virtual ICollection<Deck> Decks { get; set; } = new List<Deck>();
+
+    public virtual FavoriteDeck? FavoriteDeck { get; set; }
+
+    [JsonIgnore]
+    public virtual ICollection<Gameroom>? GameroomPlayer1Navigations { get; set; } = new List<Gameroom>();
+    [JsonIgnore]
+    public virtual ICollection<Gameroom>? GameroomPlayer2Navigations { get; set; } = new List<Gameroom>();
+    [JsonIgnore]
+    public virtual ICollection<Gameroom>? GameroomWinnerNavigations { get; set; } = new List<Gameroom>();
+
     public virtual ICollection<Avatar> Avatars { get; set; } = new List<Avatar>();
 }

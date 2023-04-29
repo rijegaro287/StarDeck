@@ -33,4 +33,6 @@ public partial class Card
     public string? Ability { get; set; }
 
     public string? Description { get; set; }
+
+    public string? Race { get; set; }
 }
