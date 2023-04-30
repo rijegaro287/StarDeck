@@ -55,7 +55,7 @@ namespace Stardeck.Controllers
         [Route("add")]
         public async Task<IActionResult>Post([FromBody] CardImage card)
         {
-            Card cardAux = cardLogic.newCard(card);
+            Card cardAux = cardLogic.NewCard(card);
             if (cardAux == null)
             {
                 return BadRequest();
@@ -69,7 +69,7 @@ namespace Stardeck.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, Card nCard)
         {
-            var acc = cardLogic.updateCard(id, nCard);
+            var acc = cardLogic.UpdateCard(id, nCard);
             if (acc != null)
             {
                 return Ok(acc);
@@ -88,6 +88,18 @@ namespace Stardeck.Controllers
                 return Ok(card);
             }
             return NotFound();
+        }
+
+
+        [HttpGet]
+        [Route("get/nineCards")]
+        public async Task<IActionResult> getNineCards()
+        {
+            if (cardLogic.getNineCards() == null)
+            {
+                return NotFound();
+            }
+            return Ok(cardLogic.getNineCards());
         }
     }
 }
