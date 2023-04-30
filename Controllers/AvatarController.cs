@@ -3,6 +3,7 @@ using Stardeck.Models;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore;
+using Stardeck.Logic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,11 +14,13 @@ namespace Stardeck.Controllers
     public class AvatarController : ControllerBase
     {
         private readonly StardeckContext context;
+        private AvatarLogic avatarLogic;
 
 
         public AvatarController(StardeckContext context)
         {
             this.context = context;
+            this.avatarLogic = new AvatarLogic(context);
         }
 
 
@@ -25,21 +28,22 @@ namespace Stardeck.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await context.Avatars.ToListAsync());
+            if (avatarLogic.GetAll() == null)
+            {
+                return NotFound();
+            }
+            return Ok(avatarLogic.GetAll());
         }
 
         // GET api/<AvatarController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(long id)
+        public async Task<IActionResult> Get(int id)
         {
-            //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
-            var avatar = context.Avatars.Find(id);
-
-            if (avatar == null)
+            if (avatarLogic.GetAvatar(id) == null)
             {
                 return NotFound();
             }
-            return Ok(avatar);
+            return Ok(avatarLogic.GetAvatar(id));
         }
 
         // POST api/<AvatarController>
@@ -66,16 +70,12 @@ namespace Stardeck.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(long id, Avatar nAvatar)
         {
-            var av = await context.Avatars.FindAsync(id);
-            if(av!=null)
+            Avatar avatarAux = avatarLogic.newAvatar(id, nAvatar);
+            if (avatarAux == null)
             {
-                av.Id = nAvatar.Id;
-                av.Image=nAvatar.Image;
-                av.Name = nAvatar.Name;
-                await context.SaveChangesAsync();
-                return Ok(av);
+                return BadRequest();
             }
-            return NotFound();
+            return Ok(avatarAux);
 
         }
 
