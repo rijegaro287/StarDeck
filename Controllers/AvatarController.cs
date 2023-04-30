@@ -50,7 +50,7 @@ namespace Stardeck.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AvatarImage avatar)
         {
-            Avatar avatarAux=new Avatar()
+            Avatar avatarAux=new()
             {
                 Id = avatar.Id,
                 Image = Convert.FromBase64String(avatar.Image),

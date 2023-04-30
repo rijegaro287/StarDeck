@@ -2,6 +2,6 @@
 {
     public class AvatarImage:Avatar
     {
-        public string Image { get; set; }
+        public new string? Image { get; set; }
     }
 }

@@ -8,7 +8,7 @@ export class AppComponent {
   title = 'StarDeck';
 }
 
-const apiURL = 'http://localhost:8080'
+const apiURL = 'https://localhost:7212'
 
 export default AppComponent
 export { apiURL }

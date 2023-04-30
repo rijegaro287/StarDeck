@@ -1,0 +1,63 @@
+<div class="w-75 my-5 mx-auto">
+  <div class="row">
+    <h1>Selección de cartas </h1>
+  </div>
+  <div class="row">
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+
+    <h3>Seleccione su primera carta</h3>
+    <div class="selection-list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of selectionCard1">
+        <app-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"
+          (click)="onSelect(card,1)"></app-card>
+      </ng-container>
+    </div>
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+  </div>
+  <div class="row">
+    <hr style="height:4px;border-width:0;color:aquamarine;background-color:aquamarine">
+    <h3>Seleccione su segunda carta</h3>
+    <div class="selection-list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of selectionCard2">
+        <app-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"
+          (click)="onSelect(card,2)"></app-card>
+      </ng-container>
+    </div>
+    <hr style="height:4px;border-width:0;color:aquamarine;background-color:aquamarine">
+  </div>
+
+  <div class="row">
+    <hr style="height: 4px; border-width: 0; color: orangered; background-color: orangered">
+    <h3>Seleccione su tercer carta</h3>
+    <div class="selection-list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of selectionCard3">
+        <app-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"
+          (click)="onSelect(card,3)"></app-card>
+      </ng-container>
+    </div>
+    <hr style="height: 4px; border-width: 0; color: orangered; background-color: orangered ">
+  </div>
+
+
+  <div class="row">
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+    <h1>Cartas en su colección</h1>
+  </div>
+
+  <div class="row">
+    <div class="list-grid">
+      <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
+      <ng-container *ngFor="let card of cards">
+        <app-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"></app-card>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="createInitialCollection()"> Aceptar </button>
+  </div>
+
+</div>

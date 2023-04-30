@@ -5,8 +5,8 @@
     "ng": "ng",
     "prestart": "node aspnetcore-https",
     "start": "run-script-os",
-    "start:windows": "ng serve --port 4200 --ssl --ssl-cert %APPDATA%\\ASP.NET\\https\\%npm_package_name%.pem --ssl-key %APPDATA%\\ASP.NET\\https\\%npm_package_name%.key",
-    "start:default": "ng serve --port 4200 --ssl --ssl-cert $HOME/.aspnet/https/${npm_package_name}.pem --ssl-key $HOME/.aspnet/https/${npm_package_name}.key",
+    "start:windows": "ng serve --port 44478 --ssl --ssl-cert %APPDATA%\\ASP.NET\\https\\%npm_package_name%.pem --ssl-key %APPDATA%\\ASP.NET\\https\\%npm_package_name%.key",
+    "start:default": "ng serve --port 44478 --ssl --ssl-cert $HOME/.aspnet/https/${npm_package_name}.pem --ssl-key $HOME/.aspnet/https/${npm_package_name}.key",
     "build": "ng build",
     "build:ssr": "ng run Stardeck:server:dev",
     "watch": "ng build --watch --configuration development",
@@ -26,6 +26,8 @@
     "@angular/platform-server": "^15.2.7",
     "@angular/router": "^15.2.7",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.4",
+    "material-design-icons": "^3.0.1",
     "oidc-client": "^1.11.5",
     "random-web-token": "^2.2.1",
     "run-script-os": "^1.1.6",
@@ -45,6 +47,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
+    "schematics-scss-migrate": "^2.3.17",
     "typescript": "^4.9.5"
   },
   "overrides": {

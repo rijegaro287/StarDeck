@@ -1,20 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.Models;
 using System.Text.Json;
 using System.Xml.Linq;
 using System;
-<<<<<<< Updated upstream
-=======
 using System.Text.RegularExpressions;
 using Stardeck.Logic;
->>>>>>> Stashed changes
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Stardeck.Controllers
 {
-    [Route("[controller]")]
+    [Route("cards")]
     [ApiController]
     public class CardController : ControllerBase
     {
@@ -30,6 +28,7 @@ namespace Stardeck.Controllers
 
         // GET: api/<CardController>
         [HttpGet]
+        [Route("get_all")]
         public async Task<IActionResult> Get()
         {
             if(cardLogic.GetAll() == null)
@@ -40,7 +39,8 @@ namespace Stardeck.Controllers
         }
 
         // GET api/<CardController>/5
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("get/{id}")]
         public async Task<IActionResult> Get(string id)
         {
             if (cardLogic.GetCard(id) == null)
@@ -52,32 +52,16 @@ namespace Stardeck.Controllers
 
         // POST api/<CardController>
         [HttpPost]
+        [Route("add")]
         public async Task<IActionResult>Post([FromBody] CardImage card)
         {
             Card cardAux = cardLogic.newCard(card);
             if (cardAux == null)
             {
-<<<<<<< Updated upstream
-                Id = card.Id,
-                Name = card.Name,
-                Energy = card.Energy,
-                Battlecost = card.Battlecost,
-                Image = Convert.FromBase64String(card.Image), 
-                Active = card.Active,
-                Type = card.Type,
-                Ability = card.Ability,
-                Description= card.Description
-
-    };
-            await context.Cards.AddAsync(cardAux);
-            
-            await context.SaveChangesAsync();
-            return Ok(card);
-=======
                 return BadRequest();
             }
             return Ok(cardAux);
->>>>>>> Stashed changes
+
 
         }
 
@@ -88,22 +72,7 @@ namespace Stardeck.Controllers
             var acc = cardLogic.updateCard(id, nCard);
             if (acc != null)
             {
-<<<<<<< Updated upstream
-                card.Id = nCard.Id;
-                card.Name = nCard.Name;
-                card.Energy = nCard.Energy;
-                card.Battlecost = nCard.Battlecost;
-                card.Image = nCard.Image;
-                card.Active = nCard.Active;
-                card.Type = nCard.Type;
-                card.Ability = nCard.Ability;
-                card.Description = nCard.Description;
-
-                await context.SaveChangesAsync();
-                return Ok(card);
-=======
                 return Ok(acc);
->>>>>>> Stashed changes
             }
             return NotFound();
 

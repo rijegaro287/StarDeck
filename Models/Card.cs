@@ -24,7 +24,7 @@ public partial class Card
 
     public int Battlecost { get; set; }
 
-    public  byte[] Image { get; set; } = null!;
+    public byte[] Image { get; set; } = null!;
 
     public bool? Active { get; set; } = true;
 
@@ -33,4 +33,6 @@ public partial class Card
     public string? Ability { get; set; }
 
     public string? Description { get; set; }
+
+    public string? Race { get; set; }
 }

@@ -1,0 +1,40 @@
+@import '../../../../styles.scss';
+
+.main-content {
+  width: 80%;
+  height: calc(100vh - 7rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.card-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  overflow-y: auto;
+}
+
+.add-button {
+  align-self: flex-end;
+}
+
+.card-list {
+  height: 60vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}

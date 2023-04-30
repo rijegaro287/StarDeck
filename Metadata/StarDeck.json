@@ -1,0 +1,230 @@
+{
+    "metadata": {
+        "kernelspec": {
+            "name": "SQL",
+            "display_name": "SQL",
+            "language": "sql"
+        },
+        "language_info": {
+            "name": "sql",
+            "version": ""
+        }
+    },
+    "nbformat_minor": 2,
+    "nbformat": 4,
+    "cells": [
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE DATABASE \"Stardeck\"\r\n",
+                "    WITH\r\n",
+                "    OWNER = \"StardeckAdmin\"\r\n",
+                "    ENCODING = 'UTF8'\r\n",
+                "    CONNECTION LIMIT = -1\r\n",
+                "    IS_TEMPLATE = False;"
+            ],
+            "metadata": {
+                "azdata_cell_guid": "f86ef01e-39d9-4076-9b85-4ec727b46de4",
+                "language": "sql",
+                "tags": [
+                    "hide_input"
+                ]
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE ROLE \"Admin\" WITH\r\n",
+                "\tLOGIN\r\n",
+                "\tSUPERUSER\r\n",
+                "\tCREATEDB\r\n",
+                "\tCREATEROLE\r\n",
+                "\tINHERIT\r\n",
+                "\tNOREPLICATION\r\n",
+                "\tCONNECTION LIMIT -1\r\n",
+                "\tPASSWORD 'admin';\r\n",
+                "GRANT postgres TO \"Admin\" WITH ADMIN OPTION;\r\n",
+                ""
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "957e7c53-cd91-428d-ab82-f8da3a0ccddd",
+                "tags": [
+                    "hide_input"
+                ]
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE TABLE public.card\r\n",
+                "(\r\n",
+                "    id character(14) NOT NULL,\r\n",
+                "    name character varying(30) NOT NULL,\r\n",
+                "    energy integer NOT NULL DEFAULT 0,\r\n",
+                "    battlecost integer NOT NULL DEFAULT 0,\r\n",
+                "    image bytea NOT NULL,\r\n",
+                "    active boolean NOT NULL DEFAULT 'True',\r\n",
+                "    type integer NOT NULL DEFAULT 0,\r\n",
+                "    \"ability \" json,\r\n",
+                "    description text,\r\n",
+                "    CONSTRAINT card_pkey PRIMARY KEY (id),\r\n",
+                "    CONSTRAINT card_energy_check CHECK (energy < 101 AND energy > '-101'::integer) NOT VALID,\r\n",
+                "    CONSTRAINT card_battlecost_check CHECK (battlecost >= 0 AND battlecost <= 100) NOT VALID,\r\n",
+                "    CONSTRAINT card_type_check CHECK (type >= 0 AND type <= 4) NOT VALID\r\n",
+                ");\r\n",
+                "\r\n",
+                "ALTER TABLE IF EXISTS public.card\r\n",
+                "    OWNER to \"StardeckAdmin\";\r\n",
+                "\r\n",
+                "COMMENT ON TABLE public.card\r\n",
+                "    IS '0-basica\r\n",
+                "1-normal\r\n",
+                "2-rara\r\n",
+                "3-Muy Rara\r\n",
+                "4-Ultra Rara';"
+            ],
+            "metadata": {
+                "azdata_cell_guid": "3db78737-d6dc-4e83-a22c-4c5b1a004b0b",
+                "language": "sql",
+                "tags": []
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE TABLE public.account\r\n",
+                "(\r\n",
+                "    id character(14) NOT NULL,\r\n",
+                "    name character varying(30) NOT NULL,\r\n",
+                "    nickname text NOT NULL,\r\n",
+                "    email text NOT NULL,\r\n",
+                "    country text NOT NULL,\r\n",
+                "    password text NOT NULL,\r\n",
+                "    active boolean NOT NULL DEFAULT 'TRUE',\r\n",
+                "    avatar bigint NOT NULL DEFAULT 0,\r\n",
+                "    config json,\r\n",
+                "    points bigint NOT NULL DEFAULT 0,\r\n",
+                "    coins bigint NOT NULL DEFAULT 20,\r\n",
+                "    PRIMARY KEY (id),\r\n",
+                "    UNIQUE (nickname),\r\n",
+                "    UNIQUE (email)\r\n",
+                ");\r\n",
+                "\r\n",
+                "ALTER TABLE IF EXISTS public.account\r\n",
+                "    OWNER to \"StardeckAdmin\";"
+            ],
+            "metadata": {
+                "azdata_cell_guid": "dfbcb883-1260-4798-94be-6965b9755f8f",
+                "language": "sql",
+                "tags": []
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE TABLE public.avatar\r\n",
+                "(\r\n",
+                "    id bigint NOT NULL,\r\n",
+                "    image bytea NOT NULL,\r\n",
+                "    name text NOT NULL,\r\n",
+                "    PRIMARY KEY (id)\r\n",
+                ");\r\n",
+                "\r\n",
+                "ALTER TABLE IF EXISTS public.avatar\r\n",
+                "    OWNER to \"StardeckAdmin\";"
+            ],
+            "metadata": {
+                "azdata_cell_guid": "d83fbb70-4050-4811-a13e-a31e4d9839b5",
+                "language": "sql",
+                "tags": []
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE TABLE IF NOT EXISTS public.collection\r\n",
+                "(\r\n",
+                "    id_account character(14) COLLATE pg_catalog.\"default\" NOT NULL,\r\n",
+                "    deck json NOT NULL,\r\n",
+                "    CONSTRAINT deck_pkey PRIMARY KEY (id_account),\r\n",
+                "    CONSTRAINT deck_account_fkey FOREIGN KEY (id_account)\r\n",
+                "        REFERENCES public.account (id) MATCH SIMPLE\r\n",
+                "        ON UPDATE NO ACTION\r\n",
+                "        ON DELETE NO ACTION\r\n",
+                ")\r\n",
+                "\r\n",
+                "TABLESPACE pg_default;\r\n",
+                "\r\n",
+                "ALTER TABLE IF EXISTS public.collection\r\n",
+                "    OWNER to \"StardeckAdmin\";"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "368f5ec0-6e90-4aaa-b972-95e3eeb05711",
+                "tags": []
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "CREATE TABLE IF NOT EXISTS public.avatar_account\r\n",
+                "(\r\n",
+                "    id_account character(14) COLLATE pg_catalog.\"default\" NOT NULL,\r\n",
+                "    avatar bigint NOT NULL,\r\n",
+                "    CONSTRAINT avatar_account_pkey PRIMARY KEY (id_account, avatar),\r\n",
+                "    CONSTRAINT avatar_account_avatar_fkey FOREIGN KEY (avatar)\r\n",
+                "        REFERENCES public.avatar (id) MATCH SIMPLE\r\n",
+                "        ON UPDATE NO ACTION\r\n",
+                "        ON DELETE NO ACTION,\r\n",
+                "    CONSTRAINT avatar_account_id_account_fkey FOREIGN KEY (id_account)\r\n",
+                "        REFERENCES public.account (id) MATCH SIMPLE\r\n",
+                "        ON UPDATE NO ACTION\r\n",
+                "        ON DELETE NO ACTION\r\n",
+                ")\r\n",
+                "\r\n",
+                "TABLESPACE pg_default;\r\n",
+                "\r\n",
+                "ALTER TABLE IF EXISTS public.avatar_account\r\n",
+                "    OWNER to \"StardeckAdmin\";"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "8101dc0b-3b95-46b0-9a6f-62ab6757a220",
+                "tags": []
+            },
+            "outputs": [],
+            "execution_count": null
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "ALTER TABLE IF EXISTS public.account\r\n",
+                "    ADD FOREIGN KEY (avatar)\r\n",
+                "    REFERENCES public.avatar (id) MATCH SIMPLE\r\n",
+                "    ON UPDATE NO ACTION\r\n",
+                "    ON DELETE NO ACTION\r\n",
+                "    NOT VALID;"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "f28f28a1-de78-49aa-bff0-db468d040894",
+                "tags": []
+            },
+            "outputs": [],
+            "execution_count": null
+        }
+    ]
+}

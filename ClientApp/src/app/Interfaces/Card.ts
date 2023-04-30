@@ -1,19 +1,19 @@
-type ICardRace = ''
+type ICardRace = 'Raza 1' | 'Raza 2' | 'Raza 3' | 'Raza 4';
 
-// Se pueden cambiar por otros (?)
-type ICardType = 'UltraRare' | 'VeryRare' | 'Rare' | 'Normal' | 'Basic'
+type ICardType = 4 | 3 | 2 | 1 | 0;
 
 interface ICard {
   id: string;
   name: string;
-  image: File;
+  image: string;
   energy: number;
-  cost: number;
+  battlecost: number;
   type: ICardType;
-  race: ICardRace;
-  active: boolean;
-  skillID: number;
+  race?: ICardRace;
+  active?: boolean;
+  ability?: number;
   description: string;
+  borderColor?: string;
 }
 
 export {
