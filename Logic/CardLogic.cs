@@ -36,7 +36,7 @@ namespace Stardeck.Logic
         }
 
 
-        public Card newCard(CardImage card)
+        public Card NewCard(CardImage card)
         {
             var cardAux = new Card()
             {
@@ -63,7 +63,7 @@ namespace Stardeck.Logic
 
         }
 
-        public Card updateCard(string id, Card nCard)
+        public Card UpdateCard(string id, Card nCard)
         {
             var card = context.Cards.Find(id);
             if (card != null)

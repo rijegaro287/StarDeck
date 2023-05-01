@@ -1,4 +1,5 @@
 ﻿using Stardeck.Models;
+using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
 {
@@ -41,11 +42,18 @@ namespace Stardeck.Logic
         {
             var deckAux = new Deck(deck.Deck1)
             {
-                IdDeck = "00012", //MAKE DECK ID
+                IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
                 Deck1 = deck.Deck1,
 
             };
+
+            while (!Regex.IsMatch(deckAux.IdDeck, @"^D-[a-zA-Z0-9]{12}"))
+            {
+                deckAux.IdDeck = string.Concat("D-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
+            }
+
+
             context.Decks.Add(deckAux);
             context.SaveChanges();
             return deckAux;
