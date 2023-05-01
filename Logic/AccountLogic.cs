@@ -52,7 +52,7 @@ namespace Stardeck.Logic
             return acc;
         }
 
-        public Account newAccount(Account acc)
+        public Account NewAccount(Account acc)
         {
             if (context.Avatars.Find(acc.Avatar) == null)
             {
@@ -94,7 +94,7 @@ namespace Stardeck.Logic
             for (int i = 0; i < 15; i++)
             {
                 var index = ran.Next(cards.Count);
-                addCardsLogic(accAux.Id, cards[index].Id);
+                AddCardsLogic(accAux.Id, cards[index].Id);
                 cards.RemoveAt(index);
             }
 
@@ -103,7 +103,7 @@ namespace Stardeck.Logic
 
         }
 
-        public string[] addCardsLogic(string accountId, string cardId)
+        public string[] AddCardsLogic(string accountId, string cardId)
         {
             var collection = context.Collections.Find(accountId);
             if (collection == null)
@@ -136,7 +136,7 @@ namespace Stardeck.Logic
             }
         }
 
-        public Account updateAccount(string id, Account nAcc)
+        public Account UpdateAccount(string id, Account nAcc)
         {
             var acc = context.Accounts.Find(id);
             if (acc != null)
@@ -161,7 +161,7 @@ namespace Stardeck.Logic
 
         }
 
-        public Account deleteAccount(string id)
+        public Account DeleteAccount(string id)
         {
             var acc = context.Accounts.Find(id);
             if (acc != null)
@@ -175,7 +175,7 @@ namespace Stardeck.Logic
         }
 
 
-        public Collection deleteCard(string accountId, string cardId)
+        public Collection DeleteCard(string accountId, string cardId)
         {
             var collection = context.Collections.Find(accountId);
             if (collection == null)
@@ -196,6 +196,20 @@ namespace Stardeck.Logic
             }
 
         }
+
+        /*
+        public string GetParam(string id,string param)
+        {
+            Account account = context.Accounts.Find(id);
+            if (account == null) 
+            {
+                return null;
+            }
+            string config = account.Config;
+            if(config.Contains(param)) 
+            { 
+            }
+        }*/
 
 
 

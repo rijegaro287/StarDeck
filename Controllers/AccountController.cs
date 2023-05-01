@@ -22,7 +22,7 @@ namespace Stardeck.Controllers
     {
       this.context = context;
       this.accountLogic= new AccountLogic(context);
-        }
+    }
 
     // GET: api/<AccountController>
     [HttpGet]
@@ -60,7 +60,7 @@ namespace Stardeck.Controllers
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] Account acc)
     {
-            Account accAux = accountLogic.newAccount(acc);
+            Account accAux = accountLogic.NewAccount(acc);
             if (accAux == null)
             {
                 return BadRequest();
@@ -72,7 +72,7 @@ namespace Stardeck.Controllers
 
     public async Task<IActionResult> addCards(string accountId, string cardId)
     {
-        string[] aux= accountLogic.addCardsLogic(accountId,cardId);
+        string[] aux= accountLogic.AddCardsLogic(accountId,cardId);
       
         {
           if (aux.Length==1)
@@ -94,7 +94,7 @@ namespace Stardeck.Controllers
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(string id, Account nAcc)
     {
-      var acc = accountLogic.updateAccount(id,nAcc);
+      var acc = accountLogic.UpdateAccount(id,nAcc);
       if (acc != null)
       {
         return Ok(acc);
@@ -106,7 +106,7 @@ namespace Stardeck.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-      var acc = accountLogic.deleteAccount(id);
+      var acc = accountLogic.DeleteAccount(id);
       if (acc != null)
       {
         return Ok(acc);
@@ -118,7 +118,7 @@ namespace Stardeck.Controllers
     [HttpDelete("deleteCards")]
     public async Task<IActionResult> Delete(string accountId, string cardId)
     {
-      var collection =accountLogic.deleteCard(accountId,cardId);
+      var collection =accountLogic.DeleteCard(accountId,cardId);
       if (collection == null)
       {
         return NotFound("Coleccion no encontrada");
@@ -135,6 +135,7 @@ namespace Stardeck.Controllers
 
     }
 
+<<<<<<< Updated upstream
     // GET api/<AccountController>/5
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(string id)
@@ -302,4 +303,22 @@ namespace Stardeck.Controllers
 
     }
   }
+=======
+
+
+/*
+
+    [HttpGet("/params/{id}/{param}")]
+    public async Task<IActionResult> GetParams(string id,string param)
+    {
+      if (accountLogic.GetParam(id,param) == null)
+      {
+        return NotFound();
+      }
+      return Ok(accountLogic.GetParam(id,param));
+     }*/
+
+
+    }
+>>>>>>> Stashed changes
 }

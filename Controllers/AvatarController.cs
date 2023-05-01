@@ -50,17 +50,11 @@ namespace Stardeck.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AvatarImage avatar)
         {
-            Avatar avatarAux=new()
+            Avatar avatarAux = avatarLogic.NewAvatar(avatar);
+            if (avatarAux == null)
             {
-                Id = avatar.Id,
-                Image = Convert.FromBase64String(avatar.Image),
-                Name = avatar.Name
-
-            };
-
-            await context.Avatars.AddAsync(avatarAux);
-
-            await context.SaveChangesAsync();
+                return BadRequest();
+            }
             return Ok(avatarAux);
 
 
@@ -70,12 +64,12 @@ namespace Stardeck.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(long id, Avatar nAvatar)
         {
-            Avatar avatarAux = avatarLogic.newAvatar(id, nAvatar);
-            if (avatarAux == null)
+            var avatar = avatarLogic.UpdateAvatar(id, nAvatar);
+            if (avatar != null)
             {
-                return BadRequest();
+                return Ok(avatar);
             }
-            return Ok(avatarAux);
+            return NotFound();
 
         }
 
@@ -83,11 +77,9 @@ namespace Stardeck.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(long id)
         {
-            var avatar = await context.Avatars.FindAsync(id);
+            var avatar = avatarLogic.DeleteAvatar(id);
             if (avatar != null)
             {
-                context.Remove(avatar);
-                context.SaveChanges();
                 return Ok(avatar);
             }
             return NotFound();

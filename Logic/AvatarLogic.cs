@@ -1,5 +1,7 @@
 ﻿using Stardeck.Models;
 using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
 
 namespace Stardeck.Logic
 {
@@ -37,22 +39,39 @@ namespace Stardeck.Logic
             
         }
 
-        public Avatar newAvatar(long id, Avatar nAvatar)
+        public Avatar NewAvatar(Avatar avatar)
         {
-            var av = context.Avatars.Find(id);
-            if (av != null)
+            var avatarAux = new Avatar()
             {
-                av.Id = nAvatar.Id;
-                av.Image = nAvatar.Image;
-                av.Name = nAvatar.Name;
+                Id=avatar.Id,
+                Name=avatar.Name,
+                Image=avatar.Image,
+
+            };
+            context.Avatars.Add(avatarAux);
+            return avatarAux;
+
+        }
+
+        public Avatar UpdateAvatar(long id, Avatar nAvatar)
+        {
+            var avatar = context.Avatars.Find(id);
+            if (avatar != null)
+            {
+                avatar.Name = nAvatar.Name;
+                avatar.Image = nAvatar.Image;
+                avatar.Name = nAvatar.Name;
+                avatar.Image = nAvatar.Image;
+
                 context.SaveChanges();
-                return av;
+                return avatar;
             }
             return null;
 
         }
 
-        public Avatar deleteAvatar(long id)
+
+        public Avatar DeleteAvatar(long id)
         {
             var avatar = context.Avatars.Find(id);
             if (avatar != null)
