@@ -6,6 +6,8 @@ using Stardeck.Models;
 using System.Text.RegularExpressions;
 using System;
 using System.Net;
+using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 //using System.Web.Mvc;
 
 namespace Stardeck.Logic
@@ -22,8 +24,8 @@ namespace Stardeck.Logic
 
         public List<Account> GetAll()
         {
-            List<Account> accounts= context.Accounts.ToList();
-            if(accounts.Count == 0)
+            List<Account> accounts = context.Accounts.ToList();
+            if (accounts.Count == 0)
             {
                 return null;
             }
@@ -33,22 +35,18 @@ namespace Stardeck.Logic
         public string[] GetCards(string accountId)
         {
             var collection = context.Collections.Find(accountId);
-            if (collection?.Collection1 == null) { 
-                return null; 
+            if (collection?.Collection1 == null)
+            {
+                return null;
             }
             return collection.Collection1;
 
         }
 
-        public Account GetAccount(string id)
+        public Account? GetAccount(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
             var acc = context.Accounts.Find(id);
-
-            if (acc == null)
-            {
-                return null;
-            }
             return acc;
         }
 
@@ -87,14 +85,14 @@ namespace Stardeck.Logic
 
             context.Accounts.Add(accAux);
             context.SaveChanges();
-            
+
             //Add initial cards
             var cards = context.Cards.Where(x => x.Type == 0).ToList();
             var ran = new Random();
             for (int i = 0; i < 15; i++)
             {
                 var index = ran.Next(cards.Count);
-                addCardsLogic(accAux.Id, cards[index].Id);
+                addCardsToCollection(accAux.Id, cards[index].Id);
                 cards.RemoveAt(index);
             }
 
@@ -102,38 +100,42 @@ namespace Stardeck.Logic
             return accAux;
 
         }
-
-        public string[] addCardsLogic(string accountId, string cardId)
+        /// <summary>
+        /// Ad a card to the player collection. If is a new player create it collection
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="cardId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"> when a card is already in collection</exception>
+        public string[]? addCardsToCollection(string accountId, string cardId)
         {
             var collection = context.Collections.Find(accountId);
             if (collection == null)
             {
-                collection = new(new List<string>().ToArray())
-                {
-                    IdAccount = accountId
-                };
-                collection.Collectionlist.Add(cardId);
-                context.Collections.Add(collection);
-                context.SaveChanges();
-                return collection.Collection1;
+                collection=createAndSaveNewCollection(accountId);
             }
-            else
+
+            if (collection.Collectionlist.Contains(cardId))
             {
-                {
-                    if (collection.Collectionlist.Contains(cardId))
-                    {
-                        string[] r = new string[1];
-                        r[0] ="Ya en coleccion";
-                        return r;
-                    }
-                    else
-                    {
-                        collection.Collectionlist.Add(cardId);
-                        context.SaveChanges();
-                        return collection.Collection1;
-                    }
-                }
+                return null;
             }
+            collection.Collectionlist.Add(cardId);
+            context.SaveChanges();
+            return collection.Collection1;
+
+
+        }
+
+
+        private Collection createAndSaveNewCollection(string accountId)
+        {
+            var collection = new Collection(new List<string>().ToArray())
+            {
+                IdAccount = accountId
+            };
+            context.Collections.Add(collection);
+            context.SaveChanges();
+            return collection;
         }
 
         public Account updateAccount(string id, Account nAcc)
@@ -157,6 +159,10 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return acc;
             }
+            else
+            {
+                throw new Exception("Account not found");
+            }
             return null;
 
         }
@@ -170,6 +176,10 @@ namespace Stardeck.Logic
                 context.Remove(acc);
                 context.SaveChanges();
                 return acc;
+            }
+            else
+            {
+                throw new Exception("Account not found");
             }
             return null;
         }
@@ -197,7 +207,51 @@ namespace Stardeck.Logic
 
         }
 
+        public string[]? addCardsListToCollection(string accountId, string[] cardId)
+        {
+            string[] tmpresult = new List<string>().ToArray();
+            foreach (var card in cardId)
+            {
+                tmpresult = addCardsToCollection(accountId, card);
+                if (tmpresult is null) continue;
+            }
+            return tmpresult;
+        }
 
+        public Dictionary<string, string>? GetParameter(string id, string parameter)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            return new Dictionary<string, string> {
+                [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()] 
+                };
+        }
+        public Dictionary<string, string>? GetParameters(string id)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            return user.Serverconfig;
+        }
 
+        public Dictionary<string, string>? PostParameter(string id, string parameter, string value)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            if (user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            user.Serverconfig[parameter.ToLower()]= value;
+            context.SaveChanges();
+            return user.Serverconfig;
+        }
+
+        public Dictionary<string, string>? PutParameter(string id, string parameter, string value)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            user.Serverconfig[parameter.ToLower()] = value;
+            context.SaveChanges();
+            return user.Serverconfig;
+        }
     }
 }

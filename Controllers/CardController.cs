@@ -99,6 +99,7 @@ namespace Stardeck.Controllers
             {
                 return NotFound();
             }
+
             return Ok(cardLogic.getNineCards());
         }
     }

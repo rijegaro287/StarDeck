@@ -119,15 +119,19 @@ export class SelectionCardComponent implements OnInit {
     if (this.selectedCards.length < 3) {
       return alert("Debe seleccionar 3 cartas");
     }
-    for (let i = 0; i <= 2; i++) {
-      this.idCard = this.selectedCards[i].id.toString();
-      console.log(this.idCard)
-      //Metodo de enviar cartas seleccionadas
-      await this.accountService.addCards(this.idAccount, this.idCard)
-        .then(response => {
-          console.log(response);
-        })
-    }
+
+    var cardslist = this.selectedCards.map(x => x.id);
+    console.log(this.idCard)
+    //Metodo de enviar cartas seleccionadas
+    await this.accountService.addCardsList(this.idAccount, cardslist)
+      .then(response => {
+        console.log(response);
+      })
+    await this.accountService.addParameter(this.idAccount, "InitialCards", '"True"')
+      .then(response => {
+        console.log(response);
+      })
+
     window.location.assign(this.baseurl + "login")
   }
   /**
