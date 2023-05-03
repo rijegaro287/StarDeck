@@ -1,5 +1,4 @@
 ﻿using Stardeck.Models;
-using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
 {
@@ -34,7 +33,7 @@ namespace Stardeck.Logic
                 return null;
             }
             return avatar;
-            
+
         }
 
         public Avatar newAvatar(long id, Avatar nAvatar)

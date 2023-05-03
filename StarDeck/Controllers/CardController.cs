@@ -1,11 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Stardeck.Models;
-using System.Text.Json;
-using System.Xml.Linq;
-using System;
-using System.Text.RegularExpressions;
 using Stardeck.Logic;
+using Stardeck.Models;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,7 +26,7 @@ namespace Stardeck.Controllers
         [Route("get_all")]
         public async Task<IActionResult> Get()
         {
-            if(cardLogic.GetAll() == null)
+            if (cardLogic.GetAll() == null)
             {
                 return NotFound();
             }
@@ -53,7 +48,7 @@ namespace Stardeck.Controllers
         // POST api/<CardController>
         [HttpPost]
         [Route("add")]
-        public async Task<IActionResult>Post([FromBody] CardImage card)
+        public async Task<IActionResult> Post([FromBody] CardImage card)
         {
             Card cardAux = cardLogic.NewCard(card);
             if (cardAux == null)

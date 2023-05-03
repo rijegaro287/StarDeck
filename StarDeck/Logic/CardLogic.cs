@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Stardeck.Models;
+﻿using Stardeck.Models;
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
 
 namespace Stardeck.Logic
 {
@@ -51,7 +48,7 @@ namespace Stardeck.Logic
                 Type = card.Type,
                 Ability = card.Ability,
                 Description = card.Description,
-                Race=card.Race
+                Race = card.Race
 
             };
 
@@ -104,7 +101,7 @@ namespace Stardeck.Logic
 
         public List<List<Card>> getNineCards()
         {
-            List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 ||x.Type==2);
+            List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
             Random rand = new Random();
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
 

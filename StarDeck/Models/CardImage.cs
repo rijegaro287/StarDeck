@@ -1,7 +1,7 @@
 ﻿namespace Stardeck.Models
 {
-    public class CardImage: Card
+    public class CardImage : Card
     {
-        public new string? Image { get;set; }
+        public new string? Image { get; set; }
     }
 }

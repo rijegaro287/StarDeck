@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.Logic;
 using Stardeck.Models;
-using System.Reflection.Metadata;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -122,7 +121,7 @@ namespace Stardeck.Controllers
         }
 
         [HttpPost("{id}/Parameters/{parameter}")]
-        public async Task<IActionResult> PostParameter(string id, string parameter, [FromBody]string value)
+        public async Task<IActionResult> PostParameter(string id, string parameter, [FromBody] string value)
         {
             var temp = accountLogic.PostParameter(id, parameter, value);
             if (temp == null)

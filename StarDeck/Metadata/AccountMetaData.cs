@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Configuration;
-using System.Text.Json.Serialization;
 
 namespace Stardeck.Models;
 [MetadataType(typeof(AccountMetadata))]

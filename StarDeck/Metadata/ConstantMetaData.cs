@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using System.ComponentModel.DataAnnotations;
-using static Stardeck.Models.Collection;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Stardeck.Models;
 [MetadataType(typeof(ConstantMetaData))]

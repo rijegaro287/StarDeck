@@ -1,18 +1,14 @@
-﻿using Newtonsoft.Json;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Configuration;
-using System.Runtime.Serialization;
-using static Stardeck.Models.Collection;
 
 namespace Stardeck.Models;
 [MetadataType(typeof(CollectionMetaData))]
 public partial class Collection
 {
-  public Collection(string[]? collection1)
-  {
+    public Collection(string[]? collection1)
+    {
         if (collection1 != null)
         {
             this.Collection1 = collection1;
@@ -25,8 +21,8 @@ public partial class Collection
         this.Collectionlist.CollectionChanged += new(updateJson);
     }
 
-  [NotMapped]
-  public ObservableCollection<string>? Collectionlist;
+    [NotMapped]
+    public ObservableCollection<string>? Collectionlist;
 
     private void updateJson(object sender, NotifyCollectionChangedEventArgs e)
     {

@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Stardeck.Models;
-using static System.Net.Mime.MediaTypeNames;
-using System.Xml.Linq;
-using Microsoft.EntityFrameworkCore;
 using Stardeck.Logic;
+using Stardeck.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -50,7 +47,7 @@ namespace Stardeck.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AvatarImage avatar)
         {
-            Avatar avatarAux=new()
+            Avatar avatarAux = new()
             {
                 Id = avatar.Id,
                 Image = Convert.FromBase64String(avatar.Image),

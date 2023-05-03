@@ -1,13 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+﻿using Microsoft.EntityFrameworkCore;
 using Stardeck.Models;
 using System.Text.RegularExpressions;
-using System;
-using System.Net;
-using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
 //using System.Web.Mvc;
 
 namespace Stardeck.Logic
@@ -112,7 +105,7 @@ namespace Stardeck.Logic
             var collection = context.Collections.Find(accountId);
             if (collection == null)
             {
-                collection=createAndSaveNewCollection(accountId);
+                collection = createAndSaveNewCollection(accountId);
             }
 
             if (collection.Collectionlist.Contains(cardId))
@@ -223,9 +216,10 @@ namespace Stardeck.Logic
             Account? user = GetAccount(id);
             if (user == null) { return null; }
             if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
-            return new Dictionary<string, string> {
-                [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()] 
-                };
+            return new Dictionary<string, string>
+            {
+                [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()]
+            };
         }
         public Dictionary<string, string>? GetParameters(string id)
         {
@@ -239,7 +233,7 @@ namespace Stardeck.Logic
             Account? user = GetAccount(id);
             if (user == null) { return null; }
             if (user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
-            user.Serverconfig[parameter.ToLower()]= value;
+            user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             return user.Serverconfig;
         }
