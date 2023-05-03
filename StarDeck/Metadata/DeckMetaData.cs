@@ -17,7 +17,7 @@ namespace Stardeck.Models;
 public partial class Deck
 {
 
-    static int maxcardcount = 18;
+    static Constant maxcardcount = new StardeckContext().Constants.First(e=>e.Key=="deckSize") ;
     public Deck(string[]? Deck1)
     {
         if (Deck1!=null)
@@ -37,9 +37,17 @@ public partial class Deck
     [System.Text.Json.Serialization.JsonIgnore]
     public ObservableCollection<string>? Decklist;
     
-    
-    public class DeckMetaData
+    public string? addCard(string card)
     {
+        if (Decklist.Count <= maxcardcount.getAsInt())
+        {
+            Decklist.Add(card);
+            return card;
+        }
+        else
+        {
+            return null;
+        }
     }
 
     private void updateJson( object sender, NotifyCollectionChangedEventArgs e)
@@ -47,4 +55,8 @@ public partial class Deck
         this.Deck1=this.Decklist.ToArray();
     }
 
+}
+
+public class DeckMetaData
+{
 }

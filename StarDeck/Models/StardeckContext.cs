@@ -23,6 +23,8 @@ public partial class StardeckContext : DbContext
 
     public virtual DbSet<Collection> Collections { get; set; }
 
+    public virtual DbSet<Constant> Constants { get; set; }
+
     public virtual DbSet<Deck> Decks { get; set; }
 
     public virtual DbSet<FavoriteDeck> FavoriteDecks { get; set; }
@@ -160,6 +162,16 @@ public partial class StardeckContext : DbContext
                 .HasForeignKey<Collection>(d => d.IdAccount)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("deck_account_fkey");
+        });
+
+        modelBuilder.Entity<Constant>(entity =>
+        {
+            entity
+                .HasKey(e => e.Key);
+            entity.ToTable("constants");
+
+            entity.Property(e => e.Key).HasColumnName("key");
+            entity.Property(e => e.Value).HasColumnName("value");
         });
 
         modelBuilder.Entity<Deck>(entity =>

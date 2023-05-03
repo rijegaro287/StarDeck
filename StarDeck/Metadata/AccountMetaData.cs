@@ -10,11 +10,18 @@ public partial class Account
 {
     public Account(string? config)
     {
-        this.Config=config;
-        if (this.Config == "" | this.Config == null) { this.Serverconfig = new(this);  return; }
-        this.Serverconfig = JsonConvert.DeserializeObject<ServerconfigutationDict<string, string>>(this.Config);
-        this.Serverconfig ??= new(this);
-        this.Serverconfig.main = this;
+        this.Config = config;
+        if (this.Config == "" | this.Config == null) { this.Serverconfig = new(this); return; }
+        try
+        {
+            this.Serverconfig = JsonConvert.DeserializeObject<ServerconfigutationDict<string, string>>(this.Config);
+            this.Serverconfig.main = this;
+
+        }
+        catch (JsonReaderException e)
+        {
+            this.Serverconfig ??= new(this);
+        }
     }
 
     [NotMapped]
@@ -46,29 +53,45 @@ public partial class Account
         protected ServerconfigutationDict(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext) : base(serializationInfo, streamingContext)
         {
         }
-        public ServerconfigutationDict():base()
+        public ServerconfigutationDict() : base()
         {
         }
 
+
         public new TValue this[TKey key]
         {
-            get
-            {
-                return base[key];
-            }
+            get { return base[key]; }
             set
             {
                 base[key] = value;
-                if (main!=null)
+                if (main != null)
                 {
-                    
                     main.Config = JsonConvert.SerializeObject(this);
-
                 }
             }
 
         }
 
+        public new void Clear()
+        {
+
+            base.Clear();
+            if (main != null)
+            {
+                main.Config = JsonConvert.SerializeObject(this);
+            }
+
+        }
+        public new void Add(TKey key, TValue value)
+        {
+            base.Add(key, value);
+            if (main != null)
+            {
+
+                main.Config = JsonConvert.SerializeObject(this);
+
+            }
+        }
 
     }
 
