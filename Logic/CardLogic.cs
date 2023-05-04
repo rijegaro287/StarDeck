@@ -98,21 +98,12 @@ namespace Stardeck.Logic
             return null;
         }
 
-        public List<List<Card>> GetNineCards()
+        public List<Card> GetNineCards()
         {
             List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
             Random rand = new Random();
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
-
-            List<List<Card>> cards = new List<List<Card>>
-            {
-                shuffled.GetRange(0, 3),
-                shuffled.GetRange(3, 3),
-                shuffled.GetRange(6, 3)
-            };
-
-            return cards;
-
+            return shuffled.GetRange(0,9);
         }
 
 
