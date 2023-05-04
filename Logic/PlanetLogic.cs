@@ -67,12 +67,12 @@ namespace Stardeck.Logic
             var planet = context.Planets.Find(id);
             if (planet != null)
             {
-                planet.Id = nPlanet.Id; 
+                planet.Id = nPlanet.Id;
                 planet.Name = nPlanet.Name;
                 planet.Type = nPlanet.Type;
                 planet.Active = nPlanet.Active;
                 planet.Ability = nPlanet.Ability;
-                planet.Image=nPlanet.Image;
+                planet.Image = nPlanet.Image;
                 planet.Description = nPlanet.Description;
 
                 context.SaveChanges();

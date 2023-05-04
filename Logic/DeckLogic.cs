@@ -62,10 +62,10 @@ namespace Stardeck.Logic
 
         public Deck UpdateDeck(string id, Deck nDeck)
         {
-            var deck= context.Decks.Find(id);
+            var deck = context.Decks.Find(id);
             if (deck != null)
             {
-                deck.IdDeck =nDeck.IdDeck; //MAKE DECK ID
+                deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
                 deck.IdAccount = nDeck.IdAccount;
                 deck.Deck1 = nDeck.Deck1;
 
