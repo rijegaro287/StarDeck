@@ -89,5 +89,17 @@ namespace Stardeck.Controllers
             }
             return NotFound();
         }
+
+        [HttpGet]
+        [Route("get/nineCards")]
+        public async Task<IActionResult> getNineCards()
+        {
+            if (cardLogic.getNineCards() == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cardLogic.getNineCards());
+        }
     }
 }
