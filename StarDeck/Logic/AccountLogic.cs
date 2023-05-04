@@ -205,7 +205,7 @@ namespace Stardeck.Logic
             { 
             }
         }*/
-        }
+
 
         public string[]? addCardsListToCollection(string accountId, string[] cardId)
         {
@@ -253,6 +253,7 @@ namespace Stardeck.Logic
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             return user.Serverconfig;
-        }
+        } }
     }
-}
+
+
