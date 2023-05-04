@@ -8,3 +8,6 @@
 /.vscode/tasks.json
 /obj
 /StardeckTest/obj
+/ClientApp/.angular
+/ClientApp/node_modules
+/bin
