@@ -13,7 +13,7 @@ public partial class Planet
 
     public long Type { get; set; }
 
-    public byte[][]? Image { get; set; }
+    public byte[]? Image { get; set; }
 
     public bool? Active { get; set; }
 

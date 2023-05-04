@@ -43,7 +43,7 @@ namespace Stardeck.Logic
             return acc;
         }
 
-        public Account newAccount(Account acc)
+        public Account NewAccount(Account acc)
         {
             if (context.Avatars.Find(acc.Avatar) == null)
             {
@@ -131,7 +131,7 @@ namespace Stardeck.Logic
             return collection;
         }
 
-        public Account updateAccount(string id, Account nAcc)
+        public Account? UpdateAccount(string id, Account nAcc)
         {
             var acc = context.Accounts.Find(id);
             if (acc != null)
@@ -152,15 +152,11 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return acc;
             }
-            else
-            {
-                throw new Exception("Account not found");
-            }
             return null;
 
         }
 
-        public Account deleteAccount(string id)
+        public Account? DeleteAccount(string id)
         {
             var acc = context.Accounts.Find(id);
             if (acc != null)
@@ -170,15 +166,11 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return acc;
             }
-            else
-            {
-                throw new Exception("Account not found");
-            }
             return null;
         }
 
 
-        public Collection deleteCard(string accountId, string cardId)
+        public Collection DeleteCard(string accountId, string cardId)
         {
             var collection = context.Collections.Find(accountId);
             if (collection == null)
@@ -199,6 +191,21 @@ namespace Stardeck.Logic
             }
 
         }
+
+        /*
+        public string GetParam(string id,string param)
+        {
+            Account account = context.Accounts.Find(id);
+            if (account == null) 
+            {
+                return null;
+            }
+            string config = account.Config;
+            if(config.Contains(param)) 
+            { 
+            }
+        }*/
+
 
         public string[]? addCardsListToCollection(string accountId, string[] cardId)
         {
@@ -246,6 +253,7 @@ namespace Stardeck.Logic
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             return user.Serverconfig;
-        }
+        } }
     }
-}
+
+
