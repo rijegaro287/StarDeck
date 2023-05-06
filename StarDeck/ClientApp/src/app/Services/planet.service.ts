@@ -10,16 +10,16 @@ import { IPlanetResponse, IServerResponse } from '../Interfaces/ServerResponse';
   providedIn: 'root'
 })
 export class PlanetService {
-  url = `${apiURL}/planet`;
+  url = `${apiURL}`;
 
   constructor(private request: RequestService) { }
 
   getAllPlanet = (): Promise<IPlanet[]> => {
-    return this.request.get(`${this.url}/get_all`);
+    return this.request.get(`${this.url}/api/Planet`);
   }
 
   addPlanet = (planet: IPlanet): Promise<IServerResponse> => {
-    return this.request.post(`${this.url}/add`, planet);
+    return this.request.post(`${this.url}/api/Planet`, planet);
   }
 
 }
