@@ -1,0 +1,45 @@
+@import '../../../../styles.scss';
+
+mat-planet{
+  border: 3px solid $primary;
+  border-radius: 1.2rem;
+}
+
+.planet-container {
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.planet-image,
+.planet-info {
+  height: 18rem;
+}
+
+.planet-image {
+  width: 18rem;
+  border-radius: 1rem;
+}
+
+.planet-info {
+  width: 100%;
+  overflow-y: auto;
+
+  .planet-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $secondary;
+    margin-bottom: 0.2rem;
+  }
+
+  .planet-description {
+    color: $text;
+    font-size: 1.6rem;
+    text-align: justify;
+    overflow-wrap: break-word;
+  }
+}
+
+

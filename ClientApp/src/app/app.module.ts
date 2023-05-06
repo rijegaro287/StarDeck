@@ -35,6 +35,9 @@ import { CardComponent } from './Components/Generic/card/card.component';
 import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
 import { UserMainComponent } from './Components/User/user-main/user-main.component';
+import { CreatePlanetComponent } from './Components/Admin/planet/create/create-planet.component';
+import { PlanetComponent } from './Components/Generic/planet/planet.component';
+import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.component';
 
 
 @NgModule({
@@ -51,7 +54,10 @@ import { UserMainComponent } from './Components/User/user-main/user-main.compone
     ImageUploaderComponent,
     RegisterAccountComponent,
     SelectionCardComponent,
-    UserMainComponent
+    UserMainComponent,
+    CreatePlanetComponent,
+    PlanetComponent,
+    PlanetListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -68,6 +74,7 @@ import { UserMainComponent } from './Components/User/user-main/user-main.compone
         children: [
           { path: '', redirectTo: 'cards', pathMatch: 'full' },
           { path: 'cards', component: CardListComponent },
+          { path: 'planets', component: PlanetListComponent },
         ]
       },
       {

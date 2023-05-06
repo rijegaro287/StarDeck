@@ -25,15 +25,19 @@
     </div>
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
-        <mat-label color="primary" >País</mat-label>
-        <input matInput formControlName="nationality" required>
+        <mat-label>País</mat-label>
+        <mat-select matInput formControlName="nationality" required>
+          <mat-option *ngFor="let country of countryList" [value]="country">
+            {{ country }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
         <mat-label color="primary">Contraseña</mat-label>
-        <input matInput formControlName="password" required type="password" maxlength="8">
+        <input matInput formControlName="password" required type="password" maxlength="8" >
       </mat-form-field>
     </div>
 
