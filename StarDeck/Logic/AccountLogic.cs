@@ -253,7 +253,38 @@ namespace Stardeck.Logic
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             return user.Serverconfig;
-        } }
+        }
+
+        public bool? SelectFavoriteDeck(string id, string idDeck)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            Deck? deck = context.Decks.Find(idDeck);
+            if (deck == null) { return false; }
+
+            if (deck.IdDeck==user.Id)
+            {
+                FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
+                if (actual==null)
+                {
+                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck};
+                    context.FavoriteDecks.Add(actual);
+                }
+                else
+                {
+                    actual.Deckid = deck.IdDeck;
+                    actual.Deck = deck;
+                }
+                context.SaveChanges();
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
+    }
     }
 
 
