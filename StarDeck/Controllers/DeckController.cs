@@ -41,6 +41,17 @@ namespace Stardeck.Controllers
             return Ok(deckLogic.GetDeck(id));
         }
 
+        // GET api/<DeckController>/5
+        [HttpGet("User/{id}")]
+        public async Task<IActionResult> GetAllDecksByUser(string UserId)
+        {
+            if (deckLogic.GetDecksByUser(UserId) == null)
+            {
+                return NotFound();
+            }
+            return Ok(deckLogic.GetDecksByUser(UserId));
+        }
+
         // POST api/<DeckController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Deck deck)
