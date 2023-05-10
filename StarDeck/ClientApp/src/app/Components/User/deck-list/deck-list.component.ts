@@ -289,6 +289,8 @@ export class DeckListComponent implements OnInit {
   }
 
   onDeckCancelClicked = () => {
+    this.newDeckName.setValue('');
+    this.newDeck.cards = [];
     this.selectedTab -= 1
     this.creatingDeck = false;
     this.decks.pop();

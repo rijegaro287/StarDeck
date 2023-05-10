@@ -28,17 +28,26 @@
   @include card-list-grid;
 }
 
-.new-deck-options {
+.new-deck-info {
   display: flex;
-  gap: 1rem;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 
-  mat-form-field {
-    margin-bottom: -1.25em
+  h3 {
+    margin: 0;
   }
 
-  button {
-    width: 10rem;
+  .new-deck-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    mat-form-field {
+      margin-bottom: -1.25em
+    }
+
+    button {
+      width: 10rem;
+    }
   }
 }
