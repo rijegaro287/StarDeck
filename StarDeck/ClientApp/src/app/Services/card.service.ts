@@ -22,6 +22,10 @@ export class CardService {
     return this.request.post(`${this.url}/add`, card);
   }
 
+  getCard = (cardID: string): Promise<any> => {
+    return this.request.get(`${this.url}/get/${cardID}`);
+  }
+
   // addCard = (card: ICard): Promise<IServerResponse> => {
   //   const response: IServerResponse = {
   //     status: 'ok',

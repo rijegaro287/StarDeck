@@ -54,7 +54,7 @@ export class LoginComponent {
     if (Rol === "Admin") {
       window.location.assign(this.baseurl + "/admin")
     } else {
-      window.location.assign(this.baseurl + "/User")
+      window.location.assign(this.baseurl + "/user")
     }
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges } from '@angular/core';
 
 import { CARD_TYPES } from 'src/app/app.component';
 
@@ -40,7 +40,7 @@ export class CardListComponent implements OnChanges {
    * y las filtra según su tipo
   */
   ngOnChanges() {
-    if (this.cards) {
+    if (this.cards.length > 0) {
       this.ultraRareCards = this.cards.filter(card => card.type === CARD_TYPES.ULTRA_RARE);
       this.veryRareCards = this.cards.filter(card => card.type === CARD_TYPES.VERY_RARE);
       this.rareCards = this.cards.filter(card => card.type === CARD_TYPES.RARE);
