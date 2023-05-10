@@ -1,8 +1,7 @@
-import { ChangeDetectorRef, Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 import { CARD_TYPES } from 'src/app/app.component';
 
-import { CardService } from 'src/app/Services/card.service';
 import { HelpersService } from 'src/app/Services/helpers.service';
 
 import { ICard } from 'src/app/Interfaces/Card';
@@ -15,6 +14,7 @@ import { ICard } from 'src/app/Interfaces/Card';
 export class CardListComponent implements OnChanges {
   @Input() cards: ICard[]
   @Input() onCardClicked: (card: ICard) => void
+  @Input() hover: boolean
 
   ultraRareCards: ICard[]
   veryRareCards: ICard[]
@@ -25,14 +25,15 @@ export class CardListComponent implements OnChanges {
   constructor(
     protected helpers: HelpersService
   ) {
-    this.cards = []
-    this.onCardClicked = (card: ICard) => { }
+    this.cards = [];
+    this.onCardClicked = (card: ICard) => { };
+    this.hover = false;
 
-    this.ultraRareCards = []
-    this.veryRareCards = []
-    this.rareCards = []
-    this.normalCards = []
-    this.basicCards = []
+    this.ultraRareCards = [];
+    this.veryRareCards = [];
+    this.rareCards = [];
+    this.normalCards = [];
+    this.basicCards = [];
   }
 
   /** 
@@ -41,6 +42,12 @@ export class CardListComponent implements OnChanges {
   */
   ngOnChanges() {
     if (this.cards.length > 0) {
+      this.cards.forEach((card) => {
+        if (!card.borderColor) {
+          card.borderColor = this.helpers.getCardBorderColor(card.type);
+        }
+      })
+
       this.ultraRareCards = this.cards.filter(card => card.type === CARD_TYPES.ULTRA_RARE);
       this.veryRareCards = this.cards.filter(card => card.type === CARD_TYPES.VERY_RARE);
       this.rareCards = this.cards.filter(card => card.type === CARD_TYPES.RARE);

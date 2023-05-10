@@ -1,46 +1,46 @@
 <mat-tab-group class="card-list">
   <mat-tab label="Ultra Rara">
-    <div class="list-grid">
+    <div class="card-list-grid">
       <!-- Recorre cada lista de cartas y las agrega una a una a las pestañas -->
       <ng-container *ngFor="let card of ultraRareCards">
         <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
-          [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
+          [cardBorderColor]="card.borderColor!"></app-card>
       </ng-container>
     </div>
   </mat-tab>
 
   <mat-tab label="Muy Rara">
-    <div class="list-grid">
+    <div class="card-list-grid">
       <ng-container *ngFor="let card of veryRareCards">
         <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
-          [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
+          [cardBorderColor]="card.borderColor!"></app-card>
       </ng-container>
     </div>
   </mat-tab>
 
   <mat-tab label="Rara">
-    <div class="list-grid">
+    <div class="card-list-grid">
       <ng-container *ngFor="let card of rareCards">
         <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
-          [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
+          [cardBorderColor]="card.borderColor!"></app-card>
       </ng-container>
     </div>
   </mat-tab>
 
   <mat-tab label="Normal">
-    <div class="list-grid">
+    <div class="card-list-grid">
       <ng-container *ngFor="let card of normalCards">
         <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
-          [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
+          [cardBorderColor]="card.borderColor!"></app-card>
       </ng-container>
     </div>
   </mat-tab>
 
   <mat-tab label="Básica">
-    <div class="list-grid">
+    <div class="card-list-grid">
       <ng-container *ngFor="let card of basicCards">
         <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
-          [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
+          [cardBorderColor]="card.borderColor!"></app-card>
       </ng-container>
     </div>
   </mat-tab>

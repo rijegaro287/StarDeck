@@ -83,7 +83,8 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
         path: "user", component: UserMainComponent,
         // canActivate: [UserGuard],
         children: [
-          { path: 'deck', component: DeckListComponent }
+          { path: '', redirectTo: 'decks', pathMatch: 'full' },
+          { path: 'decks', component: DeckListComponent }
         ]
       }
 

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { CARD_TYPES } from '../app.component';
+
 import { ICardType } from '../Interfaces/Card';
 
 @Injectable({
@@ -38,15 +40,15 @@ export class HelpersService {
    */
   getCardBorderColor(type: ICardType): string {
     switch (type) {
-      case 4:
+      case CARD_TYPES.ULTRA_RARE:
         return '#e6ce4a';
-      case 3:
+      case CARD_TYPES.VERY_RARE:
         return '#9a00d6';
-      case 2:
+      case CARD_TYPES.RARE:
         return '#4161f1';
-      case 1:
+      case CARD_TYPES.NORMAL:
         return '#66e961';
-      case 0:
+      case CARD_TYPES.BASIC:
         return 'black';
       default:
         return 'black';
