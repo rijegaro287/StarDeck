@@ -294,6 +294,12 @@ export class DeckListComponent implements OnInit {
     this.selectedTab -= 1
     this.creatingDeck = false;
     this.decks.pop();
+
+    this.cardCollection.forEach((card) => {
+      card.borderColor = this.helpers.getCardBorderColor(card.type);
+    });
+
+    this.onCardClicked = (card: ICard) => { };
   }
 
   validateNewDeck = () => {
