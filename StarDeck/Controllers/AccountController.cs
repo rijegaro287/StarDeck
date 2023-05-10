@@ -144,6 +144,18 @@ namespace Stardeck.Controllers
             }
             return NotFound();
         }
+        // PUT api/<AccountController>/5
+
+        [HttpPut("{id}/favorite/{deck}")]
+        public async Task<IActionResult> SelectFavorite(string id, string deck)
+        {
+            var selected = accountLogic.SelectFavoriteDeck(id, deck);
+            if (!(selected == null ||selected!=true))
+            {
+                return NotFound();
+            }
+            return Ok(deck);
+        }
 
 
         [HttpPut("{id}/Parameters/{parameter}")]
