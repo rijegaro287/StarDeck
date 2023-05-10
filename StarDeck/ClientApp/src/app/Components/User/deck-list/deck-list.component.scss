@@ -1,0 +1,12 @@
+.main-content {
+  width: 80%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: auto;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}

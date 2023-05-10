@@ -15,7 +15,7 @@ export class UserMainComponent {
     this.navbarItems = [
       {
         description: 'Escuadron', // Descripción del elemento
-        link: '/' // Ruta a la que redirige
+        link: '/user/deck' // Ruta a la que redirige
       },
       {
         description: 'Coleccion',

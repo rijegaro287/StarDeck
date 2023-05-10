@@ -23,18 +23,19 @@ import { AppComponent } from './app.component';
 import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
 import { LoginComponent } from './Components/Generic/login/login.component';
 import { NavbarComponent } from './Components/Generic/navbar/navbar.component';
+import { CardListComponent } from './Components/Generic/card-list/card-list.component';
 
 import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
-import { CardListComponent } from './Components/Admin/card-list/card-list.component';
+import { AllCardsListComponent } from './Components/Admin/all-cards-list/all-cards-list.component';
 import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/card-form-dialog.component';
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
 
-// import { HomeComponent } from './Components/home/home.component';
-
 import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
+
 import { UserMainComponent } from './Components/User/user-main/user-main.component';
+import { DeckListComponent } from './Components/User/deck-list/deck-list.component';
 
 
 @NgModule({
@@ -42,16 +43,18 @@ import { UserMainComponent } from './Components/User/user-main/user-main.compone
     AppComponent,
     LoginComponent,
     AdminMainComponent,
-    CardListComponent,
+    AllCardsListComponent,
     ImageUploaderComponent,
     NavbarComponent,
+    CardListComponent,
     CardFormComponent,
     CardFormDialogComponent,
     CardComponent,
     ImageUploaderComponent,
     RegisterAccountComponent,
     SelectionCardComponent,
-    UserMainComponent
+    UserMainComponent,
+    DeckListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,21 +65,27 @@ import { UserMainComponent } from './Components/User/user-main/user-main.compone
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent /* , canActivate: [LoginGuard] */ },
       {
-        path: 'admin',
-        component: AdminMainComponent,
-        // canActivate: [AdministratorGuard],
-        children: [
-          { path: '', redirectTo: 'cards', pathMatch: 'full' },
-          { path: 'cards', component: CardListComponent },
-        ]
-      },
-      {
         path: "Register", children: [
           { path: 'account', data: { title: "Registro de Cuenta" }, component: RegisterAccountComponent },
           { path: 'selection-card', data: { title: "Seleccion de Cartas" }, component: SelectionCardComponent }
         ]
       },
-      { path: "User", component: UserMainComponent}
+      {
+        path: 'admin',
+        component: AdminMainComponent,
+        // canActivate: [AdministratorGuard],
+        children: [
+          { path: '', redirectTo: 'cards', pathMatch: 'full' },
+          { path: 'cards', component: AllCardsListComponent },
+        ]
+      },
+      {
+        path: "user", component: UserMainComponent,
+        // canActivate: [UserGuard],
+        children: [
+          { path: 'deck', component: DeckListComponent }
+        ]
+      }
 
       // {
       //   path: 'player',
