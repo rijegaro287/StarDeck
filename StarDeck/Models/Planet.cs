@@ -1,4 +1,7 @@
-﻿namespace Stardeck.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Stardeck.Models;
 
 /// <summary>
 /// 0 raro
@@ -13,11 +16,11 @@ public partial class Planet
 
     public long Type { get; set; }
 
-    public byte[]? Image { get; set; }
-
     public bool? Active { get; set; }
 
     public string? Description { get; set; }
 
     public string? Ability { get; set; }
+
+    public byte[]? Image { get; set; }
 }
