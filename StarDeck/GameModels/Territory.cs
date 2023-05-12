@@ -13,6 +13,6 @@
 
         public TerritoryAbility? Ability { get; set; }
 
-        public Cards
+        //public Cards
     }
 }

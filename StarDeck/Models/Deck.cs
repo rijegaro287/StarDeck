@@ -2,6 +2,7 @@
 
 public partial class Deck
 {
+    public string DeckName { get; set; } = null!;
     public string IdAccount { get; set; } = null!;
 
     public string[] Deck1 { get; set; } = null!;

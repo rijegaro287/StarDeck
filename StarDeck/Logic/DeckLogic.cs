@@ -24,6 +24,17 @@ namespace Stardeck.Logic
             return decks;
         }
 
+        public IQueryable? GetNames(string userId)
+        {
+            var decks = GetDecksByUser(userId).Select(x => new{Id=x.IdDeck,Name=x.DeckName}).ToList();
+            if (decks.Count == 0)
+            {
+                return null;
+            }
+            return (IQueryable?)decks;
+        }
+
+
 
         public Deck GetDeck(string id)
         {
