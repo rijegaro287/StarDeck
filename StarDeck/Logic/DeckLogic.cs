@@ -14,7 +14,7 @@ namespace Stardeck.Logic
         }
 
 
-        public List<Deck> GetAll()
+        public List<Deck>? GetAll()
         {
             List<Deck> decks = context.Decks.ToList();
             if (decks.Count == 0)
@@ -86,6 +86,16 @@ namespace Stardeck.Logic
                 return deck;
             }
             return null;
+        }
+
+        public List<Deck>? GetDecksByUser(string Userid)
+        {
+            List<Deck> decks = context.Decks.Where(x=>x.IdAccount==Userid).ToList();
+            if (decks.Count == 0)
+            {
+                return null;
+            }
+            return decks;
         }
     }
 }
