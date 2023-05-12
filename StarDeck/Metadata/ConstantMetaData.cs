@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace Stardeck.Models;
-[MetadataType(typeof(ConstantMetaData))]
+[MetadataType(typeof(ParameterMetaData))]
 
-public partial class Constant
+public partial class Parameter
 {
     public string getAsString()
     {
@@ -38,7 +38,7 @@ public class ConstantElement<T> : Constant
 }
 **/
 
-public class ConstantMetaData
+public class ParameterMetaData
 {
 }
 
