@@ -1,12 +1,17 @@
-﻿namespace Stardeck.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Stardeck.Models;
 
 public partial class Deck
 {
     public string IdAccount { get; set; } = null!;
 
-    public string[] Deck1 { get; set; } = null!;
+    public string[] Cardlist { get; set; } = null!;
 
     public string IdDeck { get; set; } = null!;
+
+    public string? DeckName { get; set; }
 
     public virtual ICollection<FavoriteDeck> FavoriteDecks { get; set; } = new List<FavoriteDeck>();
 

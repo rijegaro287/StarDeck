@@ -14,7 +14,7 @@ namespace Stardeck.Logic
         }
 
 
-        public List<Deck> GetAll()
+        public List<Deck>? GetAll()
         {
             List<Deck> decks = context.Decks.ToList();
             if (decks.Count == 0)
@@ -23,6 +23,17 @@ namespace Stardeck.Logic
             }
             return decks;
         }
+
+        public IQueryable? GetNames(string userId)
+        {
+            var decks = GetDecksByUser(userId).Select(x => new{Id=x.IdDeck,Name=x.DeckName}).ToList();
+            if (decks.Count == 0)
+            {
+                return null;
+            }
+            return (IQueryable?)decks;
+        }
+
 
 
         public Deck GetDeck(string id)
@@ -40,11 +51,11 @@ namespace Stardeck.Logic
 
         public Deck NewDeck(Deck deck)
         {
-            var deckAux = new Deck(deck.Deck1)
+            var deckAux = new Deck(deck.Cardlist)
             {
                 IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
-                Deck1 = deck.Deck1,
+                Cardlist = deck.Cardlist,
 
             };
 
@@ -67,7 +78,7 @@ namespace Stardeck.Logic
             {
                 deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
                 deck.IdAccount = nDeck.IdAccount;
-                deck.Deck1 = nDeck.Deck1;
+                deck.Cardlist = nDeck.Cardlist;
 
                 context.SaveChanges();
                 return deck;
@@ -86,6 +97,16 @@ namespace Stardeck.Logic
                 return deck;
             }
             return null;
+        }
+
+        public List<Deck>? GetDecksByUser(string Userid)
+        {
+            List<Deck> decks = context.Decks.Where(x=>x.IdAccount==Userid).ToList();
+            if (decks.Count == 0)
+            {
+                return null;
+            }
+            return decks;
         }
     }
 }

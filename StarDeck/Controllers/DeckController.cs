@@ -30,6 +30,19 @@ namespace Stardeck.Controllers
             return Ok(deckLogic.GetAll());
         }
 
+
+        // GET api/<DeckController>/Names
+        [HttpGet("Names/{userId}")]
+        public async Task<IActionResult> GetNames(string userId)
+        {
+            if (deckLogic.GetNames(userId) == null)
+            {
+                return NotFound();
+            }
+            return Ok(deckLogic.GetNames(userId));
+        }
+
+
         // GET api/<DeckController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
@@ -39,6 +52,17 @@ namespace Stardeck.Controllers
                 return NotFound();
             }
             return Ok(deckLogic.GetDeck(id));
+        }
+
+        // GET api/<DeckController>/5
+        [HttpGet("User/{id}")]
+        public async Task<IActionResult> GetAllDecksByUser(string UserId)
+        {
+            if (deckLogic.GetDecksByUser(UserId) == null)
+            {
+                return NotFound();
+            }
+            return Ok(deckLogic.GetDecksByUser(UserId));
         }
 
         // POST api/<DeckController>
