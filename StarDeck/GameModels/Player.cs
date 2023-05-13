@@ -24,7 +24,7 @@ namespace Stardeck.GameModels
             Account = dataPlayer;
         }
         [JsonIgnore]
-
+        [Newtonsoft.Json.JsonIgnore]
         private Account? Account { get; set; }
         public string Id { get; set; }
 
@@ -57,18 +57,17 @@ namespace Stardeck.GameModels
         /// <returns>Isplaying from the player</returns>
         public bool Init()
         {
-            //Get deck
             var deck = GetFavoriteDeck();
-            //create hand
             var hand = CreateInitialHand(deck);
             //remove hand cards from deck
             deck.RemoveAll(card => hand.Contains(card));
-            //set deck
+            //set deck and hand
             Deck = deck;
-            //set hand
             Hand = hand;
             //put player in game
             Account.isplaying = true;
+            Account.isInMatchMacking = false;
+            
             return (bool)Account.isplaying;
         }
 

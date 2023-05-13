@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Stardeck.Models;
 
 namespace Stardeck.GameModels
@@ -16,8 +18,11 @@ namespace Stardeck.GameModels
         public long? Bet { get; set; }
 
         public int? Turn { get; set; }
-
+        
         public Territory[] Territories { get; set; } = new Territory[2];
+        
+        [JsonIgnore]
+        private Territory? _territory3;
 
         public Gamelog? Gamelog { get; set; }
         
@@ -32,7 +37,12 @@ namespace Stardeck.GameModels
             Gamelog = data.Gamelog;
             Room= data;
         }
-
+        /// <summary>
+        /// Initialize the game. THis method don create the instance only initialize the players and territories.
+        /// constructor is required to be called before this method
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public GameRoom Init()
         {
             var ready1 = Player1.Init();
@@ -44,6 +54,19 @@ namespace Stardeck.GameModels
             return this;
 
 
+        }
+        
+        
+
+        /// <summary>
+        /// Get the data of the player that is not included in the game data getter
+        /// </summary>
+        /// <param name="playerId"></param>
+        /// <returns>Json string</returns>
+
+        public string GetPlayerData(string playerId)
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(playerId == Player1.Id ? Player1 : Player2);
         }
 
         /// <summary>
@@ -79,25 +102,26 @@ namespace Stardeck.GameModels
         ///  Assign the territories to the game
         /// </summary>
         /// <returns></returns>
-        public bool AssignTerritories()
+        private bool AssignTerritories()
         {
-            for (var i = 0; i < Territories.Length; i++)
+            Territories[0] = GetRandomPlanet();
+            Territories[1] = GetRandomPlanet();
+            Territories[2].Id = "0";
+            _territory3 = GetRandomPlanet();
+            
+            if (Territories.Any(t => t.Id is null))
             {
-                Territories[i] = GetRandomPlanet();
-                if (Territories[i].Id is null)
-                {
-                    return false;
-                }
+                return false;
             }
 
-            return true;
+            return _territory3.Id is not null;
         }
 
         /// <summary>
         ///  Get a random planet using the planet list of the game and their probability
         /// </summary>
         /// <returns></returns>
-        public static Territory GetRandomPlanet()
+        private static Territory GetRandomPlanet()
         {
             var random = new Random();
             var probability = random.Next(0, 100);
@@ -105,11 +129,10 @@ namespace Stardeck.GameModels
             var planets = logic.GetAll().GroupBy(x => x.Type).OrderByDescending(x => x.Key);
             var planetsList = probability switch
             {
-                < 10 => planets.First(x => x.Key == 1).ToList(),
-                < 30 => planets.First(x => x.Key == 2).ToList(),
-                < 60 => planets.First(x => x.Key == 3).ToList(),
-                < 90 => planets.First(x => x.Key == 4).ToList(),
-                _ => planets.First(x => x.Key == 5).ToList()
+                < 15 => planets.First(x => x.Key == 0).ToList(),
+                < 50 => planets.First(x => x.Key == 1).ToList(),
+                < 101 => planets.First(x => x.Key == 2).ToList(),
+                _ => planets.First(x => x.Key == 2).ToList()
             };
 
             //select random planet from list
@@ -118,17 +141,7 @@ namespace Stardeck.GameModels
             return new Territory(planet);
         }
 
-        public List<string?> GetTerritories()
-        {
-            var list = Territories.Select(x=>x.Id).ToList();
-            if (Turn<3)
-            {
-                list[2] = "0";
-            }
-            return list;
-        }
-
-        public void SaveToDb()
+        private void SaveToDb()
         {
             var context = new StardeckContext();
             var room = context.Gamerooms.Find(Roomid) ?? context.Gamerooms.Add(Room).Entity;
@@ -137,6 +150,7 @@ namespace Stardeck.GameModels
             room.Bet = Bet;
             context.SaveChanges();
         }
+
     }
 }
 
