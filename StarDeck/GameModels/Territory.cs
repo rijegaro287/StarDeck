@@ -3,9 +3,9 @@
 
     public class Territory
     {
-        public string Id { get; set; } = null!;
+        public string? Id { get; set; }
 
-        public string Name { get; set; } = null!;
+        public string Name { get; set; }
 
         public long Type { get; set; }
 
@@ -13,6 +13,17 @@
 
         public TerritoryAbility? Ability { get; set; }
 
-        //public Cards
+        public List<GameCard> player1Cards { get; set; } = new();
+
+        public List<GameCard> player2Cards { get; set; } = new();   
+
+        public Territory(Models.Planet data)
+        {
+            Id = data.Id;
+            Name = data.Name;
+            Type = data.Type;
+            Active = data.Active;
+            Ability = new TerritoryAbility(data.Ability);
+        }
     }
 }

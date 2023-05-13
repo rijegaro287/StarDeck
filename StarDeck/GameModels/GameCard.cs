@@ -19,5 +19,18 @@
         public bool? Showed { get; set; }
 
         public int? Turnplayed { get; set; }
+
+        public GameCard(Models.Card data)
+        {
+            //create object from card data
+            Id = data.Id;
+            Name = data.Name;
+            Energy = data.Energy;
+            Battlecost = data.Battlecost;
+            Type = data.Type;
+            Ability = new CardAbility(data.Ability);
+            Race = data.Race;
+        }
+
     }
 }

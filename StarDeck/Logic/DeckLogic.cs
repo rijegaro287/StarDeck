@@ -108,5 +108,12 @@ namespace Stardeck.Logic
             }
             return decks;
         }
+        
+        public static List<T> Shuffle<T>(IEnumerable<T> list)
+        {
+            var random = new Random();
+            var newList = list.OrderBy(item => random.Next()).ToList();
+            return newList;
+        }
     }
 }
