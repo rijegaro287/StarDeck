@@ -51,11 +51,11 @@ namespace Stardeck.Logic
 
         public Deck NewDeck(Deck deck)
         {
-            var deckAux = new Deck(deck.Deck1)
+            var deckAux = new Deck(deck.Cardlist)
             {
                 IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
-                Deck1 = deck.Deck1,
+                Cardlist = deck.Cardlist,
 
             };
 
@@ -78,7 +78,7 @@ namespace Stardeck.Logic
             {
                 deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
                 deck.IdAccount = nDeck.IdAccount;
-                deck.Deck1 = nDeck.Deck1;
+                deck.Cardlist = nDeck.Cardlist;
 
                 context.SaveChanges();
                 return deck;

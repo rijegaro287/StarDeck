@@ -13,9 +13,9 @@ namespace Stardeck.Logic
             this.context = context;
         }
 
-        public List<Constant> GetAll()
+        public List<Parameter> GetAll()
         {
-            List<Constant> constant= context.Constants.ToList();
+            List<Parameter> constant= context.Parameters.ToList();
             if (constant.Count == 0)
             {
                 return null;
@@ -24,9 +24,9 @@ namespace Stardeck.Logic
         }
 
 
-        public Constant GetConstant(string id)
+        public Parameter GetConstant(string id)
         {
-            var constant = context.Constants.Find(id);
+            var constant = context.Parameters.Find(id);
 
             if (constant == null)
             {
@@ -35,14 +35,14 @@ namespace Stardeck.Logic
             return constant;
         }
 
-        public Constant NewConstant(string id, string value)
+        public Parameter NewConstant(string id, string value)
         {
-            var constAux = new Constant()
+            var constAux = new Parameter()
             {
                 Key = id,
                 Value = value
             };
-            context.Constants.Add(constAux);
+            context.Parameters.Add(constAux);
 
             context.SaveChanges();
             return constAux;

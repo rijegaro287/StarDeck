@@ -11,30 +11,30 @@ public partial class Deck
 {
 
     static Parameter maxcardcount = new StardeckContext().Parameters.First(e => e.Key == "deckSize");
-    public Deck(string[]? Deck1)
+    public Deck(string[]? Cardlist)
     {
-        if (Deck1 != null)
+        if (Cardlist != null)
         {
-            this.Decklist = Deck1;
-            DecklistObject = new(Deck1);
+            this.Cardlist = Cardlist;
+            Decklist = new(Cardlist);
         }
         else
         {
-            this.DecklistObject ??= new();
+            this.Decklist ??= new();
         }
-        this.DecklistObject.CollectionChanged += new(updateJson);
+        this.Decklist.CollectionChanged += new(updateJson);
     }
 
     [NotMapped]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public ObservableCollection<string>? DecklistObject;
+    public ObservableCollection<string>? Decklist;
 
     public string? addCard(string card)
     {
-        if (Decklist.Count() <= maxcardcount.getAsInt())
+        if (Cardlist.Count() <= maxcardcount.getAsInt())
         {
-            DecklistObject.Add(card);
+            Decklist.Add(card);
             return card;
         }
         else
@@ -45,7 +45,7 @@ public partial class Deck
 
     private void updateJson(object sender, NotifyCollectionChangedEventArgs e)
     {
-        this.Decklist = this.DecklistObject.ToArray();
+        this.Cardlist = this.Decklist.ToArray();
     }
 
 }
