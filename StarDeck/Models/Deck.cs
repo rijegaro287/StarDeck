@@ -7,7 +7,7 @@ public partial class Deck
 {
     public string IdAccount { get; set; } = null!;
 
-    public string[] Decklist { get; set; } = null!;
+    public string[] Cardlist { get; set; } = null!;
 
     public string IdDeck { get; set; } = null!;
 

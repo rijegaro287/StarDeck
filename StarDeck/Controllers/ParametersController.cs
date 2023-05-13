@@ -48,7 +48,7 @@ namespace Stardeck.Controllers
         // POST api/<ConstantsController>
         [HttpPost]
         [Route("add")]
-        public async Task<IActionResult> Post([FromBody] Constant constant)
+        public async Task<IActionResult> Post([FromBody] Parameter constant)
         {
             Parameter constAux = parametersLogic.NewParameter(constant.Key, constant.Value);
             if (constAux == null)

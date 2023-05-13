@@ -51,11 +51,11 @@ namespace Stardeck.Logic
 
         public Deck NewDeck(Deck deck)
         {
-            var deckAux = new Deck(deck.Decklist)
+            var deckAux = new Deck(deck.Cardlist)
             {
                 IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
-                Decklist = deck.Decklist,
+                Cardlist = deck.Cardlist,
 
             };
 
@@ -78,7 +78,7 @@ namespace Stardeck.Logic
             {
                 deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
                 deck.IdAccount = nDeck.IdAccount;
-                deck.Decklist = nDeck.Decklist;
+                deck.Cardlist = nDeck.Cardlist;
 
                 context.SaveChanges();
                 return deck;
@@ -107,6 +107,13 @@ namespace Stardeck.Logic
                 return null;
             }
             return decks;
+        }
+        
+        public static List<T> Shuffle<T>(IEnumerable<T> list)
+        {
+            var random = new Random();
+            var newList = list.OrderBy(item => random.Next()).ToList();
+            return newList;
         }
     }
 }

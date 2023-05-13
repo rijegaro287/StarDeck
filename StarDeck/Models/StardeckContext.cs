@@ -180,9 +180,9 @@ public partial class StardeckContext : DbContext
                 .HasMaxLength(14)
                 .IsFixedLength()
                 .HasColumnName("deckName");
-            entity.Property(e => e.Decklist)
+            entity.Property(e => e.Cardlist)
                 .HasColumnType("character(14)[]")
-                .HasColumnName("decklist");
+                .HasColumnName("cardlist");
             entity.Property(e => e.IdAccount)
                 .HasMaxLength(14)
                 .IsFixedLength()
