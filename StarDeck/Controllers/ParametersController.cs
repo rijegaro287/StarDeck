@@ -7,15 +7,15 @@ namespace Stardeck.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ConstantsController : ControllerBase
+    public class ParametersController : ControllerBase
     {
         private readonly StardeckContext context;
-        private ConstantsLogic constantsLogic;
+        private ParametersLogic parametersLogic;
 
-        public ConstantsController(StardeckContext context)
+        public ParametersController(StardeckContext context)
         {
             this.context = context;
-            this.constantsLogic = new ConstantsLogic(context);
+            this.parametersLogic = new ParametersLogic(context);
         }
 
 
@@ -24,11 +24,11 @@ namespace Stardeck.Controllers
         [Route("get_all")]
         public async Task<IActionResult> Get()
         {
-            if (constantsLogic.GetAll() == null)
+            if (parametersLogic.GetAll() == null)
             {
                 return NotFound();
             }
-            return Ok(constantsLogic.GetAll());
+            return Ok(parametersLogic.GetAll());
 
         }
 
@@ -37,11 +37,11 @@ namespace Stardeck.Controllers
         [Route("get/{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            if (constantsLogic.GetConstant(id) == null)
+            if (parametersLogic.GetParameter(id) == null)
             {
                 return NotFound();
             }
-            return Ok(constantsLogic.GetConstant(id));
+            return Ok(parametersLogic.GetParameter(id));
 
         }
 
@@ -50,7 +50,7 @@ namespace Stardeck.Controllers
         [Route("add")]
         public async Task<IActionResult> Post([FromBody] Parameter constant)
         {
-            Parameter constAux = constantsLogic.NewConstant(constant.Key, constant.Value);
+            Parameter constAux = parametersLogic.NewParameter(constant.Key, constant.Value);
             if (constAux == null)
             {
                 return BadRequest();
