@@ -77,7 +77,7 @@ namespace Stardeck.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            var card = cardLogic.deleteCard(id);
+            var card = cardLogic.DeleteCard(id);
             if (card != null)
             {
                 return Ok(card);
