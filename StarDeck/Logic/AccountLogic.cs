@@ -284,7 +284,17 @@ namespace Stardeck.Logic
 
             return true;
         }
+
+        public bool? SetActive(string accountId,bool active)
+        {
+            Account account = GetAccount(accountId);
+            if(account == null) { return null; }
+            account.Active = active;
+            context.SaveChanges();
+            return account.Active;
+        }
+
     }
-    }
+}
 
 
