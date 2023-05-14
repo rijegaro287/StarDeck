@@ -71,10 +71,8 @@ namespace Stardeck.Logic
 
 
             };
-            while (!Regex.IsMatch(accAux.Id, @"^U-[a-zA-Z0-9]{12}"))
-            {
-                accAux.Id = string.Concat("U-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-            }
+
+            accAux.generateID();
 
             context.Accounts.Add(accAux);
             context.SaveChanges();

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stardeck.Models;
 [MetadataType(typeof(AccountMetadata))]
-public partial class Account
+public partial class Account:IAlphanumericID
 {
     public Account(string? config)
     {
@@ -93,6 +93,10 @@ public partial class Account
 
     }
 
+    public void generateID()
+    {
+        ((IAlphanumericID)this).generateIdWithPrefix("U");
+    }
 }
 
 

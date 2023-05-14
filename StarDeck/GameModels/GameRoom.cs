@@ -26,17 +26,26 @@ namespace Stardeck.GameModels
 
         public Gamelog? Gamelog { get; set; }
         
-        public Models.Gameroom Room{ get; set; }
-
+        [JsonIgnore]
+        private Models.Gameroom Room{ get; set; }
+        
+        
+        /// <summary>
+        ///  Create a Runtime GameRoom from a database GameRoom and intialize it Gamelog if needed
+        /// </summary>
+        /// <param name="data"></param>
         public GameRoom(Models.Gameroom data)
         {
             //create object from room data
             Roomid = data.Roomid;
             Player1 = new Player(data.Player1Navigation);
             Player2 = new Player(data.Player2Navigation);
+            data.Gamelog ??= new Gamelog() {Gameid=data.Roomid,Game=data};
             Gamelog = data.Gamelog;
             Room= data;
         }
+        
+        
         /// <summary>
         /// Initialize the game. THis method don create the instance only initialize the players and territories.
         /// constructor is required to be called before this method
