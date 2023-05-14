@@ -29,11 +29,11 @@ export class AccountService {
     return this.request.post(`${this.url}/addCards/${IdUser}`, IdCard);
   }
   // Para añadir una parametro a la cuenta
-  addParameter = (IdUser: string, Name: string, Value:string): Promise<any> => {
+  addParameter = (IdUser: string, Name: string, Value: string): Promise<any> => {
     return this.request.post(`${this.url}/${IdUser}/Parameters/${Name}`, Value);
   }
   //Para obtener la coleccion inicial dada
-  cards = (Id: string): Promise<any> => {
+  getAccountCards = (Id: string): Promise<any> => {
     return this.request.get(`${this.url}/${Id}/cards`);
   }
   //Para obtener todas las cartas del juego

@@ -1,0 +1,48 @@
+<div class="main-content">
+  <div class="deck-list">
+    <h1>Lista de escuadrones</h1>
+
+    <button class="add-button" mat-raised-button color="primary" [disabled]="creatingDeck" (click)="onCreateClicked()">
+      <mat-icon>add</mat-icon>
+      <span>Crear escuadrón</span>
+    </button>
+    <mat-tab-group class="deck-list" [(selectedIndex)]="selectedTab">
+      <ng-container *ngFor="let deck of decks">
+        <mat-tab [label]="deck.name" [disabled]="creatingDeck">
+          <div class="card-list-grid">
+            <ng-container *ngFor="let card of deck.cards">
+              <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
+                [cardBorderColor]="this.helpers.getCardBorderColor(card.type)"></app-card>
+            </ng-container>
+          </div>
+        </mat-tab>
+
+      </ng-container>
+    </mat-tab-group>
+
+    <div class="new-deck-info" style="display: {{creatingDeck ? 'flex' : 'none'}};">
+      <h3 style="display: {{creatingDeck ? 'block' : 'none'}};">
+        Cartas seleccionadas: {{this.newDeck.cards.length}}
+      </h3>
+
+      <div class="new-deck-buttons">
+        <mat-form-field appearance="outline">
+          <input matInput [formControl]="newDeckName">
+          <mat-label>Nombre del escuadrón</mat-label>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="onDeckCreateClicked()"
+          [disabled]="!validateNewDeck()">Crear</button>
+        <button mat-raised-button color="warn" (click)="onDeckCancelClicked()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-list">
+    <h1>Colección de cartas</h1>
+    <h2 style="display: {{creatingDeck ? 'block' : 'none'}};">Seleccione {{this.deckSize}} cartas para su nuevo mazo
+    </h2>
+
+    <app-card-list [cards]="cardCollection" [onCardClicked]="onCardClicked"></app-card-list>
+  </div>
+</div>

@@ -23,23 +23,24 @@ import { AppComponent } from './app.component';
 import { ImageUploaderComponent } from './Components/Generic/image-uploader/image-uploader.component';
 import { LoginComponent } from './Components/Generic/login/login.component';
 import { NavbarComponent } from './Components/Generic/navbar/navbar.component';
+import { CardListComponent } from './Components/Generic/card-list/card-list.component';
 
 import { AdminMainComponent } from './Components/Admin/admin-main/admin-main.component';
-import { CardListComponent } from './Components/Admin/card-list/card-list.component';
+import { AllCardsListComponent } from './Components/Admin/all-cards-list/all-cards-list.component';
 import { CardFormDialogComponent } from './Components/Dialogs/card-form-dialog/card-form-dialog.component';
 import { CardFormComponent } from './Components/Forms/card-form/card-form.component';
 import { CardComponent } from './Components/Generic/card/card.component';
 
-// import { HomeComponent } from './Components/home/home.component';
-
 import { RegisterAccountComponent } from './Components/Register/register-account/register-account.component';
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
+
 import { UserMainComponent } from './Components/User/user-main/user-main.component';
 import { CreatePlanetComponent } from './Components/Admin/planet/create/create-planet.component';
 import { PlanetComponent } from './Components/Generic/planet/planet.component';
 import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.component';
 import { SelectDeckComponent } from './Components/User/select-deck/select-deck.component';
 import { SearchOpponentComponent } from './Components/User/search-oponent/search-opponent.component';
+import { DeckListComponent } from './Components/User/deck-list/deck-list.component';
 
 
 @NgModule({
@@ -47,9 +48,10 @@ import { SearchOpponentComponent } from './Components/User/search-oponent/search
     AppComponent,
     LoginComponent,
     AdminMainComponent,
-    CardListComponent,
+    AllCardsListComponent,
     ImageUploaderComponent,
     NavbarComponent,
+    CardListComponent,
     CardFormComponent,
     CardFormDialogComponent,
     CardComponent,
@@ -62,6 +64,8 @@ import { SearchOpponentComponent } from './Components/User/search-oponent/search
     PlanetListComponent,
     SelectDeckComponent,
     SearchOpponentComponent
+    UserMainComponent,
+    DeckListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -72,19 +76,28 @@ import { SearchOpponentComponent } from './Components/User/search-oponent/search
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent /* , canActivate: [LoginGuard] */ },
       {
+        path: "Register", children: [
+          { path: 'account', data: { title: "Registro de Cuenta" }, component: RegisterAccountComponent },
+          { path: 'selection-card', data: { title: "Seleccion de Cartas" }, component: SelectionCardComponent }
+        ]
+      },
+      {
         path: 'admin',
         component: AdminMainComponent,
         // canActivate: [AdministratorGuard],
         children: [
           { path: '', redirectTo: 'cards', pathMatch: 'full' },
+          { path: 'cards', component: AllCardsListComponent },
           { path: 'cards', component: CardListComponent },
           { path: 'planets', component: PlanetListComponent },
         ]
       },
       {
-        path: "Register", children: [
-          { path: 'account', data: { title: "Registro de Cuenta" }, component: RegisterAccountComponent },
-          { path: 'selection-card', data: { title: "Seleccion de Cartas" }, component: SelectionCardComponent }
+        path: "user", component: UserMainComponent,
+        // canActivate: [UserGuard],
+        children: [
+          { path: '', redirectTo: 'decks', pathMatch: 'full' },
+          { path: 'decks', component: DeckListComponent }
         ]
       },
       {
