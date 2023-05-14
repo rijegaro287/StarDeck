@@ -38,6 +38,8 @@ import { UserMainComponent } from './Components/User/user-main/user-main.compone
 import { CreatePlanetComponent } from './Components/Admin/planet/create/create-planet.component';
 import { PlanetComponent } from './Components/Generic/planet/planet.component';
 import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.component';
+import { SelectDeckComponent } from './Components/User/select-deck/select-deck.component';
+import { SearchOpponentComponent } from './Components/User/search-oponent/search-opponent.component';
 
 
 @NgModule({
@@ -57,7 +59,9 @@ import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.
     UserMainComponent,
     CreatePlanetComponent,
     PlanetComponent,
-    PlanetListComponent
+    PlanetListComponent,
+    SelectDeckComponent,
+    SearchOpponentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -83,7 +87,13 @@ import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.
           { path: 'selection-card', data: { title: "Seleccion de Cartas" }, component: SelectionCardComponent }
         ]
       },
-      { path: "User", component: UserMainComponent}
+      {
+        path: "User", component: UserMainComponent,
+        children: [
+          { path: 'battle/select-deck', component: SelectDeckComponent },
+          { path: 'battle/search-opponent', component: SearchOpponentComponent }
+          ]
+      }
 
       // {
       //   path: 'player',
