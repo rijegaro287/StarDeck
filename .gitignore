@@ -11,3 +11,5 @@
 /ClientApp/.angular
 /ClientApp/node_modules
 /bin
+/.idea/.idea.folder.dir/.idea
+/StarDeck/.idea/.idea.Stardeck/.idea

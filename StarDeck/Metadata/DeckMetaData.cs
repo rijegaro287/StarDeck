@@ -7,10 +7,11 @@ namespace Stardeck.Models;
 [MetadataType(typeof(DeckMetaData))]
 
 
-public partial class Deck
+public partial class Deck: IAlphanumericID
 {
 
     static Parameter maxcardcount = new StardeckContext().Parameters.First(e => e.Key == "deckSize");
+    
     public Deck(string[]? Cardlist)
     {
         if (Cardlist != null)
@@ -32,7 +33,7 @@ public partial class Deck
 
     public string? addCard(string card)
     {
-        if (Cardlist.Count() <= maxcardcount.getAsInt())
+        if (Cardlist.Length < maxcardcount.getAsInt())
         {
             Decklist.Add(card);
             return card;
@@ -47,6 +48,18 @@ public partial class Deck
     {
         this.Cardlist = this.Decklist.ToArray();
     }
+    [NotMapped]
+    public string Id
+    {
+        get => IdDeck;
+        set => IdDeck = value;
+    }
+    
+    public void generateID()
+    {
+        ((IAlphanumericID)this).generateIdWithPrefix("D");
+    }
+
 
 }
 

@@ -71,10 +71,8 @@ namespace Stardeck.Logic
 
 
             };
-            while (!Regex.IsMatch(accAux.Id, @"^U-[a-zA-Z0-9]{12}"))
-            {
-                accAux.Id = string.Concat("U-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-            }
+
+            accAux.generateID();
 
             context.Accounts.Add(accAux);
             context.SaveChanges();
@@ -262,7 +260,7 @@ namespace Stardeck.Logic
             Deck? deck = context.Decks.Find(idDeck);
             if (deck == null) { return false; }
 
-            if (deck.IdDeck==user.Id)
+            if (deck.IdAccount==user.Id)
             {
                 FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
                 if (actual==null)
@@ -284,7 +282,10 @@ namespace Stardeck.Logic
 
             return true;
         }
+
+        
+
     }
-    }
+}
 
 

@@ -15,12 +15,12 @@ namespace Stardeck.Logic
 
         public List<Parameter> GetAll()
         {
-            List<Parameter> parameter= context.Parameters.ToList();
-            if (parameter.Count == 0)
+            List<Parameter> parameters= context.Parameters.ToList();
+            if (parameters.Count == 0)
             {
                 return null;
             }
-            return parameter;
+            return parameters;
         }
 
 
