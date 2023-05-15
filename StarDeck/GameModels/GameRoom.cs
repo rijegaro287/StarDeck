@@ -114,7 +114,10 @@ namespace Stardeck.GameModels
         {
             Territories[0] = GetRandomPlanet();
             Territories[1] = GetRandomPlanet();
-            Territories[2].Id = "0";
+            Territories[2] = new Territory
+            {
+                Id = "0"
+            };
             _territory3 = GetRandomPlanet();
             
             if (Territories.Any(t => t.Id is null))
@@ -152,6 +155,9 @@ namespace Stardeck.GameModels
         private void SaveToDb()
         {
             var context = new StardeckContext();
+            
+            Room.Player1Navigation = null;
+            Room.Player2Navigation = null;
             var room = context.Gamerooms.Find(Roomid) ?? context.Gamerooms.Add(Room).Entity;
             room.Gamelog = Gamelog;
             room.Winner = Winner;

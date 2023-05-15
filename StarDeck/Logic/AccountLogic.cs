@@ -260,7 +260,7 @@ namespace Stardeck.Logic
             Deck? deck = context.Decks.Find(idDeck);
             if (deck == null) { return false; }
 
-            if (deck.IdDeck==user.Id)
+            if (deck.IdAccount==user.Id)
             {
                 FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
                 if (actual==null)
