@@ -47,14 +47,14 @@ namespace Stardeck.Logic
                 
                 var battle = new Gameroom();
                 var rnd = new Random();
-                var randIndex = rnd.Next(players.Count);
-                var opponent = players[randIndex];
+                var randIndex = rnd.Next(inRangePlayers.Count);
+                var opponent = inRangePlayers[randIndex];
 
                 battle.Player2 = opponent.Id;
                 battle.Player2Navigation = opponent;
                 battle.Player1 = player1.Id;
                 battle.Player1Navigation = player1;
-
+                battle.generateID();
                 var room = new GameRoom(battle);
                 room.Init();
                 ActiveRooms.Add(room);

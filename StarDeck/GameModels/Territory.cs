@@ -25,5 +25,14 @@
             Active = data.Active;
             Ability = new TerritoryAbility(data.Ability);
         }
+
+        public Territory()
+        {
+            Name="Oculto";
+            Type = 0;
+            Active = false;
+            Ability = new TerritoryAbility(null);
+            Id = "0";
+        }
     }
 }

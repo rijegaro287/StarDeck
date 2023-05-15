@@ -1,8 +1,10 @@
-﻿namespace Stardeck.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Stardeck.Models;
 
 public partial class Gameroom:IAlphanumericID
 {
-    public string Roomid { get; set; } = null!;
+    public string Roomid { get; set; } = "";
 
     public string Player1 { get; set; } = null!;
 
@@ -19,6 +21,7 @@ public partial class Gameroom:IAlphanumericID
     public virtual Account? Player2Navigation { get; set; }
 
     public virtual Account? WinnerNavigation { get; set; }
+    [NotMapped]
     public string Id { get => Roomid; set => Roomid=value; }
 
     public void generateID()
