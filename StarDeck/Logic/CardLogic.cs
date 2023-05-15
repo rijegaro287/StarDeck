@@ -99,23 +99,21 @@ namespace Stardeck.Logic
       return null;
     }
 
-        public Card DeleteCard(string id)
-        {
-            var card = context.Cards.Find(id);
-            if (card != null)
-            {
-                //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
-                context.Remove(card);
-                context.SaveChanges();
-                return card;
-            }
-            return null;
-        }
+    public Card DeleteCard(string id)
+    {
+      var card = context.Cards.Find(id);
+      if (card != null)
+      {
+        //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
+        context.Remove(card);
+        context.SaveChanges();
+        return card;
+      }
+      return null;
+    }
 
 
   }
 
-        }
-
-    }
+}
 

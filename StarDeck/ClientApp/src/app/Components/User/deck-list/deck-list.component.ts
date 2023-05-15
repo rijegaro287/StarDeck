@@ -3,6 +3,7 @@ import { FormBuilder, FormControl } from '@angular/forms';
 
 import { AccountService } from 'src/app/Services/account.service';
 import { CardService } from 'src/app/Services/card.service';
+import { ParametersService } from 'src/app/Services/parameters.service';
 import { HelpersService } from 'src/app/Services/helpers.service';
 
 import { ICard } from 'src/app/Interfaces/Card';
@@ -33,6 +34,7 @@ export class DeckListComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private cardService: CardService,
+    private parameterService: ParametersService,
     protected helpers: HelpersService,
     private _formBuilder: FormBuilder
   ) {
@@ -245,7 +247,8 @@ export class DeckListComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.deckSize = 18;
+    await this.parameterService.getParameter('deckSize')
+      .then((parameter) => this.deckSize = Number(parameter.value));
 
     await this.accountService.getAccountCards(this.userID)
       .then((cardIDs) => this.cardCollectionIDs = cardIDs);
