@@ -19,11 +19,10 @@ namespace Stardeck.GameModels
 
         public int? Turn { get; set; }
         
-        public Territory[] Territories { get; set; } = new Territory[2];
+        public Territory[] Territories { get; set; } = new Territory[3];
         
         [JsonIgnore]
         private Territory? _territory3;
-
         public Gamelog? Gamelog { get; set; }
         
         [JsonIgnore]

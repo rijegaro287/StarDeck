@@ -48,7 +48,7 @@ public partial class Deck: IAlphanumericID
     {
         this.Cardlist = this.Decklist.ToArray();
     }
-
+    [NotMapped]
     public string Id
     {
         get => IdDeck;

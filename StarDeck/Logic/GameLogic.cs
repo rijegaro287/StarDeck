@@ -1,52 +1,80 @@
 ﻿using Stardeck.Models;
 using System.Collections.Generic;
+using System.Timers;
+using Microsoft.EntityFrameworkCore;
+using Stardeck.GameModels;
 
 namespace Stardeck.Logic
 {
     public class GameLogic
     {
-        
-        private readonly StardeckContext context;
+        private static StardeckContext _context;
+        private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
 
         public GameLogic(StardeckContext context)
         {
-            this.context = context;
+            _context = context;
         }
+        
 
 
-        public List<Account> IsWaitng(string playerId)
+        public static async Task<GameRoom?> IsWaiting(string playerId)
         {
-            Account player1 = context.Accounts.Find(playerId);
-            Account opponet;
-            List<Account> players=context.Accounts.ToList().Where(x => x.isInMatchMacking == true).ToList();
-            
-            if (players.Count>1 )
+
+            var player1 = _context.Accounts.Find(playerId);
+            if (player1 is null)
             {
-                List<Account> battle = new List<Account>();
-                Random rnd = new Random();
-                int randIndex = rnd.Next(players.Count);
-                opponet = players[randIndex];
-                if( opponet == player1 )
-                {
-                    opponet = players[rnd.Next(players.Count)];
-                }
-                battle.Add(opponet);
-                battle.Add(player1 );
-                return battle;
+                throw new Exception("Player not founded");
             }
+
+            var counter = 0;
+            player1.isInMatchMacking = true;
+            while (player1.isInMatchMacking==true && counter < 15)
+            {
+                counter += 1;
+                var players = _context.Accounts.Include(x => x.FavoriteDeck).ToList()
+                    .Where(x => x.isInMatchMacking == true).ToList();
+                var inRangePlayers =
+                    players.Where(x => x.Id != playerId
+                                       && Math.Abs(x.Points - player1.Points) < 101).ToList();
+
+                if (inRangePlayers.Count == 0)
+                {
+                   await Task.Delay(1500);
+                   continue;
+                }
+
+                
+                var battle = new Gameroom();
+                var rnd = new Random();
+                var randIndex = rnd.Next(players.Count);
+                var opponent = players[randIndex];
+
+                battle.Player2 = opponent.Id;
+                battle.Player2Navigation = opponent;
+                battle.Player1 = player1.Id;
+                battle.Player1Navigation = player1;
+
+                var room = new GameRoom(battle);
+                room.Init();
+                ActiveRooms.Add(room);
+                return room;
+            }
+
             return null;
-            
+
         }
 
-        public List<Account> SetActive(string accountId, bool isInMatchMacking)
+        public bool? PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account account = context.Accounts.Find(accountId);
-            if (account == null) { return null; }
-            account.isInMatchMacking = isInMatchMacking;
-            context.SaveChanges();
-            List<Account> players = context.Accounts.ToList().Where(x => x.isInMatchMacking == true).ToList();
-            return players;
-        }
+            Account? account = _context.Accounts.Find(accountId);
+            if (account is null)
+            {
+                return null;
+            }
 
+            account.isInMatchMacking = isInMatchMacking;
+            return isInMatchMacking;
+        }
     }
 }
