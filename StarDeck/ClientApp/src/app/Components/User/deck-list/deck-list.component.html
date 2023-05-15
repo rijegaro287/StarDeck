@@ -2,13 +2,20 @@
   <div class="deck-list">
     <h1>Lista de escuadrones</h1>
 
-    <button class="add-button" mat-raised-button color="primary" [disabled]="creatingDeck" (click)="onCreateClicked()">
+    <button class="add-button" mat-raised-button color="primary" [disabled]="creatingDeck || loadingDecks"
+      (click)="onCreateClicked()">
       <mat-icon>add</mat-icon>
       <span>Crear escuadrón</span>
     </button>
     <mat-tab-group class="deck-list" [(selectedIndex)]="selectedTab">
       <ng-container *ngFor="let deck of decks">
-        <mat-tab [label]="deck.name" [disabled]="creatingDeck">
+        <mat-tab [disabled]="creatingDeck">
+          <ng-template mat-tab-label>
+            <div class="deck-list-label">
+              <span>{{deck.deckName.toLocaleUpperCase()}}</span>
+              <span>{{deck.id.toUpperCase()}}</span>
+            </div>
+          </ng-template>
           <div class="card-list-grid">
             <ng-container *ngFor="let card of deck.cards">
               <app-card (click)="onCardClicked(card)" [card]="card" [base64CardImage]="card.image"
@@ -22,7 +29,7 @@
 
     <div class="new-deck-info" style="display: {{creatingDeck ? 'flex' : 'none'}};">
       <h3 style="display: {{creatingDeck ? 'block' : 'none'}};">
-        Cartas seleccionadas: {{this.newDeck.cards.length}}
+        Cartas seleccionadas: {{this.newDeck.cards!.length}}
       </h3>
 
       <div class="new-deck-buttons">

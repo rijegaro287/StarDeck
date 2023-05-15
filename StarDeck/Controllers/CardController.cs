@@ -56,8 +56,6 @@ namespace Stardeck.Controllers
         return BadRequest();
       }
       return Ok(cardAux);
-
-
     }
 
     // PUT api/<CardController>/5

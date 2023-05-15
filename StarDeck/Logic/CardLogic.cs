@@ -57,10 +57,9 @@ namespace Stardeck.Logic
         cardAux.Id = string.Concat("C-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
       }
       context.Cards.Add(cardAux);
+      context.Cards.Add(cardAux);
 
-            
-            context.Cards.Add(cardAux);
-
+      return null;
     }
 
     public Card UpdateCard(string id, Card nCard)

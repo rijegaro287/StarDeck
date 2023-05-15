@@ -24,6 +24,14 @@
   }
 }
 
+.deck-list-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .card-list-grid {
   @include card-list-grid;
 }
