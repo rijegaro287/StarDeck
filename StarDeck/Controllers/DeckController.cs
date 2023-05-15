@@ -55,7 +55,7 @@ namespace Stardeck.Controllers
         }
 
         // GET api/<DeckController>/5
-        [HttpGet("User/{id}")]
+        [HttpGet("User/{UserId}")]
         public async Task<IActionResult> GetAllDecksByUser(string UserId)
         {
             if (deckLogic.GetDecksByUser(UserId) == null)
@@ -70,7 +70,7 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Post([FromBody] Deck deck)
         {
             Deck deckAux = deckLogic.NewDeck(deck);
-            if (deckAux == null)
+            if (deckAux is null)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace Stardeck.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, Deck nDeck)
         {
-            Deck deckAux = deckLogic.UpdateDeck(id, nDeck);
+            Deck? deckAux = deckLogic.UpdateDeck(id, nDeck);
             if (deckAux == null)
             {
                 return BadRequest();

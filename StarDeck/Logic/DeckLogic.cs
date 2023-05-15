@@ -24,29 +24,25 @@ namespace Stardeck.Logic
             return decks;
         }
 
-        public IQueryable? GetNames(string userId)
+        public List<KvPairDeckName>? GetNames(string userId)
         {
-            var decks = GetDecksByUser(userId).Select(x => new{Id=x.IdDeck,Name=x.DeckName}).ToList();
-            if (decks.Count == 0)
-            {
-                return null;
-            }
-            return (IQueryable?)decks;
+            var decks = GetDecksByUser(userId).Select(x => new KvPairDeckName(){Id=x.IdDeck,Name=x.DeckName}).ToList();
+            return decks.Count == 0 ? null : decks.ToList();
+        }
+        public struct KvPairDeckName
+        {
+            public string Id { get; set; }
+            public string Name{ get; set; }
         }
 
 
 
-        public Deck GetDeck(string id)
+        public Deck? GetDeck(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
             var deck = context.Decks.Find(id);
 
-            if (deck == null)
-            {
-                return null;
-            }
-            return deck;
-
+            return deck ?? null;
         }
 
         public Deck NewDeck(Deck deck)
@@ -68,19 +64,16 @@ namespace Stardeck.Logic
 
         }
 
-        public Deck UpdateDeck(string id, Deck nDeck)
+        public Deck? UpdateDeck(string id, Deck nDeck)
         {
             var deck = context.Decks.Find(id);
-            if (deck != null)
-            {
-                deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
-                deck.IdAccount = nDeck.IdAccount;
-                deck.Cardlist = nDeck.Cardlist;
+            if (deck == null) return null;
+            deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
+            deck.IdAccount = nDeck.IdAccount;
+            deck.Cardlist = nDeck.Cardlist;
 
-                context.SaveChanges();
-                return deck;
-            }
-            return null;
+            context.SaveChanges();
+            return deck;
 
         }
 
@@ -99,11 +92,7 @@ namespace Stardeck.Logic
         public List<Deck>? GetDecksByUser(string Userid)
         {
             List<Deck> decks = context.Decks.Where(x=>x.IdAccount==Userid).ToList();
-            if (decks.Count == 0)
-            {
-                return null;
-            }
-            return decks;
+            return decks.Count == 0 ? null : decks;
         }
         
         public static List<T> Shuffle<T>(IEnumerable<T> list)
