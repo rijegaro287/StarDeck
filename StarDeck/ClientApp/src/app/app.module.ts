@@ -37,6 +37,8 @@ import { SelectionCardComponent } from './Components/Register/selection-card/sel
 import { UserMainComponent } from './Components/User/user-main/user-main.component';
 import { DeckListComponent } from './Components/User/deck-list/deck-list.component';
 
+import { GameMainComponent } from './Components/Game/game-main/game-main.component';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
     RegisterAccountComponent,
     SelectionCardComponent,
     UserMainComponent,
-    DeckListComponent
+    DeckListComponent,
+    GameMainComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -86,6 +89,11 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
           { path: '', redirectTo: 'decks', pathMatch: 'full' },
           { path: 'decks', component: DeckListComponent }
         ]
+      },
+      {
+        path: "game", component: GameMainComponent,
+        // canActivate: [UserGuard],
+        children: []
       }
 
       // {
