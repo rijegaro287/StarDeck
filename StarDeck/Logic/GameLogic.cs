@@ -8,31 +8,30 @@ namespace Stardeck.Logic
 {
     public class GameLogic
     {
-        private static StardeckContext _context;
+        private static readonly StardeckContext MatchMackingcontext = new();
+        private StardeckContext _context;
         private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
 
         public GameLogic(StardeckContext context)
         {
             _context = context;
         }
-        
 
 
-        public static async Task<GameRoom?> IsWaiting(string playerId)
+        public async Task<GameRoom?> IsWaiting(string playerId)
         {
-
-            var player1 = _context.Accounts.Find(playerId);
+            await PutInMatchMaking(playerId, true);
+            var player1 = await MatchMackingcontext.Accounts.FindAsync(playerId);
             if (player1 is null)
             {
                 throw new Exception("Player not found");
             }
 
             var counter = 0;
-            player1.isInMatchMacking = true;
-            while (player1.isInMatchMacking==true && counter < 15)
+            while (player1.isInMatchMacking == true && counter < 15)
             {
                 counter += 1;
-                var players = _context.Accounts.Include(x => x.FavoriteDeck).ToList()
+                var players = MatchMackingcontext.Accounts.ToList()
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
                     players.Where(x => x.Id != playerId
@@ -40,11 +39,11 @@ namespace Stardeck.Logic
 
                 if (inRangePlayers.Count == 0)
                 {
-                   await Task.Delay(1500);
-                   continue;
+                    await Task.Delay(1500);
+                    continue;
                 }
 
-                
+
                 var battle = new Gameroom();
                 var rnd = new Random();
                 var randIndex = rnd.Next(inRangePlayers.Count);
@@ -61,42 +60,40 @@ namespace Stardeck.Logic
                 return room;
             }
 
+            player1.isInMatchMacking = false;
             return null;
-
         }
 
-        public bool? PutInMatchMaking(string accountId, bool isInMatchMacking)
+        public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account? account = _context.Accounts.Find(accountId);
+            Account? account = await MatchMackingcontext.Accounts.FindAsync(accountId);
             if (account is null)
             {
                 return null;
             }
 
+            var selectedDeck = await _context.FavoriteDecks.FindAsync(accountId);
+            account.FavoriteDeck = selectedDeck;
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
 
-        public List<Gameroom> GetAllGamerooms()
+        public List<Gameroom?>? GetAllGamerooms()
         {
-            List<Gameroom> roomList = _context.Gamerooms.ToList();
-            if(roomList is null)
-            {
-                return null;
-            }
-            return roomList;
+            List<Gameroom?> roomList = _context.Gamerooms.ToList();
+            return roomList.Count == 0 ? null : roomList;
         }
 
-        public Gameroom GetGameroom(string id)
+        public Gameroom? GetGameroom(string id)
         {
-            Gameroom room = _context.Gamerooms.Find(id);
-            if (room is null)
-            {
-                return null;
-            }
+            Gameroom? room = _context.Gamerooms.Find(id);
             return room;
         }
 
-
+        public GameRoom? GetGameRoomData(string id)
+        {
+            GameRoom? room = ActiveRooms.Find(x => x.Roomid == id);
+            return room;
+        }
     }
 }

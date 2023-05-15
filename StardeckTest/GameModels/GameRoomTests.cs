@@ -14,7 +14,7 @@ namespace Stardeck.GameModels.Tests
     public class GameRoomTests
     {
 
-        Gameroom room;
+        Gameroom? room;
         [TestInitialize]
         public void poblateData()
         {

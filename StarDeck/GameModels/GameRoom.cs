@@ -26,14 +26,14 @@ namespace Stardeck.GameModels
         public Gamelog? Gamelog { get; set; }
         
         [JsonIgnore]
-        private Models.Gameroom Room{ get; set; }
+        private Gameroom? Room{ get; set; }
         
         
         /// <summary>
         ///  Create a Runtime GameRoom from a database GameRoom and intialize it Gamelog if needed
         /// </summary>
         /// <param name="data"></param>
-        public GameRoom(Models.Gameroom data)
+        public GameRoom(Gameroom? data)
         {
             //create object from room data
             Roomid = data.Roomid;
