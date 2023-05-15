@@ -99,7 +99,7 @@ export class DeckListComponent implements OnInit {
     this.onCardClicked = this.onCardSelected;
     this.decks.push(this.newDeck);
 
-    this.selectedTab += 1
+    this.selectedTab = this.decks.length;
     this.creatingDeck = true;
   }
 
@@ -122,9 +122,8 @@ export class DeckListComponent implements OnInit {
     this.newDeck.idAccount = this.userID;
 
     this.deckService.addUserDeck(this.newDeck)
-      .then((response) => {
-        console.log(response);
-      });
+      .then((response) => window.location.reload())
+      .catch((error) => alert(error.message));
   }
 
   onDeckCancelClicked = () => {
