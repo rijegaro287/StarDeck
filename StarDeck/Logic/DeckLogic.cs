@@ -59,10 +59,7 @@ namespace Stardeck.Logic
 
             };
 
-            while (!Regex.IsMatch(deckAux.IdDeck, @"^D-[a-zA-Z0-9]{12}"))
-            {
-                deckAux.IdDeck = string.Concat("D-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-            }
+            deckAux.generateID();
 
 
             context.Decks.Add(deckAux);

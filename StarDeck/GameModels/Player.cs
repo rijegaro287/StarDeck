@@ -92,8 +92,9 @@ namespace Stardeck.GameModels
         private List<GameCard> GetFavoriteDeck()
         {
             //create deck
-            var logic = new Logic.CardLogic(new StardeckContext());
-            var cards = Account.FavoriteDeck?.Deck?.Cardlist.Select(card => logic.GetCard(card));
+            var logicCard = new Logic.CardLogic(new StardeckContext());
+            var logicDeck = new Logic.DeckLogic(new StardeckContext());
+            var cards = logicDeck.GetDeck(Account.FavoriteDeck.Deckid).Decklist.ToList().Select(card => logicCard.GetCard(card));
             var deck = (cards ?? throw new InvalidOperationException("El Deck seleccionado es invalido"))
                 .Select(cardata => new GameCard(cardata)).ToList();
             //shuffle deck

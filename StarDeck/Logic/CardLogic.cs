@@ -52,10 +52,7 @@ namespace Stardeck.Logic
 
             };
 
-            while (!Regex.IsMatch(cardAux.Id, @"^C-[a-zA-Z0-9]{12}"))
-            {
-                cardAux.Id = string.Concat("C-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-            }
+            
             context.Cards.Add(cardAux);
 
             context.SaveChanges();

@@ -1,6 +1,6 @@
 ﻿namespace Stardeck.Models;
 
-public partial class Gameroom
+public partial class Gameroom:IAlphanumericID
 {
     public string Roomid { get; set; } = null!;
 
@@ -19,4 +19,10 @@ public partial class Gameroom
     public virtual Account? Player2Navigation { get; set; }
 
     public virtual Account? WinnerNavigation { get; set; }
+    public string Id { get => Roomid; set => Roomid=value; }
+
+    public void generateID()
+    {
+        ((IAlphanumericID)this).generateIdWithPrefix("G");
+    }
 }
