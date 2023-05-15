@@ -24,6 +24,22 @@ namespace Stardeck.Logic
             return decks;
         }
 
+        public Dictionary<string,string> GetNames(string userId)
+        {
+            var decks = GetDecksByUser(userId);
+            Dictionary<string, string> deckNames = new Dictionary<string, string>();
+            foreach (var deck in decks)
+            {
+                deckNames.Add(deck.IdDeck, deck.DeckName);
+            }
+            if (decks.Count == 0)
+            {
+                return null;
+            }
+            return deckNames;
+        }
+
+
 
         public Deck GetDeck(string id)
         {
@@ -40,11 +56,12 @@ namespace Stardeck.Logic
 
         public Deck NewDeck(Deck deck)
         {
-            var deckAux = new Deck(deck.Deck1)
+            var deckAux = new Deck(deck.Cardlist)
             {
                 IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
-                Deck1 = deck.Deck1,
+                Cardlist = deck.Cardlist,
+                DeckName=deck.DeckName
 
             };
 
@@ -67,7 +84,8 @@ namespace Stardeck.Logic
             {
                 deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
                 deck.IdAccount = nDeck.IdAccount;
-                deck.Deck1 = nDeck.Deck1;
+                deck.Cardlist = nDeck.Cardlist;
+                deck.DeckName=nDeck.DeckName;
 
                 context.SaveChanges();
                 return deck;

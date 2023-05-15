@@ -1,4 +1,4 @@
-﻿namespace Stardeck.GameModels
+namespace Stardeck.GameModels
 {
 
   public class Territory
@@ -13,6 +13,6 @@
 
     public TerritoryAbility? Ability { get; set; }
 
-    // public Cards
-  }
+        //public Cards
+    }
 }

@@ -1,4 +1,4 @@
-﻿using Stardeck.Models;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -99,15 +99,23 @@ namespace Stardeck.Logic
       return null;
     }
 
-    public List<Card> GetNineCards()
-    {
-      List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
-      Random rand = new Random();
-      var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
-      return shuffled.GetRange(0, 9);
-    }
+        public Card DeleteCard(string id)
+        {
+            var card = context.Cards.Find(id);
+            if (card != null)
+            {
+                //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
+                context.Remove(card);
+                context.SaveChanges();
+                return card;
+            }
+            return null;
+        }
 
 
   }
 
-}
+        }
+
+    }
+

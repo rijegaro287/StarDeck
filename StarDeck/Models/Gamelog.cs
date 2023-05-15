@@ -1,4 +1,7 @@
-﻿namespace Stardeck.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Stardeck.Models;
 
 public partial class Gamelog
 {

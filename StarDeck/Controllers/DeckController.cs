@@ -30,6 +30,19 @@ namespace Stardeck.Controllers
             return Ok(deckLogic.GetAll());
         }
 
+
+        // GET api/<DeckController>/Names
+        [HttpGet("Names/{userId}")]
+        public async Task<IActionResult> GetNames(string userId)
+        {
+            if (deckLogic.GetNames(userId) == null)
+            {
+                return NotFound();
+            }
+            return Ok(deckLogic.GetNames(userId));
+        }
+
+
         // GET api/<DeckController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)

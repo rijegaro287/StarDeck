@@ -10,13 +10,13 @@ namespace Stardeck.Models;
 public partial class Deck
 {
 
-    static Constant maxcardcount = new StardeckContext().Constants.First(e => e.Key == "deckSize");
-    public Deck(string[]? Deck1)
+    static Parameter maxcardcount = new StardeckContext().Parameters.First(e => e.Key == "deckSize");
+    public Deck(string[]? Cardlist)
     {
-        if (Deck1 != null)
+        if (Cardlist != null)
         {
-            this.Deck1 = Deck1;
-            Decklist = new(Deck1);
+            this.Cardlist = Cardlist;
+            Decklist = new(Cardlist);
         }
         else
         {
@@ -32,7 +32,7 @@ public partial class Deck
 
     public string? addCard(string card)
     {
-        if (Decklist.Count <= maxcardcount.getAsInt())
+        if (Cardlist.Count() <= maxcardcount.getAsInt())
         {
             Decklist.Add(card);
             return card;
@@ -45,7 +45,7 @@ public partial class Deck
 
     private void updateJson(object sender, NotifyCollectionChangedEventArgs e)
     {
-        this.Deck1 = this.Decklist.ToArray();
+        this.Cardlist = this.Decklist.ToArray();
     }
 
 }
