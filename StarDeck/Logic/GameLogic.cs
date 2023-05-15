@@ -24,7 +24,7 @@ namespace Stardeck.Logic
             var player1 = _context.Accounts.Find(playerId);
             if (player1 is null)
             {
-                throw new Exception("Player not founded");
+                throw new Exception("Player not found");
             }
 
             var counter = 0;
@@ -76,5 +76,27 @@ namespace Stardeck.Logic
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
+
+        public List<Gameroom> GetAllGamerooms()
+        {
+            List<Gameroom> roomList = _context.Gamerooms.ToList();
+            if(roomList is null)
+            {
+                return null;
+            }
+            return roomList;
+        }
+
+        public Gameroom GetGameroom(string id)
+        {
+            Gameroom room = _context.Gamerooms.Find(id);
+            if (room is null)
+            {
+                return null;
+            }
+            return room;
+        }
+
+
     }
 }
