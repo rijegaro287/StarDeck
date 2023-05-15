@@ -6,6 +6,8 @@ import Card from '../GameObjects/Card';
 import CardList from '../GameObjects/CardList';
 import HiddenCard from '../GameObjects/HiddenCard';
 import Button from '../GameObjects/Button';
+import StatusBar from '../GameObjects/StatusBar';
+
 import { COLORS } from '../Constants';
 
 @Component({
@@ -58,6 +60,8 @@ class MainScene extends Phaser.Scene {
     this.load.image('hidden-card', '../../../assets/images/logo.png');
     this.load.image('energy-icon', '../../../assets/svg/energy-icon.svg');
     this.load.image('battle-cost-icon', '../../../assets/svg/battle-cost-icon.svg');
+    this.load.image('coin-icon', '../../../assets/svg/coin-icon.svg');
+    this.load.image('clock-icon', '../../../assets/svg/clock-icon.svg');
   }
 
   create() {
@@ -106,10 +110,18 @@ class MainScene extends Phaser.Scene {
     surrenderButton.setPosition(surrenderButtonPositionX, surrenderButtonPositionY)
 
 
+    const statusBar = new StatusBar(
+      this, 0, 0, this.playableWidth, this.playableHeight * 0.08, 10, 500, 20, 'Nombre oponente'
+    );
+    const statusBarPositionX = statusBar.width / 2 + this.margin;
+    const statusBarPositionY = statusBar.height / 2 + this.margin;
+    statusBar.setPosition(statusBarPositionX, statusBarPositionY);
+
     this.add.existing(playerHandContainer);
     this.add.existing(playerDeck);
     this.add.existing(endTurnButton);
     this.add.existing(surrenderButton);
+    this.add.existing(statusBar);
   }
 
   update() {

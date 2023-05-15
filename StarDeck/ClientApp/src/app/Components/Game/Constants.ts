@@ -6,6 +6,7 @@ const COLORS = {
   BACKGROUND_1: 0x434343,
   BACKGROUND_2: 0x696969,
   ENERGY: 0x6988f0,
+  COINS: 0xFFDF00,
   WHITE: 0xffffff
 }
 
