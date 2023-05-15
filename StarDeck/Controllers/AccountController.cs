@@ -202,16 +202,7 @@ namespace Stardeck.Controllers
 
         }
 
-        [HttpPut("{id}/{active}")]
-        public async Task<IActionResult> Put(string id, bool active)
-        {
-            bool? act = accountLogic.SetActive(id, active);
-            if (act != null)
-            {
-                return Ok(act);
-            }
-            return NotFound();
-        }
+        
 
     }
 }
