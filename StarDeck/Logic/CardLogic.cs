@@ -83,7 +83,7 @@ namespace Stardeck.Logic
         }
 
 
-        public Card deleteCard(string id)
+        public Card DeleteCard(string id)
         {
             var card = context.Cards.Find(id);
             if (card != null)
