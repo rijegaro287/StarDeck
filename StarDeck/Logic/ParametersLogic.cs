@@ -1,4 +1,4 @@
-﻿using Stardeck.Models;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -15,12 +15,12 @@ namespace Stardeck.Logic
 
         public List<Parameter> GetAll()
         {
-            List<Parameter> parameter= context.Parameters.ToList();
-            if (parameter.Count == 0)
+            List<Parameter> parameters= context.Parameters.ToList();
+            if (parameters.Count == 0)
             {
                 return null;
             }
-            return parameter;
+            return parameters;
         }
 
 
@@ -37,45 +37,17 @@ namespace Stardeck.Logic
 
         public Parameter NewParameter(string id, string value)
         {
-            var paramAux = new Parameter()
+            var paramtAux = new Parameter()
             {
                 Key = id,
                 Value = value
             };
-            context.Parameters.Add(paramAux);
+            context.Parameters.Add(paramtAux);
 
             context.SaveChanges();
-            return paramAux;
+            return paramtAux;
 
         }
-
-        public Parameter UpdateParameter(string id, string nValue)
-        {
-            var param = context.Parameters.Find(id);
-            if (param != null)
-            {
-                param.Value= nValue;
-
-                context.SaveChanges();
-                return param;
-            }
-            return null;
-
-        }
-
-        public Parameter DeleteParameter(string id)
-        {
-            var param = context.Parameters.Find(id);
-            if (param != null)
-            {
-                context.Remove(param);
-                context.SaveChanges();
-                return param;
-            }
-            return null;
-        }
-
-
 
     }
 }

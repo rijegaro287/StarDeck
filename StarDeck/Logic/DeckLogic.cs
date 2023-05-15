@@ -65,10 +65,7 @@ namespace Stardeck.Logic
 
             };
 
-            while (!Regex.IsMatch(deckAux.IdDeck, @"^D-[a-zA-Z0-9]{12}"))
-            {
-                deckAux.IdDeck = string.Concat("D-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-            }
+            deckAux.generateID();
 
 
             context.Decks.Add(deckAux);
@@ -114,6 +111,13 @@ namespace Stardeck.Logic
                 return null;
             }
             return decks;
+        }
+        
+        public static List<T> Shuffle<T>(IEnumerable<T> list)
+        {
+            var random = new Random();
+            var newList = list.OrderBy(item => random.Next()).ToList();
+            return newList;
         }
     }
 }

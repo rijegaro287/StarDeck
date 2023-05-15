@@ -2,6 +2,6 @@
 {
     public class TerritoryAbility
     {
-        public TerritoryAbility(string s) { }
+        public TerritoryAbility(string? s) { }
     }
 }

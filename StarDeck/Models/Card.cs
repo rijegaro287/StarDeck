@@ -11,9 +11,15 @@
 /// 
 /// 4-Ultra Rara
 /// </summary>
-public partial class Card
+public partial class Card:IAlphanumericID
 {
     public string Id { get; set; } = null!;
+    public void generateID()
+    {
+        ((IAlphanumericID)this).generateIdWithPrefix("C");
+    }
+
+
 
     public string Name { get; set; } = null!;
 
@@ -32,4 +38,5 @@ public partial class Card
     public string? Description { get; set; }
 
     public string? Race { get; set; }
+    
 }

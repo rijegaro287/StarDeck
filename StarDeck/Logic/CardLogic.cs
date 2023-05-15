@@ -58,8 +58,8 @@ namespace Stardeck.Logic
       }
       context.Cards.Add(cardAux);
 
-      context.SaveChanges();
-      return card;
+            
+            context.Cards.Add(cardAux);
 
     }
 
