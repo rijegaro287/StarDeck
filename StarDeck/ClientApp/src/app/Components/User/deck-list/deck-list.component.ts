@@ -16,22 +16,32 @@ import { IDeck } from 'src/app/Interfaces/Deck';
   styleUrls: ['./deck-list.component.scss']
 })
 export class DeckListComponent implements OnInit {
+  /** ID del usuario que ha iniciado sesión */
   userID: string;
+  /** Tamaño máximo de los escuadrones */
   deckSize: number;
 
-  deckIDs: string[];
+  /** IDs de la colección de cartas del usuario */
+  cardCollectionIDs: string[];
+  /** Cartas de la colección del usuario */
+  cardCollection: ICard[];
+  /** Escuadrones del usuario */
   decks: IDeck[];
 
-  cardCollectionIDs: string[];
-  cardCollection: ICard[];
-
+  /** Se ejecuta al hacer click sobre una carta */
   onCardClicked: (card: ICard) => void;
 
+  /** Contiene la información de un nuevo escuadrón */
   newDeck: IDeck;
+  /** Input para el nombre del nuevo escuadrón */
   newDeckName: FormControl;
+  /** Indica la pestaña del escuadrón seleccionado */
   selectedTab: number;
-  creatingDeck: boolean;
+
+  /** Indica si se están cargando los escuadrones del usuario */
   loadingDecks: boolean;
+  /** Indica si se está creando un nuevo escuadrón */
+  creatingDeck: boolean;
 
   constructor(
     private accountService: AccountService,
@@ -44,10 +54,9 @@ export class DeckListComponent implements OnInit {
     this.userID = sessionStorage.getItem('ID')!;
     this.deckSize = 0;
 
-    this.deckIDs = [];
-    this.decks = [];
 
     this.cardCollectionIDs = [];
+    this.decks = [];
     this.cardCollection = [];
 
     this.onCardClicked = (card: ICard) => { };
@@ -61,10 +70,14 @@ export class DeckListComponent implements OnInit {
     }
     this.newDeckName = this._formBuilder.control('', []);
     this.selectedTab = 0;
+
     this.creatingDeck = false;
     this.loadingDecks = false;
   }
 
+  /**
+   * Se ejecuta le inicializar el componente
+   */
   async ngOnInit() {
     console.log(this.userID);
     this.loadingDecks = true;
@@ -95,6 +108,7 @@ export class DeckListComponent implements OnInit {
     this.loadingDecks = false;
   }
 
+  /** Se ejecuta al hacer click sobre el botón que habilita la creación de escuadrón */
   onCreateClicked() {
     this.onCardClicked = this.onCardSelected;
     this.decks.push(this.newDeck);
@@ -103,6 +117,7 @@ export class DeckListComponent implements OnInit {
     this.creatingDeck = true;
   }
 
+  /** Se ejecuta al hacer click sobre una carta mientras se crea un escuadrón */
   onCardSelected = (card: ICard) => {
     const newDeckCardsIDs = this.newDeck.cards!.map((card) => card.id);
 
@@ -116,6 +131,7 @@ export class DeckListComponent implements OnInit {
     }
   }
 
+  /** Se ejecuta al hacer click sobre el botón de crear escuadrón */
   onDeckCreateClicked = () => {
     this.newDeck.deckName = this.newDeckName.value;
     this.newDeck.cardlist = this.newDeck.cards!.map((card) => card.id);
@@ -126,6 +142,7 @@ export class DeckListComponent implements OnInit {
       .catch((error) => alert(error.message));
   }
 
+  /** Se ejecuta al hacer click sobre el botón de cancelar creación de escuadrón */
   onDeckCancelClicked = () => {
     this.newDeckName.setValue('');
     this.newDeck.cards! = [];
@@ -140,6 +157,7 @@ export class DeckListComponent implements OnInit {
     this.onCardClicked = (card: ICard) => { };
   }
 
+  /** Valida que el nuevo escuadrón cumpla con las restricciones */
   validateNewDeck = () => {
     const isNewNameFilled = this.newDeckName.value.length > 0;
     const isNewDeckValid = this.newDeck.cards!.length === this.deckSize;
