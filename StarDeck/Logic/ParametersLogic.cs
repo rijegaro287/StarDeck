@@ -37,17 +37,45 @@ namespace Stardeck.Logic
 
         public Parameter NewParameter(string id, string value)
         {
-            var paramtAux = new Parameter()
+            var paramAux = new Parameter()
             {
                 Key = id,
                 Value = value
             };
-            context.Parameters.Add(paramtAux);
+            context.Parameters.Add(paramAux);
 
             context.SaveChanges();
-            return paramtAux;
+            return paramAux;
 
         }
+
+        public Parameter UpdateParameter(string id, string nValue)
+        {
+            var param = context.Parameters.Find(id);
+            if (param != null)
+            {
+                param.Value= nValue;
+
+                context.SaveChanges();
+                return param;
+            }
+            return null;
+
+        }
+
+        public Parameter DeleteParameter(string id)
+        {
+            var param = context.Parameters.Find(id);
+            if (param != null)
+            {
+                context.Remove(param);
+                context.SaveChanges();
+                return param;
+            }
+            return null;
+        }
+
+
 
     }
 }

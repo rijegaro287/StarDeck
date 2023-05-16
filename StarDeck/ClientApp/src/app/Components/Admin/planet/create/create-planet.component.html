@@ -1,0 +1,40 @@
+<div class="main-content">
+    <h2 mat-dialog-title>Crear nuevo planeta</h2>
+  
+  <mat-dialog-content>
+  <app-image-uploader [imageURL]="'../../../assets/images/planet.png'"></app-image-uploader>
+
+  <form [formGroup]="newPlanet">
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label>Tipo</mat-label>
+        <mat-select matInput formControlName="type" required>
+          <mat-option value="0">Raro</mat-option>
+          <mat-option value="1">Básico</mat-option>
+          <mat-option value="2">Popular</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label>Descripción</mat-label>
+        <textarea rows="3" matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <div class="actions">
+      <button mat-flat-button color="primary" (click)="createPlanet()">Crear planeta</button>
+      <button mat-flat-button color="warn" mat-dialog-close>Cancelar</button>
+    </div>
+  </mat-dialog-actions>
+</div>

@@ -35,7 +35,11 @@ import { RegisterAccountComponent } from './Components/Register/register-account
 import { SelectionCardComponent } from './Components/Register/selection-card/selection-card.component';
 
 import { UserMainComponent } from './Components/User/user-main/user-main.component';
-import { DeckListComponent } from './Components/User/deck-list/deck-list.component';
+import { CreatePlanetComponent } from './Components/Admin/planet/create/create-planet.component';
+import { PlanetComponent } from './Components/Generic/planet/planet.component';
+import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.component';
+import { SelectDeckComponent } from './Components/User/select-deck/select-deck.component';
+import { SearchOpponentComponent } from './Components/User/search-oponent/search-opponent.component';
 
 import { GameMainComponent } from './Components/Game/game-main/game-main.component';
 
@@ -56,8 +60,11 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
     RegisterAccountComponent,
     SelectionCardComponent,
     UserMainComponent,
-    DeckListComponent,
-    GameMainComponent
+    CreatePlanetComponent,
+    PlanetComponent,
+    PlanetListComponent,
+    SelectDeckComponent,
+    SearchOpponentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -79,7 +86,8 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
         // canActivate: [AdministratorGuard],
         children: [
           { path: '', redirectTo: 'cards', pathMatch: 'full' },
-          { path: 'cards', component: AllCardsListComponent },
+          { path: 'cards', component: CardListComponent },
+          { path: 'planets', component: PlanetListComponent },
         ]
       },
       {
@@ -91,9 +99,11 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
         ]
       },
       {
-        path: "game", component: GameMainComponent,
-        // canActivate: [UserGuard],
-        children: []
+        path: "User", component: UserMainComponent,
+        children: [
+          { path: 'battle/select-deck', component: SelectDeckComponent },
+          { path: 'battle/search-opponent', component: SearchOpponentComponent }
+          ]
       }
 
       // {

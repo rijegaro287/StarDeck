@@ -4,6 +4,8 @@ import { CARD_TYPES } from '../app.component';
 
 import { ICardType } from '../Interfaces/Card';
 
+import { IPlanetType } from '../Interfaces/Planet';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -50,6 +52,24 @@ export class HelpersService {
         return '#66e961';
       case CARD_TYPES.BASIC:
         return 'black';
+      default:
+        return 'black';
+    }
+  }
+
+  /**
+   * Devuelve el color del borde del planeta según su tipo
+   * @param type Tipo de la carta
+   * @returns String con el color del borde
+   */
+  getPlanetBorderColor(type: IPlanetType): string {
+    switch (type) {
+      case 2:
+        return '#EE0C94';
+      case 1:
+        return '#81CF00';
+      case 0:
+        return '#0085CF';
       default:
         return 'black';
     }

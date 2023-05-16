@@ -1,0 +1,35 @@
+<div class="w-75 my-5 mx-auto">
+  <div class="row">
+    <h1>Seleccione el Escuadrón que desea jugar en la Batalla  </h1>
+  </div>
+  
+    <div class="row">
+      <mat-form-field appearance="outline" [hideRequiredMarker]="true">
+        <mat-label>Escuadrón</mat-label>
+        <mat-select matInput formControlName="selectedDeck" required onchange="ObtenerCartas()">
+          <mat-option *ngFor="let deck of deckList" [value]="deck">
+            {{ deck }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+    </div>
+
+    <div>
+      <h3>Cartas en el Escuadron</h3>
+
+
+
+
+
+
+    </div>
+
+  <div class="row">
+    <button mat-raised-button color="primary" (click)="Batalla()"> Buscar Batalla </button>
+  </div>
+
+</div>

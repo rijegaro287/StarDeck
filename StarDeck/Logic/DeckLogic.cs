@@ -72,6 +72,7 @@ namespace Stardeck.Logic
             deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
             deck.IdAccount = nDeck.IdAccount;
             deck.Cardlist = nDeck.Cardlist;
+                deck.DeckName=nDeck.DeckName;
 
             context.SaveChanges();
             return deck;
