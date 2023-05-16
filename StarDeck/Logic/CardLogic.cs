@@ -19,6 +19,7 @@ namespace Stardeck.Logic
             {
                 return null;
             }
+
             return cards;
         }
 
@@ -31,6 +32,7 @@ namespace Stardeck.Logic
             {
                 return null;
             }
+
             return card;
         }
 
@@ -52,7 +54,7 @@ namespace Stardeck.Logic
 
             };
 
-            
+
             context.Cards.Add(cardAux);
 
             context.SaveChanges();
@@ -78,6 +80,7 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return card;
             }
+
             return null;
 
         }
@@ -93,6 +96,7 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return card;
             }
+
             return null;
         }
 
@@ -101,11 +105,12 @@ namespace Stardeck.Logic
             List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
             Random rand = new Random();
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
-            return shuffled.GetRange(0,9);
+            return shuffled.GetRange(0, 9);
         }
 
 
-        
+
 
     }
+}
 
