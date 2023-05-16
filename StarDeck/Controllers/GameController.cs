@@ -79,5 +79,16 @@ namespace Stardeck.Controllers
 
             return NotFound();
         }
+        [HttpGet("getGameRoomData/{idRoom}/{idUser}")]
+        public async Task<IActionResult> GetPlayerData(string idRoom,string idUser)
+        {
+            var room = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+            if (room != null)
+            {
+                return Ok(room);
+            }
+
+            return NotFound();
+        }
     }
 }
