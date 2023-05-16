@@ -36,7 +36,7 @@ builder.Services.AddHttpContextAccessor();
 
 var connectionString = builder.Configuration.GetConnectionString("PosgreSQLConnection");
 builder.Services.AddDbContext<StardeckContext>(options =>
-options.UseNpgsql(connectionString));
+    options.UseNpgsql(connectionString)); 
 
 
 var app = builder.Build();

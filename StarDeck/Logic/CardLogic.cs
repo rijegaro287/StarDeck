@@ -52,11 +52,8 @@ namespace Stardeck.Logic
 
       };
 
-      while (!Regex.IsMatch(cardAux.Id, @"^C-[a-zA-Z0-9]{12}"))
-      {
-        cardAux.Id = string.Concat("C-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-      }
-      context.Cards.Add(cardAux);
+            
+            context.Cards.Add(cardAux);
 
       context.SaveChanges();
       return card;
@@ -86,18 +83,18 @@ namespace Stardeck.Logic
     }
 
 
-    public Card deleteCard(string id)
-    {
-      var card = context.Cards.Find(id);
-      if (card != null)
-      {
-        //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
-        context.Remove(card);
-        context.SaveChanges();
-        return card;
-      }
-      return null;
-    }
+        public Card DeleteCard(string id)
+        {
+            var card = context.Cards.Find(id);
+            if (card != null)
+            {
+                //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
+                context.Remove(card);
+                context.SaveChanges();
+                return card;
+            }
+            return null;
+        }
 
     public List<Card> GetNineCards()
     {
@@ -110,4 +107,5 @@ namespace Stardeck.Logic
 
   }
 
-}
+    }
+

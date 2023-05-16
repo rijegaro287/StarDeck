@@ -1,8 +1,11 @@
-﻿namespace Stardeck.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
-public partial class Gameroom
+namespace Stardeck.Models;
+
+public partial class Gameroom:IAlphanumericID
 {
-    public string Roomid { get; set; } = null!;
+    public string Roomid { get; set; } = "";
 
     public string Player1 { get; set; } = null!;
 
@@ -13,10 +16,20 @@ public partial class Gameroom
     public long? Bet { get; set; }
 
     public virtual Gamelog? Gamelog { get; set; }
-
+    
+    [JsonIgnore]
     public virtual Account? Player1Navigation { get; set; }
 
+    [JsonIgnore]
     public virtual Account? Player2Navigation { get; set; }
 
+    [JsonIgnore]
     public virtual Account? WinnerNavigation { get; set; }
+    [NotMapped]
+    public string Id { get => Roomid; set => Roomid=value; }
+
+    public void generateID()
+    {
+        ((IAlphanumericID)this).generateIdWithPrefix("G");
+    }
 }

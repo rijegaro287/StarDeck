@@ -14,7 +14,7 @@ namespace Stardeck.Logic
         }
 
 
-        public List<Deck> GetAll()
+        public List<Deck>? GetAll()
         {
             List<Deck> decks = context.Decks.ToList();
             if (decks.Count == 0)
@@ -24,34 +24,39 @@ namespace Stardeck.Logic
             return decks;
         }
 
+        public List<KvPairDeckName>? GetNames(string userId)
+        {
+            var decks = GetDecksByUser(userId).Select(x => new KvPairDeckName(){Id=x.IdDeck,Name=x.DeckName}).ToList();
+            return decks.Count == 0 ? null : decks.ToList();
+        }
+        public struct KvPairDeckName
+        {
+            public string Id { get; set; }
+            public string Name{ get; set; }
+        }
 
-        public Deck GetDeck(string id)
+
+
+        public Deck? GetDeck(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
             var deck = context.Decks.Find(id);
 
-            if (deck == null)
-            {
-                return null;
-            }
-            return deck;
-
+            return deck ?? null;
         }
 
         public Deck NewDeck(Deck deck)
         {
-            var deckAux = new Deck(deck.Deck1)
+            var deckAux = new Deck(deck.Cardlist)
             {
                 IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
-                Deck1 = deck.Deck1,
+                Cardlist = deck.Cardlist,
+                DeckName=deck.DeckName
 
             };
 
-            while (!Regex.IsMatch(deckAux.IdDeck, @"^D-[a-zA-Z0-9]{12}"))
-            {
-                deckAux.IdDeck = string.Concat("D-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
-            }
+            deckAux.generateID();
 
 
             context.Decks.Add(deckAux);
@@ -60,19 +65,17 @@ namespace Stardeck.Logic
 
         }
 
-        public Deck UpdateDeck(string id, Deck nDeck)
+        public Deck? UpdateDeck(string id, Deck nDeck)
         {
             var deck = context.Decks.Find(id);
-            if (deck != null)
-            {
-                deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
-                deck.IdAccount = nDeck.IdAccount;
-                deck.Deck1 = nDeck.Deck1;
+            if (deck == null) return null;
+            deck.IdDeck = nDeck.IdDeck; //MAKE DECK ID
+            deck.IdAccount = nDeck.IdAccount;
+            deck.Cardlist = nDeck.Cardlist;
+                deck.DeckName=nDeck.DeckName;
 
-                context.SaveChanges();
-                return deck;
-            }
-            return null;
+            context.SaveChanges();
+            return deck;
 
         }
 
@@ -86,6 +89,19 @@ namespace Stardeck.Logic
                 return deck;
             }
             return null;
+        }
+
+        public List<Deck>? GetDecksByUser(string Userid)
+        {
+            List<Deck> decks = context.Decks.Where(x=>x.IdAccount==Userid).ToList();
+            return decks.Count == 0 ? null : decks;
+        }
+        
+        public static List<T> Shuffle<T>(IEnumerable<T> list)
+        {
+            var random = new Random();
+            var newList = list.OrderBy(item => random.Next()).ToList();
+            return newList;
         }
     }
 }

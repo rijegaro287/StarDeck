@@ -30,6 +30,19 @@ namespace Stardeck.Controllers
             return Ok(deckLogic.GetAll());
         }
 
+
+        // GET api/<DeckController>/Names
+        [HttpGet("Names/{userId}")]
+        public async Task<IActionResult> GetNames(string userId)
+        {
+            if (deckLogic.GetNames(userId) == null)
+            {
+                return NotFound();
+            }
+            return Ok(deckLogic.GetNames(userId));
+        }
+
+
         // GET api/<DeckController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
@@ -41,12 +54,23 @@ namespace Stardeck.Controllers
             return Ok(deckLogic.GetDeck(id));
         }
 
+        // GET api/<DeckController>/5
+        [HttpGet("User/{UserId}")]
+        public async Task<IActionResult> GetAllDecksByUser(string UserId)
+        {
+            if (deckLogic.GetDecksByUser(UserId) == null)
+            {
+                return NotFound();
+            }
+            return Ok(deckLogic.GetDecksByUser(UserId));
+        }
+
         // POST api/<DeckController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Deck deck)
         {
             Deck deckAux = deckLogic.NewDeck(deck);
-            if (deckAux == null)
+            if (deckAux is null)
             {
                 return BadRequest();
             }
@@ -59,7 +83,7 @@ namespace Stardeck.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, Deck nDeck)
         {
-            Deck deckAux = deckLogic.UpdateDeck(id, nDeck);
+            Deck? deckAux = deckLogic.UpdateDeck(id, nDeck);
             if (deckAux == null)
             {
                 return BadRequest();

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Stardeck.Models;
 
@@ -21,15 +23,15 @@ public partial class StardeckContext : DbContext
 
     public virtual DbSet<Collection> Collections { get; set; }
 
-    public virtual DbSet<Constant> Constants { get; set; }
-
     public virtual DbSet<Deck> Decks { get; set; }
 
     public virtual DbSet<FavoriteDeck> FavoriteDecks { get; set; }
 
     public virtual DbSet<Gamelog> Gamelogs { get; set; }
 
-    public virtual DbSet<Gameroom> Gamerooms { get; set; }
+    public virtual DbSet<Gameroom?> Gamerooms { get; set; }
+
+    public virtual DbSet<Parameter> Parameters { get; set; }
 
     public virtual DbSet<Planet> Planets { get; set; }
 
@@ -162,29 +164,25 @@ public partial class StardeckContext : DbContext
                 .HasConstraintName("deck_account_fkey");
         });
 
-        modelBuilder.Entity<Constant>(entity =>
-        {
-            entity
-                .HasKey(e => e.Key);
-            entity.ToTable("constants");
-
-            entity.Property(e => e.Key).HasColumnName("key");
-            entity.Property(e => e.Value).HasColumnName("value");
-        });
-
         modelBuilder.Entity<Deck>(entity =>
         {
             entity.HasKey(e => e.IdDeck).HasName("deck_pkey1");
 
             entity.ToTable("deck");
 
+            entity.HasIndex(e => e.DeckName, "deck_deckName_deckName1_key").IsUnique();
+
             entity.Property(e => e.IdDeck)
                 .HasMaxLength(14)
                 .IsFixedLength()
                 .HasColumnName("id_deck");
-            entity.Property(e => e.Deck1)
+            entity.Property(e => e.DeckName)
+                .HasMaxLength(14)
+                .IsFixedLength()
+                .HasColumnName("deckName");
+            entity.Property(e => e.Cardlist)
                 .HasColumnType("character(14)[]")
-                .HasColumnName("deck");
+                .HasColumnName("cardlist");
             entity.Property(e => e.IdAccount)
                 .HasMaxLength(14)
                 .IsFixedLength()
@@ -276,6 +274,16 @@ public partial class StardeckContext : DbContext
             entity.HasOne(d => d.WinnerNavigation).WithMany(p => p.GameroomWinnerNavigations)
                 .HasForeignKey(d => d.Winner)
                 .HasConstraintName("gameroom_winner_fkey");
+        });
+
+        modelBuilder.Entity<Parameter>(entity =>
+        {
+            entity.HasKey(e => e.Key).HasName("constants_pkey");
+
+            entity.ToTable("parameters");
+
+            entity.Property(e => e.Key).HasColumnName("key");
+            entity.Property(e => e.Value).HasColumnName("value");
         });
 
         modelBuilder.Entity<Planet>(entity =>
