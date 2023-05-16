@@ -105,7 +105,7 @@ namespace Stardeck.Logic
         }
 
 
-        }
+        
 
     }
 

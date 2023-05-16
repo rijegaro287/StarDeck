@@ -1,4 +1,5 @@
 import { ICard } from "./Card";
+import { IPlanet } from "./Planet";
 
 interface IServerResponse<T = any> {
   status: 'ok' | 'error';
@@ -8,8 +9,10 @@ interface IServerResponse<T = any> {
 }
 
 type ICardsResponse = IServerResponse<ICard[]>;
+type IPlanetResponse = IServerResponse<IPlanet[]>;
 
 export {
   IServerResponse,
-  ICardsResponse
+  ICardsResponse,
+  IPlanetResponse
 }
