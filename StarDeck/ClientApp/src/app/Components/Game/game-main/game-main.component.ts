@@ -7,8 +7,11 @@ import CardList from '../GameObjects/CardList';
 import HiddenCard from '../GameObjects/HiddenCard';
 import Button from '../GameObjects/Button';
 import StatusBar from '../GameObjects/StatusBar';
+import PlanetContainer from '../GameObjects/PlanetContainer';
 
 import { COLORS } from '../Constants';
+import Planet from '../GameObjects/Planet';
+
 
 @Component({
   selector: 'app-game-main',
@@ -71,11 +74,11 @@ class MainScene extends Phaser.Scene {
 
 
     const card1 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
-    const card2 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
-    const card3 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
-    const card4 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
-    const card5 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
-    const card6 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
+    const card2 = new Card(this, 0, 0, 'Carta 2', 'Raza 2', 50, 75);
+    const card3 = new Card(this, 0, 0, 'Carta 3', 'Raza 3', 50, 75);
+    const card4 = new Card(this, 0, 0, 'Carta 4', 'Raza 4', 50, 75);
+    const card5 = new Card(this, 0, 0, 'Carta 5', 'Raza 5', 50, 75);
+    const card6 = new Card(this, 0, 0, 'Carta 6', 'Raza 6', 50, 75);
 
     const playerHand = [card1, card2, card3, card4, card5, card6];
 
@@ -117,11 +120,58 @@ class MainScene extends Phaser.Scene {
     const statusBarPositionY = statusBar.height / 2 + this.margin;
     statusBar.setPosition(statusBarPositionX, statusBarPositionY);
 
+    const card7 = new Card(this, 0, 0, 'Carta 7', 'Raza 1', 50, 75);
+    const card8 = new Card(this, 0, 0, 'Carta 8', 'Raza 1', 50, 75);
+    const card9 = new Card(this, 0, 0, 'Carta 9', 'Raza 1', 50, 75);
+    const card10 = new Card(this, 0, 0, 'Carta 10', 'Raza 1', 50, 75);
+    const card11 = new Card(this, 0, 0, 'Carta 11', 'Raza 1', 50, 75);
+    const card12 = new Card(this, 0, 0, 'Carta 12', 'Raza 1', 50, 75);
+
+    const card13 = new Card(this, 0, 0, 'Carta 13', 'Raza 1', 50, 75);
+    const card14 = new Card(this, 0, 0, 'Carta 14', 'Raza 1', 50, 75);
+    const card15 = new Card(this, 0, 0, 'Carta 15', 'Raza 1', 50, 75);
+    const card16 = new Card(this, 0, 0, 'Carta 16', 'Raza 1', 50, 75);
+    const card17 = new Card(this, 0, 0, 'Carta 17', 'Raza 1', 50, 75);
+
+    const card18 = new Card(this, 0, 0, 'Carta 18', 'Raza 1', 50, 75);
+    const card19 = new Card(this, 0, 0, 'Carta 19', 'Raza 1', 50, 75);
+    const card20 = new Card(this, 0, 0, 'Carta 20', 'Raza 1', 50, 75);
+
+    const planet1 = {
+      planetName: 'Planeta 1',
+      playerCards: [card7, card8, card9],
+      opponentCards: [card10, card11, card12]
+
+    };
+
+    const planet2 = {
+      planetName: 'Planeta 2',
+      playerCards: [card13, card14],
+      opponentCards: [card15, card16, card17]
+    };
+
+    const planet3 = {
+      planetName: 'Planeta 3',
+      playerCards: [card18, card19],
+      opponentCards: [card20]
+    };
+
+    const planetList = [planet1, planet2, planet3];
+
+    const planetContainer = new PlanetContainer(
+      this, 0, 0, this.playableWidth - this.margin, this.playableHeight * 0.55, planetList
+    );
+    const planetContainerPositionX = planetContainer.width / 2 + this.margin;
+    const planetContainerPositionY = planetContainer.height / 2 + this.margin + statusBar.height + this.playableHeight * 0.025;
+    planetContainer.setPosition(planetContainerPositionX, planetContainerPositionY);
+
     this.add.existing(playerHandContainer);
     this.add.existing(playerDeck);
     this.add.existing(endTurnButton);
     this.add.existing(surrenderButton);
     this.add.existing(statusBar);
+    this.add.existing(planetContainer);
+    // this.add.existing(planet1);
   }
 
   update() {

@@ -34,13 +34,13 @@ export default class CardList extends Phaser.GameObjects.Container {
     );
 
     const gridHeight = this.height - 2 * this.margin;
-    const gridWidth = this.width - 2 * this.margin;
 
     this.cardList.forEach((card, index) => {
       const scaleRatio = gridHeight / card.height;
       const scaledCardWidth = card.width * scaleRatio;
 
       const cardsWidth = scaledCardWidth * this.cardList.length + this.margin * (this.cardList.length - 1);
+
       const cardsPositionX = (cardsWidth - scaledCardWidth) / 2 - index * (scaledCardWidth + this.margin);
 
       card.setPosition(-cardsPositionX, 0);
