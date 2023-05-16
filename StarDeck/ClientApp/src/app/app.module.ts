@@ -94,7 +94,7 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
         ]
       },
       {
-        path: "User", component: UserMainComponent,
+        path: "user", component: UserMainComponent,
         children: [
           { path: '', redirectTo: 'decks', pathMatch: 'full' },
           { path: 'decks', component: DeckListComponent },
@@ -105,16 +105,6 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
       {
         path: "game", component: GameMainComponent
       }
-
-      // {
-      //   path: 'player',
-      //   component: PlayerMainComponent,
-      //   // canActivate: [PlayerGuard],
-      //   children: [
-      //     { path: '', redirectTo: 'profile', pathMatch: 'full' },
-      //     { path: 'profile', component: PlayerProfileComponent },
-      //   ]
-      // },
     ]),
     MatFormFieldModule,
     MatSelectModule,
