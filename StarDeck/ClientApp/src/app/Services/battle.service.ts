@@ -24,13 +24,8 @@ export class BattleService {
   }
 
   //Para solicitar un partida (POST)
-  search_battle = (deck: string): Promise<any> => {
-    return this.request.post(this.url, user);
-  }
-
-
-  
-
-
+  // search_battle = (deck: string): Promise<any> => {
+  //   return this.request.post(this.url, user);
+  // }
 
 }

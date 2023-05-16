@@ -21,7 +21,7 @@ export class SelectDeckComponent implements OnInit {
   deckList: []; //Lista de decks
   cardsDeckList: ICard[];
   selectedDeck: string; //Deck seleccionado
-  
+
   respuesta = {};
 
   router: Router | undefined;
@@ -38,17 +38,17 @@ export class SelectDeckComponent implements OnInit {
    * @param accountService injector del service de cuenta para las peticiones
    */
   constructor(@Inject('BASE_URL') baseUrl: string,
-    protected helpers: HelpersService, protected battle:BattleService) {
+    protected helpers: HelpersService, protected battle: BattleService) {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
-    
+
     this.baseurl = baseUrl;
     this.idSquad = '';
     this.deckList = [];
     this.cardsDeckList = [];
 
     this.selectedDeck = '';
-    
+
   }
   /**
    *Funcion que se ejecuta cuando se carga el componente
@@ -62,7 +62,7 @@ export class SelectDeckComponent implements OnInit {
         this.deckList = decks;
       });
 
-    
+
   }
 
   /**
@@ -75,7 +75,7 @@ export class SelectDeckComponent implements OnInit {
       .then(cards => {
         this.cardsDeckList = cards;
       });
-    
+
   }
   /**
    *Funcion que se llama cuando se da click en Buscar Batalla
@@ -84,12 +84,12 @@ export class SelectDeckComponent implements OnInit {
     window.location.assign(this.baseurl + "batalla/search-opponent");
 
     //Logica para la solicitud de una partida al servidor
-    await this.battle.search_battle(this.selectedDeck)
-      .then(battle => {
-      });
+    // await this.battle.search_battle(this.selectedDeck)
+    //   .then(battle => {
+    //   });
 
-    
+
   }
-  
+
 }
 

@@ -112,7 +112,6 @@ class MainScene extends Phaser.Scene {
     const surrenderButtonPositionY = this.playableHeight + 2 * this.margin - playerHandHeight - surrenderButton.height;
     surrenderButton.setPosition(surrenderButtonPositionX, surrenderButtonPositionY)
 
-
     const statusBar = new StatusBar(
       this, 0, 0, this.playableWidth, this.playableHeight * 0.08, 10, 500, 20, 'Nombre oponente'
     );
@@ -171,7 +170,6 @@ class MainScene extends Phaser.Scene {
     this.add.existing(surrenderButton);
     this.add.existing(statusBar);
     this.add.existing(planetContainer);
-    // this.add.existing(planet1);
   }
 
   update() {

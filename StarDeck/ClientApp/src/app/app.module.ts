@@ -40,6 +40,7 @@ import { PlanetComponent } from './Components/Generic/planet/planet.component';
 import { PlanetListComponent } from './Components/Admin/planet/list/planet-list.component';
 import { SelectDeckComponent } from './Components/User/select-deck/select-deck.component';
 import { SearchOpponentComponent } from './Components/User/search-oponent/search-opponent.component';
+import { DeckListComponent } from './Components/User/deck-list/deck-list.component';
 
 import { GameMainComponent } from './Components/Game/game-main/game-main.component';
 
@@ -64,7 +65,9 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
     PlanetComponent,
     PlanetListComponent,
     SelectDeckComponent,
-    SearchOpponentComponent
+    SearchOpponentComponent,
+    DeckListComponent,
+    GameMainComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -91,19 +94,16 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
         ]
       },
       {
-        path: "user", component: UserMainComponent,
-        // canActivate: [UserGuard],
+        path: "User", component: UserMainComponent,
         children: [
           { path: '', redirectTo: 'decks', pathMatch: 'full' },
-          { path: 'decks', component: DeckListComponent }
+          { path: 'decks', component: DeckListComponent },
+          { path: 'battle/select-deck', component: SelectDeckComponent },
+          { path: 'battle/search-opponent', component: SearchOpponentComponent }
         ]
       },
       {
-        path: "User", component: UserMainComponent,
-        children: [
-          { path: 'battle/select-deck', component: SelectDeckComponent },
-          { path: 'battle/search-opponent', component: SearchOpponentComponent }
-          ]
+        path: "game", component: GameMainComponent
       }
 
       // {
