@@ -37,8 +37,8 @@ export class AccountService {
     return this.request.get(`${this.url}/${Id}/cards`);
   }
   //Para obtener todas las cartas del juego
-  allCards = (): Promise<ICard[]> => {
-    return this.request.get(`${apiURL}/cards/get_all`);
+  nineCards = (): Promise<ICard[]> => {
+    return this.request.get(`${apiURL}/cards/get/nineCards`);
   }
   //Para obtener una carta especifica por id 
   getCard = (Id: string): Promise<any> => {
