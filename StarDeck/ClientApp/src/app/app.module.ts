@@ -91,7 +91,6 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
         children: [
           { path: '', redirectTo: 'cards', pathMatch: 'full' },
           { path: 'cards', component: AllCardsListComponent },
-          { path: 'cards', component: CardListComponent },
           { path: 'planets', component: PlanetListComponent },
         ]
       },
