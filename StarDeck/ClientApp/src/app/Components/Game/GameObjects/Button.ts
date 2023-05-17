@@ -1,4 +1,4 @@
-import * as Phaser from "phaser";
+import * as Phaser from 'phaser';
 
 import { COLORS } from "../Constants";
 import { toRGBString } from "../Helpers";

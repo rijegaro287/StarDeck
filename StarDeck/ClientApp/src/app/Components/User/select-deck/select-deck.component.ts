@@ -9,9 +9,10 @@ import { BattleService } from "src/app/Services/battle.service";
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ICard } from "src/app/Interfaces/Card";
-import { IDeckNames, IDeck } from "../../../Interfaces/Decks";
+
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { CardService } from "../../../Services/card.service";
+import { IDeckNames } from "../../../Interfaces/Deck";
 @Component({
   selector: 'app-select-deck',
   templateUrl: './select-deck.component.html',
@@ -78,6 +79,7 @@ export class SelectDeckComponent implements OnInit {
    *Funcion que se llama cuando se cambia de opci�n en el Select
    */
   async ObtenerCartas() {
+    this.cardsDeckList = [];
     this.idDeck = this.newBattle.value.selectedDeck.id.toString();
     this.nameDeck = this.newBattle.value.selectedDeck.name.toString();
     console.log(this.nameDeck)
@@ -87,7 +89,7 @@ export class SelectDeckComponent implements OnInit {
     await this.battle.cardsofdeck(this.idDeck)
       .then(deck=> {
         this.idcardsDeckList = deck.cardlist;
-        console.log(this.idcardsDeckList)
+        
       });
 
      //Logica para obtener las cartas del deck selecccionado 
@@ -97,7 +99,6 @@ export class SelectDeckComponent implements OnInit {
         .then((card) => {
           this.cardsDeckList.push(card);
           this.cardsDeckList = this.cardsDeckList.slice()
-          console.log(this.cardsDeckList)
         });
     }
     
@@ -108,13 +109,13 @@ export class SelectDeckComponent implements OnInit {
   async Batalla() {
     try {
       this.onSelect();
-      await this.battle.favoritedeck(this.idDeck, this.nameDeck)
+      await this.battle.favoritedeck(this.idAccount, this.idDeck)
         .then(respuesta => {
-
+          console.log(respuesta)
       });
       window.location.assign(this.baseurl + "user/battle/search-opponent");
     } catch (error) {
-      alert(error);
+      console.error(error)
     }    
   }
   /*

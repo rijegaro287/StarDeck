@@ -3,7 +3,7 @@ import { apiURL } from '../app.component';
 
 import { RequestService } from './request.service';
 
-import { IDeckNames } from '../Interfaces/Decks';
+
 
 
 @Injectable({
@@ -27,8 +27,8 @@ export class BattleService {
   }
 
   //Poner el deck como favorito
-  favoritedeck = (Id: string, nameDeck:string): Promise<any> => {
-    return this.request.put(`${this.url}/Account/${Id}/favorite/${nameDeck}`, nameDeck);
+  favoritedeck = (Id: string, idDeck:string): Promise<any> => {
+    return this.request.put(`${this.url}/Account/${Id}/favorite/${idDeck}`, idDeck);
   }
 
   //Para solicitar un partida (POST)
@@ -36,7 +36,11 @@ export class BattleService {
     return this.request.post(`${this.url}/api/Game/${playerId}`, playerId);
   }
 
+  //Poner el deck como favorito
+  cancel = (Id: string): Promise<any> => {
+    return this.request.put(`${this.url}/api/Game/${Id}/false`, Id);
 
+  }
   
 
 

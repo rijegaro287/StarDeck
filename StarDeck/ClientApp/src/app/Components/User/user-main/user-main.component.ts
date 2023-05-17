@@ -33,7 +33,6 @@ export class UserMainComponent {
   */
   onPlayClicked() {
     window.location.assign(this.baseurl + "user/battle/select-deck");
-    console.log('Play clicked');
 
   }
 }
