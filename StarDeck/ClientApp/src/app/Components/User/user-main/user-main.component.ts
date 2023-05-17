@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import { INavbarItem } from 'src/app/Interfaces/Helpers';
 
@@ -10,19 +10,18 @@ import { INavbarItem } from 'src/app/Interfaces/Helpers';
 export class UserMainComponent {
   /** Contiene los elementos de la barra de navegación */
   navbarItems: INavbarItem[];
+    baseurl: string;
 
-  constructor() {
+  constructor(@Inject('BASE_URL') baseUrl: string) {
+    this.baseurl = baseUrl;
+
     this.navbarItems = [
       {
-        description: 'Escuadron', // Descripción del elemento
+        description: 'Escuadrón', // Descripción del elemento
         link: '/user/decks' // Ruta a la que redirige
       },
       {
-        description: 'Coleccion',
-        link: '/'
-      },
-      {
-        description: 'Configuración',
+        description: 'Configuración Cuenta',
         link: '/'
       }
     ]
@@ -33,6 +32,7 @@ export class UserMainComponent {
     sobre el botón de jugar
   */
   onPlayClicked() {
+    window.location.assign(this.baseurl + "user/battle/select-deck");
     console.log('Play clicked');
 
   }

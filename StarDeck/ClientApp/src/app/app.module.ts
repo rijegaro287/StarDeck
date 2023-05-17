@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 
@@ -63,8 +64,7 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
     PlanetComponent,
     PlanetListComponent,
     SelectDeckComponent,
-    SearchOpponentComponent
-    UserMainComponent,
+    SearchOpponentComponent,
     DeckListComponent
   ],
   imports: [
@@ -97,26 +97,12 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
         // canActivate: [UserGuard],
         children: [
           { path: '', redirectTo: 'decks', pathMatch: 'full' },
-          { path: 'decks', component: DeckListComponent }
-        ]
-      },
-      {
-        path: "User", component: UserMainComponent,
-        children: [
+          { path: 'decks', component: DeckListComponent },
           { path: 'battle/select-deck', component: SelectDeckComponent },
           { path: 'battle/search-opponent', component: SearchOpponentComponent }
-          ]
+        ]
       }
 
-      // {
-      //   path: 'player',
-      //   component: PlayerMainComponent,
-      //   // canActivate: [PlayerGuard],
-      //   children: [
-      //     { path: '', redirectTo: 'profile', pathMatch: 'full' },
-      //     { path: 'profile', component: PlayerProfileComponent },
-      //   ]
-      // },
     ]),
     MatFormFieldModule,
     MatSelectModule,
@@ -125,7 +111,7 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
     MatIconModule,
     MatGridListModule,
     MatCheckboxModule,
-
+    MatProgressSpinnerModule,
     MatToolbarModule,
     MatCardModule,
     MatTabsModule,
