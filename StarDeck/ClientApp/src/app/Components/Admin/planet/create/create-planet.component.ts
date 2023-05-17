@@ -6,7 +6,7 @@ import { HelpersService } from '../../../../Services/helpers.service';
 import { PlanetService } from '../../../../Services/planet.service';
 
 @Component({
-  selector: 'app-card-form',
+  selector: 'app-create-planet',
   templateUrl: './create-planet.component.html',
   styleUrls: ['./create-planet.component.scss']
 })
@@ -34,7 +34,7 @@ export class CreatePlanetComponent {
 
     const imageString = fileList.length ? await this.helpers.fileToBase64(fileList[0]) : '';
 
-    
+
     const newPlanet: IPlanet = {
       id: 'P-' + random.genSync('medium+', 12),
       name: this.newPlanet.value.name.toString(),
@@ -82,6 +82,6 @@ export class CreatePlanetComponent {
       throw new Error('La descripción del planet debe tener como máximo 1000 caracteres');
     }
   }
- 
-  
+
+
 }

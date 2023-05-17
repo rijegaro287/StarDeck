@@ -8,6 +8,8 @@ import { HelpersService } from "src/app/Services/helpers.service";
 import { ICard } from 'src/app/Interfaces/Card';
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { CardService } from "src/app/Services/card.service";
+import { CARD_TYPES } from "src/app/app.component";
 
 @Component({
   selector: 'app-selection-card',
@@ -19,7 +21,7 @@ export class SelectionCardComponent implements OnInit {
   idAccount: string;
   idCard: string;
   //Coleccion asignada
-  collectionInitial: [];
+  collectionInitial: string[];
 
   //Como obtener estas cartas sin Id
   cards: ICard[];
@@ -50,6 +52,7 @@ export class SelectionCardComponent implements OnInit {
    */
   constructor(@Inject('BASE_URL') baseUrl: string,
     private accountService: AccountService,
+    private cardService: CardService,
     protected helpers: HelpersService) {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
@@ -71,7 +74,7 @@ export class SelectionCardComponent implements OnInit {
    * */
   async ngOnInit() {
     //Obtiene la coleccion de 15 cartas que le asigna el sistema
-    await this.accountService.cards(this.idAccount)
+    await this.accountService.getAccountCards(this.idAccount)
       .then(collection => {
         // Coleccion Inicial designada al jugador
         this.collectionInitial = collection;
@@ -80,7 +83,7 @@ export class SelectionCardComponent implements OnInit {
 
     //Busca la informacion de la cartas que fueron asignadas
     for (let i = 0; i < this.collectionInitial.length; i++) {
-      await this.accountService.getCard(this.collectionInitial[i])
+      await this.cardService.getCard(this.collectionInitial[i])
         .then(card => {
           //Agregar las cartas a la lista principal de la coleccion del jugador para mostrarlas
           card.borderColor = this.helpers.getCardBorderColor(card.type);
@@ -89,15 +92,22 @@ export class SelectionCardComponent implements OnInit {
         });
     }
     //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
-    await this.accountService.nineCards()
+    // await this.cardService.getNineRandomCards()
+    await this.cardService.getAllCards()
       .then((cards) => {
-        console.log(cards)
+        const validCards = cards.filter((card) =>
+          !this.collectionInitial.includes(card.id) &&
+          (card.type === CARD_TYPES.NORMAL || card.type === CARD_TYPES.RARE)
+        );
+
+        const shuffledCards = validCards.sort((a, b) => 0.5 - Math.random());
+
         //Asignar las cartas a seleccionar
-        this.selectionCard1 = cards.slice(0, 3);
+        this.selectionCard1 = shuffledCards.slice(0, 3);
         console.log(this.selectionCard1)
-        this.selectionCard2 = cards.slice(3, 6);
+        this.selectionCard2 = shuffledCards.slice(3, 6);
         console.log(this.selectionCard2)
-        this.selectionCard3 = cards.slice(6, 9);
+        this.selectionCard3 = shuffledCards.slice(6, 9);
         console.log(this.selectionCard3)
       });
   }
@@ -117,10 +127,10 @@ export class SelectionCardComponent implements OnInit {
       .then(response => {
         console.log(response);
       })
-    await this.accountService.addParameter(this.idAccount, "InitialCards", '"True"')
-      .then(response => {
-        console.log(response);
-      })
+    // await this.accountService.addParameter(this.idAccount, "InitialCards", '"True"')
+    //   .then(response => {
+    //     console.log(response);
+    //   })
 
     window.location.assign(this.baseurl + "login")
   }
