@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Web.Helpers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Stardeck.Models;
 
 namespace Stardeck.GameModels
@@ -21,11 +23,11 @@ namespace Stardeck.GameModels
         
         public Territory[] Territories { get; set; } = new Territory[3];
         
-        [JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         private Territory? _territory3;
         public Gamelog? Gamelog { get; set; }
         
-        [JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         private Gameroom? Room{ get; set; }
         
         
@@ -74,7 +76,11 @@ namespace Stardeck.GameModels
 
         public string GetPlayerData(string playerId)
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(playerId == Player1.Id ? Player1 : Player2);
+            
+            return Newtonsoft.Json.JsonConvert.SerializeObject(playerId == Player1.Id ? Player1 : Player2,new JsonSerializerSettings()
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            });
         }
 
         /// <summary>
