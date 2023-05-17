@@ -42,6 +42,12 @@ namespace Stardeck.Logic
             var acc = context.Accounts.Find(id);
             return acc;
         }
+        public Account? GetAccountWithFavoriteDeck(string id)
+        {
+            //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
+            var acc = context.Accounts.Include(x=>x.FavoriteDeck).First(x=>x.Id==id);
+            return acc;
+        }
 
         public Account NewAccount(Account acc)
         {
@@ -253,26 +259,16 @@ namespace Stardeck.Logic
             return user.Serverconfig;
         }
 
-        public bool? SelectFavoriteDeck(string id, string idDeck)
+        public async Task<bool?> SelectFavoriteDeck(string id, string idDeck)
         {
-            Account? user = GetAccount(id);
+            Account? user = GetAccountWithFavoriteDeck(id);
             if (user == null) { return null; }
             Deck? deck = context.Decks.Find(idDeck);
             if (deck == null) { return false; }
 
             if (deck.IdAccount==user.Id)
             {
-                FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
-                if (actual==null)
-                {
-                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck};
-                    context.FavoriteDecks.Add(actual);
-                }
-                else
-                {
-                    actual.Deckid = deck.IdDeck;
-                    actual.Deck = deck;
-                }
+                user.FavoriteDeck = new() { Accountid = user.Id, Deckid = deck.IdDeck};
                 context.SaveChanges();
             }
             else

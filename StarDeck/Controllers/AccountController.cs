@@ -149,7 +149,7 @@ namespace Stardeck.Controllers
         [HttpPut("{id}/favorite/{deck}")]
         public async Task<IActionResult> SelectFavorite(string id, string deck)
         {
-            var selected = accountLogic.SelectFavoriteDeck(id, deck);
+            var selected = await accountLogic.SelectFavoriteDeck(id, deck);
             if (selected is not true)
             {
                 return NotFound();
