@@ -1,4 +1,4 @@
-type IPlanetType =  2 | 1 | 0;
+type IPlanetType = 2 | 1 | 0;
 
 interface IPlanet {
   id: string;
@@ -9,9 +9,11 @@ interface IPlanet {
   ability?: string;
   description: string;
   borderColor?: string;
+  player1Cards?: any[];
+  player2Cards?: any[];
 }
 
-export { 
+export {
   IPlanetType,
   IPlanet
 }

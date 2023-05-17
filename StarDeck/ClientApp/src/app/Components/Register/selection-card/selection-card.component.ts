@@ -9,6 +9,7 @@ import { ICard } from 'src/app/Interfaces/Card';
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { CardService } from "src/app/Services/card.service";
+import { CARD_TYPES } from "src/app/app.component";
 
 @Component({
   selector: 'app-selection-card',
@@ -20,7 +21,7 @@ export class SelectionCardComponent implements OnInit {
   idAccount: string;
   idCard: string;
   //Coleccion asignada
-  collectionInitial: [];
+  collectionInitial: string[];
 
   //Como obtener estas cartas sin Id
   cards: ICard[];
@@ -91,15 +92,22 @@ export class SelectionCardComponent implements OnInit {
         });
     }
     //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
-    await this.accountService.nineCards()
+    // await this.cardService.getNineRandomCards()
+    await this.cardService.getAllCards()
       .then((cards) => {
-        console.log(cards)
+        const validCards = cards.filter((card) =>
+          !this.collectionInitial.includes(card.id) &&
+          (card.type === CARD_TYPES.NORMAL || card.type === CARD_TYPES.RARE)
+        );
+
+        const shuffledCards = validCards.sort((a, b) => 0.5 - Math.random());
+
         //Asignar las cartas a seleccionar
-        this.selectionCard1 = cards.slice(0, 3);
+        this.selectionCard1 = shuffledCards.slice(0, 3);
         console.log(this.selectionCard1)
-        this.selectionCard2 = cards.slice(3, 6);
+        this.selectionCard2 = shuffledCards.slice(3, 6);
         console.log(this.selectionCard2)
-        this.selectionCard3 = cards.slice(6, 9);
+        this.selectionCard3 = shuffledCards.slice(6, 9);
         console.log(this.selectionCard3)
       });
   }

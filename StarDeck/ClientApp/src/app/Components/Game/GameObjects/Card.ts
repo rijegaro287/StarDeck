@@ -4,7 +4,7 @@ import { COLORS } from "../Constants";
 import { toRGBString } from "../Helpers";
 
 export default class Card extends Phaser.GameObjects.Container {
-	private image64String: string | null;
+	private base64Image?: string;
 	private margin: number;
 	private cardName: string;
 	private cardRace: string;
@@ -19,7 +19,7 @@ export default class Card extends Phaser.GameObjects.Container {
 		cardRace: string,
 		cardEnergyCost: number,
 		cardBattleCost: number,
-		image64String?: string
+		base64Image?: string
 	) {
 		super(scene, x, y);
 
@@ -27,13 +27,13 @@ export default class Card extends Phaser.GameObjects.Container {
 		this.y = y;
 		this.width = 200;
 		this.height = 350;
-		this.margin = 15
+		this.margin = 15;
 		this.cardName = cardName;
 		this.cardRace = cardRace;
 		this.cardEnergyCost = cardEnergyCost;
 		this.cardBattleCost = cardBattleCost;
 
-		this.image64String = image64String ? image64String : null;
+		this.base64Image = base64Image ? base64Image : '';
 
 		this.setSize(this.width, this.height);
 		this.setPosition(this.x, this.y);
@@ -47,6 +47,16 @@ export default class Card extends Phaser.GameObjects.Container {
 		const imagePositionY = -(this.height - imageSize) / 2 + this.margin
 		const cardImage = this.scene.add.image(0, imagePositionY, 'default-card');
 		cardImage.setDisplaySize(imageSize, imageSize);
+
+
+		console.log(cardImage.displayHeight, cardImage.displayWidth);
+
+
+		if (this.base64Image !== '') {
+			this.scene.textures
+				.addBase64(cardName, `data:image/png;base64,${this.base64Image}`)
+				.once(Phaser.Textures.Events.LOAD, () => cardImage.setTexture(cardName));
+		}
 
 		const cardNameText = this.scene.add.text(0, 2 * this.margin, this.cardName, {
 			fontFamily: 'Exo, sans-serif',

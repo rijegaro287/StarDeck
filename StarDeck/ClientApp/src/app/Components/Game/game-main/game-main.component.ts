@@ -9,9 +9,12 @@ import Button from '../GameObjects/Button';
 import StatusBar from '../GameObjects/StatusBar';
 import PlanetContainer from '../GameObjects/PlanetContainer';
 
-import { COLORS } from '../Constants';
-import Planet from '../GameObjects/Planet';
+import { getUserGameRoomData } from '../Requests';
 
+import { IGameRoom, IPlayer } from 'src/app/Interfaces/Game';
+import { ICard } from 'src/app/Interfaces/Card';
+
+import { COLORS } from '../Constants';
 
 @Component({
   selector: 'app-game-main',
@@ -41,6 +44,14 @@ export class GameMainComponent {
 }
 
 class MainScene extends Phaser.Scene {
+  gameRoom: IGameRoom;
+
+  playerID: string;
+  playerInfo: IPlayer;
+  playerHand: Card[];
+
+  opponentName: string;
+
   margin: number;
   playableWidth: number;
   playableHeight: number;
@@ -48,12 +59,32 @@ class MainScene extends Phaser.Scene {
   constructor() {
     super({ key: 'MainScene' });
 
+    this.gameRoom = {} as IGameRoom;
+
+    this.playerID = '';
+    this.playerInfo = {} as IPlayer;
+    this.playerHand = [];
+
+    this.opponentName = '';
+
     this.margin = 0;
     this.playableWidth = 0;
     this.playableHeight = 0;
   }
 
   preload() {
+    this.gameRoom = JSON.parse(sessionStorage.getItem('GameRoomData')!);
+
+    this.playerID = sessionStorage.getItem('ID')!;
+    if (this.gameRoom.player1.id === this.playerID) {
+      this.playerInfo = this.gameRoom.player1;
+      this.opponentName = this.gameRoom.player2.nickname;
+    }
+    else {
+      this.playerInfo = this.gameRoom.player2;
+      this.opponentName = this.gameRoom.player1.nickname;
+    }
+
     this.margin = 10;
     this.playableWidth = Number(this.sys.game.canvas.width) - 2 * this.margin;
     this.playableHeight = Number(this.sys.game.canvas.height) - 2 * this.margin;
@@ -67,27 +98,44 @@ class MainScene extends Phaser.Scene {
     this.load.image('clock-icon', '../../../assets/svg/clock-icon.svg');
   }
 
-  create() {
+  async create() {
+    await getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+      .then((response) => response.json())
+      .then((gameRoomData) => this.playerInfo = gameRoomData);
+
+    this.playerHand = this.playerInfo.Hand!.map((card: any) => {
+      return new Card(
+        this,
+        0,
+        0,
+        card.Name,
+        'Raza',
+        card.Energy,
+        card.Battlecost,
+        card.image
+      );
+    });
+
+    console.log(this.gameRoom);
+    console.log(this.playerInfo.Hand);
+    console.log(this.playerHand);
+
     const backgroundImage = this.add.image(0, 0, 'main-bg');
     backgroundImage.setDisplaySize(Number(this.sys.game.canvas.width), Number(this.sys.game.canvas.height));
     backgroundImage.setOrigin(0, 0);
 
-
-    const card1 = new Card(this, 0, 0, 'Carta 1', 'Raza 1', 50, 75);
-    const card2 = new Card(this, 0, 0, 'Carta 2', 'Raza 2', 50, 75);
-    const card3 = new Card(this, 0, 0, 'Carta 3', 'Raza 3', 50, 75);
-    const card4 = new Card(this, 0, 0, 'Carta 4', 'Raza 4', 50, 75);
-    const card5 = new Card(this, 0, 0, 'Carta 5', 'Raza 5', 50, 75);
-    const card6 = new Card(this, 0, 0, 'Carta 6', 'Raza 6', 50, 75);
-
-    const playerHand = [card1, card2, card3, card4, card5, card6];
 
     const playerHandWidth = this.playableWidth * 0.92;
     const playerHandHeight = this.playableHeight * 0.25;
     const playerHandY = this.margin + this.playableHeight - playerHandHeight / 2;
     const playerHandX = playerHandWidth / 2 + this.margin;
     const playerHandContainer = new CardList(
-      this, playerHandX, playerHandY, playerHandWidth, playerHandHeight, playerHand
+      this,
+      playerHandX,
+      playerHandY,
+      playerHandWidth,
+      playerHandHeight,
+      this.playerHand
     );
 
     const playerDeck = new HiddenCard(this, 0, 0);
@@ -113,7 +161,15 @@ class MainScene extends Phaser.Scene {
     surrenderButton.setPosition(surrenderButtonPositionX, surrenderButtonPositionY)
 
     const statusBar = new StatusBar(
-      this, 0, 0, this.playableWidth, this.playableHeight * 0.08, 10, 500, 20, 'Nombre oponente'
+      this,
+      0,
+      0,
+      this.playableWidth,
+      this.playableHeight * 0.08,
+      10,
+      this.playerInfo.Coins,
+      20,
+      this.opponentName
     );
     const statusBarPositionX = statusBar.width / 2 + this.margin;
     const statusBarPositionY = statusBar.height / 2 + this.margin;
@@ -137,20 +193,20 @@ class MainScene extends Phaser.Scene {
     const card20 = new Card(this, 0, 0, 'Carta 20', 'Raza 1', 50, 75);
 
     const planet1 = {
-      planetName: 'Planeta 1',
+      planetName: this.gameRoom.territories[0].name,
       playerCards: [card7, card8, card9],
       opponentCards: [card10, card11, card12]
 
     };
 
     const planet2 = {
-      planetName: 'Planeta 2',
+      planetName: this.gameRoom.territories[1].name,
       playerCards: [card13, card14],
       opponentCards: [card15, card16, card17]
     };
 
     const planet3 = {
-      planetName: 'Planeta 3',
+      planetName: this.gameRoom.territories[2].name,
       playerCards: [card18, card19],
       opponentCards: [card20]
     };

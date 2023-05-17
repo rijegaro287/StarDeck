@@ -1,13 +1,13 @@
 <div class="w-75 my-5 mx-auto">
   <form [formGroup]="newBattle">
     <div class="row">
-      <h1>Seleccione el Escuadrón que desea jugar en la Batalla  </h1>
+      <h1>Seleccione el Escuadrón que desea jugar en la Batalla </h1>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
         <mat-label>Escuadrón</mat-label>
-        <mat-select matInput formControlName="selectedDeck" required (ngModelChange)="ObtenerCartas()">
+        <mat-select matInput formControlName="selectedDeck" required (ngModelChange)="getCards()">
           <mat-option *ngFor="let deck of deckList" [value]="deck">
             {{ deck.name }}
           </mat-option>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="row">
-      <button mat-raised-button color="primary" (click)="Batalla()"> Buscar Batalla </button>
+      <button mat-raised-button color="primary" (click)="searchOpponent()"> Buscar Batalla </button>
     </div>
   </form>
 </div>
