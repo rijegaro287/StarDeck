@@ -12,27 +12,29 @@ namespace Stardeck.Logic
       this.context = context;
     }
 
-    public List<Card> GetAll()
-    {
-      List<Card> cards = context.Cards.ToList();
-      if (cards.Count == 0)
-      {
-        return null;
-      }
-      return cards;
-    }
+        public List<Card> GetAll()
+        {
+            List<Card> cards = context.Cards.ToList();
+            if (cards.Count == 0)
+            {
+                return null;
+            }
+
+            return cards;
+        }
 
     public Card GetCard(string id)
     {
       //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
       var card = context.Cards.Find(id);
 
-      if (card == null)
-      {
-        return null;
-      }
-      return card;
-    }
+            if (card == null)
+            {
+                return null;
+            }
+
+            return card;
+        }
 
 
     public Card NewCard(CardImage card)
@@ -52,7 +54,7 @@ namespace Stardeck.Logic
 
       };
 
-            
+
             context.Cards.Add(cardAux);
 
       context.SaveChanges();
@@ -75,10 +77,11 @@ namespace Stardeck.Logic
         card.Description = nCard.Description;
         card.Race = nCard.Race;
 
-        context.SaveChanges();
-        return card;
-      }
-      return null;
+                context.SaveChanges();
+                return card;
+            }
+
+            return null;
 
     }
 
@@ -93,19 +96,21 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return card;
             }
+
             return null;
         }
 
-    public List<Card> GetNineCards()
-    {
-      List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
-      Random rand = new Random();
-      var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
-      return shuffled.GetRange(0, 9);
+        public List<Card> GetNineCards()
+        {
+            List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
+            Random rand = new Random();
+            var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
+            return shuffled.GetRange(0, 9);
+        }
+
+
+
+
     }
-
-
-  }
-
-    }
+}
 
