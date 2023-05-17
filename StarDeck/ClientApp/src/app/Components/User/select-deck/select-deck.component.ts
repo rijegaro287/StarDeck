@@ -9,6 +9,10 @@ import { BattleService } from "src/app/Services/battle.service";
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ICard } from "src/app/Interfaces/Card";
+
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { CardService } from "../../../Services/card.service";
+import { IDeckNames } from "../../../Interfaces/Deck";
 @Component({
   selector: 'app-select-deck',
   templateUrl: './select-deck.component.html',
@@ -16,12 +20,14 @@ import { ICard } from "src/app/Interfaces/Card";
 })
 export class SelectDeckComponent implements OnInit {
   //---------------Variables a utilizar--------------
-  idSquad: string;
+  idDeck: string;
+  nameDeck: string;
   idAccount: string;
-  deckList: []; //Lista de decks
+  deckList:IDeckNames[]; 
+  idcardsDeckList:[];
   cardsDeckList: ICard[];
-  selectedDeck: string; //Deck seleccionado
-
+  newBattle: FormGroup;
+  
   respuesta = {};
 
   router: Router | undefined;
@@ -38,17 +44,22 @@ export class SelectDeckComponent implements OnInit {
    * @param accountService injector del service de cuenta para las peticiones
    */
   constructor(@Inject('BASE_URL') baseUrl: string,
-    protected helpers: HelpersService, protected battle: BattleService) {
+    protected helpers: HelpersService, protected cards: CardService, protected battle: BattleService, private _formBuilder: FormBuilder,) {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
 
     this.baseurl = baseUrl;
-    this.idSquad = '';
+    this.idDeck = '';
+    this.nameDeck = '';
     this.deckList = [];
+    this.idcardsDeckList = [];
     this.cardsDeckList = [];
+    //Datos del formulario de Registro de Cuenta
+    this.newBattle = this._formBuilder.group({
+      selectedDeck: ['', Validators.required]
+    });
 
-    this.selectedDeck = '';
-
+    
   }
   /**
    *Funcion que se ejecuta cuando se carga el componente
@@ -60,36 +71,64 @@ export class SelectDeckComponent implements OnInit {
     await this.battle.decks(this.idAccount)
       .then(decks => {
         this.deckList = decks;
+        console.log(this.deckList)
       });
-
-
   }
 
   /**
-   *Funcion que se llama cuando se da click en Aceptar 
+   *Funcion que se llama cuando se cambia de opci�n en el Select
    */
   async ObtenerCartas() {
+    this.cardsDeckList = [];
+    this.idDeck = this.newBattle.value.selectedDeck.id.toString();
+    this.nameDeck = this.newBattle.value.selectedDeck.name.toString();
+    console.log(this.nameDeck)
+    console.log(this.idDeck)
 
-    //Logica para obtener las cartas del deck selecccionado en el Select
-    await this.battle.cardsofdeck(this.selectedDeck)
-      .then(cards => {
-        this.cardsDeckList = cards;
+    //Logica para obtener los ids del deck selecccionado en el Select
+    await this.battle.cardsofdeck(this.idDeck)
+      .then(deck=> {
+        this.idcardsDeckList = deck.cardlist;
+        
       });
 
+     //Logica para obtener las cartas del deck selecccionado 
+    for (let i = 0; i < this.idcardsDeckList.length; i++) {
+      const cardID = this.idcardsDeckList[i];
+      await this.cards.getCard(cardID)
+        .then((card) => {
+          this.cardsDeckList.push(card);
+          this.cardsDeckList = this.cardsDeckList.slice()
+        });
+    }
+    
   }
   /**
    *Funcion que se llama cuando se da click en Buscar Batalla
    */
   async Batalla() {
-    window.location.assign(this.baseurl + "batalla/search-opponent");
+    try {
+      this.onSelect();
+      await this.battle.favoritedeck(this.idAccount, this.idDeck)
+        .then(respuesta => {
+          console.log(respuesta)
+      });
+      window.location.assign(this.baseurl + "user/battle/search-opponent");
+    } catch (error) {
+      console.error(error)
+    }    
+  }
+  /*
+   *Función que valida si se selecciono o no un escuadrón
+   **/
+  onSelect() {
 
-    //Logica para la solicitud de una partida al servidor
-    // await this.battle.search_battle(this.selectedDeck)
-    //   .then(battle => {
-    //   });
-
+    if (this.idDeck == '' && this.nameDeck == '') {
+      throw new Error('Debe seleccionar un escuadrón de batalla');
+    }
 
   }
-
+  
+  
 }
 

@@ -8,6 +8,12 @@ interface IDeck {
   cards?: ICard[];
 }
 
+interface IDeckNames {
+  id: string;
+  name: string;
+}
+
 export {
-  IDeck
+  IDeck,
+  IDeckNames
 }

@@ -38,7 +38,7 @@ namespace Stardeck.Controllers
             var act = await gameLogic.PutInMatchMaking(id, isInMatchMaking);
             if (act != null)
             {
-                return Ok(act);
+                return Ok(new KeyValuePair<string, bool?>(id, act));
             }
 
             return NotFound();
@@ -72,6 +72,17 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> GetData(string id)
         {
             var room = gameLogic.GetGameRoomData(id);
+            if (room != null)
+            {
+                return Ok(room);
+            }
+
+            return NotFound();
+        }
+        [HttpGet("getGameRoomData/{idRoom}/{idUser}")]
+        public async Task<IActionResult> GetPlayerData(string idRoom,string idUser)
+        {
+            var room = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
             if (room != null)
             {
                 return Ok(room);

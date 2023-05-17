@@ -1,11 +1,7 @@
-import * as random from "random-web-token";
 
 import { Component, Inject, OnInit } from '@angular/core';
-
-import { AccountService } from 'src/app/Services/account.service';
+import { BattleService } from "src/app/Services/battle.service";
 import { HelpersService } from "src/app/Services/helpers.service";
-
-import { ICard } from 'src/app/Interfaces/Card';
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 
@@ -15,8 +11,9 @@ import { Router } from "@angular/router";
   styleUrls: ['./search-opponent.component.scss']
 })
 export class SearchOpponentComponent implements OnInit {
- 
+  idAccount: string;
   respuesta = {};
+  dataBattle: string;
 
   router: Router | undefined;
   baseurl: string;
@@ -29,24 +26,48 @@ export class SearchOpponentComponent implements OnInit {
   /**
    * Constructor de la clase
    * @param baseUrl variable para manejar la direccion de la pagina
-   * @param accountService injector del service de cuenta para las peticiones
+   * @param battleS injector del service de batalla para las peticiones
    */
   constructor(@Inject('BASE_URL') baseUrl: string,
-    private accountService: AccountService,
+    private battleS: BattleService,
     protected helpers: HelpersService) {
     //-------------Inizializacion de variables --------------
     this.baseurl = baseUrl;
-    
+    this.idAccount = sessionStorage.getItem('ID')!;
+    this.dataBattle = '';
+
   }
   /**
    *Funcion que se ejecuta cuando se carga el componente
    * */
   async ngOnInit() {
-    
 
+    //Logica para la solicitud de una batalla 
+    await this.battleS.search_battle(this.idAccount)
+      .then(battle => {
+        this.dataBattle = battle;
+        console.log(battle)
+      })
+      .catch(error => {
+        alert("No hay jugadores disponibles, intentelo más tarde");
+        window.location.assign(this.baseurl + "user/battle/select-deck");
+
+      })
+
+    //Llamada al componente de Juego 
+    //window.location.assign(this.baseurl + "");
   }
 
 
+  async searchCancel() {
+    //Logica para la solicitud de una batalla 
+    await this.battleS.cancel(this.idAccount)
+      .then(battle => {
+        console.log(battle)
+      });
+    window.location.assign(this.baseurl + "user");
+  }
+  
   
 }
 

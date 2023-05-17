@@ -19,6 +19,7 @@
         public bool? Showed { get; set; }
 
         public int? Turnplayed { get; set; }
+        public string? image { get; set; }
 
         public GameCard(Models.Card data)
         {
@@ -30,6 +31,7 @@
             Type = data.Type;
             Ability = new CardAbility(data.Ability);
             Race = data.Race;
+            image = Convert.ToBase64String(data.Image);
         }
 
     }

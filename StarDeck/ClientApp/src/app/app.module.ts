@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 
@@ -89,6 +90,7 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
         // canActivate: [AdministratorGuard],
         children: [
           { path: '', redirectTo: 'cards', pathMatch: 'full' },
+          { path: 'cards', component: AllCardsListComponent },
           { path: 'cards', component: CardListComponent },
           { path: 'planets', component: PlanetListComponent },
         ]
@@ -105,6 +107,7 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
       {
         path: "game", component: GameMainComponent
       }
+
     ]),
     MatFormFieldModule,
     MatSelectModule,
@@ -113,7 +116,7 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
     MatIconModule,
     MatGridListModule,
     MatCheckboxModule,
-
+    MatProgressSpinnerModule,
     MatToolbarModule,
     MatCardModule,
     MatTabsModule,
