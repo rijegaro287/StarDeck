@@ -114,9 +114,10 @@ export class RegisterAccountComponent {
    * Funcion para validar que una contraseña sea alfanumerica
    * */
   hasLetterAndNumber(password: string): boolean {
-  const letterExp = /[a-zA-Z]/; 
-  const numberExp = /\d/; 
-  return letterExp.test(password) && numberExp.test(password);}
+    const letterExp = /[a-zA-Z]/;
+    const numberExp = /\d/;
+    return letterExp.test(password) && numberExp.test(password);
+  }
 
 
   /*
@@ -132,7 +133,7 @@ export class RegisterAccountComponent {
 
     const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.newUser.value.email);
     const validPassword = this.hasLetterAndNumber(this.newUser.value.password.toString());
-    
+
     if (!validEmail) {
       throw new Error("Ingrese una dirección de correo electrónico válida");
     }

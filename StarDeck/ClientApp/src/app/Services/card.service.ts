@@ -4,7 +4,7 @@ import { apiURL } from '../app.component';
 import { RequestService } from './request.service';
 
 import { ICard } from '../Interfaces/Card';
-import { ICardsResponse, IServerResponse } from '../Interfaces/ServerResponse';
+import { IServerResponse } from '../Interfaces/ServerResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,12 @@ export class CardService {
     return this.request.get(`${this.url}/get_all`);
   }
 
+  getCard = (cardID: string): Promise<any> => {
+    return this.request.get(`${this.url}/get/${cardID}`);
+  }
+
   addCard = (card: ICard): Promise<IServerResponse> => {
     return this.request.post(`${this.url}/add`, card);
   }
 
-  getCard = (cardID: string): Promise<any> => {
-    return this.request.get(`${this.url}/get/${cardID}`);
-  }
 }

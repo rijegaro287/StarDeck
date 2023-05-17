@@ -1,4 +1,4 @@
-﻿using Stardeck.Models;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic

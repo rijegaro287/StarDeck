@@ -119,10 +119,10 @@ export class SelectionCardComponent implements OnInit {
       .then(response => {
         console.log(response);
       })
-    await this.accountService.addParameter(this.idAccount, "InitialCards", '"True"')
-      .then(response => {
-        console.log(response);
-      })
+    // await this.accountService.addParameter(this.idAccount, "InitialCards", '"True"')
+    //   .then(response => {
+    //     console.log(response);
+    //   })
 
     window.location.assign(this.baseurl + "login")
   }

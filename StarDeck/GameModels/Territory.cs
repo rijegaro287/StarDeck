@@ -1,4 +1,4 @@
-﻿namespace Stardeck.GameModels
+namespace Stardeck.GameModels
 {
 
     public class Territory

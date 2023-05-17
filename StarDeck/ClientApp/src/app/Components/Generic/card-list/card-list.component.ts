@@ -12,14 +12,20 @@ import { ICard } from 'src/app/Interfaces/Card';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnChanges {
+  /** Lista de cartas a mostrar */
   @Input() cards: ICard[]
+  /** Función que se ejecuta al hacer click sobre una carta */
   @Input() onCardClicked: (card: ICard) => void
-  @Input() hover: boolean
 
+  /** Cartas ultra raras */
   ultraRareCards: ICard[]
+  /** Cartas muy raras */
   veryRareCards: ICard[]
+  /** Cartas raras */
   rareCards: ICard[]
+  /** Cartas normales */
   normalCards: ICard[]
+  /** Cartas básicas */
   basicCards: ICard[]
 
   constructor(
@@ -27,7 +33,6 @@ export class CardListComponent implements OnChanges {
   ) {
     this.cards = [];
     this.onCardClicked = (card: ICard) => { };
-    this.hover = false;
 
     this.ultraRareCards = [];
     this.veryRareCards = [];
@@ -37,8 +42,7 @@ export class CardListComponent implements OnChanges {
   }
 
   /** 
-   * Solicita todas las cartas al servidor 
-   * y las filtra según su tipo
+   * Solicita todas las cartas al servidor y las filtra según su tipo
   */
   ngOnChanges() {
     if (this.cards.length > 0) {

@@ -46,7 +46,7 @@ export class SelectDeckComponent implements OnInit {
     protected helpers: HelpersService, protected cards: CardService, protected battle: BattleService, private _formBuilder: FormBuilder,) {
     //-------------Inizializacion de variables --------------
     this.idAccount = sessionStorage.getItem('ID')!;
-    
+
     this.baseurl = baseUrl;
     this.idDeck = '';
     this.nameDeck = '';
@@ -75,7 +75,7 @@ export class SelectDeckComponent implements OnInit {
   }
 
   /**
-   *Funcion que se llama cuando se cambia de opción en el Select
+   *Funcion que se llama cuando se cambia de opci�n en el Select
    */
   async ObtenerCartas() {
     this.idDeck = this.newBattle.value.selectedDeck.id.toString();
