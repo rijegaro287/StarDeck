@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 
 namespace Stardeck.GameModels.Tests
 {
@@ -48,6 +49,26 @@ namespace Stardeck.GameModels.Tests
             room.Player2Navigation = player2;
 
             var roomAux = new GameRoom(room);
+
+        }
+        
+        
+        [TestMethod()]
+        public  void GameInitTest()
+        {
+            var logic = new  Logic.GameLogic(new());
+            var a= logic.PutInMatchMaking("U-RXF7RJNBWEKD",true).Result;
+            Assert.IsTrue(a,"No se logro poner al jugador en MatchMaking");
+            var room =  logic.IsWaiting("U-37WTJPRJSGHH").Result;
+            Assert.IsNotNull(room, "La sala no se creo correctamente");
+
+        }
+        [TestMethod()]
+        public  void GameInitMaxTimeTest()
+        {
+            var logic = new  Logic.GameLogic(new());
+            var room =  logic.IsWaiting("U-37WTJPRJSGHH").Result;
+            Assert.IsNull(room, "La sala se creo correctamente, cuando no deberia");
 
         }
     }
