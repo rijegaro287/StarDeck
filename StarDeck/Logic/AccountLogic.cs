@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Stardeck.Models;
-using System.Text.RegularExpressions;
+
 //using System.Web.Mvc;
 
 namespace Stardeck.Logic
@@ -22,18 +22,15 @@ namespace Stardeck.Logic
             {
                 return null;
             }
+
             return accounts;
         }
 
-        public string[] GetCards(string accountId)
+        public string[]? GetCards(string accountId)
         {
             var collection = context.Collections.Find(accountId);
-            if (collection?.Collection1 == null)
-            {
-                return null;
-            }
-            return collection.Collection1;
 
+            return collection?.Collection1;
         }
 
         public Account? GetAccount(string id)
@@ -42,10 +39,11 @@ namespace Stardeck.Logic
             var acc = context.Accounts.Find(id);
             return acc;
         }
+
         public Account? GetAccountWithFavoriteDeck(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
-            var acc = context.Accounts.Include(x=>x.FavoriteDeck).First(x=>x.Id==id);
+            var acc = context.Accounts.Include(x => x.FavoriteDeck).First(x => x.Id == id);
             return acc;
         }
 
@@ -74,8 +72,6 @@ namespace Stardeck.Logic
                 Password = acc.Password,
                 Avatar = acc.Avatar,
                 Config = acc.Config,
-
-
             };
 
             accAux.generateID();
@@ -95,8 +91,8 @@ namespace Stardeck.Logic
 
 
             return accAux;
-
         }
+
         /// <summary>
         /// Ad a card to the player collection. If is a new player create it collection
         /// </summary>
@@ -116,11 +112,10 @@ namespace Stardeck.Logic
             {
                 return null;
             }
+
             collection.Collectionlist.Add(cardId);
             context.SaveChanges();
             return collection.Collection1;
-
-
         }
 
 
@@ -156,8 +151,8 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return acc;
             }
-            return null;
 
+            return null;
         }
 
         public Account? DeleteAccount(string id)
@@ -170,6 +165,7 @@ namespace Stardeck.Logic
                 context.SaveChanges();
                 return acc;
             }
+
             return null;
         }
 
@@ -191,9 +187,9 @@ namespace Stardeck.Logic
 
                     return collection;
                 }
+
                 return null;
             }
-
         }
 
         /*
@@ -219,31 +215,53 @@ namespace Stardeck.Logic
                 tmpresult = addCardsToCollection(accountId, card);
                 if (tmpresult is null) continue;
             }
+
             return tmpresult;
         }
 
         public Dictionary<string, string>? GetParameter(string id, string parameter)
         {
             Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            if (user == null)
+            {
+                return null;
+            }
+
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower()))
+            {
+                return null;
+            }
+
             return new Dictionary<string, string>
             {
                 [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()]
             };
         }
+
         public Dictionary<string, string>? GetParameters(string id)
         {
             Account? user = GetAccount(id);
-            if (user == null) { return null; }
+            if (user == null)
+            {
+                return null;
+            }
+
             return user.Serverconfig;
         }
 
         public Dictionary<string, string>? PostParameter(string id, string parameter, string value)
         {
             Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            if (user == null)
+            {
+                return null;
+            }
+
+            if (user.Serverconfig.ContainsKey(parameter.ToLower()))
+            {
+                return null;
+            }
+
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             return user.Serverconfig;
@@ -252,8 +270,16 @@ namespace Stardeck.Logic
         public Dictionary<string, string>? PutParameter(string id, string parameter, string value)
         {
             Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            if (user == null)
+            {
+                return null;
+            }
+
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower()))
+            {
+                return null;
+            }
+
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             return user.Serverconfig;
@@ -262,13 +288,20 @@ namespace Stardeck.Logic
         public async Task<bool?> SelectFavoriteDeck(string id, string idDeck)
         {
             Account? user = GetAccountWithFavoriteDeck(id);
-            if (user == null) { return null; }
-            Deck? deck = context.Decks.Find(idDeck);
-            if (deck == null) { return false; }
-
-            if (deck.IdAccount==user.Id)
+            if (user == null)
             {
-                user.FavoriteDeck = new() { Accountid = user.Id, Deckid = deck.IdDeck};
+                return null;
+            }
+
+            Deck? deck = await context.Decks.FindAsync(idDeck);
+            if (deck == null)
+            {
+                return null;
+            }
+
+            if (deck.IdAccount == user.Id)
+            {
+                user.FavoriteDeck = new() { Accountid = user.Id, Deckid = deck.IdDeck };
                 context.SaveChanges();
             }
             else
@@ -278,10 +311,5 @@ namespace Stardeck.Logic
 
             return true;
         }
-
-        
-
     }
 }
-
-
