@@ -38,7 +38,7 @@ namespace Stardeck.Controllers
             var act = await gameLogic.PutInMatchMaking(id, isInMatchMaking);
             if (act != null)
             {
-                return Ok(act);
+                return Ok(new KeyValuePair<string, bool?>(id, act));
             }
 
             return NotFound();

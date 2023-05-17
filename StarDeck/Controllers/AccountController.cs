@@ -112,7 +112,7 @@ namespace Stardeck.Controllers
             string[]? aux = accountLogic.addCardsListToCollection(accountId, cardId);
             if (aux is null)
             {
-                return BadRequest("Ya en coleccion " + cardId);
+                return BadRequest(new KeyValuePair<string, string>("404", "Ya en coleccion " + cardId));
             }
             return Ok(aux);
 
@@ -150,11 +150,12 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> SelectFavorite(string id, string deck)
         {
             var selected = await accountLogic.SelectFavoriteDeck(id, deck);
-            if (selected is not true)
+            return selected switch
             {
-                return NotFound();
-            }
-            return Ok(deck);
+                null => NotFound(new KeyValuePair<string,string>("404","Deck not found")),
+                false => NotFound(new KeyValuePair<string,string>("200","Deck Is not from this user")),
+                _ => Ok(new KeyValuePair<string, string>(id, deck))
+            };
         }
 
 
@@ -186,9 +187,10 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Delete(string accountId, string cardId)
         {
             var collection = accountLogic.DeleteCard(accountId, cardId);
-            if (collection == null)
+            if (collection is null)
             {
-                return NotFound("Coleccion no encontrada");
+                ;
+                return NotFound(new KeyValuePair<string, string>("404", "Coleccion no encontrada"));
             }
             else
             {
@@ -196,7 +198,7 @@ namespace Stardeck.Controllers
                 {
                     return Ok(collection.Collection1);
                 }
-                return NotFound("No se pudo eliminar");
+                return NotFound(new KeyValuePair<string, string>("404", "Carta no encontrada"));
             }
 
 
