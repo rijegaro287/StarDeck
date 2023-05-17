@@ -22,11 +22,11 @@ interface IPlayer {
   Name: string;
   nickname: string;
   Avatar: number;
-  Config: null;
-  Points: number;
-  Coins: number;
-  Hand?: ICard[];
-  Deck?: ICard[];
+  config: null;
+  points: number;
+  coins: number;
+  hand?: ICard[];
+  deck?: ICard[];
 }
 
 export {
