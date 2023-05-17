@@ -74,6 +74,8 @@ h1 {
   color: $secondary
 }
 
+$navbar-height: 7rem;
+
 @mixin card-list-grid {
   height: 45rem;
   display: grid;

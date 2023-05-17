@@ -3,7 +3,7 @@
     Hace que la barra de navegación siempre esté visible
     en la página de administrador
   -->
-  <app-navbar [items]="navbarItems">
+  <app-navbar [items]="navbarItems" [logoHref]="'/user'">
     <button class="play-button" mat-raised-button color="accent" (click)="onPlayClicked()">Jugar</button>
   </app-navbar>
 

@@ -10,7 +10,7 @@ import { INavbarItem } from 'src/app/Interfaces/Helpers';
 export class UserMainComponent {
   /** Contiene los elementos de la barra de navegación */
   navbarItems: INavbarItem[];
-    baseurl: string;
+  baseurl: string;
 
   constructor(@Inject('BASE_URL') baseUrl: string) {
     this.baseurl = baseUrl;
@@ -28,11 +28,9 @@ export class UserMainComponent {
   }
 
   /**
-    Se ejecuta al hacer click
-    sobre el botón de jugar
+    Se ejecuta al hacer clicksobre el botón de jugar
   */
   onPlayClicked() {
     window.location.assign(this.baseurl + "user/battle/select-deck");
-
   }
 }
