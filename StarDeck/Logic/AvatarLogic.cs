@@ -2,23 +2,25 @@
 using System.Text.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using Stardeck.DbAccess;
 
 namespace Stardeck.Logic
 {
     public class AvatarLogic
     {
         private readonly StardeckContext context;
-
+        private readonly AvatarDb avatarDB;
 
         public AvatarLogic(StardeckContext context)
         {
             this.context = context;
+            this.avatarDB=new AvatarDb(context);
         }
 
 
         public List<Avatar> GetAll()
         {
-            List<Avatar> avatars = context.Avatars.ToList();
+            List<Avatar> avatars = avatarDB.GetAllAvatars();
             if (avatars.Count == 0)
             {
                 return null;
@@ -28,8 +30,7 @@ namespace Stardeck.Logic
 
         public Avatar GetAvatar(long id)
         {
-            //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
-            var avatar = context.Avatars.Find(id);
+            var avatar = avatarDB.GetAvatar(id);
 
             if (avatar == null)
             {
@@ -48,14 +49,14 @@ namespace Stardeck.Logic
                 Image=avatar.Image,
 
             };
-            context.Avatars.Add(avatarAux);
+            avatarDB.NewAvatar(avatarAux);
             return avatarAux;
 
         }
 
         public Avatar UpdateAvatar(long id, Avatar nAvatar)
         {
-            var avatar = context.Avatars.Find(id);
+            var avatar = avatarDB.GetAvatar(id);
             if (avatar != null)
             {
                 avatar.Name = nAvatar.Name;
@@ -73,11 +74,9 @@ namespace Stardeck.Logic
 
         public Avatar DeleteAvatar(long id)
         {
-            var avatar = context.Avatars.Find(id);
+            var avatar = avatarDB.DeleteAvatar(id);
             if (avatar != null)
             {
-                context.Remove(avatar);
-                context.SaveChanges();
                 return avatar;
             }
             return null;

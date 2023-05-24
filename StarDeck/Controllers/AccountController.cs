@@ -94,7 +94,7 @@ namespace Stardeck.Controllers
         [HttpPost("addCards/{accountId}/{cardId}")]
         public async Task<IActionResult> addCards(string accountId, string cardId)
         {
-            string[]? aux = accountLogic.addCardsToCollection(accountId, cardId);
+            string[]? aux = accountLogic.AddCardsToCollection(accountId, cardId);
             if (aux is null)
             {
                 return BadRequest("Ya en coleccion " + cardId);
@@ -109,7 +109,7 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> addCardsList(string accountId, [FromBody] string[] cardId)
         {
 
-            string[]? aux = accountLogic.addCardsListToCollection(accountId, cardId);
+            string[]? aux = accountLogic.AddCardsListToCollection(accountId, cardId);
             if (aux is null)
             {
                 return BadRequest("Ya en coleccion " + cardId);

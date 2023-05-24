@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.GameModels;
+using Stardeck.DbAccess;
 
 namespace Stardeck.Logic
 {
@@ -10,10 +11,13 @@ namespace Stardeck.Logic
     {
         private static StardeckContext _context;
         private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
+        private readonly GameDb gameDB;
 
         public GameLogic(StardeckContext context)
         {
             _context = context;
+            this.gameDB=new GameDb(context);
+            
         }
         
 
@@ -79,7 +83,7 @@ namespace Stardeck.Logic
 
         public List<Gameroom> GetAllGamerooms()
         {
-            List<Gameroom> roomList = _context.Gamerooms.ToList();
+            List<Gameroom> roomList = gameDB.GetAllGamerooms();
             if(roomList is null)
             {
                 return null;
@@ -89,7 +93,7 @@ namespace Stardeck.Logic
 
         public Gameroom GetGameroom(string id)
         {
-            Gameroom room = _context.Gamerooms.Find(id);
+            Gameroom room = gameDB.GetGameroom(id);
             if (room is null)
             {
                 return null;

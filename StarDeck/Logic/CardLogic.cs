@@ -1,4 +1,5 @@
-﻿using Stardeck.Models;
+﻿using Stardeck.DbAccess;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -6,16 +7,17 @@ namespace Stardeck.Logic
     public class CardLogic
     {
         private readonly StardeckContext context;
-
+        private readonly CardDb cardDB;
         public CardLogic(StardeckContext context)
         {
             this.context = context;
+            this.cardDB=new CardDb(context);
         }
 
         public List<Card> GetAll()
         {
-            List<Card> cards = context.Cards.ToList();
-            if (cards.Count == 0)
+            List<Card> cards = cardDB.GetAllCards();
+            if (cards == null)
             {
                 return null;
             }
@@ -24,9 +26,7 @@ namespace Stardeck.Logic
 
         public Card GetCard(string id)
         {
-            //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
-            var card = context.Cards.Find(id);
-
+            var card = cardDB.GetCard(id);
             if (card == null)
             {
                 return null;
@@ -51,18 +51,14 @@ namespace Stardeck.Logic
                 Race = card.Race
 
             };
-
-            
-            context.Cards.Add(cardAux);
-
-            context.SaveChanges();
+            cardDB.NewCard(cardAux);
             return card;
 
         }
 
         public Card UpdateCard(string id, Card nCard)
         {
-            var card = context.Cards.Find(id);
+            var card = cardDB.GetCard(id);
             if (card != null)
             {
                 card.Name = nCard.Name;
@@ -83,14 +79,11 @@ namespace Stardeck.Logic
         }
 
 
-        public Card deleteCard(string id)
+        public Card DeleteCard(string id)
         {
-            var card = context.Cards.Find(id);
+            var card = cardDB.DeleteCard(id);
             if (card != null)
             {
-                //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
-                context.Remove(card);
-                context.SaveChanges();
                 return card;
             }
             return null;
@@ -103,9 +96,7 @@ namespace Stardeck.Logic
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
             return shuffled.GetRange(0,9);
         }
-
-
-        }
+     }
 
     }
 

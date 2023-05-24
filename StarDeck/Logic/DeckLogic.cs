@@ -1,4 +1,5 @@
-﻿using Stardeck.Models;
+﻿using Stardeck.DbAccess;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -7,31 +8,32 @@ namespace Stardeck.Logic
     {
 
         private readonly StardeckContext context;
-
+        private readonly DeckDb deckDB;
         public DeckLogic(StardeckContext context)
         {
             this.context = context;
+            this.deckDB = new DeckDb(context);
         }
 
 
         public List<Deck>? GetAll()
         {
-            List<Deck> decks = context.Decks.ToList();
-            if (decks.Count == 0)
+            List<Deck> decks = deckDB.GetAllDecks();
+            if (decks == null)
             {
                 return null;
             }
             return decks;
         }
 
-        public IQueryable? GetNames(string userId)
+        public Object GetNames(string userId)
         {
-            var decks = GetDecksByUser(userId).Select(x => new{Id=x.IdDeck,Name=x.DeckName}).ToList();
-            if (decks.Count == 0)
+            var decks = deckDB.GetNames(userId);
+            if (decks ==null )
             {
                 return null;
             }
-            return (IQueryable?)decks;
+            return decks;
         }
 
 
@@ -39,7 +41,7 @@ namespace Stardeck.Logic
         public Deck GetDeck(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
-            var deck = context.Decks.Find(id);
+            var deck = deckDB.GetDeck(id);
 
             if (deck == null)
             {
@@ -60,10 +62,7 @@ namespace Stardeck.Logic
             };
 
             deckAux.generateID();
-
-
-            context.Decks.Add(deckAux);
-            context.SaveChanges();
+            deckDB.NewDeck(deckAux);
             return deckAux;
 
         }
@@ -86,11 +85,9 @@ namespace Stardeck.Logic
 
         public Deck DeleteDeck(string id)
         {
-            var deck = context.Decks.Find(id);
+            var deck = deckDB.DeleteDeck(id);
             if (deck != null)
             {
-                context.Remove(deck);
-                context.SaveChanges();
                 return deck;
             }
             return null;
@@ -98,8 +95,8 @@ namespace Stardeck.Logic
 
         public List<Deck>? GetDecksByUser(string Userid)
         {
-            List<Deck> decks = context.Decks.Where(x=>x.IdAccount==Userid).ToList();
-            if (decks.Count == 0)
+            List<Deck> decks = deckDB.GetDecksByUser(Userid);
+            if (decks == null)
             {
                 return null;
             }

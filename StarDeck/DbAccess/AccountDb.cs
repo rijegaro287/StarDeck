@@ -1,108 +1,61 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Stardeck.DbAccess;
-using Stardeck.Models;
-using System.Text.RegularExpressions;
-//using System.Web.Mvc;
+﻿using Stardeck.Models;
 
-namespace Stardeck.Logic
+namespace Stardeck.DbAccess
 {
-    public class AccountLogic
+    public class AccountDb
     {
         private readonly StardeckContext context;
-        private readonly AccountDb accountDB;
-        private readonly AvatarDb avatarDB;
 
-        public AccountLogic(StardeckContext context)
+        public AccountDb(StardeckContext context)
         {
             this.context = context;
-            this.avatarDB=new AvatarDb(context);
-            this.accountDB = new AccountDb(context);
         }
 
 
-        public List<Account> GetAll()
+        public List<Account> GetAllAccounts()
         {
-            List<Account> accounts = accountDB.GetAllAccounts();
-            if (accounts == null)
+            List<Account> accounts = context.Accounts.ToList();
+            if (accounts.Count == 0)
             {
                 return null;
             }
             return accounts;
         }
 
-        public string[] GetCards(string accountId)
-        {
-            var collection = accountDB.GetAccountCards(accountId);
-            if (collection== null)
-            {
-                return null;
-            }
-            return collection;
-
-        }
-
         public Account? GetAccount(string id)
         {
-            var acc = accountDB.GetAccount(id);
-            if (acc == null)
+            var acc = context.Accounts.Find(id);
+            if(acc == null)
             {
                 return null;
             }
             return acc;
         }
 
+        public string[] GetAccountCards(string accountId)
+        {
+            var collection = context.Collections.Find(accountId);
+            if (collection?.Collection1 == null)
+            {
+                return null;
+            }
+            return collection.Collection1;
+        }
+
         public Account NewAccount(Account acc)
         {
-            if (avatarDB.GetAvatar(acc.Avatar) == null)
-            {
-                Avatar a = new()
-                {
-                    Id = 1111,
-                    Image = Convert.FromBase64String("0001"),
-                    Name = "default"
-                };
-                avatarDB.NewAvatar(a);
-                acc.Avatar = a.Id;
-            }
-
+            context.Accounts.Add(acc);
             context.SaveChanges();
-            var accAux = new Account("{'rol':'User'}")
+
+            if (GetAccount(acc.Id) == null)
             {
-                Id = acc.Id,
-                Name = acc.Name,
-                Nickname = acc.Nickname,
-                Email = acc.Email,
-                Country = acc.Country,
-                Password = acc.Password,
-                Avatar = acc.Avatar,
-                Config = acc.Config,
-            };
-
-            accAux.generateID();
-
-            accountDB.NewAccount(accAux);
-
-            //Add initial cards
-            var cards = context.Cards.Where(x => x.Type == 0).ToList();
-            var ran = new Random();
-            for (int i = 0; i < 15; i++)
-            {
-                var index = ran.Next(cards.Count);
-                AddCardsToCollection(accAux.Id, cards[index].Id);
-                cards.RemoveAt(index);
+                return null;
             }
 
-
-            return accAux;
+            return acc;
 
         }
-        /// <summary>
-        /// Ad a card to the player collection. If is a new player create it collection
-        /// </summary>
-        /// <param name="accountId"></param>
-        /// <param name="cardId"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"> when a card is already in collection</exception>
+
         public string[]? AddCardsToCollection(string accountId, string cardId)
         {
             var collection = context.Collections.Find(accountId);
@@ -134,10 +87,10 @@ namespace Stardeck.Logic
             return collection;
         }
 
+
         public Account? UpdateAccount(string id, Account nAcc)
         {
-            var acc = accountDB.GetAccount(id);
-
+            var acc = GetAccount(id);
             if (acc != null)
             {
                 acc.Id = nAcc.Id;
@@ -160,11 +113,15 @@ namespace Stardeck.Logic
 
         }
 
+
         public Account? DeleteAccount(string id)
         {
-            var acc = accountDB.DeleteAccount(id);
+            var acc = GetAccount(id);
             if (acc != null)
             {
+                //REMOVER LOS DATOS ASOCIADOS EN OTRAS TABLAS
+                context.Remove(acc);
+                context.SaveChanges();
                 return acc;
             }
             return null;
@@ -192,20 +149,6 @@ namespace Stardeck.Logic
             }
 
         }
-
-        /*
-        public string GetParam(string id,string param)
-        {
-            Account account = context.Accounts.Find(id);
-            if (account == null) 
-            {
-                return null;
-            }
-            string config = account.Config;
-            if(config.Contains(param)) 
-            { 
-            }
-        }*/
 
 
         public string[]? AddCardsListToCollection(string accountId, string[] cardId)
@@ -263,12 +206,12 @@ namespace Stardeck.Logic
             Deck? deck = context.Decks.Find(idDeck);
             if (deck == null) { return false; }
 
-            if (deck.IdAccount==user.Id)
+            if (deck.IdAccount == user.Id)
             {
                 FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
-                if (actual==null)
+                if (actual == null)
                 {
-                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck};
+                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck };
                     context.FavoriteDecks.Add(actual);
                 }
                 else
@@ -286,9 +229,6 @@ namespace Stardeck.Logic
             return true;
         }
 
-        
 
     }
 }
-
-

@@ -1,4 +1,5 @@
-﻿using Stardeck.Models;
+﻿using Stardeck.DbAccess;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -7,16 +8,18 @@ namespace Stardeck.Logic
     {
 
         private readonly StardeckContext context;
+        private readonly ParametersDb parametersDB;
 
         public ParametersLogic(StardeckContext context)
         {
             this.context = context;
+            this.parametersDB=new ParametersDb(context);
         }
 
         public List<Parameter> GetAll()
         {
-            List<Parameter> parameters= context.Parameters.ToList();
-            if (parameters.Count == 0)
+            List<Parameter> parameters= parametersDB.GetAllParameters();
+            if (parameters== null)
             {
                 return null;
             }
@@ -26,7 +29,7 @@ namespace Stardeck.Logic
 
         public Parameter GetParameter(string id)
         {
-            var param = context.Parameters.Find(id);
+            var param = parametersDB.GetParameter(id);
 
             if (param == null)
             {
@@ -42,9 +45,7 @@ namespace Stardeck.Logic
                 Key = id,
                 Value = value
             };
-            context.Parameters.Add(paramtAux);
-
-            context.SaveChanges();
+            parametersDB.NewParameter(paramtAux);
             return paramtAux;
 
         }
