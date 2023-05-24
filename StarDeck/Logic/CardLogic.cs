@@ -1,5 +1,6 @@
 ﻿using Stardeck.DbAccess;
 using Stardeck.Models;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -14,14 +15,15 @@ namespace Stardeck.Logic
             this.cardDB=new CardDb(context);
         }
 
-        public List<Card> GetAll()
+        public Object GetAll()
         {
-            List<Card> cards = cardDB.GetAllCards();
-            if (cards == null)
+            List<Card> cards = (List<Card>)cardDB.GetAllCards();
+            
+            if (cards.Equals(0) )
             {
-                return null;
+                return 0;
             }
-            return cards;
+            return (List<Card>)cards;
         }
 
         public Card GetCard(string id)
@@ -35,7 +37,7 @@ namespace Stardeck.Logic
         }
 
 
-        public Card NewCard(CardImage card)
+        public Object NewCard(CardImage card)
         {
             var cardAux = new Card()
             {
@@ -51,8 +53,17 @@ namespace Stardeck.Logic
                 Race = card.Race
 
             };
-            cardDB.NewCard(cardAux);
-            return card;
+            var save = cardDB.NewCard(cardAux);
+            if (save == null)
+            {
+                return null;
+            }
+            if(save.Equals(0))
+            {
+                return 0;
+            }
+            
+            return cardAux;
 
         }
 
@@ -91,7 +102,12 @@ namespace Stardeck.Logic
 
         public List<Card> GetNineCards()
         {
-            List<Card> filteredCards = GetAll().FindAll(x => x.Type == 1 || x.Type == 2);
+            List<Card> cards =(List<Card>) GetAll();
+            if(cards.Count == 0 || cards==null)
+            {
+                return null;
+            }
+            List<Card> filteredCards = cards.FindAll(x => x.Type == 1 || x.Type == 2);
             Random rand = new Random();
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
             return shuffled.GetRange(0,9);

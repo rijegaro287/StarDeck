@@ -11,12 +11,10 @@ namespace Stardeck.Controllers
     [ApiController]
     public class CardController : ControllerBase
     {
-        private readonly StardeckContext context;
         private CardLogic cardLogic;
 
         public CardController(StardeckContext context)
         {
-            this.context = context;
             this.cardLogic = new CardLogic(context);
         }
 
@@ -26,11 +24,16 @@ namespace Stardeck.Controllers
         [Route("get_all")]
         public async Task<IActionResult> Get()
         {
-            if (cardLogic.GetAll() == null)
+            var cards = cardLogic.GetAll();
+            if (cards == null)
             {
-                return NotFound();
+                return BadRequest("There was a problem, try again later");
             }
-            return Ok(cardLogic.GetAll());
+            if (cards.Equals(0))
+            {
+                return NotFound("No cards found");
+            }
+            return Ok(cards);
         }
 
         // GET api/<CardController>/5
@@ -38,11 +41,12 @@ namespace Stardeck.Controllers
         [Route("get/{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            if (cardLogic.GetCard(id) == null)
+            var card = cardLogic.GetCard(id);
+            if (card== null)
             {
-                return NotFound();
+                return NotFound("No card found");
             }
-            return Ok(cardLogic.GetCard(id));
+            return Ok(card);
         }
 
         // POST api/<CardController>
@@ -50,10 +54,14 @@ namespace Stardeck.Controllers
         [Route("add")]
         public async Task<IActionResult> Post([FromBody] CardImage card)
         {
-            Card cardAux = cardLogic.NewCard(card);
+            var cardAux = cardLogic.NewCard(card);
+            if (cardAux.Equals(0))
+            {
+                return BadRequest("There is already ");
+            }
             if (cardAux == null)
             {
-                return BadRequest();
+                return BadRequest("There was a problem, try again later");
             }
             return Ok(cardAux);
 
@@ -69,7 +77,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound();
+            return NotFound("No card found");
 
         }
 
@@ -82,19 +90,20 @@ namespace Stardeck.Controllers
             {
                 return Ok(card);
             }
-            return NotFound();
+            return NotFound("No card found");
         }
 
         [HttpGet]
         [Route("get/nineCards")]
         public async Task<IActionResult> GetNineCards()
         {
-            if (cardLogic.GetNineCards() == null)
+            var cards = cardLogic.GetNineCards();
+            if (cards== null)
             {
-                return NotFound();
+                return NotFound("No cards found");
             }
 
-            return Ok(cardLogic.GetNineCards());
+            return Ok(cards);
         }
     }
 }

@@ -35,15 +35,19 @@ namespace Stardeck.DbAccess
         public string[] GetAccountCards(string accountId)
         {
             var collection = context.Collections.Find(accountId);
-            if (collection?.Collection1 == null)
+            if (collection?.Collection1.Length==0)
             {
                 return null;
             }
             return collection.Collection1;
         }
 
-        public Account NewAccount(Account acc)
+        public Object NewAccount(Account acc)
         {
+            if( GetAccount(acc.Id) != null ) 
+            {
+                return 0;
+            }
             context.Accounts.Add(acc);
             context.SaveChanges();
 
@@ -160,23 +164,6 @@ namespace Stardeck.DbAccess
                 if (tmpresult is null) continue;
             }
             return tmpresult;
-        }
-
-        public Dictionary<string, string>? GetParameter(string id, string parameter)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
-            return new Dictionary<string, string>
-            {
-                [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()]
-            };
-        }
-        public Dictionary<string, string>? GetParameters(string id)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            return user.Serverconfig;
         }
 
         public Dictionary<string, string>? PostParameter(string id, string parameter, string value)

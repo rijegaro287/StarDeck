@@ -11,12 +11,14 @@ namespace Stardeck.Logic
         private readonly StardeckContext context;
         private readonly AccountDb accountDB;
         private readonly AvatarDb avatarDB;
+        private readonly CardDb cardDB;
 
         public AccountLogic(StardeckContext context)
         {
             this.context = context;
             this.avatarDB=new AvatarDb(context);
             this.accountDB = new AccountDb(context);
+            this.cardDB = new CardDb(context);
         }
 
 
@@ -30,6 +32,16 @@ namespace Stardeck.Logic
             return accounts;
         }
 
+        public Account? GetAccount(string id)
+        {
+            var acc = accountDB.GetAccount(id);
+            if (acc == null)
+            {
+                return null;
+            }
+            return acc;
+        }
+
         public string[] GetCards(string accountId)
         {
             var collection = accountDB.GetAccountCards(accountId);
@@ -41,17 +53,25 @@ namespace Stardeck.Logic
 
         }
 
-        public Account? GetAccount(string id)
+        public Dictionary<string, string>? GetParameter(string id, string parameter)
         {
-            var acc = accountDB.GetAccount(id);
-            if (acc == null)
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            return new Dictionary<string, string>
             {
-                return null;
-            }
-            return acc;
+                [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()]
+            };
+        }
+        public Dictionary<string, string>? GetParameters(string id)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            return user.Serverconfig;
         }
 
-        public Account NewAccount(Account acc)
+
+        public Object NewAccount(Account acc)
         {
             if (avatarDB.GetAvatar(acc.Avatar) == null)
             {
@@ -80,10 +100,27 @@ namespace Stardeck.Logic
 
             accAux.generateID();
 
-            accountDB.NewAccount(accAux);
+            var save=accountDB.NewAccount(accAux);
+            if (save.Equals(0))
+            {
+                return 0;
+            }
+            if (save == null)
+            {
+                return null;
+            }
 
             //Add initial cards
-            var cards = context.Cards.Where(x => x.Type == 0).ToList();
+            //var cards = context.Cards.Where(x => x.Type == 0).ToList();
+            var cards = (List<Card>)cardDB.GetCardByType(0);
+            if(cards.Count == 0)
+            {
+                return -1;
+            }
+            if(cards == null) 
+            {
+                return -2;
+            }
             var ran = new Random();
             for (int i = 0; i < 15; i++)
             {
@@ -92,9 +129,7 @@ namespace Stardeck.Logic
                 cards.RemoveAt(index);
             }
 
-
             return accAux;
-
         }
         /// <summary>
         /// Ad a card to the player collection. If is a new player create it collection
@@ -122,7 +157,6 @@ namespace Stardeck.Logic
 
         }
 
-
         private Collection CreateAndSaveNewCollection(string accountId)
         {
             var collection = new Collection(new List<string>().ToArray())
@@ -133,6 +167,28 @@ namespace Stardeck.Logic
             context.SaveChanges();
             return collection;
         }
+
+        public string[]? AddCardsListToCollection(string accountId, string[] cardId)
+        {
+            string[] tmpresult = new List<string>().ToArray();
+            foreach (var card in cardId)
+            {
+                tmpresult = AddCardsToCollection(accountId, card);
+                if (tmpresult is null) continue;
+            }
+            return tmpresult;
+        }
+
+        public Dictionary<string, string>? PostParameter(string id, string parameter, string value)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            if (user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            user.Serverconfig[parameter.ToLower()] = value;
+            context.SaveChanges();
+            return user.Serverconfig;
+        }
+
 
         public Account? UpdateAccount(string id, Account nAcc)
         {
@@ -159,6 +215,48 @@ namespace Stardeck.Logic
             return null;
 
         }
+
+        public bool? SelectFavoriteDeck(string id, string idDeck)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            Deck? deck = context.Decks.Find(idDeck);
+            if (deck == null) { return false; }
+
+            if (deck.IdAccount == user.Id)
+            {
+                FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
+                if (actual == null)
+                {
+                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck };
+                    context.FavoriteDecks.Add(actual);
+                }
+                else
+                {
+                    actual.Deckid = deck.IdDeck;
+                    actual.Deck = deck;
+                }
+                context.SaveChanges();
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public Dictionary<string, string>? PutParameter(string id, string parameter, string value)
+        {
+            Account? user = GetAccount(id);
+            if (user == null) { return null; }
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+            user.Serverconfig[parameter.ToLower()] = value;
+            context.SaveChanges();
+            return user.Serverconfig;
+        }
+
+
 
         public Account? DeleteAccount(string id)
         {
@@ -208,83 +306,15 @@ namespace Stardeck.Logic
         }*/
 
 
-        public string[]? AddCardsListToCollection(string accountId, string[] cardId)
-        {
-            string[] tmpresult = new List<string>().ToArray();
-            foreach (var card in cardId)
-            {
-                tmpresult = AddCardsToCollection(accountId, card);
-                if (tmpresult is null) continue;
-            }
-            return tmpresult;
-        }
+        
 
-        public Dictionary<string, string>? GetParameter(string id, string parameter)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
-            return new Dictionary<string, string>
-            {
-                [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()]
-            };
-        }
-        public Dictionary<string, string>? GetParameters(string id)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            return user.Serverconfig;
-        }
+        
 
-        public Dictionary<string, string>? PostParameter(string id, string parameter, string value)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
-            user.Serverconfig[parameter.ToLower()] = value;
-            context.SaveChanges();
-            return user.Serverconfig;
-        }
+        
 
-        public Dictionary<string, string>? PutParameter(string id, string parameter, string value)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
-            user.Serverconfig[parameter.ToLower()] = value;
-            context.SaveChanges();
-            return user.Serverconfig;
-        }
+        
 
-        public bool? SelectFavoriteDeck(string id, string idDeck)
-        {
-            Account? user = GetAccount(id);
-            if (user == null) { return null; }
-            Deck? deck = context.Decks.Find(idDeck);
-            if (deck == null) { return false; }
-
-            if (deck.IdAccount==user.Id)
-            {
-                FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
-                if (actual==null)
-                {
-                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck};
-                    context.FavoriteDecks.Add(actual);
-                }
-                else
-                {
-                    actual.Deckid = deck.IdDeck;
-                    actual.Deck = deck;
-                }
-                context.SaveChanges();
-            }
-            else
-            {
-                return false;
-            }
-
-            return true;
-        }
+        
 
         
 

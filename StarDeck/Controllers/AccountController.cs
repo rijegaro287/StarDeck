@@ -13,11 +13,10 @@ namespace Stardeck.Controllers
     [AllowAnonymous]
     public class AccountController : ControllerBase
     {
-        private readonly StardeckContext context;
-        private AccountLogic accountLogic;
+        
+        private readonly AccountLogic accountLogic;
         public AccountController(StardeckContext context)
         {
-            this.context = context;
             this.accountLogic = new AccountLogic(context);
         }
 
@@ -27,19 +26,10 @@ namespace Stardeck.Controllers
         {
             if (accountLogic.GetAll() == null)
             {
-                return NotFound();
+                return NotFound("No Accounts Found");
             }
             return Ok(accountLogic.GetAll());
 
-        }
-        [HttpGet("{accountId}/cards")]
-        public async Task<IActionResult> GetCards(string accountId)
-        {
-            if (accountLogic.GetCards(accountId) == null)
-            {
-                return NotFound();
-            }
-            return Ok(accountLogic.GetCards(accountId));
         }
 
         // GET api/<AccountController>/5
@@ -49,10 +39,23 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetAccount(id);
             if (temp == null)
             {
-                return NotFound();
+                return NotFound("No Account Found");
             }
             return Ok(temp);
         }
+
+        [HttpGet("{accountId}/cards")]
+        public async Task<IActionResult> GetCards(string accountId)
+        {
+            var cards = accountLogic.GetCards(accountId);
+            if (cards== null)
+            {
+                return NotFound("No Cards Found");
+            }
+            return Ok(cards);
+        }
+
+        
 
 
         [HttpGet("{id}/Parameters/{parameter}")]
@@ -61,7 +64,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetParameter(id, parameter);
             if (temp == null)
             {
-                return NotFound();
+                return NotFound("No Account or Parameter Found");
             }
             return Ok(temp);
         }
@@ -71,7 +74,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetParameters(id);
             if (temp == null)
             {
-                return NotFound();
+                return NotFound("No Account Found");
             }
             return Ok(temp);
         }
@@ -83,16 +86,30 @@ namespace Stardeck.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Account acc)
         {
-            Account accAux = accountLogic.NewAccount(acc);
+            var accAux = accountLogic.NewAccount(acc);
+            if(accAux.Equals(0))
+            {
+                return BadRequest("There is already an account associated with this data");
+            }
             if (accAux == null)
             {
-                return BadRequest();
+                return BadRequest("There was a problem saving the account, try again later");
             }
+            if (accAux.Equals(-1))
+            {
+                return BadRequest("There are no cards to asign");
+            }
+            if (accAux.Equals(-2))
+            {
+                
+                return BadRequest("There was a problem, try again later");
+            }
+
             return Ok(accAux);
         }
 
         [HttpPost("addCards/{accountId}/{cardId}")]
-        public async Task<IActionResult> addCards(string accountId, string cardId)
+        public async Task<IActionResult> AddCards(string accountId, string cardId)
         {
             string[]? aux = accountLogic.AddCardsToCollection(accountId, cardId);
             if (aux is null)
@@ -106,13 +123,13 @@ namespace Stardeck.Controllers
         }
 
         [HttpPost("addCards/{accountId}")]
-        public async Task<IActionResult> addCardsList(string accountId, [FromBody] string[] cardId)
+        public async Task<IActionResult> AddCardsList(string accountId, [FromBody] string[] cardId)
         {
 
             string[]? aux = accountLogic.AddCardsListToCollection(accountId, cardId);
             if (aux is null)
             {
-                return BadRequest("Ya en coleccion " + cardId);
+                return BadRequest("Is already in collection " + cardId);
             }
             return Ok(aux);
 
@@ -126,7 +143,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.PostParameter(id, parameter, value);
             if (temp == null)
             {
-                return NotFound("Not found account or parameter already have a value");
+                return NotFound("No account found or parameter already have a value");
             }
             return Ok(temp);
         }
@@ -142,7 +159,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound();
+            return NotFound("No account found");
         }
         // PUT api/<AccountController>/5
 
@@ -152,7 +169,11 @@ namespace Stardeck.Controllers
             var selected = accountLogic.SelectFavoriteDeck(id, deck);
             if (selected is not true)
             {
-                return NotFound();
+                return NotFound("No deck found");
+            }
+            if( selected is null)
+            {
+                return NotFound("No account found");
             }
             return Ok(deck);
         }
@@ -164,7 +185,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.PutParameter(id, parameter, value);
             if (temp == null)
             {
-                return NotFound("Not found account or parameter do not exist");
+                return NotFound("No account found or parameter does not exist");
             }
             return Ok(temp);
         }
@@ -178,7 +199,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound();
+            return NotFound("No account found");
         }
 
 
@@ -188,7 +209,7 @@ namespace Stardeck.Controllers
             var collection = accountLogic.DeleteCard(accountId, cardId);
             if (collection == null)
             {
-                return NotFound("Coleccion no encontrada");
+                return NotFound("No collection found");
             }
             else
             {
@@ -196,7 +217,7 @@ namespace Stardeck.Controllers
                 {
                     return Ok(collection.Collection1);
                 }
-                return NotFound("No se pudo eliminar");
+                return NotFound("There was a problem, try again later");
             }
 
 
