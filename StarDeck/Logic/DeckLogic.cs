@@ -29,9 +29,9 @@ namespace Stardeck.Logic
         public Object GetNames(string userId)
         {
             var decks = deckDB.GetNames(userId);
-            if (decks ==null )
+            if (decks .Equals(0))
             {
-                return null;
+                return 0;
             }
             return decks;
         }
@@ -63,6 +63,10 @@ namespace Stardeck.Logic
 
             deckAux.generateID();
             deckDB.NewDeck(deckAux);
+            if(deckDB.GetDeck(deckAux.Id) == null)
+            {
+                return null;
+            }
             return deckAux;
 
         }

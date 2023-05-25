@@ -24,11 +24,12 @@ namespace Stardeck.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            if (accountLogic.GetAll() == null)
+            var acc = accountLogic.GetAll();
+            if ( acc== null)
             {
-                return NotFound("No Accounts Found");
+                return NotFound("No se encontraron cuentas");
             }
-            return Ok(accountLogic.GetAll());
+            return Ok(acc);
 
         }
 
@@ -39,7 +40,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetAccount(id);
             if (temp == null)
             {
-                return NotFound("No Account Found");
+                return NotFound("No se encontró la cuenta");
             }
             return Ok(temp);
         }
@@ -50,12 +51,10 @@ namespace Stardeck.Controllers
             var cards = accountLogic.GetCards(accountId);
             if (cards== null)
             {
-                return NotFound("No Cards Found");
+                return NotFound("No se encontraron cartas");
             }
             return Ok(cards);
         }
-
-        
 
 
         [HttpGet("{id}/Parameters/{parameter}")]
@@ -64,7 +63,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetParameter(id, parameter);
             if (temp == null)
             {
-                return NotFound("No Account or Parameter Found");
+                return NotFound("No se encontraron cuentas o parámetros");
             }
             return Ok(temp);
         }
@@ -74,7 +73,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetParameters(id);
             if (temp == null)
             {
-                return NotFound("No Account Found");
+                return NotFound("No se encontraron cuentas");
             }
             return Ok(temp);
         }
@@ -89,20 +88,19 @@ namespace Stardeck.Controllers
             var accAux = accountLogic.NewAccount(acc);
             if(accAux.Equals(0))
             {
-                return BadRequest("There is already an account associated with this data");
+                return BadRequest("Ya existe una cuenta con estos datos ");
             }
             if (accAux == null)
             {
-                return BadRequest("There was a problem saving the account, try again later");
+                return BadRequest("Algo salió mal guardando la cuenta, inténtalo más tarde");
             }
             if (accAux.Equals(-1))
             {
-                return BadRequest("There are no cards to asign");
+                return BadRequest("No hay cartas para asignar");
             }
             if (accAux.Equals(-2))
             {
-                
-                return BadRequest("There was a problem, try again later");
+                return BadRequest("Algo salió mal, inténtalo más tarde");
             }
 
             return Ok(accAux);
@@ -129,7 +127,7 @@ namespace Stardeck.Controllers
             string[]? aux = accountLogic.AddCardsListToCollection(accountId, cardId);
             if (aux is null)
             {
-                return BadRequest("Is already in collection " + cardId);
+                return BadRequest("Ya en colección " + cardId);
             }
             return Ok(aux);
 
@@ -143,7 +141,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.PostParameter(id, parameter, value);
             if (temp == null)
             {
-                return NotFound("No account found or parameter already have a value");
+                return NotFound("No se encontró cuenta o los parámetros ya tienen valor");
             }
             return Ok(temp);
         }
@@ -159,7 +157,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound("No account found");
+            return NotFound("No se encontró la cuenta");
         }
         // PUT api/<AccountController>/5
 
@@ -169,11 +167,11 @@ namespace Stardeck.Controllers
             var selected = accountLogic.SelectFavoriteDeck(id, deck);
             if (selected is not true)
             {
-                return NotFound("No deck found");
+                return NotFound("No se encontró el deck");
             }
             if( selected is null)
             {
-                return NotFound("No account found");
+                return NotFound("No se encontró la cuenta");
             }
             return Ok(deck);
         }
@@ -185,7 +183,7 @@ namespace Stardeck.Controllers
             var temp = accountLogic.PutParameter(id, parameter, value);
             if (temp == null)
             {
-                return NotFound("No account found or parameter does not exist");
+                return NotFound("No se encontró la cuneta o el parámetro no existe");
             }
             return Ok(temp);
         }
@@ -199,7 +197,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound("No account found");
+            return NotFound("No se encontró la cuenta");
         }
 
 
@@ -209,7 +207,7 @@ namespace Stardeck.Controllers
             var collection = accountLogic.DeleteCard(accountId, cardId);
             if (collection == null)
             {
-                return NotFound("No collection found");
+                return NotFound("No se encontró la colección");
             }
             else
             {
@@ -217,7 +215,7 @@ namespace Stardeck.Controllers
                 {
                     return Ok(collection.Collection1);
                 }
-                return NotFound("There was a problem, try again later");
+                return NotFound("Algo salió mal, inténtalo más tarde");
             }
 
 

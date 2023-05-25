@@ -27,11 +27,11 @@ namespace Stardeck.Controllers
             var cards = cardLogic.GetAll();
             if (cards == null)
             {
-                return BadRequest("There was a problem, try again later");
+                return BadRequest("Algo salió mal, inténtalo más tarde");
             }
             if (cards.Equals(0))
             {
-                return NotFound("No cards found");
+                return NotFound("No se encontraron cartas");
             }
             return Ok(cards);
         }
@@ -44,7 +44,7 @@ namespace Stardeck.Controllers
             var card = cardLogic.GetCard(id);
             if (card== null)
             {
-                return NotFound("No card found");
+                return NotFound("No se encontraron cartas");
             }
             return Ok(card);
         }
@@ -57,11 +57,11 @@ namespace Stardeck.Controllers
             var cardAux = cardLogic.NewCard(card);
             if (cardAux.Equals(0))
             {
-                return BadRequest("There is already ");
+                return BadRequest("Ya existe una carta con estos datos");
             }
             if (cardAux == null)
             {
-                return BadRequest("There was a problem, try again later");
+                return BadRequest("Algo salió mal, inténtalo más tarde");
             }
             return Ok(cardAux);
 
@@ -77,7 +77,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound("No card found");
+            return NotFound("No se encontró la carta");
 
         }
 
@@ -90,7 +90,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(card);
             }
-            return NotFound("No card found");
+            return NotFound("No se encontró la carta");
         }
 
         [HttpGet]
@@ -100,7 +100,7 @@ namespace Stardeck.Controllers
             var cards = cardLogic.GetNineCards();
             if (cards== null)
             {
-                return NotFound("No cards found");
+                return NotFound("No se encontraron cartas");
             }
 
             return Ok(cards);

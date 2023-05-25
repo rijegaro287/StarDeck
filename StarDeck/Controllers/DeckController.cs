@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stardeck.DbAccess;
 using Stardeck.Logic;
 using Stardeck.Models;
 
@@ -23,11 +24,12 @@ namespace Stardeck.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            if (deckLogic.GetAll() == null)
+            var decks = deckLogic.GetAll();
+            if ( decks== null)
             {
-                return NotFound();
+                return NotFound("No se encontraron decks");
             }
-            return Ok(deckLogic.GetAll());
+            return Ok(decks);
         }
 
 
@@ -35,11 +37,16 @@ namespace Stardeck.Controllers
         [HttpGet("Names/{userId}")]
         public async Task<Object> GetNames(string userId)
         {
-            if (deckLogic.GetNames(userId) == null)
+            var decks = deckLogic.GetNames(userId);
+            if( decks.Equals(0))
             {
-                return NotFound();
+                return NotFound("No se encontró usuario");
             }
-            return Ok(deckLogic.GetNames(userId));
+            if (decks== null)
+            {
+                return NotFound("No se encontraron decks");
+            }
+            return Ok(decks);
         }
 
 
@@ -47,22 +54,24 @@ namespace Stardeck.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            if (deckLogic.GetDeck(id) == null)
+            var decks = deckLogic.GetDeck(id);
+            if (decks== null)
             {
-                return NotFound();
+                return NotFound("No se encontraron decks");
             }
-            return Ok(deckLogic.GetDeck(id));
+            return Ok(decks);
         }
 
         // GET api/<DeckController>/5
         [HttpGet("User/{id}")]
         public async Task<IActionResult> GetAllDecksByUser(string UserId)
         {
-            if (deckLogic.GetDecksByUser(UserId) == null)
+            var decks = deckLogic.GetDecksByUser(UserId);
+            if ( decks== null)
             {
-                return NotFound();
+                return NotFound("No se encontraron decks");
             }
-            return Ok(deckLogic.GetDecksByUser(UserId));
+            return Ok(decks);
         }
 
         // POST api/<DeckController>
@@ -72,7 +81,7 @@ namespace Stardeck.Controllers
             Deck deckAux = deckLogic.NewDeck(deck);
             if (deckAux == null)
             {
-                return BadRequest();
+                return BadRequest("Algo salió mal, inténtalo más tarde");
             }
             return Ok(deckAux);
 
@@ -86,7 +95,7 @@ namespace Stardeck.Controllers
             Deck deckAux = deckLogic.UpdateDeck(id, nDeck);
             if (deckAux == null)
             {
-                return BadRequest();
+                return BadRequest("Algo salió mal, inténtalo más tarde");
             }
             return Ok(deckAux);
 
@@ -101,7 +110,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(deck);
             }
-            return NotFound();
+            return NotFound("No se encontró el deck");
         }
     }
 }

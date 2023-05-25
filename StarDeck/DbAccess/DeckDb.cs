@@ -23,9 +23,16 @@ namespace Stardeck.DbAccess
         }
 
 
-        public IEnumerable<Object>? GetNames(string userId)
+        public Object GetNames(string userId)
         {
-            var decks = GetDecksByUser(userId).Select(x => new { Id = x.IdDeck, Name = x.DeckName }).ToList();
+            var userDecks = GetDecksByUser(userId);
+            if(userDecks==null) 
+            {
+                return 0;
+            }
+
+
+            var decks = userDecks.Select(x => new { Id = x.IdDeck, Name = x.DeckName }).ToList();
             
             if (decks==null)
             {
@@ -57,11 +64,9 @@ namespace Stardeck.DbAccess
 
         public Deck NewDeck(Deck deck)
         {
-
             context.Decks.Add(deck);
             context.SaveChanges();
             return deck;
-
         }
 
         public Deck DeleteDeck(string id)
