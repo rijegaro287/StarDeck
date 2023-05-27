@@ -57,7 +57,7 @@ export class SearchOpponentComponent implements OnInit {
       .catch((error) => {
         alert("No hay jugadores disponibles, intentelo más tarde");
         window.location.assign(this.baseurl + "user/battle/select-deck");
-      })
+      });
 
   }
 

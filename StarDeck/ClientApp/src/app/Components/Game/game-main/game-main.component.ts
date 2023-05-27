@@ -103,21 +103,21 @@ class MainScene extends Phaser.Scene {
       .then((response) => response.json())
       .then((gameRoomData) => this.playerInfo = gameRoomData);
 
-    this.playerHand = this.playerInfo.Hand!.map((card: any) => {
+    this.playerHand = this.playerInfo.hand!.map((card: any) => {
       return new Card(
         this,
         0,
         0,
-        card.Name,
+        card.name,
         'Raza',
-        card.Energy,
-        card.Battlecost,
+        card.energy,
+        card.battlecost,
         card.image
       );
     });
 
     console.log(this.gameRoom);
-    console.log(this.playerInfo.Hand);
+    console.log(this.playerInfo.hand);
     console.log(this.playerHand);
 
     const backgroundImage = this.add.image(0, 0, 'main-bg');
@@ -167,7 +167,7 @@ class MainScene extends Phaser.Scene {
       this.playableWidth,
       this.playableHeight * 0.08,
       10,
-      this.playerInfo.Coins,
+      this.playerInfo.coins,
       20,
       this.opponentName
     );
