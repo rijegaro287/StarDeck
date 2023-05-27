@@ -7,28 +7,26 @@ using Stardeck.Models;
 
 namespace Stardeck.GameModels
 {
-    public class GameRoom: GameModels.GameModel
+    public class GameRoom : GameModels.GameModel
     {
-        
-        
-        
         /// <summary>
         ///  Create a Runtime GameRoom from a database GameRoom and intialize it Gamelog if needed
         /// </summary>
         /// <param name="data"></param>
-        public GameRoom(Gameroom? data):base()
-        {   //assign space for terrutories
-            Territories  = new List<Territory>(new Territory[3]);
+        public GameRoom(Gameroom? data) : base()
+        {
+            //assign space for terrutories
+            Territories = new List<Territory>(new Territory[3]);
             //create object from room data
             Roomid = data.Roomid;
             Player1 = new Player(data.Player1Navigation);
             Player2 = new Player(data.Player2Navigation);
-            data.Gamelog ??= new Gamelog() {Gameid=data.Roomid,Game=data};
+            data.Gamelog ??= new Gamelog() { Gameid = data.Roomid, Game = data };
             Gamelog = data.Gamelog;
-            Room= data;
+            Room = data;
         }
-        
-        
+
+
         /// <summary>
         /// Initialize the game. THis method don create the instance only initialize the players and territories.
         /// constructor is required to be called before this method
@@ -44,9 +42,59 @@ namespace Stardeck.GameModels
             if (!ready1 || !ready2 || !territories) throw new Exception("Error al inicializar la partida");
             SaveToDb();
             return this;
-
-
         }
+
+        public string? CheckWinner()
+        {
+            foreach (var territory in Territories)
+            {
+                territory.checkWinner();
+            }
+
+            var player1Win = Territories.Count(x => x.Winner == Player1.Id);
+            var player2Win = Territories.Count(x => x.Winner == Player2.Id);
+
+            if (player1Win > player2Win)
+            {
+                return Player1.Id;
+            }
+
+            if (player2Win > player1Win)
+            {
+                return Player2.Id;
+            }
+
+            return "Draw";
+        }
+
+        /// <summary>
+        /// Draw a card from the player deck
+        /// </summary>
+        /// <param name="playerid"></param>
+        public void DrawCard(string playerid)
+        {
+            var player = FindPlayerOnGame(playerid);
+            if (player is null) return;
+            DrawCard(player);
+        }
+
+        /// <summary>
+        ///  Draw a card from the player deck
+        /// </summary>
+        /// <param name="player"></param>
+        private void DrawCard(Player player)
+        {
+            var drawed = player.DrawCard();
+            if (drawed is null)
+            {
+                Gamelog?.LogDrawError(player.Id);
+            }
+            else
+            {
+                Gamelog?.LogDraw(player.Id, drawed.Id);
+            }
+        }
+
         /// <summary>
         /// Play a card on the temporary player territory
         /// </summary>
@@ -56,17 +104,37 @@ namespace Stardeck.GameModels
         /// <returns>True if card played and energy reduced, false if not enough energy and null if invalid id</returns>
         public bool? PlayCard(string playerid, string cardid, string territoryid)
         {
-            var territory = Territories.FindIndex(x=>x.Id==territoryid);
-            if (playerid == Player1.Id)
+            var territory = Territories.FindIndex(x => x.Id == territoryid);
+            var player = FindPlayerOnGame(playerid);
+            if (player is null)
             {
-                return Player1.PlayCard(cardid,territory);
-            }
-            if (playerid == Player2.Id)
-            {
-                return Player2.PlayCard(cardid,territory);
+                return null;
             }
 
-            return null;
+            var played = player.PlayCard(cardid, territory);
+            if (played is null) Gamelog?.LogCard(playerid, cardid, territoryid);
+            return played;
+        }
+
+        /// <summary>
+        /// Get the player reference from the player id
+        /// </summary>
+        /// <param name="playerId"></param>
+        /// <returns>player reference or null if not found</returns>
+        public Player? FindPlayerOnGame(string playerId)
+        {
+            if (playerId == Player1.Id)
+            {
+                return Player1;
+            }
+            else if (playerId == Player2.Id)
+            {
+                return Player2;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -74,13 +142,13 @@ namespace Stardeck.GameModels
         /// </summary>
         /// <param name="playerId"></param>
         /// <returns>Json string</returns>
-
         public string GetPlayerData(string playerId)
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(playerId == Player1.Id ? Player1 : Player2,new JsonSerializerSettings()
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            });
+            return Newtonsoft.Json.JsonConvert.SerializeObject(playerId == Player1.Id ? Player1 : Player2,
+                new JsonSerializerSettings()
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                });
         }
 
         /// <summary>
@@ -112,6 +180,7 @@ namespace Stardeck.GameModels
 
             return playerId == Player2.Id ? Player2.Hand.Select(x => x.Id).ToList() : null;
         }
+
         /// <summary>
         ///  Assign the territories to the game
         /// </summary>
@@ -125,7 +194,7 @@ namespace Stardeck.GameModels
                 Id = "0"
             };
             _territory3 = GetRandomPlanet();
-            
+
             if (Territories.Any(t => t.Id is null))
             {
                 return false;
@@ -158,6 +227,7 @@ namespace Stardeck.GameModels
             return new Territory(planet);
         }
 
+
         private void SaveToDb()
         {
             var context = new StardeckContext();
@@ -169,9 +239,5 @@ namespace Stardeck.GameModels
             room.Bet = Bet;
             context.SaveChanges();
         }
-
     }
 }
-
-
-

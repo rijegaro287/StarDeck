@@ -6,24 +6,6 @@ namespace Stardeck.GameModels
 {
     public class Player
     {
-        public Player(Account? dataPlayer)
-        {
-            if (dataPlayer is null)
-            {
-                throw new InvalidOperationException("La informacion del jugador es invalida");
-            }
-
-            //create object from player data
-            Id = dataPlayer.Id;
-            Name = dataPlayer.Name;
-            Nickname = dataPlayer.Nickname;
-            Avatar = dataPlayer.Avatar;
-            Config = dataPlayer.Config;
-            Points = dataPlayer.Points;
-            Coins = dataPlayer.Coins;
-            Energy = 1;
-            Account = dataPlayer;
-        }
 
         [JsonIgnore]
         [Newtonsoft.Json.JsonIgnore]
@@ -51,6 +33,26 @@ namespace Stardeck.GameModels
 
         [JsonIgnore]
         public List<Territory> TmpTerritories { get; set; } = new List<Territory>();
+        
+        
+        public Player(Account? dataPlayer)
+        {
+            if (dataPlayer is null)
+            {
+                throw new InvalidOperationException("La informacion del jugador es invalida");
+            }
+
+            //create object from player data
+            Id = dataPlayer.Id;
+            Name = dataPlayer.Name;
+            Nickname = dataPlayer.Nickname;
+            Avatar = dataPlayer.Avatar;
+            Config = dataPlayer.Config;
+            Points = dataPlayer.Points;
+            Coins = dataPlayer.Coins;
+            Energy = 1;
+            Account = dataPlayer;
+        }
 
         /// <summary>
         ///     Initialize player hand and deck and put player in game
@@ -113,8 +115,12 @@ namespace Stardeck.GameModels
         {
             return Deck;
         }
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cardid"></param>
+        /// <param name="territory"></param>
+        /// <returns>false if not enough energy, true if played, null if card is no in hand</returns>
         public bool? PlayCard(string cardid, int territory)
         {
             var card = Hand.Find(x => x.Id == cardid);
@@ -132,6 +138,15 @@ namespace Stardeck.GameModels
             Hand.Remove(card);
             TmpTerritories[territory].PlayCard(card);
             return true;
+        }
+
+        public GameCard? DrawCard()
+        {
+            if (Deck.Count == 0) return null;
+            var rand = Random.Shared.Next(Deck.Count);
+            Hand.Add(Deck[rand]);
+            Deck.RemoveAt(rand);
+            return Hand.Last();
         }
     }
 }
