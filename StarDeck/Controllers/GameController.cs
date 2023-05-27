@@ -90,5 +90,25 @@ namespace Stardeck.Controllers
 
             return NotFound();
         }
+        
+        [HttpGet("getGameRoomData/{idRoom}/{idUser}/{idCard}/{idTargetPlanet}")]
+        public async Task<IActionResult> PlayCard(string idRoom,string idUser,string idCard,string idTargetPlanet)
+        {
+            
+            var answer=await this.gameLogic.PlayCard(idRoom, idUser, idCard, idTargetPlanet);
+            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+            switch (answer)
+            {
+                case null:
+                    return NotFound(KeyValuePair.Create("error","Room Game Instance not found"));
+                case 1:
+                    return Ok(KeyValuePair.Create("Played",playerData));
+                case 0:
+                    return Ok(KeyValuePair.Create("Not Played thus lack of energy",playerData));
+                case -1:
+                    return Ok(KeyValuePair.Create("Invalid ID",playerData));
+            }
+            return NotFound(KeyValuePair.Create("",playerData));
+        }
     }
 }

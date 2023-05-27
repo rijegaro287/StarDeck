@@ -4,6 +4,7 @@ using System.Timers;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.GameModels;
 using Stardeck.DbAccess;
+using Stardeck.Pages;
 
 namespace Stardeck.Logic
 {
@@ -79,6 +80,29 @@ namespace Stardeck.Logic
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="game"> gameid</param>
+        /// <param name="idPlayer">playerid</param>
+        /// <param name="cardid">card to play</param>
+        /// <param name="planetid">planet where play card</param>
+        /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
+        public async Task<int?> PlayCard(string game,string idPlayer, string cardid, string planetid)
+        {
+                var room = GetGameRoomData(game);
+                if (room is null)
+                {
+                    return null;
+                }
+                var result=room.PlayCard(idPlayer,cardid,planetid);
+                return result switch
+                {
+                    null => -1,
+                    true => 1,
+                    false => 0
+                };
+        }
 
         public List<Gameroom> GetAllGamerooms()
         {
@@ -104,5 +128,8 @@ namespace Stardeck.Logic
             GameRoom? room = ActiveRooms.Find(x => x.Roomid == id);
             return room;
         }
+        
+        
+        
     }
 }
