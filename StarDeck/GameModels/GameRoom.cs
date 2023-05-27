@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
 using System.Web.Helpers;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Stardeck.Models;
@@ -64,7 +65,13 @@ namespace Stardeck.GameModels
                 return Player2.Id;
             }
 
-            return "Draw";
+            var playerWithMorePoints = GetPlayerWithMaxPoints();
+            if (playerWithMorePoints is null)
+            {
+                return "Draw";
+            }
+
+            return playerWithMorePoints;
         }
 
         /// <summary>
@@ -96,45 +103,21 @@ namespace Stardeck.GameModels
         }
 
 
-        public string RevealCards()
+        public string RevealCardsOrder()
         {
             if (Turn.Equals(1))
             {
-                var rnd=new Random();
-                
-                if (rnd.Next(2)==0)
-                {
-                    return Player1.Id;
-                }
-                else
-                {
-                    return Player2.Id;
-                }
-            }
-            int player1Points = 0;
-            int player2Points = 0;
-            Territories.ForEach(t =>
-            {
-                t.player1Cards.ForEach(c =>
-                {
-                    player1Points += c.Battlecost;
-                });
-
-                t.player2Cards.ForEach(c =>
-                {
-                    player2Points += c.Battlecost;
-                });
-            });
-
-            if (player1Points > player2Points)
-            {
-                return Player1.Id;
-            }
-            else
-            {
-                return Player2.Id;
+                return GetRandomPlayerId();
             }
 
+            var player = GetPlayerWithMaxPoints();
+
+            if (player is null)
+            {
+                return GetRandomPlayerId();
+            }
+
+            return player;
         }
 
 
@@ -193,6 +176,27 @@ namespace Stardeck.GameModels
                     ContractResolver = new CamelCasePropertyNamesContractResolver()
                 });
         }
+        
+        /// <summary>
+        /// Get the player with the most points including all the territories
+        /// </summary>
+        /// <returns> player with the most points or null if draw</returns>
+        public string? GetPlayerWithMaxPoints()
+        {
+            Territory.Points points = new();
+            Territories.ForEach(t => { points += t.GetPlayersPoints(); });
+            if (points.player1 == points.player2)
+            {
+                return null;
+            }
+
+            if (points.player1 > points.player2)
+            {
+                return Player1.Id;
+            }
+
+            return Player2.Id;
+        }
 
         /// <summary>
         ///  Return the Deck of the player as a list of string
@@ -227,7 +231,7 @@ namespace Stardeck.GameModels
         /// <summary>
         ///  Assign the territories to the game
         /// </summary>
-        /// <returns></returns>
+        /// <returns> true id assigned false if failed</returns>
         private bool AssignTerritories()
         {
             Territories[0] = GetRandomPlanet();
@@ -268,6 +272,11 @@ namespace Stardeck.GameModels
             var planet = planetsList[random.Next(0, planetsList.Count)];
 
             return new Territory(planet);
+        }
+
+        private string GetRandomPlayerId()
+        {
+            return Random.Shared.Next(0, 2) == 0 ? Player1.Id : Player2.Id;
         }
 
 

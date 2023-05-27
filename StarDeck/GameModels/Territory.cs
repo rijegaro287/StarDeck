@@ -46,7 +46,7 @@ namespace Stardeck.GameModels
 
         public void checkWinner()
         {
-            var points = GetpointPlayers();
+            var points = GetPlayersPoints();
             if (points.player1 > points.player2)
             {
                 this.Winner = "player1";
@@ -61,7 +61,7 @@ namespace Stardeck.GameModels
             }
         }
 
-        public Points GetpointPlayers()
+        public Points GetPlayersPoints()
         {
             Points points = new Points();
             this.player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
@@ -73,6 +73,11 @@ namespace Stardeck.GameModels
         {
             public int player1;
             public int player2;
+            public static Points operator +(Points a, Points b)
+            {
+                return new Points { player1 = a.player1 + b.player1, player2 = a.player2 + b.player2 };
+            }
         }
     }
+    
 }
