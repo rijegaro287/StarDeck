@@ -1,0 +1,62 @@
+@import '../../../../styles.scss';
+
+.main-content {
+  width: 80%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5rem;
+  overflow: auto;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.deck-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .add-button {
+    align-self: flex-end;
+  }
+}
+
+.deck-list-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-list-grid {
+  @include card-list-grid;
+}
+
+.new-deck-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  h3 {
+    margin: 0;
+  }
+
+  .new-deck-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    mat-form-field {
+      margin-bottom: -1.25em
+    }
+
+    button {
+      width: 10rem;
+    }
+  }
+}

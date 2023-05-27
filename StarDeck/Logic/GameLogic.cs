@@ -9,23 +9,22 @@ namespace Stardeck.Logic
 {
     public class GameLogic
     {
-        private static StardeckContext _context;
+        private static StardeckContext gameContext;
         private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
         private readonly GameDb gameDB;
 
-        public GameLogic(StardeckContext context)
+        public GameLogic(StardeckContext gameContext)
         {
-            _context = context;
-            this.gameDB=new GameDb(context);
-            
+            GameLogic.gameContext = gameContext;
+            this.gameDB=new GameDb(gameContext);
         }
         
 
 
-        public static async Task<GameRoom?> IsWaiting(string playerId)
+        public async Task<GameRoom?> IsWaiting(string playerId)
         {
 
-            var player1 = _context.Accounts.Find(playerId);
+            var player1 = gameContext.Accounts.Find(playerId);
             if (player1 is null)
             {
                 throw new Exception("Player not found");
@@ -36,7 +35,7 @@ namespace Stardeck.Logic
             while (player1.isInMatchMacking==true && counter < 15)
             {
                 counter += 1;
-                var players = _context.Accounts.Include(x => x.FavoriteDeck).ToList()
+                var players = gameContext.Accounts.Include(x => x.FavoriteDeck).ToList()
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
                     players.Where(x => x.Id != playerId
@@ -69,9 +68,9 @@ namespace Stardeck.Logic
 
         }
 
-        public bool? PutInMatchMaking(string accountId, bool isInMatchMacking)
+        public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account? account = _context.Accounts.Find(accountId);
+            Account? account = await gameContext.Accounts.FindAsync(accountId);
             if (account is null)
             {
                 return null;
@@ -100,7 +99,10 @@ namespace Stardeck.Logic
             }
             return room;
         }
-
-
+        public GameRoom? GetGameRoomData(string id)
+        {
+            GameRoom? room = ActiveRooms.Find(x => x.Roomid == id);
+            return room;
+        }
     }
 }

@@ -95,7 +95,7 @@ export class CardFormDialogComponent {
     if (isNaN(newCard.energy) || newCard.energy < -100 || newCard.energy > 100) {
       throw new Error('La energía de la carta debe ser un número entre -100 y 100');
     }
-    if (isNaN(newCard.energy) || newCard.battlecost < 0 || newCard.battlecost > 100) {
+    if (isNaN(newCard.battlecost) || newCard.battlecost < 0 || newCard.battlecost > 100) {
       throw new Error('El costo de la carta debe ser un número entre 0 y 100');
     }
   }

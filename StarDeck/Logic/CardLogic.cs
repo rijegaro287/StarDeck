@@ -15,15 +15,10 @@ namespace Stardeck.Logic
             this.cardDB=new CardDb(context);
         }
 
-        public Object GetAll()
+        public List<Card>? GetAll()
         {
-            List<Card> cards = (List<Card>)cardDB.GetAllCards();
-            
-            if (cards.Equals(0) )
-            {
-                return 0;
-            }
-            return (List<Card>)cards;
+            List<Card>? cards = cardDB.GetAllCards();
+            return cards;
         }
 
         public Card GetCard(string id)
@@ -37,7 +32,7 @@ namespace Stardeck.Logic
         }
 
 
-        public Object NewCard(CardImage card)
+        public bool? NewCard(CardImage card)
         {
             var cardAux = new Card()
             {
@@ -54,16 +49,7 @@ namespace Stardeck.Logic
 
             };
             var save = cardDB.NewCard(cardAux);
-            if (save == null)
-            {
-                return null;
-            }
-            if(save.Equals(0))
-            {
-                return 0;
-            }
-            
-            return cardAux;
+            return save;
 
         }
 

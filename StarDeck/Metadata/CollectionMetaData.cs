@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stardeck.Models;
-[MetadataType(typeof(CollectionMetaData))]
+
 public partial class Collection
 {
     public Collection(string[]? collection1)
@@ -12,24 +12,29 @@ public partial class Collection
         if (collection1 != null)
         {
             this.Collection1 = collection1;
-            Collectionlist = new(Collection1);
+            Collectionlist = new ObservableCollection<string>(Collection1);
         }
         else
         {
-            this.Collectionlist ??= new();
+            this.Collectionlist ??= new ObservableCollection<string>();
         }
-        this.Collectionlist.CollectionChanged += new(updateJson);
+
+        this.Collectionlist.CollectionChanged += new NotifyCollectionChangedEventHandler(updateJson);
     }
 
-    [NotMapped]
-    public ObservableCollection<string>? Collectionlist;
+    [NotMapped] public ObservableCollection<string>? Collectionlist;
 
     private void updateJson(object sender, NotifyCollectionChangedEventArgs e)
     {
+        if (e is { Action: NotifyCollectionChangedAction.Add, NewItems: not null })
+            foreach (string eNewItem in e.NewItems)
+            {
+                if (Collectionlist != null && Collectionlist.Count(x => x == eNewItem) > 1)
+                {
+                    Collectionlist.Remove(eNewItem);
+                }
+            }
+
         this.Collection1 = this.Collectionlist.ToArray();
     }
-
-}
-public class CollectionMetaData
-{
 }

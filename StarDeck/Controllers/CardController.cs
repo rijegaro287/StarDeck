@@ -27,7 +27,7 @@ namespace Stardeck.Controllers
             var cards = cardLogic.GetAll();
             if (cards == null)
             {
-                return BadRequest("Algo saliÛ mal, intÈntalo m·s tarde");
+                return BadRequest("Algo sali√≥ mal, int√©ntalo m√°s tarde");
             }
             if (cards.Equals(0))
             {
@@ -55,15 +55,15 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Post([FromBody] CardImage card)
         {
             var cardAux = cardLogic.NewCard(card);
-            if (cardAux.Equals(0))
+            if (cardAux.Equals(null))
             {
-                return BadRequest("Ya existe una carta con estos datos");
+                return BadRequest(new KeyValuePair<string,string>("error","Ya existe una carta con estos datos"));
             }
-            if (cardAux == null)
+            if (cardAux == false)
             {
-                return BadRequest("Algo saliÛ mal, intÈntalo m·s tarde");
+                return BadRequest(new KeyValuePair<string,string>("error","Algo sali√≥ mal, int√©ntalo m√°s tarde"));
             }
-            return Ok(cardAux);
+            return Ok(new KeyValuePair<string,string>("success","Carta agregada correctamente"));
 
 
         }
@@ -77,7 +77,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound("No se encontrÛ la carta");
+            return NotFound("No se encontr√≥ la carta");
 
         }
 
@@ -90,7 +90,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(card);
             }
-            return NotFound("No se encontrÛ la carta");
+            return NotFound("No se encontr√≥ la carta");
         }
 
         [HttpGet]

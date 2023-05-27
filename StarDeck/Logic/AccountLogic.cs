@@ -22,13 +22,9 @@ namespace Stardeck.Logic
         }
 
 
-        public List<Account> GetAll()
+        public List<Account>? GetAll()
         {
-            List<Account> accounts = accountDB.GetAllAccounts();
-            if (accounts == null)
-            {
-                return null;
-            }
+            List<Account>? accounts = accountDB.GetAllAccounts();
             return accounts;
         }
 
@@ -69,9 +65,18 @@ namespace Stardeck.Logic
             if (user == null) { return null; }
             return user.Serverconfig;
         }
-
-
-        public Object NewAccount(Account acc)
+        public Account? GetAccountWithFavoriteDeck(string id)
+        {
+            //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
+            var acc = context.Accounts.Include(x => x.FavoriteDeck).First(x => x.Id == id);
+            return acc;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="acc"></param>
+        /// <returns>1 if account created with cards, -1 error in creation of account, -2 error assignin cards to account, null accoutn already exist </returns>
+        public int? NewAccount(Account acc)
         {
             if (avatarDB.GetAvatar(acc.Avatar) == null)
             {
@@ -101,26 +106,28 @@ namespace Stardeck.Logic
             accAux.generateID();
 
             var save=accountDB.NewAccount(accAux);
-            if (save.Equals(0))
+            if (save.Equals(null))
             {
-                return 0;
-            }
-            if (save == null)
-            {
+                //La cuenta ya existe
                 return null;
             }
-
-            //Add initial cards
-            //var cards = context.Cards.Where(x => x.Type == 0).ToList();
-            var cards = (List<Card>)cardDB.GetCardByType(0);
-            if(cards.Count == 0)
+            if (save == false)
             {
+                //fallo al guardar la cuenta
                 return -1;
             }
+
+            //Add initial cards from basic
+            //var cards = context.Cards.Where(x => x.Type == 0).ToList();
+            var cards = cardDB.GetCardByType(0);
+            //Cards empty
             if(cards == null) 
             {
+                //fallo al guardar las cartas
                 return -2;
+                #warning se quedaria la cuenta creada sin cartas, borrarla
             }
+            
             var ran = new Random();
             for (int i = 0; i < 15; i++)
             {
@@ -129,7 +136,7 @@ namespace Stardeck.Logic
                 cards.RemoveAt(index);
             }
 
-            return accAux;
+            return 1;
         }
         /// <summary>
         /// Ad a card to the player collection. If is a new player create it collection

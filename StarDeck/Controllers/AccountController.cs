@@ -13,8 +13,8 @@ namespace Stardeck.Controllers
     [AllowAnonymous]
     public class AccountController : ControllerBase
     {
-        
         private readonly AccountLogic accountLogic;
+
         public AccountController(StardeckContext context)
         {
             this.accountLogic = new AccountLogic(context);
@@ -25,12 +25,12 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Get()
         {
             var acc = accountLogic.GetAll();
-            if ( acc== null)
+            if (acc == null)
             {
-                return NotFound("No se encontraron cuentas");
+                return NotFound(new KeyValuePair<string,string>("error","No se encontraron cuentas"));
             }
-            return Ok(acc);
 
+            return Ok(acc);
         }
 
         // GET api/<AccountController>/5
@@ -42,6 +42,7 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontró la cuenta");
             }
+
             return Ok(temp);
         }
 
@@ -49,10 +50,11 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> GetCards(string accountId)
         {
             var cards = accountLogic.GetCards(accountId);
-            if (cards== null)
+            if (cards == null)
             {
                 return NotFound("No se encontraron cartas");
             }
+
             return Ok(cards);
         }
 
@@ -65,8 +67,10 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontraron cuentas o parámetros");
             }
+
             return Ok(temp);
         }
+
         [HttpGet("{id}/Parameters")]
         public async Task<IActionResult> GetParameters(string id)
         {
@@ -75,10 +79,9 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontraron cuentas");
             }
+
             return Ok(temp);
         }
-
-
 
 
         // POST api/<AccountController>
@@ -86,24 +89,16 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Post([FromBody] Account acc)
         {
             var accAux = accountLogic.NewAccount(acc);
-            if(accAux.Equals(0))
+            return accAux switch
             {
-                return BadRequest("Ya existe una cuenta con estos datos ");
-            }
-            if (accAux == null)
-            {
-                return BadRequest("Algo salió mal guardando la cuenta, inténtalo más tarde");
-            }
-            if (accAux.Equals(-1))
-            {
-                return BadRequest("No hay cartas para asignar");
-            }
-            if (accAux.Equals(-2))
-            {
-                return BadRequest("Algo salió mal, inténtalo más tarde");
-            }
-
-            return Ok(accAux);
+                null => BadRequest(new KeyValuePair<string, string>("error",
+                    "Ya existe una cuenta con estos datos o el correo ya está registrado")),
+                -1 => BadRequest(new KeyValuePair<string, string>("error",
+                    "Algo salió mal guardando la cuenta, inténtalo más tarde")),
+                -2 => BadRequest(new KeyValuePair<string, string>("error", "No hay cartas para asignar")),
+                1 => Ok(new KeyValuePair<string, string>("Succes", "Cuenta creada con exito")),
+                _ => BadRequest("Algo salió mal, inténtalo más tarde"),
+            };
         }
 
         [HttpPost("addCards/{accountId}/{cardId}")]
@@ -114,25 +109,24 @@ namespace Stardeck.Controllers
             {
                 return BadRequest("Ya en coleccion " + cardId);
             }
+
             return Ok(aux);
 
             //return Ok(dic);
-
         }
 
         [HttpPost("addCards/{accountId}")]
         public async Task<IActionResult> AddCardsList(string accountId, [FromBody] string[] cardId)
         {
-
             string[]? aux = accountLogic.AddCardsListToCollection(accountId, cardId);
             if (aux is null)
             {
                 return BadRequest("Ya en colección " + cardId);
             }
+
             return Ok(aux);
 
             //return Ok(dic);
-
         }
 
         [HttpPost("{id}/Parameters/{parameter}")]
@@ -143,9 +137,9 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontró cuenta o los parámetros ya tienen valor");
             }
+
             return Ok(temp);
         }
-
 
 
         // PUT api/<AccountController>/5
@@ -157,6 +151,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
+
             return NotFound("No se encontró la cuenta");
         }
         // PUT api/<AccountController>/5
@@ -169,10 +164,12 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontró el deck");
             }
-            if( selected is null)
+
+            if (selected is null)
             {
                 return NotFound("No se encontró la cuenta");
             }
+
             return Ok(deck);
         }
 
@@ -185,6 +182,7 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontró la cuneta o el parámetro no existe");
             }
+
             return Ok(temp);
         }
 
@@ -197,6 +195,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
+
             return NotFound("No se encontró la cuenta");
         }
 
@@ -215,13 +214,9 @@ namespace Stardeck.Controllers
                 {
                     return Ok(collection.Collection1);
                 }
+
                 return NotFound("Algo salió mal, inténtalo más tarde");
             }
-
-
         }
-
-        
-
     }
 }

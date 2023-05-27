@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -24,7 +24,7 @@ namespace Stardeck.Controllers
         [Route("get_all")]
         public async Task<IActionResult> Get()
         {
-            if (parametersLogic.GetAll() == null)
+            if (parametersLogic.GetAll() is null)
             {
                 return NotFound();
             }

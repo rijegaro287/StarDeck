@@ -1,4 +1,4 @@
-﻿namespace Stardeck.GameModels
+namespace Stardeck.GameModels
 {
 
     public class Territory
@@ -7,11 +7,11 @@
 
         public string Name { get; set; }
 
-        public long Type { get; set; }
+    public long Type { get; set; }
 
-        public bool? Active { get; set; }
+    public bool? Active { get; set; }
 
-        public TerritoryAbility? Ability { get; set; }
+    public TerritoryAbility? Ability { get; set; }
 
         public List<GameCard> player1Cards { get; set; } = new();
 
