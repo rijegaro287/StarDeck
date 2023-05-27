@@ -95,6 +95,49 @@ namespace Stardeck.GameModels
             }
         }
 
+
+        public string RevealCards()
+        {
+            if (Turn.Equals(1))
+            {
+                var rnd=new Random();
+                
+                if (rnd.Next(2)==0)
+                {
+                    return Player1.Id;
+                }
+                else
+                {
+                    return Player2.Id;
+                }
+            }
+            int player1Points = 0;
+            int player2Points = 0;
+            Territories.ForEach(t =>
+            {
+                t.player1Cards.ForEach(c =>
+                {
+                    player1Points += c.Battlecost;
+                });
+
+                t.player2Cards.ForEach(c =>
+                {
+                    player2Points += c.Battlecost;
+                });
+            });
+
+            if (player1Points > player2Points)
+            {
+                return Player1.Id;
+            }
+            else
+            {
+                return Player2.Id;
+            }
+
+        }
+
+
         /// <summary>
         /// Play a card on the temporary player territory
         /// </summary>
