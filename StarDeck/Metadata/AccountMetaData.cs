@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stardeck.Models;
-[MetadataType(typeof(AccountMetadata))]
 public partial class Account:IAlphanumericID
 {
     public Account(string? config)
@@ -21,6 +20,7 @@ public partial class Account:IAlphanumericID
             this.Serverconfig ??= new(this);
         }
     }
+    
 
     [NotMapped]
     public DateTime? lastacces { get; set; } = null;
@@ -101,15 +101,3 @@ public partial class Account:IAlphanumericID
 
 
 
-public class AccountMetadata
-{
-    [RegularExpression(@"^C-[a-zA-Z0-9]{12}")]
-    [StringLength(maximumLength: 14, MinimumLength = 14)]
-    public string Id { get; set; } = null!;
-    [DataType(DataType.EmailAddress)]
-    public string Email { get; set; } = null!;
-
-    [System.Text.Json.Serialization.JsonIgnore]
-    [Newtonsoft.Json.JsonIgnore]
-    public string Password { get; set; } = null!;
-}

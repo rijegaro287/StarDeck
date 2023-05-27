@@ -20,15 +20,14 @@ namespace Stardeck.DbAccess
             }
             return avatars;
         }
-
-        public Avatar GetAvatar(long id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Avatar object or null if not found</returns>
+        public Avatar? GetAvatar(long id)
         {
             var avatar = context.Avatars.Find(id);
-
-            if (avatar == null)
-            {
-                return null;
-            }
             return avatar;
 
         }

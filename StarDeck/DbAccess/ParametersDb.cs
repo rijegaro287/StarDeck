@@ -12,7 +12,7 @@ namespace Stardeck.DbAccess
             this.context = context;
         }
 
-        public List<Parameter> GetAllParameters()
+        public List<Parameter>? GetAllParameters()
         {
             List<Parameter> parameters = context.Parameters.ToList();
             if (parameters.Count == 0)
@@ -22,7 +22,7 @@ namespace Stardeck.DbAccess
             return parameters;
         }
 
-        public Parameter GetParameter(string id)
+        public Parameter? GetParameter(string id)
         {
             var param = context.Parameters.Find(id);
 

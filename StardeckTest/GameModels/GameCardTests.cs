@@ -16,7 +16,7 @@ namespace Stardeck.GameModels.Tests
         [TestMethod()]
         public void GameCardTest()
         {
-            var cartasRaras=(new CardLogic(new()).GetAll());
+            var cartasRaras=(new CardLogic(new StardeckContext()).GetAll());
             Assert.IsNotNull(cartasRaras,"no se lograron obtener todas las cartas de la base");
             var CartasTransformadas = new List<GameModels.GameCard>();
             foreach(var card in cartasRaras)

@@ -11,60 +11,57 @@ namespace Stardeck.DbAccess
             this.context = context;
         }
 
-        public Object GetAllCards()
+        public List<Card>? GetAllCards()
         {
             List<Card> cards = context.Cards.ToList();
             if (cards.Count == 0)
-            {
-                return 0;
-            }
-            if (cards== null) 
             {
                 return null;
             }
             return cards;
         }
 
-        public Card GetCard(string id)
+        public Card? GetCard(string id)
         {
             var card = context.Cards.Find(id);
 
-            if (card == null)
-            {
-                return null;
-            }
             return card;
         }
 
-        public Object GetCardByType(int type)
+        public List<Card>? GetCardByType(int type)
         {
             var card = context.Cards.Where(x => x.Type == 0).ToList();
 
-            if (card == null)
-            {
-                return null;
-            }
             if(card.Count == 0) 
             {
-                return 0;
+                return null;
             }
             return card;
         }
 
-
-        public Object NewCard(Card card)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns>True if card was saved, false if card catch a error in saving, null if card already exist</returns>
+        public bool? NewCard(Card card)
         {
             if(GetCard(card.Id)!=null) 
             { 
-                return 0; 
+                return null; 
             }
             context.Cards.Add(card);
-            context.SaveChanges();
-            if (GetCard(card.Id) == null)
+            try
             {
-                return null;
+                context.SaveChanges();
             }
-            return card;
+            catch (Exception e)
+            {
+                #warning add log for this exception
+                Console.WriteLine(e);
+                return false;
+            }
+            return true;
         }
 
         public Card DeleteCard(string id)

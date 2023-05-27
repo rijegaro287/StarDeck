@@ -12,7 +12,7 @@ namespace Stardeck.DbAccess
         }
 
 
-        public List<Account> GetAllAccounts()
+        public List<Account>? GetAllAccounts()
         {
             List<Account> accounts = context.Accounts.ToList();
             if (accounts.Count == 0)
@@ -21,14 +21,14 @@ namespace Stardeck.DbAccess
             }
             return accounts;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Accoutn object or null if not founded</returns>
         public Account? GetAccount(string id)
         {
             var acc = context.Accounts.Find(id);
-            if(acc == null)
-            {
-                return null;
-            }
             return acc;
         }
 
@@ -42,21 +42,24 @@ namespace Stardeck.DbAccess
             return collection.Collection1;
         }
 
-        public Object NewAccount(Account acc)
+        public bool? NewAccount(Account acc)
         {
             if( GetAccount(acc.Id) != null ) 
             {
-                return 0;
-            }
-            context.Accounts.Add(acc);
-            context.SaveChanges();
-
-            if (GetAccount(acc.Id) == null)
-            {
                 return null;
             }
-
-            return acc;
+            context.Accounts.Add(acc);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                #warning log this exception
+                Console.WriteLine(e);
+                return false;  
+            }
+            return true;
 
         }
 

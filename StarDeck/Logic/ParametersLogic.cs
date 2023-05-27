@@ -16,10 +16,10 @@ namespace Stardeck.Logic
             this.parametersDB=new ParametersDb(context);
         }
 
-        public List<Parameter> GetAll()
+        public List<Parameter>? GetAll()
         {
-            List<Parameter> parameters= parametersDB.GetAllParameters();
-            if (parameters== null)
+            List<Parameter>? parameters= parametersDB.GetAllParameters();
+            if (parameters is null)
             {
                 return null;
             }
@@ -27,7 +27,7 @@ namespace Stardeck.Logic
         }
 
 
-        public Parameter GetParameter(string id)
+        public Parameter? GetParameter(string id)
         {
             var param = parametersDB.GetParameter(id);
 
@@ -48,6 +48,31 @@ namespace Stardeck.Logic
             parametersDB.NewParameter(paramtAux);
             return paramtAux;
 
+        }
+        
+        public Parameter? UpdateParameter(string id, string nValue)
+        {
+            var param = context.Parameters.Find(id);
+            if (param != null)
+            {
+                param.Value= nValue;
+
+                context.SaveChanges();
+                return param;
+            }
+            return null;
+
+        }
+        public Parameter? DeleteParameter(string id)
+        {
+            var param = context.Parameters.Find(id);
+            if (param != null)
+            {
+                context.Remove(param);
+                context.SaveChanges();
+                return param;
+            }
+            return null;
         }
 
     }
