@@ -31,5 +31,9 @@ export class CardComponent implements OnChanges {
     if (this.base64CardImage !== '') {
       this.imageURL = this.helpers.base64ToImageURL(this.base64CardImage);
     }
+    if (!this.cardBorderColor) {
+      this.cardBorderColor = this.helpers.getCardBorderColor(this.card.type);
+    }
+
   }
 }

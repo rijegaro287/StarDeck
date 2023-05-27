@@ -29,7 +29,7 @@ public partial class StardeckContext : DbContext
 
     public virtual DbSet<Gamelog> Gamelogs { get; set; }
 
-    public virtual DbSet<Gameroom> Gamerooms { get; set; }
+    public virtual DbSet<Gameroom?> Gamerooms { get; set; }
 
     public virtual DbSet<Parameter> Parameters { get; set; }
 

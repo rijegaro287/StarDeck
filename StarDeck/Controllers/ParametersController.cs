@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -19,7 +19,7 @@ namespace Stardeck.Controllers
         }
 
 
-        // GET: api/<ConstantsController>
+        // GET: api/<ParametersController>
         [HttpGet]
         [Route("get_all")]
         public async Task<IActionResult> Get()
@@ -32,7 +32,7 @@ namespace Stardeck.Controllers
 
         }
 
-        // GET api/<ConstantsController>/5
+        // GET api/<ParametersController>/5
         [HttpGet]
         [Route("get/{id}")]
         public async Task<IActionResult> Get(string id)
@@ -45,7 +45,7 @@ namespace Stardeck.Controllers
 
         }
 
-        // POST api/<ConstantsController>
+        // POST api/<ParametersController>
         [HttpPost]
         [Route("add")]
         public async Task<IActionResult> Post([FromBody] Parameter constant)
@@ -58,6 +58,31 @@ namespace Stardeck.Controllers
             return Ok(constAux);
 
 
+        }
+
+        // PUT api/<ParametersController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(string id, string nValue)
+        {
+            var param = parametersLogic.UpdateParameter(id, nValue);
+            if (param != null)
+            {
+                return Ok(param);
+            }
+            return NotFound();
+
+        }
+
+        // DELETE api/<ParametersController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var param = parametersLogic.DeleteParameter(id);
+            if (param != null)
+            {
+                return Ok(param);
+            }
+            return NotFound();
         }
 
 

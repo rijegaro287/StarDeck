@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 
+import { CARD_TYPES } from '../app.component';
+
 import { ICardType } from '../Interfaces/Card';
+
+import { IPlanetType } from '../Interfaces/Planet';
 
 @Injectable({
   providedIn: 'root'
@@ -38,16 +42,34 @@ export class HelpersService {
    */
   getCardBorderColor(type: ICardType): string {
     switch (type) {
-      case 4:
+      case CARD_TYPES.ULTRA_RARE:
         return '#e6ce4a';
-      case 3:
+      case CARD_TYPES.VERY_RARE:
         return '#9a00d6';
-      case 2:
+      case CARD_TYPES.RARE:
         return '#4161f1';
-      case 1:
+      case CARD_TYPES.NORMAL:
         return '#66e961';
-      case 0:
+      case CARD_TYPES.BASIC:
         return 'black';
+      default:
+        return 'black';
+    }
+  }
+
+  /**
+   * Devuelve el color del borde del planeta según su tipo
+   * @param type Tipo de la carta
+   * @returns String con el color del borde
+   */
+  getPlanetBorderColor(type: IPlanetType): string {
+    switch (type) {
+      case 2:
+        return '#EE0C94';
+      case 1:
+        return '#81CF00';
+      case 0:
+        return '#0085CF';
       default:
         return 'black';
     }

@@ -12,6 +12,7 @@ import { LoginComponent } from "../../Generic/login/login.component";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ILoginData } from "../../../Interfaces/login-data";
+import { countries } from "countries-list";
 
 
 @Component({
@@ -37,6 +38,7 @@ export class RegisterAccountComponent {
   };
   /* Formulario del Registro de Cuenta */
   newUser: FormGroup;
+  countryList: string[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string,
     private _formBuilder: FormBuilder,
@@ -48,6 +50,8 @@ export class RegisterAccountComponent {
     this.http = http;
     this.baseurl = baseUrl
     this.term = false;
+    this.countryList = Object.values(countries).map(country => country.name);
+    console.log(this.countryList);
 
     //Datos del formulario de Registro de Cuenta
     this.newUser = this._formBuilder.group({
@@ -106,6 +110,14 @@ export class RegisterAccountComponent {
     console.log(this.term)
 
   }
+  /*
+   * Funcion para validar que una contraseña sea alfanumerica
+   * */
+  hasLetterAndNumber(password: string): boolean {
+    const letterExp = /[a-zA-Z]/;
+    const numberExp = /\d/;
+    return letterExp.test(password) && numberExp.test(password);
+  }
 
 
   /*
@@ -120,14 +132,13 @@ export class RegisterAccountComponent {
     });
 
     const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.newUser.value.email);
-    if (this.newUser.value.name.toString().length < 5 || this.newUser.value.name.toString().length > 30) {
-      throw new Error('El nombre debe contener entre 5 y 30 carácteres');
-    }
-    if (this.newUser.value.nickname.toString().length < 5 || this.newUser.value.nickname.toString().length > 30) {
-      throw new Error('El nickname debe contener entre 5 y 30 carácteres');
-    }
+    const validPassword = this.hasLetterAndNumber(this.newUser.value.password.toString());
+
     if (!validEmail) {
       throw new Error("Ingrese una dirección de correo electrónico válida");
+    }
+    if (!validPassword) {
+      throw new Error("Ingrese una contraseña que contenga números y letras");
     }
     if (this.newUser.value.password.toString().length != 8) {
       throw new Error('La contraseña debe ser de 8 carácteres');

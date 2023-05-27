@@ -1,0 +1,10 @@
+@import '../../../../styles.scss';
+
+.card-list {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.card-list-grid {
+  @include card-list-grid;
+}

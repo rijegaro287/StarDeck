@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import '../../../../../styles.scss';
 
 .main-content {
   width: 80%;
@@ -13,7 +13,7 @@
   }
 }
 
-.card-list-container {
+.planet-list-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
   align-self: flex-end;
 }
 
-.card-list {
+.planet-list {
   height: 60vh;
   width: 100%;
   overflow-y: auto;
