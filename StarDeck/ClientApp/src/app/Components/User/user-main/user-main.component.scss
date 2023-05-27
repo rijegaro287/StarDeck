@@ -1,0 +1,19 @@
+@import '../../../../styles.scss';
+
+.main-content {
+  width: 80%;
+  min-height: calc(100vh - 7rem);
+  margin: 0rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.play-button {
+  font-size: 1.8rem;
+  font-weight: 400;
+}

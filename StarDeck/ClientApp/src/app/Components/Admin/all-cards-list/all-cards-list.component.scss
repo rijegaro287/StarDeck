@@ -1,0 +1,26 @@
+@import '../../../../styles.scss';
+
+.main-content {
+  width: 80%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.card-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 3rem;
+  overflow-y: auto;
+}
+
+.add-button {
+  align-self: flex-end;
+}
