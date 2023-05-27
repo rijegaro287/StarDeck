@@ -10,5 +10,5 @@ public partial class Gamelog
 
     public string? Log { get; set; }
     [JsonIgnore]
-    public virtual Gameroom Game { get; set; } = null!;
+    public virtual Gameroom? Game { get; set; } = null!;
 }

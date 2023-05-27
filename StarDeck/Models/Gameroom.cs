@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace Stardeck.Models;
 
@@ -15,11 +16,14 @@ public partial class Gameroom:IAlphanumericID
     public long? Bet { get; set; }
 
     public virtual Gamelog? Gamelog { get; set; }
-
+    
+    [JsonIgnore]
     public virtual Account? Player1Navigation { get; set; }
 
+    [JsonIgnore]
     public virtual Account? Player2Navigation { get; set; }
 
+    [JsonIgnore]
     public virtual Account? WinnerNavigation { get; set; }
     [NotMapped]
     public string Id { get => Roomid; set => Roomid=value; }

@@ -10,14 +10,13 @@ namespace Stardeck.Controllers
     [ApiController]
     public class GameController : ControllerBase
     {
-        private static readonly StardeckContext Maincontext = new();
         private readonly StardeckContext context;
         private GameLogic gameLogic;
 
         public GameController(StardeckContext context)
         {
-            this.context = Maincontext;
-            this.gameLogic = new GameLogic(Maincontext);
+            this.context = context;
+            this.gameLogic = new GameLogic(context);
         }
 
 
@@ -25,7 +24,7 @@ namespace Stardeck.Controllers
         [HttpPost("{playerId}")]
         public async Task<IActionResult> Post(string playerId)
         {
-            var room=await GameLogic.IsWaiting(playerId);
+            var room=await gameLogic.IsWaiting(playerId);
             if (room is null)
             {
                 return NotFound();
@@ -36,10 +35,10 @@ namespace Stardeck.Controllers
         [HttpPut("{id}/{isInMatchMaking}")]
         public async Task<IActionResult> Put(string id, bool isInMatchMaking)
         {
-            var act = gameLogic.PutInMatchMaking(id, isInMatchMaking);
+            var act = await gameLogic.PutInMatchMaking(id, isInMatchMaking);
             if (act != null)
             {
-                return Ok(act);
+                return Ok(new KeyValuePair<string, bool?>(id, act));
             }
 
             return NotFound();
@@ -62,6 +61,28 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Get(string id)
         {
             var room = gameLogic.GetGameroom(id);
+            if (room is not null)
+            {
+                return Ok(room);
+            }
+
+            return NotFound();
+        }
+        [HttpGet("getGameRoomData/{id}")]
+        public async Task<IActionResult> GetData(string id)
+        {
+            var room = gameLogic.GetGameRoomData(id);
+            if (room != null)
+            {
+                return Ok(room);
+            }
+
+            return NotFound();
+        }
+        [HttpGet("getGameRoomData/{idRoom}/{idUser}")]
+        public async Task<IActionResult> GetPlayerData(string idRoom,string idUser)
+        {
+            var room = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
             if (room != null)
             {
                 return Ok(room);

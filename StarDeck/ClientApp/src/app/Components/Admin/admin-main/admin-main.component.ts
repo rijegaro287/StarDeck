@@ -18,8 +18,8 @@ export class AdminMainComponent {
         link: '/admin/cards' // Ruta a la que redirige
       },
       {
-        description: 'Territorios',
-        link: '/'
+        description: 'Planetas',
+        link: '/admin/planets'
       },
       {
         description: 'Configuración',

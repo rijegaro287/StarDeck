@@ -1,0 +1,41 @@
+<div class="main-content">
+  <h1>Lista de planetas</h1>
+
+  <div class="planet-list-container">
+    <button class="add-button" mat-raised-button color="primary" (click)="createPlanet()">
+      <mat-icon>add</mat-icon>
+      <span>Crear planeta</span>
+    </button>
+
+    <mat-tab-group class="planet-list">
+      <mat-tab label="Raro">
+        <div class="list-grid">
+          <ng-container *ngFor="let planet of rarePlanets">
+            <app-planet [planet]="planet" [base64PlanetImage]="planet.image"
+                        [planetBorderColor]="this.helpers.getPlanetBorderColor(planet.type)"></app-planet>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Básico">
+        <div class="list-grid">
+          <ng-container *ngFor="let planet of basicPlanets">
+            <app-planet [planet]="planet" [base64PlanetImage]="planet.image"
+                        [planetBorderColor]="this.helpers.getPlanetBorderColor(planet.type)"></app-planet>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Popular">
+        <div class="list-grid">
+          <ng-container *ngFor="let planet of popularPlanets">
+            <app-planet [planet]="planet" [base64PlanetImage]="planet.image"
+                        [planetBorderColor]="this.helpers.getPlanetBorderColor(planet.type)"></app-planet>
+          </ng-container>
+        </div>
+      </mat-tab>
+
+
+    </mat-tab-group>
+  </div>
+</div>
