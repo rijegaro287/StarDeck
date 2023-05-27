@@ -7,36 +7,18 @@ using Stardeck.Models;
 
 namespace Stardeck.GameModels
 {
-    public class GameRoom
+    public class GameRoom: GameModels.GameModel
     {
-        public string Roomid { get; set; }
-
-        public Player Player1 { get; set; }
-
-        public Player Player2 { get; set; }
-
-        public string? Winner { get; set; }
-
-        public long? Bet { get; set; }
-
-        public int? Turn { get; set; }
         
-        public Territory[] Territories { get; set; } = new Territory[3];
-        
-        [System.Text.Json.Serialization.JsonIgnore]
-        private Territory? _territory3;
-        public Gamelog? Gamelog { get; set; }
-        
-        [System.Text.Json.Serialization.JsonIgnore]
-        private Gameroom? Room{ get; set; }
         
         
         /// <summary>
         ///  Create a Runtime GameRoom from a database GameRoom and intialize it Gamelog if needed
         /// </summary>
         /// <param name="data"></param>
-        public GameRoom(Gameroom? data)
-        {
+        public GameRoom(Gameroom? data):base()
+        {   //assign space for terrutories
+            Territories  = new List<Territory>(new Territory[3]);
             //create object from room data
             Roomid = data.Roomid;
             Player1 = new Player(data.Player1Navigation);
@@ -65,8 +47,27 @@ namespace Stardeck.GameModels
 
 
         }
-        
-        
+        /// <summary>
+        /// Play a card on the temporary player territory
+        /// </summary>
+        /// <param name="playerid"></param>
+        /// <param name="cardid"></param>
+        /// <param name="territoryid"></param>
+        /// <returns>True if card played and energy reduced, false if not enough energy and null if invalid id</returns>
+        public bool? PlayCard(string playerid, string cardid, string territoryid)
+        {
+            var territory = Territories.FindIndex(x=>x.Id==territoryid);
+            if (playerid == Player1.Id)
+            {
+                return Player1.PlayCard(cardid,territory);
+            }
+            if (playerid == Player2.Id)
+            {
+                return Player2.PlayCard(cardid,territory);
+            }
+
+            return null;
+        }
 
         /// <summary>
         /// Get the data of the player that is not included in the game data getter
@@ -76,7 +77,6 @@ namespace Stardeck.GameModels
 
         public string GetPlayerData(string playerId)
         {
-            
             return Newtonsoft.Json.JsonConvert.SerializeObject(playerId == Player1.Id ? Player1 : Player2,new JsonSerializerSettings()
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
@@ -161,7 +161,6 @@ namespace Stardeck.GameModels
         private void SaveToDb()
         {
             var context = new StardeckContext();
-            
             Room.Player1Navigation = null;
             Room.Player2Navigation = null;
             var room = context.Gamerooms.Find(Roomid) ?? context.Gamerooms.Add(Room).Entity;

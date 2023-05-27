@@ -12,6 +12,7 @@ namespace Stardeck.GameModels
             {
                 throw new InvalidOperationException("La informacion del jugador es invalida");
             }
+
             //create object from player data
             Id = dataPlayer.Id;
             Name = dataPlayer.Name;
@@ -23,9 +24,11 @@ namespace Stardeck.GameModels
             Energy = 1;
             Account = dataPlayer;
         }
+
         [JsonIgnore]
         [Newtonsoft.Json.JsonIgnore]
         private Account? Account { get; set; }
+
         public string Id { get; set; }
 
         public string Name { get; set; }
@@ -39,17 +42,15 @@ namespace Stardeck.GameModels
         public long Points { get; set; }
 
         public long Coins { get; set; }
-        
-        [JsonIgnore]
-        public long Energy { get; set; }
-        
-        [JsonIgnore]
 
-        public List<GameCard> Deck { get; set; } = new List<GameCard>();
-        
-        [JsonIgnore]
+        [JsonIgnore] public long Energy { get; set; }
 
-        public List<GameCard> Hand { get; set; } = new List<GameCard>();
+        [JsonIgnore] public List<GameCard> Deck { get; set; } = new List<GameCard>();
+
+        [JsonIgnore] public List<GameCard> Hand { get; set; } = new List<GameCard>();
+
+        [JsonIgnore]
+        public List<Territory> TmpTerritories { get; set; } = new List<Territory>();
 
         /// <summary>
         ///     Initialize player hand and deck and put player in game
@@ -67,7 +68,7 @@ namespace Stardeck.GameModels
             //put player in game
             Account.isplaying = true;
             Account.isInMatchMacking = false;
-            
+
             return (bool)Account.isplaying;
         }
 
@@ -94,23 +95,43 @@ namespace Stardeck.GameModels
             //create deck
             var logicCard = new Logic.CardLogic(new StardeckContext());
             var logicDeck = new Logic.DeckLogic(new StardeckContext());
-            var cards = logicDeck.GetDeck(Account.FavoriteDeck.Deckid).Decklist.ToList().Select(card => logicCard.GetCard(card));
+            var cards = logicDeck.GetDeck(Account.FavoriteDeck.Deckid).Decklist.ToList()
+                .Select(card => logicCard.GetCard(card));
             var deck = (cards ?? throw new InvalidOperationException("El Deck seleccionado es invalido"))
                 .Select(cardata => new GameCard(cardata)).ToList();
             //shuffle deck
             deck = Logic.DeckLogic.Shuffle(deck);
             return deck;
         }
-        
+
         public List<GameCard> GetHand()
         {
             return Hand;
         }
+
         public List<GameCard> GetDeck()
         {
             return Deck;
         }
 
 
+        public bool? PlayCard(string cardid, int territory)
+        {
+            var card = Hand.Find(x => x.Id == cardid);
+            if (card is null)
+            {
+                return null;
+            }
+
+            if (card.Energy > Energy)
+            {
+                return false;
+            }
+
+            Energy -= card.Energy;
+            Hand.Remove(card);
+            TmpTerritories[territory].PlayCard(card);
+            return true;
+        }
     }
 }

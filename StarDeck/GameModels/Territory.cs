@@ -34,5 +34,13 @@ namespace Stardeck.GameModels
             Ability = new TerritoryAbility(null);
             Id = "0";
         }
+        /// <summary>
+        /// Play a card in the territory as a player1
+        /// </summary>
+        /// <param name="card"></param>
+        public void PlayCard(GameCard card)
+        {
+            this.player1Cards.Add(card);
+        }
     }
 }
