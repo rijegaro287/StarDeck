@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -44,7 +44,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\Interfaces\Game.ts" />
+    <Folder Include="Data\" />
+    <Folder Include="TEST\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="TestStarDeck\obj\project.assets.json" />
+    <_ContentIncludedByDefault Remove="TestStarDeck\obj\project.packagespec.json" />
+    <_ContentIncludedByDefault Remove="TestStarDeck\obj\TestStarDeck.csproj.nuget.dgspec.json" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

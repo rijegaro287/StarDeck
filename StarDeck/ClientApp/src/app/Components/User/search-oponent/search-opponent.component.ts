@@ -1,9 +1,11 @@
-
 import { Component, Inject, OnInit } from '@angular/core';
-import { BattleService } from "src/app/Services/battle.service";
-import { HelpersService } from "src/app/Services/helpers.service";
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
+
+import { BattleService } from "src/app/Services/battle.service";
+import { HelpersService } from "src/app/Services/helpers.service";
+
+import { IGameRoom } from 'src/app/Interfaces/Game';
 
 @Component({
   selector: 'app-search-opponent',
@@ -12,8 +14,7 @@ import { Router } from "@angular/router";
 })
 export class SearchOpponentComponent implements OnInit {
   idAccount: string;
-  respuesta = {};
-  dataBattle: string;
+  dataBattle: IGameRoom;
 
   router: Router | undefined;
   baseurl: string;
@@ -34,7 +35,7 @@ export class SearchOpponentComponent implements OnInit {
     //-------------Inizializacion de variables --------------
     this.baseurl = baseUrl;
     this.idAccount = sessionStorage.getItem('ID')!;
-    this.dataBattle = '';
+    this.dataBattle = {} as IGameRoom;
 
   }
   /**
@@ -43,31 +44,29 @@ export class SearchOpponentComponent implements OnInit {
   async ngOnInit() {
 
     //Logica para la solicitud de una batalla 
-    await this.battleS.search_battle(this.idAccount)
-      .then(battle => {
+    await this.battleS.searchBattle(this.idAccount)
+      .then((battle) => {
+        //Llamada al componente de Juego 
         this.dataBattle = battle;
+
+        sessionStorage.setItem('GameRoomData', JSON.stringify(this.dataBattle));
+
+        window.location.assign(this.baseurl + "game");
         console.log(battle)
       })
-      .catch(error => {
+      .catch((error) => {
         alert("No hay jugadores disponibles, intentelo más tarde");
         window.location.assign(this.baseurl + "user/battle/select-deck");
+      });
 
-      })
-
-    //Llamada al componente de Juego 
-    //window.location.assign(this.baseurl + "");
   }
 
 
   async searchCancel() {
     //Logica para la solicitud de una batalla 
-    await this.battleS.cancel(this.idAccount)
-      .then(battle => {
-        console.log(battle)
+    await this.battleS.cancelBattleSearch(this.idAccount)
+      .then((battle) => {
+        window.location.assign(this.baseurl + "user");
       });
-    window.location.assign(this.baseurl + "user");
   }
-  
-  
 }
-

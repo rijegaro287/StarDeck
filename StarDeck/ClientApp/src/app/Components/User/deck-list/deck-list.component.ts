@@ -93,12 +93,13 @@ export class DeckListComponent implements OnInit {
       await this.cardService.getCard(cardID)
         .then((card) => {
           this.cardCollection.push(card);
-          this.cardCollection = this.cardCollection.slice()
+          this.cardCollection = this.cardCollection.slice();
         });
     }
 
     await this.deckService.getUserDecks(this.userID)
-      .then((decks) => { this.decks = decks; });
+      .then((decks) => { this.decks = decks; })
+      .catch((error) => console.log(error.error));
 
     this.decks.forEach((deck) => {
       deck.cards = this.cardCollection

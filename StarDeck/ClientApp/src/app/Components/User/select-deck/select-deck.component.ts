@@ -23,11 +23,11 @@ export class SelectDeckComponent implements OnInit {
   idDeck: string;
   nameDeck: string;
   idAccount: string;
-  deckList:IDeckNames[]; 
-  idcardsDeckList:[];
+  deckList: IDeckNames[];
+  idcardsDeckList: [];
   cardsDeckList: ICard[];
   newBattle: FormGroup;
-  
+
   respuesta = {};
 
   router: Router | undefined;
@@ -59,7 +59,7 @@ export class SelectDeckComponent implements OnInit {
       selectedDeck: ['', Validators.required]
     });
 
-    
+
   }
   /**
    *Funcion que se ejecuta cuando se carga el componente
@@ -68,7 +68,7 @@ export class SelectDeckComponent implements OnInit {
 
     //Logica para obtener la lista de Decks de un jugador
 
-    await this.battle.decks(this.idAccount)
+    await this.battle.getUserDecks(this.idAccount)
       .then(decks => {
         this.deckList = decks;
         console.log(this.deckList)
@@ -78,7 +78,7 @@ export class SelectDeckComponent implements OnInit {
   /**
    *Funcion que se llama cuando se cambia de opci�n en el Select
    */
-  async ObtenerCartas() {
+  async getCards() {
     this.cardsDeckList = [];
     this.idDeck = this.newBattle.value.selectedDeck.id.toString();
     this.nameDeck = this.newBattle.value.selectedDeck.name.toString();
@@ -86,13 +86,13 @@ export class SelectDeckComponent implements OnInit {
     console.log(this.idDeck)
 
     //Logica para obtener los ids del deck selecccionado en el Select
-    await this.battle.cardsofdeck(this.idDeck)
-      .then(deck=> {
+    await this.battle.getDeckCards(this.idDeck)
+      .then(deck => {
         this.idcardsDeckList = deck.cardlist;
-        
+
       });
 
-     //Logica para obtener las cartas del deck selecccionado 
+    //Logica para obtener las cartas del deck selecccionado 
     for (let i = 0; i < this.idcardsDeckList.length; i++) {
       const cardID = this.idcardsDeckList[i];
       await this.cards.getCard(cardID)
@@ -101,34 +101,30 @@ export class SelectDeckComponent implements OnInit {
           this.cardsDeckList = this.cardsDeckList.slice()
         });
     }
-    
+
   }
   /**
    *Funcion que se llama cuando se da click en Buscar Batalla
    */
-  async Batalla() {
+  async searchOpponent() {
     try {
       this.onSelect();
-      await this.battle.favoritedeck(this.idAccount, this.idDeck)
-        .then(respuesta => {
-          console.log(respuesta)
-      });
+      await this.battle.setUserFavoriteDeck(this.idAccount, this.idDeck)
+        .then((response) => { });
       window.location.assign(this.baseurl + "user/battle/search-opponent");
     } catch (error) {
+      alert(error);
       console.error(error)
-    }    
+    }
   }
+
   /*
    *Función que valida si se selecciono o no un escuadrón
    **/
   onSelect() {
-
     if (this.idDeck == '' && this.nameDeck == '') {
       throw new Error('Debe seleccionar un escuadrón de batalla');
     }
-
   }
-  
-  
 }
 

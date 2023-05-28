@@ -13,11 +13,10 @@ namespace Stardeck.Controllers
     [AllowAnonymous]
     public class AccountController : ControllerBase
     {
-        private readonly StardeckContext context;
-        private AccountLogic accountLogic;
+        private readonly AccountLogic accountLogic;
+
         public AccountController(StardeckContext context)
         {
-            this.context = context;
             this.accountLogic = new AccountLogic(context);
         }
 
@@ -25,21 +24,13 @@ namespace Stardeck.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            if (accountLogic.GetAll() == null)
+            var acc = accountLogic.GetAll();
+            if (acc == null)
             {
-                return NotFound();
+                return NotFound(new KeyValuePair<string,string>("error","No se encontraron cuentas"));
             }
-            return Ok(accountLogic.GetAll());
 
-        }
-        [HttpGet("{accountId}/cards")]
-        public async Task<IActionResult> GetCards(string accountId)
-        {
-            if (accountLogic.GetCards(accountId) == null)
-            {
-                return NotFound();
-            }
-            return Ok(accountLogic.GetCards(accountId));
+            return Ok(acc);
         }
 
         // GET api/<AccountController>/5
@@ -49,9 +40,22 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetAccount(id);
             if (temp == null)
             {
-                return NotFound();
+                return NotFound("No se encontró la cuenta");
             }
+
             return Ok(temp);
+        }
+
+        [HttpGet("{accountId}/cards")]
+        public async Task<IActionResult> GetCards(string accountId)
+        {
+            var cards = accountLogic.GetCards(accountId);
+            if (cards == null)
+            {
+                return NotFound("No se encontraron cartas");
+            }
+
+            return Ok(cards);
         }
 
 
@@ -61,63 +65,68 @@ namespace Stardeck.Controllers
             var temp = accountLogic.GetParameter(id, parameter);
             if (temp == null)
             {
-                return NotFound();
+                return NotFound("No se encontraron cuentas o parámetros");
             }
+
             return Ok(temp);
         }
+
         [HttpGet("{id}/Parameters")]
         public async Task<IActionResult> GetParameters(string id)
         {
             var temp = accountLogic.GetParameters(id);
             if (temp == null)
             {
-                return NotFound();
+                return NotFound("No se encontraron cuentas");
             }
+
             return Ok(temp);
         }
-
-
 
 
         // POST api/<AccountController>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Account acc)
         {
-            Account accAux = accountLogic.NewAccount(acc);
-            if (accAux == null)
+            var accAux = accountLogic.NewAccount(acc);
+            return accAux switch
             {
-                return BadRequest();
-            }
-            return Ok(accAux);
+                null => BadRequest(new KeyValuePair<string, string>("error",
+                    "Ya existe una cuenta con estos datos o el correo ya está registrado")),
+                -1 => BadRequest(new KeyValuePair<string, string>("error",
+                    "Algo salió mal guardando la cuenta, inténtalo más tarde")),
+                -2 => BadRequest(new KeyValuePair<string, string>("error", "No hay cartas para asignar")),
+                1 => Ok(new KeyValuePair<string, string>("Succes", "Cuenta creada con exito")),
+                _ => BadRequest("Algo salió mal, inténtalo más tarde"),
+            };
         }
 
         [HttpPost("addCards/{accountId}/{cardId}")]
-        public async Task<IActionResult> addCards(string accountId, string cardId)
+        public async Task<IActionResult> AddCards(string accountId, string cardId)
         {
-            string[]? aux = accountLogic.addCardsToCollection(accountId, cardId);
+            string[]? aux = accountLogic.AddCardsToCollection(accountId, cardId);
             if (aux is null)
             {
                 return BadRequest("Ya en coleccion " + cardId);
             }
+
             return Ok(aux);
 
             //return Ok(dic);
-
         }
 
         [HttpPost("addCards/{accountId}")]
-        public async Task<IActionResult> addCardsList(string accountId, [FromBody] string[] cardId)
+        public async Task<IActionResult> AddCardsList(string accountId, [FromBody] string[] cardId)
         {
-
-            string[]? aux = accountLogic.addCardsListToCollection(accountId, cardId);
+            string[]? aux = accountLogic.AddCardsListToCollection(accountId, cardId);
             if (aux is null)
             {
-                return BadRequest(new KeyValuePair<string, string>("404", "Ya en coleccion " + cardId));
+                return BadRequest("Ya en colección " + cardId);
             }
+
             return Ok(aux);
 
             //return Ok(dic);
-
         }
 
         [HttpPost("{id}/Parameters/{parameter}")]
@@ -126,11 +135,11 @@ namespace Stardeck.Controllers
             var temp = accountLogic.PostParameter(id, parameter, value);
             if (temp == null)
             {
-                return NotFound("Not found account or parameter already have a value");
+                return NotFound("No se encontró cuenta o los parámetros ya tienen valor");
             }
+
             return Ok(temp);
         }
-
 
 
         // PUT api/<AccountController>/5
@@ -142,20 +151,26 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound();
+
+            return NotFound("No se encontró la cuenta");
         }
         // PUT api/<AccountController>/5
 
         [HttpPut("{id}/favorite/{deck}")]
         public async Task<IActionResult> SelectFavorite(string id, string deck)
         {
-            var selected = await accountLogic.SelectFavoriteDeck(id, deck);
-            return selected switch
+            var selected = accountLogic.SelectFavoriteDeck(id, deck);
+            if (selected is not true)
             {
-                null => NotFound(new KeyValuePair<string,string>("404","Deck not found")),
-                false => NotFound(new KeyValuePair<string,string>("200","Deck Is not from this user")),
-                _ => Ok(new KeyValuePair<string, string>(id, deck))
-            };
+                return NotFound("No se encontró el deck");
+            }
+
+            if (selected is null)
+            {
+                return NotFound("No se encontró la cuenta");
+            }
+
+            return Ok(deck);
         }
 
 
@@ -165,8 +180,9 @@ namespace Stardeck.Controllers
             var temp = accountLogic.PutParameter(id, parameter, value);
             if (temp == null)
             {
-                return NotFound("Not found account or parameter do not exist");
+                return NotFound("No se encontró la cuneta o el parámetro no existe");
             }
+
             return Ok(temp);
         }
 
@@ -179,7 +195,8 @@ namespace Stardeck.Controllers
             {
                 return Ok(acc);
             }
-            return NotFound();
+
+            return NotFound("No se encontró la cuenta");
         }
 
 
@@ -187,10 +204,9 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Delete(string accountId, string cardId)
         {
             var collection = accountLogic.DeleteCard(accountId, cardId);
-            if (collection is null)
+            if (collection == null)
             {
-                ;
-                return NotFound(new KeyValuePair<string, string>("404", "Coleccion no encontrada"));
+                return NotFound("No se encontró la colección");
             }
             else
             {
@@ -198,13 +214,9 @@ namespace Stardeck.Controllers
                 {
                     return Ok(collection.Collection1);
                 }
-                return NotFound(new KeyValuePair<string, string>("404", "Carta no encontrada"));
+
+                return NotFound("Algo salió mal, inténtalo más tarde");
             }
-
-
         }
-
-        
-
     }
 }

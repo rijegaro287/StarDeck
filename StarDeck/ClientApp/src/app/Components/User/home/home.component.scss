@@ -1,0 +1,15 @@
+@import '../../../../styles.scss';
+
+.main-container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - $navbar-height);
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+}

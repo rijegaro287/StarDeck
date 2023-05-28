@@ -7,92 +7,103 @@ using Stardeck.Models;
 
 namespace Stardeck.Controllers
 {
-  [Route("cards")]
-  [ApiController]
-  public class CardController : ControllerBase
-  {
-    private readonly StardeckContext context;
-    private CardLogic cardLogic;
-
-    public CardController(StardeckContext context)
+    [Route("cards")]
+    [ApiController]
+    public class CardController : ControllerBase
     {
-      this.context = context;
-      this.cardLogic = new CardLogic(context);
+        private CardLogic cardLogic;
+
+        public CardController(StardeckContext context)
+        {
+            this.cardLogic = new CardLogic(context);
+        }
+
+
+        // GET: api/<CardController>
+        [HttpGet]
+        [Route("get_all")]
+        public async Task<IActionResult> Get()
+        {
+            var cards = cardLogic.GetAll();
+            if (cards == null)
+            {
+                return BadRequest("Algo salió mal, inténtalo más tarde");
+            }
+            if (cards.Equals(0))
+            {
+                return NotFound("No se encontraron cartas");
+            }
+            return Ok(cards);
+        }
+
+        // GET api/<CardController>/5
+        [HttpGet]
+        [Route("get/{id}")]
+        public async Task<IActionResult> Get(string id)
+        {
+            var card = cardLogic.GetCard(id);
+            if (card== null)
+            {
+                return NotFound("No se encontraron cartas");
+            }
+            return Ok(card);
+        }
+
+        // POST api/<CardController>
+        [HttpPost]
+        [Route("add")]
+        public async Task<IActionResult> Post([FromBody] CardImage card)
+        {
+            var cardAux = cardLogic.NewCard(card);
+            if (cardAux.Equals(null))
+            {
+                return BadRequest(new KeyValuePair<string,string>("error","Ya existe una carta con estos datos"));
+            }
+            if (cardAux == false)
+            {
+                return BadRequest(new KeyValuePair<string,string>("error","Algo salió mal, inténtalo más tarde"));
+            }
+            return Ok(new KeyValuePair<string,string>("success","Carta agregada correctamente"));
+
+
+        }
+
+        // PUT api/<CardController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(string id, Card nCard)
+        {
+            var acc = cardLogic.UpdateCard(id, nCard);
+            if (acc != null)
+            {
+                return Ok(acc);
+            }
+            return NotFound("No se encontró la carta");
+
+        }
+
+        // DELETE api/<CardController>/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var card = cardLogic.DeleteCard(id);
+            if (card != null)
+            {
+                return Ok(card);
+            }
+            return NotFound("No se encontró la carta");
+        }
+
+        [HttpGet]
+        [Route("get/nineCards")]
+        public async Task<IActionResult> GetNineCards()
+        {
+            var cards = cardLogic.GetNineCards();
+            if (cards== null)
+            {
+                return NotFound("No se encontraron cartas");
+            }
+
+            return Ok(cards);
+        }
     }
-
-
-    // GET: api/<CardController>
-    [HttpGet]
-    [Route("get_all")]
-    public async Task<IActionResult> Get()
-    {
-      if (cardLogic.GetAll() == null)
-      {
-        return NotFound();
-      }
-      return Ok(cardLogic.GetAll());
-    }
-
-    // GET api/<CardController>/5
-    [HttpGet]
-    [Route("get/{id}")]
-    public async Task<IActionResult> Get(string id)
-    {
-      if (cardLogic.GetCard(id) == null)
-      {
-        return NotFound();
-      }
-      return Ok(cardLogic.GetCard(id));
-    }
-
-    // POST api/<CardController>
-    [HttpPost]
-    [Route("add")]
-    public async Task<IActionResult> Post([FromBody] CardImage card)
-    {
-      Card cardAux = cardLogic.NewCard(card);
-      if (cardAux == null)
-      {
-        return BadRequest();
-      }
-      return Ok(cardAux);
-    }
-
-    // PUT api/<CardController>/5
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Put(string id, Card nCard)
-    {
-      var acc = cardLogic.UpdateCard(id, nCard);
-      if (acc != null)
-      {
-        return Ok(acc);
-      }
-      return NotFound();
-
-    }
-
-    // DELETE api/<CardController>/5
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(string id)
-    {
-      var card = cardLogic.DeleteCard(id);
-      if (card != null)
-      {
-        return Ok(card);
-      }
-      return NotFound();
-    }
-
-    // [HttpGet]
-    // [Route("get/nineCards")]
-    // public async Task<IActionResult> GetNineCards()
-    // {
-    //     if (cardLogic.GetNineCards() == null)
-    //     {
-    //         return NotFound();
-    //     }
-
-    //     return Ok(cardLogic.GetNineCards());
-    // }
-  }
 }

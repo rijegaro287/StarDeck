@@ -1,38 +1,36 @@
-export interface Welcome {
+import { ICard } from "./Card";
+import { IPlanet } from "./Planet";
+
+interface IGameRoom {
   roomid: string;
-  player1: Player;
-  player2: Player;
+  player1: IPlayer;
+  player2: IPlayer;
   winner: null;
   bet: null;
   turn: null;
-  territories: Territory[];
-  gamelog: Gamelog;
+  territories: IPlanet[];
+  gamelog: IGameLog;
 }
 
-export interface Gamelog {
-  gameid: string;
+interface IGameLog {
+  gameID: string;
   log: null;
 }
 
-export interface Player {
+interface IPlayer {
   id: string;
-  name: string;
+  Name: string;
   nickname: string;
-  avatar: number;
+  Avatar: number;
   config: null;
   points: number;
   coins: number;
+  hand?: ICard[];
+  deck?: ICard[];
 }
 
-export interface Territory {
-  id: string;
-  name: string;
-  type: number;
-  active: boolean;
-  ability: Ability;
-  player1Cards: any[];
-  player2Cards: any[];
-}
-
-export interface Ability {
+export {
+  IGameRoom,
+  IGameLog,
+  IPlayer
 }

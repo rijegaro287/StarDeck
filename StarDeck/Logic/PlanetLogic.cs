@@ -1,4 +1,5 @@
-﻿using Stardeck.Models;
+﻿using Stardeck.DbAccess;
+using Stardeck.Models;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
@@ -6,17 +7,19 @@ namespace Stardeck.Logic
     public class PlanetLogic
     {
         private readonly StardeckContext context;
+        private readonly PlanetDb planetDB;
 
         public PlanetLogic(StardeckContext context)
         {
             this.context = context;
+            this.planetDB=new PlanetDb(context);
         }
 
 
         public List<Planet> GetAll()
         {
-            List<Planet> planets = context.Planets.ToList();
-            if (planets.Count == 0)
+            List<Planet> planets = planetDB.GetAllPlanets();
+            if (planets==null)
             {
                 return null;
             }
@@ -27,7 +30,7 @@ namespace Stardeck.Logic
         public Planet GetPlanet(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
-            var planets = context.Planets.Find(id);
+            var planets = planetDB.GetPlanet(id);
 
             if (planets == null)
             {
@@ -56,15 +59,14 @@ namespace Stardeck.Logic
                 planetAux.Id = string.Concat("P-", System.Guid.NewGuid().ToString().Replace("-", "").AsSpan(0, 12));
             }
 
-            context.Planets.Add(planetAux);
-            context.SaveChanges();
+            planetDB.NewPlanet(planetAux);
             return planetAux;
 
         }
 
         public Planet UpdatePlanet(string id, Planet nPlanet)
         {
-            var planet = context.Planets.Find(id);
+            var planet = planetDB.GetPlanet(id);
             if (planet != null)
             {
                 planet.Id = nPlanet.Id;
@@ -84,11 +86,9 @@ namespace Stardeck.Logic
 
         public Planet DeletePlanet(string id)
         {
-            var planet = context.Planets.Find(id);
+            var planet = planetDB.DeletePlanet(id);
             if (planet != null)
             {
-                context.Remove(planet);
-                context.SaveChanges();
                 return planet;
             }
             return null;

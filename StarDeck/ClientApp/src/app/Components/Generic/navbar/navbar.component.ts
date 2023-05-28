@@ -9,8 +9,10 @@ import { INavbarItem } from '../../../Interfaces/Helpers';
 export class NavbarComponent {
   /** Recibe los elementos de la barra como entrada */
   @Input() items: INavbarItem[];
+  @Input() logoHref: string;
 
   constructor() {
     this.items = [];
+    this.logoHref = '/';
   }
 }

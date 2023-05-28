@@ -6,7 +6,7 @@ import { HelpersService } from '../../../../Services/helpers.service';
 import { PlanetService } from '../../../../Services/planet.service';
 
 @Component({
-  selector: 'app-card-form',
+  selector: 'app-create-planet',
   templateUrl: './create-planet.component.html',
   styleUrls: ['./create-planet.component.scss']
 })
