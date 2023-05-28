@@ -29,6 +29,12 @@ namespace Stardeck.Logic
                 throw new Exception("Player not found");
             }
 
+            if (player1.isplaying== true)
+            {
+                #warning Aqui iria la logica para reconectar a partida.
+                return null;
+            }
+
             var counter = 0;
             player1.isInMatchMacking = true;
             while (player1.isInMatchMacking == true && counter < 15)
