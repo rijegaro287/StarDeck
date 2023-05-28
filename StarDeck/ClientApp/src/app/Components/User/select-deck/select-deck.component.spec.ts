@@ -10,7 +10,7 @@ describe('SelectDeckComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [SelectDeckComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SelectDeckComponent);
     component = fixture.componentInstance;

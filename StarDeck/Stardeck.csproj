@@ -18,10 +18,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.JavaScript.UnitTest" Version="1.5.10610.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Npgsql" Version="7.0.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
@@ -30,18 +26,21 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Data\**" />
+    <Compile Remove="TEST\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Data\**" />
+    <Content Remove="TEST\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="TEST\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="Data\**" />
+    <None Remove="TEST\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\Interfaces\Game.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="TEST\" />
   </ItemGroup>
 
   <ItemGroup>

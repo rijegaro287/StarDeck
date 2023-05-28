@@ -65,7 +65,7 @@ export class RegisterAccountComponent {
     });
   }
   /*
-   *Funcion que crea la cuenta del nuevo jugador 
+   *Funcion que crea la cuenta del nuevo jugador
    */
   async createAccount() {
     const user: ILoginData =
@@ -103,7 +103,7 @@ export class RegisterAccountComponent {
 
   }
   /*
-   * Funcion para validar el checkbox de terminos y condiciones 
+   * Funcion para validar el checkbox de terminos y condiciones
    */
   onCheck() {
     this.term = !this.term;
@@ -139,6 +139,12 @@ export class RegisterAccountComponent {
     }
     if (!validPassword) {
       throw new Error("Ingrese una contraseña que contenga números y letras");
+    }
+    if (this.newUser.value.name.length < 5 || this.newUser.value.name.length.length > 30) {
+      throw new Error('El nombre del usuario debe tener entre 5 y 30 caracteres');
+    }
+    if (this.newUser.value.nickname.length < 5 || this.newUser.value.nickname.length.length > 30) {
+      throw new Error('El apodo del usuario debe tener entre 5 y 30 caracteres');
     }
     if (this.newUser.value.password.toString().length != 8) {
       throw new Error('La contraseña debe ser de 8 carácteres');

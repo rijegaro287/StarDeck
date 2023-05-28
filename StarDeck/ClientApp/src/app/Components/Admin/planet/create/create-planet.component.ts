@@ -26,7 +26,7 @@ export class CreatePlanetComponent {
     });
   }
   /*
-   *Funcion que crea la cuenta del nuevo jugador 
+   *Funcion que crea la cuenta del nuevo jugador
    */
   async createPlanet() {
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
@@ -34,7 +34,7 @@ export class CreatePlanetComponent {
 
     const imageString = fileList.length ? await this.helpers.fileToBase64(fileList[0]) : '';
 
-    
+
     const newPlanet: IPlanet = {
       id: 'P-' + random.genSync('medium+', 12),
       name: this.newPlanet.value.name.toString(),
@@ -82,6 +82,6 @@ export class CreatePlanetComponent {
       throw new Error('La descripción del planet debe tener como máximo 1000 caracteres');
     }
   }
- 
-  
+
+
 }

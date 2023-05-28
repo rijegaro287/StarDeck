@@ -105,6 +105,9 @@ class MainScene extends Phaser.Scene {
     const endTurnButtonPositionY = this.playableHeight + 2 * this.margin - playerHandHeight - endTurnButton.height;
     endTurnButton.setPosition(endTurnButtonPositionX, endTurnButtonPositionY)
 
+    endTurnButton.on('pointerdown', () => { console.log('Terminar turno') });
+
+
     const surrenderButton = new Button(
       this, 0, 0, this.playableWidth / 10, 35, 'Rendición', COLORS.WARNING
     );
