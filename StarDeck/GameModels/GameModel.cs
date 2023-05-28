@@ -14,15 +14,20 @@ public class GameModel
 
         public long? Bet { get; set; }
 
-        public int? Turn { get; set; }
+        public int Turn { get; set; } = 0;
+
+        public int TurnTimer { get; set; } = 0;
         
-        
+        public Player? FirstToShow { get; set; }
         public List<Territory> Territories { get; set; }
         
         [System.Text.Json.Serialization.JsonIgnore]
-        protected Territory? _territory3;
-        public Gamelog? Gamelog { get; set; }
+        protected Territory? Territory3;
+
+        protected Gamelog? Gamelog { get; set; }
+
         
         [System.Text.Json.Serialization.JsonIgnore]
         protected Gameroom? Room{ get; set; }
+
 }

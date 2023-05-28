@@ -17,14 +17,12 @@ namespace Stardeck.Logic
         public GameLogic(StardeckContext gameContext)
         {
             GameLogic.gameContext = gameContext;
-            this.gameDB=new GameDb(gameContext);
+            this.gameDB = new GameDb(gameContext);
         }
-        
 
 
         public async Task<GameRoom?> IsWaiting(string playerId)
         {
-
             var player1 = gameContext.Accounts.Find(playerId);
             if (player1 is null)
             {
@@ -33,7 +31,7 @@ namespace Stardeck.Logic
 
             var counter = 0;
             player1.isInMatchMacking = true;
-            while (player1.isInMatchMacking==true && counter < 15)
+            while (player1.isInMatchMacking == true && counter < 15)
             {
                 counter += 1;
                 var players = gameContext.Accounts.Include(x => x.FavoriteDeck).ToList()
@@ -44,11 +42,11 @@ namespace Stardeck.Logic
 
                 if (inRangePlayers.Count == 0)
                 {
-                   await Task.Delay(1500);
-                   continue;
+                    await Task.Delay(1500);
+                    continue;
                 }
 
-                
+
                 var battle = new Gameroom();
                 var rnd = new Random();
                 var randIndex = rnd.Next(inRangePlayers.Count);
@@ -66,7 +64,6 @@ namespace Stardeck.Logic
             }
 
             return null;
-
         }
 
         public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
@@ -80,6 +77,7 @@ namespace Stardeck.Logic
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -88,29 +86,31 @@ namespace Stardeck.Logic
         /// <param name="cardid">card to play</param>
         /// <param name="planetid">planet where play card</param>
         /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
-        public async Task<int?> PlayCard(string game,string idPlayer, string cardid, string planetid)
+        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, string planetid)
         {
-                var room = GetGameRoomData(game);
-                if (room is null)
-                {
-                    return null;
-                }
-                var result=room.PlayCard(idPlayer,cardid,planetid);
-                return result switch
-                {
-                    null => -1,
-                    true => 1,
-                    false => 0
-                };
+            var room = GetGameRoomData(game);
+            if (room is null)
+            {
+                return null;
+            }
+
+            var result = room.PlayCard(idPlayer, cardid, planetid);
+            return result switch
+            {
+                null => -1,
+                true => 1,
+                false => 0
+            };
         }
 
         public List<Gameroom> GetAllGamerooms()
         {
             List<Gameroom> roomList = gameDB.GetAllGamerooms();
-            if(roomList is null)
+            if (roomList is null)
             {
                 return null;
             }
+
             return roomList;
         }
 
@@ -121,15 +121,27 @@ namespace Stardeck.Logic
             {
                 return null;
             }
+
             return room;
         }
+
         public GameRoom? GetGameRoomData(string id)
         {
             GameRoom? room = ActiveRooms.Find(x => x.Roomid == id);
             return room;
         }
-        
-        
-        
+
+
+        public async Task<bool?> EndTurn(string idRoom, string idUser)
+        {
+            var task= GetGameRoomData(idRoom)?.EndTurn(idUser);
+            if (task is null)
+            {
+                return null;
+            }
+    
+            await task;
+            return true;
+        }
     }
 }
