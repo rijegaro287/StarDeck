@@ -1,3 +1,5 @@
+using Stardeck.Models;
+
 namespace Stardeck.GameModels
 {
     public class Territory
@@ -12,12 +14,12 @@ namespace Stardeck.GameModels
 
         public TerritoryAbility? Ability { get; set; }
 
-        public string? Winner { get; set; } = null;
+        public string? Winner { get; set; }
         public List<GameCard> player1Cards { get; set; } = new();
 
         public List<GameCard> player2Cards { get; set; } = new();
 
-        public Territory(Models.Planet data)
+        public Territory(Planet data)
         {
             Id = data.Id;
             Name = data.Name;
@@ -35,13 +37,47 @@ namespace Stardeck.GameModels
             Id = "0";
         }
 
+
+        /// <summary>
+        /// Play the list of cards played in this turn in the territory as a player1
+        /// </summary>
+        /// <param name="list"></param>
+        public void PlayCardPlayer1(List<GameCard> list)
+        {
+            foreach (var card in list)
+            {
+                PlayCardPlayer1(card);
+            }
+        }
+
+        /// <summary>
+        ///  Play the list of cards played in this turn in the territory as a player2
+        /// </summary>
+        /// <param name="list"></param>
+        public void PlayCardPlayer2(List<GameCard> list)
+        {
+            foreach (var card in list)
+            {
+                PlayCardPlayer2(card);
+            }
+        }
+
         /// <summary>
         /// Play a card in the territory as a player1
         /// </summary>
         /// <param name="card"></param>
-        public void PlayCard(GameCard card)
+        public void PlayCardPlayer1(GameCard card)
         {
-            this.player1Cards.Add(card);
+            player1Cards.Add(card);
+        }
+
+        /// <summary>
+        /// Play a card in the territory as a player2
+        /// </summary>
+        /// <param name="card"></param>
+        public void PlayCardPlayer2(GameCard card)
+        {
+            player2Cards.Add(card);
         }
 
         public void checkWinner()
@@ -49,23 +85,23 @@ namespace Stardeck.GameModels
             var points = GetPlayersPoints();
             if (points.player1 > points.player2)
             {
-                this.Winner = "player1";
+                Winner = "player1";
             }
             else if (points.player1 < points.player2)
             {
-                this.Winner = "player2";
+                Winner = "player2";
             }
             else
             {
-                this.Winner = "Draw";
+                Winner = "Draw";
             }
         }
 
         public Points GetPlayersPoints()
         {
             Points points = new Points();
-            this.player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
-            this.player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
+            player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
+            player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
             return points;
         }
 
@@ -73,11 +109,11 @@ namespace Stardeck.GameModels
         {
             public int player1;
             public int player2;
+
             public static Points operator +(Points a, Points b)
             {
                 return new Points { player1 = a.player1 + b.player1, player2 = a.player2 + b.player2 };
             }
         }
     }
-    
 }

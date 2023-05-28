@@ -31,8 +31,8 @@ namespace Stardeck.GameModels
 
         [JsonIgnore] public List<GameCard> Hand { get; set; } = new List<GameCard>();
 
-        [JsonIgnore]
-        public List<Territory> TmpTerritories { get; set; } = new List<Territory>();
+        [JsonIgnore] public List<List<GameCard>> TmpTerritories { get; set; } = new(3)
+            {new(),new(),new()};
         
         
         public Player(Account? dataPlayer)
@@ -70,7 +70,7 @@ namespace Stardeck.GameModels
             //put player in game
             Account.isplaying = true;
             Account.isInMatchMacking = false;
-
+            
             return (bool)Account.isplaying;
         }
 
@@ -136,7 +136,7 @@ namespace Stardeck.GameModels
 
             Energy -= card.Energy;
             Hand.Remove(card);
-            TmpTerritories[territory].PlayCard(card);
+            TmpTerritories[territory].Add(card);
             return true;
         }
 
@@ -147,6 +147,20 @@ namespace Stardeck.GameModels
             Hand.Add(Deck[rand]);
             Deck.RemoveAt(rand);
             return Hand.Last();
+        }
+
+        public void CleanTmpTerritories()
+        {
+            foreach (var tmpTerritory in TmpTerritories)
+            {
+                tmpTerritory.Clear();
+            }
+        }
+
+        public void SetEnergy(int turn)
+        {
+            Energy = 1 + turn * 2;
+            
         }
     }
 }
