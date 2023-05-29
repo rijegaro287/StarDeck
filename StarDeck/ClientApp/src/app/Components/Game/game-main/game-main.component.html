@@ -27,7 +27,8 @@
 
         <div class="opponent-cards">
           <div class="player-card" *ngFor="let card of planet.opponentCards">
-            <app-game-card [card]="card" [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
+            <app-game-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
           </div>
         </div>
 
@@ -35,7 +36,8 @@
 
         <div class="player-cards">
           <div class="player-card" *ngFor="let card of planet.playerCards">
-            <app-game-card [card]="card" [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
+            <app-game-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
           </div>
         </div>
       </div>
@@ -43,8 +45,8 @@
 
     <div class="player-hand">
       <ng-container *ngFor="let card of playerInfo.hand">
-        <app-game-card [card]="card" [cardBorderColor]="card.borderColor!" [isPlayingCard]="playingTurn"
-          (click)="onCardClicked(card)"></app-game-card>
+        <app-game-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"
+          [isPlayingCard]="playingTurn" (click)="onCardClicked(card)"></app-game-card>
       </ng-container>
     </div>
   </div>

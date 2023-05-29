@@ -14,10 +14,18 @@ export class GameService {
   constructor(private request: RequestService) { }
 
   /**
- * Solicita al servidor la información de todas las cartas activas
- * @returns Una promesa con la respuesta del servidor
- */
+  * Solicita al servidor la información de la sala de juego de un jugador
+  * @returns Una promesa con la respuesta del servidor
+  */
   getUserGameRoomData = (userID: string, gameRoomID: string): Promise<IPlayer> => {
     return this.request.get(`${this.url}/getGameRoomData/${gameRoomID}/${userID}`);
+  }
+
+  /**
+  * Solicita al servidor la información de la sala de juego de un jugador
+  * @returns Una promesa con la respuesta del servidor
+  */
+  placeCard = (gameRoomID: string, userID: string, cardID: string, planetIndex: number): Promise<IPlayer> => {
+    return this.request.post(`${this.url}/getGameRoomData/${gameRoomID}/${userID}/${cardID}/${planetIndex}`, {});
   }
 }
