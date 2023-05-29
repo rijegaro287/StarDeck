@@ -19,6 +19,8 @@ export class GameMainComponent implements OnInit {
 
   opponentName: string;
 
+  turnTime: number;
+
   constructor(private gameService: GameService) {
     this.gameRoom = {} as IGameRoom;
 
@@ -26,14 +28,16 @@ export class GameMainComponent implements OnInit {
     this.playerInfo = {} as IPlayer;
 
     this.opponentName = '';
+
+    this.turnTime = 20;
   }
 
   async ngOnInit(): Promise<void> {
     this.gameRoom = JSON.parse(sessionStorage.getItem('GameRoomData')!);
     this.playerID = sessionStorage.getItem('ID')!;
 
-    // console.log(this.gameRoom);
-    // console.log(this.playerID);
+    console.log(this.gameRoom);
+    console.log(this.playerID);
 
     if (this.gameRoom.player1.id === this.playerID) {
       this.playerInfo = this.gameRoom.player1;
@@ -51,9 +55,13 @@ export class GameMainComponent implements OnInit {
       })
       .catch((error) => alert(error));
 
-    console.log(this.playerInfo.hand);
+    console.log(this.playerInfo);
 
   }
+
+  onEndTurnClicked() { }
+
+  onSurrenderClicked() { }
 
 }
 

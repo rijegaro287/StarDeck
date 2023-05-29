@@ -1,15 +1,50 @@
 <div class="main-container">
   <div class="game-container">
     <div class="status-bar-container">
+      <h1 class="opponent-name">Oponente: {{opponentName}}</h1>
 
+      <div class="status-bar">
+        <div class="status-element">
+          <i class="bi bi-clock" style="color:white;"></i>
+          <span>{{turnTime}}</span>
+        </div>
+
+        <div class="status-element">
+          <i class="bi bi-lightning-fill" style="color:#6988f0;"></i>
+          <span style="color:#6988f0;">{{playerInfo.energy}}</span>
+        </div>
+
+        <div class="status-element">
+          <i class="bi bi-coin" style="color:#FFDF00;"></i>
+          <span style="color:#FFDF00;">{{playerInfo.coins}}</span>
+        </div>
+      </div>
     </div>
 
     <div class="planets-container">
+      <div class="planet-container" *ngFor="let planet of gameRoom.territories">
+        <p class="planet-name">{{planet.name}}</p>
 
+        <div class="opponent-cards">
+
+        </div>
+
+        <hr>
+
+        <div class="player-cards">
+
+        </div>
+      </div>
     </div>
 
     <div class="buttons-container">
+      <button mat-raised-button color="warn" (click)="onSurrenderClicked()">
+        <span>Rendirse</span>
+      </button>
 
+      <button mat-raised-button color="primary" (click)="onEndTurnClicked()">
+        <span>Terminar Turno</span>
+      </button>
     </div>
 
     <div class="player-cards-container">

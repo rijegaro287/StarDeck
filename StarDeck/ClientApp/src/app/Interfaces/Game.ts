@@ -25,6 +25,7 @@ interface IPlayer {
   config: null;
   points: number;
   coins: number;
+  energy: number;
   hand?: ICard[];
   deck?: ICard[];
   tmpTerritories?: IPlanet[][];
