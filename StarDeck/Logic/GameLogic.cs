@@ -90,7 +90,7 @@ namespace Stardeck.Logic
         /// <param name="cardid">card to play</param>
         /// <param name="planetid">planet where play card</param>
         /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
-        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, string planetid)
+        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, int planetindex)
         {
             var room = GetGameRoomData(game);
             if (room is null)
@@ -98,7 +98,7 @@ namespace Stardeck.Logic
                 return null;
             }
 
-            var result = room.PlayCard(idPlayer, cardid, planetid);
+            var result = room.PlayCard(idPlayer, cardid, planetindex);
             return result switch
             {
                 null => -1,
