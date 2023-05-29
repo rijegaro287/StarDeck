@@ -1,0 +1,91 @@
+@import '../../../../styles.scss';
+
+/*  DIMENSIONES DE CADA PARTE */
+$window-padding: 1.5rem;
+$game-container-gap: 1.5rem;
+$status-bar-height: 0.1;
+$planets-height: 0.6;
+$buttons-height: 0.1;
+$player-cards-height: 0.2;
+
+@function get_height($height) {
+  $available-space: calc(calc(100vh - calc(2*$window-padding)) - calc(3*$game-container-gap));
+  @return calc($available-space * $height)
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../../assets/images/main-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.game-container {
+  padding: $window-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $game-container-gap;
+}
+
+// .status-bar-container,
+// .buttons-container,
+.planets-container {
+  background-color: $background_0;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.status-bar-container {
+  height: get_height($status-bar-height);
+  width: 100%;
+
+}
+
+.planets-container {
+  height: get_height($planets-height);
+}
+
+.buttons-container {
+  height: get_height($buttons-height);
+  width: 100%;
+
+}
+
+.player-cards-container {
+  height: get_height($player-cards-height);
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player-hand {
+  background-color: $background_0;
+  border-radius: 1rem;
+  height: 100%;
+  width: 95%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player-deck {
+  background-color: $background_1;
+  border-radius: 1rem;
+  height: 100%;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 90%;
+  }
+}
