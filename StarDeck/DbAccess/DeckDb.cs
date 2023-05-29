@@ -50,14 +50,10 @@ namespace Stardeck.DbAccess
             return decks;
         }
 
-        public Deck GetDeck(string id)
+        public Deck? GetDeck(string id)
         {
             var deck = context.Decks.Find(id);
 
-            if (deck == null)
-            {
-                return null;
-            }
             return deck;
 
         }
