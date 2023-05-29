@@ -94,10 +94,15 @@ namespace Stardeck.Controllers
             return NotFound();
         }
 
-        [HttpGet("getGameRoomData/{idRoom}/{idUser}/{idCard}/{idTargetPlanet}")]
-        public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, string idTargetPlanet)
+        [HttpPost("getGameRoomData/{idRoom}/{idUser}/{idCard}/{indexTargetPlanet}")]
+        public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, int indexTargetPlanet)
         {
-            var answer = await this.gameLogic.PlayCard(idRoom, idUser, idCard, idTargetPlanet);
+            if (0<indexTargetPlanet & indexTargetPlanet <=3)
+            {
+                return BadRequest(KeyValuePair.Create("error", "Invalid index"));
+            }
+            
+            var answer = await this.gameLogic.PlayCard(idRoom, idUser, idCard, indexTargetPlanet);
             var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
             switch (answer)
             {
