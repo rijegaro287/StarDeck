@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stardeck.Models;
-[MetadataType(typeof(DeckMetaData))]
 
 
 public partial class Deck: IAlphanumericID
@@ -61,8 +60,4 @@ public partial class Deck: IAlphanumericID
     }
 
 
-}
-
-public class DeckMetaData
-{
 }

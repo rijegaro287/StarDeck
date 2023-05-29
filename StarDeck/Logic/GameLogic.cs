@@ -3,35 +3,44 @@ using System.Collections.Generic;
 using System.Timers;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.GameModels;
+using Stardeck.DbAccess;
+using Stardeck.Pages;
 
 namespace Stardeck.Logic
 {
     public class GameLogic
     {
-        private static readonly StardeckContext MatchMackingcontext = new();
-        private StardeckContext _context;
+        private static StardeckContext gameContext;
         private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
+        private readonly GameDb gameDB;
 
-        public GameLogic(StardeckContext context)
+        public GameLogic(StardeckContext gameContext)
         {
-            _context = context;
+            GameLogic.gameContext = gameContext;
+            this.gameDB = new GameDb(gameContext);
         }
 
 
         public async Task<GameRoom?> IsWaiting(string playerId)
         {
-            await PutInMatchMaking(playerId, true);
-            var player1 = await MatchMackingcontext.Accounts.FindAsync(playerId);
+            var player1 = gameContext.Accounts.Find(playerId);
             if (player1 is null)
             {
                 throw new Exception("Player not found");
             }
 
+            if (player1.isplaying== true)
+            {
+                #warning Aqui iria la logica para reconectar a partida.
+                return null;
+            }
+
             var counter = 0;
+            player1.isInMatchMacking = true;
             while (player1.isInMatchMacking == true && counter < 15)
             {
                 counter += 1;
-                var players = MatchMackingcontext.Accounts.ToList()
+                var players = gameContext.Accounts.Include(x => x.FavoriteDeck).ToList()
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
                     players.Where(x => x.Id != playerId
@@ -60,33 +69,65 @@ namespace Stardeck.Logic
                 return room;
             }
 
-            player1.isInMatchMacking = false;
             return null;
         }
 
         public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account? account = await MatchMackingcontext.Accounts.FindAsync(accountId);
+            Account? account = await gameContext.Accounts.FindAsync(accountId);
             if (account is null)
             {
                 return null;
             }
 
-            var selectedDeck = await _context.FavoriteDecks.FindAsync(accountId);
-            account.FavoriteDeck = selectedDeck;
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
 
-        public List<Gameroom?>? GetAllGamerooms()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="game"> gameid</param>
+        /// <param name="idPlayer">playerid</param>
+        /// <param name="cardid">card to play</param>
+        /// <param name="planetid">planet where play card</param>
+        /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
+        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, string planetid)
         {
-            List<Gameroom?> roomList = _context.Gamerooms.ToList();
-            return roomList.Count == 0 ? null : roomList;
+            var room = GetGameRoomData(game);
+            if (room is null)
+            {
+                return null;
+            }
+
+            var result = room.PlayCard(idPlayer, cardid, planetid);
+            return result switch
+            {
+                null => -1,
+                true => 1,
+                false => 0
+            };
         }
 
-        public Gameroom? GetGameroom(string id)
+        public List<Gameroom> GetAllGamerooms()
         {
-            Gameroom? room = _context.Gamerooms.Find(id);
+            List<Gameroom> roomList = gameDB.GetAllGamerooms();
+            if (roomList is null)
+            {
+                return null;
+            }
+
+            return roomList;
+        }
+
+        public Gameroom GetGameroom(string id)
+        {
+            Gameroom room = gameDB.GetGameroom(id);
+            if (room is null)
+            {
+                return null;
+            }
+
             return room;
         }
 
@@ -94,6 +135,19 @@ namespace Stardeck.Logic
         {
             GameRoom? room = ActiveRooms.Find(x => x.Roomid == id);
             return room;
+        }
+
+
+        public async Task<bool?> EndTurn(string idRoom, string idUser)
+        {
+            var task= GetGameRoomData(idRoom)?.EndTurn(idUser);
+            if (task is null)
+            {
+                return null;
+            }
+    
+            await task;
+            return true;
         }
     }
 }

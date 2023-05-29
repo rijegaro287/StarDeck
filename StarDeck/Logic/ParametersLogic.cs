@@ -1,3 +1,4 @@
+﻿using Stardeck.DbAccess;
 using Stardeck.Models;
 using System.Text.RegularExpressions;
 
@@ -7,16 +8,18 @@ namespace Stardeck.Logic
     {
 
         private readonly StardeckContext context;
+        private readonly ParametersDb parametersDB;
 
         public ParametersLogic(StardeckContext context)
         {
             this.context = context;
+            this.parametersDB=new ParametersDb(context);
         }
 
-        public List<Parameter> GetAll()
+        public List<Parameter>? GetAll()
         {
-            List<Parameter> parameters= context.Parameters.ToList();
-            if (parameters.Count == 0)
+            List<Parameter>? parameters= parametersDB.GetAllParameters();
+            if (parameters is null)
             {
                 return null;
             }
@@ -24,9 +27,9 @@ namespace Stardeck.Logic
         }
 
 
-        public Parameter GetParameter(string id)
+        public Parameter? GetParameter(string id)
         {
-            var param = context.Parameters.Find(id);
+            var param = parametersDB.GetParameter(id);
 
             if (param == null)
             {
@@ -37,19 +40,17 @@ namespace Stardeck.Logic
 
         public Parameter NewParameter(string id, string value)
         {
-            var paramAux = new Parameter()
+            var paramtAux = new Parameter()
             {
                 Key = id,
                 Value = value
             };
-            context.Parameters.Add(paramAux);
-
-            context.SaveChanges();
-            return paramAux;
+            parametersDB.NewParameter(paramtAux);
+            return paramtAux;
 
         }
-
-        public Parameter UpdateParameter(string id, string nValue)
+        
+        public Parameter? UpdateParameter(string id, string nValue)
         {
             var param = context.Parameters.Find(id);
             if (param != null)
@@ -62,8 +63,7 @@ namespace Stardeck.Logic
             return null;
 
         }
-
-        public Parameter DeleteParameter(string id)
+        public Parameter? DeleteParameter(string id)
         {
             var param = context.Parameters.Find(id);
             if (param != null)
@@ -74,8 +74,6 @@ namespace Stardeck.Logic
             }
             return null;
         }
-
-
 
     }
 }
