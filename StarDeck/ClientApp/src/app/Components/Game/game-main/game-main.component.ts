@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as Phaser from 'phaser';
 
-import { IGameRoom, IPlayer } from 'src/app/Interfaces/Game';
+import { GameService } from 'src/app/Services/game.service';
+
 import { ICard } from 'src/app/Interfaces/Card';
-
+import { IGameRoom, IPlayer } from 'src/app/Interfaces/Game';
 
 @Component({
   selector: 'app-game-main',
@@ -19,7 +19,7 @@ export class GameMainComponent implements OnInit {
 
   opponentName: string;
 
-  constructor() {
+  constructor(private gameService: GameService) {
     this.gameRoom = {} as IGameRoom;
 
     this.playerID = '';
@@ -28,12 +28,12 @@ export class GameMainComponent implements OnInit {
     this.opponentName = '';
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.gameRoom = JSON.parse(sessionStorage.getItem('GameRoomData')!);
     this.playerID = sessionStorage.getItem('ID')!;
 
-    console.log(this.gameRoom);
-    console.log(this.playerID);
+    // console.log(this.gameRoom);
+    // console.log(this.playerID);
 
     if (this.gameRoom.player1.id === this.playerID) {
       this.playerInfo = this.gameRoom.player1;
@@ -43,6 +43,16 @@ export class GameMainComponent implements OnInit {
       this.playerInfo = this.gameRoom.player2;
       this.opponentName = this.gameRoom.player1.nickname;
     }
+
+    await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+      .then((playerInfo) => {
+        this.playerInfo = playerInfo;
+        this.playerInfo.hand = this.playerInfo.hand!.slice();
+      })
+      .catch((error) => alert(error));
+
+    console.log(this.playerInfo.hand);
+
   }
 
 }

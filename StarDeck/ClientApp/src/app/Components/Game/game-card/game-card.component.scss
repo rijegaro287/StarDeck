@@ -1,0 +1,70 @@
+@import '../../../../styles.scss';
+
+.card-container {
+  border: 3px solid $primary;
+  border-radius: 1.2rem;
+  padding: 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-image {
+  width: 50%;
+  border-radius: 0.5rem;
+}
+
+@media (min-height: 768px) {
+  .card-image {
+    width: 70%;
+  }
+}
+
+.card-info {
+  width: 100%;
+  overflow-y: auto;
+
+  .card-name {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $secondary;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.card-cost {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.energy,
+.battle-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $text;
+  gap: 0.2rem;
+
+  i {
+    font-size: 2rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+  }
+}
+
+.energy i {
+  color: $energy;
+}
+
+.battle-points i {
+  color: $warning;
+}

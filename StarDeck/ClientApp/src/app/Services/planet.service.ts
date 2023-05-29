@@ -4,7 +4,7 @@ import { apiURL } from '../app.component';
 import { RequestService } from './request.service';
 
 import { IPlanet } from '../Interfaces/Planet';
-import { IPlanetResponse, IServerResponse } from '../Interfaces/ServerResponse';
+import { IServerResponse } from '../Interfaces/ServerResponse';
 
 @Injectable({
   providedIn: 'root'

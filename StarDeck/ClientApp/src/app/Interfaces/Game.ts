@@ -27,6 +27,7 @@ interface IPlayer {
   coins: number;
   hand?: ICard[];
   deck?: ICard[];
+  tmpTerritories?: IPlanet[][];
 }
 
 export {
