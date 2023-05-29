@@ -1,0 +1,21 @@
+<div #card_container class="card-container"
+  style="border-color: {{cardBorderColor}}; width: {{card_container.offsetHeight * 0.8}}px;">
+  <img class="card-image" src="{{imageURL}}" alt="Foto de carta">
+
+  <!-- Coloca la información en la carta -->
+  <div class="card-info">
+    <h3 class="card-name">{{card.name}}</h3>
+  </div>
+
+  <div class="card-cost">
+    <div class="energy">
+      <i class="bi bi-lightning-fill"></i>
+      <span>{{card.energy}}</span>
+    </div>
+
+    <div class="battle-points">
+      <i class="bi bi-fire"></i>
+      <span>{{card.battlecost}}</span>
+    </div>
+  </div>
+</div>
