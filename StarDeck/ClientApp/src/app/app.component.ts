@@ -16,7 +16,10 @@ const CARD_TYPES = {
   ULTRA_RARE: 4
 }
 
+const PLANET_TYPES = {
+}
+
 const apiURL = 'https://localhost:7212'
 
 export default AppComponent
-export { apiURL, CARD_TYPES }
+export { apiURL, CARD_TYPES, PLANET_TYPES }
