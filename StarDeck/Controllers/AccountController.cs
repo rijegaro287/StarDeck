@@ -160,17 +160,15 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> SelectFavorite(string id, string deck)
         {
             var selected = accountLogic.SelectFavoriteDeck(id, deck);
-            if (selected is not true)
-            {
-                return NotFound("No se encontró el deck");
-            }
-
             if (selected is null)
             {
                 return NotFound("No se encontró la cuenta");
             }
-
-            return Ok(deck);
+            if (selected is not true)
+            {
+                return NotFound("No se encontró el deck");
+            }
+            return Ok(KeyValuePair.Create("Success", $"Deck {deck} seleccionado como favorito"));
         }
 
 

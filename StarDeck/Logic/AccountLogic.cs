@@ -226,16 +226,16 @@ namespace Stardeck.Logic
         public bool? SelectFavoriteDeck(string id, string idDeck)
         {
             Account? user = GetAccount(id);
-            if (user == null) { return null; }
+            if (user is null) { return null; }
             Deck? deck = context.Decks.Find(idDeck);
-            if (deck == null) { return false; }
+            if (deck is null) { return false; }
 
             if (deck.IdAccount == user.Id)
             {
-                FavoriteDeck actual = context.FavoriteDecks.Find(idDeck);
-                if (actual == null)
+                FavoriteDeck? actual = context.FavoriteDecks.Find(id);
+                if (actual is null)
                 {
-                    actual = new() { Accountid = user.Id, Deckid = deck.IdDeck };
+                    actual = new FavoriteDeck { Accountid = user.Id, Deckid = deck.IdDeck };
                     context.FavoriteDecks.Add(actual);
                 }
                 else
