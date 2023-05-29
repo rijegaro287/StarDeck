@@ -10,6 +10,7 @@ namespace Stardeck.Logic
 {
     public class GameLogic
     {
+        private static readonly StardeckContext MatchMackingcontext = new();
         private static StardeckContext gameContext;
         private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
         private readonly GameDb gameDB;
@@ -21,26 +22,20 @@ namespace Stardeck.Logic
         }
 
 
-        public async Task<GameRoom?> IsWaiting(string playerId)
+  public async Task<GameRoom?> IsWaiting(string playerId)
         {
-            var player1 = gameContext.Accounts.Find(playerId);
+            await PutInMatchMaking(playerId, true);
+            var player1 = await MatchMackingcontext.Accounts.FindAsync(playerId);
             if (player1 is null)
             {
                 throw new Exception("Player not found");
             }
 
-            if (player1.isplaying== true)
-            {
-                #warning Aqui iria la logica para reconectar a partida.
-                return null;
-            }
-
             var counter = 0;
-            player1.isInMatchMacking = true;
             while (player1.isInMatchMacking == true && counter < 15)
             {
                 counter += 1;
-                var players = gameContext.Accounts.Include(x => x.FavoriteDeck).ToList()
+                var players = MatchMackingcontext.Accounts.ToList()
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
                     players.Where(x => x.Id != playerId
@@ -69,17 +64,20 @@ namespace Stardeck.Logic
                 return room;
             }
 
+            player1.isInMatchMacking = false;
             return null;
         }
 
         public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account? account = await gameContext.Accounts.FindAsync(accountId);
+            Account? account = await MatchMackingcontext.Accounts.FindAsync(accountId);
             if (account is null)
             {
                 return null;
             }
 
+            var selectedDeck = await gameContext.FavoriteDecks.FindAsync(accountId);
+            account.FavoriteDeck = selectedDeck;
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
@@ -92,7 +90,7 @@ namespace Stardeck.Logic
         /// <param name="cardid">card to play</param>
         /// <param name="planetid">planet where play card</param>
         /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
-        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, string planetid)
+        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, int planetindex)
         {
             var room = GetGameRoomData(game);
             if (room is null)
@@ -100,7 +98,7 @@ namespace Stardeck.Logic
                 return null;
             }
 
-            var result = room.PlayCard(idPlayer, cardid, planetid);
+            var result = room.PlayCard(idPlayer, cardid, planetindex);
             return result switch
             {
                 null => -1,

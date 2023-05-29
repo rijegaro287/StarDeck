@@ -309,19 +309,21 @@ namespace Stardeck.GameModels
         /// </summary>
         /// <param name="playerid"></param>
         /// <param name="cardid"></param>
-        /// <param name="territoryid"></param>
+        /// <param name="territoryindex"></param>
         /// <returns>True if card played and energy reduced, false if not enough energy and null if invalid id</returns>
-        public bool? PlayCard(string playerid, string cardid, string territoryid)
+        public bool? PlayCard(string playerid, string cardid, int territoryindex)
         {
-            var territory = Territories.FindIndex(x => x.Id == territoryid);
             var player = FindPlayerOnGame(playerid);
             if (player is null)
             {
                 return null;
             }
+            var played = player.PlayCard(cardid, territoryindex-1);
+            if (played is not null) return played;
+            var territoryid = Territories[territoryindex - 1].Id;
+            if (territoryid != null)
+                Gamelog?.LogCard(playerid, cardid, territoryid);
 
-            var played = player.PlayCard(cardid, territory);
-            if (played is null) Gamelog?.LogCard(playerid, cardid, territoryid);
             return played;
         }
 
