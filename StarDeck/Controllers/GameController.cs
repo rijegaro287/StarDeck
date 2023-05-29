@@ -117,7 +117,15 @@ namespace Stardeck.Controllers
         [HttpGet("{idRoom}/{idUser}/initTurn")]
         public async Task<IActionResult> InitTurn(string idRoom, string idUser)
         {
-            var playerData = gameLogic.GetGameRoomData(idRoom)?.InitTurn(idUser);
+            var turn = await gameLogic.GetGameRoomData(idRoom)?.InitTurn(idUser);
+            if (turn is null)
+            {
+                return BadRequest(KeyValuePair.Create("error", "Player not in game"));
+            }
+            
+            //after the turn end request the player data
+            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+            //if the player data is null the game ended 10 min ago and need to request the game room not the player data
             if (playerData is null)
             {
                 return NotFound();
