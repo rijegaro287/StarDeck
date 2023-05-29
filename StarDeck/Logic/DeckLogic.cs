@@ -38,23 +38,20 @@ namespace Stardeck.Logic
 
 
 
-        public Deck GetDeck(string id)
+        public Deck? GetDeck(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
             var deck = deckDB.GetDeck(id);
 
-            if (deck == null)
-            {
-                return null;
-            }
             return deck;
 
         }
 
-        public Deck NewDeck(Deck deck)
+        public Deck? NewDeck(Deck deck)
         {
             var deckAux = new Deck(deck.Cardlist)
             {
+                DeckName = deck.DeckName,
                 IdDeck = deck.IdDeck,
                 IdAccount = deck.IdAccount,
                 Cardlist = deck.Cardlist,

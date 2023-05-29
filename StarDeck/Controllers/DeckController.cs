@@ -78,7 +78,7 @@ namespace Stardeck.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Deck deck)
         {
-            Deck deckAux = deckLogic.NewDeck(deck);
+            Deck? deckAux = deckLogic.NewDeck(deck);
             if (deckAux is null)
             {
                 return BadRequest("Algo salió mal, inténtalo más tarde");
