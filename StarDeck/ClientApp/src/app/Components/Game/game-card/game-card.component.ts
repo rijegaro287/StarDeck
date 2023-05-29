@@ -15,6 +15,7 @@ export class GameCardComponent {
   @Input() base64CardImage: string
   /** Recibe la información de la cara como entrada */
   @Input() card: ICard
+  @Input() isPlayingCard: boolean
 
   imageURL: string;
 
@@ -23,6 +24,7 @@ export class GameCardComponent {
     this.base64CardImage = '';
     this.card = {} as ICard;
     this.imageURL = '../../../../assets/images/card.png';
+    this.isPlayingCard = false;
   }
 
   /** Se ejecuta cuando se detecta que la entrada cambió */

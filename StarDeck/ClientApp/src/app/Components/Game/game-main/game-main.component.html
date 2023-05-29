@@ -22,17 +22,21 @@
     </div>
 
     <div class="planets-container">
-      <div class="planet-container" *ngFor="let planet of gameRoom.territories">
+      <div (click)="onPlanetClicked(planet)" class="planet-container" *ngFor="let planet of planetsInfo">
         <p class="planet-name">{{planet.name}}</p>
 
         <div class="opponent-cards">
-
+          <div class="player-card" *ngFor="let card of planet.opponentCards">
+            <app-game-card [card]="card" [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
+          </div>
         </div>
 
         <hr>
 
         <div class="player-cards">
-
+          <div class="player-card" *ngFor="let card of planet.playerCards">
+            <app-game-card [card]="card" [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
+          </div>
         </div>
       </div>
     </div>
@@ -50,7 +54,8 @@
     <div class="player-cards-container">
       <div class="player-hand">
         <div class="player-card" *ngFor="let card of playerInfo.hand">
-          <app-game-card [card]="card"></app-game-card>
+          <app-game-card [card]="card" [cardBorderColor]="card.borderColor!" [isPlayingCard]="playingTurn"
+            (click)="onCardClicked(card)"></app-game-card>
         </div>
       </div>
 
