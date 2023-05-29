@@ -111,7 +111,6 @@ export class GameMainComponent implements OnInit {
         });
       }
     }
-
   }
 
   onPlanetClicked(planet: IPlanetCards) {
