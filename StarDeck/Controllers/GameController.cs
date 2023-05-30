@@ -133,7 +133,7 @@ namespace Stardeck.Controllers
             //if the player data is null the game ended 10 min ago and need to request the game room not the player data
             if (playerData is null)
             {
-                return NotFound();
+                return NotFound(KeyValuePair.Create("error", "Game finished"));
             }
 
             return Ok(playerData);
