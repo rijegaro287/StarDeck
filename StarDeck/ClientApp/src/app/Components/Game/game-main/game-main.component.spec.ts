@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameMainComponent } from './game-main.component';
@@ -8,6 +9,7 @@ describe('GameMainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule ],
       declarations: [ GameMainComponent ]
     })
     .compileComponents();
@@ -21,10 +23,4 @@ describe('GameMainComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize the game with correct configuration', () => {
-    expect(component.config.type).toBe(Phaser.AUTO);
-    expect(component.config.width).toBe(component.playableWidth);
-    expect(component.config.height).toBe(component.playableHeight);
-    expect(component.game).toBeDefined();
-  });
 });

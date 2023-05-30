@@ -28,6 +28,8 @@ export class GameMainComponent implements OnInit {
 
   selectedCard: ICard | null;
 
+  endTurnButton: boolean;
+
   constructor(
     private gameService: GameService,
     protected helpers: HelpersService
@@ -44,6 +46,7 @@ export class GameMainComponent implements OnInit {
     this.playingTurn = true;
 
     this.selectedCard = null;
+    this.endTurnButton = false;
   }
 
   async ngOnInit(): Promise<void> {
@@ -63,51 +66,27 @@ export class GameMainComponent implements OnInit {
       .catch((error) => alert(error));
 
     console.log(this.playerInfo);
+
+    console.log('Turno Inicial')
+    await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
+      .then((player) => {
+        console.log(player);
+        this.revealCards()
+        this.starTurn()
+      })
+      .catch((error) => alert(error));
+
   }
 
-    const playerDeck = new HiddenCard(this, 0, 0);
-    const playerDeckHeight = playerDeck.height + 2 * this.margin;
-    const playerDeckY = playerHandY
-    const playerDeckX = playerHandWidth + 1.5 * this.margin + this.playableWidth * 0.08 / 2;
-
-    playerDeck.scale = playerHandHeight / playerDeckHeight
-    playerDeck.setPosition(playerDeckX, playerDeckY)
-
-    const endTurnButton = new Button(
-      this, 0, 0, this.playableWidth / 10, 35, 'Terminar turno', COLORS.PRIMARY
-    );
-    const endTurnButtonPositionX = this.playableWidth - endTurnButton.width / 2;
-    const endTurnButtonPositionY = this.playableHeight + 2 * this.margin - playerHandHeight - endTurnButton.height;
-    endTurnButton.setPosition(endTurnButtonPositionX, endTurnButtonPositionY)
-
-    const surrenderButton = new Button(
-      this, 0, 0, this.playableWidth / 10, 35, 'Rendición', COLORS.WARNING
-    );
-    const surrenderButtonPositionX = surrenderButton.width / 2 + this.margin;
-    const surrenderButtonPositionY = this.playableHeight + 2 * this.margin - playerHandHeight - surrenderButton.height;
-    surrenderButton.setPosition(surrenderButtonPositionX, surrenderButtonPositionY)
-
-    const statusBar = new StatusBar(
-      this,
-      0,
-      0,
-      this.playableWidth,
-      this.playableHeight * 0.08,
-      10,
-      this.playerInfo.coins,
-      20,
-      this.opponentName
-    );
-    const statusBarPositionX = statusBar.width / 2 + this.margin;
-    const statusBarPositionY = statusBar.height / 2 + this.margin;
-    statusBar.setPosition(statusBarPositionX, statusBarPositionY);
-
-    const card7 = new Card(this, 0, 0, 'Carta 7', 'Raza 1', 50, 75);
-    const card8 = new Card(this, 0, 0, 'Carta 8', 'Raza 1', 50, 75);
-    const card9 = new Card(this, 0, 0, 'Carta 9', 'Raza 1', 50, 75);
-    const card10 = new Card(this, 0, 0, 'Carta 10', 'Raza 1', 50, 75);
-    const card11 = new Card(this, 0, 0, 'Carta 11', 'Raza 1', 50, 75);
-    const card12 = new Card(this, 0, 0, 'Carta 12', 'Raza 1', 50, 75);
+  onCardClicked(card: ICard) {
+    if (this.playingTurn) {
+      if (this.selectedCard === null) {
+        card.borderColor = 'white';
+        this.selectedCard = card;
+      }
+      else if (this.selectedCard.id !== card.id) {
+        this.selectedCard.borderColor = this.helpers.getCardBorderColor(this.selectedCard.type);
+        card.borderColor = 'white';
 
         this.selectedCard = card;
       }
@@ -158,7 +137,48 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  onEndTurnClicked() { }
+  async onEndTurnClicked() {
+    await this.gameService.endTurn(this.gameRoom.roomid,this.playerID)
+      .then((respuesta) => {
+        console.log(respuesta);
+        alert(respuesta.key);
+        this.endTurnButton = true;
+
+      })
+      .catch((error) => alert(error));
+  }
+
+  async starTurn() {
+    for (let turno = 1; turno < 9; turno++) {
+      //Activar el boton de terminar turno
+      this.endTurnButton = false;
+      //Obtener la informacion de la sala
+      await this.gameService.getGameRoomData(this.gameRoom.roomid)
+        .then((roomInfo) => {
+          console.log(roomInfo);
+        })
+        .catch((error) => alert(error));
+      //Obtener la informacion del jugador
+      await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+        .then((playerInfo) => {
+          this.playerInfo = playerInfo;
+          this.playerInfo.hand = this.playerInfo.hand!.slice();
+        })
+        .catch((error) => alert(error));
+      //Inicializar el turno
+      await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
+        .then((playerInfoTurn) => {
+          console.log(playerInfoTurn);
+        })
+        .catch((error) => alert(error));
+      //Revelar las cartas
+      this.revealCards();
+    }
+  }
+
+  revealCards() {
+
+  }
 
   onSurrenderClicked() { }
 

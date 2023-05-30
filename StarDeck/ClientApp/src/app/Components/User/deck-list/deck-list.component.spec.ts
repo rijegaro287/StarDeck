@@ -10,7 +10,8 @@ describe('DeckListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule],
-      declarations: [ DeckListComponent ]
+      declarations: [ DeckListComponent ],
+      providers:[DeckListComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
     })
     .compileComponents();
 

@@ -46,9 +46,10 @@
         <span>Rendirse</span>
       </button>
 
-      <button mat-raised-button color="primary" (click)="onEndTurnClicked()">
+      <button mat-raised-button color="primary" (click)="onEndTurnClicked()" [disabled]="endTurnButton">
         <span>Terminar Turno</span>
       </button>
+
     </div>
 
     <div class="player-cards-container">
