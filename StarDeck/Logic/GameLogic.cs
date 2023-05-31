@@ -123,11 +123,6 @@ namespace Stardeck.Logic
             }
             return room;
         }
-        public GameRoom? GetGameRoomData(string id)
-        {
-            GameRoom? room = ActiveRooms.Find(x => x.Roomid == id);
-            return room;
-        }
         
         
         
