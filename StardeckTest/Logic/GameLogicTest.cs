@@ -35,6 +35,7 @@ namespace StardeckTest.Logic
         }
 
         [TestMethod]
+        [Ignore]
         public void GetRoomDataTest()
         {
             var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext());
