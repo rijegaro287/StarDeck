@@ -42,6 +42,8 @@ export class HelpersService {
    */
   getCardBorderColor(type: ICardType): string {
     switch (type) {
+      case null:
+        return 'black';
       case CARD_TYPES.ULTRA_RARE:
         return '#e6ce4a';
       case CARD_TYPES.VERY_RARE:

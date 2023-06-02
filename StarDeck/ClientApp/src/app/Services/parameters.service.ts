@@ -3,7 +3,7 @@ import { apiURL } from '../app.component';
 
 import { RequestService } from './request.service';
 
-import { IParameter } from '../Interfaces/Parameter';
+import { IParameter, KV } from '../Interfaces/Parameter';
 
 @Injectable({
   providedIn: 'root'
