@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Stardeck.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,5 +64,11 @@ app.MapControllerRoute(
     pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
+
+
+var path = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
+var log = new LoggerConfiguration().WriteTo.File(path + "/StarDeck/logs/" + DateTime.Now.ToLongDateString() + ".log",shared:true).CreateLogger();
+Log.Logger = log;
+Log.Information("Inited at:{Time}",  DateTime.Now.ToLongTimeString());
 
 app.Run();
