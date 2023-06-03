@@ -163,7 +163,6 @@ namespace Stardeck.Logic
             return room;
         }
 
-
         public async Task<bool?> EndTurn(string idRoom, string idUser)
         {
             var task = GetGameRoomData(idRoom)?.EndTurn(idUser);
