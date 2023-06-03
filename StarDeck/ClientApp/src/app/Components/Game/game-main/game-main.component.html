@@ -1,0 +1,63 @@
+<div class="main-container">
+  <div class="status-bar-container">
+    <h1 class="opponent-name">Oponente: {{opponentName}}</h1>
+
+    <div class="status-bar">
+      <div class="status-element">
+        <i class="bi bi-clock" style="color:white;"></i>
+        <span>{{turnTime}}</span>
+      </div>
+
+      <div class="status-element">
+        <i class="bi bi-lightning-fill" style="color:#6988f0;"></i>
+        <span style="color:#6988f0;">{{playerInfo.energy}}</span>
+      </div>
+
+      <div class="status-element">
+        <i class="bi bi-coin" style="color:#FFDF00;"></i>
+        <span style="color:#FFDF00;">{{playerInfo.coins}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <div class="planets-container">
+      <div (click)="onPlanetClicked(planet)" class="planet-container" *ngFor="let planet of planetsInfo">
+        <p class="planet-name">{{planet.name}}</p>
+
+        <div class="opponent-cards">
+          <div class="player-card" *ngFor="let card of planet.opponentCards">
+            <app-game-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="player-cards">
+          <div class="player-card" *ngFor="let card of planet.playerCards">
+            <app-game-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="helpers.getCardBorderColor(card.type)"></app-game-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="player-hand">
+      <ng-container *ngFor="let card of playerInfo.hand">
+        <app-game-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"
+          [isPlayingCard]="playingTurn" (click)="onCardClicked(card)"></app-game-card>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="buttons-container">
+    <button mat-raised-button color="warn" (click)="onSurrenderClicked()">
+      <span>Rendirse</span>
+    </button>
+
+    <button mat-raised-button color="primary" (click)="onEndTurnClicked()">
+      <span>Terminar Turno</span>
+    </button>
+  </div>
+</div>

@@ -24,11 +24,12 @@ namespace Stardeck.Controllers
         [HttpPost("{playerId}")]
         public async Task<IActionResult> Post(string playerId)
         {
-            var room=await gameLogic.IsWaiting(playerId);
+            var room = await gameLogic.IsWaiting(playerId);
             if (room is null)
             {
                 return NotFound();
             }
+
             return Ok(room);
         }
 
@@ -68,6 +69,7 @@ namespace Stardeck.Controllers
 
             return NotFound();
         }
+
         [HttpGet("getGameRoomData/{id}")]
         public async Task<IActionResult> GetData(string id)
         {
@@ -79,8 +81,9 @@ namespace Stardeck.Controllers
 
             return NotFound();
         }
+
         [HttpGet("getGameRoomData/{idRoom}/{idUser}")]
-        public async Task<IActionResult> GetPlayerData(string idRoom,string idUser)
+        public async Task<IActionResult> GetPlayerData(string idRoom, string idUser)
         {
             var room = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
             if (room != null)
@@ -90,25 +93,62 @@ namespace Stardeck.Controllers
 
             return NotFound();
         }
-        
-        [HttpGet("getGameRoomData/{idRoom}/{idUser}/{idCard}/{idTargetPlanet}")]
-        public async Task<IActionResult> PlayCard(string idRoom,string idUser,string idCard,string idTargetPlanet)
+
+        [HttpPost("getGameRoomData/{idRoom}/{idUser}/{idCard}/{indexTargetPlanet}")]
+        public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, int indexTargetPlanet)
         {
+            if (indexTargetPlanet<0 & indexTargetPlanet >3)
+            {
+                return BadRequest(KeyValuePair.Create("error", "Invalid index"));
+            }
             
-            var answer=await this.gameLogic.PlayCard(idRoom, idUser, idCard, idTargetPlanet);
+            var answer = await this.gameLogic.PlayCard(idRoom, idUser, idCard, indexTargetPlanet);
             var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
             switch (answer)
             {
                 case null:
-                    return NotFound(KeyValuePair.Create("error","Room Game Instance not found"));
+                    return NotFound(KeyValuePair.Create("error", "Room Game Instance not found"));
                 case 1:
-                    return Ok(KeyValuePair.Create("Played",playerData));
+                    return Ok(KeyValuePair.Create("Played", playerData));
                 case 0:
-                    return Ok(KeyValuePair.Create("Not Played thus lack of energy",playerData));
+                    return Ok(KeyValuePair.Create("Not Played thus lack of energy", playerData));
                 case -1:
-                    return Ok(KeyValuePair.Create("Invalid ID",playerData));
+                    return Ok(KeyValuePair.Create("Invalid ID", playerData));
             }
-            return NotFound(KeyValuePair.Create("",playerData));
+
+            return NotFound(KeyValuePair.Create("", playerData));
+        }
+
+        [HttpGet("{idRoom}/{idUser}/initTurn")]
+        public async Task<IActionResult> InitTurn(string idRoom, string idUser)
+        {
+            var turn = await gameLogic.GetGameRoomData(idRoom)?.InitTurn(idUser);
+            if (turn is null)
+            {
+                return BadRequest(KeyValuePair.Create("error", "Player not in game"));
+            }
+            
+            //after the turn end request the player data
+            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+            //if the player data is null the game ended 10 min ago and need to request the game room not the player data
+            if (playerData is null)
+            {
+                return NotFound(KeyValuePair.Create("error", "Game finished"));
+            }
+
+            return Ok(playerData);
+        }
+
+        [HttpPost("{idRoom}/{idUser}/endTurn")]
+        public async Task<IActionResult> EndTurn(string idRoom, string idUser)
+        {
+            var task = await gameLogic.EndTurn(idRoom, idUser);
+            return task switch
+            {
+                null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
+                false => NotFound(KeyValuePair.Create("error", "Game finished")),
+                _ => Ok(KeyValuePair.Create("Turn ended", task))
+            };
         }
     }
 }

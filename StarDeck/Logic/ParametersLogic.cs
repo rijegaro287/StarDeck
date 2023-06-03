@@ -75,5 +75,18 @@ namespace Stardeck.Logic
             return null;
         }
 
+        public CardTypes GetCardType()
+        {
+            return new CardTypes();
+        }
+
+        public class CardTypes
+        {
+            public int BASIC { get; set; } = 0;
+            public int NORMAL { get; set; } = 1;
+            public int RARE { get; set; } = 2;
+            public int VERY_RARE { get; set; } = 3;
+            public int ULTRA_RARE { get; set; } = 4;
+        }
     }
 }

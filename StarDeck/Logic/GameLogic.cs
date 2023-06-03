@@ -10,6 +10,7 @@ namespace Stardeck.Logic
 {
     public class GameLogic
     {
+        private static readonly StardeckContext MatchMackingcontext = new();
         private static StardeckContext gameContext;
         private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
         private readonly GameDb gameDB;
@@ -17,38 +18,51 @@ namespace Stardeck.Logic
         public GameLogic(StardeckContext gameContext)
         {
             GameLogic.gameContext = gameContext;
-            this.gameDB=new GameDb(gameContext);
+            this.gameDB = new GameDb(gameContext);
         }
-        
 
 
         public async Task<GameRoom?> IsWaiting(string playerId)
         {
-
-            var player1 = gameContext.Accounts.Find(playerId);
+            var player1 = await MatchMackingcontext.Accounts.FindAsync(playerId);
             if (player1 is null)
             {
                 throw new Exception("Player not found");
             }
 
+            GameRoom? room;
+            room = CheckIfPlaying(player1);
+            if (room is not null)
+            {
+                return room;
+            }
+
+            await PutInMatchMaking(playerId, true);
+
             var counter = 0;
-            player1.isInMatchMacking = true;
-            while (player1.isInMatchMacking==true && counter < 15)
+            while (player1.isInMatchMacking == true && counter < 15)
             {
                 counter += 1;
-                var players = gameContext.Accounts.Include(x => x.FavoriteDeck).ToList()
+                var players = MatchMackingcontext.Accounts.ToList()
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
                     players.Where(x => x.Id != playerId
                                        && Math.Abs(x.Points - player1.Points) < 101).ToList();
 
+
                 if (inRangePlayers.Count == 0)
                 {
-                   await Task.Delay(1500);
-                   continue;
+                    await Task.Delay(1500);
+                    room = CheckIfPlaying(player1);
+                    if (room is not null)
+                    {
+                        return room;
+                    }
+
+                    continue;
                 }
 
-                
+
                 var battle = new Gameroom();
                 var rnd = new Random();
                 var randIndex = rnd.Next(inRangePlayers.Count);
@@ -59,27 +73,43 @@ namespace Stardeck.Logic
                 battle.Player1 = player1.Id;
                 battle.Player1Navigation = player1;
                 battle.generateID();
-                var room = new GameRoom(battle);
+                room = new GameRoom(battle);
                 room.Init();
                 ActiveRooms.Add(room);
                 return room;
             }
 
-            return null;
+            player1.isInMatchMacking = false;
+            return CheckIfPlaying(player1);
+        }
 
+        public GameRoom? CheckIfPlaying(Account player)
+        {
+            if (!(bool)player.isplaying) return null;
+            var room = ActiveRooms.FirstOrDefault(x =>
+                (x.Player2.Id == player.Id | x.Player1.Id == player.Id) && x.Turn <= 8);
+            if (room is not null)
+            {
+                return room;
+            }
+
+            return null;
         }
 
         public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account? account = await gameContext.Accounts.FindAsync(accountId);
+            Account? account = await MatchMackingcontext.Accounts.FindAsync(accountId);
             if (account is null)
             {
                 return null;
             }
 
+            var selectedDeck = await gameContext.FavoriteDecks.FindAsync(accountId);
+            account.FavoriteDeck = selectedDeck;
             account.isInMatchMacking = isInMatchMacking;
             return isInMatchMacking;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -88,29 +118,31 @@ namespace Stardeck.Logic
         /// <param name="cardid">card to play</param>
         /// <param name="planetid">planet where play card</param>
         /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
-        public async Task<int?> PlayCard(string game,string idPlayer, string cardid, string planetid)
+        public async Task<int?> PlayCard(string game, string idPlayer, string cardid, int planetindex)
         {
-                var room = GetGameRoomData(game);
-                if (room is null)
-                {
-                    return null;
-                }
-                var result=room.PlayCard(idPlayer,cardid,planetid);
-                return result switch
-                {
-                    null => -1,
-                    true => 1,
-                    false => 0
-                };
+            var room = GetGameRoomData(game);
+            if (room is null)
+            {
+                return null;
+            }
+
+            var result = room.PlayCard(idPlayer, cardid, planetindex);
+            return result switch
+            {
+                null => -1,
+                true => 1,
+                false => 0
+            };
         }
 
         public List<Gameroom> GetAllGamerooms()
         {
             List<Gameroom> roomList = gameDB.GetAllGamerooms();
-            if(roomList is null)
+            if (roomList is null)
             {
                 return null;
             }
+
             return roomList;
         }
 
@@ -121,6 +153,7 @@ namespace Stardeck.Logic
             {
                 return null;
             }
+
             return room;
         }
 
@@ -130,6 +163,16 @@ namespace Stardeck.Logic
             return room;
         }
 
+        public async Task<bool?> EndTurn(string idRoom, string idUser)
+        {
+            var task = GetGameRoomData(idRoom)?.EndTurn(idUser);
+            if (task is null)
+            {
+                return null;
+            }
 
+            await task;
+            return true;
+        }
     }
 }

@@ -45,6 +45,7 @@ import { SearchOpponentComponent } from './Components/User/search-oponent/search
 import { DeckListComponent } from './Components/User/deck-list/deck-list.component';
 
 import { GameMainComponent } from './Components/Game/game-main/game-main.component';
+import { GameCardComponent } from './Components/Game/game-card/game-card.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { GameMainComponent } from './Components/Game/game-main/game-main.compone
     SearchOpponentComponent,
     DeckListComponent,
     GameMainComponent,
-    HomeComponent
+    HomeComponent,
+    GameCardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
