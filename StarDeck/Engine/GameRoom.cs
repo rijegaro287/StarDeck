@@ -1,24 +1,25 @@
 ﻿using System.Diagnostics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
 
-namespace Stardeck.GameModels
+namespace Stardeck.Engine
 {
-    public class GameRoom : GameModel
+    public class GameRoom : GameRoomModel
     {
         /// <summary>
         /// Pointer to the function that will be executing the game loop
         /// </summary>
-        private Task<GameRoom>? _loop;
+        internal Task<GameRoom>? _loop;
 
         /// <summary>
         /// Sincronization member to check if both players have ended their turn
         /// </summary>
         protected PlayerEndTurnFlag EndTurnFlag = new();
 
-        private CancellationTokenSource _tokenSource = new();
+        public CancellationTokenSource TokenSource = new();
         private CancellationToken _token;
 
         protected struct PlayerEndTurnFlag
@@ -44,46 +45,12 @@ namespace Stardeck.GameModels
             }
         }
 
-
-        /// <summary>
-        ///  Create a Runtime GameRoom from a database GameRoom and initialize it Gamelog if needed
-        /// </summary>
-        /// <param name="data"></param>
-        public GameRoom(Gameroom? data)
+        private string GetRandomPlayerId()
         {
-            _token = _tokenSource.Token;
-            //assign space for terrutories
-            Territories = new List<Territory>(new Territory[3]);
-            //create object from room data
-            if (data is null) throw new Exception("Error al crear la partida");
-            Roomid = data.Roomid;
-            Player1 = new Player(data.Player1Navigation);
-            Player2 = new Player(data.Player2Navigation);
-            data.Gamelog ??= new Gamelog { Gameid = data.Roomid, Game = data };
-            Gamelog = data.Gamelog;
-            Room = data;
+            return Random.Shared.Next(0, 2) == 0 ? Player1.Id : Player2.Id;
         }
 
-
-        /// <summary>
-        /// Initialize the game. THis method don create the instance only initialize the players and territories.
-        /// constructor is required to be called before this method
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
-        public GameRoom Init()
-        {
-            var ready1 = Player1.Init();
-            var ready2 = Player2.Init();
-            var territories = AssignTerritories();
-
-            if (!ready1 || !ready2 || !territories) throw new Exception("Error al inicializar la partida");
-            SaveToDb();
-            _loop = Task.Run(TurnLoop);
-            return this;
-        }
-
-        private async Task<GameRoom> TurnLoop()
+        internal async Task<GameRoom> TurnLoop()
         {
             while (Turn <= 8)
             {
@@ -98,6 +65,7 @@ namespace Stardeck.GameModels
             _loop.Dispose();
             return this;
         }
+
 
         /// <summary>
         /// function to sync the turn timer with the client 
@@ -127,6 +95,8 @@ namespace Stardeck.GameModels
             return Turn;
         }
 
+        public PlayerModel FirstToShow { get; set; }
+
         /// <summary>
         /// Reset the flags to start a new turn including the timer
         /// </summary>
@@ -135,15 +105,15 @@ namespace Stardeck.GameModels
             EndTurnFlag.player1 = false;
             EndTurnFlag.player2 = false;
             EndTurnFlag.Reset();
-            var reseted = _tokenSource.TryReset();
+            var reseted = TokenSource.TryReset();
             if (reseted)
             {
                 EndTurnFlag.Timer = Task.Delay(30000, _token);
             }
             else
             {
-                _tokenSource = new CancellationTokenSource();
-                _token = _tokenSource.Token;
+                TokenSource = new CancellationTokenSource();
+                _token = TokenSource.Token;
                 EndTurnFlag.Timer = Task.Delay(30000, _token);
             }
 
@@ -187,7 +157,7 @@ namespace Stardeck.GameModels
 
             if (EndTurnFlag.Check())
             {
-                _tokenSource.Cancel();
+                TokenSource.Cancel();
                 return true;
             }
 
@@ -271,17 +241,17 @@ namespace Stardeck.GameModels
         /// <summary>
         ///  Draw a card from the player deck
         /// </summary>
-        /// <param name="player"></param>
-        private void DrawCard(Player player)
+        /// <param name="playerModel"></param>
+        private void DrawCard(Player playerModel)
         {
-            var drawed = player.DrawCard();
+            var drawed = playerModel.DrawCard();
             if (drawed is null)
             {
-                Gamelog?.LogDrawError(player.Id);
+                Gamelog?.LogDrawError(playerModel.Id);
             }
             else
             {
-                Gamelog?.LogDraw(player.Id, drawed.Id);
+                Gamelog?.LogDraw(playerModel.Id, drawed.Id);
             }
         }
 
@@ -318,7 +288,8 @@ namespace Stardeck.GameModels
             {
                 return null;
             }
-            var played = player.PlayCard(cardid, territoryindex-1);
+
+            var played = player.PlayCard(cardid, territoryindex - 1);
             if (played is not null) return played;
             var territoryid = Territories[territoryindex - 1].Id;
             if (territoryid != null)
@@ -387,7 +358,7 @@ namespace Stardeck.GameModels
         /// <returns> player with the most points or null if draw</returns>
         public string? GetPlayerWithMaxPoints()
         {
-            Territory.Points points = new();
+            PlayableTerritory.Points points = new();
             Territories.ForEach(t => { points += t.GetPlayersPoints(); });
             if (points.player1 == points.player2)
             {
@@ -400,103 +371,6 @@ namespace Stardeck.GameModels
             }
 
             return Player2.Id;
-        }
-
-        /// <summary>
-        ///  Return the Deck of the player as a list of string
-        /// </summary>
-        /// <param name="playerId"></param>
-        /// <returns>list of string or null when not founded the player</returns>
-        public List<string>? GetDeck(string playerId)
-        {
-            if (playerId == Player1.Id)
-            {
-                return Player1.Deck.Select(x => x.Id).ToList();
-            }
-
-            return playerId == Player2.Id ? Player2.Deck.Select(x => x.Id).ToList() : null;
-        }
-
-        /// <summary>
-        ///  Return the Hand of the player as a list of string
-        /// </summary>
-        /// <param name="playerId"></param>
-        /// <returns> list of string or null when not founded the player </returns>
-        public List<string>? GetHand(string playerId)
-        {
-            if (playerId == Player1.Id)
-            {
-                return Player1.Hand.Select(x => x.Id).ToList();
-            }
-
-            return playerId == Player2.Id ? Player2.Hand.Select(x => x.Id).ToList() : null;
-        }
-
-        /// <summary>
-        ///  Assign the territories to the game
-        /// </summary>
-        /// <returns> true id assigned false if failed</returns>
-        private bool AssignTerritories()
-        {
-            Territories[0] = GetRandomPlanet();
-            Territories[1] = GetRandomPlanet();
-            Territories[2] = new Territory
-            {
-                Id = "0"
-            };
-            Territory3 = GetRandomPlanet();
-
-            if (Territories.Any(t => t.Id is null))
-            {
-                return false;
-            }
-
-            return Territory3.Id is not null;
-        }
-
-
-        /// <summary>
-        ///  Get a random planet using the planet list of the game and their probability
-        /// </summary>
-        /// <returns></returns>
-        private static Territory GetRandomPlanet()
-        {
-            var random = new Random();
-            var probability = random.Next(0, 100);
-            var logic = new PlanetLogic(new StardeckContext());
-            var planets = logic.GetAll().GroupBy(x => x.Type).OrderByDescending(x => x.Key);
-            var planetsList = probability switch
-            {
-                < 15 => planets.First(x => x.Key == 0).ToList(),
-                < 50 => planets.First(x => x.Key == 1).ToList(),
-                < 101 => planets.First(x => x.Key == 2).ToList(),
-                _ => planets.First(x => x.Key == 2).ToList()
-            };
-
-            //select random planet from list
-            var planet = planetsList[random.Next(0, planetsList.Count)];
-
-            return new Territory(planet);
-        }
-
-        private string GetRandomPlayerId()
-        {
-            return Random.Shared.Next(0, 2) == 0 ? Player1.Id : Player2.Id;
-        }
-
-
-        private void SaveToDb()
-        {
-            var context = new StardeckContext();
-            Debug.Assert(Room != null, nameof(Room) + " != null");
-            Room.Player1Navigation = null;
-            Room.Player2Navigation = null;
-            var room = context.Gamerooms.Find(Roomid) ?? context.Gamerooms.Add(Room).Entity;
-            Debug.Assert(room != null, nameof(room) + " != null");
-            room.Gamelog = Gamelog;
-            room.Winner = Winner;
-            room.Bet = Bet;
-            context.SaveChanges();
         }
     }
 }
