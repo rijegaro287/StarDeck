@@ -27,6 +27,7 @@ export class CardListComponent implements OnChanges {
   normalCards: ICard[]
   /** Cartas básicas */
   basicCards: ICard[]
+  group : { key:number,list: ICard[]; }[] = [];
 
   constructor(
     protected helpers: HelpersService
@@ -41,7 +42,7 @@ export class CardListComponent implements OnChanges {
     this.basicCards = [];
   }
 
-  /** 
+  /**
    * Solicita todas las cartas al servidor y las filtra según su tipo
   */
   ngOnChanges() {
@@ -51,6 +52,9 @@ export class CardListComponent implements OnChanges {
           card.borderColor = this.helpers.getCardBorderColor(card.type);
         }
       })
+
+      //Agrupar por tipo en un array de objetos { key:number,list: ICard[]; }
+      this.group=[...new Set(this.cards.map(x=>x.type))].map(x=>{return {key:x,list:this.cards.filter(y=>y.type==x)}})
 
       this.ultraRareCards = this.cards.filter(card => card.type === CARD_TYPES.ULTRA_RARE);
       this.veryRareCards = this.cards.filter(card => card.type === CARD_TYPES.VERY_RARE);

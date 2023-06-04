@@ -97,7 +97,7 @@ namespace Stardeck.Controllers
         [HttpPost("getGameRoomData/{idRoom}/{idUser}/{idCard}/{indexTargetPlanet}")]
         public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, int indexTargetPlanet)
         {
-            if (0<indexTargetPlanet & indexTargetPlanet <=3)
+            if (indexTargetPlanet<0 & indexTargetPlanet >3)
             {
                 return BadRequest(KeyValuePair.Create("error", "Invalid index"));
             }
@@ -133,7 +133,7 @@ namespace Stardeck.Controllers
             //if the player data is null the game ended 10 min ago and need to request the game room not the player data
             if (playerData is null)
             {
-                return NotFound();
+                return NotFound(KeyValuePair.Create("error", "Game finished"));
             }
 
             return Ok(playerData);
