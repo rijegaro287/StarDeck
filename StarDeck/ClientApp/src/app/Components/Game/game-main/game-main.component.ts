@@ -28,6 +28,8 @@ export class GameMainComponent implements OnInit {
 
   selectedCard: ICard | null;
 
+  endTurnButton: boolean;
+
   constructor(
     private gameService: GameService,
     protected helpers: HelpersService
@@ -44,6 +46,7 @@ export class GameMainComponent implements OnInit {
     this.playingTurn = true;
 
     this.selectedCard = null;
+    this.endTurnButton = false;
   }
 
   async ngOnInit(): Promise<void> {
@@ -63,6 +66,16 @@ export class GameMainComponent implements OnInit {
       .catch((error) => alert(error));
 
     console.log(this.playerInfo);
+
+    console.log('Turno Inicial')
+    await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
+      .then((player) => {
+        console.log(player);
+        this.revealCards()
+        this.starTurn()
+      })
+      .catch((error) => alert(error));
+
   }
 
   onCardClicked(card: ICard) {
@@ -132,7 +145,48 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  onEndTurnClicked() { }
+  async onEndTurnClicked() {
+    await this.gameService.endTurn(this.gameRoom.roomid,this.playerID)
+      .then((respuesta) => {
+        console.log(respuesta);
+        alert(respuesta.key);
+        this.endTurnButton = true;
+
+      })
+      .catch((error) => alert(error));
+  }
+
+  async starTurn() {
+    for (let turno = 1; turno < 9; turno++) {
+      //Activar el boton de terminar turno
+      this.endTurnButton = false;
+      //Obtener la informacion de la sala
+      await this.gameService.getGameRoomData(this.gameRoom.roomid)
+        .then((roomInfo) => {
+          console.log(roomInfo);
+        })
+        .catch((error) => alert(error));
+      //Obtener la informacion del jugador
+      await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+        .then((playerInfo) => {
+          this.playerInfo = playerInfo;
+          this.playerInfo.hand = this.playerInfo.hand!.slice();
+        })
+        .catch((error) => alert(error));
+      //Inicializar el turno
+      await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
+        .then((playerInfoTurn) => {
+          console.log(playerInfoTurn);
+        })
+        .catch((error) => alert(error));
+      //Revelar las cartas
+      this.revealCards();
+    }
+  }
+
+  revealCards() {
+
+  }
 
   onSurrenderClicked() { }
 

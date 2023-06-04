@@ -1,4 +1,3 @@
-import * as random from "random-web-token";
 
 import { Component, Inject, OnInit } from '@angular/core';
 
@@ -92,7 +91,7 @@ export class SelectDeckComponent implements OnInit {
 
       });
 
-    //Logica para obtener las cartas del deck selecccionado 
+    //Logica para obtener las cartas del deck selecccionado
     for (let i = 0; i < this.idcardsDeckList.length; i++) {
       const cardID = this.idcardsDeckList[i];
       await this.cards.getCard(cardID)

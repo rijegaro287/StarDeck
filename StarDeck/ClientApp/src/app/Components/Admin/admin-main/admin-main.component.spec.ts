@@ -20,4 +20,15 @@ describe('AdminMainComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain navbarItems', () => {
+    expect(component.navbarItems).toBeDefined();
+    expect(component.navbarItems.length).toBeGreaterThan(0);
+  });
+
+  it('onPlayClicked should log "Play clicked"', () => {
+    spyOn(console, 'log');
+    component.onPlayClicked();
+    expect(console.log).toHaveBeenCalledWith('Play clicked');
+  });
 });
