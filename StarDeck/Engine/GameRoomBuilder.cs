@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using Microsoft.Extensions.Logging.Abstractions;
+using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -160,8 +162,8 @@ public class GameRoomBuilder
     private static List<GameCard> GetFavoriteDeck(StardeckContext stardeckContext, PlayerModel player)
     {
         //create deck
-        var logicCard = new Logic.CardLogic(stardeckContext);
-        var logicDeck = new Logic.DeckLogic(stardeckContext);
+        var logicCard = new Logic.CardLogic(stardeckContext, new NullLogger<GameController>());
+        var logicDeck = new Logic.DeckLogic(stardeckContext, new NullLogger<GameController>());
         var cards = logicDeck.GetDeck(player.Account.FavoriteDeck.Deckid).Decklist.ToList()
             .Select(card => logicCard.GetCard(card));
         var deck = (cards ?? throw new InvalidOperationException("El Deck seleccionado es invalido"))

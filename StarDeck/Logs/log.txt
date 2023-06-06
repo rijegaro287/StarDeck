@@ -1,0 +1,11 @@
+2023-06-06 11:43:28.350 -06:00 [1] [INF] Inited
+2023-06-06 11:43:28.836 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-06 11:43:28.843 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-06 11:43:34.444 -06:00 [13] [INF] [0HMR6MM4R7HOQ] <null>HTTP GET /swagger/index.html responded 200 in 422.8166 ms
+2023-06-06 11:43:34.593 -06:00 [10] [INF] [0HMR6MM4R7HOQ] <null>HTTP GET /favicon.ico responded 200 in 60.7243 ms
+2023-06-06 11:43:35.102 -06:00 [12] [INF] [0HMR6MM4R7HOQ] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 282.5064 ms
+2023-06-06 11:43:39.265 -06:00 [12] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-06 11:43:46.848 -06:00 [21] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-06 11:43:53.595 -06:00 [14] [INF] Request GetAll de Accounts completada
+2023-06-06 11:43:53.690 -06:00 [14] [INF] [0HMR6MM4R7HOQ] <null>HTTP GET /Account responded 200 in 5258.2246 ms
+2023-06-06 11:43:54.498 -06:00 [14] [ERR] Couldn't start the SPA development server with command 'npm start'.
