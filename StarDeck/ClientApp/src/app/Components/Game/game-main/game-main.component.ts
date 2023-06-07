@@ -18,13 +18,16 @@ export class GameMainComponent implements OnInit {
 
   playerID: string;
   playerInfo: IPlayer;
+  playerCardsID: keyof IPlanet;
 
   planetsInfo: IPlanetCards[];
 
   opponentName: string;
+  opponentCardsID: keyof IPlanet;
 
+  status: string;
+  currentTurn: number;
   playingTurn: boolean;
-  turnTime: number;
 
   selectedCard: ICard | null;
 
@@ -36,12 +39,16 @@ export class GameMainComponent implements OnInit {
 
     this.playerID = '';
     this.playerInfo = {} as IPlayer;
+    this.playerCardsID = 'player1Cards';
 
     this.opponentName = '';
+    this.opponentCardsID = 'player2Cards';
+
     this.planetsInfo = [];
 
-    this.turnTime = 20;
-    this.playingTurn = true;
+    this.status = 'Iniciando partida...'
+    this.currentTurn = 0;
+    this.playingTurn = false;
 
     this.selectedCard = null;
   }
@@ -53,6 +60,43 @@ export class GameMainComponent implements OnInit {
     console.log(this.gameRoom);
     console.log(this.playerID);
 
+    await this.sleep(3000);
+
+    await this.updateGameData();
+    this.setPlanetsData();
+
+    while (this.currentTurn < 8) {
+      this.status = 'Iniciando turno...'
+      this.playingTurn = false;
+
+      await this.sleep(3000);
+
+      this.playingTurn = true;
+      this.status = `Jugando turno ${this.currentTurn + 1}...`;
+
+      await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
+        .then(async (player) => {
+          this.currentTurn++;
+          this.playingTurn = false;
+          this.status = 'Revelando cartas...';
+
+          await this.updateGameData();
+          await this.revealCards();
+        })
+        .catch((error) => alert(error.message));
+    }
+
+    this.playingTurn = false;
+    this.status = `Determinando ganador...`;
+
+    this.showWinner();
+  }
+
+  async updateGameData() {
+    await this.gameService.getGameRoomData(this.gameRoom.roomid)
+      .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
+      .catch((error) => alert(error.message));
+
     this.setPlayersData();
 
     await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
@@ -60,9 +104,73 @@ export class GameMainComponent implements OnInit {
         this.playerInfo = playerInfo;
         this.playerInfo.hand = this.playerInfo.hand!.slice();
       })
-      .catch((error) => alert(error));
+      .catch((error) => alert(error.message));
 
+    this.currentTurn = this.gameRoom.turn!;
+
+    console.log(this.gameRoom);
     console.log(this.playerInfo);
+  }
+
+  setPlayersData() {
+    if (this.gameRoom.player1.id === this.playerID) {
+      this.playerInfo = this.gameRoom.player1;
+      this.playerCardsID = 'player1Cards';
+
+      this.opponentName = this.gameRoom.player2.nickname;
+      this.opponentCardsID = 'player2Cards';
+    }
+    else {
+      this.playerInfo = this.gameRoom.player2;
+      this.playerCardsID = 'player2Cards';
+
+      this.opponentName = this.gameRoom.player1.nickname;
+      this.opponentCardsID = 'player1Cards';
+    }
+  }
+
+  setPlanetsData() {
+    for (let index = 0; index < this.gameRoom.territories.length; index++) {
+      const planet = this.gameRoom.territories[index];
+      this.planetsInfo.push({
+        index: index + 1,
+        name: planet.name,
+        playerCards: [],
+        opponentCards: []
+      });
+    }
+  }
+
+  async revealCards() {
+    return new Promise((resolve, reject) => {
+      this.planetsInfo.forEach(async (planet, index) => {
+        planet.playerCards = [];
+        planet.opponentCards = [];
+
+        const gameRoomPlanet = this.gameRoom.territories[index];
+
+        if (this.gameRoom.firstToShow.id === this.playerID) {
+          await this.sleep(2000);
+          planet.playerCards = gameRoomPlanet[this.playerCardsID] as ICard[];
+
+          await this.sleep(2000);
+          planet.opponentCards = gameRoomPlanet[this.opponentCardsID] as ICard[];
+        }
+        else {
+          await this.sleep(2000);
+          planet.opponentCards = gameRoomPlanet[this.opponentCardsID] as ICard[];
+
+          await this.sleep(2000);
+          planet.playerCards = gameRoomPlanet[this.playerCardsID] as ICard[];
+        }
+      });
+
+      return resolve;
+    });
+  }
+
+  showWinner() {
+    console.log('winner:', this.gameRoom.winner);
   }
 
   onCardClicked(card: ICard) {
@@ -84,35 +192,6 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  setPlayersData() {
-    if (this.gameRoom.player1.id === this.playerID) {
-      this.playerInfo = this.gameRoom.player1;
-      this.opponentName = this.gameRoom.player2.nickname;
-
-      for (let index = 0; index < this.gameRoom.territories.length; index++) {
-        this.planetsInfo.push({
-          index: index,
-          name: this.gameRoom.territories[index].name,
-          opponentCards: this.gameRoom.territories[index].player2Cards!,
-          playerCards: this.gameRoom.territories[index].player1Cards!
-        });
-      }
-    }
-    else {
-      this.playerInfo = this.gameRoom.player2;
-      this.opponentName = this.gameRoom.player1.nickname;
-
-      for (let index = 0; index < this.gameRoom.territories.length; index++) {
-        this.planetsInfo.push({
-          index: index,
-          name: this.gameRoom.territories[index].name,
-          opponentCards: this.gameRoom.territories[index].player1Cards!,
-          playerCards: this.gameRoom.territories[index].player2Cards!
-        });
-      }
-    }
-  }
-
   onPlanetClicked(planet: IPlanetCards) {
     if (this.playingTurn && this.selectedCard) {
       if (this.playerInfo.energy >= this.selectedCard.energy) {
@@ -123,17 +202,28 @@ export class GameMainComponent implements OnInit {
 
             planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
             this.selectedCard = null;
+            console.log('Card placed');
           })
           .catch((error) => alert(error));
       }
       else {
-        alert('No tiene suficiente energóa para jugar esta carta')
+        alert('No tiene suficiente energía para jugar esta carta')
       }
     }
   }
 
-  onEndTurnClicked() { }
+  onEndTurnClicked() {
+    // this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
+    //   .then((response) => { console.log(response); })
+    //   .catch((error) => alert(error));
+
+    // this.playingTurn = false;
+    // this.status = 'Esperando a que el oponente termine su turno...';
+  }
 
   onSurrenderClicked() { }
 
+  sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 }

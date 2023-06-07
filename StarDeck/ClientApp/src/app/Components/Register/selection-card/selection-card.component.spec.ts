@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectionCardComponent } from './selection-card.component';
@@ -8,7 +9,10 @@ describe('SelectionCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SelectionCardComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [SelectionCardComponent],
+      providers:[SelectionCardComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
+
     })
     .compileComponents();
 
@@ -19,5 +23,24 @@ describe('SelectionCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should initialize variables correctly', () => {
+    expect(component.collectionInitial).toEqual([]);
+    expect(component.cards).toEqual([]);
+    expect(component.selectionCard1).toEqual([]);
+    expect(component.selectionCard2).toEqual([]);
+    expect(component.selectionCard3).toEqual([]);
+    expect(component.selectedCards).toEqual([]);
+    expect(component.cardSelected1).toBe(false);
+    expect(component.cardSelected2).toBe(false);
+    expect(component.cardSelected3).toBe(false);
+  });
+
+  it('should show an alert if createInitialCollection is called with less than 3 selected cards', async () => {
+    spyOn(window, 'alert');
+
+    await component.createInitialCollection();
+
+    expect(window.alert).toHaveBeenCalledWith('Debe seleccionar 3 cartas');
   });
 });

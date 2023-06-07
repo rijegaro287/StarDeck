@@ -26,7 +26,7 @@ export class CreatePlanetComponent {
     });
   }
   /*
-   *Funcion que crea la cuenta del nuevo jugador 
+   *Funcion que crea la cuenta del nuevo jugador
    */
   async createPlanet() {
     const fileInput: HTMLInputElement = document.querySelector('#file-input')!;
