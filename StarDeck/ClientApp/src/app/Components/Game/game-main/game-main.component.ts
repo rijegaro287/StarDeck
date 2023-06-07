@@ -89,16 +89,17 @@ export class GameMainComponent implements OnInit {
       await this.sleep(4000);
     }
 
-    this.sleep(1000);
+    await this.sleep(1000);
 
     this.playingTurn = false;
     this.status = `Determinando ganador...`;
     await this.updateGameData();
 
-    this.sleep(1000);
-
     this.showWinner();
-    // window.location.href = '/winner';
+
+    await this.sleep(2000);
+
+    window.location.href = '/winner';
   }
 
   async updateGameData() {
@@ -157,6 +158,7 @@ export class GameMainComponent implements OnInit {
         planet.opponentCards = [];
 
         const gameRoomPlanet = this.gameRoom.territories[index];
+        planet.name = this.gameRoom.territories[index].name;
 
         if (this.gameRoom.firstToShow.id === this.playerID) {
           await this.sleep(1000);
