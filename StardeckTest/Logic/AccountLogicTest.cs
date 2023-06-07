@@ -1,4 +1,7 @@
-﻿using Stardeck.Models;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics.Internal;
+using Microsoft.Extensions.Logging.Abstractions;
+using Stardeck.Controllers;
+using Stardeck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +37,8 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AccountCreationTest()
         {
-            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext());
+            
+            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.NewAccount(account);
             //Assert
             Assert.AreEqual(response, 1);
@@ -52,7 +56,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AccountFoundTest()
         {
-            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
 
             var response = logic.GetAccount("U-RXF7RJNBWEKD");
 
@@ -65,7 +69,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AllAccountFoundTest()
         {
-            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetAll();
             //Assert
             Assert.IsNotNull(response);
@@ -75,7 +79,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void GetcardsTest()
         {
-            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetCards("U-RXF7RJNBWEKD");
             //Assert
             Assert.IsNotNull(response);

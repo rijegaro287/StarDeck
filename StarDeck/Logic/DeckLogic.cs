@@ -1,4 +1,5 @@
-﻿using Stardeck.DbAccess;
+﻿using Stardeck.Controllers;
+using Stardeck.DbAccess;
 using Stardeck.Models;
 using System.Text.RegularExpressions;
 
@@ -9,8 +10,10 @@ namespace Stardeck.Logic
 
         private readonly StardeckContext context;
         private readonly DeckDb deckDB;
-        public DeckLogic(StardeckContext context)
+        private readonly ILogger<GameController> _logger;
+        public DeckLogic(StardeckContext context, ILogger<GameController> logger)
         {
+            _logger = logger;
             this.context = context;
             this.deckDB = new DeckDb(context);
         }
@@ -21,8 +24,10 @@ namespace Stardeck.Logic
             List<Deck> decks = deckDB.GetAllDecks();
             if (decks == null)
             {
+                _logger.LogWarning("No existen deks en GetAll");
                 return null;
             }
+            _logger.LogInformation("Request GetAll de Decks completada");
             return decks;
         }
 
@@ -31,8 +36,10 @@ namespace Stardeck.Logic
             var decks = deckDB.GetNames(userId);
             if (decks .Equals(0))
             {
+                _logger.LogWarning("No existen deks en para el usuario {userId} en GetNames", userId);
                 return 0;
             }
+            _logger.LogInformation("Request GetNames de Decks para ususario {userId} completada",userId);
             return decks;
         }
 
@@ -42,7 +49,7 @@ namespace Stardeck.Logic
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
             var deck = deckDB.GetDeck(id);
-
+            _logger.LogInformation("Request GetDeck para ususario {userId} completada", id);
             return deck;
 
         }
@@ -62,8 +69,10 @@ namespace Stardeck.Logic
             deckDB.NewDeck(deckAux);
             if(deckDB.GetDeck(deckAux.Id) == null)
             {
+                _logger.LogWarning("No se pudo guardar el nuevo deck {deck.Id}", deck.Id);
                 return null;
             }
+            _logger.LogInformation("Request NewDeck para deck {deck.Id} completada", deck.Id);
             return deckAux;
 
         }
@@ -78,8 +87,10 @@ namespace Stardeck.Logic
                 deck.Cardlist = nDeck.Cardlist;
 
                 context.SaveChanges();
+                _logger.LogInformation("Request UpdateDeck para deck {deck.Id} completada", deck.Id);
                 return deck;
             }
+            _logger.LogWarning("No existe el deck {id} en UpdateDeck", id);
             return null;
 
         }
@@ -89,8 +100,10 @@ namespace Stardeck.Logic
             var deck = deckDB.DeleteDeck(id);
             if (deck != null)
             {
+                _logger.LogWarning("No existe el deck {id} en DeleteDeck", id);
                 return deck;
             }
+            _logger.LogInformation("Request DeleteDeck para deck {id} completada", id);
             return null;
         }
 
@@ -99,8 +112,10 @@ namespace Stardeck.Logic
             List<Deck> decks = deckDB.GetDecksByUser(Userid);
             if (decks == null)
             {
+                _logger.LogWarning("El usuario {Userid} no tiene decks", Userid);
                 return null;
             }
+            _logger.LogInformation("Request GetDecksByUser para usuario {id} completada", Userid);
             return decks;
         }
         

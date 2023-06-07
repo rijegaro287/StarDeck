@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
+using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -56,7 +58,7 @@ namespace Stardeck.Engine
             {
                 StartTurn();
                 //wait the 20second timer to end, changes are async so no need to check for the flag
-                if (EndTurnFlag.Timer != null) await EndTurnFlag.Timer;
+                await awaitTurnToEnd();
 
                 FinishTurn();
             }
@@ -76,8 +78,33 @@ namespace Stardeck.Engine
         {
             var index = FindPlayerIndexOnGame(idUser);
             if (index is null) return null;
-            if (EndTurnFlag.Timer is not null) await EndTurnFlag.Timer;
+            await awaitTurnToEnd();
             return Turn;
+        }
+
+        private async Task<bool?> awaitTurnToEnd()
+        {
+            if (EndTurnFlag.Timer != null)
+            {
+                try
+                {
+                    await EndTurnFlag.Timer;
+                    return true;
+                }
+                catch (TaskCanceledException)
+                {
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
 
@@ -106,7 +133,7 @@ namespace Stardeck.Engine
             EndTurnFlag.player2 = false;
             EndTurnFlag.Reset();
             var reseted = TokenSource.TryReset();
-            _token= TokenSource.Token;
+            _token = TokenSource.Token;
             if (reseted)
             {
                 EndTurnFlag.Timer = Task.Delay(30000, _token);
@@ -133,10 +160,10 @@ namespace Stardeck.Engine
             Turn += 1;
             Player2.SetEnergy(Turn);
             DrawCard(Player2);
-            
+
             Player1.SetEnergy(Turn);
             DrawCard(Player1);
-            
+
             return Turn;
         }
 
@@ -165,7 +192,7 @@ namespace Stardeck.Engine
                 return true;
             }
 
-            if (EndTurnFlag.Timer != null) await EndTurnFlag.Timer;
+            await awaitTurnToEnd();
             return true;
         }
 
@@ -196,18 +223,30 @@ namespace Stardeck.Engine
 
         private string? CheckAndSetFinalWinner()
         {
+            AccountLogic _accountLogic = new AccountLogic(new(), new NullLogger<GameController>());
             foreach (var territory in Territories)
             {
                 territory.checkWinner();
             }
 
-            var player1Win = Territories.Count(x => x.Winner == Player1.Id);
-            var player2Win = Territories.Count(x => x.Winner == Player2.Id);
+            var player1Win = Territories.Count(x => x.Winner == "player1");
+            var player2Win = Territories.Count(x => x.Winner == "player2");
 
             if (player1Win > player2Win)
             {
                 Winner = Player1.Id;
                 Room.Winner = Player1.Id;
+                Account winner =_accountLogic.GetAccount(Winner);
+                Account looser = _accountLogic.GetAccount(Player2.Id);
+
+                winner.Points += 1;
+                winner.Coins += 1;
+                if(Room.Bet is not null)
+                {
+                    winner.Coins += (int)Room.Bet;
+                    looser.Coins-=(int)Room.Bet;
+                }
+                
                 return Player1.Id;
             }
 
@@ -215,6 +254,15 @@ namespace Stardeck.Engine
             {
                 Winner = Player2.Id;
                 Room.Winner = Player2.Id;
+                Account winner = _accountLogic.GetAccount(Winner);
+                Account looser = _accountLogic.GetAccount(Player1.Id);
+                winner.Points += 1;
+                winner.Coins += 1;
+                if (Room.Bet is not null)
+                {
+                    winner.Coins += (int)Room.Bet;
+                    looser.Coins -= (int)Room.Bet;
+                }
                 return Player2.Id;
             }
 
@@ -298,7 +346,7 @@ namespace Stardeck.Engine
             var territoryid = Territories[territoryindex - 1].Id;
             if (territoryid != null)
                 Gamelog?.LogCard(playerid, cardid, territoryid);
-            
+
             return played;
         }
 
@@ -369,12 +417,7 @@ namespace Stardeck.Engine
                 return null;
             }
 
-            if (points.player1 > points.player2)
-            {
-                return Player1.Id;
-            }
-
-            return Player2.Id;
+            return points.player1 > points.player2 ? Player1.Id : Player2.Id;
         }
     }
 }

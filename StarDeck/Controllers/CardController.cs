@@ -12,10 +12,13 @@ namespace Stardeck.Controllers
     public class CardController : ControllerBase
     {
         private CardLogic cardLogic;
+        private readonly ILogger<GameController> _logger;
 
-        public CardController(StardeckContext context)
+        public CardController(StardeckContext context, ILogger<GameController> logger)
         {
-            this.cardLogic = new CardLogic(context);
+            _logger = logger;
+            this.cardLogic = new CardLogic(context,_logger);
+            
         }
 
 

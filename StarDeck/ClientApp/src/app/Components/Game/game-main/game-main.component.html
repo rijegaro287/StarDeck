@@ -4,8 +4,7 @@
 
     <div class="status-bar">
       <div class="status-element">
-        <i class="bi bi-clock" style="color:white;"></i>
-        <span>{{turnTime}}</span>
+        <span>{{status}}</span>
       </div>
 
       <div class="status-element">
@@ -56,7 +55,7 @@
       <span>Rendirse</span>
     </button>
 
-    <button mat-raised-button color="primary" (click)="onEndTurnClicked()">
+    <button mat-raised-button color="primary" [disabled]="!playingTurn" (click)="onEndTurnClicked()">
       <span>Terminar Turno</span>
     </button>
   </div>

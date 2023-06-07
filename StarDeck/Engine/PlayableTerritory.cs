@@ -86,7 +86,7 @@ public class PlayableTerritory : TerritoryModel
     {
         Points points = new Points();
         player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
-        player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
+        player2Cards.ForEach(c => { points.player2 += c.Battlecost; });
         return points;
     }
 
