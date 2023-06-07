@@ -47,7 +47,7 @@ public class Player : PlayerModel
             return null;
         }
 
-        if (card.Energy >= Energy)
+        if (Energy < card.Energy )
         {
             return false;
         }
