@@ -1,4 +1,4 @@
-﻿using Stardeck.GameModels;
+using Stardeck.GameModels;
 using Stardeck.Models;
 
 namespace Stardeck.Engine;
@@ -78,7 +78,10 @@ public class PlayableTerritory : TerritoryModel
     }
     else
     {
-      Winner = "Draw";
+        Points points = new Points();
+        player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
+        player2Cards.ForEach(c => { points.player2 += c.Battlecost; });
+        return points;
     }
   }
 

@@ -226,8 +226,8 @@ namespace Stardeck.Engine
                 territory.checkWinner();
             }
 
-            var player1Win = Territories.Count(x => x.Winner == Player1.Id);
-            var player2Win = Territories.Count(x => x.Winner == Player2.Id);
+            var player1Win = Territories.Count(x => x.Winner == "player1");
+            var player2Win = Territories.Count(x => x.Winner == "player2");
 
             if (player1Win > player2Win)
             {
@@ -394,12 +394,7 @@ namespace Stardeck.Engine
                 return null;
             }
 
-            if (points.player1 > points.player2)
-            {
-                return Player1.Id;
-            }
-
-            return Player2.Id;
+            return points.player1 > points.player2 ? Player1.Id : Player2.Id;
         }
     }
 }
