@@ -4,6 +4,7 @@ using System.Timers;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.GameModels;
 using Stardeck.DbAccess;
+using Stardeck.Engine;
 using Stardeck.Pages;
 
 namespace Stardeck.Logic
@@ -12,7 +13,7 @@ namespace Stardeck.Logic
     {
         private static readonly StardeckContext MatchMackingcontext = new();
         private static StardeckContext gameContext;
-        private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
+        private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
         private readonly GameDb gameDB;
 
         public GameLogic(StardeckContext gameContext)
@@ -73,8 +74,8 @@ namespace Stardeck.Logic
                 battle.Player1 = player1.Id;
                 battle.Player1Navigation = player1;
                 battle.generateID();
-                room = new GameRoom(battle);
-                room.Init();
+                room = GameRoomBuilder.CreateInstance(battle);
+                room = GameRoomBuilder.Init(gameContext, room);
                 ActiveRooms.Add(room);
                 return room;
             }
