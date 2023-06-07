@@ -10,6 +10,7 @@ interface IGameRoom {
   turn: null;
   territories: IPlanet[];
   gamelog: IGameLog;
+  firstToShow: { id: string; name: string; }
 }
 
 interface IGameLog {

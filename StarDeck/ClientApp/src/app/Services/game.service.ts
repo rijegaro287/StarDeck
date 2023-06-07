@@ -28,4 +28,16 @@ export class GameService {
   placeCard = (gameRoomID: string, userID: string, cardID: string, planetIndex: number): Promise<IPlayer> => {
     return this.request.post(`${this.url}/getGameRoomData/${gameRoomID}/${userID}/${cardID}/${planetIndex}`, {});
   }
+
+  getGameRoomData = (gameRoomID: string): Promise<IGameRoom> => {
+    return this.request.get(`${this.url}/getGameRoomData/${gameRoomID}`);
+  }
+
+  initTurn = (gameRoomID: string, playerID: string): Promise<any> => {
+    return this.request.get(`${this.url}/${gameRoomID}/${playerID}/initTurn`);
+  }
+
+  endTurn = (gameRoomID: string, playerID: string): Promise<any> => {
+    return this.request.post(`${this.url}/${gameRoomID}/${playerID}/endTurn`, gameRoomID);
+  }
 }

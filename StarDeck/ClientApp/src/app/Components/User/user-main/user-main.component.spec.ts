@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserMainComponent } from './user-main.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('UserMainComponent', () => {
   let component: UserMainComponent;
@@ -8,7 +9,9 @@ describe('UserMainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UserMainComponent ]
+      imports: [HttpClientTestingModule ],
+      declarations: [UserMainComponent ],
+      providers:[UserMainComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
     })
     .compileComponents();
 
