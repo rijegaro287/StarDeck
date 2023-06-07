@@ -9,7 +9,7 @@ import { ICard } from 'src/app/Interfaces/Card';
 @Component({
   selector: 'app-card-info',
   templateUrl: './card-information.component.html',
-  styleUrls: ['./card-information.component.scss ']
+  styleUrls: ['./card-information.component.scss']
 })
 export class CardInformationComponent  {
 

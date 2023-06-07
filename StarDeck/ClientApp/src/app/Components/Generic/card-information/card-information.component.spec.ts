@@ -8,7 +8,8 @@ describe('CardInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardInformationComponent ]
+      declarations: [ CardInformationComponent ],
+      providers:[CardInformationComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
     })
     .compileComponents();
 

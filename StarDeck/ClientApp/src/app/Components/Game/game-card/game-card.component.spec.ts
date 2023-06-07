@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { GameCardComponent } from './game-card.component';
 
 describe('GameCardComponent', () => {
@@ -22,4 +22,5 @@ describe('GameCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
