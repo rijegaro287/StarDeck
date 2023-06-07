@@ -49,7 +49,11 @@ namespace Stardeck.Logic
             while (player1.isInMatchMacking == true && counter < 15)
             {
                 counter += 1;
-                var players = MatchMackingcontext.Accounts.ToList()
+                List<Account> accounts;
+                accounts =  await MatchMackingcontext.Accounts.ToListAsync();
+                
+                
+                var players = accounts
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
                     players.Where(x => x.Id != playerId
@@ -94,7 +98,7 @@ namespace Stardeck.Logic
         {
             if (!(bool)player.isplaying) return null;
             var room = ActiveRooms.FirstOrDefault(x =>
-                (x.Player2.Id == player.Id | x.Player1.Id == player.Id) && x.Turn <= 8);
+                (x.Player2.Id == player.Id | x.Player1.Id == player.Id) && x.Turn <= 7);
             if (room is not null)
             {
                 _logger.LogInformation("Request CheckIfPlaying para {id} completada",player.Id);

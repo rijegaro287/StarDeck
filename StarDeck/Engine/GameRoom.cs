@@ -54,7 +54,7 @@ namespace Stardeck.Engine
 
         internal async Task<GameRoom> TurnLoop()
         {
-            while (Turn <= 8)
+            while (Turn < 8)
             {
                 StartTurn();
                 //wait the 20second timer to end, changes are async so no need to check for the flag
@@ -236,17 +236,17 @@ namespace Stardeck.Engine
             {
                 Winner = Player1.Id;
                 Room.Winner = Player1.Id;
-                Account winner =_accountLogic.GetAccount(Winner);
+                Account winner = _accountLogic.GetAccount(Winner);
                 Account looser = _accountLogic.GetAccount(Player2.Id);
 
                 winner.Points += 1;
                 winner.Coins += 1;
-                if(Room.Bet is not null)
+                if (Room.Bet is not null)
                 {
                     winner.Coins += (int)Room.Bet;
-                    looser.Coins-=(int)Room.Bet;
+                    looser.Coins -= (int)Room.Bet;
                 }
-                
+
                 return Player1.Id;
             }
 
@@ -263,6 +263,7 @@ namespace Stardeck.Engine
                     winner.Coins += (int)Room.Bet;
                     looser.Coins -= (int)Room.Bet;
                 }
+
                 return Player2.Id;
             }
 
@@ -272,6 +273,16 @@ namespace Stardeck.Engine
                 Winner = "Draw";
                 Room.Winner = null;
                 return "Draw";
+            }
+
+            try
+            {
+                Player1.Account.isplaying = false;
+                Player2.Account.isplaying = false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
             Winner = playerWithMorePoints;
