@@ -55,6 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\Components\Generic\card-information" />
     <Folder Include="Data\" />
     <Folder Include="TEST\" />
   </ItemGroup>
