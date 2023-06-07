@@ -106,6 +106,7 @@ namespace Stardeck.Engine
             EndTurnFlag.player2 = false;
             EndTurnFlag.Reset();
             var reseted = TokenSource.TryReset();
+            _token= TokenSource.Token;
             if (reseted)
             {
                 EndTurnFlag.Timer = Task.Delay(30000, _token);
