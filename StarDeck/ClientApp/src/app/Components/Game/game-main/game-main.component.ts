@@ -18,10 +18,12 @@ export class GameMainComponent implements OnInit {
 
   playerID: string;
   playerInfo: IPlayer;
+  playerCardsID: string;
 
   planetsInfo: IPlanetCards[];
 
   opponentName: string;
+  opponentCardsID: string;
 
   status: string;
   currentTurn: number;
@@ -37,8 +39,11 @@ export class GameMainComponent implements OnInit {
 
     this.playerID = '';
     this.playerInfo = {} as IPlayer;
+    this.playerCardsID = 'player1Cards';
 
     this.opponentName = '';
+    this.opponentCardsID = 'player2Cards';
+
     this.planetsInfo = [];
 
     this.status = 'Iniciando partida...'
@@ -55,28 +60,33 @@ export class GameMainComponent implements OnInit {
     console.log(this.gameRoom);
     console.log(this.playerID);
 
+    await this.sleep(3000);
+
     await this.updateGameData();
+    this.setPlanetsData();
 
     while (this.currentTurn < 8) {
-      // this.status = 'Iniciando turno...'
-      // this.playingTurn = false;
+      this.status = 'Iniciando turno...'
+      this.playingTurn = false;
+
+      await this.sleep(3000);
 
       this.playingTurn = true;
       this.status = `Jugando turno ${this.currentTurn + 1}...`;
 
       await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
-        .then(async (player) => { console.log('turn ended'); })
+        .then(async (player) => {
+          this.currentTurn++;
+          this.playingTurn = false;
+          this.status = 'Revelando cartas...';
+
+          await this.updateGameData();
+          await this.revealCards();
+        })
         .catch((error) => alert(error.message));
-
-      this.currentTurn++;
-      this.playingTurn = false;
-      this.status = 'Revelando cartas...';
-
-      await this.updateGameData();
-      this.revealCards();
     }
 
-    await this.updateGameData();
+    console.log('winner:', this.gameRoom.winner);
   }
 
   async updateGameData() {
@@ -93,6 +103,8 @@ export class GameMainComponent implements OnInit {
       })
       .catch((error) => alert(error.message));
 
+    this.currentTurn = this.gameRoom.turn!;
+
     console.log(this.gameRoom);
     console.log(this.playerInfo);
   }
@@ -100,12 +112,60 @@ export class GameMainComponent implements OnInit {
   setPlayersData() {
     if (this.gameRoom.player1.id === this.playerID) {
       this.playerInfo = this.gameRoom.player1;
+      this.playerCardsID = 'player1Cards';
+
       this.opponentName = this.gameRoom.player2.nickname;
+      this.opponentCardsID = 'player2Cards';
     }
     else {
       this.playerInfo = this.gameRoom.player2;
+      this.playerCardsID = 'player2Cards';
+
       this.opponentName = this.gameRoom.player1.nickname;
+      this.opponentCardsID = 'player1Cards';
     }
+  }
+
+  setPlanetsData() {
+    for (let index = 0; index < this.gameRoom.territories.length; index++) {
+      const planet = this.gameRoom.territories[index];
+      this.planetsInfo.push({
+        index: index + 1,
+        name: planet.name,
+        playerCards: [],
+        opponentCards: []
+      });
+    }
+  }
+
+  async revealCards() {
+    return new Promise((resolve, reject) => {
+      this.planetsInfo.forEach(async (planet, index) => {
+        planet.playerCards = [];
+        planet.opponentCards = [];
+
+        const gameRoomPlanet = this.gameRoom.territories[index];
+
+        if (this.gameRoom.firstToShow.id === this.playerID) {
+          await this.sleep(2000);
+          planet.playerCards = gameRoomPlanet[this.playerCardsID as keyof IPlanet] as ICard[];
+          console.log('wsdas', planet.playerCards);
+
+          await this.sleep(2000);
+          planet.opponentCards = gameRoomPlanet[this.opponentCardsID as keyof IPlanet] as ICard[];
+        }
+        else {
+          await this.sleep(2000);
+          planet.opponentCards = gameRoomPlanet[this.opponentCardsID as keyof IPlanet] as ICard[];
+
+          await this.sleep(2000);
+          planet.playerCards = gameRoomPlanet[this.playerCardsID as keyof IPlanet] as ICard[];
+          console.log('wsdas', planet.playerCards);
+        }
+      });
+
+      return resolve;
+    });
   }
 
   onCardClicked(card: ICard) {
@@ -158,44 +218,7 @@ export class GameMainComponent implements OnInit {
 
   onSurrenderClicked() { }
 
-  revealCards() {
-    this.planetsInfo = [];
-
-    if (this.gameRoom.firstToShow.id === this.playerID) {
-      setTimeout(() => {
-        for (let index = 0; index < this.gameRoom.territories.length; index++) {
-          this.planetsInfo.push({
-            index: index + 1,
-            name: this.gameRoom.territories[index].name,
-            opponentCards: [],
-            playerCards: this.gameRoom.territories[index].player1Cards!
-          });
-        }
-      }, 2000);
-
-      setTimeout(() => {
-        for (let index = 0; index < this.gameRoom.territories.length; index++) {
-          this.planetsInfo[index].opponentCards = this.gameRoom.territories[index].player2Cards!;
-        }
-      }, 4000)
-    }
-    else {
-      setTimeout(() => {
-        for (let index = 0; index < this.gameRoom.territories.length; index++) {
-          this.planetsInfo.push({
-            index: index + 1,
-            name: this.gameRoom.territories[index].name,
-            opponentCards: this.gameRoom.territories[index].player2Cards!,
-            playerCards: []
-          });
-        }
-      }, 2000);
-
-      setTimeout(() => {
-        for (let index = 0; index < this.gameRoom.territories.length; index++) {
-          this.planetsInfo[index].playerCards = this.gameRoom.territories[index].player1Cards!;
-        }
-      }, 4000)
-    }
+  sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
