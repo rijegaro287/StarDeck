@@ -106,6 +106,7 @@ namespace Stardeck.Engine
             EndTurnFlag.player2 = false;
             EndTurnFlag.Reset();
             var reseted = TokenSource.TryReset();
+            _token= TokenSource.Token;
             if (reseted)
             {
                 EndTurnFlag.Timer = Task.Delay(30000, _token);
@@ -131,8 +132,11 @@ namespace Stardeck.Engine
 
             Turn += 1;
             Player2.SetEnergy(Turn);
+            DrawCard(Player2);
+            
             Player1.SetEnergy(Turn);
-
+            DrawCard(Player1);
+            
             return Turn;
         }
 
@@ -184,9 +188,9 @@ namespace Stardeck.Engine
         private void SwapPlanet()
         {
             if (Territory3 == null) return;
-            Territory3.player1Cards = Territories[3].player1Cards;
-            Territory3.player2Cards = Territories[3].player2Cards;
-            Territories[3] = Territory3;
+            Territory3.player1Cards = Territories[2].player1Cards;
+            Territory3.player2Cards = Territories[2].player2Cards;
+            Territories[2] = Territory3;
         }
 
 
@@ -290,11 +294,11 @@ namespace Stardeck.Engine
             }
 
             var played = player.PlayCard(cardid, territoryindex - 1);
-            if (played is not null) return played;
+            if (played is null) return played;
             var territoryid = Territories[territoryindex - 1].Id;
             if (territoryid != null)
                 Gamelog?.LogCard(playerid, cardid, territoryid);
-
+            
             return played;
         }
 

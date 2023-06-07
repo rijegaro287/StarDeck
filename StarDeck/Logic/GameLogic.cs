@@ -117,7 +117,7 @@ namespace Stardeck.Logic
         /// <param name="game"> gameid</param>
         /// <param name="idPlayer">playerid</param>
         /// <param name="cardid">card to play</param>
-        /// <param name="planetid">planet where play card</param>
+        /// <param name="planetindex">planet where play card from 1 to 3 inclusive</param>
         /// <returns>1 if succes, 0 if not enough energy, null if GameRoom not founded, -1 if invalid player,card or planet id </returns>
         public async Task<int?> PlayCard(string game, string idPlayer, string cardid, int planetindex)
         {
