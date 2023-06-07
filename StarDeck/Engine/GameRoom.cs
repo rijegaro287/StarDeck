@@ -165,7 +165,19 @@ namespace Stardeck.Engine
                 return true;
             }
 
-            if (EndTurnFlag.Timer != null) await EndTurnFlag.Timer;
+            try
+            {
+                if (EndTurnFlag.Timer != null) await EndTurnFlag.Timer;
+            }
+            catch (TaskCanceledException)
+            {
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
             return true;
         }
 
