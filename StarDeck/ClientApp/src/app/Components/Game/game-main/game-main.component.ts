@@ -76,7 +76,7 @@ export class GameMainComponent implements OnInit {
       this.status = `Jugando turno ${this.currentTurn + 1}...`;
 
       await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
-        .then(async (player) => { console.log('turn ended'); })
+        .then(async (player) => { console.log('Turn ended'); })
         .catch((error) => alert(error.message));
 
       this.playingTurn = false;
@@ -85,8 +85,6 @@ export class GameMainComponent implements OnInit {
 
       await this.updateGameData();
       await this.revealCards();
-
-      await this.sleep(4000);
     }
 
     await this.sleep(1000);
@@ -103,28 +101,23 @@ export class GameMainComponent implements OnInit {
   }
 
   async updateGameData() {
-    return new Promise<void>(async (resolve, reject) => {
-      await this.gameService.getGameRoomData(this.gameRoom.roomid)
-        .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
-        .catch((error) => alert(error.message));
+    await this.gameService.getGameRoomData(this.gameRoom.roomid)
+      .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
+      .catch((error) => alert(error.message));
 
-      this.setPlayersData();
+    this.setPlayersData();
 
-      await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
-        .then((playerInfo) => {
-          this.playerInfo = playerInfo;
-          this.playerInfo.hand = this.playerInfo.hand!.slice();
-        })
-        .catch((error) => alert(error.message));
+    await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+      .then((playerInfo) => {
+        this.playerInfo = playerInfo;
+        this.playerInfo.hand = this.playerInfo.hand!.slice();
+      })
+      .catch((error) => alert(error.message));
 
-      this.currentTurn = this.gameRoom.turn!;
+    this.currentTurn = this.gameRoom.turn!;
 
-      console.log(this.gameRoom);
-      console.log(this.playerInfo);
-
-      return resolve();
-    });
-
+    console.log(this.gameRoom);
+    console.log(this.playerInfo);
   }
 
   setPlayersData() {
@@ -157,32 +150,33 @@ export class GameMainComponent implements OnInit {
   }
 
   async revealCards() {
-    return new Promise(async (resolve, reject) => {
-      this.planetsInfo.forEach(async (planet, index) => {
-        planet.playerCards = [];
-        planet.opponentCards = [];
+    for (let index = 0; index < this.planetsInfo.length; index++) {
+      const planet = this.planetsInfo[index];
+      planet.playerCards = [];
+      planet.opponentCards = [];
+    }
 
-        const gameRoomPlanet = this.gameRoom.territories[index];
-        planet.name = this.gameRoom.territories[index].name;
+    for (let index = 0; index < this.planetsInfo.length; index++) {
+      const planet = this.planetsInfo[index];
 
-        if (this.gameRoom.firstToShow.id === this.playerID) {
-          await this.sleep(1000);
-          planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
+      const gameRoomPlanet = this.gameRoom.territories[index];
+      planet.name = this.gameRoom.territories[index].name;
 
-          await this.sleep(1000);
-          planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
-        }
-        else {
-          await this.sleep(1000);
-          planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
+      if (this.gameRoom.firstToShow.id === this.playerID) {
+        await this.sleep(750);
+        planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
 
-          await this.sleep(1000);
-          planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
-        }
-      });
+        await this.sleep(750);
+        planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
+      }
+      else {
+        await this.sleep(750);
+        planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
 
-      return resolve(null);
-    });
+        await this.sleep(750);
+        planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
+      }
+    }
   }
 
   showWinner() {
@@ -194,7 +188,6 @@ export class GameMainComponent implements OnInit {
     else {
       winnerName = this.gameRoom.winner === this.playerID ? this.playerInfo.nickname : this.opponentName;
     }
-
 
     const planetWinners = this.gameRoom.territories.map((planet, index) => {
       const playerPoints = planet[this.playerCardsID]!.reduce((total, card) => total + card.battlecost, 0);
@@ -250,16 +243,19 @@ export class GameMainComponent implements OnInit {
         this.playingTurn = false;
 
         await this.gameService.placeCard(this.gameRoom.roomid, this.playerID, this.selectedCard.id, planet.index)
-          .then((response) => { console.log('card placed'); })
+          .then((response) => {
+            console.log(response);
+
+            this.playerInfo.energy = this.selectedCard!.energy;
+            this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
+
+            planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
+            this.selectedCard = null;
+
+            this.playingTurn = true;
+            console.log('Card placed');
+          })
           .catch((error) => alert(error));
-
-        this.playerInfo.energy -= this.selectedCard!.energy;
-        this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
-
-        planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
-        this.selectedCard = null;
-
-        this.playingTurn = true;
       }
       else {
         alert('No tiene suficiente energía para jugar esta carta')
@@ -267,13 +263,13 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  async onEndTurnClicked() {
-    this.playingTurn = false;
-    this.status = 'Esperando a que el oponente termine su turno...';
-
-    await this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
+  onEndTurnClicked() {
+    this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
       .then((response) => { console.log(response); })
       .catch((error) => alert(error));
+
+    this.playingTurn = false;
+    this.status = 'Esperando a que el oponente termine su turno...';
   }
 
   onSurrenderClicked() { }
