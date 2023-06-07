@@ -1,4 +1,4 @@
-﻿using Stardeck.GameModels;
+using Stardeck.GameModels;
 using Stardeck.Models;
 
 namespace Stardeck.Engine;
@@ -52,11 +52,10 @@ public class Player : PlayerModel
       return false;
     }
 
-    Energy -= card.Energy;
-    Hand.Remove(card);
-    TmpTerritories[territory].Add(card);
-    return true;
-  }
+        if (Energy < card.Energy )
+        {
+            return false;
+        }
 
   public GameCard? DrawCard()
   {

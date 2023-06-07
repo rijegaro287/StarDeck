@@ -110,9 +110,9 @@ namespace Stardeck.Controllers
                 case 1:
                     return Ok(KeyValuePair.Create("Played", playerData));
                 case 0:
-                    return Ok(KeyValuePair.Create("Not Played thus lack of energy", playerData));
+                    return BadRequest(KeyValuePair.Create("Not Played thus lack of energy", playerData));
                 case -1:
-                    return Ok(KeyValuePair.Create("Invalid ID", playerData));
+                    return BadRequest(KeyValuePair.Create("Invalid ID", playerData));
             }
 
             return NotFound(KeyValuePair.Create("", playerData));
