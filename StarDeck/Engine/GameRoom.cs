@@ -135,7 +135,7 @@ namespace Stardeck.Engine
             DrawCard(Player2);
             
             Player1.SetEnergy(Turn);
-            DrawCard(Player2);
+            DrawCard(Player1);
             
             return Turn;
         }
@@ -188,9 +188,9 @@ namespace Stardeck.Engine
         private void SwapPlanet()
         {
             if (Territory3 == null) return;
-            Territory3.player1Cards = Territories[3].player1Cards;
-            Territory3.player2Cards = Territories[3].player2Cards;
-            Territories[3] = Territory3;
+            Territory3.player1Cards = Territories[2].player1Cards;
+            Territory3.player2Cards = Territories[2].player2Cards;
+            Territories[2] = Territory3;
         }
 
 
