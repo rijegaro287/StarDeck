@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -16,7 +18,7 @@ namespace Stardeck.GameModels.Tests
         [TestMethod()]
         public void GameCardTest()
         {
-            var cartasRaras=(new CardLogic(new StardeckContext()).GetAll());
+            var cartasRaras=(new CardLogic(new StardeckContext(), new NullLogger<GameController>()).GetAll());
             Assert.IsNotNull(cartasRaras,"no se lograron obtener todas las cartas de la base");
             var CartasTransformadas = new List<GameModels.GameCard>();
             foreach(var card in cartasRaras)
