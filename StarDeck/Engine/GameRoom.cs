@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
+using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -221,6 +223,7 @@ namespace Stardeck.Engine
 
         private string? CheckAndSetFinalWinner()
         {
+            AccountLogic _accountLogic = new AccountLogic(new(), new NullLogger<GameController>());
             foreach (var territory in Territories)
             {
                 territory.checkWinner();
@@ -233,6 +236,17 @@ namespace Stardeck.Engine
             {
                 Winner = Player1.Id;
                 Room.Winner = Player1.Id;
+                Account winner =_accountLogic.GetAccount(Winner);
+                Account looser = _accountLogic.GetAccount(Player2.Id);
+
+                winner.Points += 1;
+                winner.Coins += 1;
+                if(Room.Bet is not null)
+                {
+                    winner.Coins += (int)Room.Bet;
+                    looser.Coins-=(int)Room.Bet;
+                }
+                
                 return Player1.Id;
             }
 
@@ -240,6 +254,15 @@ namespace Stardeck.Engine
             {
                 Winner = Player2.Id;
                 Room.Winner = Player2.Id;
+                Account winner = _accountLogic.GetAccount(Winner);
+                Account looser = _accountLogic.GetAccount(Player1.Id);
+                winner.Points += 1;
+                winner.Coins += 1;
+                if (Room.Bet is not null)
+                {
+                    winner.Coins += (int)Room.Bet;
+                    looser.Coins -= (int)Room.Bet;
+                }
                 return Player2.Id;
             }
 

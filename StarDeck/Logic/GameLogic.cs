@@ -14,14 +14,14 @@ namespace Stardeck.Logic
     public class GameLogic
     {
         private static readonly StardeckContext MatchMackingcontext = new();
-        private static StardeckContext gameContext;
+        private readonly StardeckContext gameContext;
         private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
         private readonly GameDb gameDB;
         private readonly ILogger<GameController> _logger;
 
         public GameLogic(StardeckContext gameContext, ILogger<GameController> logger)
         {
-            GameLogic.gameContext = gameContext;
+            this.gameContext = gameContext;
             _logger = logger;
             this.gameDB = new GameDb(gameContext);
             
