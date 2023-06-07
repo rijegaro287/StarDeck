@@ -33,11 +33,11 @@ export class GameService {
     return this.request.get(`${this.url}/getGameRoomData/${gameRoomID}`);
   }
 
-  endTurn = (gameRoomID: string, playerID: string): Promise<any> => {
-    return this.request.post(`${this.url}/${gameRoomID}/${playerID}/endTurn`,gameRoomID );
-  }
-
   initTurn = (gameRoomID: string, playerID: string): Promise<any> => {
     return this.request.get(`${this.url}/${gameRoomID}/${playerID}/initTurn`);
+  }
+
+  endTurn = (gameRoomID: string, playerID: string): Promise<any> => {
+    return this.request.post(`${this.url}/${gameRoomID}/${playerID}/endTurn`, gameRoomID);
   }
 }
