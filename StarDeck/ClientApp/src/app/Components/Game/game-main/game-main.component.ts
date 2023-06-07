@@ -124,16 +124,24 @@ export class GameMainComponent implements OnInit {
         });
       }
     }
-
   }
 
   onPlanetClicked(planet: IPlanetCards) {
     if (this.playingTurn && this.selectedCard) {
-      this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard), 1);
+      if (this.playerInfo.energy >= this.selectedCard.energy) {
+        this.gameService.placeCard(this.gameRoom.roomid, this.playerID, this.selectedCard.id, planet.index)
+          .then((response) => {
+            this.playerInfo.energy -= this.selectedCard!.energy;
+            this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
 
-      planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
-      this.selectedCard = null;
-      console.log(planet);
+            planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
+            this.selectedCard = null;
+          })
+          .catch((error) => alert(error));
+      }
+      else {
+        alert('No tiene suficiente energóa para jugar esta carta')
+      }
     }
   }
 

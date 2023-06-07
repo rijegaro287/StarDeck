@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Stardeck.Logic;
 using Stardeck.Models;
 
@@ -28,8 +30,8 @@ namespace Stardeck.Controllers
             {
                 return NotFound();
             }
-            return Ok(parametersLogic.GetAll());
 
+            return Ok(parametersLogic.GetAll());
         }
 
         // GET api/<ParametersController>/5
@@ -41,8 +43,16 @@ namespace Stardeck.Controllers
             {
                 return NotFound();
             }
-            return Ok(parametersLogic.GetParameter(id));
 
+            return Ok(parametersLogic.GetParameter(id));
+        }
+
+        // GET api/<ParametersController>/5
+        [HttpGet]
+        [Route("/api/Parameters/CardsType")]
+        public async Task<IActionResult> GetCardType()
+        {
+            return Ok(JsonConvert.SerializeObject(parametersLogic.GetCardType()).ToUpper());
         }
 
         // POST api/<ParametersController>
@@ -55,9 +65,8 @@ namespace Stardeck.Controllers
             {
                 return BadRequest();
             }
+
             return Ok(constAux);
-
-
         }
 
         // PUT api/<ParametersController>/5
@@ -69,8 +78,8 @@ namespace Stardeck.Controllers
             {
                 return Ok(param);
             }
-            return NotFound();
 
+            return NotFound();
         }
 
         // DELETE api/<ParametersController>/5
@@ -82,10 +91,8 @@ namespace Stardeck.Controllers
             {
                 return Ok(param);
             }
+
             return NotFound();
         }
-
-
-
     }
 }

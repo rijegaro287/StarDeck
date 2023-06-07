@@ -1,9 +1,14 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using Stardeck.Models;
+//configure serilog
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog();
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
@@ -40,6 +45,22 @@ builder.Services.AddDbContext<StardeckContext>(options =>
 
 
 var app = builder.Build();
+
+// app.UseHealthAndMetricsMiddleware();
+
+app.UseSerilogRequestLogging(options =>
+{
+     options.MessageTemplate = "[{Connection}] <{User}>"+options.MessageTemplate;
+    // Attach additional properties to the request completion event
+    options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+    {
+        diagnosticContext.Set("Request", httpContext.Features.Get<IEndpointFeature>()?.Endpoint?.DisplayName);
+        diagnosticContext.Set("User", httpContext.User.Identity?.Name);
+        diagnosticContext.Set("Connection", httpContext.Connection.Id);
+    };
+    
+});
+
 app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -63,5 +84,16 @@ app.MapControllerRoute(
     pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
+
+
+
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", true)
+    .Build();
+var log = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
+Log.Logger = log;
+Log.Information("Inited"  );
 
 app.Run();

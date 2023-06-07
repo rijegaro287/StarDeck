@@ -1,8 +1,12 @@
-﻿using Stardeck.Models;
+﻿using Stardeck.Engine;
+using Stardeck.Models;
 
 namespace Stardeck.GameModels;
 
-public class GameModel
+/// <summary>
+/// Data to send to Client 
+/// </summary>
+public class GameRoomModel
 {
         public string Roomid { get; set; }
 
@@ -18,16 +22,16 @@ public class GameModel
 
         public int TurnTimer { get; set; } = 0;
         
-        public Player? FirstToShow { get; set; }
-        public List<Territory> Territories { get; set; }
+        public string? FirstToShow { get; set; }
+        public List<PlayableTerritory> Territories { get; set; }
         
         [System.Text.Json.Serialization.JsonIgnore]
-        protected Territory? Territory3;
+        protected internal PlayableTerritory? Territory3;
 
-        protected Gamelog? Gamelog { get; set; }
+        protected internal Gamelog? Gamelog { get; set; }
 
         
         [System.Text.Json.Serialization.JsonIgnore]
-        protected Gameroom? Room{ get; set; }
+        protected internal Gameroom? Room{ get; set; }
 
 }

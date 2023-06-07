@@ -4,6 +4,7 @@ using System.Timers;
 using Microsoft.EntityFrameworkCore;
 using Stardeck.GameModels;
 using Stardeck.DbAccess;
+using Stardeck.Engine;
 using Stardeck.Pages;
 
 namespace Stardeck.Logic
@@ -12,7 +13,7 @@ namespace Stardeck.Logic
     {
         private static readonly StardeckContext MatchMackingcontext = new();
         private static StardeckContext gameContext;
-        private static readonly List<GameModels.GameRoom> ActiveRooms = new List<GameModels.GameRoom>();
+        private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
         private readonly GameDb gameDB;
 
         public GameLogic(StardeckContext gameContext)
@@ -22,14 +23,22 @@ namespace Stardeck.Logic
         }
 
 
-  public async Task<GameRoom?> IsWaiting(string playerId)
+        public async Task<GameRoom?> IsWaiting(string playerId)
         {
-            await PutInMatchMaking(playerId, true);
             var player1 = await MatchMackingcontext.Accounts.FindAsync(playerId);
             if (player1 is null)
             {
                 throw new Exception("Player not found");
             }
+
+            GameRoom? room;
+            room = CheckIfPlaying(player1);
+            if (room is not null)
+            {
+                return room;
+            }
+
+            await PutInMatchMaking(playerId, true);
 
             var counter = 0;
             while (player1.isInMatchMacking == true && counter < 15)
@@ -41,9 +50,16 @@ namespace Stardeck.Logic
                     players.Where(x => x.Id != playerId
                                        && Math.Abs(x.Points - player1.Points) < 101).ToList();
 
+
                 if (inRangePlayers.Count == 0)
                 {
                     await Task.Delay(1500);
+                    room = CheckIfPlaying(player1);
+                    if (room is not null)
+                    {
+                        return room;
+                    }
+
                     continue;
                 }
 
@@ -58,13 +74,26 @@ namespace Stardeck.Logic
                 battle.Player1 = player1.Id;
                 battle.Player1Navigation = player1;
                 battle.generateID();
-                var room = new GameRoom(battle);
-                room.Init();
+                room = GameRoomBuilder.CreateInstance(battle);
+                room = GameRoomBuilder.Init(gameContext, room);
                 ActiveRooms.Add(room);
                 return room;
             }
 
             player1.isInMatchMacking = false;
+            return CheckIfPlaying(player1);
+        }
+
+        public GameRoom? CheckIfPlaying(Account player)
+        {
+            if (!(bool)player.isplaying) return null;
+            var room = ActiveRooms.FirstOrDefault(x =>
+                (x.Player2.Id == player.Id | x.Player1.Id == player.Id) && x.Turn <= 8);
+            if (room is not null)
+            {
+                return room;
+            }
+
             return null;
         }
 
@@ -135,15 +164,14 @@ namespace Stardeck.Logic
             return room;
         }
 
-
         public async Task<bool?> EndTurn(string idRoom, string idUser)
         {
-            var task= GetGameRoomData(idRoom)?.EndTurn(idUser);
+            var task = GetGameRoomData(idRoom)?.EndTurn(idUser);
             if (task is null)
             {
                 return null;
             }
-    
+
             await task;
             return true;
         }
