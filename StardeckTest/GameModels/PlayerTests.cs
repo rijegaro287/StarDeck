@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Stardeck.Engine;
+using Microsoft.Extensions.Logging.Abstractions;
+using Stardeck.Controllers;
 
 namespace Stardeck.GameModels.Tests
 {
@@ -38,7 +40,7 @@ namespace Stardeck.GameModels.Tests
         public void PlayerInitTest()
         {
             var context = new StardeckContext();
-            Account? player = (new Logic.AccountLogic(context)).GetAccountWithFavoriteDeck("U-RXF7RJNBWEKD");
+            Account? player = (new Logic.AccountLogic(context, new NullLogger<GameController>())).GetAccountWithFavoriteDeck("U-RXF7RJNBWEKD");
             Assert.IsNotNull(player);
             PlayerModel? player1 = new Player(player);
             Assert.IsNotNull(player1);

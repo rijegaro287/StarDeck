@@ -14,10 +14,13 @@ namespace Stardeck.Controllers
     public class AccountController : ControllerBase
     {
         private readonly AccountLogic accountLogic;
+        private readonly ILogger<GameController> _logger;
 
-        public AccountController(StardeckContext context)
+        public AccountController(StardeckContext context, ILogger<GameController> logger)
         {
-            this.accountLogic = new AccountLogic(context);
+            _logger = logger;
+            this.accountLogic = new AccountLogic(context, _logger);
+            
         }
 
         // GET: api/<AccountController>

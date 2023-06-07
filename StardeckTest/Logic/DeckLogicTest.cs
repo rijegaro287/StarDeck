@@ -1,4 +1,6 @@
-﻿using Stardeck.Models;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using Stardeck.Controllers;
+using Stardeck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +30,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void DeckCreationTest()
         {
-            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.NewDeck(deck);
             //Assert
             Assert.IsNotNull(response);
@@ -48,7 +50,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void DeckFoundTest()
         {
-            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext(), new NullLogger<GameController>());
 
             var response = logic.GetDeck("D-100bfff317c4");
 
@@ -61,7 +63,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AllDecksFoundTest()
         {
-            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetAll();
             //Assert
             Assert.IsNotNull(response);
@@ -71,7 +73,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void GetNamesTest()
         {
-            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetAll();
             //Assert
             Assert.IsNotNull(response);
@@ -81,7 +83,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void GetDecksByUserTest()
         {
-            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.DeckLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetDecksByUser("U-XA8G5I3ZEZJV");
             //Assert
             Assert.IsNotNull(response);

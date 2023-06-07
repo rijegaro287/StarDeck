@@ -1,4 +1,6 @@
-﻿using Stardeck.Models;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using Stardeck.Controllers;
+using Stardeck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +37,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void CardCreationTest()
         {
-            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.NewCard(card);
             //Assert
             Assert.IsTrue(response);
@@ -54,7 +56,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void CardFoundTest()
         {
-            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext(), new NullLogger<GameController>());
 
             var response = logic.GetCard("C-9ae900e6feec");
 
@@ -67,7 +69,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AllCardsFoundTest()
         {
-            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetAll();
             //Assert
             Assert.IsNotNull(response);
@@ -77,7 +79,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void GetNineCardsTest()
         {
-            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.CardLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetNineCards();
             //Assert
             Assert.IsNotNull(response);

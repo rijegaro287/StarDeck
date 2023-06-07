@@ -1,4 +1,6 @@
-﻿using Stardeck.GameModels;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using Stardeck.Controllers;
+using Stardeck.GameModels;
 using Stardeck.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void GameFoundTest()
         {
-            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameController>());
 
             var response = logic.GetGameroom("G-202903a7d04e");
 
@@ -27,7 +29,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AllGamesFoundTest()
         {
-            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.GetAllGamerooms();
             //Assert
             Assert.IsNotNull(response);
@@ -38,7 +40,7 @@ namespace StardeckTest.Logic
         [Ignore]
         public void GetRoomDataTest()
         {
-            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext());
+            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameController>());
 
             var response = logic.GetGameRoomData("G-202903a7d04e");
 
