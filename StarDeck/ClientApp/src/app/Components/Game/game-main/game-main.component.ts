@@ -18,12 +18,12 @@ export class GameMainComponent implements OnInit {
 
   playerID: string;
   playerInfo: IPlayer;
-  playerCardsID: string;
+  playerCardsID: keyof IPlanet;
 
   planetsInfo: IPlanetCards[];
 
   opponentName: string;
-  opponentCardsID: string;
+  opponentCardsID: keyof IPlanet;
 
   status: string;
   currentTurn: number;
@@ -86,7 +86,10 @@ export class GameMainComponent implements OnInit {
         .catch((error) => alert(error.message));
     }
 
-    console.log('winner:', this.gameRoom.winner);
+    this.playingTurn = false;
+    this.status = `Determinando ganador...`;
+
+    this.showWinner();
   }
 
   async updateGameData() {
@@ -148,24 +151,26 @@ export class GameMainComponent implements OnInit {
 
         if (this.gameRoom.firstToShow.id === this.playerID) {
           await this.sleep(2000);
-          planet.playerCards = gameRoomPlanet[this.playerCardsID as keyof IPlanet] as ICard[];
-          console.log('wsdas', planet.playerCards);
+          planet.playerCards = gameRoomPlanet[this.playerCardsID] as ICard[];
 
           await this.sleep(2000);
-          planet.opponentCards = gameRoomPlanet[this.opponentCardsID as keyof IPlanet] as ICard[];
+          planet.opponentCards = gameRoomPlanet[this.opponentCardsID] as ICard[];
         }
         else {
           await this.sleep(2000);
-          planet.opponentCards = gameRoomPlanet[this.opponentCardsID as keyof IPlanet] as ICard[];
+          planet.opponentCards = gameRoomPlanet[this.opponentCardsID] as ICard[];
 
           await this.sleep(2000);
-          planet.playerCards = gameRoomPlanet[this.playerCardsID as keyof IPlanet] as ICard[];
-          console.log('wsdas', planet.playerCards);
+          planet.playerCards = gameRoomPlanet[this.playerCardsID] as ICard[];
         }
       });
 
       return resolve;
     });
+  }
+
+  showWinner() {
+    console.log('winner:', this.gameRoom.winner);
   }
 
   onCardClicked(card: ICard) {
@@ -209,11 +214,11 @@ export class GameMainComponent implements OnInit {
 
   onEndTurnClicked() {
     // this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
-    //   .then((response) => {
-    //     this.playingTurn = false;
-    //     this.status = 'Esperando a que el oponente termine su turno...';
-    //   })
+    //   .then((response) => { console.log(response); })
     //   .catch((error) => alert(error));
+
+    // this.playingTurn = false;
+    // this.status = 'Esperando a que el oponente termine su turno...';
   }
 
   onSurrenderClicked() { }
