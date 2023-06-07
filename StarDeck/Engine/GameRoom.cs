@@ -56,7 +56,7 @@ namespace Stardeck.Engine
             {
                 StartTurn();
                 //wait the 20second timer to end, changes are async so no need to check for the flag
-                if (EndTurnFlag.Timer != null) await EndTurnFlag.Timer;
+                await awaitTurnToEnd();
 
                 FinishTurn();
             }
@@ -82,28 +82,27 @@ namespace Stardeck.Engine
 
         private async Task<bool?> awaitTurnToEnd()
         {
-            try
+            if (EndTurnFlag.Timer != null)
             {
-                if (EndTurnFlag.Timer != null)
+                try
                 {
                     await EndTurnFlag.Timer;
+                    return true;
                 }
-                else
+                catch (TaskCanceledException)
                 {
-                    return null;
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
                 }
             }
-            catch (TaskCanceledException)
+            else
             {
-                return true;
+                return null;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-
-            return null;
         }
 
 
@@ -132,7 +131,7 @@ namespace Stardeck.Engine
             EndTurnFlag.player2 = false;
             EndTurnFlag.Reset();
             var reseted = TokenSource.TryReset();
-            _token= TokenSource.Token;
+            _token = TokenSource.Token;
             if (reseted)
             {
                 EndTurnFlag.Timer = Task.Delay(30000, _token);
@@ -159,10 +158,10 @@ namespace Stardeck.Engine
             Turn += 1;
             Player2.SetEnergy(Turn);
             DrawCard(Player2);
-            
+
             Player1.SetEnergy(Turn);
             DrawCard(Player1);
-            
+
             return Turn;
         }
 
@@ -190,6 +189,7 @@ namespace Stardeck.Engine
                 TokenSource.Cancel();
                 return true;
             }
+
             await awaitTurnToEnd();
             return true;
         }
@@ -323,7 +323,7 @@ namespace Stardeck.Engine
             var territoryid = Territories[territoryindex - 1].Id;
             if (territoryid != null)
                 Gamelog?.LogCard(playerid, cardid, territoryid);
-            
+
             return played;
         }
 
