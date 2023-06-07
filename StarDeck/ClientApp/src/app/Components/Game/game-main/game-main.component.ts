@@ -97,7 +97,7 @@ export class GameMainComponent implements OnInit {
 
     await this.sleep(2000);
 
-    // window.location.href = '/winner';
+    window.location.href = '/winner';
   }
 
   async updateGameData() {
@@ -163,17 +163,17 @@ export class GameMainComponent implements OnInit {
       planet.name = this.gameRoom.territories[index].name;
 
       if (this.gameRoom.firstToShow.id === this.playerID) {
-        await this.sleep(750);
+        await this.sleep(1000);
         planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
 
-        await this.sleep(750);
+        await this.sleep(1000);
         planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
       }
       else {
-        await this.sleep(750);
+        await this.sleep(1000);
         planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
 
-        await this.sleep(750);
+        await this.sleep(1000);
         planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
       }
     }
@@ -246,7 +246,7 @@ export class GameMainComponent implements OnInit {
           .then((response) => {
             console.log(response);
 
-            this.playerInfo.energy = this.selectedCard!.energy;
+            this.playerInfo.energy -= this.selectedCard!.energy;
             this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
 
             planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));

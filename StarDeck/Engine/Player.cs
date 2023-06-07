@@ -47,15 +47,16 @@ public class Player : PlayerModel
       return null;
     }
 
-    if (card.Energy >= Energy)
+    if (Energy < card.Energy)
     {
       return false;
     }
 
-        if (Energy < card.Energy )
-        {
-            return false;
-        }
+    Energy -= card.Energy;
+    Hand.Remove(card);
+    TmpTerritories[territory].Add(card);
+    return true;
+  }
 
   public GameCard? DrawCard()
   {
@@ -79,5 +80,4 @@ public class Player : PlayerModel
     Energy = 1 + turn;
 
   }
-
 }
