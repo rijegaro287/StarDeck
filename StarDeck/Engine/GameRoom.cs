@@ -132,8 +132,11 @@ namespace Stardeck.Engine
 
             Turn += 1;
             Player2.SetEnergy(Turn);
+            DrawCard(Player2);
+            
             Player1.SetEnergy(Turn);
-
+            DrawCard(Player2);
+            
             return Turn;
         }
 
@@ -291,11 +294,11 @@ namespace Stardeck.Engine
             }
 
             var played = player.PlayCard(cardid, territoryindex - 1);
-            if (played is not null) return played;
+            if (played is null) return played;
             var territoryid = Territories[territoryindex - 1].Id;
             if (territoryid != null)
                 Gamelog?.LogCard(playerid, cardid, territoryid);
-
+            
             return played;
         }
 
