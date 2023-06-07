@@ -1,0 +1,30 @@
+<div class="main-component">
+  <div class="container">
+    <div class="global-winner">
+      <h1>Ganador de la partida</h1>
+      <span>{{gameWinner.winner}}</span>
+    </div>
+
+    <ng-container *ngFor="let planet of gameWinner.planetWinners">
+      <mat-card class="planet">
+        <mat-card-header class="planet-name">
+          <span>{{planet.planetName}}</span>
+        </mat-card-header>
+
+        <mat-card-content class="planet-winner">
+          <div class="winner-name">
+            Ganador: <span>{{planet.winner}}</span>
+          </div>
+          <div class="winner-score">
+            Puntuación: <span>{{planet.winnerPoints}}</span>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+    </ng-container>
+
+    <button mat-raised-button color="primary" (click)="onAcceptClicked()">
+      <span>Aceptar</span>
+    </button>
+  </div>
+</div>
