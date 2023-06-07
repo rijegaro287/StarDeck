@@ -76,8 +76,34 @@ namespace Stardeck.Engine
         {
             var index = FindPlayerIndexOnGame(idUser);
             if (index is null) return null;
-            if (EndTurnFlag.Timer is not null) await EndTurnFlag.Timer;
+            await awaitTurnToEnd();
             return Turn;
+        }
+
+        private async Task<bool?> awaitTurnToEnd()
+        {
+            try
+            {
+                if (EndTurnFlag.Timer != null)
+                {
+                    await EndTurnFlag.Timer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+            return null;
         }
 
 
@@ -164,20 +190,7 @@ namespace Stardeck.Engine
                 TokenSource.Cancel();
                 return true;
             }
-
-            try
-            {
-                if (EndTurnFlag.Timer != null) await EndTurnFlag.Timer;
-            }
-            catch (TaskCanceledException)
-            {
-                return true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            await awaitTurnToEnd();
             return true;
         }
 
