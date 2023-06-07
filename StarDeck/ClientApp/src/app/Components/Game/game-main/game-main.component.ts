@@ -55,36 +55,44 @@ export class GameMainComponent implements OnInit {
     console.log(this.gameRoom);
     console.log(this.playerID);
 
-    while (this.currentTurn < 1) {
-      this.status = 'Iniciando turno...'
-      this.playingTurn = false;
-
-      await this.gameService.getGameRoomData(this.gameRoom.roomid)
-        .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
-        .catch((error) => alert(error.message));
-
-      this.setPlayersData();
-
-      await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
-        .then((playerInfo) => {
-          this.playerInfo = playerInfo;
-          this.playerInfo.hand = this.playerInfo.hand!.slice();
-        })
-        .catch((error) => alert(error.message));
-
-      console.log(this.playerInfo);
+    while (this.currentTurn < 8) {
+      // this.status = 'Iniciando turno...'
+      // this.playingTurn = false;
+      await this.updateGameData();
 
       this.playingTurn = true;
-      this.status = `Jugando turno ${this.currentTurn + 1}...}`;
+      this.status = `Jugando turno ${this.currentTurn + 1}...`;
 
       await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
-        .then((player) => {
+        .then(async (player) => {
           this.currentTurn++;
+          this.playingTurn = false;
           this.status = 'Revelando cartas...';
           console.log('turn ended');
         })
         .catch((error) => alert(error.message));
     }
+
+    await this.updateGameData();
+  }
+
+  async updateGameData() {
+    await this.gameService.getGameRoomData(this.gameRoom.roomid)
+      .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
+      .catch((error) => alert(error.message));
+
+    console.log(this.gameRoom);
+
+    this.setPlayersData();
+
+    await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+      .then((playerInfo) => {
+        this.playerInfo = playerInfo;
+        this.playerInfo.hand = this.playerInfo.hand!.slice();
+      })
+      .catch((error) => alert(error.message));
+
+    console.log(this.playerInfo);
   }
 
   setPlayersData() {
@@ -95,7 +103,7 @@ export class GameMainComponent implements OnInit {
       this.planetsInfo = [];
       for (let index = 0; index < this.gameRoom.territories.length; index++) {
         this.planetsInfo.push({
-          index: index,
+          index: index + 1,
           name: this.gameRoom.territories[index].name,
           opponentCards: this.gameRoom.territories[index].player2Cards!,
           playerCards: this.gameRoom.territories[index].player1Cards!
@@ -109,7 +117,7 @@ export class GameMainComponent implements OnInit {
       this.planetsInfo = [];
       for (let index = 0; index < this.gameRoom.territories.length; index++) {
         this.planetsInfo.push({
-          index: index,
+          index: index + 1,
           name: this.gameRoom.territories[index].name,
           opponentCards: this.gameRoom.territories[index].player1Cards!,
           playerCards: this.gameRoom.territories[index].player2Cards!
@@ -158,13 +166,12 @@ export class GameMainComponent implements OnInit {
   }
 
   onEndTurnClicked() {
-
-    this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
-      .then((response) => {
-        this.playingTurn = false;
-        this.status = 'Esperando a que el oponente termine su turno...';
-      })
-      .catch((error) => alert(error));
+    // this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
+    //   .then((response) => {
+    //     this.playingTurn = false;
+    //     this.status = 'Esperando a que el oponente termine su turno...';
+    //   })
+    //   .catch((error) => alert(error));
   }
 
   onSurrenderClicked() { }
