@@ -55,22 +55,25 @@ export class GameMainComponent implements OnInit {
     console.log(this.gameRoom);
     console.log(this.playerID);
 
+    await this.updateGameData();
+
     while (this.currentTurn < 8) {
       // this.status = 'Iniciando turno...'
       // this.playingTurn = false;
-      await this.updateGameData();
 
       this.playingTurn = true;
       this.status = `Jugando turno ${this.currentTurn + 1}...`;
 
       await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
-        .then(async (player) => {
-          this.currentTurn++;
-          this.playingTurn = false;
-          this.status = 'Revelando cartas...';
-          console.log('turn ended');
-        })
+        .then(async (player) => { console.log('turn ended'); })
         .catch((error) => alert(error.message));
+
+      this.currentTurn++;
+      this.playingTurn = false;
+      this.status = 'Revelando cartas...';
+
+      await this.updateGameData();
+      this.revealCards();
     }
 
     await this.updateGameData();
@@ -81,8 +84,6 @@ export class GameMainComponent implements OnInit {
       .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
       .catch((error) => alert(error.message));
 
-    console.log(this.gameRoom);
-
     this.setPlayersData();
 
     await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
@@ -92,6 +93,7 @@ export class GameMainComponent implements OnInit {
       })
       .catch((error) => alert(error.message));
 
+    console.log(this.gameRoom);
     console.log(this.playerInfo);
   }
 
@@ -99,30 +101,10 @@ export class GameMainComponent implements OnInit {
     if (this.gameRoom.player1.id === this.playerID) {
       this.playerInfo = this.gameRoom.player1;
       this.opponentName = this.gameRoom.player2.nickname;
-
-      this.planetsInfo = [];
-      for (let index = 0; index < this.gameRoom.territories.length; index++) {
-        this.planetsInfo.push({
-          index: index + 1,
-          name: this.gameRoom.territories[index].name,
-          opponentCards: this.gameRoom.territories[index].player2Cards!,
-          playerCards: this.gameRoom.territories[index].player1Cards!
-        });
-      }
     }
     else {
       this.playerInfo = this.gameRoom.player2;
       this.opponentName = this.gameRoom.player1.nickname;
-
-      this.planetsInfo = [];
-      for (let index = 0; index < this.gameRoom.territories.length; index++) {
-        this.planetsInfo.push({
-          index: index + 1,
-          name: this.gameRoom.territories[index].name,
-          opponentCards: this.gameRoom.territories[index].player1Cards!,
-          playerCards: this.gameRoom.territories[index].player2Cards!
-        });
-      }
     }
   }
 
@@ -176,5 +158,44 @@ export class GameMainComponent implements OnInit {
 
   onSurrenderClicked() { }
 
-  revealCards() { }
+  revealCards() {
+    this.planetsInfo = [];
+
+    if (this.gameRoom.firstToShow.id === this.playerID) {
+      setTimeout(() => {
+        for (let index = 0; index < this.gameRoom.territories.length; index++) {
+          this.planetsInfo.push({
+            index: index + 1,
+            name: this.gameRoom.territories[index].name,
+            opponentCards: [],
+            playerCards: this.gameRoom.territories[index].player1Cards!
+          });
+        }
+      }, 2000);
+
+      setTimeout(() => {
+        for (let index = 0; index < this.gameRoom.territories.length; index++) {
+          this.planetsInfo[index].opponentCards = this.gameRoom.territories[index].player2Cards!;
+        }
+      }, 4000)
+    }
+    else {
+      setTimeout(() => {
+        for (let index = 0; index < this.gameRoom.territories.length; index++) {
+          this.planetsInfo.push({
+            index: index + 1,
+            name: this.gameRoom.territories[index].name,
+            opponentCards: this.gameRoom.territories[index].player2Cards!,
+            playerCards: []
+          });
+        }
+      }, 2000);
+
+      setTimeout(() => {
+        for (let index = 0; index < this.gameRoom.territories.length; index++) {
+          this.planetsInfo[index].playerCards = this.gameRoom.territories[index].player1Cards!;
+        }
+      }, 4000)
+    }
+  }
 }
