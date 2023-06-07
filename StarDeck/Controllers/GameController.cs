@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
 
@@ -12,11 +13,13 @@ namespace Stardeck.Controllers
     {
         private readonly StardeckContext context;
         private GameLogic gameLogic;
-
-        public GameController(StardeckContext context)
+        private readonly ILogger<GameController> _logger;
+        public GameController(StardeckContext context, ILogger<GameController> logger)
         {
             this.context = context;
-            this.gameLogic = new GameLogic(context);
+            _logger = logger;
+            this.gameLogic = new GameLogic(context,_logger);
+
         }
 
 
@@ -41,7 +44,6 @@ namespace Stardeck.Controllers
             {
                 return Ok(new KeyValuePair<string, bool?>(id, act));
             }
-
             return NotFound();
         }
 
@@ -54,19 +56,18 @@ namespace Stardeck.Controllers
             {
                 return Ok(rooms);
             }
-
+            
             return NotFound();
         }
 
         [HttpGet("getGameRoom/{id}")]
         public async Task<IActionResult> Get(string id)
-        {
+        {  
             var room = gameLogic.GetGameroom(id);
             if (room is not null)
             {
                 return Ok(room);
             }
-
             return NotFound();
         }
 
@@ -78,7 +79,6 @@ namespace Stardeck.Controllers
             {
                 return Ok(room);
             }
-
             return NotFound();
         }
 
@@ -90,7 +90,6 @@ namespace Stardeck.Controllers
             {
                 return Ok(room);
             }
-
             return NotFound();
         }
 

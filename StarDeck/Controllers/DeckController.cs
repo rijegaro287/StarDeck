@@ -13,10 +13,13 @@ namespace Stardeck.Controllers
     {
 
         private DeckLogic deckLogic;
+        private readonly ILogger<GameController> _logger;
 
-        public DeckController(StardeckContext context)
+        public DeckController(StardeckContext context, ILogger<GameController> logger)
         {
-            this.deckLogic = new DeckLogic(context);
+            _logger = logger;
+            this.deckLogic = new DeckLogic(context,_logger);
+            
         }
 
 

@@ -1,4 +1,5 @@
-﻿using Stardeck.DbAccess;
+﻿using Stardeck.Controllers;
+using Stardeck.DbAccess;
 using Stardeck.Models;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -9,8 +10,10 @@ namespace Stardeck.Logic
     {
         private readonly StardeckContext context;
         private readonly CardDb cardDB;
-        public CardLogic(StardeckContext context)
+        private readonly ILogger<GameController> _logger;
+        public CardLogic(StardeckContext context, ILogger<GameController> logger)
         {
+            _logger = logger;
             this.context = context;
             this.cardDB=new CardDb(context);
         }
@@ -18,6 +21,7 @@ namespace Stardeck.Logic
         public List<Card>? GetAll()
         {
             List<Card>? cards = cardDB.GetAllCards();
+            _logger.LogInformation("Request GetAll de cards completada");
             return cards;
         }
 
@@ -26,8 +30,10 @@ namespace Stardeck.Logic
             var card = cardDB.GetCard(id);
             if (card == null)
             {
+                _logger.LogWarning("no se encontró carta {id}",id);
                 return null;
             }
+            _logger.LogInformation("Request GetCards para {id} completada",id);
             return card;
         }
 
@@ -49,6 +55,7 @@ namespace Stardeck.Logic
 
             };
             var save = cardDB.NewCard(cardAux);
+            _logger.LogInformation("Request NewCard para {id} completada", card.Id);
             return save;
 
         }
@@ -69,8 +76,10 @@ namespace Stardeck.Logic
                 card.Race = nCard.Race;
 
                 context.SaveChanges();
+                _logger.LogInformation("Request UpdateCard para {id} completada", id);
                 return card;
             }
+            _logger.LogWarning("No se pudo actualizar la carta {id}", id);
             return null;
 
         }
@@ -81,8 +90,10 @@ namespace Stardeck.Logic
             var card = cardDB.DeleteCard(id);
             if (card != null)
             {
+                _logger.LogInformation("Request DeleteCard para {id} completada", id);
                 return card;
             }
+            _logger.LogWarning("No se pudo eliminar la carta {id}", id);
             return null;
         }
 
@@ -91,11 +102,13 @@ namespace Stardeck.Logic
             List<Card> cards =(List<Card>) GetAll();
             if(cards.Count == 0 || cards==null)
             {
+                _logger.LogWarning("No existen las suficientes cartas en GetNineCards");
                 return null;
             }
             List<Card> filteredCards = cards.FindAll(x => x.Type == 1 || x.Type == 2);
             Random rand = new Random();
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
+            _logger.LogInformation("Request GetNineCards completada");
             return shuffled.GetRange(0,9);
         }
      }
