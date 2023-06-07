@@ -99,27 +99,32 @@ export class GameMainComponent implements OnInit {
 
     await this.sleep(2000);
 
-    window.location.href = '/winner';
+    // window.location.href = '/winner';
   }
 
   async updateGameData() {
-    await this.gameService.getGameRoomData(this.gameRoom.roomid)
-      .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
-      .catch((error) => alert(error.message));
+    return new Promise<void>(async (resolve, reject) => {
+      await this.gameService.getGameRoomData(this.gameRoom.roomid)
+        .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
+        .catch((error) => alert(error.message));
 
-    this.setPlayersData();
+      this.setPlayersData();
 
-    await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
-      .then((playerInfo) => {
-        this.playerInfo = playerInfo;
-        this.playerInfo.hand = this.playerInfo.hand!.slice();
-      })
-      .catch((error) => alert(error.message));
+      await this.gameService.getUserGameRoomData(this.playerID, this.gameRoom.roomid)
+        .then((playerInfo) => {
+          this.playerInfo = playerInfo;
+          this.playerInfo.hand = this.playerInfo.hand!.slice();
+        })
+        .catch((error) => alert(error.message));
 
-    this.currentTurn = this.gameRoom.turn!;
+      this.currentTurn = this.gameRoom.turn!;
 
-    console.log(this.gameRoom);
-    console.log(this.playerInfo);
+      console.log(this.gameRoom);
+      console.log(this.playerInfo);
+
+      return resolve();
+    });
+
   }
 
   setPlayersData() {
@@ -181,7 +186,16 @@ export class GameMainComponent implements OnInit {
   }
 
   showWinner() {
-    const winnerName = this.gameRoom.winner === this.playerID ? this.playerInfo.nickname : this.opponentName;
+    let winnerName = '';
+
+    if (this.gameRoom.winner === 'Draw') {
+      winnerName = 'Empate';
+    }
+    else {
+      winnerName = this.gameRoom.winner === this.playerID ? this.playerInfo.nickname : this.opponentName;
+    }
+
+
     const planetWinners = this.gameRoom.territories.map((planet, index) => {
       const playerPoints = planet[this.playerCardsID]!.reduce((total, card) => total + card.battlecost, 0);
       const opponentPoints = planet[this.opponentCardsID]!.reduce((total, card) => total + card.battlecost, 0);
@@ -230,19 +244,22 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  onPlanetClicked(planet: IPlanetCards) {
+  async onPlanetClicked(planet: IPlanetCards) {
     if (this.playingTurn && this.selectedCard) {
       if (this.playerInfo.energy >= this.selectedCard.energy) {
-        this.gameService.placeCard(this.gameRoom.roomid, this.playerID, this.selectedCard.id, planet.index)
-          .then((response) => {
-            this.playerInfo.energy -= this.selectedCard!.energy;
-            this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
+        this.playingTurn = false;
 
-            planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
-            this.selectedCard = null;
-            console.log('Card placed');
-          })
+        await this.gameService.placeCard(this.gameRoom.roomid, this.playerID, this.selectedCard.id, planet.index)
+          .then((response) => { console.log('card placed'); })
           .catch((error) => alert(error));
+
+        this.playerInfo.energy -= this.selectedCard!.energy;
+        this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
+
+        planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
+        this.selectedCard = null;
+
+        this.playingTurn = true;
       }
       else {
         alert('No tiene suficiente energía para jugar esta carta')
@@ -250,13 +267,13 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  onEndTurnClicked() {
-    this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
-      .then((response) => { console.log(response); })
-      .catch((error) => alert(error));
-
+  async onEndTurnClicked() {
     this.playingTurn = false;
     this.status = 'Esperando a que el oponente termine su turno...';
+
+    await this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
+      .then((response) => { console.log(response); })
+      .catch((error) => alert(error));
   }
 
   onSurrenderClicked() { }
