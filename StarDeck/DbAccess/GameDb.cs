@@ -12,23 +12,16 @@ namespace Stardeck.DbAccess
             this._context = _context;
         }
 
-        public List<Gameroom> GetAllGamerooms()
+        public async Task<List<Gameroom?>?>? GetAllGamerooms()
         {
-            List<Gameroom> roomList = _context.Gamerooms.ToList();
-            if (roomList is null)
-            {
-                return null;
-            }
-            return roomList;
+            List<Gameroom?>? roomList = await _context.Gamerooms.ToListAsync();
+            return roomList.Count == 0 ? null : roomList;
         }
 
-        public Gameroom GetGameroom(string id)
+        public async Task<Gameroom?> GetGameroom(string id)
         {
-            Gameroom room = _context.Gamerooms.Find(id);
-            if (room is null)
-            {
-                return null;
-            }
+            Gameroom? room = await _context.Gamerooms.FindAsync(id);
+
             return room;
         }
     }

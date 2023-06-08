@@ -18,13 +18,13 @@ namespace Stardeck.Logic
         private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
         private readonly GameDb gameDB;
         private readonly ILogger<GameController> _logger;
+        private static object Locker = new object();
 
         public GameLogic(StardeckContext gameContext, ILogger<GameController> logger)
         {
             this.gameContext = gameContext;
             _logger = logger;
             this.gameDB = new GameDb(gameContext);
-            
         }
 
         public async Task<GameRoom?> IsWaiting(string playerId)
@@ -50,9 +50,9 @@ namespace Stardeck.Logic
             {
                 counter += 1;
                 List<Account> accounts;
-                accounts =  await MatchMackingcontext.Accounts.ToListAsync();
-                
-                
+                accounts = await MatchMackingcontext.Accounts.ToListAsync();
+
+
                 var players = accounts
                     .Where(x => x.isInMatchMacking == true).ToList();
                 var inRangePlayers =
@@ -73,21 +73,33 @@ namespace Stardeck.Logic
                 }
 
 
-                var battle = new Gameroom();
-                var rnd = new Random();
-                var randIndex = rnd.Next(inRangePlayers.Count);
-                var opponent = inRangePlayers[randIndex];
+                lock (Locker)
+                {
+                    room = CheckIfPlaying(player1);
+                    if (room is not null)
+                    {
+                        return room;
+                    }
 
-                battle.Player2 = opponent.Id;
-                battle.Player2Navigation = opponent;
-                battle.Player1 = player1.Id;
-                battle.Player1Navigation = player1;
-                battle.generateID();
-                room = GameRoomBuilder.CreateInstance(battle);
-                room = GameRoomBuilder.Init(gameContext, room);
-                ActiveRooms.Add(room);
-                _logger.LogInformation("Request IsWaiting completada");
-                return room;
+                    var battle = new Gameroom();
+                    var rnd = new Random();
+                    var randIndex = rnd.Next(inRangePlayers.Count);
+                    var opponent = inRangePlayers[randIndex];
+
+                    battle.Player2 = opponent.Id;
+                    battle.Player2Navigation = opponent;
+                    battle.Player1 = player1.Id;
+                    battle.Player1Navigation = player1;
+                    battle.generateID();
+                    room = GameRoomBuilder.CreateInstance(battle);
+                    room = GameRoomBuilder.Init(gameContext, room);
+
+                    ActiveRooms.Add(room);
+                    GameRoomBuilder.SaveToDb(gameContext, room);
+                    room = CheckIfPlaying(player1);
+                    _logger.LogInformation("Request IsWaiting completada");
+                    return room;
+                }
             }
 
             player1.isInMatchMacking = false;
@@ -101,9 +113,10 @@ namespace Stardeck.Logic
                 (x.Player2.Id == player.Id | x.Player1.Id == player.Id) && x.Turn <= 7);
             if (room is not null)
             {
-                _logger.LogInformation("Request CheckIfPlaying para {id} completada",player.Id);
+                _logger.LogInformation("Request CheckIfPlaying para {id} completada", player.Id);
                 return room;
             }
+
             _logger.LogWarning("No se encontró al jugador {player.Id} en el Request CheckIfPlaying ", player.Id);
             return null;
         }
@@ -151,27 +164,29 @@ namespace Stardeck.Logic
             };
         }
 
-        public List<Gameroom> GetAllGamerooms()
+        public async Task<List<Gameroom>?> GetAllGamerooms()
         {
-            List<Gameroom> roomList = gameDB.GetAllGamerooms();
+            var roomList = await gameDB.GetAllGamerooms();
             if (roomList is null)
             {
                 _logger.LogWarning("No se encontró ningún Gameroom");
                 return null;
             }
+
             _logger.LogInformation("Request GetAllGameRooms completada");
             return roomList;
         }
 
-        public Gameroom GetGameroom(string id)
+        public async Task<Gameroom?>? GetGameroom(string id)
         {
-            Gameroom room = gameDB.GetGameroom(id);
+            Gameroom? room = await gameDB.GetGameroom(id);
             if (room is null)
             {
                 _logger.LogWarning("No se encontró ningún Gameroom con {id}", id);
                 return null;
             }
-            _logger.LogInformation("Request GetAllGameRooms para {id} completada",id);
+
+            _logger.LogInformation("Request GetAllGameRooms para {id} completada", id);
             return room;
         }
 
@@ -192,8 +207,16 @@ namespace Stardeck.Logic
             }
 
             await task;
-            _logger.LogInformation("Request EndTurn para partida {idRoom} y usuario {idUser} completada", idRoom, idUser);
+            _logger.LogInformation("Request EndTurn para partida {idRoom} y usuario {idUser} completada", idRoom,
+                idUser);
             return true;
+        }
+
+        public static async Task<bool?> IsInGame(string id)
+        {
+            var Accounts = await MatchMackingcontext.Accounts.ToListAsync();
+            var account = Accounts.Find(x => x.Id == id);
+            return account is null ? null : account.isplaying;
         }
     }
 }
