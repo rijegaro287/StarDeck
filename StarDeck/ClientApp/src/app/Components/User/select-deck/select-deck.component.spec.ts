@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectDeckComponent } from './select-deck.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('SelectDeckComponent', () => {
   let component: SelectDeckComponent;
@@ -8,9 +9,12 @@ describe('SelectDeckComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SelectDeckComponent]
+      imports: [HttpClientTestingModule],
+      declarations: [SelectDeckComponent],
+      providers:[SelectDeckComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
+
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SelectDeckComponent);
     component = fixture.componentInstance;
@@ -20,4 +24,12 @@ describe('SelectDeckComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should throw an error if no deck is selected when calling onSelect', () => {
+    expect(() => {
+      component.onSelect();
+    }).toThrowError('Debe seleccionar un escuadrón de batalla');
+  });
+
+
 });

@@ -3,9 +3,9 @@ using Stardeck.Models;
 
 namespace Stardeck.Engine;
 
-public class Player : PlayerModel
+public class PlayerLogic : PlayerModel
 {
-    public Player(Account? dataPlayer)
+    public PlayerLogic(Account? dataPlayer)
     {
         if (dataPlayer is null)
         {
@@ -33,6 +33,7 @@ public class Player : PlayerModel
     {
         return Deck;
     }
+
     /// <summary>
     /// 
     /// </summary>
@@ -47,7 +48,7 @@ public class Player : PlayerModel
             return null;
         }
 
-        if (card.Energy > Energy)
+        if (Energy < card.Energy)
         {
             return false;
         }
@@ -77,8 +78,6 @@ public class Player : PlayerModel
 
     public void SetEnergy(int turn)
     {
-        Energy = 1 + turn * 2;
-            
+        Energy = 1 + turn;
     }
-
 }

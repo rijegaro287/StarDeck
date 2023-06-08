@@ -10,8 +10,8 @@ namespace Stardeck.Logic
 
         private readonly StardeckContext context;
         private readonly DeckDb deckDB;
-        private readonly ILogger<GameController> _logger;
-        public DeckLogic(StardeckContext context, ILogger<GameController> logger)
+        private readonly ILogger _logger;
+        public DeckLogic(StardeckContext context, ILogger logger)
         {
             _logger = logger;
             this.context = context;

@@ -64,7 +64,7 @@ namespace Stardeck.DbAccess
             return true;
         }
 
-        public Card DeleteCard(string id)
+        public Card? DeleteCard(string id)
         {
             var card = GetCard(id);
             if (card != null)

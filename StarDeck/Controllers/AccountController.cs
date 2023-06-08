@@ -14,9 +14,9 @@ namespace Stardeck.Controllers
     public class AccountController : ControllerBase
     {
         private readonly AccountLogic accountLogic;
-        private readonly ILogger<GameController> _logger;
+        private readonly ILogger _logger;
 
-        public AccountController(StardeckContext context, ILogger<GameController> logger)
+        public AccountController(StardeckContext context, ILogger<AccountController> logger)
         {
             _logger = logger;
             this.accountLogic = new AccountLogic(context, _logger);

@@ -30,7 +30,7 @@ namespace Stardeck.GameModels.Tests
         {
             Account player=(new StardeckContext()).Accounts.Find("U-RXF7RJNBWEKD");
             Assert.IsNotNull(player, "No se encontro la cuenta de testeo");
-            PlayerModel player1 = new Player(player);
+            PlayerModel player1 = new PlayerLogic(player);
             Assert.IsNotNull(player1,"No se logro transformar la cuenta de testeo a jugador");
             Assert.AreEqual(player.Id, player1.Id);
             Assert.IsNotNull(player1.Hand);
@@ -42,7 +42,7 @@ namespace Stardeck.GameModels.Tests
             var context = new StardeckContext();
             Account? player = (new Logic.AccountLogic(context, new NullLogger<GameController>())).GetAccountWithFavoriteDeck("U-RXF7RJNBWEKD");
             Assert.IsNotNull(player);
-            PlayerModel? player1 = new Player(player);
+            PlayerModel? player1 = new PlayerLogic(player);
             Assert.IsNotNull(player1);
 
             Assert.IsTrue(GameRoomBuilder.InitPlayer(context, player1),"El jugador no se inicializo bien");
@@ -56,7 +56,7 @@ namespace Stardeck.GameModels.Tests
         [ExpectedException(typeof(System.NullReferenceException))]
         public void PlayerCreationAndInitErrorTest()
         {
-            GameRoomBuilder.InitPlayer(new StardeckContext(), new Player(player));
+            GameRoomBuilder.InitPlayer(new StardeckContext(), new PlayerLogic(player));
         }
     }
 }

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchOpponentComponent } from './search-opponent.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('SearchOpponentComponent', () => {
   let component: SearchOpponentComponent;
@@ -8,7 +9,9 @@ describe('SearchOpponentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchOpponentComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [SearchOpponentComponent ],
+      providers:[SearchOpponentComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
     })
     .compileComponents();
 

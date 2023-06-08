@@ -65,7 +65,7 @@ public class PlayableTerritory : TerritoryModel
         player2Cards.Add(card);
     }
 
-    public void checkWinner()
+    public void CheckWinner()
     {
         var points = GetPlayersPoints();
         if (points.player1 > points.player2)
@@ -86,7 +86,7 @@ public class PlayableTerritory : TerritoryModel
     {
         Points points = new Points();
         player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
-        player1Cards.ForEach(c => { points.player1 += c.Battlecost; });
+        player2Cards.ForEach(c => { points.player2 += c.Battlecost; });
         return points;
     }
 

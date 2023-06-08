@@ -12,13 +12,12 @@ namespace Stardeck.Controllers
     public class CardController : ControllerBase
     {
         private CardLogic cardLogic;
-        private readonly ILogger<GameController> _logger;
+        private readonly ILogger _logger;
 
-        public CardController(StardeckContext context, ILogger<GameController> logger)
+        public CardController(StardeckContext context, ILogger<CardController> logger)
         {
             _logger = logger;
-            this.cardLogic = new CardLogic(context,_logger);
-            
+            this.cardLogic = new CardLogic(context, _logger);
         }
 
 
@@ -30,12 +29,14 @@ namespace Stardeck.Controllers
             var cards = cardLogic.GetAll();
             if (cards == null)
             {
-                return BadRequest("Algo salió mal, inténtalo más tarde");
+                return BadRequest(KeyValuePair.Create("error", "Algo salió mal, inténtalo más tarde"));
             }
-            if (cards.Equals(0))
+
+            if (cards.Count == 0)
             {
-                return NotFound("No se encontraron cartas");
+                return NotFound(KeyValuePair.Create("error", "No se encontraron cartas"));
             }
+
             return Ok(cards);
         }
 
@@ -45,10 +46,11 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Get(string id)
         {
             var card = cardLogic.GetCard(id);
-            if (card== null)
+            if (card is null)
             {
                 return NotFound("No se encontraron cartas");
             }
+
             return Ok(card);
         }
 
@@ -60,15 +62,15 @@ namespace Stardeck.Controllers
             var cardAux = cardLogic.NewCard(card);
             if (cardAux.Equals(null))
             {
-                return BadRequest(new KeyValuePair<string,string>("error","Ya existe una carta con estos datos"));
+                return BadRequest(new KeyValuePair<string, string>("error", "Ya existe una carta con estos datos"));
             }
+
             if (cardAux == false)
             {
-                return BadRequest(new KeyValuePair<string,string>("error","Algo salió mal, inténtalo más tarde"));
+                return BadRequest(new KeyValuePair<string, string>("error", "Algo salió mal, inténtalo más tarde"));
             }
-            return Ok(new KeyValuePair<string,string>("success","Carta agregada correctamente"));
 
-
+            return Ok(new KeyValuePair<string, string>("success", "Carta agregada correctamente"));
         }
 
         // PUT api/<CardController>/5
@@ -76,12 +78,12 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Put(string id, Card nCard)
         {
             var acc = cardLogic.UpdateCard(id, nCard);
-            if (acc != null)
+            if (acc is null)
             {
                 return Ok(acc);
             }
-            return NotFound("No se encontró la carta");
 
+            return NotFound("No se encontró la carta");
         }
 
         // DELETE api/<CardController>/5
@@ -93,6 +95,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(card);
             }
+
             return NotFound("No se encontró la carta");
         }
 
@@ -101,7 +104,7 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> GetNineCards()
         {
             var cards = cardLogic.GetNineCards();
-            if (cards== null)
+            if (cards == null)
             {
                 return NotFound("No se encontraron cartas");
             }

@@ -10,22 +10,22 @@ namespace Stardeck.Logic
     {
         private readonly StardeckContext context;
         private readonly CardDb cardDB;
-        private readonly ILogger<GameController> _logger;
-        public CardLogic(StardeckContext context, ILogger<GameController> logger)
+        private readonly ILogger _logger;
+        public CardLogic(StardeckContext context, ILogger logger)
         {
             _logger = logger;
             this.context = context;
             this.cardDB=new CardDb(context);
         }
 
-        public List<Card>? GetAll()
+        public List<Card> GetAll()
         {
             List<Card>? cards = cardDB.GetAllCards();
             _logger.LogInformation("Request GetAll de cards completada");
             return cards;
         }
 
-        public Card GetCard(string id)
+        public Card? GetCard(string id)
         {
             var card = cardDB.GetCard(id);
             if (card == null)
@@ -60,7 +60,7 @@ namespace Stardeck.Logic
 
         }
 
-        public Card UpdateCard(string id, Card nCard)
+        public Card? UpdateCard(string id, Card nCard)
         {
             var card = cardDB.GetCard(id);
             if (card != null)
@@ -85,10 +85,10 @@ namespace Stardeck.Logic
         }
 
 
-        public Card DeleteCard(string id)
+        public Card? DeleteCard(string id)
         {
             var card = cardDB.DeleteCard(id);
-            if (card != null)
+            if (card is null)
             {
                 _logger.LogInformation("Request DeleteCard para {id} completada", id);
                 return card;
