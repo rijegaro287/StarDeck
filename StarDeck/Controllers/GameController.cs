@@ -73,7 +73,7 @@ namespace Stardeck.Controllers
             return NotFound();
         }
 
-        [HttpGet("getGameRoom/{id}")]
+        [HttpGet("getGameRoom/{id}/IsInGame")]
         public async Task<IActionResult> IsInGame(string id)
         {
             var ingame = await GameLogic.IsInGame(id);
