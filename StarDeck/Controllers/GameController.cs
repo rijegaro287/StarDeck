@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stardeck.Engine;
 using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -73,7 +74,7 @@ namespace Stardeck.Controllers
             return NotFound();
         }
 
-        [HttpGet("getGameRoom/{id}")]
+        [HttpGet("{id}/IsInGame")]
         public async Task<IActionResult> IsInGame(string id)
         {
             var ingame = await GameLogic.IsInGame(id);
@@ -156,8 +157,20 @@ namespace Stardeck.Controllers
             return task switch
             {
                 null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
-                false => NotFound(KeyValuePair.Create("error", "Game finished")),
+                false => NotFound(KeyValuePair.Create("Info", "Game finished")),
                 _ => Ok(KeyValuePair.Create("Turn ended", task))
+            };
+        }
+        
+        [HttpPost("{idRoom}/{idUser}/Surrender")]
+        public async Task<IActionResult> Surrender(string idRoom, string idUser)
+        {
+            bool? task = await gameLogic.Surrender(idRoom, idUser);
+            return task switch
+            {
+                null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
+                false => NotFound(KeyValuePair.Create("error", "Game already finished")),
+                _ => Ok(KeyValuePair.Create("Game Ended", task))
             };
         }
     }

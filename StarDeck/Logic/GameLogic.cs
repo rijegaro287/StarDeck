@@ -218,5 +218,16 @@ namespace Stardeck.Logic
             var account = Accounts.Find(x => x.Id == id);
             return account is null ? null : account.isplaying;
         }
+
+        public async Task<bool?> Surrender(string idRoom, string idUser)
+        {
+           var room= ActiveRooms.Find(x=> x.Roomid == idRoom);
+           if (room is null)
+           {
+               _logger.LogWarning("No se encontró ningún Jugador con {id}, en partida {idRoom}", idUser, idRoom);
+               return null;
+           }
+           return room.Surrender(idUser);
+        }
     }
 }

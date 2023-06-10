@@ -14,7 +14,7 @@ public class GameRoomModel
 
         public PlayerLogic Player2 { get; set; }
 
-        public string? Winner { get; set; }
+        public string? Winner { get; set; } = null;
 
         public long? Bet { get; set; }
 

@@ -1,9 +1,6 @@
-﻿using System.Diagnostics;
-using Microsoft.Extensions.Logging.Abstractions;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Serilog.Extensions.Logging;
-using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
@@ -55,7 +52,7 @@ namespace Stardeck.Engine
 
         internal async Task<GameRoom> TurnLoop()
         {
-            while (Turn < 8)
+            while (Turn < 8 && Winner is null)
             {
                 StartTurn();
                 //wait the 20second timer to end, changes are async so no need to check for the flag
@@ -64,7 +61,11 @@ namespace Stardeck.Engine
                 FinishTurn();
             }
 
-            CheckAndSetFinalWinner();
+            if (Winner is null)
+            {
+                CheckAndSetFinalWinner();
+            }
+
             _loop.Dispose();
             return this;
         }
@@ -229,9 +230,18 @@ namespace Stardeck.Engine
 
             AccountLogic _accountLogic = new AccountLogic(new StardeckContext(),
                 new SerilogLoggerFactory().CreateLogger(type: typeof(AccountLogic)));
+
+
             foreach (var territory in Territories)
             {
                 territory.CheckWinner();
+            }
+
+            //Means that some player surrender
+            if (Winner is not null)
+            {
+                _accountLogic.ManageEnd(Room.Bet, Winner, Winner != Player1.Id ? Player1.Id : Player2.Id);
+                return Winner;
             }
 
             var player1Win = Territories.Count(x => x.Winner == "player1");
@@ -264,7 +274,7 @@ namespace Stardeck.Engine
                 Room!.Winner = null;
                 return "Draw";
             }
-            
+
             Winner = playerWithMorePoints;
             Room!.Winner = playerWithMorePoints;
             return playerWithMorePoints;
@@ -409,6 +419,26 @@ namespace Stardeck.Engine
             }
 
             return points.player1 > points.player2 ? Player1.Id : Player2.Id;
+        }
+
+        public bool? Surrender(string idUser)
+        {
+            PlayerLogic? player;
+            
+            if (idUser == Player1.Id)
+                player = Player2;
+            else if (idUser == Player2.Id)
+                player = Player1;
+            else
+                player = null;
+            
+            if (player is null) return null;
+
+
+            Winner = player.Id;
+            Room!.Winner = player.Id;
+            Turn = 8;
+            return true;
         }
     }
 }
