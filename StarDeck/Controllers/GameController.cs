@@ -14,12 +14,12 @@ namespace Stardeck.Controllers
         private readonly StardeckContext context;
         private GameLogic gameLogic;
         private readonly ILogger<GameController> _logger;
+
         public GameController(StardeckContext context, ILogger<GameController> logger)
         {
             this.context = context;
             _logger = logger;
-            this.gameLogic = new GameLogic(context,_logger);
-
+            this.gameLogic = new GameLogic(context, _logger);
         }
 
 
@@ -44,6 +44,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(new KeyValuePair<string, bool?>(id, act));
             }
+
             return NotFound();
         }
 
@@ -56,19 +57,32 @@ namespace Stardeck.Controllers
             {
                 return Ok(rooms);
             }
-            
+
             return NotFound();
         }
 
         [HttpGet("getGameRoom/{id}")]
         public async Task<IActionResult> Get(string id)
-        {  
+        {
             var room = gameLogic.GetGameroom(id);
             if (room is not null)
             {
                 return Ok(room);
             }
+
             return NotFound();
+        }
+
+        [HttpGet("getGameRoom/{id}/IsInGame")]
+        public async Task<IActionResult> IsInGame(string id)
+        {
+            var ingame = await GameLogic.IsInGame(id);
+            if (ingame is null)
+            {
+                return Ok(KeyValuePair.Create( "Founded",ingame));
+            }
+
+            return NotFound(KeyValuePair.Create( "Error",ingame));
         }
 
         [HttpGet("getGameRoomData/{id}")]
@@ -79,6 +93,7 @@ namespace Stardeck.Controllers
             {
                 return Ok(room);
             }
+
             return NotFound();
         }
 
@@ -90,32 +105,28 @@ namespace Stardeck.Controllers
             {
                 return Ok(room);
             }
+
             return NotFound();
         }
 
         [HttpPost("getGameRoomData/{idRoom}/{idUser}/{idCard}/{indexTargetPlanet}")]
         public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, int indexTargetPlanet)
         {
-            if (indexTargetPlanet<0 & indexTargetPlanet >3)
+            if (indexTargetPlanet < 0 & indexTargetPlanet > 3)
             {
                 return BadRequest(KeyValuePair.Create("error", "Invalid index"));
             }
-            
-            var answer = await this.gameLogic.PlayCard(idRoom, idUser, idCard, indexTargetPlanet);
-            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
-            switch (answer)
-            {
-                case null:
-                    return NotFound(KeyValuePair.Create("error", "Room Game Instance not found"));
-                case 1:
-                    return Ok(KeyValuePair.Create("Played", playerData));
-                case 0:
-                    return Ok(KeyValuePair.Create("Not Played thus lack of energy", playerData));
-                case -1:
-                    return Ok(KeyValuePair.Create("Invalid ID", playerData));
-            }
 
-            return NotFound(KeyValuePair.Create("", playerData));
+            var answer = await gameLogic.PlayCard(idRoom, idUser, idCard, indexTargetPlanet);
+            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+            return answer switch
+            {
+                null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
+                1 => Ok(KeyValuePair.Create("Played", playerData)),
+                0 => BadRequest(KeyValuePair.Create("Not Played thus lack of energy", playerData)),
+                -1 => BadRequest(KeyValuePair.Create("Invalid ID", playerData)),
+                _ => NotFound(KeyValuePair.Create("", playerData))
+            };
         }
 
         [HttpGet("{idRoom}/{idUser}/initTurn")]
@@ -126,7 +137,7 @@ namespace Stardeck.Controllers
             {
                 return BadRequest(KeyValuePair.Create("error", "Player not in game"));
             }
-            
+
             //after the turn end request the player data
             var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
             //if the player data is null the game ended 10 min ago and need to request the game room not the player data

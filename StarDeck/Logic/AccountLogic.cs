@@ -4,6 +4,7 @@ using Stardeck.DbAccess;
 using Stardeck.Models;
 using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
+
 //using System.Web.Mvc;
 
 namespace Stardeck.Logic
@@ -14,13 +15,13 @@ namespace Stardeck.Logic
         private readonly AccountDb accountDB;
         private readonly AvatarDb avatarDB;
         private readonly CardDb cardDB;
-        private readonly ILogger<GameController> _logger;
+        private readonly ILogger _logger;
 
-        public AccountLogic(StardeckContext context,ILogger<GameController> logger)
+        public AccountLogic(StardeckContext context, ILogger logger)
         {
             _logger = logger;
             this.context = context;
-            this.avatarDB=new AvatarDb(context);
+            this.avatarDB = new AvatarDb(context);
             this.accountDB = new AccountDb(context);
             this.cardDB = new CardDb(context);
         }
@@ -38,45 +39,50 @@ namespace Stardeck.Logic
             var acc = accountDB.GetAccount(id);
             if (acc == null)
             {
-                _logger.LogWarning("No se encontró cuenta en GetAccount para {id}",id);
+                _logger.LogWarning("No se encontró cuenta en GetAccount para {id}", id);
                 return null;
             }
-            _logger.LogInformation("Request GetAccount para {id} completada",id);
+
+            _logger.LogInformation("Request GetAccount para {id} completada", id);
             return acc;
         }
 
         public string[] GetCards(string accountId)
         {
             var collection = accountDB.GetAccountCards(accountId);
-            if (collection== null)
+            if (collection == null)
             {
                 _logger.LogWarning("No se encontró colección en GetCards para {id}", accountId);
                 return null;
             }
+
             _logger.LogInformation("Request GetCards para {id} completada", accountId);
             return collection;
-
         }
 
         public Dictionary<string, string>? GetParameter(string id, string parameter)
         {
             Account? user = GetAccount(id);
-            if (user == null) 
+            if (user == null)
             {
                 _logger.LogWarning("No se encontró Usuario en GetParameters para {id}", id);
-                return null; 
-            }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) 
-            {
-                _logger.LogWarning("No se encontró Parámetro {parameter} en GetParameters para usuario{id}", parameter, id);
                 return null;
             }
+
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower()))
+            {
+                _logger.LogWarning("No se encontró Parámetro {parameter} en GetParameters para usuario{id}", parameter,
+                    id);
+                return null;
+            }
+
             _logger.LogInformation("Request GetParameter para {id} completada", id);
             return new Dictionary<string, string>
             {
                 [parameter.ToLower()] = user.Serverconfig[parameter.ToLower()]
             };
         }
+
         public Dictionary<string, string>? GetParameters(string id)
         {
             Account? user = GetAccount(id);
@@ -85,9 +91,11 @@ namespace Stardeck.Logic
                 _logger.LogWarning("No se encontró usuario {id} en GetParameters ", id);
                 return null;
             }
+
             _logger.LogInformation("Request GetParameters para {id} completada", id);
             return user.Serverconfig;
         }
+
         public Account? GetAccountWithFavoriteDeck(string id)
         {
             //var card = context.Cards.Where(x=> x.Id==id).Include(x=>x.Navigator);
@@ -95,6 +103,7 @@ namespace Stardeck.Logic
             _logger.LogInformation("Request GetAccountWithFavoriteDeck para {id} completada", id);
             return acc;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -129,13 +138,14 @@ namespace Stardeck.Logic
 
             accAux.generateID();
 
-            var save=accountDB.NewAccount(accAux);
+            var save = accountDB.NewAccount(accAux);
             if (save.Equals(null))
             {
                 //La cuenta ya existe
                 _logger.LogWarning("Ya existe una cuenta para {id}", acc.Id);
                 return null;
             }
+
             if (save == false)
             {
                 //fallo al guardar la cuenta
@@ -147,14 +157,14 @@ namespace Stardeck.Logic
             //var cards = context.Cards.Where(x => x.Type == 0).ToList();
             var cards = cardDB.GetCardByType(0);
             //Cards empty
-            if(cards == null) 
+            if (cards == null)
             {
                 //fallo al guardar las cartas
                 _logger.LogWarning("No se guardaron las cartas de la cuenta nueva {id}", acc.Id);
                 return -2;
-                #warning se quedaria la cuenta creada sin cartas, borrarla
+#warning se quedaria la cuenta creada sin cartas, borrarla
             }
-            
+
             var ran = new Random();
             for (int i = 0; i < 15; i++)
             {
@@ -162,9 +172,11 @@ namespace Stardeck.Logic
                 AddCardsToCollection(accAux.Id, cards[index].Id);
                 cards.RemoveAt(index);
             }
+
             _logger.LogInformation("Request NewAccount para {id} completada", acc.Id);
             return 1;
         }
+
         /// <summary>
         /// Ad a card to the player collection. If is a new player create it collection
         /// </summary>
@@ -182,15 +194,15 @@ namespace Stardeck.Logic
 
             if (collection.Collectionlist.Contains(cardId))
             {
-                _logger.LogWarning("El usuario {accountId} ya tiene la carta {cardId} en su colección", accountId,cardId);
+                _logger.LogWarning("El usuario {accountId} ya tiene la carta {cardId} en su colección", accountId,
+                    cardId);
                 return null;
             }
+
             collection.Collectionlist.Add(cardId);
             context.SaveChanges();
             _logger.LogInformation("Request AddCardsToCollection para {id} completada", accountId);
             return collection.Collection1;
-
-
         }
 
         private Collection CreateAndSaveNewCollection(string accountId)
@@ -213,6 +225,7 @@ namespace Stardeck.Logic
                 tmpresult = AddCardsToCollection(accountId, card);
                 if (tmpresult is null) continue;
             }
+
             _logger.LogInformation("Request AddCardsListToCollection para {id} completada", accountId);
             return tmpresult;
         }
@@ -220,12 +233,17 @@ namespace Stardeck.Logic
         public Dictionary<string, string>? PostParameter(string id, string parameter, string value)
         {
             Account? user = GetAccount(id);
-            if (user == null) 
+            if (user == null)
             {
                 _logger.LogWarning("no se encuentra usuario {id} para request PostParameter", id);
                 return null;
             }
-            if (user.Serverconfig.ContainsKey(parameter.ToLower())) { return null; }
+
+            if (user.Serverconfig.ContainsKey(parameter.ToLower()))
+            {
+                return null;
+            }
+
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
             _logger.LogInformation("Request PostParameter para {id} completada", id);
@@ -256,24 +274,26 @@ namespace Stardeck.Logic
                 _logger.LogInformation("Request UpdateAccount para {id} completada", id);
                 return acc;
             }
+
             _logger.LogWarning("No se encontró cuenta con {id} en UpdateAccount", id);
             return null;
-
         }
 
         public bool? SelectFavoriteDeck(string id, string idDeck)
         {
             Account? user = GetAccount(id);
-            if (user is null) 
+            if (user is null)
             {
                 _logger.LogWarning("No se encontró cuenta con {id} en SelectFavoriteDeck", id);
                 return null;
             }
+
             Deck? deck = context.Decks.Find(idDeck);
-            if (deck is null) 
+            if (deck is null)
             {
-                _logger.LogWarning("No se encontró deck con {idDeck} para el usuario {id} en SelectFavoriteDeck", idDeck,id);
-                return false; 
+                _logger.LogWarning("No se encontró deck con {idDeck} para el usuario {id} en SelectFavoriteDeck",
+                    idDeck, id);
+                return false;
             }
 
             if (deck.IdAccount == user.Id)
@@ -289,36 +309,44 @@ namespace Stardeck.Logic
                     actual.Deckid = deck.IdDeck;
                     actual.Deck = deck;
                 }
+
                 context.SaveChanges();
             }
             else
             {
-                _logger.LogWarning("El usuario asociado a {idDeck} no coincide con el usuario dado {id} en SelectFavoriteDeck", idDeck, id);
+                _logger.LogWarning(
+                    "El usuario asociado a {idDeck} no coincide con el usuario dado {id} en SelectFavoriteDeck", idDeck,
+                    id);
                 return false;
             }
-            _logger.LogInformation("Request SelectFavoriteDeck para usuario {id} y deck{idDeck} completada", id,idDeck);
+
+            _logger.LogInformation("Request SelectFavoriteDeck para usuario {id} y deck{idDeck} completada", id,
+                idDeck);
             return true;
         }
 
         public Dictionary<string, string>? PutParameter(string id, string parameter, string value)
         {
             Account? user = GetAccount(id);
-            if (user == null) 
+            if (user == null)
             {
                 _logger.LogWarning("No se encontró usuario {id} en PutParameter", id);
                 return null;
             }
-            if (!user.Serverconfig.ContainsKey(parameter.ToLower())) 
+
+            if (!user.Serverconfig.ContainsKey(parameter.ToLower()))
             {
-                _logger.LogWarning("Ya existe el parámetro {parameter} para el usuario {id} en PutParameter",parameter, id);
+                _logger.LogWarning("Ya existe el parámetro {parameter} para el usuario {id} en PutParameter", parameter,
+                    id);
                 return null;
             }
+
             user.Serverconfig[parameter.ToLower()] = value;
             context.SaveChanges();
-            _logger.LogInformation("Request PutParameter para usuario {id} y parámetro {parameter} completada", id, parameter);
+            _logger.LogInformation("Request PutParameter para usuario {id} y parámetro {parameter} completada", id,
+                parameter);
             return user.Serverconfig;
         }
-
 
 
         public Account? DeleteAccount(string id)
@@ -329,6 +357,7 @@ namespace Stardeck.Logic
                 _logger.LogInformation("Request DeleteAccount para usuario {id} completada", id);
                 return acc;
             }
+
             _logger.LogWarning("Request DeleteAccount falló para usuario {id}", id);
             return null;
         }
@@ -349,43 +378,67 @@ namespace Stardeck.Logic
                     collection.Collection1 = collection.Collection1.Where(x => x != cardId).ToArray();
                     context.SaveChanges();
 
-                    _logger.LogWarning("Request DeleteCard para usuario {id} y la carta {cardId} completada", accountId,cardId);
+                    _logger.LogWarning("Request DeleteCard para usuario {id} y la carta {cardId} completada", accountId,
+                        cardId);
                     return collection;
                 }
-                _logger.LogWarning("No se encontró la carta {cardId} en colección para el usuario {accountId} en DeleteCard", cardId,accountId);
+
+                _logger.LogWarning(
+                    "No se encontró la carta {cardId} en colección para el usuario {accountId} en DeleteCard", cardId,
+                    accountId);
                 return null;
             }
-
         }
 
-        /*
-        public string GetParam(string id,string param)
+        public void ManageEnd(long? bet, string player1Id, string player2Id)
         {
-            Account account = context.Accounts.Find(id);
-            if (account == null) 
+            var winner = GetAccount(player1Id);
+            var looser = GetAccount(player2Id);
+
+            if (winner is null || looser is null)
             {
-                return null;
+                _logger.LogWarning("No se encontró usuario {player1Id} o {player2Id} en ManageEnd", player1Id,
+                    player2Id);
+                return;
             }
-            string config = account.Config;
-            if(config.Contains(param)) 
-            { 
+
+            winner.Points += 1;
+            winner.Coins += 1;
+            if (bet is not null)
+            {
+                winner.Coins += (int)bet;
+                looser.Coins -= (int)bet;
             }
-        }*/
 
+            context.SaveChanges();
+        }
 
-        
+        public object GetRanking(bool individual,string accountId)
+        {
+            var accounts = GetAll().Select(x => new { Nickname = x.Nickname, Points = x.Points }).ToList();
+            accounts = accounts.OrderByDescending(x => x.Points).ThenBy(x => x.Nickname) .ToList();
+            if (individual)
+            {
+                int counter=1;
+                foreach(var account in accounts)
+                {
+                    var nick=GetAccount(accountId).Nickname;
+                    if (account.Nickname == nick)
+                    {
+                        return new
+                        {
+                            Position = counter,
+                            Nickname = account.Nickname,
+                            Points = account.Points,
+                        };
+                    }
+                    counter++;
+                }
+            }
+            
+            
+            return accounts;
 
-        
-
-        
-
-        
-
-        
-
-        
-
+        }
     }
 }
-
-

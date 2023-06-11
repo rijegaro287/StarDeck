@@ -65,7 +65,7 @@ public class PlayableTerritory : TerritoryModel
         player2Cards.Add(card);
     }
 
-    public void checkWinner()
+    public void CheckWinner()
     {
         var points = GetPlayersPoints();
         if (points.player1 > points.player2)

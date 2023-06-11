@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Serilog.Extensions.Logging;
 using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;
@@ -54,7 +55,7 @@ namespace Stardeck.Engine
 
         internal async Task<GameRoom> TurnLoop()
         {
-            while (Turn <= 8)
+            while (Turn < 8)
             {
                 StartTurn();
                 //wait the 20second timer to end, changes are async so no need to check for the flag
@@ -223,10 +224,14 @@ namespace Stardeck.Engine
 
         private string? CheckAndSetFinalWinner()
         {
-            AccountLogic _accountLogic = new AccountLogic(new(), new NullLogger<GameController>());
+            Player1.Account!.isplaying = false;
+            Player2.Account!.isplaying = false;
+
+            AccountLogic _accountLogic = new AccountLogic(new StardeckContext(),
+                new SerilogLoggerFactory().CreateLogger(type: typeof(AccountLogic)));
             foreach (var territory in Territories)
             {
-                territory.checkWinner();
+                territory.CheckWinner();
             }
 
             var player1Win = Territories.Count(x => x.Winner == "player1");
@@ -235,34 +240,20 @@ namespace Stardeck.Engine
             if (player1Win > player2Win)
             {
                 Winner = Player1.Id;
-                Room.Winner = Player1.Id;
-                Account winner =_accountLogic.GetAccount(Winner);
-                Account looser = _accountLogic.GetAccount(Player2.Id);
+                Room!.Winner = Player1.Id;
+                _accountLogic.ManageEnd(Room.Bet, Player1.Id, Player2.Id);
 
-                winner.Points += 1;
-                winner.Coins += 1;
-                if(Room.Bet is not null)
-                {
-                    winner.Coins += (int)Room.Bet;
-                    looser.Coins-=(int)Room.Bet;
-                }
-                
                 return Player1.Id;
             }
 
             if (player2Win > player1Win)
             {
                 Winner = Player2.Id;
-                Room.Winner = Player2.Id;
-                Account winner = _accountLogic.GetAccount(Winner);
-                Account looser = _accountLogic.GetAccount(Player1.Id);
-                winner.Points += 1;
-                winner.Coins += 1;
-                if (Room.Bet is not null)
-                {
-                    winner.Coins += (int)Room.Bet;
-                    looser.Coins -= (int)Room.Bet;
-                }
+                Room!.Winner = Player2.Id;
+
+                _accountLogic.ManageEnd(Room.Bet, Player2.Id, Player1.Id);
+
+
                 return Player2.Id;
             }
 
@@ -270,12 +261,12 @@ namespace Stardeck.Engine
             if (playerWithMorePoints is null)
             {
                 Winner = "Draw";
-                Room.Winner = null;
+                Room!.Winner = null;
                 return "Draw";
             }
-
+            
             Winner = playerWithMorePoints;
-            Room.Winner = playerWithMorePoints;
+            Room!.Winner = playerWithMorePoints;
             return playerWithMorePoints;
         }
 
@@ -293,17 +284,17 @@ namespace Stardeck.Engine
         /// <summary>
         ///  Draw a card from the player deck
         /// </summary>
-        /// <param name="playerModel"></param>
-        private void DrawCard(Player playerModel)
+        /// <param name="playerLogicModel"></param>
+        private void DrawCard(PlayerLogic playerLogicModel)
         {
-            var drawed = playerModel.DrawCard();
+            var drawed = playerLogicModel.DrawCard();
             if (drawed is null)
             {
-                Gamelog?.LogDrawError(playerModel.Id);
+                Gamelog?.LogDrawError(playerLogicModel.Id);
             }
             else
             {
-                Gamelog?.LogDraw(playerModel.Id, drawed.Id);
+                Gamelog?.LogDraw(playerLogicModel.Id, drawed.Id);
             }
         }
 
@@ -355,7 +346,7 @@ namespace Stardeck.Engine
         /// </summary>
         /// <param name="playerId"></param>
         /// <returns>player reference or null if not found</returns>
-        public Player? FindPlayerOnGame(string playerId)
+        public PlayerLogic? FindPlayerOnGame(string playerId)
         {
             if (playerId == Player1.Id)
             {

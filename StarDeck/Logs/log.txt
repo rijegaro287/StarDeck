@@ -9013,3 +9013,201 @@ System.Threading.Tasks.TaskCanceledException: A task was canceled.
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-08 17:02:29.545 -06:00 [1] [INF] Inited
+2023-06-08 17:02:30.109 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:02:30.114 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:02:35.669 -06:00 [13] [INF] [0HMR8EHNT0A25] <null>HTTP GET /favicon.ico responded 200 in 40.1495 ms
+2023-06-08 17:02:40.366 -06:00 [13] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:02:40.377 -06:00 [7] [INF] [0HMR8EHNT0A25] <null>HTTP GET /swagger/index.html responded 200 in 233.9225 ms
+2023-06-08 17:02:40.478 -06:00 [3] [INF] [0HMR8EHNT0A25] <null>HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 21.6790 ms
+2023-06-08 17:02:40.478 -06:00 [21] [INF] [0HMR8EHNT0A25] <null>HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 8.7763 ms
+2023-06-08 17:02:40.497 -06:00 [21] [INF] [0HMR8EHNT0A25] <null>HTTP GET /swagger/swagger-ui.css responded 200 in 44.5095 ms
+2023-06-08 17:02:40.620 -06:00 [5] [INF] [0HMR8EHNT0A25] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 0.2285 ms
+2023-06-08 17:02:40.726 -06:00 [11] [ERR] [0HMR8EHNT0A25] <null>HTTP GET /swagger/v1/swagger.json responded 500 in 31.0548 ms
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET Account" for actions - Stardeck.Controllers.AccountController.GetRanking (Stardeck),Stardeck.Controllers.AccountController.Get (Stardeck). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-06-08 17:02:40.804 -06:00 [11] [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET Account" for actions - Stardeck.Controllers.AccountController.GetRanking (Stardeck),Stardeck.Controllers.AccountController.Get (Stardeck). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-08 17:02:43.025 -06:00 [13] [INF] [0HMR8EHNT0A25] <null>HTTP GET /favicon.ico responded 200 in 1.6440 ms
+2023-06-08 17:02:47.815 -06:00 [20] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:02:55.200 -06:00 [3] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:03:02.628 -06:00 [20] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:04:58.960 -06:00 [1] [INF] Inited
+2023-06-08 17:04:59.270 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:04:59.275 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:05:05.139 -06:00 [13] [INF] [0HMR8EJ48PM22] <null>HTTP GET /swagger/index.html responded 200 in 212.2446 ms
+2023-06-08 17:05:05.255 -06:00 [21] [INF] [0HMR8EJ48PM22] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 10.5209 ms
+2023-06-08 17:05:05.445 -06:00 [21] [ERR] [0HMR8EJ48PM22] <null>HTTP GET /swagger/v1/swagger.json responded 500 in 128.0924 ms
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Game/getGameRoom/{id}" for actions - Stardeck.Controllers.GameController.Get (Stardeck),Stardeck.Controllers.GameController.IsInGame (Stardeck). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-06-08 17:05:05.479 -06:00 [21] [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Game/getGameRoom/{id}" for actions - Stardeck.Controllers.GameController.Get (Stardeck),Stardeck.Controllers.GameController.IsInGame (Stardeck). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-08 17:05:09.115 -06:00 [21] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:06:44.375 -06:00 [1] [INF] Inited
+2023-06-08 17:06:44.676 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:06:44.686 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:07:18.527 -06:00 [1] [INF] Inited
+2023-06-08 17:07:18.864 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:07:18.870 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:07:28.589 -06:00 [11] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:07:28.886 -06:00 [6] [INF] [0HMR8EKDRSSFA] <null>HTTP GET /swagger/index.html responded 200 in 188.2521 ms
+2023-06-08 17:07:29.003 -06:00 [11] [INF] [0HMR8EKDRSSFA] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 6.0663 ms
+2023-06-08 17:07:29.164 -06:00 [8] [ERR] [0HMR8EKDRSSFA] <null>HTTP GET /swagger/v1/swagger.json responded 500 in 98.1893 ms
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Game/getGameRoom/{id}" for actions - Stardeck.Controllers.GameController.Get (Stardeck),Stardeck.Controllers.GameController.IsInGame (Stardeck). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-06-08 17:07:29.200 -06:00 [8] [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Game/getGameRoom/{id}" for actions - Stardeck.Controllers.GameController.Get (Stardeck),Stardeck.Controllers.GameController.IsInGame (Stardeck). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-08 17:09:08.688 -06:00 [1] [INF] Inited
+2023-06-08 17:09:08.991 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:09:09.000 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:09:12.305 -06:00 [7] [INF] [0HMR8ELEMPHP8] <null>HTTP GET /swagger/index.html responded 200 in 215.2660 ms
+2023-06-08 17:09:12.635 -06:00 [10] [INF] [0HMR8ELEMPHP8] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 149.9701 ms
+2023-06-08 17:09:18.793 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:09:26.246 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:09:26.488 -06:00 [15] [INF] Request GetAll de Accounts completada
+2023-06-08 17:09:26.514 -06:00 [15] [INF] [0HMR8ELEMPHP8] <null>HTTP GET /Account/Ranking responded 200 in 3800.3279 ms
+2023-06-08 17:09:33.653 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:09:41.087 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:14:49.856 -06:00 [1] [INF] Inited
+2023-06-08 17:14:50.204 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:14:50.209 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:14:55.251 -06:00 [13] [INF] [0HMR8EOKD4B4L] <null>HTTP GET /swagger/index.html responded 200 in 284.4854 ms
+2023-06-08 17:14:55.385 -06:00 [10] [INF] [0HMR8EOKD4B4L] <null>HTTP GET /favicon.ico responded 200 in 29.8954 ms
+2023-06-08 17:14:55.407 -06:00 [15] [INF] [0HMR8EOKD4B4L] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 6.5611 ms
+2023-06-08 17:14:55.641 -06:00 [12] [INF] [0HMR8EOKD4B4L] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 163.7979 ms
+2023-06-08 17:15:00.119 -06:00 [21] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:15:01.568 -06:00 [11] [INF] Request GetAll de Accounts completada
+2023-06-08 17:15:01.597 -06:00 [11] [INF] [0HMR8EOKD4B4L] <null>HTTP GET /Account/Ranking responded 200 in 3154.0515 ms
+2023-06-08 17:15:07.575 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:15:15.023 -06:00 [21] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:15:22.459 -06:00 [21] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:15:47.845 -06:00 [1] [INF] Inited
+2023-06-08 17:15:48.149 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:15:48.158 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:15:56.753 -06:00 [13] [INF] Request GetAll de Accounts completada
+2023-06-08 17:15:56.812 -06:00 [13] [INF] [0HMR8EP5LEOQF] <null>HTTP GET /Account/Ranking responded 200 in 3503.8448 ms
+2023-06-08 17:15:58.076 -06:00 [14] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:16:05.553 -06:00 [5] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:16:12.682 -06:00 [13] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:16:20.099 -06:00 [14] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:16:32.914 -06:00 [1] [INF] Inited
+2023-06-08 17:16:33.326 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 17:16:33.332 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 17:16:41.717 -06:00 [11] [INF] Request GetAll de Accounts completada
+2023-06-08 17:16:41.776 -06:00 [11] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /Account/Ranking responded 200 in 4813.5672 ms
+2023-06-08 17:16:43.217 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:16:50.547 -06:00 [11] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:16:57.961 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:05.333 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:05.991 -06:00 [6] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /swagger/index.html responded 200 in 158.7322 ms
+2023-06-08 17:17:06.105 -06:00 [11] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 6.1910 ms
+2023-06-08 17:17:06.299 -06:00 [16] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 130.1966 ms
+2023-06-08 17:17:09.062 -06:00 [11] [INF] Request GetAll de Accounts completada
+2023-06-08 17:17:09.069 -06:00 [11] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /Account/Ranking responded 200 in 133.1577 ms
+2023-06-08 17:17:12.795 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:20.224 -06:00 [12] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:27.687 -06:00 [5] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:32.904 -06:00 [15] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /swagger/index.html responded 200 in 8.7922 ms
+2023-06-08 17:17:32.994 -06:00 [5] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 0.9170 ms
+2023-06-08 17:17:33.073 -06:00 [5] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 9.1981 ms
+2023-06-08 17:17:35.057 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:38.522 -06:00 [12] [INF] Request GetAll de Accounts completada
+2023-06-08 17:17:38.526 -06:00 [12] [INF] [0HMR8EPJ49T9Q] <null>HTTP GET /Account/Ranking responded 200 in 214.6275 ms
+2023-06-08 17:17:42.539 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 17:17:49.951 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:11:06.026 -06:00 [1] [INF] Inited
+2023-06-08 18:11:06.343 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 18:11:06.348 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 18:11:16.573 -06:00 [12] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:11:16.716 -06:00 [14] [WRN] No se encontró cuenta en GetAccount para Ranking
+2023-06-08 18:11:16.744 -06:00 [14] [INF] [0HMR8FO2L3MAB] <null>HTTP GET /Account/Ranking responded 404 in 3620.8665 ms
+2023-06-08 18:11:20.617 -06:00 [6] [INF] [0HMR8FO2L3MAB] <null>HTTP GET /swagger/index.html responded 200 in 200.3422 ms
+2023-06-08 18:11:20.737 -06:00 [12] [INF] [0HMR8FO2L3MAB] <null>HTTP GET /swagger/favicon-32x32.png responded 200 in 9.8080 ms
+2023-06-08 18:11:20.939 -06:00 [12] [INF] [0HMR8FO2L3MAB] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 133.1085 ms
+2023-06-08 18:11:23.991 -06:00 [21] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:11:31.024 -06:00 [20] [INF] Request GetAll de Accounts completada
+2023-06-08 18:11:31.040 -06:00 [20] [INF] [0HMR8FO2L3MAB] <null>HTTP GET /Account/Ranking/false/sdfsdf responded 200 in 370.4379 ms
+2023-06-08 18:11:31.433 -06:00 [20] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:11:38.880 -06:00 [20] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:11:41.101 -06:00 [21] [INF] Request GetAll de Accounts completada
+2023-06-08 18:11:41.198 -06:00 [21] [WRN] No se encontró cuenta en GetAccount para Joely
+2023-06-08 18:12:20.308 -06:00 [1] [INF] Inited
+2023-06-08 18:12:20.715 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 18:12:20.720 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 18:12:28.681 -06:00 [9] [INF] Request GetAll de Accounts completada
+2023-06-08 18:12:28.770 -06:00 [9] [INF] [0HMR8FOOQDUMQ] <null>HTTP GET /Account responded 200 in 3795.5280 ms
+2023-06-08 18:12:30.961 -06:00 [9] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:12:31.941 -06:00 [5] [INF] Request GetAll de Accounts completada
+2023-06-08 18:12:31.947 -06:00 [5] [INF] [0HMR8FOOQDUMQ] <null>HTTP GET /Account/Ranking/false/Joely responded 200 in 143.3582 ms
+2023-06-08 18:12:38.404 -06:00 [14] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:12:45.807 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:12:52.938 -06:00 [11] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:00.102 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:07.537 -06:00 [14] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:14.972 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:22.384 -06:00 [3] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:29.817 -06:00 [3] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:37.216 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:44.610 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:47.042 -06:00 [14] [INF] Request GetAll de Accounts completada
+2023-06-08 18:13:47.051 -06:00 [14] [INF] Request GetAccount para U-R3CWXQHYMGMW completada
+2023-06-08 18:13:47.057 -06:00 [14] [INF] [0HMR8FOOQDUMQ] <null>HTTP GET /Account/Ranking/true/U-R3CWXQHYMGMW responded 200 in 189.0628 ms
+2023-06-08 18:13:51.980 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:13:59.348 -06:00 [15] [INF] Request GetAll de Accounts completada
+2023-06-08 18:13:59.349 -06:00 [15] [INF] [0HMR8FOOQDUMQ] <null>HTTP GET /Account/Ranking/false/U-R3CWXQHYMGMW responded 200 in 93.5508 ms
+2023-06-08 18:13:59.427 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:14:20.928 -06:00 [14] [INF] Request GetAll de Accounts completada
+2023-06-08 18:14:20.930 -06:00 [14] [INF] Request GetAccount para U-fada7a653fc3 completada
+2023-06-08 18:14:20.931 -06:00 [14] [INF] Request GetAccount para U-fada7a653fc3 completada
+2023-06-08 18:14:20.933 -06:00 [14] [INF] [0HMR8FOOQDUMQ] <null>HTTP GET /Account/Ranking/true/U-fada7a653fc3 responded 200 in 98.9327 ms
+2023-06-08 18:37:09.297 -06:00 [1] [INF] Inited
+2023-06-08 18:37:09.646 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-08 18:37:09.652 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-08 18:37:12.941 -06:00 [12] [INF] Request GetAll de Accounts completada
+2023-06-08 18:37:13.002 -06:00 [12] [INF] [0HMR8G6KEJKVA] <null>HTTP GET /Account/Ranking/false/+ responded 200 in 3172.3539 ms
+2023-06-08 18:37:19.311 -06:00 [8] [INF] Request GetAll de Accounts completada
+2023-06-08 18:37:19.313 -06:00 [8] [INF] [0HMR8G6KEJKVA] <null>HTTP GET /Account/Ranking/false/a responded 200 in 91.0876 ms
+2023-06-08 18:37:19.518 -06:00 [20] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-08 18:37:26.965 -06:00 [19] [ERR] Couldn't start the SPA development server with command 'npm start'.

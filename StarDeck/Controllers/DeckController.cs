@@ -13,9 +13,9 @@ namespace Stardeck.Controllers
     {
 
         private DeckLogic deckLogic;
-        private readonly ILogger<GameController> _logger;
+        private readonly ILogger _logger;
 
-        public DeckController(StardeckContext context, ILogger<GameController> logger)
+        public DeckController(StardeckContext context, ILogger<DeckController> logger)
         {
             _logger = logger;
             this.deckLogic = new DeckLogic(context,_logger);

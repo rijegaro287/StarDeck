@@ -14,13 +14,30 @@ namespace Stardeck.Controllers
     public class AccountController : ControllerBase
     {
         private readonly AccountLogic accountLogic;
-        private readonly ILogger<GameController> _logger;
+        private readonly ILogger _logger;
 
-        public AccountController(StardeckContext context, ILogger<GameController> logger)
+        public AccountController(StardeckContext context, ILogger<AccountController> logger)
         {
             _logger = logger;
             this.accountLogic = new AccountLogic(context, _logger);
             
+        }
+
+        [HttpGet("Ranking/{individual}/{accountId}")]
+        // GET: api/<AccountController>/Ranking
+        public async Task<IActionResult> GetRanking(bool individual, string accountId)
+        {
+            var accounts = accountLogic.GetRanking(individual, accountId);
+            if (accounts == null)
+            {
+                return NotFound(new KeyValuePair<string, string>("error", "No se encontraron cuentas"));
+            }
+
+            return Ok(accounts);
+
+            //accounts.Sort((a, b) => a.Points.CompareTo(b.Points));
+            return Ok(accounts);
+
         }
 
         // GET: api/<AccountController>
