@@ -46,6 +46,9 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
 
 import { GameMainComponent } from './Components/Game/game-main/game-main.component';
 import { GameCardComponent } from './Components/Game/game-card/game-card.component';
+import {RankingComponent} from "./Components/User/ranking/ranking.component";
+import {CardInformationComponent} from "./Components/Generic/card-information/card-information.component";
+import {MatTableModule} from "@angular/material/table";
 
 
 @NgModule({
@@ -72,7 +75,9 @@ import { GameCardComponent } from './Components/Game/game-card/game-card.compone
     DeckListComponent,
     GameMainComponent,
     HomeComponent,
-    GameCardComponent
+    GameCardComponent,
+    RankingComponent,
+    CardInformationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -103,12 +108,16 @@ import { GameCardComponent } from './Components/Game/game-card/game-card.compone
         children: [
           { path: '', component: HomeComponent },
           { path: 'decks', component: DeckListComponent },
+          { path: 'ranking', component: RankingComponent },
           { path: 'battle/select-deck', component: SelectDeckComponent },
           { path: 'battle/search-opponent', component: SearchOpponentComponent }
         ]
       },
       {
         path: "game", component: GameMainComponent
+      },
+      {
+        path: "cardI", component: CardInformationComponent
       }
 
     ]),
@@ -124,7 +133,8 @@ import { GameCardComponent } from './Components/Game/game-card/game-card.compone
     MatCardModule,
     MatTabsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

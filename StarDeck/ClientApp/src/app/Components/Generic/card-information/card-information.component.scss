@@ -20,18 +20,22 @@
 }
 
 .card-list-grid {
-  @include card-list-grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-content: center;
+  padding: 20px;
 }
 
 .energy,
 .battle-points {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   color: $text;
   gap: 1.4rem;
   width: 50%;
+  padding: 10px;
 
   i {
     font-size: 2.8rem;
@@ -47,10 +51,14 @@
 
 .battle-points i {
   color: $warning;
+
 }
 
-.borde {
-  width: 10%;
+.borde1 {
+  width: 15%;
   height: 5px;
-  border: 1px solid #000;
+}
+
+.borde2 {
+  padding: 5px;
 }

@@ -1,6 +1,15 @@
 <div class="main-content">
   <div class="deck-list">
-    <h1>Lista de escuadrones</h1>
+
+    <div class="title">
+      <h1>Lista de escuadrones</h1>
+      <span> <button class="info-button" mat-icon-button color="warn" (click)="cardInformation()">
+        <i class="bi bi-patch-question-fill"></i>
+      </button> </span>
+
+    </div>
+
+
 
     <button class="add-button" mat-raised-button color="primary" [disabled]="creatingDeck || loadingDecks"
       (click)="onCreateClicked()">
