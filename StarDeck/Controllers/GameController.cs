@@ -74,6 +74,7 @@ namespace Stardeck.Controllers
             return NotFound();
         }
 
+
         [HttpGet("{id}/IsInGame")]
         public async Task<IActionResult> IsInGame(string id)
         {
