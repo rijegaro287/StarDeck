@@ -10602,3 +10602,835 @@ System.InvalidOperationException: A second operation was started on this context
 2023-06-15 20:51:22.688 -06:00 [53] [INF] [0HMRE1UVUH24J] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4181 ms
 2023-06-15 20:51:30.807 -06:00 [49] [INF] [0HMRE1UVUH24J] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3794 ms
 2023-06-15 20:51:31.864 -06:00 [49] [INF] [0HMRE1UVUH24L] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1.1237 ms
+2023-06-15 21:43:10.059 -06:00 [1] [INF] Inited
+2023-06-15 21:43:13.562 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-15 21:43:13.606 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-15 21:44:30.108 -06:00 [7] [INF] [0HMRE3F8MRF14] <null>HTTP GET /api/Parameters/CardsType responded 200 in 671.1303 ms
+2023-06-15 21:44:32.135 -06:00 [7] [INF] [0HMRE3F8MRF15] <null>HTTP GET /swagger/index.html responded 200 in 80.8900 ms
+2023-06-15 21:44:32.233 -06:00 [7] [INF] [0HMRE3F8MRF15] <null>HTTP GET /swagger/swagger-ui.css responded 200 in 9.5451 ms
+2023-06-15 21:44:32.405 -06:00 [13] [INF] [0HMRE3F8MRF15] <null>HTTP GET /swagger/favicon-16x16.png responded 200 in 0.4973 ms
+2023-06-15 21:44:32.651 -06:00 [7] [INF] [0HMRE3F8MRF15] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 163.2601 ms
+2023-06-15 21:46:09.841 -06:00 [14] [INF] [0HMRE3F8MRF14] <null>HTTP OPTIONS /login/Signin responded 204 in 8.5308 ms
+2023-06-15 21:46:14.120 -06:00 [7] [INF] [0HMRE3F8MRF14] <null>HTTP PUT /login/Signin responded 200 in 4266.6170 ms
+2023-06-15 21:46:14.424 -06:00 [7] [INF] [0HMRE3F8MRF14] <null>HTTP GET /api/Parameters/CardsType responded 200 in 5.3400 ms
+2023-06-15 21:55:11.189 -06:00 [29] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5600 ms
+2023-06-15 21:55:19.205 -06:00 [29] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5869 ms
+2023-06-15 21:55:51.369 -06:00 [34] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.7486 ms
+2023-06-15 21:56:07.564 -06:00 [33] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5652 ms
+2023-06-15 21:56:15.055 -06:00 [29] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.7367 ms
+2023-06-15 21:56:17.037 -06:00 [32] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5570 ms
+2023-06-15 21:56:18.538 -06:00 [34] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:56:18.553 -06:00 [34] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 1243.8721 ms
+2023-06-15 21:56:21.230 -06:00 [30] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:56:21.240 -06:00 [30] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 257.3839 ms
+2023-06-15 21:56:21.463 -06:00 [21] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:56:21.493 -06:00 [21] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 235.7251 ms
+2023-06-15 21:56:21.599 -06:00 [21] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:56:21.600 -06:00 [21] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 95.8849 ms
+2023-06-15 21:56:21.694 -06:00 [21] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:56:21.694 -06:00 [21] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 85.5496 ms
+2023-06-15 21:56:21.783 -06:00 [37] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:56:21.785 -06:00 [37] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 85.7778 ms
+2023-06-15 21:56:21.902 -06:00 [21] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:56:21.904 -06:00 [21] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 94.5548 ms
+2023-06-15 21:56:22.008 -06:00 [34] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:56:22.009 -06:00 [34] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 86.0497 ms
+2023-06-15 21:56:22.125 -06:00 [33] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:56:22.126 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 108.0518 ms
+2023-06-15 21:56:22.221 -06:00 [30] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:56:22.222 -06:00 [30] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 88.8213 ms
+2023-06-15 21:56:22.312 -06:00 [30] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:56:22.313 -06:00 [30] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 84.2674 ms
+2023-06-15 21:56:22.406 -06:00 [30] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:56:22.407 -06:00 [30] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 83.7416 ms
+2023-06-15 21:56:22.501 -06:00 [33] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:56:22.502 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 85.7804 ms
+2023-06-15 21:56:22.607 -06:00 [37] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:56:22.612 -06:00 [37] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 90.7798 ms
+2023-06-15 21:56:22.719 -06:00 [37] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:56:22.720 -06:00 [37] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.9878 ms
+2023-06-15 21:56:22.808 -06:00 [37] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:56:22.809 -06:00 [37] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 81.7636 ms
+2023-06-15 21:56:22.897 -06:00 [37] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:56:22.899 -06:00 [37] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 83.5298 ms
+2023-06-15 21:56:22.988 -06:00 [37] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:56:22.989 -06:00 [37] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 83.3584 ms
+2023-06-15 21:56:23.078 -06:00 [33] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:56:23.082 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 87.5906 ms
+2023-06-15 21:56:23.191 -06:00 [30] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:56:23.192 -06:00 [30] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 87.3206 ms
+2023-06-15 21:57:00.064 -06:00 [39] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8165 ms
+2023-06-15 21:57:00.341 -06:00 [42] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:57:00.342 -06:00 [42] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 84.8967 ms
+2023-06-15 21:57:01.911 -06:00 [30] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6208 ms
+2023-06-15 21:57:46.244 -06:00 [33] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4628 ms
+2023-06-15 21:57:46.491 -06:00 [42] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:57:46.492 -06:00 [42] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 86.8141 ms
+2023-06-15 21:57:48.278 -06:00 [35] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:57:48.280 -06:00 [35] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 93.1787 ms
+2023-06-15 21:57:48.390 -06:00 [42] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:57:48.391 -06:00 [42] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 86.0953 ms
+2023-06-15 21:57:48.484 -06:00 [33] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:57:48.490 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 91.2313 ms
+2023-06-15 21:57:48.587 -06:00 [46] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:57:48.589 -06:00 [46] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 92.0358 ms
+2023-06-15 21:57:48.724 -06:00 [46] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:57:48.725 -06:00 [46] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 97.7664 ms
+2023-06-15 21:57:48.840 -06:00 [33] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:57:48.842 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 86.1017 ms
+2023-06-15 21:57:48.969 -06:00 [35] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:57:48.970 -06:00 [35] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 90.9644 ms
+2023-06-15 21:57:49.061 -06:00 [42] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:57:49.062 -06:00 [42] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 81.8352 ms
+2023-06-15 21:57:49.158 -06:00 [33] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:57:49.158 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 85.3479 ms
+2023-06-15 21:57:49.250 -06:00 [33] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:57:49.251 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 86.7248 ms
+2023-06-15 21:57:49.342 -06:00 [42] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:57:49.343 -06:00 [42] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 82.2825 ms
+2023-06-15 21:57:49.433 -06:00 [44] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:57:49.435 -06:00 [44] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 84.5773 ms
+2023-06-15 21:57:49.527 -06:00 [33] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:57:49.527 -06:00 [33] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 83.1125 ms
+2023-06-15 21:57:49.619 -06:00 [35] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:57:49.620 -06:00 [35] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.7465 ms
+2023-06-15 21:57:49.709 -06:00 [42] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:57:49.710 -06:00 [42] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 82.2149 ms
+2023-06-15 21:57:49.811 -06:00 [47] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:57:49.811 -06:00 [47] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 85.7228 ms
+2023-06-15 21:57:49.910 -06:00 [45] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:57:49.911 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 83.9671 ms
+2023-06-15 21:57:50.003 -06:00 [35] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:57:50.004 -06:00 [35] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 81.5351 ms
+2023-06-15 21:57:50.094 -06:00 [45] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:57:50.096 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 85.5116 ms
+2023-06-15 21:58:38.226 -06:00 [44] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3028 ms
+2023-06-15 21:58:38.455 -06:00 [45] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:58:38.472 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 98.1293 ms
+2023-06-15 21:58:40.287 -06:00 [45] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:58:40.288 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 91.3387 ms
+2023-06-15 21:58:40.388 -06:00 [45] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:58:40.389 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 85.1355 ms
+2023-06-15 21:58:40.485 -06:00 [49] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:58:40.486 -06:00 [49] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 83.9453 ms
+2023-06-15 21:58:40.584 -06:00 [44] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:58:40.586 -06:00 [44] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 84.9657 ms
+2023-06-15 21:58:40.690 -06:00 [50] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:58:40.694 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 89.3951 ms
+2023-06-15 21:58:40.800 -06:00 [43] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:58:40.804 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 89.9667 ms
+2023-06-15 21:58:40.906 -06:00 [43] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:58:40.907 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 87.2873 ms
+2023-06-15 21:58:41.016 -06:00 [44] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:58:41.017 -06:00 [44] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 90.3472 ms
+2023-06-15 21:58:41.128 -06:00 [44] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:58:41.132 -06:00 [44] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 90.4564 ms
+2023-06-15 21:58:41.238 -06:00 [51] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:58:41.239 -06:00 [51] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 87.8714 ms
+2023-06-15 21:58:41.334 -06:00 [49] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:58:41.335 -06:00 [49] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 84.9550 ms
+2023-06-15 21:58:41.430 -06:00 [53] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:58:41.432 -06:00 [53] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 86.0635 ms
+2023-06-15 21:58:41.559 -06:00 [53] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:58:41.560 -06:00 [53] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 90.9242 ms
+2023-06-15 21:58:41.672 -06:00 [43] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:58:41.674 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 89.6774 ms
+2023-06-15 21:58:41.792 -06:00 [51] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:58:41.793 -06:00 [51] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 87.1878 ms
+2023-06-15 21:58:41.886 -06:00 [51] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:58:41.888 -06:00 [51] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 84.9703 ms
+2023-06-15 21:58:41.990 -06:00 [52] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:58:41.994 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 90.5571 ms
+2023-06-15 21:58:42.117 -06:00 [53] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:58:42.119 -06:00 [53] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 88.6748 ms
+2023-06-15 21:58:42.242 -06:00 [45] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:58:42.244 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 86.4431 ms
+2023-06-15 21:58:55.487 -06:00 [52] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5786 ms
+2023-06-15 21:58:55.710 -06:00 [43] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:58:55.711 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 84.4465 ms
+2023-06-15 21:59:01.368 -06:00 [43] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:59:01.368 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 93.3964 ms
+2023-06-15 21:59:01.458 -06:00 [49] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:59:01.458 -06:00 [49] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 82.9224 ms
+2023-06-15 21:59:01.555 -06:00 [49] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:59:01.556 -06:00 [49] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 85.0796 ms
+2023-06-15 21:59:01.658 -06:00 [45] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:59:01.659 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 82.1394 ms
+2023-06-15 21:59:01.746 -06:00 [52] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:59:01.746 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 81.7413 ms
+2023-06-15 21:59:01.842 -06:00 [43] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:59:01.843 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 84.9000 ms
+2023-06-15 21:59:01.943 -06:00 [43] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:59:01.944 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 85.0173 ms
+2023-06-15 21:59:02.048 -06:00 [50] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:59:02.049 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 85.1154 ms
+2023-06-15 21:59:02.147 -06:00 [52] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:59:02.148 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 85.6708 ms
+2023-06-15 21:59:02.256 -06:00 [50] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:59:02.257 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 88.3732 ms
+2023-06-15 21:59:02.352 -06:00 [52] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:59:02.354 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 85.7771 ms
+2023-06-15 21:59:02.478 -06:00 [54] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:59:02.479 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 87.6503 ms
+2023-06-15 21:59:02.571 -06:00 [54] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:59:02.571 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 83.5180 ms
+2023-06-15 21:59:02.675 -06:00 [52] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:59:02.678 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 89.6080 ms
+2023-06-15 21:59:02.787 -06:00 [48] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:59:02.790 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 93.1039 ms
+2023-06-15 21:59:02.926 -06:00 [52] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:59:02.926 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 104.2055 ms
+2023-06-15 21:59:03.025 -06:00 [45] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:59:03.025 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 88.2442 ms
+2023-06-15 21:59:03.117 -06:00 [45] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:59:03.118 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 85.9314 ms
+2023-06-15 21:59:03.223 -06:00 [45] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:59:03.224 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 87.1328 ms
+2023-06-15 21:59:09.128 -06:00 [54] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4108 ms
+2023-06-15 21:59:09.455 -06:00 [54] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:59:09.456 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 82.8864 ms
+2023-06-15 21:59:11.653 -06:00 [54] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:59:11.655 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 87.4496 ms
+2023-06-15 21:59:11.745 -06:00 [48] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:59:11.745 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 83.9872 ms
+2023-06-15 21:59:11.836 -06:00 [50] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:59:11.836 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 82.3598 ms
+2023-06-15 21:59:11.928 -06:00 [50] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:59:11.928 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 81.2823 ms
+2023-06-15 21:59:12.022 -06:00 [45] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:59:12.023 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 82.8771 ms
+2023-06-15 21:59:12.115 -06:00 [48] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:59:12.115 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 81.7678 ms
+2023-06-15 21:59:12.206 -06:00 [54] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:59:12.207 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 84.6873 ms
+2023-06-15 21:59:12.300 -06:00 [48] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:59:12.301 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 83.6961 ms
+2023-06-15 21:59:12.404 -06:00 [45] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:59:12.405 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 85.4185 ms
+2023-06-15 21:59:12.513 -06:00 [45] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:59:12.515 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 90.1471 ms
+2023-06-15 21:59:12.620 -06:00 [52] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:59:12.622 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 88.4994 ms
+2023-06-15 21:59:12.723 -06:00 [48] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:59:12.724 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 85.6006 ms
+2023-06-15 21:59:12.812 -06:00 [43] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:59:12.812 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 81.7813 ms
+2023-06-15 21:59:12.903 -06:00 [45] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:59:12.904 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.8775 ms
+2023-06-15 21:59:13.010 -06:00 [43] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:59:13.012 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 87.6802 ms
+2023-06-15 21:59:13.131 -06:00 [54] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:59:13.132 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 86.3923 ms
+2023-06-15 21:59:13.221 -06:00 [52] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:59:13.222 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 82.5876 ms
+2023-06-15 21:59:13.329 -06:00 [43] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:59:13.330 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 92.3537 ms
+2023-06-15 21:59:13.443 -06:00 [43] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:59:13.445 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 97.3370 ms
+2023-06-15 21:59:19.271 -06:00 [52] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3562 ms
+2023-06-15 21:59:19.484 -06:00 [43] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:59:19.485 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 81.4426 ms
+2023-06-15 21:59:26.019 -06:00 [52] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:59:26.021 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 90.9393 ms
+2023-06-15 21:59:26.113 -06:00 [45] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:59:26.114 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 84.2393 ms
+2023-06-15 21:59:26.207 -06:00 [45] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:59:26.208 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 84.1866 ms
+2023-06-15 21:59:26.302 -06:00 [45] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:59:26.303 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 82.8564 ms
+2023-06-15 21:59:26.395 -06:00 [52] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:59:26.397 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 85.3247 ms
+2023-06-15 21:59:26.504 -06:00 [54] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:59:26.505 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 87.7058 ms
+2023-06-15 21:59:26.602 -06:00 [54] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:59:26.603 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 84.4166 ms
+2023-06-15 21:59:26.723 -06:00 [48] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:59:26.724 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 87.2351 ms
+2023-06-15 21:59:26.815 -06:00 [48] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:59:26.816 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 82.7106 ms
+2023-06-15 21:59:26.911 -06:00 [48] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:59:26.912 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 85.5328 ms
+2023-06-15 21:59:27.012 -06:00 [48] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:59:27.014 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 87.3714 ms
+2023-06-15 21:59:27.128 -06:00 [48] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:59:27.129 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 92.3646 ms
+2023-06-15 21:59:27.220 -06:00 [45] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:59:27.222 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 85.8170 ms
+2023-06-15 21:59:27.340 -06:00 [45] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:59:27.340 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 88.2209 ms
+2023-06-15 21:59:27.438 -06:00 [48] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:59:27.439 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 83.6296 ms
+2023-06-15 21:59:27.537 -06:00 [54] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:59:27.539 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 84.6249 ms
+2023-06-15 21:59:27.647 -06:00 [52] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:59:27.652 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 91.7616 ms
+2023-06-15 21:59:27.760 -06:00 [52] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:59:27.762 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 90.1818 ms
+2023-06-15 21:59:27.859 -06:00 [50] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:59:27.860 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 84.6529 ms
+2023-06-15 21:59:37.434 -06:00 [54] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5527 ms
+2023-06-15 21:59:37.721 -06:00 [45] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 21:59:37.722 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 81.6813 ms
+2023-06-15 21:59:44.494 -06:00 [48] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 21:59:44.501 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 99.8654 ms
+2023-06-15 21:59:44.615 -06:00 [54] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 21:59:44.618 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 87.2778 ms
+2023-06-15 21:59:44.709 -06:00 [50] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 21:59:44.709 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 82.7686 ms
+2023-06-15 21:59:44.801 -06:00 [52] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 21:59:44.801 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 84.6255 ms
+2023-06-15 21:59:44.893 -06:00 [43] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 21:59:44.895 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 85.3246 ms
+2023-06-15 21:59:45.001 -06:00 [43] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 21:59:45.002 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 86.4066 ms
+2023-06-15 21:59:45.105 -06:00 [54] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 21:59:45.106 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 84.9627 ms
+2023-06-15 21:59:45.203 -06:00 [50] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 21:59:45.205 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 86.2860 ms
+2023-06-15 21:59:45.306 -06:00 [50] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 21:59:45.306 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 88.0207 ms
+2023-06-15 21:59:45.403 -06:00 [50] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 21:59:45.404 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 84.8368 ms
+2023-06-15 21:59:45.512 -06:00 [43] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 21:59:45.512 -06:00 [43] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 83.9953 ms
+2023-06-15 21:59:45.602 -06:00 [56] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 21:59:45.602 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 83.3437 ms
+2023-06-15 21:59:45.701 -06:00 [54] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 21:59:45.702 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 87.7345 ms
+2023-06-15 21:59:45.802 -06:00 [50] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 21:59:45.803 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 85.5441 ms
+2023-06-15 21:59:45.904 -06:00 [50] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 21:59:45.905 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 86.9781 ms
+2023-06-15 21:59:46.009 -06:00 [52] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 21:59:46.011 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 87.4585 ms
+2023-06-15 21:59:46.116 -06:00 [56] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 21:59:46.118 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 88.9508 ms
+2023-06-15 21:59:46.227 -06:00 [52] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 21:59:46.227 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 90.8099 ms
+2023-06-15 21:59:46.329 -06:00 [56] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 21:59:46.330 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 84.7525 ms
+2023-06-15 22:00:01.927 -06:00 [52] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5657 ms
+2023-06-15 22:00:02.179 -06:00 [56] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 22:00:02.180 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 85.4142 ms
+2023-06-15 22:00:04.369 -06:00 [50] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 22:00:04.370 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 85.9883 ms
+2023-06-15 22:00:04.469 -06:00 [48] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 22:00:04.470 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 83.8392 ms
+2023-06-15 22:00:04.561 -06:00 [50] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 22:00:04.562 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 82.2744 ms
+2023-06-15 22:00:04.653 -06:00 [45] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:00:04.654 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 82.9690 ms
+2023-06-15 22:00:04.743 -06:00 [50] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:00:04.744 -06:00 [50] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 82.6434 ms
+2023-06-15 22:00:04.850 -06:00 [54] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 22:00:04.851 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 89.4082 ms
+2023-06-15 22:00:04.960 -06:00 [54] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:00:04.961 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 88.9802 ms
+2023-06-15 22:00:05.065 -06:00 [45] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:00:05.069 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 89.2960 ms
+2023-06-15 22:00:05.175 -06:00 [52] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:00:05.177 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 86.9857 ms
+2023-06-15 22:00:05.275 -06:00 [52] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:00:05.276 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 84.7508 ms
+2023-06-15 22:00:05.374 -06:00 [45] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:00:05.375 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 85.8767 ms
+2023-06-15 22:00:05.482 -06:00 [45] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 22:00:05.485 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 89.2041 ms
+2023-06-15 22:00:05.583 -06:00 [52] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:00:05.585 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 85.8778 ms
+2023-06-15 22:00:05.680 -06:00 [52] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:00:05.680 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 81.9112 ms
+2023-06-15 22:00:05.772 -06:00 [45] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:00:05.774 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 84.0783 ms
+2023-06-15 22:00:05.891 -06:00 [52] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:00:05.893 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 89.0173 ms
+2023-06-15 22:00:05.994 -06:00 [54] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:00:05.994 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 82.7768 ms
+2023-06-15 22:00:06.085 -06:00 [54] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:00:06.086 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 82.9204 ms
+2023-06-15 22:00:06.245 -06:00 [48] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 22:00:06.246 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 99.5632 ms
+2023-06-15 22:00:09.117 -06:00 [48] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4509 ms
+2023-06-15 22:00:09.382 -06:00 [52] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 22:00:09.383 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 82.9462 ms
+2023-06-15 22:00:14.044 -06:00 [52] [INF] Request GetDeck para ususario D-f587bfc7afa9 completada
+2023-06-15 22:00:14.045 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/D-f587bfc7afa9 responded 200 in 85.6958 ms
+2023-06-15 22:00:14.150 -06:00 [48] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-15 22:00:14.151 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 83.8216 ms
+2023-06-15 22:00:14.239 -06:00 [52] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-15 22:00:14.239 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 81.4680 ms
+2023-06-15 22:00:14.331 -06:00 [56] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:00:14.334 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 84.3809 ms
+2023-06-15 22:00:14.429 -06:00 [56] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:00:14.429 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 82.4424 ms
+2023-06-15 22:00:14.518 -06:00 [56] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-15 22:00:14.519 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 80.7842 ms
+2023-06-15 22:00:14.610 -06:00 [48] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:00:14.611 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 84.3635 ms
+2023-06-15 22:00:14.706 -06:00 [48] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:00:14.708 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 85.5613 ms
+2023-06-15 22:00:14.817 -06:00 [48] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:00:14.820 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 87.0722 ms
+2023-06-15 22:00:14.927 -06:00 [56] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:00:14.928 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 86.1243 ms
+2023-06-15 22:00:15.022 -06:00 [52] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:00:15.024 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 84.6877 ms
+2023-06-15 22:00:15.137 -06:00 [52] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-15 22:00:15.139 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 90.5150 ms
+2023-06-15 22:00:15.258 -06:00 [45] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:00:15.259 -06:00 [45] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 93.0366 ms
+2023-06-15 22:00:15.376 -06:00 [52] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:00:15.378 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 90.9876 ms
+2023-06-15 22:00:15.489 -06:00 [52] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:00:15.490 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 91.9773 ms
+2023-06-15 22:00:15.618 -06:00 [56] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:00:15.620 -06:00 [56] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 91.9062 ms
+2023-06-15 22:00:15.729 -06:00 [48] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:00:15.731 -06:00 [48] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 89.8702 ms
+2023-06-15 22:00:15.837 -06:00 [54] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:00:15.838 -06:00 [54] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 88.2920 ms
+2023-06-15 22:00:15.955 -06:00 [52] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-15 22:00:15.957 -06:00 [52] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 93.6380 ms
+2023-06-15 22:01:13.276 -06:00 [55] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3254 ms
+2023-06-15 22:01:13.490 -06:00 [55] [INF] Request GetNames de Decks para ususario U-KIX8NYN0TY5T completada
+2023-06-15 22:01:13.491 -06:00 [55] [INF] [0HMRE3F8MRF16] <pepito>HTTP GET /api/Deck/Names/U-KIX8NYN0TY5T responded 200 in 81.2286 ms
+2023-06-15 22:01:18.820 -06:00 [60] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8571 ms
+2023-06-15 22:01:22.857 -06:00 [60] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5351 ms
+2023-06-15 22:01:24.594 -06:00 [50] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3769 ms
+2023-06-15 22:02:52.609 -06:00 [66] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /Account responded 204 in 0.1191 ms
+2023-06-15 22:02:54.304 -06:00 [63] [ERR] Failed executing DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = Int64), @p2='?' (DbType = Object), @p3='?', @p4='?', @p5='?', @p6='?', @p7='?', @p8='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO account (id, avatar, config, country, email, name, nickname, password, points)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING active, coins;
+2023-06-15 22:02:54.359 -06:00 [63] [ERR] An exception occurred in the database while saving changes for context type 'Stardeck.Models.StardeckContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "account_nickname_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "account_nickname_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: account
+    ConstraintName: account_nickname_key
+    File: nbtinsert.c
+    Line: 670
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "account_nickname_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "account_nickname_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: account
+    ConstraintName: account_nickname_key
+    File: nbtinsert.c
+    Line: 670
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-06-15 22:02:54.379 -06:00 [63] [WRN] No se pudo guardar la cuenta U-JG4H17FT05YW
+2023-06-15 22:02:54.388 -06:00 [63] [INF] [0HMRE3F8MRF16] <pepito>HTTP POST /Account responded 400 in 1772.8786 ms
+2023-06-15 22:03:57.925 -06:00 [67] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /Account responded 204 in 0.2707 ms
+2023-06-15 22:03:58.226 -06:00 [63] [ERR] Failed executing DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = Int64), @p2='?' (DbType = Object), @p3='?', @p4='?', @p5='?', @p6='?', @p7='?', @p8='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO account (id, avatar, config, country, email, name, nickname, password, points)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING active, coins;
+2023-06-15 22:03:58.238 -06:00 [63] [ERR] An exception occurred in the database while saving changes for context type 'Stardeck.Models.StardeckContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "account_nickname_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "account_nickname_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: account
+    ConstraintName: account_nickname_key
+    File: nbtinsert.c
+    Line: 670
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "account_nickname_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "account_nickname_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: account
+    ConstraintName: account_nickname_key
+    File: nbtinsert.c
+    Line: 670
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-06-15 22:03:58.273 -06:00 [63] [WRN] No se pudo guardar la cuenta U-7T5HXEZJ46WT
+2023-06-15 22:03:58.282 -06:00 [63] [INF] [0HMRE3F8MRF16] <pepito>HTTP POST /Account responded 400 in 349.8823 ms
+2023-06-15 22:04:13.672 -06:00 [63] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /Account responded 204 in 0.1903 ms
+2023-06-15 22:04:14.269 -06:00 [67] [ERR] Failed executing DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = Int64), @p2='?' (DbType = Object), @p3='?', @p4='?', @p5='?', @p6='?', @p7='?', @p8='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO account (id, avatar, config, country, email, name, nickname, password, points)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING active, coins;
+2023-06-15 22:04:14.277 -06:00 [67] [ERR] An exception occurred in the database while saving changes for context type 'Stardeck.Models.StardeckContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "account_nickname_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "account_nickname_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: account
+    ConstraintName: account_nickname_key
+    File: nbtinsert.c
+    Line: 670
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "account_nickname_key"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "account_nickname_key"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: account
+    ConstraintName: account_nickname_key
+    File: nbtinsert.c
+    Line: 670
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-06-15 22:04:14.318 -06:00 [67] [WRN] No se pudo guardar la cuenta U-2KQRKY7T5W58
+2023-06-15 22:04:14.329 -06:00 [67] [INF] [0HMRE3F8MRF16] <pepito>HTTP POST /Account responded 400 in 640.8728 ms
+2023-06-15 22:04:30.043 -06:00 [67] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /Account responded 204 in 0.1962 ms
+2023-06-15 22:04:30.722 -06:00 [65] [INF] Request CreateAndSaveNewCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:30.831 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:30.917 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.003 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.086 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.170 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.260 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.346 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.434 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.522 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.666 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.754 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.843 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:31.929 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:32.017 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:32.105 -06:00 [65] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:32.105 -06:00 [65] [INF] Request NewAccount para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:32.107 -06:00 [65] [INF] [0HMRE3F8MRF16] <pepito>HTTP POST /Account responded 200 in 2048.3274 ms
+2023-06-15 22:04:32.177 -06:00 [68] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1815 ms
+2023-06-15 22:04:32.290 -06:00 [67] [INF] [0HMRE3F8MRF16] <pepito>HTTP PUT /login/Signin responded 200 in 86.9869 ms
+2023-06-15 22:04:32.644 -06:00 [68] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4371 ms
+2023-06-15 22:04:32.846 -06:00 [68] [INF] Request GetCards para U-1YBO5MJSRESZ completada
+2023-06-15 22:04:32.850 -06:00 [68] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /Account/U-1YBO5MJSRESZ/cards responded 200 in 99.5041 ms
+2023-06-15 22:04:32.941 -06:00 [67] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:04:32.944 -06:00 [67] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.1938 ms
+2023-06-15 22:04:33.101 -06:00 [67] [INF] Request GetCards para string completada
+2023-06-15 22:04:33.101 -06:00 [67] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/string responded 200 in 95.5358 ms
+2023-06-15 22:04:33.194 -06:00 [72] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:04:33.197 -06:00 [72] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 86.6112 ms
+2023-06-15 22:04:33.355 -06:00 [65] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:04:33.357 -06:00 [65] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 83.8650 ms
+2023-06-15 22:04:33.477 -06:00 [63] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:04:33.479 -06:00 [63] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 95.8545 ms
+2023-06-15 22:04:33.602 -06:00 [63] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:04:33.604 -06:00 [63] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 92.8126 ms
+2023-06-15 22:04:33.721 -06:00 [70] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:04:33.723 -06:00 [70] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 96.4503 ms
+2023-06-15 22:04:33.854 -06:00 [73] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:04:33.855 -06:00 [73] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 94.3044 ms
+2023-06-15 22:04:33.953 -06:00 [68] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:04:33.954 -06:00 [68] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 88.7074 ms
+2023-06-15 22:04:34.126 -06:00 [67] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:04:34.128 -06:00 [67] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 87.0636 ms
+2023-06-15 22:04:34.275 -06:00 [67] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:04:34.276 -06:00 [67] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 102.1199 ms
+2023-06-15 22:04:34.429 -06:00 [63] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:04:34.432 -06:00 [63] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 93.5271 ms
+2023-06-15 22:04:35.010 -06:00 [73] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:04:35.011 -06:00 [73] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 557.7175 ms
+2023-06-15 22:04:35.198 -06:00 [63] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:04:35.199 -06:00 [63] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 107.7678 ms
+2023-06-15 22:04:35.373 -06:00 [73] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-15 22:04:35.374 -06:00 [73] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 85.4224 ms
+2023-06-15 22:04:35.542 -06:00 [72] [INF] Request GetAll de cards completada
+2023-06-15 22:04:35.547 -06:00 [72] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /cards/get_all responded 200 in 140.4840 ms
+2023-06-15 22:06:27.159 -06:00 [77] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /Account/addCards/U-1YBO5MJSRESZ responded 204 in 4.4285 ms
+2023-06-15 22:06:27.360 -06:00 [76] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:06:27.449 -06:00 [76] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:06:27.535 -06:00 [76] [INF] Request AddCardsToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:06:27.535 -06:00 [76] [INF] Request AddCardsListToCollection para U-1YBO5MJSRESZ completada
+2023-06-15 22:06:27.536 -06:00 [76] [INF] [0HMRE3F8MRF16] <peppa1>HTTP POST /Account/addCards/U-1YBO5MJSRESZ responded 200 in 367.9283 ms
+2023-06-15 22:06:27.859 -06:00 [71] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3330 ms
+2023-06-15 22:07:04.341 -06:00 [71] [INF] [0HMRE3F8MRF16] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1851 ms
+2023-06-15 22:07:04.441 -06:00 [79] [INF] [0HMRE3F8MRF16] <peppa1>HTTP PUT /login/Signin responded 200 in 90.2660 ms
+2023-06-15 22:07:04.793 -06:00 [71] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4476 ms
+2023-06-15 22:07:37.411 -06:00 [79] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5672 ms
+2023-06-15 22:07:37.588 -06:00 [84] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:07:37.590 -06:00 [84] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 82.9119 ms
+2023-06-15 22:08:44.723 -06:00 [82] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4364 ms
+2023-06-15 22:08:46.680 -06:00 [80] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:08:46.683 -06:00 [80] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 1794.7509 ms
+2023-06-15 22:09:09.294 -06:00 [86] [INF] [0HMRE3F8MRF16] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4005 ms
+2023-06-15 22:09:09.571 -06:00 [86] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:09:09.573 -06:00 [86] [INF] [0HMRE3F8MRF16] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 85.2473 ms
+2023-06-15 22:20:35.728 -06:00 [100] [INF] [0HMRE3F8MRF17] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4597 ms
+2023-06-15 22:20:36.864 -06:00 [99] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:20:36.864 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 987.1455 ms
+2023-06-15 22:21:33.934 -06:00 [99] [INF] [0HMRE3F8MRF17] <null>HTTP GET /api/Parameters/CardsType responded 200 in 6.2556 ms
+2023-06-15 22:21:34.331 -06:00 [104] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:21:34.332 -06:00 [104] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 82.2316 ms
+2023-06-15 22:21:40.594 -06:00 [101] [INF] [0HMRE3F8MRF17] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3827 ms
+2023-06-15 22:21:40.909 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Parameters/get/deckSize responded 200 in 113.0746 ms
+2023-06-15 22:21:41.117 -06:00 [104] [INF] Request GetCards para U-1YBO5MJSRESZ completada
+2023-06-15 22:21:41.118 -06:00 [104] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /Account/U-1YBO5MJSRESZ/cards responded 200 in 84.1727 ms
+2023-06-15 22:21:41.237 -06:00 [99] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:21:41.238 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.0605 ms
+2023-06-15 22:21:41.403 -06:00 [100] [INF] Request GetCards para string completada
+2023-06-15 22:21:41.404 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/string responded 200 in 83.9461 ms
+2023-06-15 22:21:41.516 -06:00 [100] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:21:41.517 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 82.3634 ms
+2023-06-15 22:21:41.621 -06:00 [99] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:21:41.631 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 95.4905 ms
+2023-06-15 22:21:41.787 -06:00 [99] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:21:41.788 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 85.7932 ms
+2023-06-15 22:21:41.899 -06:00 [100] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:21:41.900 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 81.9163 ms
+2023-06-15 22:21:42.019 -06:00 [101] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:21:42.020 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 83.7261 ms
+2023-06-15 22:21:42.133 -06:00 [101] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:21:42.137 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 89.3864 ms
+2023-06-15 22:21:42.304 -06:00 [100] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:21:42.307 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 96.1430 ms
+2023-06-15 22:21:42.413 -06:00 [100] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:21:42.415 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 88.1411 ms
+2023-06-15 22:21:42.598 -06:00 [101] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:21:42.600 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 83.5987 ms
+2023-06-15 22:21:42.731 -06:00 [103] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:21:42.731 -06:00 [103] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 84.8028 ms
+2023-06-15 22:21:42.826 -06:00 [100] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:21:42.826 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 83.5030 ms
+2023-06-15 22:21:42.927 -06:00 [104] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:21:42.929 -06:00 [104] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 86.7821 ms
+2023-06-15 22:21:43.052 -06:00 [100] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-15 22:21:43.053 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 90.6784 ms
+2023-06-15 22:21:43.200 -06:00 [99] [INF] Request GetCards para C-c45c02da84ef completada
+2023-06-15 22:21:43.201 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-c45c02da84ef responded 200 in 86.1994 ms
+2023-06-15 22:21:43.332 -06:00 [100] [INF] Request GetCards para C-30c6791db965 completada
+2023-06-15 22:21:43.333 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-30c6791db965 responded 200 in 95.1757 ms
+2023-06-15 22:21:43.460 -06:00 [100] [INF] Request GetCards para C-16da36bc73f3 completada
+2023-06-15 22:21:43.461 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-16da36bc73f3 responded 200 in 94.1949 ms
+2023-06-15 22:21:43.629 -06:00 [104] [WRN] El usuario U-1YBO5MJSRESZ no tiene decks
+2023-06-15 22:21:43.632 -06:00 [104] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Deck/User/U-1YBO5MJSRESZ responded 404 in 102.2839 ms
+2023-06-15 22:22:30.681 -06:00 [100] [INF] [0HMRE3F8MRF17] <null>HTTP OPTIONS /api/Deck responded 204 in 0.3892 ms
+2023-06-15 22:22:30.840 -06:00 [99] [INF] Request NewDeck para deck {deck.Id} completada
+2023-06-15 22:22:30.842 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP POST /api/Deck responded 200 in 112.7808 ms
+2023-06-15 22:22:31.348 -06:00 [108] [INF] [0HMRE3F8MRF17] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3521 ms
+2023-06-15 22:22:31.598 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Parameters/get/deckSize responded 200 in 85.4615 ms
+2023-06-15 22:22:31.829 -06:00 [109] [INF] Request GetCards para U-1YBO5MJSRESZ completada
+2023-06-15 22:22:31.829 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /Account/U-1YBO5MJSRESZ/cards responded 200 in 82.9269 ms
+2023-06-15 22:22:31.936 -06:00 [109] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:22:31.936 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.6245 ms
+2023-06-15 22:22:32.034 -06:00 [107] [INF] Request GetCards para string completada
+2023-06-15 22:22:32.034 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/string responded 200 in 81.8950 ms
+2023-06-15 22:22:32.133 -06:00 [101] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:22:32.134 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 82.2267 ms
+2023-06-15 22:22:32.226 -06:00 [101] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:22:32.227 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 82.2310 ms
+2023-06-15 22:22:32.322 -06:00 [100] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:22:32.325 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 87.2795 ms
+2023-06-15 22:22:32.534 -06:00 [107] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:22:32.535 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 88.7106 ms
+2023-06-15 22:22:32.632 -06:00 [109] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:22:32.633 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 83.2656 ms
+2023-06-15 22:22:32.723 -06:00 [109] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:22:32.724 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 81.5240 ms
+2023-06-15 22:22:32.817 -06:00 [108] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:22:32.817 -06:00 [108] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 83.0599 ms
+2023-06-15 22:22:32.914 -06:00 [99] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:22:32.915 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 82.6077 ms
+2023-06-15 22:22:33.014 -06:00 [99] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:22:33.016 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 84.2947 ms
+2023-06-15 22:22:33.149 -06:00 [109] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:22:33.149 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 90.3613 ms
+2023-06-15 22:22:33.243 -06:00 [109] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:22:33.244 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 83.9499 ms
+2023-06-15 22:22:33.383 -06:00 [107] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:22:33.386 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 99.3933 ms
+2023-06-15 22:22:33.580 -06:00 [107] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-15 22:22:33.581 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 83.3268 ms
+2023-06-15 22:22:33.680 -06:00 [108] [INF] Request GetCards para C-c45c02da84ef completada
+2023-06-15 22:22:33.681 -06:00 [108] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-c45c02da84ef responded 200 in 85.0502 ms
+2023-06-15 22:22:33.780 -06:00 [100] [INF] Request GetCards para C-30c6791db965 completada
+2023-06-15 22:22:33.782 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-30c6791db965 responded 200 in 84.1888 ms
+2023-06-15 22:22:33.886 -06:00 [100] [INF] Request GetCards para C-16da36bc73f3 completada
+2023-06-15 22:22:33.886 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-16da36bc73f3 responded 200 in 85.9452 ms
+2023-06-15 22:22:33.983 -06:00 [109] [INF] Request GetDecksByUser para usuario U-1YBO5MJSRESZ completada
+2023-06-15 22:22:33.999 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Deck/User/U-1YBO5MJSRESZ responded 200 in 97.2187 ms
+2023-06-15 22:22:34.457 -06:00 [99] [INF] [0HMRE3F8MRF17] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4139 ms
+2023-06-15 22:22:34.682 -06:00 [100] [INF] Request GetNames de Decks para ususario U-1YBO5MJSRESZ completada
+2023-06-15 22:22:34.683 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 200 in 85.8016 ms
+2023-06-15 22:22:36.432 -06:00 [109] [INF] Request GetDeck para ususario D-bed6292b6b1f completada
+2023-06-15 22:22:36.432 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /api/Deck/D-bed6292b6b1f responded 200 in 91.9862 ms
+2023-06-15 22:22:36.552 -06:00 [107] [INF] Request GetCards para C-c45c02da84ef completada
+2023-06-15 22:22:36.553 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-c45c02da84ef responded 200 in 83.9849 ms
+2023-06-15 22:22:36.676 -06:00 [101] [INF] Request GetCards para C-16da36bc73f3 completada
+2023-06-15 22:22:36.679 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-16da36bc73f3 responded 200 in 85.4556 ms
+2023-06-15 22:22:36.849 -06:00 [101] [INF] Request GetCards para C-30c6791db965 completada
+2023-06-15 22:22:36.850 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-30c6791db965 responded 200 in 87.0986 ms
+2023-06-15 22:22:37.013 -06:00 [101] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:22:37.014 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 84.9621 ms
+2023-06-15 22:22:37.142 -06:00 [100] [INF] Request GetCards para string completada
+2023-06-15 22:22:37.144 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/string responded 200 in 99.1371 ms
+2023-06-15 22:22:37.282 -06:00 [101] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:22:37.284 -06:00 [101] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 91.3448 ms
+2023-06-15 22:22:37.430 -06:00 [100] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:22:37.433 -06:00 [100] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 99.4763 ms
+2023-06-15 22:22:37.600 -06:00 [99] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:22:37.601 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 82.5604 ms
+2023-06-15 22:22:37.697 -06:00 [107] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:22:37.698 -06:00 [107] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 84.6095 ms
+2023-06-15 22:22:37.832 -06:00 [99] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:22:37.833 -06:00 [99] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 83.7663 ms
+2023-06-15 22:22:37.957 -06:00 [108] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:22:37.958 -06:00 [108] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 84.7777 ms
+2023-06-15 22:22:38.049 -06:00 [110] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:22:38.050 -06:00 [110] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 82.9801 ms
+2023-06-15 22:22:38.183 -06:00 [110] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:22:38.184 -06:00 [110] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 90.1063 ms
+2023-06-15 22:22:38.318 -06:00 [109] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:22:38.320 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 94.9372 ms
+2023-06-15 22:22:38.452 -06:00 [110] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:22:38.454 -06:00 [110] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 91.1797 ms
+2023-06-15 22:22:38.579 -06:00 [108] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:22:38.580 -06:00 [108] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 93.1724 ms
+2023-06-15 22:22:38.709 -06:00 [110] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:22:38.710 -06:00 [110] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 90.2820 ms
+2023-06-15 22:22:38.872 -06:00 [109] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-15 22:22:38.873 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 91.9927 ms
