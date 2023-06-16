@@ -272,7 +272,13 @@ export class GameMainComponent implements OnInit {
     this.status = 'Esperando a que el oponente termine su turno...';
   }
 
-  onSurrenderClicked() { }
+  async onSurrenderClicked() {
+    this.gameService.surrender(this.gameRoom.roomid, this.playerID)
+      .then((response) => { console.log(response); })
+      .catch((error) => alert(error));
+
+    await this.sleep(400);
+  }
 
   sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));

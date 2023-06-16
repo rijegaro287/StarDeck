@@ -5,13 +5,9 @@ namespace Stardeck.Engine;
 
 public class PlayerLogic : PlayerModel
 {
-<<<<<<< HEAD:StarDeck/Engine/Player.cs
-  public Player(Account? dataPlayer)
+  public PlayerLogic(Account? dataPlayer)
   {
     if (dataPlayer is null)
-=======
-    public PlayerLogic(Account? dataPlayer)
->>>>>>> Batalla:StarDeck/Engine/PlayerLogic.cs
     {
       throw new InvalidOperationException("La informacion del jugador es invalida");
     }
@@ -37,6 +33,7 @@ public class PlayerLogic : PlayerModel
   {
     return Deck;
   }
+
   /// <summary>
   /// 
   /// </summary>
@@ -55,28 +52,6 @@ public class PlayerLogic : PlayerModel
     {
       return false;
     }
-<<<<<<< HEAD:StarDeck/Engine/Player.cs
-=======
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="cardid"></param>
-    /// <param name="territory"></param>
-    /// <returns>false if not enough energy, true if played, null if card is no in hand</returns>
-    public bool? PlayCard(string cardid, int territory)
-    {
-        var card = Hand.Find(x => x.Id == cardid);
-        if (card is null)
-        {
-            return null;
-        }
-
-        if (Energy < card.Energy)
-        {
-            return false;
-        }
->>>>>>> Batalla:StarDeck/Engine/PlayerLogic.cs
 
     Energy -= card.Energy;
     Hand.Remove(card);
@@ -101,16 +76,8 @@ public class PlayerLogic : PlayerModel
     }
   }
 
-<<<<<<< HEAD:StarDeck/Engine/Player.cs
   public void SetEnergy(int turn)
   {
     Energy = 1 + turn;
-
   }
-=======
-    public void SetEnergy(int turn)
-    {
-        Energy = 1 + turn;
-    }
->>>>>>> Batalla:StarDeck/Engine/PlayerLogic.cs
 }
