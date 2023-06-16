@@ -40,4 +40,8 @@ export class GameService {
   endTurn = (gameRoomID: string, playerID: string): Promise<any> => {
     return this.request.post(`${this.url}/${gameRoomID}/${playerID}/endTurn`, gameRoomID);
   }
+
+  surrender = (gameRoomID: string, playerID: string): Promise<any> => {
+    return this.request.post(`${this.url}/${gameRoomID}/${playerID}/Surrender`, gameRoomID);
+  }
 }

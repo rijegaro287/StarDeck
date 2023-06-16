@@ -1,4 +1,4 @@
-﻿using Stardeck.GameModels;
+using Stardeck.GameModels;
 using Stardeck.Models;
 
 namespace Stardeck.Engine;

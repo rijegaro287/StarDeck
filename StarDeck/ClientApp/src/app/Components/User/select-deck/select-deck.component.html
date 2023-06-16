@@ -25,7 +25,8 @@
       <div class="row">
         <div class="list-grid">
           <ng-container *ngFor="let card of cardsDeckList">
-            <app-card [card]="card" [base64CardImage]="card.image" [cardBorderColor]="card.borderColor!"></app-card>
+            <app-game-card [card]="card" [base64CardImage]="card.image"
+              [cardBorderColor]="card.borderColor!"></app-game-card>
           </ng-container>
         </div>
       </div>

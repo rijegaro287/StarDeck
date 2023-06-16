@@ -1,0 +1,49 @@
+<div class="w-75 my-5 mx-auto">
+  <h2 mat-dialog-title>Informacion sobre una Carta </h2>
+  <mat-dialog-content>
+    <h4 class="text-center"> Forma una carta </h4>
+    <div class="card-list-grid">
+      <app-card  [card]="card" [base64CardImage]="card.image"
+                [cardBorderColor]="card.borderColor!"></app-card>
+    </div>
+    <div class="energy">
+      <i class="bi bi-lightning-fill"></i>
+      <span> Enegía que cuesta jugar la carta.</span>
+    </div>
+    <div class="battle-points">
+      <i class="bi bi-fire"></i>
+      <span>  Puntos de batalla que tiene la carta.</span>
+    </div>
+    <h4 class="text-center"> Significado de los bordes </h4>
+    <div>
+      <div class = "border" style="background:black "></div>
+      <span>  Carta Basica </span>
+    </div>
+    <div>
+      <div class = "border" style="background:#66e961 "></div>
+      <span>  Carta Normal </span>
+    </div>
+    <div>
+      <div class = "border" style="background:#4161f1 "></div>
+      <span>  Carta Rara </span>
+    </div>
+    <div>
+      <div class = "border" style="background:#9a00d6 "></div>
+      <span>  Carta Muy Rara </span>
+    </div>
+    <div>
+      <div class = "border" style="background:#e6ce4a "></div>
+      <span>  Carta Ultra Rara </span>
+    </div>
+    <div>
+      <div class = "border" style="background:white "></div>
+      <span>  Carta Seleccionada </span>
+    </div>
+ </mat-dialog-content>
+
+  <<mat-dialog-actions align="end">
+  <div class="actions">
+    <button mat-flat-button color="warn" mat-dialog-close >Cerrar</button>
+  </div>
+  </mat-dialog-actions>
+</div>
