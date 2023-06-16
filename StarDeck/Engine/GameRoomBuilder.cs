@@ -9,6 +9,8 @@ namespace Stardeck.Engine;
 
 public class GameRoomBuilder
 {
+    private static object Locker = new object();
+
     /// <summary>
     ///  Create a Runtime GameRoom from a database GameRoom and initialize it Gamelog if needed
     /// </summary>
@@ -22,11 +24,11 @@ public class GameRoomBuilder
             TokenSource = new CancellationTokenSource(),
 
             //assign space for terrutories
-            Territories = new List<PlayableTerritory>(new PlayableTerritory[3]),
+            Territories = new List<PlayableTerritory>(new PlayableTerritory[3] { new(), new(), new() }),
             //create object from room data
             Roomid = data.Roomid,
-            Player1 = new Player(data.Player1Navigation),
-            Player2 = new Player(data.Player2Navigation),
+            Player1 = new PlayerLogic(data.Player1Navigation),
+            Player2 = new PlayerLogic(data.Player2Navigation),
             Gamelog = data.Gamelog,
             Room = data
         };
@@ -48,7 +50,6 @@ public class GameRoomBuilder
         var territories = AssignTerritories(context, game);
 
         if (!ready1 || !ready2 || !territories) throw new Exception("Error al inicializar la partida");
-        SaveToDb(context, game);
         game._loop = Task.Run(game.TurnLoop);
         return game;
     }
@@ -59,12 +60,26 @@ public class GameRoomBuilder
     /// </summary>
     /// <param name="gameRoom"></param>
     /// <returns> true id assigned false if failed</returns>
-    private static bool AssignTerritories(StardeckContext context, GameRoom gameRoom)
+    private static bool AssignTerritories(StardeckContext context, GameRoomModel gameRoom)
     {
-        gameRoom.Territories[0] = GetRandomPlanetByDb(context);
-        gameRoom.Territories[1] = GetRandomPlanetByDb(context);
+        var planet = GetRandomPlanetByDb(context);
+        for (int i = 0; i < 3;)
+        {
+            if (gameRoom.Territories[0].Id == planet.Id || gameRoom.Territories[1].Id == planet.Id ||
+                gameRoom.Territories[2].Id == planet.Id)
+            {
+                planet = GetRandomPlanetByDb(context);
+                continue;
+            }
+
+            gameRoom.Territories[i] = planet;
+            i++;
+            planet = GetRandomPlanetByDb(context);
+        }
+
+        gameRoom.Territory3 = gameRoom.Territories[2];
         gameRoom.Territories[2] = new PlayableTerritory();
-        gameRoom.Territory3 = GetRandomPlanetByDb(context);
+
 
         if (gameRoom.Territories.Any(t => t.Id is null))
         {
@@ -82,9 +97,9 @@ public class GameRoomBuilder
     private static PlayableTerritory GetRandomPlanetByDb(StardeckContext context)
     {
         var random = new Random();
-        var probability = random.Next(0, 100);
         var logic = new PlanetLogic(context);
         var planets = logic.GetAll().GroupBy(x => x.Type).OrderByDescending(x => x.Key);
+        var probability = random.Next(0, 100);
         var planetsList = probability switch
         {
             < 15 => planets.First(x => x.Key == 0).ToList(),
@@ -93,32 +108,49 @@ public class GameRoomBuilder
             _ => planets.First(x => x.Key == 2).ToList()
         };
 
+
         //select random planet from list
         var planet = planetsList[random.Next(0, planetsList.Count)];
 
         return new PlayableTerritory(planet);
     }
 
-
-    private static void SaveToDb(StardeckContext context, GameRoom Room)
+    /// <summary>
+    /// Method to sabe a GameRoom to the database usign the gameroom model. Au
+    /// </summary>
+    /// <param name="context"></param>
+    /// <param name="Room"></param>
+    public static void SaveToDb(StardeckContext context, GameRoom Room)
     {
-        if (Room.Room != null)
+        lock (Locker)
         {
-            Room.Room.Player1Navigation = null;
-            Room.Room.Player2Navigation = null;
-        }
+            if (Room.Room != null)
+            {
+                //asegurece que no se guarden los jugadores en la base de datos
+                Room.Room.Player1Navigation = null;
+                Room.Room.Player2Navigation = null;
+            }
 
-        var room = context.Gamerooms.Find(Room.Roomid) ?? context.Gamerooms.Add(Room.Room).Entity;
-        Debug.Assert(room != null, nameof(room) + " != null");
-        room.Gamelog = Room.Gamelog;
-        room.Winner = Room.Winner;
-        room.Bet = Room.Bet;
-        context.SaveChanges();
+            var room = context.Gamerooms.Find(Room.Roomid);
+            if (room == null)
+            {
+                room = context.Gamerooms.Add(Room.Room).Entity;
+            }
+
+            if (room != null)
+            {
+                room.Gamelog = Room.Gamelog;
+                room.Winner = Room.Winner;
+                room.Bet = Room.Bet;
+            }
+
+            context.SaveChanges();
+        }
     }
 
 
     /// <summary>
-    ///     Initialize player hand and deck and put player in game
+    ///     Initialize player hand and deck, put player in game and remove from matchmaking
     /// </summary>
     /// <param name="context"></param>
     /// <param name="gamePlayer"></param>
@@ -133,6 +165,7 @@ public class GameRoomBuilder
         gamePlayer.Deck = deck;
         gamePlayer.Hand = hand;
         //put player in game
+        if (gamePlayer.Account == null) return false;
         gamePlayer.Account.isplaying = true;
         gamePlayer.Account.isInMatchMacking = false;
 

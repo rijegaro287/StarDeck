@@ -10,11 +10,11 @@ public class GameRoomModel
 {
         public string Roomid { get; set; }
 
-        public Player Player1 { get; set; }
+        public PlayerLogic Player1 { get; set; }
 
-        public Player Player2 { get; set; }
+        public PlayerLogic Player2 { get; set; }
 
-        public string? Winner { get; set; }
+        public string? Winner { get; set; } = null;
 
         public long? Bet { get; set; }
 
