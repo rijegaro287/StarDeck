@@ -23,6 +23,23 @@ namespace Stardeck.Controllers
             
         }
 
+        [HttpGet("Ranking/{individual}/{accountId}")]
+        // GET: api/<AccountController>/Ranking
+        public async Task<IActionResult> GetRanking(bool individual, string accountId)
+        {
+            var accounts = accountLogic.GetRanking(individual, accountId);
+            if (accounts == null)
+            {
+                return NotFound(new KeyValuePair<string, string>("error", "No se encontraron cuentas"));
+            }
+
+            return Ok(accounts);
+
+            //accounts.Sort((a, b) => a.Points.CompareTo(b.Points));
+            return Ok(accounts);
+
+        }
+
         // GET: api/<AccountController>
         [HttpGet]
         public async Task<IActionResult> Get()

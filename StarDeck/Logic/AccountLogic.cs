@@ -412,5 +412,33 @@ namespace Stardeck.Logic
 
             context.SaveChanges();
         }
+
+        public object GetRanking(bool individual,string accountId)
+        {
+            var accounts = GetAll().Select(x => new { Nickname = x.Nickname, Points = x.Points }).ToList();
+            accounts = accounts.OrderByDescending(x => x.Points).ThenBy(x => x.Nickname) .ToList();
+            if (individual)
+            {
+                int counter=1;
+                foreach(var account in accounts)
+                {
+                    var nick=GetAccount(accountId).Nickname;
+                    if (account.Nickname == nick)
+                    {
+                        return new
+                        {
+                            Position = counter,
+                            Nickname = account.Nickname,
+                            Points = account.Points,
+                        };
+                    }
+                    counter++;
+                }
+            }
+            
+            
+            return accounts;
+
+        }
     }
 }

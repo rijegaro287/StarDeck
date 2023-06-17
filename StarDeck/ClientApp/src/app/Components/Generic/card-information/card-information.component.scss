@@ -1,0 +1,56 @@
+@import '../../../../styles.scss';
+
+.main-content {
+  width: 60vw;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  button {
+    width: 100%;
+  }
+}
+.card-list {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.card-list-grid {
+  @include card-list-grid;
+}
+
+.energy,
+.battle-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $text;
+  gap: 1.4rem;
+  width: 50%;
+
+  i {
+    font-size: 2.8rem;
+  }
+
+  span {
+    font-size: 1.6rem;
+  }
+}
+.energy i {
+  color: $energy;
+}
+
+.battle-points i {
+  color: $warning;
+}
+
+.borde {
+  width: 10%;
+  height: 5px;
+  border: 1px solid #000;
+}

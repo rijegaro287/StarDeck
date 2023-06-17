@@ -68,9 +68,12 @@ export class SelectDeckComponent implements OnInit {
     //Logica para obtener la lista de Decks de un jugador
 
     await this.battle.getUserDecks(this.idAccount)
-      .then(decks => {
+      .then((decks) => {
         this.deckList = decks;
         console.log(this.deckList)
+      })
+      .catch(async (error) => {
+        await alert('No se encontraron escuadrones. Por favor cree al menos uno.')
       });
   }
 

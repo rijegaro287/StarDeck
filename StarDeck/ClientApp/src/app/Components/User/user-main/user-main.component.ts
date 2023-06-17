@@ -21,7 +21,7 @@ export class UserMainComponent {
         link: '/user/decks' // Ruta a la que redirige
       },
       {
-        description: 'Configuración Cuenta',
+        description: 'Ranking',
         link: '/'
       }
     ]

@@ -46,6 +46,7 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
 
 import { GameMainComponent } from './Components/Game/game-main/game-main.component';
 import { GameCardComponent } from './Components/Game/game-card/game-card.component';
+import { WinnerComponent } from './Components/Game/winner/winner.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { GameCardComponent } from './Components/Game/game-card/game-card.compone
     DeckListComponent,
     GameMainComponent,
     HomeComponent,
-    GameCardComponent
+    GameCardComponent,
+    WinnerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -107,9 +109,8 @@ import { GameCardComponent } from './Components/Game/game-card/game-card.compone
           { path: 'battle/search-opponent', component: SearchOpponentComponent }
         ]
       },
-      {
-        path: "game", component: GameMainComponent
-      }
+      { path: 'game', component: GameMainComponent },
+      { path: 'winner', component: WinnerComponent }
 
     ]),
     MatFormFieldModule,
