@@ -438,6 +438,7 @@ namespace Stardeck.Engine
             Winner = player.Id;
             Room!.Winner = player.Id;
             Turn = 8;
+            TokenSource.Cancel();
             return true;
         }
     }

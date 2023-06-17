@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Stardeck.Logic;
 
 namespace StardeckTest.Logic
 {
@@ -16,31 +17,31 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void GameFoundTest()
         {
-            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameController>());
+            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameLogic>());
 
-            var response = logic.GetGameroom("G-202903a7d04e");
+            var response = logic.GetGameroom("G-202903a7d04e").Result;
 
             //Assert
             Assert.IsNotNull(response);
-            Assert.AreEqual(response.GetType(), typeof(Gameroom));
+            Assert.AreEqual(typeof(Gameroom),response.GetType() );
 
         }
 
         [TestMethod]
         public void AllGamesFoundTest()
         {
-            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameController>());
-            var response = logic.GetAllGamerooms();
+            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameLogic>());
+            var response = logic.GetAllGamerooms().Result;
             //Assert
             Assert.IsNotNull(response);
-            Assert.AreEqual(response.GetType(), typeof(List<Gameroom>));
+            Assert.AreEqual( typeof(List<Gameroom>),response.GetType());
         }
 
         [TestMethod]
         [Ignore]
         public void GetRoomDataTest()
         {
-            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameController>());
+            var logic = new Stardeck.Logic.GameLogic(new FakeStardeckContext(), new NullLogger<GameLogic>());
 
             var response = logic.GetGameRoomData("G-202903a7d04e");
 

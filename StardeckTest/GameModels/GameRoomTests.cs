@@ -4,6 +4,7 @@ using Stardeck.GameModels;
 using Stardeck.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 using Stardeck.Engine;
 using Microsoft.Extensions.Logging.Abstractions;
 using Stardeck.Controllers;
+using Stardeck.Logic;
 
 namespace Stardeck.GameModels.Tests
 {
@@ -63,7 +65,7 @@ namespace Stardeck.GameModels.Tests
         [TestMethod()]
         public void GameInitTest()
         {
-            var logic = new Logic.GameLogic(new(), new NullLogger<GameController>());
+            var logic = new Logic.GameLogic(new(), new NullLogger<GameLogic>());
             var a = logic.PutInMatchMaking("U-RXF7RJNBWEKD", true).Result;
             Assert.IsTrue(a, "No se logro poner al jugador en MatchMaking");
             var room3 = logic.IsWaiting("U-37WTJPRJSGHH").Result;
@@ -73,8 +75,10 @@ namespace Stardeck.GameModels.Tests
         [TestMethod()]
         public void GameInitMaxTimeTest()
         {
-            var logic = new Logic.GameLogic(new(), new NullLogger<GameController>());
-            var room2 = logic.IsWaiting("U-37WTJPRJSGHH").Result;
+            var logic = new Logic.FakeGameLogic(new(), new NullLogger<GameLogic>());
+
+
+            var room2 = logic.IsWaiting("U-KIX8NYN0TY5T").Result;
             Assert.IsNull(room2, "La sala se creo correctamente, cuando no deberia");
         }
     }
