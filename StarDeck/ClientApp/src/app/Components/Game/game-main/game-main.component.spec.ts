@@ -23,4 +23,16 @@ describe('GameMainComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should initialize the component correctly', () => {
+    expect(component.playerCardsID).toEqual('player1Cards');
+    expect(component.opponentCardsID).toEqual('player2Cards');
+    expect(component.planetsInfo).toEqual([]);
+    expect(component.status).toEqual('Iniciando partida...');
+    expect(component.currentTurn).toEqual(0);
+    expect(component.playingTurn).toEqual(false);
+    expect(component.selectedCard).toEqual(null);
+  });
+
+
+
 });

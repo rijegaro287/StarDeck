@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Serilog.Extensions.Logging;
 using Stardeck.GameModels;
@@ -438,6 +438,7 @@ namespace Stardeck.Engine
             Winner = player.Id;
             Room!.Winner = player.Id;
             Turn = 8;
+            TokenSource.Cancel();
             return true;
         }
     }

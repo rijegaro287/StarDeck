@@ -18,12 +18,12 @@ export class GameMainComponent implements OnInit {
 
   playerID: string;
   playerInfo: IPlayer;
-  playerCardsID: keyof IPlanet;
+  playerCardsID: 'player1Cards' | 'player2Cards';
 
   planetsInfo: IPlanetCards[];
 
   opponentName: string;
-  opponentCardsID: keyof IPlanet;
+  opponentCardsID: 'player1Cards' | 'player2Cards';
 
   status: string;
   currentTurn: number;
@@ -60,36 +60,44 @@ export class GameMainComponent implements OnInit {
     console.log(this.gameRoom);
     console.log(this.playerID);
 
-    await this.sleep(3000);
+    await this.sleep(2000);
 
     await this.updateGameData();
     this.setPlanetsData();
+    await this.revealCards();
 
     while (this.currentTurn < 8) {
       this.status = 'Iniciando turno...'
       this.playingTurn = false;
 
-      await this.sleep(3000);
+      await this.sleep(2000);
 
       this.playingTurn = true;
       this.status = `Jugando turno ${this.currentTurn + 1}...`;
 
       await this.gameService.initTurn(this.gameRoom.roomid, this.playerID)
-        .then(async (player) => {
-          this.currentTurn++;
-          this.playingTurn = false;
-          this.status = 'Revelando cartas...';
-
-          await this.updateGameData();
-          await this.revealCards();
-        })
+        .then(async (player) => { console.log('Turn ended'); })
         .catch((error) => alert(error.message));
+
+      this.playingTurn = false;
+      this.status = 'Revelando cartas...';
+      this.currentTurn++;
+
+      await this.updateGameData();
+      await this.revealCards();
     }
+
+    await this.sleep(1000);
 
     this.playingTurn = false;
     this.status = `Determinando ganador...`;
+    await this.updateGameData();
 
     this.showWinner();
+
+    await this.sleep(2000);
+
+    window.location.href = '/winner';
   }
 
   async updateGameData() {
@@ -142,35 +150,72 @@ export class GameMainComponent implements OnInit {
   }
 
   async revealCards() {
-    return new Promise((resolve, reject) => {
-      this.planetsInfo.forEach(async (planet, index) => {
-        planet.playerCards = [];
-        planet.opponentCards = [];
+    for (let index = 0; index < this.planetsInfo.length; index++) {
+      const planet = this.planetsInfo[index];
+      planet.playerCards = [];
+      planet.opponentCards = [];
+    }
 
-        const gameRoomPlanet = this.gameRoom.territories[index];
+    for (let index = 0; index < this.planetsInfo.length; index++) {
+      const planet = this.planetsInfo[index];
 
-        if (this.gameRoom.firstToShow.id === this.playerID) {
-          await this.sleep(2000);
-          planet.playerCards = gameRoomPlanet[this.playerCardsID] as ICard[];
+      const gameRoomPlanet = this.gameRoom.territories[index];
+      planet.name = this.gameRoom.territories[index].name;
 
-          await this.sleep(2000);
-          planet.opponentCards = gameRoomPlanet[this.opponentCardsID] as ICard[];
-        }
-        else {
-          await this.sleep(2000);
-          planet.opponentCards = gameRoomPlanet[this.opponentCardsID] as ICard[];
+      if (this.gameRoom.firstToShow.id === this.playerID) {
+        await this.sleep(1000);
+        planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
 
-          await this.sleep(2000);
-          planet.playerCards = gameRoomPlanet[this.playerCardsID] as ICard[];
-        }
-      });
+        await this.sleep(1000);
+        planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
+      }
+      else {
+        await this.sleep(1000);
+        planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
 
-      return resolve;
-    });
+        await this.sleep(1000);
+        planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
+      }
+    }
   }
 
   showWinner() {
-    console.log('winner:', this.gameRoom.winner);
+    let winnerName = '';
+
+    if (this.gameRoom.winner === 'Draw') {
+      winnerName = 'Empate';
+    }
+    else {
+      winnerName = this.gameRoom.winner === this.playerID ? this.playerInfo.nickname : this.opponentName;
+    }
+
+    const planetWinners = this.gameRoom.territories.map((planet, index) => {
+      const playerPoints = planet[this.playerCardsID]!.reduce((total, card) => total + card.battlecost, 0);
+      const opponentPoints = planet[this.opponentCardsID]!.reduce((total, card) => total + card.battlecost, 0);
+
+      let result = {
+        planetName: planet.name,
+        winner: '',
+        winnerPoints: 0,
+      }
+
+      if (playerPoints === opponentPoints) {
+        result.winner = 'Empate';
+        result.winnerPoints = playerPoints;
+      }
+      else if (playerPoints > opponentPoints) {
+        result.winner = this.playerInfo.nickname;
+        result.winnerPoints = playerPoints;
+      }
+      else {
+        result.winner = this.opponentName;
+        result.winnerPoints = opponentPoints;
+      }
+
+      return result;
+    });
+
+    sessionStorage.setItem('gameWinner', JSON.stringify({ winner: winnerName, planetWinners: planetWinners }));
   }
 
   onCardClicked(card: ICard) {
@@ -192,16 +237,22 @@ export class GameMainComponent implements OnInit {
     }
   }
 
-  onPlanetClicked(planet: IPlanetCards) {
+  async onPlanetClicked(planet: IPlanetCards) {
     if (this.playingTurn && this.selectedCard) {
       if (this.playerInfo.energy >= this.selectedCard.energy) {
-        this.gameService.placeCard(this.gameRoom.roomid, this.playerID, this.selectedCard.id, planet.index)
+        this.playingTurn = false;
+
+        await this.gameService.placeCard(this.gameRoom.roomid, this.playerID, this.selectedCard.id, planet.index)
           .then((response) => {
+            console.log(response);
+
             this.playerInfo.energy -= this.selectedCard!.energy;
             this.playerInfo.hand!.splice(this.playerInfo.hand!.indexOf(this.selectedCard!), 1);
 
             planet.playerCards.push(JSON.parse(JSON.stringify(this.selectedCard)));
             this.selectedCard = null;
+
+            this.playingTurn = true;
             console.log('Card placed');
           })
           .catch((error) => alert(error));
@@ -213,15 +264,21 @@ export class GameMainComponent implements OnInit {
   }
 
   onEndTurnClicked() {
-    // this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
-    //   .then((response) => { console.log(response); })
-    //   .catch((error) => alert(error));
+    this.gameService.endTurn(this.gameRoom.roomid, this.playerID)
+      .then((response) => { console.log(response); })
+      .catch((error) => alert(error));
 
-    // this.playingTurn = false;
-    // this.status = 'Esperando a que el oponente termine su turno...';
+    this.playingTurn = false;
+    this.status = 'Esperando a que el oponente termine su turno...';
   }
 
-  onSurrenderClicked() { }
+  async onSurrenderClicked() {
+    this.gameService.surrender(this.gameRoom.roomid, this.playerID)
+      .then((response) => { console.log(response); })
+      .catch((error) => alert(error));
+
+    await this.sleep(400);
+  }
 
   sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));

@@ -51,7 +51,7 @@
   </div>
 
   <div class="buttons-container">
-    <button mat-raised-button color="warn" (click)="onSurrenderClicked()">
+    <button mat-raised-button color="warn" [disabled]="!playingTurn" (click)="onSurrenderClicked()">
       <span>Rendirse</span>
     </button>
 

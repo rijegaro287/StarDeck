@@ -13,23 +13,28 @@ namespace Stardeck.Logic
 {
     public class GameLogic
     {
-        private static readonly StardeckContext MatchMackingcontext = new();
-        private readonly StardeckContext gameContext;
+        protected static readonly StardeckContext MatchMackingContext = new();
+        private readonly StardeckContext _gameContext;
         private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
-        private readonly GameDb gameDB;
-        private readonly ILogger<GameController> _logger;
-        private static object Locker = new object();
+        private readonly GameDb _gameDb;
+        private readonly ILogger _logger;
+        private static readonly object Locker = new object();
 
-        public GameLogic(StardeckContext gameContext, ILogger<GameController> logger)
+        public GameLogic(StardeckContext gameContext, ILogger logger)
         {
-            this.gameContext = gameContext;
+            this._gameContext = gameContext;
             _logger = logger;
-            this.gameDB = new GameDb(gameContext);
+            this._gameDb = new GameDb(gameContext);
         }
 
         public async Task<GameRoom?> IsWaiting(string playerId)
         {
-            var player1 = await MatchMackingcontext.Accounts.FindAsync(playerId);
+            Account? player1;
+            lock (MatchMackingContext)
+            {
+                player1 = MatchMackingContext.Accounts.Find(playerId);
+            }
+
             if (player1 is null)
             {
                 _logger.LogWarning("Jugador no encontrado");
@@ -50,7 +55,7 @@ namespace Stardeck.Logic
             {
                 counter += 1;
                 List<Account> accounts;
-                accounts = await MatchMackingcontext.Accounts.ToListAsync();
+                accounts = await MatchMackingContext.Accounts.ToListAsync();
 
 
                 var players = accounts
@@ -92,10 +97,10 @@ namespace Stardeck.Logic
                     battle.Player1Navigation = player1;
                     battle.generateID();
                     room = GameRoomBuilder.CreateInstance(battle);
-                    room = GameRoomBuilder.Init(gameContext, room);
+                    room = GameRoomBuilder.Init(_gameContext, room);
 
                     ActiveRooms.Add(room);
-                    GameRoomBuilder.SaveToDb(gameContext, room);
+                    GameRoomBuilder.SaveToDb(_gameContext, room);
                     room = CheckIfPlaying(player1);
                     _logger.LogInformation("Request IsWaiting completada");
                     return room;
@@ -108,29 +113,36 @@ namespace Stardeck.Logic
 
         public GameRoom? CheckIfPlaying(Account player)
         {
-            if (!(bool)player.isplaying) return null;
+            switch (player.isplaying)
+            {
+                case null:
+                    throw new InvalidOperationException("Estado del jugador invalido");
+                case false:
+                    return null;
+            }
+
             var room = ActiveRooms.FirstOrDefault(x =>
                 (x.Player2.Id == player.Id | x.Player1.Id == player.Id) && x.Turn <= 7);
             if (room is not null)
             {
-                _logger.LogInformation("Request CheckIfPlaying para {id} completada", player.Id);
+                _logger.LogInformation("Request CheckIfPlaying para {Id} completada", player.Id);
                 return room;
             }
 
-            _logger.LogWarning("No se encontró al jugador {player.Id} en el Request CheckIfPlaying ", player.Id);
+            _logger.LogWarning("No se encontró al jugador {PlayerId} en el Request CheckIfPlaying ", player.Id);
             return null;
         }
 
         public async Task<bool?> PutInMatchMaking(string accountId, bool isInMatchMacking)
         {
-            Account? account = await MatchMackingcontext.Accounts.FindAsync(accountId);
+            Account? account = await MatchMackingContext.Accounts.FindAsync(accountId);
             if (account is null)
             {
                 _logger.LogWarning("No se encontró al jugador {accountId} en el Request PutInMatchMaking ", accountId);
                 return null;
             }
 
-            var selectedDeck = await gameContext.FavoriteDecks.FindAsync(accountId);
+            var selectedDeck = await _gameContext.FavoriteDecks.FindAsync(accountId);
             account.FavoriteDeck = selectedDeck;
             account.isInMatchMacking = isInMatchMacking;
             _logger.LogInformation("Request CheckIfPlaying para {accountId} completada", accountId);
@@ -166,7 +178,7 @@ namespace Stardeck.Logic
 
         public async Task<List<Gameroom>?> GetAllGamerooms()
         {
-            var roomList = await gameDB.GetAllGamerooms();
+            var roomList = await _gameDb.GetAllGamerooms();
             if (roomList is null)
             {
                 _logger.LogWarning("No se encontró ningún Gameroom");
@@ -179,7 +191,7 @@ namespace Stardeck.Logic
 
         public async Task<Gameroom?>? GetGameroom(string id)
         {
-            Gameroom? room = await gameDB.GetGameroom(id);
+            Gameroom? room = await _gameDb.GetGameroom(id);
             if (room is null)
             {
                 _logger.LogWarning("No se encontró ningún Gameroom con {id}", id);
@@ -214,20 +226,31 @@ namespace Stardeck.Logic
 
         public static async Task<bool?> IsInGame(string id)
         {
-            var Accounts = await MatchMackingcontext.Accounts.ToListAsync();
+            var Accounts = await MatchMackingContext.Accounts.ToListAsync();
             var account = Accounts.Find(x => x.Id == id);
             return account is null ? null : account.isplaying;
         }
 
         public async Task<bool?> Surrender(string idRoom, string idUser)
         {
-           var room= ActiveRooms.Find(x=> x.Roomid == idRoom);
-           if (room is null)
-           {
-               _logger.LogWarning("No se encontró ningún Jugador con {id}, en partida {idRoom}", idUser, idRoom);
-               return null;
-           }
-           return room.Surrender(idUser);
+            var room = ActiveRooms.Find(x => x.Roomid == idRoom);
+            if (room is null)
+            {
+                _logger.LogWarning("No se encontró ningún Jugador con {id}, en partida {idRoom}", idUser, idRoom);
+                return null;
+            }
+
+            return room.Surrender(idUser);
         }
+    }
+
+    public class FakeGameLogic : GameLogic
+    {
+        public FakeGameLogic(StardeckContext gameContext, ILogger logger) : base(gameContext, logger)
+        {
+            FakeGameLogic.MatchMackingContext = gameContext;
+        }
+
+        public static StardeckContext MatchMackingContext { get; set; }
     }
 }

@@ -29,11 +29,13 @@ public partial class StardeckContext : DbContext
 
     public virtual DbSet<Gamelog> Gamelogs { get; set; }
 
-    public virtual DbSet<Gameroom?> Gamerooms { get; set; }
+    public virtual DbSet<Gameroom> Gamerooms { get; set; }
 
     public virtual DbSet<Parameter> Parameters { get; set; }
 
     public virtual DbSet<Planet> Planets { get; set; }
+
+    public virtual DbSet<Ranking> Rankings { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -68,6 +70,9 @@ public partial class StardeckContext : DbContext
                 .HasColumnName("config");
             entity.Property(e => e.Country).HasColumnName("country");
             entity.Property(e => e.Email).HasColumnName("email");
+            entity.Property(e => e.Gamecounter)
+                .HasDefaultValueSql("0")
+                .HasColumnName("gamecounter");
             entity.Property(e => e.Name)
                 .HasMaxLength(30)
                 .HasColumnName("name");
@@ -176,13 +181,13 @@ public partial class StardeckContext : DbContext
                 .HasMaxLength(14)
                 .IsFixedLength()
                 .HasColumnName("id_deck");
+            entity.Property(e => e.Cardlist)
+                .HasColumnType("character(14)[]")
+                .HasColumnName("cardlist");
             entity.Property(e => e.DeckName)
                 .HasMaxLength(14)
                 .IsFixedLength()
                 .HasColumnName("deckName");
-            entity.Property(e => e.Cardlist)
-                .HasColumnType("character(14)[]")
-                .HasColumnName("cardlist");
             entity.Property(e => e.IdAccount)
                 .HasMaxLength(14)
                 .IsFixedLength()
@@ -199,6 +204,8 @@ public partial class StardeckContext : DbContext
             entity.HasKey(e => e.Accountid).HasName("favorite_deck_pkey");
 
             entity.ToTable("favorite_deck");
+
+            entity.HasIndex(e => e.Deckid, "favorite_deck_deckid_deckid1_key").IsUnique();
 
             entity.Property(e => e.Accountid)
                 .HasMaxLength(14)
@@ -311,6 +318,16 @@ public partial class StardeckContext : DbContext
                 .HasMaxLength(30)
                 .HasColumnName("name");
             entity.Property(e => e.Type).HasColumnName("type");
+        });
+
+        modelBuilder.Entity<Ranking>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("ranking");
+
+            entity.Property(e => e.Nickname).HasColumnName("nickname");
+            entity.Property(e => e.Points).HasColumnName("points");
         });
 
         OnModelCreatingPartial(modelBuilder);
