@@ -86,5 +86,25 @@ namespace StardeckTest.Logic
             Assert.AreEqual(response.GetType(), typeof(string[]));
         }
 
+        [TestMethod]
+        public void GetGeneralRankingTest()
+        {
+            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
+            var response = logic.GetRanking(false,"");
+            //Assert
+            Assert.IsNotNull(response);
+            //Assert.AreEqual(response.GetType(), typeof(List<object>));
+        }
+
+        [TestMethod]
+        public void GetIndividualRankingTest()
+        {
+            var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
+            var response = logic.GetRanking(true, "U-RXF7RJNBWEKD");
+            //Assert
+            Assert.IsNotNull(response);
+            //Assert.AreEqual(response.GetType(), typeof(string[]));
+        }
+
     }
 }

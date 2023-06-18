@@ -11434,3 +11434,96 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 2023-06-15 22:22:38.710 -06:00 [110] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 90.2820 ms
 2023-06-15 22:22:38.872 -06:00 [109] [INF] Request GetCards para C-ea66c57aa69d completada
 2023-06-15 22:22:38.873 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 91.9927 ms
+2023-06-18 14:35:02.121 -06:00 [1] [INF] Inited
+2023-06-18 14:35:02.678 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-18 14:35:02.684 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-18 14:35:07.488 -06:00 [7] [INF] [0HMRG7DV5POJ4] <null>HTTP GET /swagger/index.html responded 200 in 462.8104 ms
+2023-06-18 14:35:07.566 -06:00 [5] [INF] [0HMRG7DV5POJ4] <null>HTTP GET /swagger/swagger-ui.css responded 304 in 32.0573 ms
+2023-06-18 14:35:07.566 -06:00 [9] [INF] [0HMRG7DV5POJ4] <null>HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 13.5506 ms
+2023-06-18 14:35:07.566 -06:00 [16] [INF] [0HMRG7DV5POJ4] <null>HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 13.6423 ms
+2023-06-18 14:35:08.187 -06:00 [17] [INF] [0HMRG7DV5POJ4] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 283.9473 ms
+2023-06-18 14:35:12.857 -06:00 [17] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:35:20.376 -06:00 [17] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:35:24.861 -06:00 [16] [INF] Request GetAll de Accounts completada
+2023-06-18 14:35:24.922 -06:00 [16] [INF] [0HMRG7DV5POJ4] <null>HTTP GET /Account/Ranking/false/ m responded 200 in 6446.7496 ms
+2023-06-18 14:35:27.806 -06:00 [3] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:35:35.379 -06:00 [18] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:35:42.905 -06:00 [17] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:36:00.612 -06:00 [1] [INF] Inited
+2023-06-18 14:36:01.001 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-18 14:36:01.008 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-18 14:36:11.057 -06:00 [11] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:36:13.560 -06:00 [12] [INF] Request GetAll de Accounts completada
+2023-06-18 14:36:13.697 -06:00 [12] [INF] [0HMRG7EGIGSQ0] <null>HTTP GET /Account/Ranking/false/ m responded 200 in 7783.3243 ms
+2023-06-18 14:36:18.317 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:36:25.805 -06:00 [15] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:36:33.282 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:36:40.695 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:36:48.133 -06:00 [16] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:37:26.186 -06:00 [1] [INF] Inited
+2023-06-18 14:37:26.593 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-18 14:37:26.601 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-18 14:37:36.572 -06:00 [11] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:37:43.813 -06:00 [11] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:37:51.311 -06:00 [14] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:37:51.987 -06:00 [3] [INF] Request GetAll de Accounts completada
+2023-06-18 14:37:52.153 -06:00 [3] [INF] [0HMRG7FA0QRD0] <null>HTTP GET /Account responded 200 in 6781.0413 ms
+2023-06-18 14:37:58.741 -06:00 [8] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:38:06.197 -06:00 [6] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:38:08.994 -06:00 [14] [INF] Request GetAll de Accounts completada
+2023-06-18 14:38:09.012 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.015 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.016 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.017 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.018 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.019 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.021 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.022 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.023 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.026 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.027 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.029 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.032 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.036 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.037 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.039 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.040 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.042 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.043 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.045 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.047 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.050 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.052 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.054 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.055 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.057 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.058 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.060 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.062 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.065 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.067 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.069 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.070 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.072 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.074 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.075 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.077 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.079 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.080 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.082 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.083 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.085 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.087 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.089 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.090 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.092 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.093 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.094 -06:00 [14] [INF] Request GetAccount para U-1YBO5MJSRESZ completada
+2023-06-18 14:38:09.100 -06:00 [14] [INF] [0HMRG7FA0QRD0] <null>HTTP GET /Account/Ranking/true/U-1YBO5MJSRESZ responded 200 in 384.6404 ms
+2023-06-18 14:38:13.688 -06:00 [6] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:38:20.259 -06:00 [22] [INF] Request GetAll de Accounts completada
+2023-06-18 14:38:20.264 -06:00 [22] [INF] [0HMRG7FA0QRD0] <null>HTTP GET /Account/Ranking/false/U-1YBO5MJSRESZ responded 200 in 556.7187 ms
+2023-06-18 14:38:21.165 -06:00 [6] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:38:28.668 -06:00 [6] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:38:36.105 -06:00 [22] [ERR] Couldn't start the SPA development server with command 'npm start'.
+2023-06-18 14:38:43.599 -06:00 [6] [ERR] Couldn't start the SPA development server with command 'npm start'.

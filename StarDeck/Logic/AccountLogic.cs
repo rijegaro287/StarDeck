@@ -415,8 +415,8 @@ namespace Stardeck.Logic
 
         public object GetRanking(bool individual,string accountId)
         {
-            var accounts = GetAll().Select(x => new { Nickname = x.Nickname, Points = x.Points }).ToList();
-            accounts = accounts.OrderByDescending(x => x.Points).ThenBy(x => x.Nickname) .ToList();
+            var accounts = GetAll().Select(x => new { Nickname = x.Nickname, Games=x.Gamecounter,Points = x.Points }).ToList();
+            accounts = accounts.OrderByDescending(x => x.Points).ThenByDescending(x=>x.Games).ThenBy(x => x.Nickname) .ToList();
             if (individual)
             {
                 int counter=1;
