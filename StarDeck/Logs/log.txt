@@ -11434,3 +11434,1514 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 2023-06-15 22:22:38.710 -06:00 [110] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 90.2820 ms
 2023-06-15 22:22:38.872 -06:00 [109] [INF] Request GetCards para C-ea66c57aa69d completada
 2023-06-15 22:22:38.873 -06:00 [109] [INF] [0HMRE3F8MRF18] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 91.9927 ms
+2023-06-15 22:40:05.026 -06:00 [125] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8726 ms
+2023-06-15 22:40:06.324 -06:00 [125] [INF] Request GetNames de Decks para ususario U-1YBO5MJSRESZ completada
+2023-06-15 22:40:06.324 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 200 in 1100.3435 ms
+2023-06-15 22:41:18.941 -06:00 [124] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3694 ms
+2023-06-15 22:41:19.204 -06:00 [127] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:41:19.204 -06:00 [127] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 84.1214 ms
+2023-06-15 22:41:24.437 -06:00 [125] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4217 ms
+2023-06-15 22:41:36.071 -06:00 [123] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3803 ms
+2023-06-15 22:42:01.570 -06:00 [125] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4428 ms
+2023-06-15 22:42:10.908 -06:00 [123] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3463 ms
+2023-06-15 22:42:11.197 -06:00 [123] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Parameters/get/deckSize responded 200 in 81.5986 ms
+2023-06-15 22:42:11.358 -06:00 [124] [INF] Request GetCards para U-1YBO5MJSRESZ completada
+2023-06-15 22:42:11.358 -06:00 [124] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /Account/U-1YBO5MJSRESZ/cards responded 200 in 85.7105 ms
+2023-06-15 22:42:11.452 -06:00 [125] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:42:11.454 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 83.6613 ms
+2023-06-15 22:42:11.633 -06:00 [125] [INF] Request GetCards para string completada
+2023-06-15 22:42:11.634 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/string responded 200 in 84.6614 ms
+2023-06-15 22:42:11.726 -06:00 [125] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:42:11.729 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 85.0891 ms
+2023-06-15 22:42:11.859 -06:00 [125] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:42:11.862 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 86.4845 ms
+2023-06-15 22:42:11.977 -06:00 [129] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:42:11.980 -06:00 [129] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 93.5855 ms
+2023-06-15 22:42:12.090 -06:00 [125] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:42:12.090 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 84.0122 ms
+2023-06-15 22:42:12.183 -06:00 [123] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:42:12.185 -06:00 [123] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 84.0313 ms
+2023-06-15 22:42:12.345 -06:00 [129] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:42:12.346 -06:00 [129] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 90.2218 ms
+2023-06-15 22:42:12.495 -06:00 [123] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:42:12.497 -06:00 [123] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 92.5493 ms
+2023-06-15 22:42:12.652 -06:00 [125] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:42:12.653 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 90.8976 ms
+2023-06-15 22:42:12.802 -06:00 [127] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:42:12.804 -06:00 [127] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 90.8906 ms
+2023-06-15 22:42:12.961 -06:00 [127] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:42:12.962 -06:00 [127] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 89.3994 ms
+2023-06-15 22:42:13.103 -06:00 [130] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:42:13.104 -06:00 [130] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 84.5127 ms
+2023-06-15 22:42:13.198 -06:00 [125] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:42:13.199 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 83.0359 ms
+2023-06-15 22:42:13.289 -06:00 [127] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-15 22:42:13.290 -06:00 [127] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 83.5924 ms
+2023-06-15 22:42:13.393 -06:00 [123] [INF] Request GetCards para C-c45c02da84ef completada
+2023-06-15 22:42:13.396 -06:00 [123] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-c45c02da84ef responded 200 in 89.9456 ms
+2023-06-15 22:42:13.539 -06:00 [131] [INF] Request GetCards para C-30c6791db965 completada
+2023-06-15 22:42:13.542 -06:00 [131] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-30c6791db965 responded 200 in 91.5407 ms
+2023-06-15 22:42:13.742 -06:00 [132] [INF] Request GetCards para C-16da36bc73f3 completada
+2023-06-15 22:42:13.743 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-16da36bc73f3 responded 200 in 84.9130 ms
+2023-06-15 22:42:13.832 -06:00 [124] [WRN] El usuario U-1YBO5MJSRESZ no tiene decks
+2023-06-15 22:42:13.838 -06:00 [124] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Deck/User/U-1YBO5MJSRESZ responded 404 in 87.1583 ms
+2023-06-15 22:42:16.572 -06:00 [125] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4676 ms
+2023-06-15 22:42:35.228 -06:00 [124] [INF] [0HMRE3F8MRF19] <null>HTTP OPTIONS /login/Signin responded 204 in 0.0561 ms
+2023-06-15 22:42:35.316 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP PUT /login/Signin responded 200 in 84.4229 ms
+2023-06-15 22:42:35.647 -06:00 [127] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4448 ms
+2023-06-15 22:42:41.699 -06:00 [132] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6057 ms
+2023-06-15 22:42:41.988 -06:00 [134] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Parameters/get/deckSize responded 200 in 82.7118 ms
+2023-06-15 22:42:42.145 -06:00 [132] [INF] Request GetCards para U-1YBO5MJSRESZ completada
+2023-06-15 22:42:42.146 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /Account/U-1YBO5MJSRESZ/cards responded 200 in 96.8839 ms
+2023-06-15 22:42:42.240 -06:00 [124] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:42:42.240 -06:00 [124] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 82.2679 ms
+2023-06-15 22:42:42.357 -06:00 [127] [INF] Request GetCards para string completada
+2023-06-15 22:42:42.359 -06:00 [127] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/string responded 200 in 85.6521 ms
+2023-06-15 22:42:42.497 -06:00 [125] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:42:42.498 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 87.8628 ms
+2023-06-15 22:42:42.593 -06:00 [124] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:42:42.595 -06:00 [124] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 85.0509 ms
+2023-06-15 22:42:42.687 -06:00 [127] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:42:42.688 -06:00 [127] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 83.5128 ms
+2023-06-15 22:42:42.850 -06:00 [124] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:42:42.852 -06:00 [124] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 86.6236 ms
+2023-06-15 22:42:43.000 -06:00 [132] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:42:43.003 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 89.4462 ms
+2023-06-15 22:42:43.122 -06:00 [125] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:42:43.123 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 94.4139 ms
+2023-06-15 22:42:43.233 -06:00 [125] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:42:43.234 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 86.8064 ms
+2023-06-15 22:42:43.332 -06:00 [125] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-15 22:42:43.333 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 84.2992 ms
+2023-06-15 22:42:43.425 -06:00 [125] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-15 22:42:43.426 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 85.1981 ms
+2023-06-15 22:42:43.585 -06:00 [137] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-15 22:42:43.586 -06:00 [137] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 88.6950 ms
+2023-06-15 22:42:43.687 -06:00 [137] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-15 22:42:43.689 -06:00 [137] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 88.0980 ms
+2023-06-15 22:42:43.868 -06:00 [136] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-15 22:42:43.869 -06:00 [136] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 83.9357 ms
+2023-06-15 22:42:43.974 -06:00 [134] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-15 22:42:43.974 -06:00 [134] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 85.0692 ms
+2023-06-15 22:42:44.064 -06:00 [132] [INF] Request GetCards para C-c45c02da84ef completada
+2023-06-15 22:42:44.065 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-c45c02da84ef responded 200 in 83.1925 ms
+2023-06-15 22:42:44.175 -06:00 [132] [INF] Request GetCards para C-30c6791db965 completada
+2023-06-15 22:42:44.180 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-30c6791db965 responded 200 in 93.4288 ms
+2023-06-15 22:42:44.443 -06:00 [132] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3873 ms
+2023-06-15 22:42:47.037 -06:00 [132] [INF] Request GetCards para U-1YBO5MJSRESZ completada
+2023-06-15 22:42:47.037 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /Account/U-1YBO5MJSRESZ/cards responded 200 in 81.8827 ms
+2023-06-15 22:42:47.136 -06:00 [134] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-15 22:42:47.137 -06:00 [134] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 87.1615 ms
+2023-06-15 22:42:47.309 -06:00 [132] [INF] Request GetCards para string completada
+2023-06-15 22:42:47.310 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/string responded 200 in 87.9103 ms
+2023-06-15 22:42:47.409 -06:00 [137] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-15 22:42:47.410 -06:00 [137] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 85.4717 ms
+2023-06-15 22:42:47.535 -06:00 [134] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-15 22:42:47.536 -06:00 [134] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-0c2b742990df responded 200 in 84.5323 ms
+2023-06-15 22:42:47.687 -06:00 [132] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-15 22:42:47.689 -06:00 [132] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 86.6697 ms
+2023-06-15 22:42:47.817 -06:00 [134] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-15 22:42:47.820 -06:00 [134] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 94.2140 ms
+2023-06-15 22:42:47.940 -06:00 [137] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-15 22:42:47.940 -06:00 [137] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 84.6430 ms
+2023-06-15 22:42:48.041 -06:00 [125] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-15 22:42:48.043 -06:00 [125] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 84.2358 ms
+2023-06-15 22:42:48.203 -06:00 [136] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-15 22:42:48.204 -06:00 [136] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 86.4594 ms
+2023-06-15 22:42:48.443 -06:00 [134] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4659 ms
+2023-06-15 22:42:48.627 -06:00 [137] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:42:48.628 -06:00 [137] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 83.9069 ms
+2023-06-15 22:42:51.210 -06:00 [137] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4430 ms
+2023-06-15 22:43:21.524 -06:00 [132] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3583 ms
+2023-06-15 22:43:22.045 -06:00 [137] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2781 ms
+2023-06-15 22:43:29.535 -06:00 [137] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3886 ms
+2023-06-15 22:43:51.402 -06:00 [135] [INF] [0HMRE3F8MRF19] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1828 ms
+2023-06-15 22:43:51.579 -06:00 [140] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP PUT /login/Signin responded 200 in 166.1193 ms
+2023-06-15 22:43:51.912 -06:00 [136] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3860 ms
+2023-06-15 22:43:59.318 -06:00 [139] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5013 ms
+2023-06-15 22:44:08.431 -06:00 [140] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3315 ms
+2023-06-15 22:44:08.688 -06:00 [136] [WRN] No existen deks en para el usuario U-1YBO5MJSRESZ en GetNames
+2023-06-15 22:44:08.689 -06:00 [136] [INF] [0HMRE3F8MRF1A] <peppa1>HTTP GET /api/Deck/Names/U-1YBO5MJSRESZ responded 404 in 84.2940 ms
+2023-06-15 22:44:10.197 -06:00 [136] [INF] [0HMRE3F8MRF19] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5190 ms
+2023-06-19 01:45:45.236 -06:00 [1] [INF] Inited
+2023-06-19 01:45:46.797 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-19 01:45:46.823 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-19 01:48:09.516 -06:00 [14] [INF] [0HMRGJ4P490LJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 605.4818 ms
+2023-06-19 01:48:12.396 -06:00 [18] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Parameters/get/deckSize responded 200 in 3269.9034 ms
+2023-06-19 01:48:12.644 -06:00 [3] [INF] Request GetCards para U-KIX8NYN0TY5T completada
+2023-06-19 01:48:12.647 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /Account/U-KIX8NYN0TY5T/cards responded 200 in 239.8863 ms
+2023-06-19 01:48:12.852 -06:00 [18] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:48:12.880 -06:00 [18] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 219.1572 ms
+2023-06-19 01:48:12.987 -06:00 [22] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:48:12.988 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 98.5401 ms
+2023-06-19 01:48:13.087 -06:00 [21] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:48:13.088 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 90.9662 ms
+2023-06-19 01:48:13.223 -06:00 [22] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 01:48:13.225 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 105.8300 ms
+2023-06-19 01:48:13.326 -06:00 [3] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:48:13.328 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.2796 ms
+2023-06-19 01:48:13.427 -06:00 [19] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-19 01:48:13.428 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 91.0526 ms
+2023-06-19 01:48:13.528 -06:00 [19] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 01:48:13.529 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 91.5533 ms
+2023-06-19 01:48:13.637 -06:00 [3] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:48:13.637 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 94.1220 ms
+2023-06-19 01:48:13.743 -06:00 [19] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:48:13.744 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 91.3858 ms
+2023-06-19 01:48:13.846 -06:00 [18] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:48:13.851 -06:00 [18] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 98.4133 ms
+2023-06-19 01:48:14.043 -06:00 [21] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:48:14.044 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 92.3871 ms
+2023-06-19 01:48:14.153 -06:00 [3] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-19 01:48:14.153 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 94.3300 ms
+2023-06-19 01:48:14.259 -06:00 [19] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:48:14.262 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 98.0199 ms
+2023-06-19 01:48:14.405 -06:00 [3] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:48:14.406 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.4679 ms
+2023-06-19 01:48:14.513 -06:00 [3] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:48:14.513 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 92.4083 ms
+2023-06-19 01:48:14.615 -06:00 [21] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 01:48:14.615 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 91.5827 ms
+2023-06-19 01:48:14.717 -06:00 [21] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 01:48:14.717 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 90.7570 ms
+2023-06-19 01:48:14.821 -06:00 [21] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-19 01:48:14.822 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 90.4986 ms
+2023-06-19 01:48:14.995 -06:00 [3] [INF] Request GetDecksByUser para usuario U-KIX8NYN0TY5T completada
+2023-06-19 01:48:15.046 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Deck/User/U-KIX8NYN0TY5T responded 200 in 209.1880 ms
+2023-06-19 01:48:15.668 -06:00 [19] [INF] [0HMRGJ4P490LJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8426 ms
+2023-06-19 01:48:19.305 -06:00 [17] [INF] [0HMRGJ4P490LJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5055 ms
+2023-06-19 01:48:19.572 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Parameters/get/deckSize responded 200 in 95.5710 ms
+2023-06-19 01:48:19.740 -06:00 [14] [INF] Request GetCards para U-KIX8NYN0TY5T completada
+2023-06-19 01:48:19.741 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /Account/U-KIX8NYN0TY5T/cards responded 200 in 98.9373 ms
+2023-06-19 01:48:19.852 -06:00 [3] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:48:19.855 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 98.4170 ms
+2023-06-19 01:48:19.971 -06:00 [17] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:48:19.972 -06:00 [17] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 92.3713 ms
+2023-06-19 01:48:20.081 -06:00 [22] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:48:20.081 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 93.3778 ms
+2023-06-19 01:48:20.182 -06:00 [14] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 01:48:20.190 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 97.8008 ms
+2023-06-19 01:48:20.349 -06:00 [17] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:48:20.350 -06:00 [17] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.6839 ms
+2023-06-19 01:48:20.455 -06:00 [17] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-19 01:48:20.456 -06:00 [17] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 95.5896 ms
+2023-06-19 01:48:20.572 -06:00 [22] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 01:48:20.574 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 98.7448 ms
+2023-06-19 01:48:20.689 -06:00 [14] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:48:20.690 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 92.0393 ms
+2023-06-19 01:48:20.789 -06:00 [3] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:48:20.790 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 91.5238 ms
+2023-06-19 01:48:20.902 -06:00 [22] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:48:20.903 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 91.9930 ms
+2023-06-19 01:48:21.001 -06:00 [3] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:48:21.002 -06:00 [3] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 90.8860 ms
+2023-06-19 01:48:21.106 -06:00 [22] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-19 01:48:21.106 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 94.3921 ms
+2023-06-19 01:48:21.204 -06:00 [21] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:48:21.204 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 90.9396 ms
+2023-06-19 01:48:21.301 -06:00 [19] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:48:21.302 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 92.4892 ms
+2023-06-19 01:48:21.427 -06:00 [19] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:48:21.429 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 97.7187 ms
+2023-06-19 01:48:21.545 -06:00 [21] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 01:48:21.548 -06:00 [21] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 96.2052 ms
+2023-06-19 01:48:21.667 -06:00 [22] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 01:48:21.669 -06:00 [22] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 96.6730 ms
+2023-06-19 01:48:21.789 -06:00 [19] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-19 01:48:21.789 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 98.6580 ms
+2023-06-19 01:48:21.887 -06:00 [19] [INF] Request GetDecksByUser para usuario U-KIX8NYN0TY5T completada
+2023-06-19 01:48:21.890 -06:00 [19] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Deck/User/U-KIX8NYN0TY5T responded 200 in 94.3590 ms
+2023-06-19 01:49:26.712 -06:00 [14] [INF] [0HMRGJ4P490LJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8889 ms
+2023-06-19 01:49:26.990 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Parameters/get/deckSize responded 200 in 96.8607 ms
+2023-06-19 01:49:27.124 -06:00 [13] [INF] Request GetCards para U-KIX8NYN0TY5T completada
+2023-06-19 01:49:27.125 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /Account/U-KIX8NYN0TY5T/cards responded 200 in 97.9269 ms
+2023-06-19 01:49:27.263 -06:00 [13] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:49:27.263 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 96.9885 ms
+2023-06-19 01:49:27.380 -06:00 [11] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:49:27.382 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 91.5128 ms
+2023-06-19 01:49:27.499 -06:00 [11] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:49:27.500 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 92.2440 ms
+2023-06-19 01:49:27.608 -06:00 [11] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 01:49:27.609 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 92.9174 ms
+2023-06-19 01:49:27.713 -06:00 [11] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:49:27.715 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.6100 ms
+2023-06-19 01:49:27.923 -06:00 [11] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-19 01:49:27.924 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 95.2547 ms
+2023-06-19 01:49:28.021 -06:00 [13] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 01:49:28.027 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 96.3537 ms
+2023-06-19 01:49:28.201 -06:00 [11] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:49:28.202 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 92.4679 ms
+2023-06-19 01:49:28.320 -06:00 [13] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:49:28.325 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 99.6983 ms
+2023-06-19 01:49:28.454 -06:00 [13] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:49:28.456 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 99.6273 ms
+2023-06-19 01:49:28.577 -06:00 [14] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:49:28.578 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 99.0864 ms
+2023-06-19 01:49:28.693 -06:00 [11] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-19 01:49:28.694 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 94.4165 ms
+2023-06-19 01:49:28.793 -06:00 [11] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:49:28.793 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 91.3179 ms
+2023-06-19 01:49:28.895 -06:00 [14] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:49:28.896 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 93.7006 ms
+2023-06-19 01:49:29.018 -06:00 [13] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:49:29.019 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 97.2048 ms
+2023-06-19 01:49:29.121 -06:00 [11] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 01:49:29.122 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 92.3301 ms
+2023-06-19 01:49:29.243 -06:00 [14] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 01:49:29.245 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 99.7810 ms
+2023-06-19 01:49:29.373 -06:00 [11] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-19 01:49:29.374 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 96.8096 ms
+2023-06-19 01:49:29.487 -06:00 [11] [INF] Request GetDecksByUser para usuario U-KIX8NYN0TY5T completada
+2023-06-19 01:49:29.489 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Deck/User/U-KIX8NYN0TY5T responded 200 in 92.7390 ms
+2023-06-19 01:49:54.657 -06:00 [15] [INF] [0HMRGJ4P490LJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4892 ms
+2023-06-19 01:49:54.922 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Parameters/get/deckSize responded 200 in 89.8053 ms
+2023-06-19 01:49:55.074 -06:00 [14] [INF] Request GetCards para U-KIX8NYN0TY5T completada
+2023-06-19 01:49:55.076 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /Account/U-KIX8NYN0TY5T/cards responded 200 in 96.2313 ms
+2023-06-19 01:49:55.184 -06:00 [15] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:49:55.186 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 93.3520 ms
+2023-06-19 01:49:55.303 -06:00 [15] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:49:55.305 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 95.5306 ms
+2023-06-19 01:49:55.423 -06:00 [15] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:49:55.424 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 100.6116 ms
+2023-06-19 01:49:55.608 -06:00 [15] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 01:49:55.610 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 94.3811 ms
+2023-06-19 01:49:55.742 -06:00 [15] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:49:55.744 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 93.5684 ms
+2023-06-19 01:49:55.858 -06:00 [15] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-19 01:49:55.860 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 92.5961 ms
+2023-06-19 01:49:55.969 -06:00 [15] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 01:49:55.972 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 94.2522 ms
+2023-06-19 01:49:56.083 -06:00 [15] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:49:56.084 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 90.6390 ms
+2023-06-19 01:49:56.204 -06:00 [14] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:49:56.210 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 96.5928 ms
+2023-06-19 01:49:56.312 -06:00 [15] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:49:56.313 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 90.1157 ms
+2023-06-19 01:49:56.437 -06:00 [11] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:49:56.439 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 102.3054 ms
+2023-06-19 01:49:56.595 -06:00 [11] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-19 01:49:56.597 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 99.5518 ms
+2023-06-19 01:49:56.768 -06:00 [15] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:49:56.769 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 106.1587 ms
+2023-06-19 01:49:56.867 -06:00 [15] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:49:56.868 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 91.5399 ms
+2023-06-19 01:49:56.971 -06:00 [14] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:49:56.976 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 96.6036 ms
+2023-06-19 01:49:57.081 -06:00 [11] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 01:49:57.084 -06:00 [11] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 93.2556 ms
+2023-06-19 01:49:57.197 -06:00 [14] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 01:49:57.199 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 96.5142 ms
+2023-06-19 01:49:57.308 -06:00 [15] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-19 01:49:57.310 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 91.1869 ms
+2023-06-19 01:49:57.422 -06:00 [14] [INF] Request GetDecksByUser para usuario U-KIX8NYN0TY5T completada
+2023-06-19 01:49:57.423 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Deck/User/U-KIX8NYN0TY5T responded 200 in 94.4405 ms
+2023-06-19 01:50:13.445 -06:00 [13] [INF] [0HMRGJ4P490LJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5020 ms
+2023-06-19 01:50:13.704 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Parameters/get/deckSize responded 200 in 92.7340 ms
+2023-06-19 01:50:13.924 -06:00 [15] [INF] Request GetCards para U-KIX8NYN0TY5T completada
+2023-06-19 01:50:13.925 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /Account/U-KIX8NYN0TY5T/cards responded 200 in 91.6281 ms
+2023-06-19 01:50:14.041 -06:00 [13] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:50:14.042 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 91.3833 ms
+2023-06-19 01:50:14.153 -06:00 [13] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:50:14.157 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 93.5540 ms
+2023-06-19 01:50:14.262 -06:00 [13] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:50:14.263 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 92.5691 ms
+2023-06-19 01:50:14.363 -06:00 [13] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 01:50:14.364 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 90.8330 ms
+2023-06-19 01:50:14.466 -06:00 [15] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:50:14.469 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 94.8159 ms
+2023-06-19 01:50:14.622 -06:00 [14] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-19 01:50:14.622 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 90.4486 ms
+2023-06-19 01:50:14.721 -06:00 [14] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 01:50:14.721 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 92.9681 ms
+2023-06-19 01:50:14.834 -06:00 [13] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:50:14.835 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 96.4064 ms
+2023-06-19 01:50:14.946 -06:00 [15] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:50:14.947 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 95.8836 ms
+2023-06-19 01:50:15.056 -06:00 [15] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:50:15.058 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 96.0295 ms
+2023-06-19 01:50:15.177 -06:00 [15] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:50:15.179 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 102.1276 ms
+2023-06-19 01:50:15.294 -06:00 [14] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-19 01:50:15.298 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 98.8622 ms
+2023-06-19 01:50:15.419 -06:00 [13] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:50:15.420 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 96.7211 ms
+2023-06-19 01:50:15.519 -06:00 [13] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:50:15.520 -06:00 [13] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 90.3780 ms
+2023-06-19 01:50:15.618 -06:00 [15] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:50:15.619 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 92.9552 ms
+2023-06-19 01:50:15.759 -06:00 [15] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 01:50:15.760 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 100.5827 ms
+2023-06-19 01:50:15.952 -06:00 [14] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 01:50:15.953 -06:00 [14] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 99.6056 ms
+2023-06-19 01:50:16.054 -06:00 [15] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-19 01:50:16.056 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 92.8777 ms
+2023-06-19 01:50:16.181 -06:00 [15] [INF] Request GetDecksByUser para usuario U-KIX8NYN0TY5T completada
+2023-06-19 01:50:16.182 -06:00 [15] [INF] [0HMRGJ4P490LK] <pepito>HTTP GET /api/Deck/User/U-KIX8NYN0TY5T responded 200 in 92.0946 ms
+2023-06-19 01:53:11.612 -06:00 [28] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4017 ms
+2023-06-19 01:53:13.244 -06:00 [28] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3482 ms
+2023-06-19 01:53:58.917 -06:00 [30] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3460 ms
+2023-06-19 01:54:20.473 -06:00 [30] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4340 ms
+2023-06-19 01:54:48.507 -06:00 [36] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5008 ms
+2023-06-19 01:55:12.659 -06:00 [37] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1.5631 ms
+2023-06-19 01:55:26.806 -06:00 [40] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1.7784 ms
+2023-06-19 01:56:02.279 -06:00 [37] [INF] [0HMRGJ4P490LL] <null>HTTP OPTIONS /Account responded 204 in 0.2156 ms
+2023-06-19 01:56:04.796 -06:00 [34] [INF] Request CreateAndSaveNewCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:04.906 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.005 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.108 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.208 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.312 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.412 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.515 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.613 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.716 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.822 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:05.926 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:06.030 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:06.130 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:06.232 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:06.334 -06:00 [34] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:06.335 -06:00 [34] [INF] Request NewAccount para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:06.403 -06:00 [34] [INF] [0HMRGJ4P490LL] <pepito>HTTP POST /Account responded 200 in 4110.2533 ms
+2023-06-19 01:56:06.430 -06:00 [45] [INF] [0HMRGJ4P490LL] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1885 ms
+2023-06-19 01:56:06.590 -06:00 [42] [INF] [0HMRGJ4P490LL] <pepito>HTTP PUT /login/Signin responded 200 in 155.4493 ms
+2023-06-19 01:56:07.005 -06:00 [34] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4164 ms
+2023-06-19 01:56:07.226 -06:00 [42] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:56:07.226 -06:00 [42] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.0641 ms
+2023-06-19 01:56:07.326 -06:00 [41] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:56:07.327 -06:00 [41] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 91.7531 ms
+2023-06-19 01:56:07.439 -06:00 [44] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:56:07.442 -06:00 [44] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 100.3611 ms
+2023-06-19 01:56:07.612 -06:00 [44] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:56:07.613 -06:00 [44] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 102.6325 ms
+2023-06-19 01:56:07.767 -06:00 [42] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:56:07.768 -06:00 [42] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 113.2720 ms
+2023-06-19 01:56:07.871 -06:00 [42] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:56:07.871 -06:00 [42] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 91.9835 ms
+2023-06-19 01:56:07.991 -06:00 [44] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:56:07.995 -06:00 [44] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 98.3591 ms
+2023-06-19 01:56:08.132 -06:00 [44] [INF] Request GetCards para string completada
+2023-06-19 01:56:08.133 -06:00 [44] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 96.1787 ms
+2023-06-19 01:56:08.235 -06:00 [42] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:56:08.235 -06:00 [42] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 92.8557 ms
+2023-06-19 01:56:08.341 -06:00 [42] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:56:08.342 -06:00 [42] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 97.9002 ms
+2023-06-19 01:56:08.460 -06:00 [42] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:56:08.461 -06:00 [42] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.0553 ms
+2023-06-19 01:56:08.568 -06:00 [41] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:56:08.570 -06:00 [41] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 97.2792 ms
+2023-06-19 01:56:08.681 -06:00 [41] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:56:08.687 -06:00 [41] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 104.0369 ms
+2023-06-19 01:56:08.843 -06:00 [45] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:56:08.844 -06:00 [45] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 104.6243 ms
+2023-06-19 01:56:08.976 -06:00 [37] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:56:08.977 -06:00 [37] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 95.6828 ms
+2023-06-19 01:56:09.081 -06:00 [34] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:56:09.082 -06:00 [34] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 94.2706 ms
+2023-06-19 01:56:09.207 -06:00 [34] [INF] Request GetAll de cards completada
+2023-06-19 01:56:09.210 -06:00 [34] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 110.7497 ms
+2023-06-19 01:57:33.912 -06:00 [46] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 4.4612 ms
+2023-06-19 01:57:34.132 -06:00 [48] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:57:34.134 -06:00 [48] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.6609 ms
+2023-06-19 01:57:34.238 -06:00 [46] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:57:34.239 -06:00 [46] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 97.4711 ms
+2023-06-19 01:57:34.378 -06:00 [46] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:57:34.380 -06:00 [46] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 104.8605 ms
+2023-06-19 01:57:34.522 -06:00 [46] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:57:34.523 -06:00 [46] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 98.8867 ms
+2023-06-19 01:57:34.627 -06:00 [48] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:57:34.628 -06:00 [48] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 95.5292 ms
+2023-06-19 01:57:34.744 -06:00 [46] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:57:34.746 -06:00 [46] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.6580 ms
+2023-06-19 01:57:34.879 -06:00 [46] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:57:34.881 -06:00 [46] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 94.1544 ms
+2023-06-19 01:57:34.993 -06:00 [43] [INF] Request GetCards para string completada
+2023-06-19 01:57:34.995 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 98.1024 ms
+2023-06-19 01:57:35.105 -06:00 [43] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:57:35.107 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 95.3796 ms
+2023-06-19 01:57:35.230 -06:00 [51] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:57:35.231 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 103.0665 ms
+2023-06-19 01:57:35.337 -06:00 [51] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:57:35.339 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 92.9252 ms
+2023-06-19 01:57:35.456 -06:00 [51] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:57:35.457 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 101.6074 ms
+2023-06-19 01:57:35.569 -06:00 [48] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:57:35.570 -06:00 [48] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 94.2287 ms
+2023-06-19 01:57:35.677 -06:00 [48] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:57:35.678 -06:00 [48] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 93.6679 ms
+2023-06-19 01:57:35.784 -06:00 [48] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:57:35.786 -06:00 [48] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 99.2220 ms
+2023-06-19 01:57:35.896 -06:00 [47] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:57:35.896 -06:00 [47] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 93.0077 ms
+2023-06-19 01:57:36.003 -06:00 [50] [INF] Request GetAll de cards completada
+2023-06-19 01:57:36.005 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 97.4379 ms
+2023-06-19 01:57:53.559 -06:00 [54] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1.0315 ms
+2023-06-19 01:57:53.768 -06:00 [53] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:57:53.770 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.9603 ms
+2023-06-19 01:57:53.906 -06:00 [43] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:57:53.910 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 104.4136 ms
+2023-06-19 01:57:54.031 -06:00 [54] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:57:54.032 -06:00 [54] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 100.1226 ms
+2023-06-19 01:57:54.137 -06:00 [43] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:57:54.139 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 97.0682 ms
+2023-06-19 01:57:54.245 -06:00 [43] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:57:54.246 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 95.4331 ms
+2023-06-19 01:57:54.356 -06:00 [43] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:57:54.366 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 108.1666 ms
+2023-06-19 01:57:54.488 -06:00 [53] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:57:54.489 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 93.8344 ms
+2023-06-19 01:57:54.617 -06:00 [53] [INF] Request GetCards para string completada
+2023-06-19 01:57:54.624 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 100.8866 ms
+2023-06-19 01:57:54.730 -06:00 [53] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:57:54.731 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 95.9154 ms
+2023-06-19 01:57:54.833 -06:00 [53] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:57:54.834 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 92.4944 ms
+2023-06-19 01:57:54.961 -06:00 [53] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:57:54.963 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.1292 ms
+2023-06-19 01:57:55.071 -06:00 [43] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:57:55.072 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 95.3544 ms
+2023-06-19 01:57:55.179 -06:00 [43] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:57:55.179 -06:00 [43] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 93.4367 ms
+2023-06-19 01:57:55.277 -06:00 [51] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:57:55.278 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 91.7088 ms
+2023-06-19 01:57:55.378 -06:00 [51] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:57:55.379 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 93.9847 ms
+2023-06-19 01:57:55.497 -06:00 [50] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:57:55.500 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 99.8782 ms
+2023-06-19 01:57:55.603 -06:00 [50] [INF] Request GetAll de cards completada
+2023-06-19 01:57:55.604 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 94.5411 ms
+2023-06-19 01:58:09.148 -06:00 [43] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4274 ms
+2023-06-19 01:58:09.359 -06:00 [51] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:58:09.360 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 98.1500 ms
+2023-06-19 01:58:09.480 -06:00 [51] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:58:09.481 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 98.8059 ms
+2023-06-19 01:58:09.592 -06:00 [51] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:58:09.594 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 94.8043 ms
+2023-06-19 01:58:09.695 -06:00 [50] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:58:09.696 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 94.4894 ms
+2023-06-19 01:58:09.807 -06:00 [50] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:58:09.808 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 101.9089 ms
+2023-06-19 01:58:09.914 -06:00 [51] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:58:09.915 -06:00 [51] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 94.5222 ms
+2023-06-19 01:58:10.030 -06:00 [50] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:58:10.031 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 105.5216 ms
+2023-06-19 01:58:10.154 -06:00 [50] [INF] Request GetCards para string completada
+2023-06-19 01:58:10.156 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 102.5985 ms
+2023-06-19 01:58:10.292 -06:00 [54] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:58:10.292 -06:00 [54] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 106.0030 ms
+2023-06-19 01:58:10.422 -06:00 [54] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:58:10.425 -06:00 [54] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 103.3591 ms
+2023-06-19 01:58:10.567 -06:00 [52] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:58:10.571 -06:00 [52] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 107.1433 ms
+2023-06-19 01:58:10.696 -06:00 [49] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:58:10.698 -06:00 [49] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 100.1672 ms
+2023-06-19 01:58:10.835 -06:00 [49] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:58:10.836 -06:00 [49] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 106.5306 ms
+2023-06-19 01:58:10.942 -06:00 [54] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:58:10.944 -06:00 [54] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 97.3739 ms
+2023-06-19 01:58:11.060 -06:00 [52] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:58:11.065 -06:00 [52] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 100.9777 ms
+2023-06-19 01:58:11.232 -06:00 [53] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:58:11.242 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 119.4204 ms
+2023-06-19 01:58:11.374 -06:00 [53] [INF] Request GetAll de cards completada
+2023-06-19 01:58:11.375 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 101.3965 ms
+2023-06-19 01:58:35.573 -06:00 [55] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4535 ms
+2023-06-19 01:58:35.780 -06:00 [50] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:58:35.781 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.6597 ms
+2023-06-19 01:58:35.887 -06:00 [53] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:58:35.889 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 98.2855 ms
+2023-06-19 01:58:36.024 -06:00 [50] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:58:36.026 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 102.1953 ms
+2023-06-19 01:58:36.141 -06:00 [53] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:58:36.142 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 94.5867 ms
+2023-06-19 01:58:36.253 -06:00 [55] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:58:36.254 -06:00 [55] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 94.5712 ms
+2023-06-19 01:58:36.358 -06:00 [50] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:58:36.359 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 94.6374 ms
+2023-06-19 01:58:36.511 -06:00 [59] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:58:36.513 -06:00 [59] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 102.7578 ms
+2023-06-19 01:58:36.634 -06:00 [57] [INF] Request GetCards para string completada
+2023-06-19 01:58:36.635 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 100.6782 ms
+2023-06-19 01:58:36.756 -06:00 [58] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:58:36.756 -06:00 [58] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 103.2418 ms
+2023-06-19 01:58:36.864 -06:00 [57] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:58:36.865 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 94.9084 ms
+2023-06-19 01:58:36.988 -06:00 [59] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:58:36.989 -06:00 [59] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 99.0929 ms
+2023-06-19 01:58:37.109 -06:00 [53] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:58:37.111 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 101.2325 ms
+2023-06-19 01:58:37.237 -06:00 [58] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:58:37.238 -06:00 [58] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 100.3487 ms
+2023-06-19 01:58:37.378 -06:00 [57] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:58:37.380 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 113.1347 ms
+2023-06-19 01:58:37.530 -06:00 [57] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:58:37.535 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 101.3192 ms
+2023-06-19 01:58:37.642 -06:00 [50] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:58:37.643 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 94.2004 ms
+2023-06-19 01:58:37.744 -06:00 [57] [INF] Request GetAll de cards completada
+2023-06-19 01:58:37.745 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 95.2727 ms
+2023-06-19 01:58:54.036 -06:00 [59] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4571 ms
+2023-06-19 01:58:54.244 -06:00 [57] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:58:54.245 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 99.4042 ms
+2023-06-19 01:58:54.356 -06:00 [53] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:58:54.357 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 94.5818 ms
+2023-06-19 01:58:54.482 -06:00 [59] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:58:54.484 -06:00 [59] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 98.0805 ms
+2023-06-19 01:58:54.599 -06:00 [57] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:58:54.599 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 92.8833 ms
+2023-06-19 01:58:54.704 -06:00 [53] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:58:54.704 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 93.7029 ms
+2023-06-19 01:58:54.810 -06:00 [57] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:58:54.812 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.7870 ms
+2023-06-19 01:58:54.940 -06:00 [53] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:58:54.940 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 108.1150 ms
+2023-06-19 01:58:55.053 -06:00 [53] [INF] Request GetCards para string completada
+2023-06-19 01:58:55.053 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 94.5686 ms
+2023-06-19 01:58:55.158 -06:00 [59] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:58:55.159 -06:00 [59] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 92.8417 ms
+2023-06-19 01:58:55.260 -06:00 [57] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:58:55.260 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 94.5827 ms
+2023-06-19 01:58:55.394 -06:00 [53] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:58:55.395 -06:00 [53] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.2760 ms
+2023-06-19 01:58:55.518 -06:00 [57] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:58:55.523 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 105.1882 ms
+2023-06-19 01:58:55.661 -06:00 [50] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:58:55.663 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 98.5284 ms
+2023-06-19 01:58:55.800 -06:00 [55] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:58:55.801 -06:00 [55] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 99.3657 ms
+2023-06-19 01:58:55.903 -06:00 [50] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:58:55.906 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 96.0092 ms
+2023-06-19 01:58:56.042 -06:00 [57] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:58:56.045 -06:00 [57] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 116.3671 ms
+2023-06-19 01:58:56.165 -06:00 [50] [INF] Request GetAll de cards completada
+2023-06-19 01:58:56.168 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 98.6703 ms
+2023-06-19 01:59:19.087 -06:00 [56] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4963 ms
+2023-06-19 01:59:19.296 -06:00 [50] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:59:19.298 -06:00 [50] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.1248 ms
+2023-06-19 01:59:19.448 -06:00 [60] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:59:19.449 -06:00 [60] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 108.2675 ms
+2023-06-19 01:59:19.565 -06:00 [60] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:59:19.566 -06:00 [60] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 95.1087 ms
+2023-06-19 01:59:19.679 -06:00 [56] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:59:19.680 -06:00 [56] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 94.3489 ms
+2023-06-19 01:59:19.784 -06:00 [56] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:59:19.785 -06:00 [56] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 92.6080 ms
+2023-06-19 01:59:19.884 -06:00 [62] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:59:19.884 -06:00 [62] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 92.1966 ms
+2023-06-19 01:59:19.990 -06:00 [62] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:59:19.990 -06:00 [62] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 96.9970 ms
+2023-06-19 01:59:20.098 -06:00 [56] [INF] Request GetCards para string completada
+2023-06-19 01:59:20.099 -06:00 [56] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 93.5072 ms
+2023-06-19 01:59:20.241 -06:00 [60] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:59:20.244 -06:00 [60] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 97.7573 ms
+2023-06-19 01:59:20.392 -06:00 [64] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:59:20.393 -06:00 [64] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 94.7501 ms
+2023-06-19 01:59:20.499 -06:00 [56] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:59:20.501 -06:00 [56] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 95.3133 ms
+2023-06-19 01:59:20.615 -06:00 [56] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:59:20.615 -06:00 [56] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 94.6588 ms
+2023-06-19 01:59:20.720 -06:00 [64] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:59:20.720 -06:00 [64] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 93.9086 ms
+2023-06-19 01:59:20.828 -06:00 [56] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:59:20.831 -06:00 [56] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 99.7673 ms
+2023-06-19 01:59:20.949 -06:00 [66] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:59:20.949 -06:00 [66] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 95.4840 ms
+2023-06-19 01:59:21.074 -06:00 [62] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:59:21.075 -06:00 [62] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 97.0722 ms
+2023-06-19 01:59:21.193 -06:00 [64] [INF] Request GetAll de cards completada
+2023-06-19 01:59:21.195 -06:00 [64] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 103.2559 ms
+2023-06-19 01:59:57.707 -06:00 [61] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5257 ms
+2023-06-19 01:59:57.910 -06:00 [70] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 01:59:57.910 -06:00 [70] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 95.5739 ms
+2023-06-19 01:59:58.015 -06:00 [69] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 01:59:58.018 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 97.1304 ms
+2023-06-19 01:59:58.153 -06:00 [61] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 01:59:58.155 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 110.1744 ms
+2023-06-19 01:59:58.277 -06:00 [68] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 01:59:58.277 -06:00 [68] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 92.1432 ms
+2023-06-19 01:59:58.384 -06:00 [70] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 01:59:58.385 -06:00 [70] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 95.5855 ms
+2023-06-19 01:59:58.493 -06:00 [69] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 01:59:58.495 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 93.9966 ms
+2023-06-19 01:59:58.601 -06:00 [69] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 01:59:58.605 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 98.5915 ms
+2023-06-19 01:59:58.779 -06:00 [63] [INF] Request GetCards para string completada
+2023-06-19 01:59:58.780 -06:00 [63] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 112.1931 ms
+2023-06-19 01:59:58.902 -06:00 [63] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 01:59:58.903 -06:00 [63] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 102.2633 ms
+2023-06-19 01:59:59.015 -06:00 [61] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 01:59:59.016 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 95.6450 ms
+2023-06-19 01:59:59.128 -06:00 [61] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 01:59:59.129 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.3111 ms
+2023-06-19 01:59:59.270 -06:00 [69] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 01:59:59.272 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 109.3326 ms
+2023-06-19 01:59:59.403 -06:00 [63] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 01:59:59.404 -06:00 [63] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 101.6589 ms
+2023-06-19 01:59:59.546 -06:00 [69] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 01:59:59.549 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 109.6951 ms
+2023-06-19 01:59:59.711 -06:00 [61] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 01:59:59.712 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 96.5581 ms
+2023-06-19 01:59:59.825 -06:00 [69] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 01:59:59.827 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 99.2487 ms
+2023-06-19 01:59:59.968 -06:00 [63] [INF] Request GetAll de cards completada
+2023-06-19 01:59:59.968 -06:00 [63] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 102.9800 ms
+2023-06-19 02:00:32.388 -06:00 [63] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4109 ms
+2023-06-19 02:00:32.645 -06:00 [67] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:00:32.646 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 99.2147 ms
+2023-06-19 02:00:32.755 -06:00 [69] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:00:32.756 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 94.8327 ms
+2023-06-19 02:00:32.879 -06:00 [69] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:00:32.879 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 92.3987 ms
+2023-06-19 02:00:32.999 -06:00 [61] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:00:33.015 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 114.9081 ms
+2023-06-19 02:00:33.135 -06:00 [69] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:00:33.136 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 92.0900 ms
+2023-06-19 02:00:33.235 -06:00 [61] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:00:33.236 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 90.4212 ms
+2023-06-19 02:00:33.349 -06:00 [61] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:00:33.349 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 94.6355 ms
+2023-06-19 02:00:33.456 -06:00 [75] [INF] Request GetCards para string completada
+2023-06-19 02:00:33.459 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 94.5659 ms
+2023-06-19 02:00:33.581 -06:00 [74] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:00:33.582 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 105.0647 ms
+2023-06-19 02:00:33.690 -06:00 [61] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:00:33.691 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 95.9413 ms
+2023-06-19 02:00:33.795 -06:00 [61] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:00:33.796 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 94.4323 ms
+2023-06-19 02:00:33.919 -06:00 [75] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:00:33.919 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 100.9331 ms
+2023-06-19 02:00:34.027 -06:00 [61] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:00:34.028 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 96.5066 ms
+2023-06-19 02:00:34.129 -06:00 [69] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:00:34.129 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 93.3279 ms
+2023-06-19 02:00:34.232 -06:00 [67] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:00:34.232 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 92.3328 ms
+2023-06-19 02:00:34.334 -06:00 [67] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:00:34.336 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 96.2589 ms
+2023-06-19 02:00:34.460 -06:00 [61] [INF] Request GetAll de cards completada
+2023-06-19 02:00:34.461 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 99.5840 ms
+2023-06-19 02:00:37.195 -06:00 [75] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3893 ms
+2023-06-19 02:00:37.393 -06:00 [69] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:00:37.393 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.3285 ms
+2023-06-19 02:00:37.498 -06:00 [69] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:00:37.498 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 94.3211 ms
+2023-06-19 02:00:37.601 -06:00 [75] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:00:37.601 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 93.3716 ms
+2023-06-19 02:00:37.707 -06:00 [75] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:00:37.709 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 97.6348 ms
+2023-06-19 02:00:37.835 -06:00 [61] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:00:37.837 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 99.8358 ms
+2023-06-19 02:00:37.952 -06:00 [75] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:00:37.953 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.1417 ms
+2023-06-19 02:00:38.081 -06:00 [69] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:00:38.086 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 102.6809 ms
+2023-06-19 02:00:38.229 -06:00 [61] [INF] Request GetCards para string completada
+2023-06-19 02:00:38.229 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 106.2757 ms
+2023-06-19 02:00:38.335 -06:00 [74] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:00:38.337 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 98.4503 ms
+2023-06-19 02:00:38.503 -06:00 [69] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:00:38.503 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 128.8230 ms
+2023-06-19 02:00:38.611 -06:00 [75] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:00:38.611 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 95.8259 ms
+2023-06-19 02:00:38.711 -06:00 [75] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:00:38.711 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 91.3862 ms
+2023-06-19 02:00:38.824 -06:00 [69] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:00:38.826 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 103.8935 ms
+2023-06-19 02:00:38.929 -06:00 [69] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:00:38.937 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 100.1052 ms
+2023-06-19 02:00:39.067 -06:00 [61] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:00:39.068 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 94.1545 ms
+2023-06-19 02:00:39.179 -06:00 [61] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:00:39.180 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 99.1474 ms
+2023-06-19 02:00:39.310 -06:00 [76] [INF] Request GetAll de cards completada
+2023-06-19 02:00:39.314 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 105.4406 ms
+2023-06-19 02:00:49.270 -06:00 [75] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4442 ms
+2023-06-19 02:00:49.496 -06:00 [67] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:00:49.496 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 105.3124 ms
+2023-06-19 02:00:49.599 -06:00 [67] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:00:49.600 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 95.1544 ms
+2023-06-19 02:00:49.701 -06:00 [67] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:00:49.702 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 91.4443 ms
+2023-06-19 02:00:49.819 -06:00 [67] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:00:49.820 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 94.3379 ms
+2023-06-19 02:00:49.925 -06:00 [75] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:00:49.926 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 93.6900 ms
+2023-06-19 02:00:50.035 -06:00 [75] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:00:50.036 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 94.5466 ms
+2023-06-19 02:00:50.174 -06:00 [67] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:00:50.179 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 111.0857 ms
+2023-06-19 02:00:50.304 -06:00 [67] [INF] Request GetCards para string completada
+2023-06-19 02:00:50.306 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 101.4923 ms
+2023-06-19 02:00:50.431 -06:00 [69] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:00:50.433 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 102.3653 ms
+2023-06-19 02:00:50.550 -06:00 [75] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:00:50.551 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 94.8202 ms
+2023-06-19 02:00:50.677 -06:00 [74] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:00:50.678 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 114.5231 ms
+2023-06-19 02:00:50.799 -06:00 [74] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:00:50.800 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 96.5366 ms
+2023-06-19 02:00:50.911 -06:00 [74] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:00:50.911 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 92.6882 ms
+2023-06-19 02:00:51.012 -06:00 [74] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:00:51.013 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 93.0598 ms
+2023-06-19 02:00:51.127 -06:00 [74] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:00:51.127 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 96.5816 ms
+2023-06-19 02:00:51.232 -06:00 [76] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:00:51.234 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 98.2266 ms
+2023-06-19 02:00:51.351 -06:00 [75] [INF] Request GetAll de cards completada
+2023-06-19 02:00:51.354 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 103.2059 ms
+2023-06-19 02:00:53.517 -06:00 [74] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4515 ms
+2023-06-19 02:00:53.764 -06:00 [74] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:00:53.765 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 95.6782 ms
+2023-06-19 02:00:53.866 -06:00 [76] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:00:53.867 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 93.1473 ms
+2023-06-19 02:00:54.012 -06:00 [75] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:00:54.014 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 101.7510 ms
+2023-06-19 02:00:54.136 -06:00 [74] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:00:54.137 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 92.2703 ms
+2023-06-19 02:00:54.255 -06:00 [75] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:00:54.257 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 107.2766 ms
+2023-06-19 02:00:54.400 -06:00 [75] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:00:54.402 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 105.2225 ms
+2023-06-19 02:00:54.531 -06:00 [76] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:00:54.532 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 103.5317 ms
+2023-06-19 02:00:54.659 -06:00 [76] [INF] Request GetCards para string completada
+2023-06-19 02:00:54.661 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 105.4046 ms
+2023-06-19 02:00:54.784 -06:00 [61] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:00:54.785 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 103.2327 ms
+2023-06-19 02:00:54.929 -06:00 [69] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:00:54.931 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 105.9629 ms
+2023-06-19 02:00:55.041 -06:00 [61] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:00:55.044 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 97.0831 ms
+2023-06-19 02:00:55.187 -06:00 [76] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:00:55.187 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 101.4572 ms
+2023-06-19 02:00:55.292 -06:00 [69] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:00:55.293 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 96.6508 ms
+2023-06-19 02:00:55.403 -06:00 [76] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:00:55.404 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 97.6938 ms
+2023-06-19 02:00:55.505 -06:00 [76] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:00:55.506 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 92.5869 ms
+2023-06-19 02:00:55.605 -06:00 [67] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:00:55.606 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 93.3445 ms
+2023-06-19 02:00:55.712 -06:00 [75] [INF] Request GetAll de cards completada
+2023-06-19 02:00:55.713 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 98.7046 ms
+2023-06-19 02:00:57.274 -06:00 [69] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4576 ms
+2023-06-19 02:00:57.481 -06:00 [75] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:00:57.482 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 97.1050 ms
+2023-06-19 02:00:57.588 -06:00 [75] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:00:57.588 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 90.9473 ms
+2023-06-19 02:00:57.699 -06:00 [75] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:00:57.699 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 94.2795 ms
+2023-06-19 02:00:57.803 -06:00 [67] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:00:57.804 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 92.7475 ms
+2023-06-19 02:00:57.939 -06:00 [69] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:00:57.941 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 101.0780 ms
+2023-06-19 02:00:58.047 -06:00 [69] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:00:58.048 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.0466 ms
+2023-06-19 02:00:58.163 -06:00 [67] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:00:58.163 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 96.6872 ms
+2023-06-19 02:00:58.266 -06:00 [76] [INF] Request GetCards para string completada
+2023-06-19 02:00:58.266 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 93.2874 ms
+2023-06-19 02:00:58.372 -06:00 [75] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:00:58.373 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 92.2294 ms
+2023-06-19 02:00:58.478 -06:00 [69] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:00:58.479 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 92.3634 ms
+2023-06-19 02:00:58.583 -06:00 [69] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:00:58.584 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 96.3367 ms
+2023-06-19 02:00:58.690 -06:00 [74] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:00:58.691 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 94.2887 ms
+2023-06-19 02:00:58.793 -06:00 [61] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:00:58.794 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 96.2897 ms
+2023-06-19 02:00:58.901 -06:00 [61] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:00:58.902 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 94.8340 ms
+2023-06-19 02:00:59.019 -06:00 [61] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:00:59.020 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 94.3612 ms
+2023-06-19 02:00:59.131 -06:00 [75] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:00:59.132 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 99.8522 ms
+2023-06-19 02:00:59.236 -06:00 [61] [INF] Request GetAll de cards completada
+2023-06-19 02:00:59.237 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 93.8329 ms
+2023-06-19 02:01:01.942 -06:00 [75] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6177 ms
+2023-06-19 02:01:02.149 -06:00 [76] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:01:02.150 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 98.4515 ms
+2023-06-19 02:01:02.263 -06:00 [67] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:01:02.265 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 104.4441 ms
+2023-06-19 02:01:02.421 -06:00 [76] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:01:02.422 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 110.9668 ms
+2023-06-19 02:01:02.539 -06:00 [61] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:01:02.539 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 94.1118 ms
+2023-06-19 02:01:02.641 -06:00 [61] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:01:02.642 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 95.0061 ms
+2023-06-19 02:01:02.776 -06:00 [61] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:01:02.778 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 107.8630 ms
+2023-06-19 02:01:02.894 -06:00 [67] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:01:02.895 -06:00 [67] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 99.6707 ms
+2023-06-19 02:01:02.997 -06:00 [76] [INF] Request GetCards para string completada
+2023-06-19 02:01:02.998 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 92.9347 ms
+2023-06-19 02:01:03.105 -06:00 [61] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:01:03.109 -06:00 [61] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 100.2454 ms
+2023-06-19 02:01:03.290 -06:00 [69] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:01:03.291 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 98.1107 ms
+2023-06-19 02:01:03.410 -06:00 [74] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:01:03.412 -06:00 [74] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 96.6189 ms
+2023-06-19 02:01:03.520 -06:00 [69] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:01:03.520 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 93.7479 ms
+2023-06-19 02:01:03.629 -06:00 [69] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:01:03.630 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 94.7113 ms
+2023-06-19 02:01:03.741 -06:00 [69] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:01:03.741 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 94.9418 ms
+2023-06-19 02:01:03.851 -06:00 [75] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:01:03.851 -06:00 [75] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 97.1528 ms
+2023-06-19 02:01:03.954 -06:00 [69] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:01:03.957 -06:00 [69] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 96.0543 ms
+2023-06-19 02:01:04.092 -06:00 [76] [INF] Request GetAll de cards completada
+2023-06-19 02:01:04.093 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 102.1381 ms
+2023-06-19 02:01:39.453 -06:00 [63] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3746 ms
+2023-06-19 02:01:39.668 -06:00 [76] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:01:39.668 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.6534 ms
+2023-06-19 02:01:39.773 -06:00 [76] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:01:39.775 -06:00 [76] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 98.0708 ms
+2023-06-19 02:01:39.930 -06:00 [63] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:01:39.930 -06:00 [63] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 97.9667 ms
+2023-06-19 02:01:40.071 -06:00 [63] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:01:40.072 -06:00 [63] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 92.7136 ms
+2023-06-19 02:01:40.177 -06:00 [78] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:01:40.179 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 97.4898 ms
+2023-06-19 02:01:40.286 -06:00 [78] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:01:40.287 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 93.9323 ms
+2023-06-19 02:01:40.411 -06:00 [79] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:01:40.413 -06:00 [79] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 95.1914 ms
+2023-06-19 02:01:40.519 -06:00 [79] [INF] Request GetCards para string completada
+2023-06-19 02:01:40.520 -06:00 [79] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 92.0844 ms
+2023-06-19 02:01:40.616 -06:00 [82] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:01:40.616 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 89.8277 ms
+2023-06-19 02:01:40.715 -06:00 [78] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:01:40.720 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 98.1161 ms
+2023-06-19 02:01:40.855 -06:00 [78] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:01:40.856 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 96.1028 ms
+2023-06-19 02:01:40.965 -06:00 [78] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:01:40.967 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 95.5293 ms
+2023-06-19 02:01:41.102 -06:00 [78] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:01:41.104 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 102.0134 ms
+2023-06-19 02:01:41.240 -06:00 [78] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:01:41.240 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 98.4769 ms
+2023-06-19 02:01:41.346 -06:00 [82] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:01:41.348 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 97.9867 ms
+2023-06-19 02:01:41.511 -06:00 [78] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:01:41.512 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 100.3867 ms
+2023-06-19 02:01:41.615 -06:00 [82] [INF] Request GetAll de cards completada
+2023-06-19 02:01:41.615 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 94.1694 ms
+2023-06-19 02:02:13.084 -06:00 [81] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6740 ms
+2023-06-19 02:02:13.294 -06:00 [81] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:02:13.295 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 100.1090 ms
+2023-06-19 02:02:13.421 -06:00 [81] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:02:13.422 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 97.8020 ms
+2023-06-19 02:02:13.527 -06:00 [78] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:02:13.528 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 96.2597 ms
+2023-06-19 02:02:13.634 -06:00 [81] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:02:13.635 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 89.7559 ms
+2023-06-19 02:02:13.745 -06:00 [81] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:02:13.746 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 98.2383 ms
+2023-06-19 02:02:13.870 -06:00 [81] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:02:13.871 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.1854 ms
+2023-06-19 02:02:13.980 -06:00 [78] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:02:13.980 -06:00 [78] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 99.2243 ms
+2023-06-19 02:02:14.100 -06:00 [85] [INF] Request GetCards para string completada
+2023-06-19 02:02:14.104 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 98.5855 ms
+2023-06-19 02:02:14.215 -06:00 [86] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:02:14.216 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 93.3824 ms
+2023-06-19 02:02:14.327 -06:00 [86] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:02:14.328 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 92.8613 ms
+2023-06-19 02:02:14.435 -06:00 [86] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:02:14.436 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 92.8180 ms
+2023-06-19 02:02:14.550 -06:00 [81] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:02:14.551 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 102.4663 ms
+2023-06-19 02:02:14.658 -06:00 [81] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:02:14.659 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 94.5072 ms
+2023-06-19 02:02:14.761 -06:00 [86] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:02:14.761 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 94.6652 ms
+2023-06-19 02:02:14.864 -06:00 [82] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:02:14.865 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 96.4604 ms
+2023-06-19 02:02:15.003 -06:00 [86] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:02:15.004 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 105.3620 ms
+2023-06-19 02:02:15.116 -06:00 [86] [INF] Request GetAll de cards completada
+2023-06-19 02:02:15.119 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 101.4612 ms
+2023-06-19 02:02:33.897 -06:00 [85] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4934 ms
+2023-06-19 02:02:34.124 -06:00 [86] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:02:34.124 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 96.4499 ms
+2023-06-19 02:02:34.232 -06:00 [85] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:02:34.235 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 102.5981 ms
+2023-06-19 02:02:34.435 -06:00 [81] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:02:34.435 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 97.7418 ms
+2023-06-19 02:02:34.542 -06:00 [81] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:02:34.543 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 93.8099 ms
+2023-06-19 02:02:34.649 -06:00 [81] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:02:34.650 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 96.2317 ms
+2023-06-19 02:02:34.862 -06:00 [85] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:02:34.863 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.8521 ms
+2023-06-19 02:02:34.978 -06:00 [88] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:02:34.980 -06:00 [88] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 106.5445 ms
+2023-06-19 02:02:35.114 -06:00 [88] [INF] Request GetCards para string completada
+2023-06-19 02:02:35.114 -06:00 [88] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 91.3049 ms
+2023-06-19 02:02:35.227 -06:00 [88] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:02:35.232 -06:00 [88] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 100.8634 ms
+2023-06-19 02:02:35.391 -06:00 [88] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:02:35.393 -06:00 [88] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 108.2782 ms
+2023-06-19 02:02:35.535 -06:00 [86] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:02:35.536 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 114.5703 ms
+2023-06-19 02:02:35.657 -06:00 [82] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:02:35.658 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 96.9354 ms
+2023-06-19 02:02:35.769 -06:00 [82] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:02:35.771 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 99.2698 ms
+2023-06-19 02:02:35.942 -06:00 [87] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:02:35.942 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 102.7709 ms
+2023-06-19 02:02:36.046 -06:00 [87] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:02:36.046 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 91.9616 ms
+2023-06-19 02:02:36.164 -06:00 [86] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:02:36.166 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 100.0236 ms
+2023-06-19 02:02:36.296 -06:00 [86] [INF] Request GetAll de cards completada
+2023-06-19 02:02:36.300 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 106.6041 ms
+2023-06-19 02:02:46.401 -06:00 [82] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4442 ms
+2023-06-19 02:02:46.626 -06:00 [87] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:02:46.626 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 94.3668 ms
+2023-06-19 02:02:46.734 -06:00 [82] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:02:46.735 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 95.7762 ms
+2023-06-19 02:02:46.863 -06:00 [86] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:02:46.864 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 98.6089 ms
+2023-06-19 02:02:46.990 -06:00 [82] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:02:46.990 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 92.3694 ms
+2023-06-19 02:02:47.097 -06:00 [81] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:02:47.097 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 94.5773 ms
+2023-06-19 02:02:47.207 -06:00 [87] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:02:47.208 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.6552 ms
+2023-06-19 02:02:47.339 -06:00 [84] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:02:47.339 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 102.1987 ms
+2023-06-19 02:02:47.445 -06:00 [82] [INF] Request GetCards para string completada
+2023-06-19 02:02:47.446 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 97.7092 ms
+2023-06-19 02:02:47.547 -06:00 [86] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:02:47.548 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 92.8864 ms
+2023-06-19 02:02:47.652 -06:00 [86] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:02:47.653 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 93.3178 ms
+2023-06-19 02:02:47.755 -06:00 [85] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:02:47.755 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 93.0509 ms
+2023-06-19 02:02:47.857 -06:00 [82] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:02:47.858 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 94.2178 ms
+2023-06-19 02:02:47.966 -06:00 [85] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:02:47.967 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 94.8762 ms
+2023-06-19 02:02:48.069 -06:00 [85] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:02:48.070 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 94.1986 ms
+2023-06-19 02:02:48.175 -06:00 [81] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:02:48.177 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 93.4033 ms
+2023-06-19 02:02:48.275 -06:00 [81] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:02:48.276 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 90.7652 ms
+2023-06-19 02:02:48.377 -06:00 [84] [INF] Request GetAll de cards completada
+2023-06-19 02:02:48.378 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 94.6156 ms
+2023-06-19 02:02:48.682 -06:00 [82] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4733 ms
+2023-06-19 02:02:48.937 -06:00 [87] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:02:48.938 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 99.4262 ms
+2023-06-19 02:02:49.069 -06:00 [81] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:02:49.071 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 93.6077 ms
+2023-06-19 02:02:49.172 -06:00 [85] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:02:49.175 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 94.9266 ms
+2023-06-19 02:02:49.317 -06:00 [85] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:02:49.320 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 97.9432 ms
+2023-06-19 02:02:49.469 -06:00 [85] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:02:49.469 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 105.6672 ms
+2023-06-19 02:02:49.574 -06:00 [84] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:02:49.574 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 94.8017 ms
+2023-06-19 02:02:49.678 -06:00 [85] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:02:49.679 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 95.5881 ms
+2023-06-19 02:02:49.779 -06:00 [85] [INF] Request GetCards para string completada
+2023-06-19 02:02:49.780 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 95.4577 ms
+2023-06-19 02:02:49.886 -06:00 [87] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:02:49.886 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 94.3129 ms
+2023-06-19 02:02:49.994 -06:00 [84] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:02:49.994 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 90.2582 ms
+2023-06-19 02:02:50.102 -06:00 [85] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:02:50.103 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 96.4713 ms
+2023-06-19 02:02:50.234 -06:00 [87] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:02:50.235 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 91.6021 ms
+2023-06-19 02:02:50.343 -06:00 [87] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:02:50.343 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 94.2637 ms
+2023-06-19 02:02:50.449 -06:00 [87] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:02:50.449 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 94.3457 ms
+2023-06-19 02:02:50.580 -06:00 [85] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:02:50.580 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 99.0601 ms
+2023-06-19 02:02:50.681 -06:00 [85] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:02:50.683 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 93.8978 ms
+2023-06-19 02:02:50.808 -06:00 [87] [INF] Request GetAll de cards completada
+2023-06-19 02:02:50.809 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 102.2503 ms
+2023-06-19 02:03:04.353 -06:00 [86] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4386 ms
+2023-06-19 02:03:04.594 -06:00 [86] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:03:04.595 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 100.2073 ms
+2023-06-19 02:03:04.699 -06:00 [84] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:03:04.700 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 95.9234 ms
+2023-06-19 02:03:04.840 -06:00 [87] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:03:04.844 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 102.2223 ms
+2023-06-19 02:03:04.960 -06:00 [85] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:03:04.962 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 95.2949 ms
+2023-06-19 02:03:05.094 -06:00 [82] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:03:05.096 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 105.5758 ms
+2023-06-19 02:03:05.226 -06:00 [85] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:03:05.227 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 105.2279 ms
+2023-06-19 02:03:05.349 -06:00 [81] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:03:05.352 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 100.4892 ms
+2023-06-19 02:03:05.494 -06:00 [81] [INF] Request GetCards para string completada
+2023-06-19 02:03:05.495 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 98.5807 ms
+2023-06-19 02:03:05.605 -06:00 [85] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:03:05.606 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 93.0315 ms
+2023-06-19 02:03:05.723 -06:00 [85] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:03:05.724 -06:00 [85] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 95.1009 ms
+2023-06-19 02:03:05.896 -06:00 [81] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:03:05.898 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 95.4447 ms
+2023-06-19 02:03:06.072 -06:00 [87] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:03:06.073 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 98.8628 ms
+2023-06-19 02:03:06.251 -06:00 [87] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:03:06.251 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 103.2269 ms
+2023-06-19 02:03:06.366 -06:00 [81] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:03:06.370 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 105.3212 ms
+2023-06-19 02:03:06.510 -06:00 [87] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:03:06.511 -06:00 [87] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 96.0151 ms
+2023-06-19 02:03:06.652 -06:00 [84] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:03:06.654 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 101.3322 ms
+2023-06-19 02:03:06.776 -06:00 [84] [INF] Request GetAll de cards completada
+2023-06-19 02:03:06.778 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 100.1974 ms
+2023-06-19 02:03:23.830 -06:00 [81] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4060 ms
+2023-06-19 02:03:24.069 -06:00 [84] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:03:24.070 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 98.8855 ms
+2023-06-19 02:03:24.176 -06:00 [84] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:03:24.177 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 95.7326 ms
+2023-06-19 02:03:24.364 -06:00 [81] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:03:24.365 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 95.6342 ms
+2023-06-19 02:03:24.470 -06:00 [82] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:03:24.471 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 97.6145 ms
+2023-06-19 02:03:24.640 -06:00 [89] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:03:24.641 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 97.6859 ms
+2023-06-19 02:03:24.774 -06:00 [82] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:03:24.777 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 104.9824 ms
+2023-06-19 02:03:24.968 -06:00 [81] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:03:24.968 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 96.7440 ms
+2023-06-19 02:03:25.069 -06:00 [84] [INF] Request GetCards para string completada
+2023-06-19 02:03:25.071 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 94.6078 ms
+2023-06-19 02:03:25.208 -06:00 [86] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:03:25.210 -06:00 [86] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 101.2884 ms
+2023-06-19 02:03:25.349 -06:00 [82] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:03:25.351 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 96.0244 ms
+2023-06-19 02:03:25.480 -06:00 [81] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:03:25.481 -06:00 [81] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.9954 ms
+2023-06-19 02:03:25.588 -06:00 [84] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:03:25.589 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 94.3130 ms
+2023-06-19 02:03:25.724 -06:00 [82] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:03:25.725 -06:00 [82] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 100.9186 ms
+2023-06-19 02:03:25.856 -06:00 [89] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:03:25.858 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 102.4532 ms
+2023-06-19 02:03:25.988 -06:00 [84] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:03:25.989 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 100.2444 ms
+2023-06-19 02:03:26.098 -06:00 [84] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:03:26.099 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 93.9147 ms
+2023-06-19 02:03:26.208 -06:00 [84] [INF] Request GetAll de cards completada
+2023-06-19 02:03:26.211 -06:00 [84] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get_all responded 200 in 97.9954 ms
+2023-06-19 02:05:00.202 -06:00 [90] [INF] [0HMRGJ4P490LL] <null>HTTP OPTIONS /Account/addCards/U-YCKFBUUBZZHP responded 204 in 0.0952 ms
+2023-06-19 02:05:00.431 -06:00 [89] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 02:05:00.523 -06:00 [89] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 02:05:00.626 -06:00 [89] [INF] Request AddCardsToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 02:05:00.627 -06:00 [89] [INF] Request AddCardsListToCollection para U-YCKFBUUBZZHP completada
+2023-06-19 02:05:00.628 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP POST /Account/addCards/U-YCKFBUUBZZHP responded 200 in 415.6243 ms
+2023-06-19 02:05:01.026 -06:00 [89] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4041 ms
+2023-06-19 02:05:13.216 -06:00 [92] [INF] [0HMRGJ4P490LL] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1889 ms
+2023-06-19 02:05:13.326 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP PUT /login/Signin responded 200 in 102.0597 ms
+2023-06-19 02:05:13.697 -06:00 [90] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4338 ms
+2023-06-19 02:05:15.621 -06:00 [89] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3085 ms
+2023-06-19 02:05:15.879 -06:00 [89] [WRN] No existen deks en para el usuario U-YCKFBUUBZZHP en GetNames
+2023-06-19 02:05:15.884 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/Names/U-YCKFBUUBZZHP responded 404 in 104.7967 ms
+2023-06-19 02:05:17.867 -06:00 [89] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4454 ms
+2023-06-19 02:05:18.083 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 96.5269 ms
+2023-06-19 02:05:18.225 -06:00 [89] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:05:18.228 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 98.6347 ms
+2023-06-19 02:05:18.385 -06:00 [93] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:05:18.387 -06:00 [93] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 96.1505 ms
+2023-06-19 02:05:18.561 -06:00 [89] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:05:18.561 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 98.5433 ms
+2023-06-19 02:05:18.733 -06:00 [89] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:05:18.733 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 93.3625 ms
+2023-06-19 02:05:18.844 -06:00 [93] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:05:18.845 -06:00 [93] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 97.7531 ms
+2023-06-19 02:05:19.028 -06:00 [91] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:05:19.029 -06:00 [91] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 100.0559 ms
+2023-06-19 02:05:19.147 -06:00 [89] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:05:19.147 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 93.0272 ms
+2023-06-19 02:05:19.260 -06:00 [89] [INF] Request GetCards para string completada
+2023-06-19 02:05:19.261 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 94.8677 ms
+2023-06-19 02:05:19.403 -06:00 [94] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:05:19.404 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 95.8794 ms
+2023-06-19 02:05:19.514 -06:00 [94] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:05:19.515 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 95.7091 ms
+2023-06-19 02:05:19.626 -06:00 [94] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:05:19.627 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 95.7071 ms
+2023-06-19 02:05:19.807 -06:00 [89] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:05:19.809 -06:00 [89] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 105.7599 ms
+2023-06-19 02:05:19.973 -06:00 [93] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:05:19.979 -06:00 [93] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 107.2245 ms
+2023-06-19 02:05:20.148 -06:00 [93] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:05:20.149 -06:00 [93] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 95.8614 ms
+2023-06-19 02:05:20.318 -06:00 [92] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:05:20.321 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 99.2463 ms
+2023-06-19 02:05:20.489 -06:00 [90] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:05:20.489 -06:00 [90] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 93.8535 ms
+2023-06-19 02:05:20.605 -06:00 [92] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:05:20.608 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 101.4665 ms
+2023-06-19 02:05:20.750 -06:00 [90] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:05:20.752 -06:00 [90] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 104.1984 ms
+2023-06-19 02:05:20.916 -06:00 [94] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:05:20.919 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 100.7241 ms
+2023-06-19 02:05:21.074 -06:00 [94] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:05:21.076 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 100.6672 ms
+2023-06-19 02:06:15.673 -06:00 [94] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3934 ms
+2023-06-19 02:06:17.264 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 1423.4392 ms
+2023-06-19 02:06:17.441 -06:00 [95] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:06:17.441 -06:00 [95] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 98.2451 ms
+2023-06-19 02:06:17.552 -06:00 [97] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:06:17.552 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 97.7279 ms
+2023-06-19 02:06:17.660 -06:00 [95] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:06:17.661 -06:00 [95] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 96.9262 ms
+2023-06-19 02:06:17.772 -06:00 [94] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:06:17.774 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 100.8124 ms
+2023-06-19 02:06:17.942 -06:00 [97] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:06:17.943 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 107.8559 ms
+2023-06-19 02:06:18.059 -06:00 [94] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:06:18.062 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 108.5843 ms
+2023-06-19 02:06:18.188 -06:00 [94] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:06:18.190 -06:00 [94] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 103.1492 ms
+2023-06-19 02:06:18.311 -06:00 [95] [INF] Request GetCards para string completada
+2023-06-19 02:06:18.312 -06:00 [95] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 102.2298 ms
+2023-06-19 02:06:18.428 -06:00 [97] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:06:18.429 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 99.3959 ms
+2023-06-19 02:06:18.572 -06:00 [95] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:06:18.575 -06:00 [95] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 105.8094 ms
+2023-06-19 02:06:18.701 -06:00 [97] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:06:18.703 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 105.4732 ms
+2023-06-19 02:06:18.898 -06:00 [100] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:06:18.899 -06:00 [100] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 99.8601 ms
+2023-06-19 02:06:19.015 -06:00 [92] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:06:19.017 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 98.9339 ms
+2023-06-19 02:06:19.187 -06:00 [97] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:06:19.188 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 105.7160 ms
+2023-06-19 02:06:19.319 -06:00 [95] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:06:19.320 -06:00 [95] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 109.0123 ms
+2023-06-19 02:06:19.447 -06:00 [99] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:06:19.448 -06:00 [99] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 94.5295 ms
+2023-06-19 02:06:19.557 -06:00 [92] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:06:19.557 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 97.0120 ms
+2023-06-19 02:06:19.665 -06:00 [92] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:06:19.666 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 96.6609 ms
+2023-06-19 02:06:19.773 -06:00 [97] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:06:19.775 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 101.1242 ms
+2023-06-19 02:06:19.893 -06:00 [92] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:06:19.894 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 99.4022 ms
+2023-06-19 02:06:40.579 -06:00 [92] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4423 ms
+2023-06-19 02:06:40.915 -06:00 [103] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 96.7848 ms
+2023-06-19 02:06:41.143 -06:00 [92] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:06:41.145 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 99.8964 ms
+2023-06-19 02:06:41.295 -06:00 [102] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:06:41.296 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 99.9516 ms
+2023-06-19 02:06:41.405 -06:00 [102] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:06:41.413 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 101.1804 ms
+2023-06-19 02:06:41.660 -06:00 [102] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:06:41.660 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 98.2197 ms
+2023-06-19 02:06:41.794 -06:00 [102] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:06:41.794 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 95.7660 ms
+2023-06-19 02:06:41.914 -06:00 [97] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:06:41.915 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 99.3723 ms
+2023-06-19 02:06:42.025 -06:00 [97] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:06:42.026 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 95.6998 ms
+2023-06-19 02:06:42.144 -06:00 [103] [INF] Request GetCards para string completada
+2023-06-19 02:06:42.145 -06:00 [103] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 106.4593 ms
+2023-06-19 02:06:42.249 -06:00 [98] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:06:42.250 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 97.5818 ms
+2023-06-19 02:06:42.363 -06:00 [105] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:06:42.363 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 98.8982 ms
+2023-06-19 02:06:42.468 -06:00 [102] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:06:42.469 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 96.1576 ms
+2023-06-19 02:06:42.571 -06:00 [105] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:06:42.573 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 98.4372 ms
+2023-06-19 02:06:42.712 -06:00 [105] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:06:42.713 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 101.9278 ms
+2023-06-19 02:06:42.826 -06:00 [102] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:06:42.827 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 101.2633 ms
+2023-06-19 02:06:42.941 -06:00 [105] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:06:42.942 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 102.3611 ms
+2023-06-19 02:06:43.065 -06:00 [105] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:06:43.066 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 101.0205 ms
+2023-06-19 02:06:43.172 -06:00 [104] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:06:43.173 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 100.6063 ms
+2023-06-19 02:06:43.320 -06:00 [104] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:06:43.321 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 116.7525 ms
+2023-06-19 02:06:43.435 -06:00 [104] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:06:43.436 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 99.8667 ms
+2023-06-19 02:06:43.567 -06:00 [98] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:06:43.569 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 98.9387 ms
+2023-06-19 02:07:00.217 -06:00 [92] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8496 ms
+2023-06-19 02:07:00.511 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 100.0678 ms
+2023-06-19 02:07:00.819 -06:00 [104] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:07:00.821 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 100.4983 ms
+2023-06-19 02:07:00.934 -06:00 [97] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:07:00.935 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 96.9848 ms
+2023-06-19 02:07:01.049 -06:00 [97] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:07:01.051 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 98.8888 ms
+2023-06-19 02:07:01.173 -06:00 [97] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:07:01.174 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 104.2082 ms
+2023-06-19 02:07:01.285 -06:00 [98] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:07:01.287 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 97.5037 ms
+2023-06-19 02:07:01.408 -06:00 [97] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:07:01.409 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 97.5805 ms
+2023-06-19 02:07:01.515 -06:00 [92] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:07:01.517 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 96.3029 ms
+2023-06-19 02:07:01.645 -06:00 [92] [INF] Request GetCards para string completada
+2023-06-19 02:07:01.647 -06:00 [92] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 111.0853 ms
+2023-06-19 02:07:01.805 -06:00 [97] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:07:01.805 -06:00 [97] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 108.0283 ms
+2023-06-19 02:07:01.923 -06:00 [98] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:07:01.926 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 106.8261 ms
+2023-06-19 02:07:02.085 -06:00 [103] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:07:02.086 -06:00 [103] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 107.3152 ms
+2023-06-19 02:07:02.215 -06:00 [105] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:07:02.218 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 107.9769 ms
+2023-06-19 02:07:02.390 -06:00 [103] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:07:02.392 -06:00 [103] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 103.9801 ms
+2023-06-19 02:07:02.527 -06:00 [105] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:07:02.527 -06:00 [105] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 102.2220 ms
+2023-06-19 02:07:02.647 -06:00 [103] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:07:02.649 -06:00 [103] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 97.2667 ms
+2023-06-19 02:07:02.785 -06:00 [102] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:07:02.789 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 107.0777 ms
+2023-06-19 02:07:02.942 -06:00 [98] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:07:02.950 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 108.2137 ms
+2023-06-19 02:07:03.108 -06:00 [104] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:07:03.109 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 96.8787 ms
+2023-06-19 02:07:03.215 -06:00 [102] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:07:03.217 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 98.4000 ms
+2023-06-19 02:07:03.351 -06:00 [104] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:07:03.353 -06:00 [104] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 107.6393 ms
+2023-06-19 02:07:41.780 -06:00 [106] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8581 ms
+2023-06-19 02:07:42.095 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 97.5879 ms
+2023-06-19 02:07:42.262 -06:00 [102] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:07:42.263 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 100.4489 ms
+2023-06-19 02:07:42.435 -06:00 [102] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:07:42.437 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 98.1671 ms
+2023-06-19 02:07:42.556 -06:00 [106] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:07:42.556 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 96.9613 ms
+2023-06-19 02:07:42.669 -06:00 [102] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:07:42.670 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 98.3246 ms
+2023-06-19 02:07:42.785 -06:00 [110] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:07:42.789 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 100.6036 ms
+2023-06-19 02:07:42.922 -06:00 [106] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:07:42.923 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 103.9193 ms
+2023-06-19 02:07:43.035 -06:00 [106] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:07:43.037 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 101.2384 ms
+2023-06-19 02:07:43.177 -06:00 [98] [INF] Request GetCards para string completada
+2023-06-19 02:07:43.178 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 107.0904 ms
+2023-06-19 02:07:43.292 -06:00 [109] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:07:43.293 -06:00 [109] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 97.5244 ms
+2023-06-19 02:07:43.437 -06:00 [111] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:07:43.443 -06:00 [111] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 108.0475 ms
+2023-06-19 02:07:43.578 -06:00 [102] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:07:43.579 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 105.8967 ms
+2023-06-19 02:07:43.702 -06:00 [110] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:07:43.704 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 104.1503 ms
+2023-06-19 02:07:43.839 -06:00 [102] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:07:43.845 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 107.6635 ms
+2023-06-19 02:07:43.995 -06:00 [110] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:07:43.999 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 117.0222 ms
+2023-06-19 02:07:44.129 -06:00 [110] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:07:44.131 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 100.5323 ms
+2023-06-19 02:07:44.237 -06:00 [98] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:07:44.239 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 99.1066 ms
+2023-06-19 02:07:44.384 -06:00 [102] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:07:44.386 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 122.0503 ms
+2023-06-19 02:07:44.521 -06:00 [106] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:07:44.523 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 111.2232 ms
+2023-06-19 02:07:44.643 -06:00 [110] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:07:44.644 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 101.8173 ms
+2023-06-19 02:07:44.765 -06:00 [98] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:07:44.767 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 97.7944 ms
+2023-06-19 02:07:48.131 -06:00 [110] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 4.7400 ms
+2023-06-19 02:07:48.528 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 102.4676 ms
+2023-06-19 02:07:48.695 -06:00 [102] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:07:48.696 -06:00 [102] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 106.6178 ms
+2023-06-19 02:07:48.811 -06:00 [109] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:07:48.811 -06:00 [109] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 98.1305 ms
+2023-06-19 02:07:48.917 -06:00 [111] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:07:48.918 -06:00 [111] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 97.3712 ms
+2023-06-19 02:07:49.026 -06:00 [98] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:07:49.027 -06:00 [98] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 97.3766 ms
+2023-06-19 02:07:49.130 -06:00 [109] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:07:49.131 -06:00 [109] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 96.6582 ms
+2023-06-19 02:07:49.236 -06:00 [109] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:07:49.236 -06:00 [109] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 95.0629 ms
+2023-06-19 02:07:49.340 -06:00 [109] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:07:49.341 -06:00 [109] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 96.2081 ms
+2023-06-19 02:07:49.454 -06:00 [110] [INF] Request GetCards para string completada
+2023-06-19 02:07:49.455 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 99.4538 ms
+2023-06-19 02:07:49.599 -06:00 [106] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:07:49.599 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 97.8105 ms
+2023-06-19 02:07:49.712 -06:00 [106] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:07:49.717 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 99.9671 ms
+2023-06-19 02:07:49.925 -06:00 [110] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:07:49.925 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 102.7165 ms
+2023-06-19 02:07:50.037 -06:00 [110] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:07:50.037 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 94.9740 ms
+2023-06-19 02:07:50.143 -06:00 [110] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:07:50.144 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 96.6153 ms
+2023-06-19 02:07:50.257 -06:00 [106] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:07:50.263 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 108.3376 ms
+2023-06-19 02:07:50.441 -06:00 [110] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:07:50.441 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 97.9024 ms
+2023-06-19 02:07:50.563 -06:00 [106] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:07:50.564 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 98.5144 ms
+2023-06-19 02:07:50.699 -06:00 [110] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:07:50.701 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 112.5046 ms
+2023-06-19 02:07:50.847 -06:00 [109] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:07:50.849 -06:00 [109] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 99.1141 ms
+2023-06-19 02:07:50.979 -06:00 [106] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:07:50.981 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 112.7725 ms
+2023-06-19 02:07:51.139 -06:00 [106] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:07:51.141 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 101.8829 ms
+2023-06-19 02:08:44.679 -06:00 [112] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8061 ms
+2023-06-19 02:08:44.946 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 100.2378 ms
+2023-06-19 02:08:45.204 -06:00 [106] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:08:45.204 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 106.4310 ms
+2023-06-19 02:08:45.312 -06:00 [106] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:08:45.313 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 96.3020 ms
+2023-06-19 02:08:45.435 -06:00 [106] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:08:45.437 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 109.0005 ms
+2023-06-19 02:08:45.596 -06:00 [114] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:08:45.598 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 106.4416 ms
+2023-06-19 02:08:45.721 -06:00 [116] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:08:45.724 -06:00 [116] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 103.2198 ms
+2023-06-19 02:08:45.859 -06:00 [115] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:08:45.860 -06:00 [115] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 106.9100 ms
+2023-06-19 02:08:45.966 -06:00 [110] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:08:45.969 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 100.9398 ms
+2023-06-19 02:08:46.183 -06:00 [110] [INF] Request GetCards para string completada
+2023-06-19 02:08:46.183 -06:00 [110] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 98.3964 ms
+2023-06-19 02:08:46.299 -06:00 [114] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:08:46.299 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 96.3684 ms
+2023-06-19 02:08:46.403 -06:00 [106] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:08:46.404 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 95.5419 ms
+2023-06-19 02:08:46.514 -06:00 [106] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:08:46.514 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 96.9844 ms
+2023-06-19 02:08:46.621 -06:00 [112] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:08:46.623 -06:00 [112] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 100.3817 ms
+2023-06-19 02:08:46.748 -06:00 [106] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:08:46.756 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 107.3716 ms
+2023-06-19 02:08:46.873 -06:00 [106] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:08:46.874 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 97.9001 ms
+2023-06-19 02:08:46.991 -06:00 [106] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:08:46.993 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 100.0597 ms
+2023-06-19 02:08:47.103 -06:00 [112] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:08:47.104 -06:00 [112] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 97.7406 ms
+2023-06-19 02:08:47.213 -06:00 [114] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:08:47.214 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 96.7339 ms
+2023-06-19 02:08:47.344 -06:00 [112] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:08:47.345 -06:00 [112] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 100.3273 ms
+2023-06-19 02:08:47.478 -06:00 [106] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:08:47.481 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 104.6162 ms
+2023-06-19 02:08:47.613 -06:00 [116] [WRN] El usuario U-YCKFBUUBZZHP no tiene decks
+2023-06-19 02:08:47.616 -06:00 [116] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 404 in 102.3535 ms
+2023-06-19 02:09:10.739 -06:00 [114] [INF] [0HMRGJ4P490LL] <null>HTTP OPTIONS /api/Deck responded 204 in 0.1037 ms
+2023-06-19 02:09:10.894 -06:00 [114] [INF] Request NewDeck para deck {deck.Id} completada
+2023-06-19 02:09:10.895 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP POST /api/Deck responded 200 in 148.8683 ms
+2023-06-19 02:09:11.227 -06:00 [114] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4081 ms
+2023-06-19 02:09:11.493 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Parameters/get/deckSize responded 200 in 100.6308 ms
+2023-06-19 02:09:11.626 -06:00 [114] [INF] Request GetCards para U-YCKFBUUBZZHP completada
+2023-06-19 02:09:11.627 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /Account/U-YCKFBUUBZZHP/cards responded 200 in 97.8209 ms
+2023-06-19 02:09:11.748 -06:00 [114] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:09:11.750 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 99.2240 ms
+2023-06-19 02:09:11.917 -06:00 [114] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:09:11.918 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 95.8922 ms
+2023-06-19 02:09:12.033 -06:00 [113] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:09:12.034 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 98.9007 ms
+2023-06-19 02:09:12.142 -06:00 [120] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:09:12.143 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 100.5547 ms
+2023-06-19 02:09:12.268 -06:00 [120] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:09:12.273 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 108.6254 ms
+2023-06-19 02:09:12.452 -06:00 [118] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:09:12.454 -06:00 [118] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 99.7212 ms
+2023-06-19 02:09:12.592 -06:00 [120] [INF] Request GetCards para string completada
+2023-06-19 02:09:12.595 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 105.4581 ms
+2023-06-19 02:09:12.756 -06:00 [121] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:09:12.760 -06:00 [121] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 104.8688 ms
+2023-06-19 02:09:12.945 -06:00 [120] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:09:12.948 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 101.1455 ms
+2023-06-19 02:09:13.055 -06:00 [113] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:09:13.056 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 98.3953 ms
+2023-06-19 02:09:13.157 -06:00 [113] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:09:13.158 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 96.7140 ms
+2023-06-19 02:09:13.368 -06:00 [113] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:09:13.369 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 195.8603 ms
+2023-06-19 02:09:13.502 -06:00 [113] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:09:13.503 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 113.4301 ms
+2023-06-19 02:09:13.658 -06:00 [119] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:09:13.659 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 114.2377 ms
+2023-06-19 02:09:13.789 -06:00 [121] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:09:13.791 -06:00 [121] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 105.2819 ms
+2023-06-19 02:09:13.913 -06:00 [119] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:09:13.914 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 100.6770 ms
+2023-06-19 02:09:14.034 -06:00 [113] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:09:14.035 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 100.9692 ms
+2023-06-19 02:09:14.162 -06:00 [113] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:09:14.163 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 103.5508 ms
+2023-06-19 02:09:14.285 -06:00 [113] [INF] Request GetDecksByUser para usuario U-YCKFBUUBZZHP completada
+2023-06-19 02:09:14.286 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/User/U-YCKFBUUBZZHP responded 200 in 101.7613 ms
+2023-06-19 02:09:19.818 -06:00 [113] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3163 ms
+2023-06-19 02:09:20.104 -06:00 [113] [INF] Request GetNames de Decks para ususario U-YCKFBUUBZZHP completada
+2023-06-19 02:09:20.107 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/Names/U-YCKFBUUBZZHP responded 200 in 111.3883 ms
+2023-06-19 02:09:21.701 -06:00 [113] [INF] Request GetDeck para ususario D-d282d2deafc2 completada
+2023-06-19 02:09:21.701 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/D-d282d2deafc2 responded 200 in 127.2634 ms
+2023-06-19 02:09:21.833 -06:00 [114] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 02:09:21.834 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 103.1982 ms
+2023-06-19 02:09:22.000 -06:00 [119] [INF] Request GetCards para C-ea66c57aa69d completada
+2023-06-19 02:09:22.000 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ea66c57aa69d responded 200 in 102.3838 ms
+2023-06-19 02:09:22.104 -06:00 [119] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 02:09:22.106 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 98.1527 ms
+2023-06-19 02:09:22.215 -06:00 [113] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 02:09:22.216 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 95.5847 ms
+2023-06-19 02:09:22.324 -06:00 [120] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 02:09:22.324 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 100.8656 ms
+2023-06-19 02:09:22.439 -06:00 [113] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 02:09:22.442 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 102.5036 ms
+2023-06-19 02:09:22.579 -06:00 [106] [INF] Request GetCards para C-9ae900e6feec completada
+2023-06-19 02:09:22.580 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-9ae900e6feec responded 200 in 100.7061 ms
+2023-06-19 02:09:22.692 -06:00 [113] [INF] Request GetCards para string completada
+2023-06-19 02:09:22.692 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/string responded 200 in 99.7324 ms
+2023-06-19 02:09:22.813 -06:00 [113] [INF] Request GetCards para OI455FRRM0UV completada
+2023-06-19 02:09:22.814 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/OI455FRRM0UV responded 200 in 105.9802 ms
+2023-06-19 02:09:23.003 -06:00 [119] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 02:09:23.004 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 114.2679 ms
+2023-06-19 02:09:23.112 -06:00 [120] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 02:09:23.113 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 100.2401 ms
+2023-06-19 02:09:23.252 -06:00 [119] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 02:09:23.254 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 110.3615 ms
+2023-06-19 02:09:23.380 -06:00 [113] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 02:09:23.381 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 104.2686 ms
+2023-06-19 02:09:23.511 -06:00 [119] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 02:09:23.512 -06:00 [119] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 98.9109 ms
+2023-06-19 02:09:23.617 -06:00 [120] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 02:09:23.618 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 96.7876 ms
+2023-06-19 02:09:23.726 -06:00 [118] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 02:09:23.727 -06:00 [118] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 98.5296 ms
+2023-06-19 02:09:23.855 -06:00 [118] [INF] Request GetCards para C-e16141617dee completada
+2023-06-19 02:09:23.858 -06:00 [118] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-e16141617dee responded 200 in 105.4555 ms
+2023-06-19 02:09:23.988 -06:00 [120] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 02:09:23.988 -06:00 [120] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 103.3007 ms
+2023-06-19 02:09:29.036 -06:00 [119] [INF] [0HMRGJ4P490LL] <null>HTTP OPTIONS /Account/U-YCKFBUUBZZHP/favorite/D-d282d2deafc2 responded 204 in 0.0847 ms
+2023-06-19 02:09:29.175 -06:00 [106] [INF] Request GetAccount para U-YCKFBUUBZZHP completada
+2023-06-19 02:09:29.493 -06:00 [106] [INF] Request SelectFavoriteDeck para usuario U-YCKFBUUBZZHP y deckD-d282d2deafc2 completada
+2023-06-19 02:09:29.495 -06:00 [106] [INF] [0HMRGJ4P490LL] <juanito>HTTP PUT /Account/U-YCKFBUUBZZHP/favorite/D-d282d2deafc2 responded 200 in 453.0734 ms
+2023-06-19 02:09:29.888 -06:00 [106] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3229 ms
+2023-06-19 02:09:30.452 -06:00 [113] [INF] Request CheckIfPlaying para U-YCKFBUUBZZHP completada
+2023-06-19 02:09:54.764 -06:00 [114] [INF] [0HMRGJ4P490LL] <juanito>HTTP POST /api/Game/U-YCKFBUUBZZHP responded 404 in 24741.7708 ms
+2023-06-19 02:09:56.702 -06:00 [118] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4157 ms
+2023-06-19 02:09:56.979 -06:00 [113] [INF] Request GetNames de Decks para ususario U-YCKFBUUBZZHP completada
+2023-06-19 02:09:56.982 -06:00 [113] [INF] [0HMRGJ4P490LL] <juanito>HTTP GET /api/Deck/Names/U-YCKFBUUBZZHP responded 200 in 101.2316 ms
+2023-06-19 02:10:04.233 -06:00 [106] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3903 ms
+2023-06-19 02:10:36.834 -06:00 [120] [INF] [0HMRGJ4P490LL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3992 ms
