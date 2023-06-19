@@ -11783,3 +11783,147 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/
 2023-06-11 05:51:58.337 -06:00 [112] [INF] [0HMRADG6PRRDA] <Rosie>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 90.5366 ms
 2023-06-11 05:51:58.437 -06:00 [112] [INF] Request GetAll de cards completada
 2023-06-11 05:51:58.442 -06:00 [112] [INF] [0HMRADG6PRRDA] <Rosie>HTTP GET /cards/get_all responded 200 in 98.7989 ms
+2023-06-19 12:05:26.507 -06:00 [1] [INF] Inited
+2023-06-19 12:05:28.624 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-19 12:05:28.656 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-19 12:05:41.155 -06:00 [13] [INF] [0HMRGTV2D22EM] <null>HTTP GET /favicon.ico responded 200 in 97.7019 ms
+2023-06-19 12:05:53.328 -06:00 [11] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1359.6971 ms
+2023-06-19 12:06:03.895 -06:00 [13] [INF] [0HMRGTV2D22EN] <null>HTTP OPTIONS /login/Signin responded 204 in 3.4250 ms
+2023-06-19 12:06:07.305 -06:00 [11] [INF] [0HMRGTV2D22EN] <null>HTTP PUT /login/Signin responded 200 in 3405.6652 ms
+2023-06-19 12:06:07.740 -06:00 [13] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 6.0688 ms
+2023-06-19 12:06:09.623 -06:00 [11] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6280 ms
+2023-06-19 12:06:10.022 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /api/Parameters/get/deckSize responded 200 in 179.8004 ms
+2023-06-19 12:06:10.368 -06:00 [16] [INF] Request GetCards para U-KIX8NYN0TY5T completada
+2023-06-19 12:06:10.375 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /Account/U-KIX8NYN0TY5T/cards responded 200 in 309.3636 ms
+2023-06-19 12:06:10.732 -06:00 [16] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 12:06:10.760 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 355.9526 ms
+2023-06-19 12:06:10.907 -06:00 [11] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 12:06:10.908 -06:00 [11] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 136.1878 ms
+2023-06-19 12:06:11.111 -06:00 [17] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 12:06:11.112 -06:00 [17] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-619768da07b8 responded 200 in 179.9369 ms
+2023-06-19 12:06:11.316 -06:00 [7] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 12:06:11.316 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 163.4280 ms
+2023-06-19 12:06:11.484 -06:00 [17] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 12:06:11.485 -06:00 [17] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 110.1099 ms
+2023-06-19 12:06:12.238 -06:00 [7] [INF] Request GetCards para C-0c2b742990df completada
+2023-06-19 12:06:12.240 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-0c2b742990df responded 200 in 738.5549 ms
+2023-06-19 12:06:12.392 -06:00 [7] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 12:06:12.393 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 117.3099 ms
+2023-06-19 12:06:12.524 -06:00 [17] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 12:06:12.526 -06:00 [17] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 114.7645 ms
+2023-06-19 12:06:12.664 -06:00 [19] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 12:06:12.666 -06:00 [19] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 116.9312 ms
+2023-06-19 12:06:12.852 -06:00 [19] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 12:06:12.852 -06:00 [19] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 156.1280 ms
+2023-06-19 12:06:12.973 -06:00 [7] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 12:06:12.974 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 111.0392 ms
+2023-06-19 12:06:13.099 -06:00 [11] [INF] Request GetCards para C-5825fddec7f9 completada
+2023-06-19 12:06:13.101 -06:00 [11] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-5825fddec7f9 responded 200 in 114.0048 ms
+2023-06-19 12:06:13.241 -06:00 [15] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 12:06:13.242 -06:00 [15] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 113.6839 ms
+2023-06-19 12:06:13.466 -06:00 [17] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 12:06:13.467 -06:00 [17] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 217.9382 ms
+2023-06-19 12:06:13.604 -06:00 [16] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 12:06:13.611 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-4b370960de0a responded 200 in 121.5668 ms
+2023-06-19 12:06:13.808 -06:00 [16] [INF] Request GetCards para C-ab4e1e5b6005 completada
+2023-06-19 12:06:13.809 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-ab4e1e5b6005 responded 200 in 166.8563 ms
+2023-06-19 12:06:13.979 -06:00 [15] [INF] Request GetCards para C-3063f8c85744 completada
+2023-06-19 12:06:13.981 -06:00 [15] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-3063f8c85744 responded 200 in 145.1740 ms
+2023-06-19 12:06:14.199 -06:00 [16] [INF] Request GetCards para C-cad805020d6c completada
+2023-06-19 12:06:14.200 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /cards/get/C-cad805020d6c responded 200 in 112.0679 ms
+2023-06-19 12:06:14.394 -06:00 [7] [INF] Request GetDecksByUser para usuario U-KIX8NYN0TY5T completada
+2023-06-19 12:06:14.434 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepito>HTTP GET /api/Deck/User/U-KIX8NYN0TY5T responded 200 in 218.3982 ms
+2023-06-19 12:06:15.035 -06:00 [15] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6930 ms
+2023-06-19 12:06:17.338 -06:00 [15] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5427 ms
+2023-06-19 12:06:19.255 -06:00 [15] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.9752 ms
+2023-06-19 12:06:50.937 -06:00 [11] [INF] [0HMRGTV2D22EN] <null>HTTP OPTIONS /Account responded 204 in 0.4772 ms
+2023-06-19 12:06:52.285 -06:00 [11] [INF] Request CreateAndSaveNewCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:52.462 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:52.685 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:52.800 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:52.920 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:53.095 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:53.301 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:53.505 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:53.711 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:53.837 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:54.017 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:54.222 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:54.427 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:54.632 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:54.836 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:55.041 -06:00 [11] [INF] Request AddCardsToCollection para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:55.043 -06:00 [11] [INF] Request NewAccount para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:55.071 -06:00 [11] [INF] [0HMRGTV2D22EN] <pepito>HTTP POST /Account responded 200 in 4123.9208 ms
+2023-06-19 12:06:55.192 -06:00 [20] [INF] [0HMRGTV2D22EN] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1177 ms
+2023-06-19 12:06:55.317 -06:00 [11] [INF] [0HMRGTV2D22EN] <pepito>HTTP PUT /login/Signin responded 200 in 121.4743 ms
+2023-06-19 12:06:55.797 -06:00 [21] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6257 ms
+2023-06-19 12:06:56.064 -06:00 [7] [INF] Request GetCards para U-7QAUPWM4KQWE completada
+2023-06-19 12:06:56.067 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /Account/U-7QAUPWM4KQWE/cards responded 200 in 203.7504 ms
+2023-06-19 12:06:56.296 -06:00 [11] [INF] Request GetCards para LPI5MLX6Z50H completada
+2023-06-19 12:06:56.299 -06:00 [11] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/LPI5MLX6Z50H responded 200 in 117.6559 ms
+2023-06-19 12:06:56.460 -06:00 [21] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 12:06:56.463 -06:00 [21] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 120.6159 ms
+2023-06-19 12:06:56.669 -06:00 [20] [INF] Request GetCards para string completada
+2023-06-19 12:06:56.670 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/string responded 200 in 168.4895 ms
+2023-06-19 12:06:56.806 -06:00 [20] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 12:06:56.807 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 121.7124 ms
+2023-06-19 12:06:56.986 -06:00 [21] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 12:06:56.987 -06:00 [21] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 166.7243 ms
+2023-06-19 12:06:57.192 -06:00 [7] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 12:06:57.193 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 190.1796 ms
+2023-06-19 12:06:58.007 -06:00 [15] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 12:06:58.009 -06:00 [15] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 791.7808 ms
+2023-06-19 12:06:58.318 -06:00 [7] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 12:06:58.321 -06:00 [7] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 170.8570 ms
+2023-06-19 12:06:58.525 -06:00 [21] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 12:06:58.526 -06:00 [21] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 124.8227 ms
+2023-06-19 12:06:58.728 -06:00 [15] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 12:06:58.734 -06:00 [15] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 189.6956 ms
+2023-06-19 12:06:59.547 -06:00 [15] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 12:06:59.548 -06:00 [15] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 760.0157 ms
+2023-06-19 12:06:59.751 -06:00 [15] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 12:06:59.753 -06:00 [15] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 180.0218 ms
+2023-06-19 12:07:00.008 -06:00 [16] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 12:07:00.010 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 167.3912 ms
+2023-06-19 12:07:00.148 -06:00 [20] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 12:07:00.150 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 116.0391 ms
+2023-06-19 12:07:00.365 -06:00 [16] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 12:07:00.367 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 193.6088 ms
+2023-06-19 12:07:00.679 -06:00 [20] [INF] Request GetAll de cards completada
+2023-06-19 12:07:00.691 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get_all responded 200 in 275.0209 ms
+2023-06-19 12:08:29.213 -06:00 [21] [INF] [0HMRGTV2D22EN] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3713 ms
+2023-06-19 12:08:29.447 -06:00 [16] [INF] Request GetCards para U-7QAUPWM4KQWE completada
+2023-06-19 12:08:29.448 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /Account/U-7QAUPWM4KQWE/cards responded 200 in 114.7879 ms
+2023-06-19 12:08:29.596 -06:00 [20] [INF] Request GetCards para LPI5MLX6Z50H completada
+2023-06-19 12:08:29.597 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/LPI5MLX6Z50H responded 200 in 113.1604 ms
+2023-06-19 12:08:29.749 -06:00 [16] [INF] Request GetCards para C-19945dc9ca8e completada
+2023-06-19 12:08:29.749 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-19945dc9ca8e responded 200 in 115.3980 ms
+2023-06-19 12:08:29.870 -06:00 [16] [INF] Request GetCards para string completada
+2023-06-19 12:08:29.871 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/string responded 200 in 113.7162 ms
+2023-06-19 12:08:30.023 -06:00 [20] [INF] Request GetCards para C-b04420af9d57 completada
+2023-06-19 12:08:30.025 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-b04420af9d57 responded 200 in 119.8169 ms
+2023-06-19 12:08:30.163 -06:00 [20] [INF] Request GetCards para C-f98f79c59d66 completada
+2023-06-19 12:08:30.164 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-f98f79c59d66 responded 200 in 115.2744 ms
+2023-06-19 12:08:30.302 -06:00 [16] [INF] Request GetCards para C-52eff016ba08 completada
+2023-06-19 12:08:30.303 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-52eff016ba08 responded 200 in 115.3474 ms
+2023-06-19 12:08:30.479 -06:00 [20] [INF] Request GetCards para C-4b370960de0a completada
+2023-06-19 12:08:30.480 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-4b370960de0a responded 200 in 158.6230 ms
+2023-06-19 12:08:30.683 -06:00 [20] [INF] Request GetCards para C-ebc746a5265e completada
+2023-06-19 12:08:30.685 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-ebc746a5265e responded 200 in 186.2046 ms
+2023-06-19 12:08:30.815 -06:00 [20] [INF] Request GetCards para C-f6a37cba436e completada
+2023-06-19 12:08:30.816 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-f6a37cba436e responded 200 in 112.6715 ms
+2023-06-19 12:08:31.092 -06:00 [16] [INF] Request GetCards para C-db20cfceb020 completada
+2023-06-19 12:08:31.093 -06:00 [16] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-db20cfceb020 responded 200 in 258.0239 ms
+2023-06-19 12:08:31.224 -06:00 [21] [INF] Request GetCards para C-6e54c6efd948 completada
+2023-06-19 12:08:31.225 -06:00 [21] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-6e54c6efd948 responded 200 in 115.1911 ms
+2023-06-19 12:08:31.400 -06:00 [20] [INF] Request GetCards para C-17c3609f1b8f completada
+2023-06-19 12:08:31.402 -06:00 [20] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-17c3609f1b8f responded 200 in 151.5087 ms
+2023-06-19 12:08:31.546 -06:00 [24] [INF] Request GetCards para C-b64bd066e6aa completada
+2023-06-19 12:08:31.548 -06:00 [24] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-b64bd066e6aa responded 200 in 118.7328 ms
+2023-06-19 12:08:31.707 -06:00 [21] [INF] Request GetCards para C-619768da07b8 completada
+2023-06-19 12:08:31.708 -06:00 [21] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-619768da07b8 responded 200 in 150.9012 ms
+2023-06-19 12:08:31.912 -06:00 [24] [INF] Request GetCards para C-6645008c3e62 completada
+2023-06-19 12:08:31.914 -06:00 [24] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get/C-6645008c3e62 responded 200 in 169.5236 ms
+2023-06-19 12:08:32.323 -06:00 [3] [INF] Request GetAll de cards completada
+2023-06-19 12:08:32.325 -06:00 [3] [INF] [0HMRGTV2D22EN] <pepe1>HTTP GET /cards/get_all responded 200 in 391.1593 ms
