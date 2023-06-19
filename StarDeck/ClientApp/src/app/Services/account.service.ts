@@ -5,6 +5,7 @@ import { RequestService } from './request.service';
 
 import { IAccount } from '../Interfaces/Account';
 import { ICard } from '../Interfaces/Card';
+import {IGlobalRanking, IIndividualRanking} from "../Interfaces/Ranking";
 
 
 @Injectable({
@@ -20,7 +21,7 @@ export class AccountService {
   addUser = (user: IAccount): Promise<any> => {
     return this.request.post(this.url, user);
   }
-  // Para añadir una nueva carta 
+  // Para añadir una nueva carta
   addCards = (IdUser: string, IdCard: string): Promise<any> => {
     return this.request.post(`${this.url}/addCards/${IdUser}/${IdCard}`, {});
   }
@@ -35,5 +36,15 @@ export class AccountService {
   //Para obtener la coleccion inicial dada
   getAccountCards = (Id: string): Promise<any> => {
     return this.request.get(`${this.url}/${Id}/cards`);
+  }
+
+  //Para obtener el ranking personal de un usuario
+  getMyPosition = (Id: string): Promise<IIndividualRanking> => {
+    return this.request.get(`${this.url}/Ranking/true/${Id}`);
+  }
+
+  //Para obtener el ranking global
+  getRanking = (Id: string): Promise<IGlobalRanking[]> => {
+    return this.request.get(`${this.url}/Ranking/false/${Id}`);
   }
 }

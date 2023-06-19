@@ -22,7 +22,7 @@ export class UserMainComponent {
       },
       {
         description: 'Ranking',
-        link: '/'
+        link: '/user/ranking'
       }
     ]
   }
