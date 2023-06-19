@@ -6,14 +6,16 @@
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
         <mat-label color="primary">Nombre del jugador</mat-label>
-        <input matInput formControlName="name" required minlength="5" maxlength="30" >
+        <input placeholder="Entre 5 y 30 caracteres" matInput formControlName="name" required minlength="5"
+          maxlength="30">
       </mat-form-field>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
         <mat-label color="primary">Apodo</mat-label>
-        <input matInput formControlName="nickname" required minlength="5" maxlength="30">
+        <input placeholder="Entre 5 y 30 caracteres" matInput formControlName="nickname" required minlength="5"
+          maxlength="30">
       </mat-form-field>
     </div>
 
@@ -37,20 +39,22 @@
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
         <mat-label color="primary">Contraseña</mat-label>
-        <input matInput formControlName="password" required type="password" maxlength="8" >
+        <input placeholder="8 caracteres alfanuméricos" matInput formControlName="password" required type="password"
+          maxlength="8">
       </mat-form-field>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline" [hideRequiredMarker]="true">
-        <mat-label color="primary">Confirmación de Contraseña</mat-label>
+        <mat-label placeholder="8 caracteres alfanuméricos" color="primary">Confirmación de Contraseña</mat-label>
         <input matInput formControlName="passwordv" required type="password" maxlength="8">
       </mat-form-field>
     </div>
 
 
     <div class="row">
-      <mat-checkbox (change)="onCheck()"  color="warn" required >Acepta términos y condiciones del juego de StarDeck</mat-checkbox>
+      <mat-checkbox (change)="onCheck()" color="warn" required>Acepta términos y condiciones del juego de
+        StarDeck</mat-checkbox>
     </div>
 
     <div class="row">
