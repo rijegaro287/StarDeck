@@ -60,6 +60,33 @@ namespace StardeckTest.Controllers
 
         }
 
+
+        [TestMethod]
+        public void GetAllParametersTest()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.GetParameters("U-RXF7RJNBWEKD");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+
+        }
+
+        [TestMethod]
+        public void GetParameterTest()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.GetParameter("U-RXF7RJNBWEKD","");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<NotFoundObjectResult>(response.Result);
+
+        }
+
         [TestMethod]
         public void AllAccountFoundTest()
         {
@@ -100,6 +127,33 @@ namespace StardeckTest.Controllers
 
         }
 
+        [TestMethod]
+        public void AddCardToAccountTest()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.AddCards("U-RXF7RJNBWEKD", "C-542d9cf47009");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+
+        }
+
+        [TestMethod]
+        public void AddCardListToAccountTest()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.AddCardsList("U-RXF7RJNBWEKD", new string[] { "C-542d9cf47009", "C-bc0aece48924" });
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+
+        }
+
+
 
         [TestMethod]
         public void GetIndividualRankingTest()
@@ -107,6 +161,47 @@ namespace StardeckTest.Controllers
             var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
 
             var response = controller.GetRanking(true,"U-RXF7RJNBWEKD");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+
+        }
+
+        [TestMethod]
+        public void DeleteAccountTest()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.Delete("U-RXF7RJNBWEKD");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+
+        }
+
+
+        [TestMethod]
+        public void DeleteCardTest()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.Delete("U-RXF7RJNBWEKD", "C-4b370960de0a");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+
+        }
+
+
+        [TestMethod]
+        public void PostParameter()
+        {
+            var controller = new AccountController(new FakeStardeckContext(), new NullLogger<AccountController>());
+
+            var response = controller.PostParameter("U-RXF7RJNBWEKD","Test","TRUE");
 
             //Assert
             Assert.IsNotNull(response);
