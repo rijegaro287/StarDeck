@@ -9,10 +9,10 @@ describe('GameMainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule ],
-      declarations: [ GameMainComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [GameMainComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(GameMainComponent);
     component = fixture.componentInstance;
@@ -32,6 +32,7 @@ describe('GameMainComponent', () => {
     expect(component.playingTurn).toEqual(false);
     expect(component.selectedCard).toEqual(null);
   });
+
 
 
 

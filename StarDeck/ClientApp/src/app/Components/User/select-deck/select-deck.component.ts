@@ -73,7 +73,9 @@ export class SelectDeckComponent implements OnInit {
         console.log(this.deckList)
       })
       .catch(async (error) => {
-        await alert('No se encontraron escuadrones. Por favor cree al menos uno.')
+        await alert('No se encontraron escuadrones. Por favor cree al menos uno.');
+
+        window.location.href = '/user/decks';
       });
   }
 

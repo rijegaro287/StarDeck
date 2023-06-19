@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { GameService } from 'src/app/Services/game.service';
+import { ParametersService } from 'src/app/Services/parameters.service';
 import { HelpersService } from 'src/app/Services/helpers.service';
 
 import { ICard } from 'src/app/Interfaces/Card';
 import { IGameRoom, IPlayer } from 'src/app/Interfaces/Game';
-import { IPlanet, IPlanetCards } from 'src/app/Interfaces/Planet';
+import { IPlanetCards } from 'src/app/Interfaces/Planet';
 
 @Component({
   selector: 'app-game-main',
@@ -26,6 +27,7 @@ export class GameMainComponent implements OnInit {
   opponentCardsID: 'player1Cards' | 'player2Cards';
 
   status: string;
+  maxTurns: number;
   currentTurn: number;
   playingTurn: boolean;
 
@@ -33,6 +35,7 @@ export class GameMainComponent implements OnInit {
 
   constructor(
     private gameService: GameService,
+    private params: ParametersService,
     protected helpers: HelpersService
   ) {
     this.gameRoom = {} as IGameRoom;
@@ -47,6 +50,7 @@ export class GameMainComponent implements OnInit {
     this.planetsInfo = [];
 
     this.status = 'Iniciando partida...'
+    this.maxTurns = 0;
     this.currentTurn = 0;
     this.playingTurn = false;
 
@@ -69,6 +73,8 @@ export class GameMainComponent implements OnInit {
     while (this.currentTurn < 8) {
       this.status = 'Iniciando turno...'
       this.playingTurn = false;
+      console.log(this.maxTurns);
+
 
       await this.sleep(2000);
 
@@ -101,6 +107,10 @@ export class GameMainComponent implements OnInit {
   }
 
   async updateGameData() {
+    await this.params.getParameter('maxTurn')
+      .then((maxTurn) => { this.maxTurns = Number(maxTurn.value); })
+      .catch((error) => alert(error.message));
+
     await this.gameService.getGameRoomData(this.gameRoom.roomid)
       .then((gameRoomInfo) => { this.gameRoom = gameRoomInfo; })
       .catch((error) => alert(error.message));
