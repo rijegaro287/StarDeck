@@ -1,11 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Stardeck.Models.Tests
 {
@@ -19,8 +12,8 @@ namespace Stardeck.Models.Tests
         {
             deck = new(new List<string>().ToArray());
             deck.addCard("1");
-            deck.Id="D-123456789012";
-            deck.IdAccount="U-123456789012";
+            deck.Id = "D-123456789012";
+            deck.IdAccount = "U-123456789012";
         }
 
         [TestMethod()]
@@ -54,16 +47,16 @@ namespace Stardeck.Models.Tests
             deckAux.generateID();
 
             Assert.IsTrue(Regex.IsMatch(deckAux.Id, @"^D-[a-zA-Z0-9]{12}"));
-            Assert.IsTrue((deckAux.Id==deck.Id));
+            Assert.IsTrue((deckAux.Id == deck.Id));
         }
 
 
         [TestMethod()]
         public void addCardTest()
         {
-            int initial= deck.Cardlist.Length;
+            int initial = deck.Cardlist.Length;
             deck.addCard("2");
-            Assert.IsTrue(deck.Cardlist.Length == initial+1);
+            Assert.IsTrue(deck.Cardlist.Length == initial + 1);
 
         }
 

@@ -41,7 +41,7 @@ builder.Services.AddHttpContextAccessor();
 
 var connectionString = builder.Configuration.GetConnectionString("PosgreSQLConnection");
 builder.Services.AddDbContext<StardeckContext>(options =>
-    options.UseNpgsql(connectionString)); 
+    options.UseNpgsql(connectionString));
 
 
 var app = builder.Build();
@@ -50,7 +50,7 @@ var app = builder.Build();
 
 app.UseSerilogRequestLogging(options =>
 {
-     options.MessageTemplate = "[{Connection}] <{User}>"+options.MessageTemplate;
+    options.MessageTemplate = "[{Connection}] <{User}>" + options.MessageTemplate;
     // Attach additional properties to the request completion event
     options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
     {
@@ -58,7 +58,7 @@ app.UseSerilogRequestLogging(options =>
         diagnosticContext.Set("User", httpContext.User.Identity?.Name);
         diagnosticContext.Set("Connection", httpContext.Connection.Id);
     };
-    
+
 });
 
 app.UseSwaggerUI();
@@ -94,6 +94,6 @@ var configuration = new ConfigurationBuilder()
     .Build();
 var log = new LoggerConfiguration().ReadFrom.Configuration(configuration).CreateLogger();
 Log.Logger = log;
-Log.Information("Inited"  );
+Log.Information("Inited");
 
 app.Run();

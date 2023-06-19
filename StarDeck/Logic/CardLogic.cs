@@ -1,8 +1,5 @@
-﻿using Stardeck.Controllers;
-using Stardeck.DbAccess;
+﻿using Stardeck.DbAccess;
 using Stardeck.Models;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
 {
@@ -15,7 +12,7 @@ namespace Stardeck.Logic
         {
             _logger = logger;
             this.context = context;
-            this.cardDB=new CardDb(context);
+            this.cardDB = new CardDb(context);
         }
 
         public List<Card> GetAll()
@@ -30,10 +27,10 @@ namespace Stardeck.Logic
             var card = cardDB.GetCard(id);
             if (card == null)
             {
-                _logger.LogWarning("no se encontró carta {id}",id);
+                _logger.LogWarning("no se encontró carta {id}", id);
                 return null;
             }
-            _logger.LogInformation("Request GetCards para {id} completada",id);
+            _logger.LogInformation("Request GetCards para {id} completada", id);
             return card;
         }
 
@@ -99,8 +96,8 @@ namespace Stardeck.Logic
 
         public List<Card> GetNineCards()
         {
-            List<Card> cards =(List<Card>) GetAll();
-            if(cards.Count == 0 || cards==null)
+            List<Card> cards = (List<Card>)GetAll();
+            if (cards.Count == 0 || cards == null)
             {
                 _logger.LogWarning("No existen las suficientes cartas en GetNineCards");
                 return null;
@@ -109,9 +106,9 @@ namespace Stardeck.Logic
             Random rand = new Random();
             var shuffled = filteredCards.OrderBy(_ => rand.Next()).ToList();
             _logger.LogInformation("Request GetNineCards completada");
-            return shuffled.GetRange(0,9);
+            return shuffled.GetRange(0, 9);
         }
-     }
-
     }
+
+}
 

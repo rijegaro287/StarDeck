@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.Extensions.Logging.Abstractions;
+﻿using Microsoft.Extensions.Logging.Abstractions;
 using Stardeck.Controllers;
 using Stardeck.GameModels;
 using Stardeck.Logic;

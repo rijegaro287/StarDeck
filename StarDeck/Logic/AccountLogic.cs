@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Stardeck.Controllers;
 using Stardeck.DbAccess;
 using Stardeck.Models;
-using System.Reflection.Metadata;
-using System.Text.RegularExpressions;
 
 //using System.Web.Mvc;
 
@@ -31,6 +28,16 @@ namespace Stardeck.Logic
         {
             List<Account>? accounts = accountDB.GetAllAccounts();
             _logger.LogInformation("Request GetAll de Accounts completada");
+            return accounts;
+        }
+
+        public List<Ranking> GetRanking()
+        {
+            List<Ranking> accounts = accountDB.GetRanking();
+            {
+
+            }
+            _logger.LogInformation("Request Ranking completada");
             return accounts;
         }
 
@@ -413,16 +420,16 @@ namespace Stardeck.Logic
             context.SaveChanges();
         }
 
-        public object GetRanking(bool individual,string accountId)
+        public object? GetRanking(bool individual, string accountId)
         {
             var accounts = GetAll().Select(x => new { Nickname = x.Nickname, Games=x.Gamecounter,Points = x.Points }).ToList();
             accounts = accounts.OrderByDescending(x => x.Points).ThenByDescending(x=>x.Games).ThenBy(x => x.Nickname) .ToList();
             if (individual)
             {
-                int counter=1;
-                foreach(var account in accounts)
+                int counter = 1;
+                foreach (var account in accounts)
                 {
-                    var nick=GetAccount(accountId).Nickname;
+                    var nick = GetAccount(accountId).Nickname;
                     if (account.Nickname == nick)
                     {
                         return new
@@ -432,13 +439,26 @@ namespace Stardeck.Logic
                             Points = account.Points,
                         };
                     }
+
                     counter++;
                 }
             }
-            
-            
-            return accounts;
 
+            return accounts;
+        }
+
+        public KeyValuePair<int, List<Ranking>> GetRanking(string accountId)
+        {
+            var accounts = GetRanking();
+            var user = GetAccount(accountId);
+            var index = accounts.FindIndex(x => x.Nickname == user?.Nickname);
+            //if failed on getting the user or the index return with a -1 index
+            return KeyValuePair.Create(index, accounts);
+        }
+
+        internal class RankingWithIndex : Ranking
+        {
+            public int index { get; set; }
         }
     }
 }

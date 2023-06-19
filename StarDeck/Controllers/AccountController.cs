@@ -20,7 +20,6 @@ namespace Stardeck.Controllers
         {
             _logger = logger;
             this.accountLogic = new AccountLogic(context, _logger);
-            
         }
 
         [HttpGet("Ranking/{individual}/{accountId}")]
@@ -37,7 +36,20 @@ namespace Stardeck.Controllers
 
             //accounts.Sort((a, b) => a.Points.CompareTo(b.Points));
             return Ok(accounts);
+        }
 
+        [HttpGet("Ranking/{accountId}/index")]
+        // GET: api/<AccountController>/Ranking
+        public async Task<IActionResult> GetRankingByIndex(string accountId)
+        {
+            var ranking = accountLogic.GetRanking(accountId);
+            if (ranking.Key < 0)
+            {
+                return NotFound(new KeyValuePair<string, string>("error",
+                    "No se encontro la cuenta a buscar en el ranking"));
+            }
+
+            return Ok(ranking);
         }
 
         // GET: api/<AccountController>
@@ -47,7 +59,7 @@ namespace Stardeck.Controllers
             var acc = accountLogic.GetAll();
             if (acc == null)
             {
-                return NotFound(new KeyValuePair<string,string>("error","No se encontraron cuentas"));
+                return NotFound(new KeyValuePair<string, string>("error", "No se encontraron cuentas"));
             }
 
             return Ok(acc);
@@ -184,10 +196,12 @@ namespace Stardeck.Controllers
             {
                 return NotFound("No se encontró la cuenta");
             }
+
             if (selected is not true)
             {
                 return NotFound("No se encontró el deck");
             }
+
             return Ok(KeyValuePair.Create("Success", $"Deck {deck} seleccionado como favorito"));
         }
 

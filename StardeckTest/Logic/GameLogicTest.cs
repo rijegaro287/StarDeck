@@ -1,13 +1,6 @@
 ﻿using Microsoft.Extensions.Logging.Abstractions;
-using Stardeck.Controllers;
-using Stardeck.GameModels;
-using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Stardeck.Logic;
+using Stardeck.Models;
 
 namespace StardeckTest.Logic
 {
@@ -23,7 +16,7 @@ namespace StardeckTest.Logic
 
             //Assert
             Assert.IsNotNull(response);
-            Assert.AreEqual(typeof(Gameroom),response.GetType() );
+            Assert.AreEqual(typeof(Gameroom), response.GetType());
 
         }
 
@@ -34,7 +27,7 @@ namespace StardeckTest.Logic
             var response = logic.GetAllGamerooms().Result;
             //Assert
             Assert.IsNotNull(response);
-            Assert.AreEqual( typeof(List<Gameroom>),response.GetType());
+            Assert.AreEqual(typeof(List<Gameroom>), response.GetType());
         }
 
         [TestMethod]

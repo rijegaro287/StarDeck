@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Stardeck.DbAccess;
 using Stardeck.Logic;
 using Stardeck.Models;
 
@@ -18,8 +17,8 @@ namespace Stardeck.Controllers
         public DeckController(StardeckContext context, ILogger<DeckController> logger)
         {
             _logger = logger;
-            this.deckLogic = new DeckLogic(context,_logger);
-            
+            this.deckLogic = new DeckLogic(context, _logger);
+
         }
 
 
@@ -28,7 +27,7 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Get()
         {
             var decks = deckLogic.GetAll();
-            if ( decks== null)
+            if (decks == null)
             {
                 return NotFound("No se encontraron decks");
             }
@@ -41,11 +40,11 @@ namespace Stardeck.Controllers
         public async Task<Object> GetNames(string userId)
         {
             var decks = deckLogic.GetNames(userId);
-            if( decks.Equals(0))
+            if (decks.Equals(0))
             {
                 return NotFound("No se encontró usuario");
             }
-            if (decks== null)
+            if (decks == null)
             {
                 return NotFound("No se encontraron decks");
             }
@@ -58,7 +57,7 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> Get(string id)
         {
             var decks = deckLogic.GetDeck(id);
-            if (decks== null)
+            if (decks == null)
             {
                 return NotFound("No se encontraron decks");
             }
@@ -70,7 +69,7 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> GetAllDecksByUser(string UserId)
         {
             var decks = deckLogic.GetDecksByUser(UserId);
-            if ( decks== null)
+            if (decks == null)
             {
                 return NotFound("No se encontraron decks");
             }

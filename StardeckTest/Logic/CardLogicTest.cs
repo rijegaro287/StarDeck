@@ -1,12 +1,7 @@
 ﻿using Microsoft.Extensions.Logging.Abstractions;
 using Stardeck.Controllers;
 using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StardeckTest.Logic
 {
@@ -41,7 +36,7 @@ namespace StardeckTest.Logic
             var response = logic.NewCard(card);
             //Assert
             Assert.IsTrue(response);
-            
+
         }
 
         [TestMethod]

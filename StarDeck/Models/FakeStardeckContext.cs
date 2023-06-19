@@ -1,10 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Stardeck.Models
+﻿namespace Stardeck.Models
 {
-    public class FakeStardeckContext:StardeckContext
+    public class FakeStardeckContext : StardeckContext
     {
-        
+
         public override int SaveChanges()
         {
             return 0;

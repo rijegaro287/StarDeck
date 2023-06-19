@@ -17,7 +17,7 @@ namespace Stardeck.GameModels
 
         public List<GameCard> player2Cards { get; set; } = new();
 
- 
-        
+
+
     }
 }

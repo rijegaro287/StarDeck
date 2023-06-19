@@ -12,14 +12,14 @@ namespace Stardeck.Logic
         public PlanetLogic(StardeckContext context)
         {
             this.context = context;
-            this.planetDB=new PlanetDb(context);
+            this.planetDB = new PlanetDb(context);
         }
 
 
         public List<Planet> GetAll()
         {
             List<Planet> planets = planetDB.GetAllPlanets();
-            if (planets==null)
+            if (planets == null)
             {
                 return null;
             }

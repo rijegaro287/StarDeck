@@ -424,14 +424,14 @@ namespace Stardeck.Engine
         public bool? Surrender(string idUser)
         {
             PlayerLogic? player;
-            
+
             if (idUser == Player1.Id)
                 player = Player2;
             else if (idUser == Player2.Id)
                 player = Player1;
             else
                 player = null;
-            
+
             if (player is null) return null;
 
 

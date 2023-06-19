@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Stardeck.Engine;
-using Stardeck.GameModels;
 using Stardeck.Logic;
 using Stardeck.Models;
 
@@ -75,17 +73,17 @@ namespace Stardeck.Controllers
     }
 
 
-    [HttpGet("{id}/IsInGame")]
-    public async Task<IActionResult> IsInGame(string id)
-    {
-      var ingame = await GameLogic.IsInGame(id);
-      if (ingame is null)
-      {
-        return Ok(KeyValuePair.Create("Founded", ingame));
-      }
+        [HttpGet("{id}/IsInGame")]
+        public async Task<IActionResult> IsInGame(string id)
+        {
+            var ingame = await GameLogic.IsInGame(id);
+            if (ingame is null)
+            {
+                return Ok(KeyValuePair.Create("Founded", ingame));
+            }
 
-      return NotFound(KeyValuePair.Create("Error", ingame));
-    }
+            return NotFound(KeyValuePair.Create("Error", ingame));
+        }
 
     [HttpGet("getGameRoomData/{id}")]
     public async Task<IActionResult> GetData(string id)

@@ -1,6 +1,5 @@
 ﻿using Stardeck.DbAccess;
 using Stardeck.Models;
-using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
 {
@@ -13,12 +12,12 @@ namespace Stardeck.Logic
         public ParametersLogic(StardeckContext context)
         {
             this.context = context;
-            this.parametersDB=new ParametersDb(context);
+            this.parametersDB = new ParametersDb(context);
         }
 
         public List<Parameter>? GetAll()
         {
-            List<Parameter>? parameters= parametersDB.GetAllParameters();
+            List<Parameter>? parameters = parametersDB.GetAllParameters();
             if (parameters is null)
             {
                 return null;
@@ -49,13 +48,13 @@ namespace Stardeck.Logic
             return paramtAux;
 
         }
-        
+
         public Parameter? UpdateParameter(string id, string nValue)
         {
             var param = context.Parameters.Find(id);
             if (param != null)
             {
-                param.Value= nValue;
+                param.Value = nValue;
 
                 context.SaveChanges();
                 return param;

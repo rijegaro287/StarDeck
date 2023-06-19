@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Stardeck.Models;
-public partial class Account:IAlphanumericID
+public partial class Account : IAlphanumericID
 {
     public Account(string? config)
     {
@@ -20,7 +19,7 @@ public partial class Account:IAlphanumericID
             this.Serverconfig ??= new(this);
         }
     }
-    
+
 
     [NotMapped]
     public DateTime? lastacces { get; set; } = null;

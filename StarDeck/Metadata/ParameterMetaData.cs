@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Stardeck.Models;
+﻿namespace Stardeck.Models;
 
 public partial class Parameter
 {

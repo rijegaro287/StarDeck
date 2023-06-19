@@ -1,13 +1,7 @@
-﻿using Stardeck.Models;
-using System.Collections.Generic;
-using System.Timers;
-using Microsoft.EntityFrameworkCore;
-using Stardeck.GameModels;
+﻿using Microsoft.EntityFrameworkCore;
 using Stardeck.DbAccess;
 using Stardeck.Engine;
-using Stardeck.Pages;
-using Stardeck.Controllers;
-using System.Numerics;
+using Stardeck.Models;
 
 namespace Stardeck.Logic
 {

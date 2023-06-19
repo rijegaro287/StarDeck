@@ -26,15 +26,15 @@ namespace Stardeck.DbAccess
         public Object GetNames(string userId)
         {
             var userDecks = GetDecksByUser(userId);
-            if(userDecks==null) 
+            if (userDecks == null)
             {
                 return 0;
             }
 
 
             var decks = userDecks.Select(x => new { Id = x.IdDeck, Name = x.DeckName }).ToList();
-            
-            if (decks==null)
+
+            if (decks == null)
             {
                 return null;
             }

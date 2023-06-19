@@ -1,7 +1,5 @@
-﻿using Stardeck.Controllers;
-using Stardeck.DbAccess;
+﻿using Stardeck.DbAccess;
 using Stardeck.Models;
-using System.Text.RegularExpressions;
 
 namespace Stardeck.Logic
 {
@@ -34,12 +32,12 @@ namespace Stardeck.Logic
         public Object GetNames(string userId)
         {
             var decks = deckDB.GetNames(userId);
-            if (decks .Equals(0))
+            if (decks.Equals(0))
             {
                 _logger.LogWarning("No existen deks en para el usuario {userId} en GetNames", userId);
                 return 0;
             }
-            _logger.LogInformation("Request GetNames de Decks para ususario {userId} completada",userId);
+            _logger.LogInformation("Request GetNames de Decks para ususario {userId} completada", userId);
             return decks;
         }
 
@@ -67,7 +65,7 @@ namespace Stardeck.Logic
 
             deckAux.generateID();
             deckDB.NewDeck(deckAux);
-            if(deckDB.GetDeck(deckAux.Id) == null)
+            if (deckDB.GetDeck(deckAux.Id) == null)
             {
                 _logger.LogWarning("No se pudo guardar el nuevo deck {deck.Id}", deck.Id);
                 return null;
@@ -118,7 +116,7 @@ namespace Stardeck.Logic
             _logger.LogInformation("Request GetDecksByUser para usuario {id} completada", Userid);
             return decks;
         }
-        
+
         public static List<T> Shuffle<T>(IEnumerable<T> list)
         {
             var random = new Random();

@@ -1,12 +1,7 @@
 ﻿using Microsoft.Extensions.Logging.Abstractions;
 using Stardeck.Controllers;
 using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StardeckTest.Logic
 {
@@ -19,10 +14,10 @@ namespace StardeckTest.Logic
         [TestInitialize]
         public void poblateData()
         {
-            deck = new Deck(new string[]{ "C-9ae900e6feec" } )
+            deck = new Deck(new string[] { "C-9ae900e6feec" })
             {
                 Id = "",
-                IdAccount="U-RXF7RJNBWEKD",
+                IdAccount = "U-RXF7RJNBWEKD",
                 Cardlist = new string[] { "C-9ae900e6feec" }
 
             };
@@ -34,7 +29,7 @@ namespace StardeckTest.Logic
             var response = logic.NewDeck(deck);
             //Assert
             Assert.IsNotNull(response);
-            Assert.AreEqual(response.GetType(),typeof(Deck) );
+            Assert.AreEqual(response.GetType(), typeof(Deck));
         }
 
 

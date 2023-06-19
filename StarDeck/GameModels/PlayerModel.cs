@@ -1,5 +1,4 @@
 ﻿using Stardeck.Models;
-using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace Stardeck.GameModels
@@ -31,10 +30,11 @@ namespace Stardeck.GameModels
 
         [JsonIgnore] public List<GameCard> Hand { get; set; } = new List<GameCard>();
 
-        [JsonIgnore] public List<List<GameCard>> TmpTerritories { get; set; } = new(3)
+        [JsonIgnore]
+        public List<List<GameCard>> TmpTerritories { get; set; } = new(3)
             {new(),new(),new()};
-        
-        
-        
+
+
+
     }
 }
