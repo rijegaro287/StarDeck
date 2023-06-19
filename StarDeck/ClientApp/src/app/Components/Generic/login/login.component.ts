@@ -13,8 +13,8 @@ import { LoginService } from '../../../Services/login.service';
 export class LoginComponent {
   //Variables a utilizar
   token = sessionStorage.getItem("Token");
-  user = sessionStorage.getItem("Nombre")
-  rol = sessionStorage.getItem("Rol")
+  user = sessionStorage.getItem("Nombre");
+  rol = sessionStorage.getItem("Rol");
 
   headers = {};
   respuesta = {};
@@ -49,12 +49,16 @@ export class LoginComponent {
    * @constructor metodo relacionado
    */
   public async Sig_In(data: ILoginData) {
-    await this.service.login(data);
-    let Rol = sessionStorage.getItem('Rol')
-    if (Rol === "Admin") {
-      window.location.assign(this.baseurl + "/admin")
-    } else {
-      window.location.assign(this.baseurl + "/user")
+    try {
+      await this.service.login(data);
+      let Rol = sessionStorage.getItem('Rol')
+      if (Rol === "Admin") {
+        window.location.assign(this.baseurl + "/admin")
+      } else {
+        window.location.assign(this.baseurl + "/user")
+      }
+    } catch (error) {
+      alert("Usuario o contraseña incorrectos")
     }
   }
 

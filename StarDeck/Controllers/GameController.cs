@@ -8,171 +8,171 @@ using Stardeck.Models;
 
 namespace Stardeck.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class GameController : ControllerBase
+  [Route("api/[controller]")]
+  [ApiController]
+  public class GameController : ControllerBase
+  {
+    private readonly StardeckContext context;
+    private GameLogic gameLogic;
+    private readonly ILogger<GameController> _logger;
+
+    public GameController(StardeckContext context, ILogger<GameController> logger)
     {
-        private readonly StardeckContext context;
-        private GameLogic gameLogic;
-        private readonly ILogger<GameController> _logger;
-
-        public GameController(StardeckContext context, ILogger<GameController> logger)
-        {
-            this.context = context;
-            _logger = logger;
-            this.gameLogic = new GameLogic(context, _logger);
-        }
-
-
-        // POST api/<GameController>
-        [HttpPost("{playerId}")]
-        public async Task<IActionResult> Post(string playerId)
-        {
-            var room = await gameLogic.IsWaiting(playerId);
-            if (room is null)
-            {
-                return NotFound();
-            }
-
-            return Ok(room);
-        }
-
-        [HttpPut("{id}/{isInMatchMaking}")]
-        public async Task<IActionResult> Put(string id, bool isInMatchMaking)
-        {
-            var act = await gameLogic.PutInMatchMaking(id, isInMatchMaking);
-            if (act != null)
-            {
-                return Ok(new KeyValuePair<string, bool?>(id, act));
-            }
-
-            return NotFound();
-        }
-
-
-        [HttpGet("getGameRooms")]
-        public async Task<IActionResult> Get()
-        {
-            var rooms = gameLogic.GetAllGamerooms();
-            if (rooms != null)
-            {
-                return Ok(rooms);
-            }
-
-            return NotFound();
-        }
-
-        [HttpGet("getGameRoom/{id}")]
-        public async Task<IActionResult> Get(string id)
-        {
-            var room = gameLogic.GetGameroom(id);
-            if (room is not null)
-            {
-                return Ok(room);
-            }
-
-            return NotFound();
-        }
-
-
-        [HttpGet("{id}/IsInGame")]
-        public async Task<IActionResult> IsInGame(string id)
-        {
-            var ingame = await GameLogic.IsInGame(id);
-            if (ingame is null)
-            {
-                return Ok(KeyValuePair.Create( "Founded",ingame));
-            }
-
-            return NotFound(KeyValuePair.Create( "Error",ingame));
-        }
-
-        [HttpGet("getGameRoomData/{id}")]
-        public async Task<IActionResult> GetData(string id)
-        {
-            var room = gameLogic.GetGameRoomData(id);
-            if (room != null)
-            {
-                return Ok(room);
-            }
-
-            return NotFound();
-        }
-
-        [HttpGet("getGameRoomData/{idRoom}/{idUser}")]
-        public async Task<IActionResult> GetPlayerData(string idRoom, string idUser)
-        {
-            var room = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
-            if (room != null)
-            {
-                return Ok(room);
-            }
-
-            return NotFound();
-        }
-
-        [HttpPost("getGameRoomData/{idRoom}/{idUser}/{idCard}/{indexTargetPlanet}")]
-        public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, int indexTargetPlanet)
-        {
-            if (indexTargetPlanet < 0 & indexTargetPlanet > 3)
-            {
-                return BadRequest(KeyValuePair.Create("error", "Invalid index"));
-            }
-
-            var answer = await gameLogic.PlayCard(idRoom, idUser, idCard, indexTargetPlanet);
-            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
-            return answer switch
-            {
-                null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
-                1 => Ok(KeyValuePair.Create("Played", playerData)),
-                0 => BadRequest(KeyValuePair.Create("Not Played thus lack of energy", playerData)),
-                -1 => BadRequest(KeyValuePair.Create("Invalid ID", playerData)),
-                _ => NotFound(KeyValuePair.Create("", playerData))
-            };
-        }
-
-        [HttpGet("{idRoom}/{idUser}/initTurn")]
-        public async Task<IActionResult> InitTurn(string idRoom, string idUser)
-        {
-            var turn = await gameLogic.GetGameRoomData(idRoom)?.InitTurn(idUser);
-            if (turn is null)
-            {
-                return BadRequest(KeyValuePair.Create("error", "Player not in game"));
-            }
-
-            //after the turn end request the player data
-            var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
-            //if the player data is null the game ended 10 min ago and need to request the game room not the player data
-            if (playerData is null)
-            {
-                return NotFound(KeyValuePair.Create("error", "Game finished"));
-            }
-
-            return Ok(playerData);
-        }
-
-        [HttpPost("{idRoom}/{idUser}/endTurn")]
-        public async Task<IActionResult> EndTurn(string idRoom, string idUser)
-        {
-            var task = await gameLogic.EndTurn(idRoom, idUser);
-            return task switch
-            {
-                null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
-                false => NotFound(KeyValuePair.Create("Info", "Game finished")),
-                _ => Ok(KeyValuePair.Create("Turn ended", task))
-            };
-        }
-        
-        [HttpPost("{idRoom}/{idUser}/Surrender")]
-        public async Task<IActionResult> Surrender(string idRoom, string idUser)
-        {
-            bool? task = await gameLogic.Surrender(idRoom, idUser);
-            return task switch
-            {
-                null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
-                false => NotFound(KeyValuePair.Create("error", "Game already finished")),
-                _ => Ok(KeyValuePair.Create("Game Ended", task))
-            };
-        }
+      this.context = context;
+      _logger = logger;
+      this.gameLogic = new GameLogic(context, _logger);
     }
+
+
+    // POST api/<GameController>
+    [HttpPost("{playerId}")]
+    public async Task<IActionResult> Post(string playerId)
+    {
+      var room = await gameLogic.IsWaiting(playerId);
+      if (room is null)
+      {
+        return NotFound();
+      }
+
+      return Ok(room);
+    }
+
+    [HttpPut("{id}/{isInMatchMaking}")]
+    public async Task<IActionResult> Put(string id, bool isInMatchMaking)
+    {
+      var act = await gameLogic.PutInMatchMaking(id, isInMatchMaking);
+      if (act != null)
+      {
+        return Ok(new KeyValuePair<string, bool?>(id, act));
+      }
+
+      return NotFound();
+    }
+
+
+    [HttpGet("getGameRooms")]
+    public async Task<IActionResult> Get()
+    {
+      var rooms = gameLogic.GetAllGamerooms();
+      if (rooms != null)
+      {
+        return Ok(rooms);
+      }
+
+      return NotFound();
+    }
+
+    [HttpGet("getGameRoom/{id}")]
+    public async Task<IActionResult> Get(string id)
+    {
+      var room = gameLogic.GetGameroom(id);
+      if (room is not null)
+      {
+        return Ok(room);
+      }
+
+      return NotFound();
+    }
+
+
+    [HttpGet("{id}/IsInGame")]
+    public async Task<IActionResult> IsInGame(string id)
+    {
+      var ingame = await GameLogic.IsInGame(id);
+      if (ingame is null)
+      {
+        return Ok(KeyValuePair.Create("Founded", ingame));
+      }
+
+      return NotFound(KeyValuePair.Create("Error", ingame));
+    }
+
+    [HttpGet("getGameRoomData/{id}")]
+    public async Task<IActionResult> GetData(string id)
+    {
+      var room = gameLogic.GetGameRoomData(id);
+      if (room != null)
+      {
+        return Ok(room);
+      }
+
+      return NotFound();
+    }
+
+    [HttpGet("getGameRoomData/{idRoom}/{idUser}")]
+    public async Task<IActionResult> GetPlayerData(string idRoom, string idUser)
+    {
+      var room = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+      if (room != null)
+      {
+        return Ok(room);
+      }
+
+      return NotFound();
+    }
+
+    [HttpPost("getGameRoomData/{idRoom}/{idUser}/{idCard}/{indexTargetPlanet}")]
+    public async Task<IActionResult> PlayCard(string idRoom, string idUser, string idCard, int indexTargetPlanet)
+    {
+      if (indexTargetPlanet < 0 & indexTargetPlanet > 3)
+      {
+        return BadRequest(KeyValuePair.Create("error", "Invalid index"));
+      }
+
+      var answer = await gameLogic.PlayCard(idRoom, idUser, idCard, indexTargetPlanet);
+      var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+      return answer switch
+      {
+        null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
+        1 => Ok(KeyValuePair.Create("Played", playerData)),
+        0 => BadRequest(KeyValuePair.Create("Not Played thus lack of energy", playerData)),
+        -1 => BadRequest(KeyValuePair.Create("Invalid ID", playerData)),
+        _ => NotFound(KeyValuePair.Create("", playerData))
+      };
+    }
+
+    [HttpGet("{idRoom}/{idUser}/initTurn")]
+    public async Task<IActionResult> InitTurn(string idRoom, string idUser)
+    {
+      var turn = await gameLogic.GetGameRoomData(idRoom)?.InitTurn(idUser);
+      if (turn is null)
+      {
+        return BadRequest(KeyValuePair.Create("error", "Player not in game"));
+      }
+
+      //after the turn end request the player data
+      var playerData = gameLogic.GetGameRoomData(idRoom)?.GetPlayerData(idUser);
+      //if the player data is null the game ended 10 min ago and need to request the game room not the player data
+      if (playerData is null)
+      {
+        return NotFound(KeyValuePair.Create("error", "Game finished"));
+      }
+
+      return Ok(playerData);
+    }
+
+    [HttpPost("{idRoom}/{idUser}/endTurn")]
+    public async Task<IActionResult> EndTurn(string idRoom, string idUser)
+    {
+      var task = await gameLogic.EndTurn(idRoom, idUser);
+      return task switch
+      {
+        null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
+        false => NotFound(KeyValuePair.Create("Info", "Game finished")),
+        _ => Ok(KeyValuePair.Create("Turn ended", task))
+      };
+    }
+
+    [HttpPost("{idRoom}/{idUser}/Surrender")]
+    public async Task<IActionResult> Surrender(string idRoom, string idUser)
+    {
+      bool? task = await gameLogic.Surrender(idRoom, idUser);
+      return task switch
+      {
+        null => NotFound(KeyValuePair.Create("error", "Room Game Instance not found")),
+        false => NotFound(KeyValuePair.Create("error", "Game already finished")),
+        _ => Ok(KeyValuePair.Create("Game Ended", task))
+      };
+    }
+  }
 }
