@@ -26,17 +26,7 @@ export class SelectDeckComponent implements OnInit {
   idcardsDeckList: [];
   cardsDeckList: ICard[];
   newBattle: FormGroup;
-
-  respuesta = {};
-
-  router: Router | undefined;
   baseurl: string;
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'withCredentials': 'true'
-    })
-  };
   /**
    * Constructor de la clase
    * @param baseUrl variable para manejar la direccion de la pagina

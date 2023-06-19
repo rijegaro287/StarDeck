@@ -1,3 +1,43 @@
 <div class="main-container">
+  <h1>Mi Ranking</h1>
+  <div class = "myposition">
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+    <ul><b>Apodo</b>: {{myPosition.nickname}} </ul>
+    <ul><b>Posición</b>: {{myPosition.position}}</ul>
+    <ul><b>Puntos</b>: {{myPosition.points}} </ul>
+
+    <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
+  </div>
+
   <h1>Ranking de los Jugadores</h1>
+  <div>
+
+    <table mat-table [dataSource]="rankingList" class="mat-elevation-z8">
+
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+      </ng-container>
+
+      <!-- Nickname Column -->
+      <ng-container matColumnDef="nickname">
+        <th mat-header-cell *matHeaderCellDef> Apodo </th>
+        <td mat-cell *matCellDef="let element"> {{element.nickname}} </td>
+      </ng-container>
+
+      <!-- Points Column -->
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef> Puntos </th>
+        <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+
+
 </div>

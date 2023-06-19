@@ -9,6 +9,9 @@ import { HelpersService } from 'src/app/Services/helpers.service';
 
 import { ICard } from 'src/app/Interfaces/Card';
 import { IDeck } from 'src/app/Interfaces/Deck';
+import {CreatePlanetComponent} from "../../Admin/planet/create/create-planet.component";
+import {CardInformationComponent} from "../../Generic/card-information/card-information.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-deck-list',
@@ -44,6 +47,7 @@ export class DeckListComponent implements OnInit {
   creatingDeck: boolean;
 
   constructor(
+    private dialog: MatDialog,
     private accountService: AccountService,
     private cardService: CardService,
     private parameterService: ParametersService,
@@ -163,5 +167,10 @@ export class DeckListComponent implements OnInit {
     const isNewNameFilled = this.newDeckName.value.length > 0;
     const isNewDeckValid = this.newDeck.cards!.length === this.deckSize;
     return isNewNameFilled && isNewDeckValid;
+  }
+
+  cardInformation() {
+
+    const dialogRef = this.dialog.open(CardInformationComponent);
   }
 }

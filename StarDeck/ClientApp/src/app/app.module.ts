@@ -46,6 +46,9 @@ import { DeckListComponent } from './Components/User/deck-list/deck-list.compone
 
 import { GameMainComponent } from './Components/Game/game-main/game-main.component';
 import { GameCardComponent } from './Components/Game/game-card/game-card.component';
+import {RankingComponent} from "./Components/User/ranking/ranking.component";
+import {CardInformationComponent} from "./Components/Generic/card-information/card-information.component";
+import {MatTableModule} from "@angular/material/table";
 import { WinnerComponent } from './Components/Game/winner/winner.component';
 
 
@@ -74,6 +77,8 @@ import { WinnerComponent } from './Components/Game/winner/winner.component';
     GameMainComponent,
     HomeComponent,
     GameCardComponent,
+    RankingComponent,
+    CardInformationComponent,
     WinnerComponent
   ],
   imports: [
@@ -105,13 +110,14 @@ import { WinnerComponent } from './Components/Game/winner/winner.component';
         children: [
           { path: '', component: HomeComponent },
           { path: 'decks', component: DeckListComponent },
+          { path: 'ranking', component: RankingComponent },
           { path: 'battle/select-deck', component: SelectDeckComponent },
           { path: 'battle/search-opponent', component: SearchOpponentComponent }
         ]
       },
       { path: 'game', component: GameMainComponent },
-      { path: 'winner', component: WinnerComponent }
-
+      { path: 'winner', component: WinnerComponent },
+      { path: "cardI", component: CardInformationComponent }
     ]),
     MatFormFieldModule,
     MatSelectModule,
@@ -125,7 +131,8 @@ import { WinnerComponent } from './Components/Game/winner/winner.component';
     MatCardModule,
     MatTabsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
