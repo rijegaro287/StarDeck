@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectDeckComponent } from './select-deck.component';
-import {HttpClientTestingModule} from "@angular/common/http/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 
 describe('SelectDeckComponent', () => {
   let component: SelectDeckComponent;
@@ -11,7 +11,7 @@ describe('SelectDeckComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [SelectDeckComponent],
-      providers:[SelectDeckComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
+      providers: [SelectDeckComponent, { provide: 'BASE_URL', useValue: 'http://localhost' }]
 
     })
       .compileComponents();

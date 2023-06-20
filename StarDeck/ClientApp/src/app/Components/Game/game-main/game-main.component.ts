@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 import { GameService } from 'src/app/Services/game.service';
 import { ParametersService } from 'src/app/Services/parameters.service';
 import { HelpersService } from 'src/app/Services/helpers.service';
@@ -64,7 +63,7 @@ export class GameMainComponent implements OnInit {
     console.log(this.gameRoom);
     console.log(this.playerID);
 
-    await this.sleep(2000);
+    await this.sleep(1000);
 
     await this.updateGameData();
     this.setPlanetsData();
@@ -74,7 +73,6 @@ export class GameMainComponent implements OnInit {
       this.status = 'Iniciando turno...'
       this.playingTurn = false;
       console.log(this.maxTurns);
-
 
       await this.sleep(2000);
 
@@ -93,7 +91,7 @@ export class GameMainComponent implements OnInit {
       await this.revealCards();
     }
 
-    await this.sleep(1000);
+    await this.sleep(500);
 
     this.playingTurn = false;
     this.status = `Determinando ganador...`;
@@ -101,7 +99,7 @@ export class GameMainComponent implements OnInit {
 
     this.showWinner();
 
-    await this.sleep(2000);
+    await this.sleep(1000);
 
     window.location.href = '/winner';
   }
@@ -124,6 +122,7 @@ export class GameMainComponent implements OnInit {
       })
       .catch((error) => alert(error.message));
 
+    this.playerInfo.energy = this.playerInfo.energy > 8 ? 8 : this.playerInfo.energy;
     this.currentTurn = this.gameRoom.turn!;
 
     console.log(this.gameRoom);
@@ -173,17 +172,17 @@ export class GameMainComponent implements OnInit {
       planet.name = this.gameRoom.territories[index].name;
 
       if (this.gameRoom.firstToShow.id === this.playerID) {
-        await this.sleep(1000);
+        await this.sleep(500);
         planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
 
-        await this.sleep(1000);
+        await this.sleep(500);
         planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
       }
       else {
-        await this.sleep(1000);
+        await this.sleep(500);
         planet.opponentCards = gameRoomPlanet[this.opponentCardsID]!;
 
-        await this.sleep(1000);
+        await this.sleep(500);
         planet.playerCards = gameRoomPlanet[this.playerCardsID]!;
       }
     }
