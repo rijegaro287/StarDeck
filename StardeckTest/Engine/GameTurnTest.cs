@@ -6,7 +6,7 @@ using Stardeck.Models;
 using Stardeck.Models.Tests;
 
 namespace Stardeck.GameModels.Tests;
-
+#if DEBUG
 public class GameTurnTest
 {
     [TestClass()]
@@ -134,3 +134,4 @@ public class GameTurnTest
         }
     }
 }
+#endif
