@@ -32,7 +32,7 @@ namespace Stardeck.DbAccess
         {
             var card = context.Cards.Where(x => x.Type == 0).ToList();
 
-            if(card.Count == 0) 
+            if (card.Count == 0)
             {
                 return null;
             }
@@ -46,9 +46,9 @@ namespace Stardeck.DbAccess
         /// <returns>True if card was saved, false if card catch a error in saving, null if card already exist</returns>
         public bool? NewCard(Card card)
         {
-            if(GetCard(card.Id)!=null) 
-            { 
-                return null; 
+            if (GetCard(card.Id) != null)
+            {
+                return null;
             }
             context.Cards.Add(card);
             try
@@ -57,7 +57,7 @@ namespace Stardeck.DbAccess
             }
             catch (Exception e)
             {
-                #warning add log for this exception
+#warning add log for this exception
                 Console.WriteLine(e);
                 return false;
             }

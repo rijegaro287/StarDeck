@@ -36,7 +36,7 @@ public partial class Account
     public virtual ICollection<Deck> Decks { get; set; } = new List<Deck>();
 
     public virtual FavoriteDeck? FavoriteDeck { get; set; }
-    
+
     public long? Gamecounter { get; set; }
 
     [JsonIgnore]

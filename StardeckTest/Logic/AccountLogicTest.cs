@@ -1,13 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics.Internal;
-using Microsoft.Extensions.Logging.Abstractions;
+﻿using Microsoft.Extensions.Logging.Abstractions;
 using Stardeck.Controllers;
 using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StardeckTest.Logic
 {
@@ -37,7 +31,7 @@ namespace StardeckTest.Logic
         [TestMethod]
         public void AccountCreationTest()
         {
-            
+
             var logic = new Stardeck.Logic.AccountLogic(new FakeStardeckContext(), new NullLogger<GameController>());
             var response = logic.NewAccount(account);
             //Assert
@@ -64,7 +58,7 @@ namespace StardeckTest.Logic
             Assert.IsNotNull(response);
             Assert.AreEqual(response.GetType(), typeof(Account));
 
-        } 
+        }
 
         [TestMethod]
         public void AllAccountFoundTest()

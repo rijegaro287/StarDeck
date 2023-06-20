@@ -1,11 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Stardeck.Models.Tests
 {
@@ -40,7 +33,7 @@ namespace Stardeck.Models.Tests
         {
 
             room.generateID();
-            var roomid= room.Id;
+            var roomid = room.Id;
 
 
             room.generateID();

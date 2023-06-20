@@ -1,19 +1,17 @@
-﻿using Stardeck.Models;
-using System.Collections.Generic;
-using System.Timers;
-using Microsoft.EntityFrameworkCore;
-using Stardeck.GameModels;
+﻿using Microsoft.EntityFrameworkCore;
 using Stardeck.DbAccess;
 using Stardeck.Engine;
-using Stardeck.Pages;
-using Stardeck.Controllers;
-using System.Numerics;
+using Stardeck.Models;
 
 namespace Stardeck.Logic
 {
     public class GameLogic
     {
         protected static readonly StardeckContext MatchMackingContext = new();
+
+        private static readonly List<Account>
+            loadPlayers = MatchMackingContext.Accounts.ToList(); //needed to preload DO NOT DELETE
+
         private readonly StardeckContext _gameContext;
         private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
         private readonly GameDb _gameDb;

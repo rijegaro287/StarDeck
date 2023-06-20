@@ -10,6 +10,8 @@ import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { CardService } from "src/app/Services/card.service";
 import { CARD_TYPES } from "src/app/app.component";
+import {CardInformationComponent} from "../../Generic/card-information/card-information.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-selection-card',
@@ -31,7 +33,7 @@ export class SelectionCardComponent implements OnInit {
   selectionCard3: ICard[];
   //Lista de cartas seleccionadas
   selectedCards: ICard[];
-  //Banderas de seleccion en ronda 
+  //Banderas de seleccion en ronda
   cardSelected1: boolean;
   cardSelected2: boolean;
   cardSelected3: boolean;
@@ -51,6 +53,7 @@ export class SelectionCardComponent implements OnInit {
    * @param accountService injector del service de cuenta para las peticiones
    */
   constructor(@Inject('BASE_URL') baseUrl: string,
+              private dialog: MatDialog,
     private accountService: AccountService,
     private cardService: CardService,
     protected helpers: HelpersService) {
@@ -91,7 +94,7 @@ export class SelectionCardComponent implements OnInit {
 
         });
     }
-    //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion 
+    //Solicita todas las cartas, para luego filtrarlas, revolverlas y asignarlas en los 3 grupos de seleccion
     // await this.cardService.getNineRandomCards()
     await this.cardService.getAllCards()
       .then((cards) => {
@@ -113,7 +116,7 @@ export class SelectionCardComponent implements OnInit {
   }
 
   /**
-   *Funcion que se llama cuando se da click en Aceptar 
+   *Funcion que se llama cuando se da click en Aceptar
    */
   async createInitialCollection() {
     if (this.selectedCards.length < 3) {
@@ -137,8 +140,8 @@ export class SelectionCardComponent implements OnInit {
   /**
    * Funcion que se utilizar para seleccionar las cartas
    * @param card informacion de la carta que seleccione
-   * @param selection este numero indica en la ronda de cartas que el usuario selecciono 
-   * @param selection este numero indica en la ronda de cartas que el usuario selecciono 
+   * @param selection este numero indica en la ronda de cartas que el usuario selecciono
+   * @param selection este numero indica en la ronda de cartas que el usuario selecciono
    * */
   onSelect(card: ICard, selection: number) {
     switch (selection) {
@@ -168,6 +171,10 @@ export class SelectionCardComponent implements OnInit {
         break;
     }
     console.log(this.selectedCards);
+  }
+  cardInformation() {
+
+    const dialogRef = this.dialog.open(CardInformationComponent);
   }
 }
 

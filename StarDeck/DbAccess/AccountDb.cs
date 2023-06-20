@@ -35,7 +35,7 @@ namespace Stardeck.DbAccess
         public string[] GetAccountCards(string accountId)
         {
             var collection = context.Collections.Find(accountId);
-            if (collection?.Collection1.Length==0)
+            if (collection?.Collection1.Length == 0)
             {
                 return null;
             }
@@ -44,7 +44,7 @@ namespace Stardeck.DbAccess
 
         public bool? NewAccount(Account acc)
         {
-            if( GetAccount(acc.Id) != null ) 
+            if (GetAccount(acc.Id) != null)
             {
                 return null;
             }
@@ -55,9 +55,9 @@ namespace Stardeck.DbAccess
             }
             catch (Exception e)
             {
-                #warning log this exception
+#warning log this exception
                 Console.WriteLine(e);
-                return false;  
+                return false;
             }
             return true;
 
@@ -220,5 +220,9 @@ namespace Stardeck.DbAccess
         }
 
 
+        public List<Ranking> GetRanking()
+        {
+            return context.Rankings.ToList();
+        }
     }
 }

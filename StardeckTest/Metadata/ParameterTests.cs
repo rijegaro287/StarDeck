@@ -1,12 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Stardeck.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Stardeck.Models.Tests
+﻿namespace Stardeck.Models.Tests
 {
     [TestClass()]
     public class ParameterTests

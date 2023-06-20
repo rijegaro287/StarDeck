@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Stardeck.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 
 namespace Stardeck.Models.Tests
@@ -67,7 +65,7 @@ namespace Stardeck.Models.Tests
         [TestMethod()]
         public void generateIDTest()
         {
-            var AccAux = new Account("{}") { Id=""};
+            var AccAux = new Account("{}") { Id = "" };
 
             AccAux.generateID();
 

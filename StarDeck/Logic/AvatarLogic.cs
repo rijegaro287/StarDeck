@@ -1,8 +1,5 @@
-﻿using Stardeck.Models;
-using System.Text.RegularExpressions;
-using static System.Net.Mime.MediaTypeNames;
-using System.Xml.Linq;
-using Stardeck.DbAccess;
+﻿using Stardeck.DbAccess;
+using Stardeck.Models;
 
 namespace Stardeck.Logic
 {
@@ -14,7 +11,7 @@ namespace Stardeck.Logic
         public AvatarLogic(StardeckContext context)
         {
             this.context = context;
-            this.avatarDB=new AvatarDb(context);
+            this.avatarDB = new AvatarDb(context);
         }
 
 
@@ -37,16 +34,16 @@ namespace Stardeck.Logic
                 return null;
             }
             return avatar;
-            
+
         }
 
         public Avatar NewAvatar(Avatar avatar)
         {
             var avatarAux = new Avatar()
             {
-                Id=avatar.Id,
-                Name=avatar.Name,
-                Image=avatar.Image,
+                Id = avatar.Id,
+                Name = avatar.Name,
+                Image = avatar.Image,
 
             };
             avatarDB.NewAvatar(avatarAux);
