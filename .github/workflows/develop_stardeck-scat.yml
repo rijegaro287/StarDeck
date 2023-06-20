@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
       - name: Build with dotnet
         run: |
-              cd Stardeck
+              cd StarDeck
               dotnet build --configuration Release
               
       - name: dotnet publish
