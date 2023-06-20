@@ -8,6 +8,10 @@ namespace Stardeck.Logic
     public class GameLogic
     {
         protected static readonly StardeckContext MatchMackingContext = new();
+
+        private static readonly List<Account>
+            loadPlayers = MatchMackingContext.Accounts.ToList(); //needed to preload DO NOT DELETE
+
         private readonly StardeckContext _gameContext;
         private static readonly List<GameRoom> ActiveRooms = new List<GameRoom>();
         private readonly GameDb _gameDb;

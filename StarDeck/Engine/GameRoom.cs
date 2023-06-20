@@ -441,5 +441,21 @@ namespace Stardeck.Engine
             TokenSource.Cancel();
             return true;
         }
+#if DEBUG
+        public Task? GetTimer()
+        {
+            return _loop;
+        }
+
+        public Task? GetTurnTimer()
+        {
+            return EndTurnFlag.Timer;
+        }
+
+        public async Task<bool?> PublicawaitTurnToEnd()
+        {
+            return await awaitTurnToEnd();
+        }
+#endif
     }
 }
