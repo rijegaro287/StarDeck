@@ -61,10 +61,9 @@ namespace Stardeck.Engine
                 FinishTurn();
             }
 
-            if (Winner is null)
-            {
-                CheckAndSetFinalWinner();
-            }
+
+            CheckAndSetFinalWinner();
+            
 
             _loop.Dispose();
             return this;
