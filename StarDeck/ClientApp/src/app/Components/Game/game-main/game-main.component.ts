@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 import { GameService } from 'src/app/Services/game.service';
 import { ParametersService } from 'src/app/Services/parameters.service';
 import { HelpersService } from 'src/app/Services/helpers.service';
@@ -75,7 +74,6 @@ export class GameMainComponent implements OnInit {
       this.playingTurn = false;
       console.log(this.maxTurns);
 
-
       await this.sleep(2000);
 
       this.playingTurn = true;
@@ -124,6 +122,7 @@ export class GameMainComponent implements OnInit {
       })
       .catch((error) => alert(error.message));
 
+    this.playerInfo.energy = this.playerInfo.energy > 8 ? 8 : this.playerInfo.energy;
     this.currentTurn = this.gameRoom.turn!;
 
     console.log(this.gameRoom);

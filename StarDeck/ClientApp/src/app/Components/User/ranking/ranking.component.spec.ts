@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RankingComponent } from './ranking.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SelectionCardComponent } from '../../Register/selection-card/selection-card.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 describe('RankingComponent', () => {
   let component: RankingComponent;
@@ -8,9 +11,16 @@ describe('RankingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RankingComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [SelectionCardComponent],
+      providers: [
+        SelectionCardComponent,
+        { provide: 'BASE_URL', useValue: 'http://localhost' },
+        { provide: MatDialogRef, useValue: {} }
+      ]
+
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RankingComponent);
     component = fixture.componentInstance;

@@ -2,6 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectionCardComponent } from './selection-card.component';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('SelectionCardComponent', () => {
   let component: SelectionCardComponent;
@@ -11,10 +12,15 @@ describe('SelectionCardComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [SelectionCardComponent],
-      providers:[SelectionCardComponent, { provide: 'BASE_URL', useValue: 'http://localhost'}]
-
+      providers: [
+        SelectionCardComponent,
+        { provide: 'BASE_URL', useValue: 'http://localhost' },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MatDialog, useValue: {} }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SelectionCardComponent);
     component = fixture.componentInstance;
