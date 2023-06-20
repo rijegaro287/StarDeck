@@ -13139,3 +13139,294 @@ System.InvalidOperationException: A second operation was started on this context
 2023-06-19 17:26:56.636 -06:00 [34] [INF] [0HMRH3EAD69SD] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3194 ms
 2023-06-19 17:27:16.980 -06:00 [34] [INF] [0HMRH3EAD69SD] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3507 ms
 2023-06-19 17:27:20.073 -06:00 [42] [INF] [0HMRH3EAD69SD] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4141 ms
+2023-06-19 21:56:19.167 -06:00 [1] [INF] Inited
+2023-06-19 21:56:19.477 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-19 21:56:19.483 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-19 21:56:21.815 -06:00 [12] [INF] [0HMRH89731DJJ] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1016.3302 ms
+2023-06-19 21:56:25.893 -06:00 [6] [INF] [0HMRH89731DJI] <null>HTTP GET /swagger/index.html responded 200 in 119.9832 ms
+2023-06-19 21:56:25.979 -06:00 [12] [INF] [0HMRH89731DJI] <null>HTTP GET /swagger/swagger-ui.css responded 200 in 31.0930 ms
+2023-06-19 21:56:26.009 -06:00 [12] [INF] [0HMRH89731DJI] <null>HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 60.0824 ms
+2023-06-19 21:56:26.032 -06:00 [9] [INF] [0HMRH89731DJI] <null>HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 83.4848 ms
+2023-06-19 21:56:26.427 -06:00 [8] [INF] [0HMRH89731DJI] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 206.7794 ms
+2023-06-19 21:57:04.911 -06:00 [12] [ERR] Failed executing DbCommand (160ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = Binary), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO avatar (id, image, name)
+VALUES (@p0, @p1, @p2);
+2023-06-19 21:57:04.983 -06:00 [12] [ERR] An exception occurred in the database while saving changes for context type 'Stardeck.Models.StardeckContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "avatar" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "avatar" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: avatar
+    ColumnName: image
+    File: execMain.c
+    Line: 1889
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "avatar" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "avatar" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: avatar
+    ColumnName: image
+    File: execMain.c
+    Line: 1889
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-06-19 21:57:05.008 -06:00 [12] [ERR] [0HMRH89731DJI] <Isriom>HTTP POST /Avatar responded 500 in 3382.6126 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "avatar" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "avatar" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: avatar
+    ColumnName: image
+    File: execMain.c
+    Line: 1889
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Stardeck.DbAccess.AvatarDb.NewAvatar(Avatar av) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\DbAccess\AvatarDb.cs:line 39
+   at Stardeck.Logic.AvatarLogic.NewAvatar(Avatar avatar) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Logic\AvatarLogic.cs:line 49
+   at Stardeck.Controllers.AvatarController.Post(AvatarImage avatar) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Controllers\AvatarController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-06-19 21:57:05.093 -06:00 [12] [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "image" of relation "avatar" violates not-null constraint
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|232_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "image" of relation "avatar" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: avatar
+    ColumnName: image
+    File: execMain.c
+    Line: 1889
+    Routine: ExecConstraints
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Stardeck.DbAccess.AvatarDb.NewAvatar(Avatar av) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\DbAccess\AvatarDb.cs:line 39
+   at Stardeck.Logic.AvatarLogic.NewAvatar(Avatar avatar) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Logic\AvatarLogic.cs:line 49
+   at Stardeck.Controllers.AvatarController.Post(AvatarImage avatar) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Controllers\AvatarController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-19 21:58:48.690 -06:00 [9] [INF] [0HMRH89731DJK] <null>HTTP OPTIONS /login/Signin responded 204 in 1.0299 ms
+2023-06-19 21:58:49.548 -06:00 [22] [INF] [0HMRH89731DJI] <Isriom>HTTP PUT /login/Signin responded 200 in 851.1463 ms
+2023-06-19 21:58:49.866 -06:00 [21] [INF] [0HMRH89731DJK] <null>HTTP GET /api/Parameters/CardsType responded 200 in 5.4394 ms
+2023-06-19 21:58:50.041 -06:00 [21] [INF] Request GetAll de cards completada
+2023-06-19 21:58:50.062 -06:00 [21] [INF] [0HMRH89731DJI] <admin>HTTP GET /cards/get_all responded 400 in 138.6889 ms
+2023-06-19 21:58:55.717 -06:00 [12] [INF] [0HMRH89731DJK] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6253 ms
+2023-06-19 21:58:55.844 -06:00 [22] [INF] Request GetAll de cards completada
+2023-06-19 21:58:55.846 -06:00 [22] [INF] [0HMRH89731DJI] <admin>HTTP GET /cards/get_all responded 400 in 89.6713 ms
+2023-06-19 21:59:00.049 -06:00 [9] [INF] [0HMRH89731DJK] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5497 ms
+2023-06-19 21:59:00.205 -06:00 [9] [INF] [0HMRH89731DJI] <admin>HTTP GET /api/Planet responded 404 in 99.2629 ms
+2023-06-19 21:59:02.960 -06:00 [22] [INF] [0HMRH89731DJK] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4915 ms
+2023-06-19 22:07:42.183 -06:00 [1] [INF] Inited
+2023-06-19 22:07:42.433 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-19 22:07:42.438 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-19 22:07:44.248 -06:00 [9] [INF] [0HMRH8FIJSO3U] <null>HTTP GET /api/Parameters/CardsType responded 200 in 876.5629 ms
+2023-06-19 22:22:44.129 -06:00 [20] [INF] [0HMRH8FIJSO3V] <null>HTTP OPTIONS /login/Signin responded 204 in 1.4543 ms
+2023-06-19 22:22:47.240 -06:00 [19] [INF] [0HMRH8FIJSO40] <admin>HTTP PUT /login/Signin responded 200 in 3104.6901 ms
+2023-06-19 22:22:47.645 -06:00 [22] [INF] [0HMRH8FIJSO3V] <null>HTTP GET /api/Parameters/CardsType responded 200 in 4.6228 ms
+2023-06-19 22:22:47.842 -06:00 [19] [INF] Request GetAll de cards completada
+2023-06-19 22:22:47.857 -06:00 [19] [INF] [0HMRH8FIJSO40] <admin>HTTP GET /cards/get_all responded 400 in 120.2884 ms
+2023-06-19 22:25:41.134 -06:00 [22] [INF] [0HMRH8FIJSO41] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.9958 ms
+2023-06-19 22:25:41.402 -06:00 [22] [INF] [0HMRH8FIJSO42] <admin>HTTP GET /api/Planet responded 404 in 184.2948 ms
+2023-06-19 22:26:37.550 -06:00 [16] [INF] [0HMRH8FIJSO41] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1377 ms
+2023-06-19 22:26:39.039 -06:00 [22] [INF] [0HMRH8FIJSO42] <admin>HTTP POST /api/Planet responded 200 in 1483.1730 ms
+2023-06-19 22:26:39.320 -06:00 [3] [INF] [0HMRH8FIJSO41] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4483 ms
+2023-06-19 22:26:40.034 -06:00 [22] [INF] [0HMRH8FIJSO42] <admin>HTTP GET /api/Planet responded 200 in 672.2979 ms
+2023-06-19 22:27:56.787 -06:00 [36] [INF] [0HMRH8FIJSO43] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1289 ms
+2023-06-19 22:27:58.038 -06:00 [10] [INF] [0HMRH8FIJSO44] <admin>HTTP POST /api/Planet responded 200 in 1243.6030 ms
+2023-06-19 22:27:58.368 -06:00 [33] [INF] [0HMRH8FIJSO43] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4857 ms
+2023-06-19 22:27:59.327 -06:00 [33] [INF] [0HMRH8FIJSO44] <admin>HTTP GET /api/Planet responded 200 in 912.0484 ms
+2023-06-19 22:29:01.043 -06:00 [39] [INF] [0HMRH8FIJSO43] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1562 ms
+2023-06-19 22:29:01.230 -06:00 [11] [INF] [0HMRH8FIJSO44] <admin>HTTP POST /api/Planet responded 200 in 183.2276 ms
+2023-06-19 22:29:01.585 -06:00 [34] [INF] [0HMRH8FIJSO43] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4997 ms
+2023-06-19 22:29:03.136 -06:00 [36] [INF] [0HMRH8FIJSO44] <admin>HTTP GET /api/Planet responded 200 in 1504.8006 ms
+2023-06-19 22:30:42.712 -06:00 [41] [INF] [0HMRH8FIJSO43] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1757 ms
+2023-06-19 22:30:42.895 -06:00 [39] [INF] [0HMRH8FIJSO44] <admin>HTTP POST /api/Planet responded 200 in 178.4129 ms
+2023-06-19 22:30:43.219 -06:00 [43] [INF] [0HMRH8FIJSO43] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6061 ms
+2023-06-19 22:30:44.549 -06:00 [11] [INF] [0HMRH8FIJSO44] <admin>HTTP GET /api/Planet responded 200 in 1276.5758 ms
+2023-06-19 22:32:27.629 -06:00 [54] [INF] [0HMRH8FIJSO45] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1432 ms
+2023-06-19 22:32:28.085 -06:00 [11] [INF] [0HMRH8FIJSO46] <admin>HTTP POST /api/Planet responded 200 in 446.3247 ms
+2023-06-19 22:32:28.509 -06:00 [11] [INF] [0HMRH8FIJSO45] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1.3044 ms
+2023-06-19 22:32:30.620 -06:00 [54] [INF] [0HMRH8FIJSO46] <admin>HTTP GET /api/Planet responded 200 in 2060.7787 ms
+2023-06-19 22:34:07.188 -06:00 [50] [INF] [0HMRH8FIJSO45] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1010 ms
+2023-06-19 22:34:08.412 -06:00 [56] [INF] [0HMRH8FIJSO46] <admin>HTTP POST /api/Planet responded 200 in 1218.6178 ms
+2023-06-19 22:34:08.691 -06:00 [37] [INF] [0HMRH8FIJSO45] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4205 ms
+2023-06-19 22:34:10.347 -06:00 [50] [INF] [0HMRH8FIJSO46] <admin>HTTP GET /api/Planet responded 200 in 1624.0713 ms
+2023-06-19 22:35:39.653 -06:00 [35] [INF] [0HMRH8FIJSO45] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1803 ms
+2023-06-19 22:35:39.747 -06:00 [50] [INF] [0HMRH8FIJSO46] <admin>HTTP POST /api/Planet responded 200 in 89.4423 ms
+2023-06-19 22:35:40.034 -06:00 [50] [INF] [0HMRH8FIJSO45] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3468 ms
+2023-06-19 22:35:42.045 -06:00 [30] [INF] [0HMRH8FIJSO46] <admin>HTTP GET /api/Planet responded 200 in 1966.5819 ms
+2023-06-19 22:35:46.607 -06:00 [35] [INF] [0HMRH8FIJSO45] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3442 ms
+2023-06-19 22:35:48.003 -06:00 [35] [INF] [0HMRH8FIJSO46] <admin>HTTP GET /api/Planet responded 200 in 1366.8112 ms
+2023-06-19 22:37:23.177 -06:00 [35] [INF] [0HMRH8FIJSO45] <null>HTTP OPTIONS /api/Planet responded 204 in 0.1472 ms
+2023-06-19 22:37:23.391 -06:00 [35] [INF] [0HMRH8FIJSO46] <admin>HTTP POST /api/Planet responded 200 in 210.6359 ms
+2023-06-19 22:37:23.747 -06:00 [3] [INF] [0HMRH8FIJSO45] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5036 ms
+2023-06-19 22:37:26.195 -06:00 [3] [INF] [0HMRH8FIJSO46] <admin>HTTP GET /api/Planet responded 200 in 2417.1463 ms
+2023-06-19 22:40:01.418 -06:00 [56] [INF] [0HMRH8FIJSO47] <null>HTTP OPTIONS /api/Planet responded 204 in 0.0555 ms
+2023-06-19 22:40:02.606 -06:00 [50] [INF] [0HMRH8FIJSO48] <admin>HTTP POST /api/Planet responded 200 in 1180.9318 ms
+2023-06-19 22:40:02.960 -06:00 [13] [INF] [0HMRH8FIJSO47] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3284 ms
+2023-06-19 22:40:04.451 -06:00 [54] [INF] [0HMRH8FIJSO48] <admin>HTTP GET /api/Planet responded 200 in 1414.8130 ms
+2023-06-19 22:41:43.496 -06:00 [50] [INF] [0HMRH8FIJSO47] <null>HTTP OPTIONS /api/Planet responded 204 in 0.0571 ms
+2023-06-19 22:41:43.720 -06:00 [50] [INF] [0HMRH8FIJSO48] <admin>HTTP POST /api/Planet responded 200 in 219.4528 ms
+2023-06-19 22:41:44.068 -06:00 [50] [INF] [0HMRH8FIJSO47] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2621 ms
+2023-06-19 22:41:46.896 -06:00 [50] [INF] [0HMRH8FIJSO48] <admin>HTTP GET /api/Planet responded 200 in 2751.6841 ms
+2023-06-19 22:43:59.048 -06:00 [54] [INF] [0HMRH8FIJSO49] <null>HTTP OPTIONS /api/Planet responded 204 in 0.0871 ms
+2023-06-19 22:43:59.333 -06:00 [16] [INF] [0HMRH8FIJSO48] <admin>HTTP POST /api/Planet responded 200 in 280.9517 ms
+2023-06-19 22:43:59.722 -06:00 [24] [INF] [0HMRH8FIJSO49] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3063 ms
+2023-06-19 22:44:02.980 -06:00 [36] [INF] [0HMRH8FIJSO48] <admin>HTTP GET /api/Planet responded 200 in 3177.4005 ms
+2023-06-19 22:44:42.994 -06:00 [54] [INF] [0HMRH8FIJSO49] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4872 ms
+2023-06-19 22:44:43.173 -06:00 [39] [INF] Request GetAll de cards completada
+2023-06-19 22:44:43.175 -06:00 [39] [INF] [0HMRH8FIJSO48] <admin>HTTP GET /cards/get_all responded 400 in 87.9639 ms
+2023-06-19 22:48:12.529 -06:00 [13] [INF] [0HMRH8FIJSO4A] <null>HTTP OPTIONS /cards/add responded 204 in 0.0661 ms
+2023-06-19 22:48:13.470 -06:00 [30] [INF] Request NewCard para UK3BJARGGC46 completada
+2023-06-19 22:48:13.473 -06:00 [30] [INF] [0HMRH8FIJSO4B] <admin>HTTP POST /cards/add responded 200 in 935.2618 ms
+2023-06-19 22:48:13.834 -06:00 [31] [INF] [0HMRH8FIJSO4A] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3362 ms
+2023-06-19 22:48:14.016 -06:00 [13] [INF] Request GetAll de cards completada
+2023-06-19 22:48:14.022 -06:00 [13] [INF] [0HMRH8FIJSO4B] <admin>HTTP GET /cards/get_all responded 200 in 94.3653 ms
+2023-06-19 22:53:56.192 -06:00 [49] [INF] [0HMRH8FIJSO4C] <null>HTTP OPTIONS /cards/add responded 204 in 0.0687 ms
+2023-06-19 22:53:57.073 -06:00 [24] [INF] Request NewCard para LOYVPV1BOHND completada
+2023-06-19 22:53:57.076 -06:00 [24] [INF] [0HMRH8FIJSO4D] <admin>HTTP POST /cards/add responded 200 in 874.7236 ms
+2023-06-19 22:53:57.507 -06:00 [24] [INF] [0HMRH8FIJSO4C] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4398 ms
+2023-06-19 22:53:57.693 -06:00 [49] [INF] Request GetAll de cards completada
+2023-06-19 22:53:57.695 -06:00 [49] [INF] [0HMRH8FIJSO4D] <admin>HTTP GET /cards/get_all responded 200 in 88.0145 ms

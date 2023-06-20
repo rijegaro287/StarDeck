@@ -35,9 +35,18 @@ public partial class StardeckContext : DbContext
 
     public virtual DbSet<Ranking> Rankings { get; set; }
 
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=stardeck.postgres.database.azure.com;Database=Stardeck;Username=StardeckAdmin;Password=CE4101.1");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+    {
+#if DEBUG
+        optionsBuilder.UseNpgsql(
+            "Host=stardeck.postgres.database.azure.com;Database=Stardeck;Username=StardeckAdmin;Password=CE4101.1");
+#else
+        optionsBuilder.UseNpgsql(
+            "Host=stardeck.postgres.database.azure.com;Database=StardeckProd;Username=StardeckAdmin;Password=CE4101.1");
+#endif
+       }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -123,7 +132,8 @@ public partial class StardeckContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("card_pkey");
 
-            entity.ToTable("card", tb => tb.HasComment("0-basica\r\n\r\n1-normal\r\n\r\n2-rara\r\n\r\n3-Muy Rara\r\n\r\n4-Ultra Rara"));
+            entity.ToTable("card",
+                tb => tb.HasComment("0-basica\r\n\r\n1-normal\r\n\r\n2-rara\r\n\r\n3-Muy Rara\r\n\r\n4-Ultra Rara"));
 
             entity.Property(e => e.Id)
                 .HasMaxLength(14)
