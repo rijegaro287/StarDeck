@@ -40,5 +40,29 @@ namespace StardeckTest.Controllers
             Assert.IsInstanceOfType<OkObjectResult>(response.Result);
         }
 
+        [TestMethod]
+        public void IsInGameTest()
+        {
+            var controller = new GameController(new FakeStardeckContext(), new NullLogger<GameController>());
+
+            var response = controller.IsInGame("U-RXF7RJNBWEKD");
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<NotFoundObjectResult>(response.Result);
+        }
+
+        [TestMethod]
+        public void PutInMatchMakingTest()
+        {
+            var controller = new GameController(new FakeStardeckContext(), new NullLogger<GameController>());
+
+            var response = controller.Put("U-RXF7RJNBWEKD",true);
+
+            //Assert
+            Assert.IsNotNull(response);
+            Assert.IsInstanceOfType<OkObjectResult>(response.Result);
+        }
+
     }
 }
