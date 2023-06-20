@@ -13430,3 +13430,1231 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 2023-06-19 22:53:57.507 -06:00 [24] [INF] [0HMRH8FIJSO4C] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4398 ms
 2023-06-19 22:53:57.693 -06:00 [49] [INF] Request GetAll de cards completada
 2023-06-19 22:53:57.695 -06:00 [49] [INF] [0HMRH8FIJSO4D] <admin>HTTP GET /cards/get_all responded 200 in 88.0145 ms
+2023-06-19 23:02:08.246 -06:00 [27] [INF] [0HMRH8FIJSO4E] <null>HTTP OPTIONS /cards/add responded 204 in 0.1121 ms
+2023-06-19 23:02:09.160 -06:00 [35] [INF] Request NewCard para 3U7CZNYU0DOT completada
+2023-06-19 23:02:09.163 -06:00 [35] [INF] [0HMRH8FIJSO4F] <admin>HTTP POST /cards/add responded 200 in 910.3929 ms
+2023-06-19 23:02:09.534 -06:00 [34] [INF] [0HMRH8FIJSO4E] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3508 ms
+2023-06-19 23:02:09.716 -06:00 [34] [INF] Request GetAll de cards completada
+2023-06-19 23:02:09.718 -06:00 [34] [INF] [0HMRH8FIJSO4F] <admin>HTTP GET /cards/get_all responded 200 in 99.7234 ms
+2023-06-19 23:04:42.675 -06:00 [28] [INF] [0HMRH8FIJSO4G] <null>HTTP OPTIONS /cards/add responded 204 in 0.0825 ms
+2023-06-19 23:04:42.879 -06:00 [46] [INF] Request NewCard para IYUH76VGM2AO completada
+2023-06-19 23:04:42.881 -06:00 [46] [INF] [0HMRH8FIJSO4H] <admin>HTTP POST /cards/add responded 200 in 198.0601 ms
+2023-06-19 23:04:43.251 -06:00 [29] [INF] [0HMRH8FIJSO4G] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3218 ms
+2023-06-19 23:04:43.444 -06:00 [28] [INF] Request GetAll de cards completada
+2023-06-19 23:04:43.446 -06:00 [28] [INF] [0HMRH8FIJSO4H] <admin>HTTP GET /cards/get_all responded 200 in 107.0581 ms
+2023-06-19 23:06:51.005 -06:00 [29] [INF] [0HMRH8FIJSO4G] <null>HTTP OPTIONS /cards/add responded 204 in 0.0625 ms
+2023-06-19 23:06:51.198 -06:00 [38] [INF] Request NewCard para WOSLVG9AX01W completada
+2023-06-19 23:06:51.201 -06:00 [38] [INF] [0HMRH8FIJSO4H] <admin>HTTP POST /cards/add responded 200 in 191.0429 ms
+2023-06-19 23:06:51.488 -06:00 [38] [INF] [0HMRH8FIJSO4G] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4166 ms
+2023-06-19 23:06:51.705 -06:00 [22] [INF] Request GetAll de cards completada
+2023-06-19 23:06:51.706 -06:00 [22] [INF] [0HMRH8FIJSO4H] <admin>HTTP GET /cards/get_all responded 200 in 174.1486 ms
+2023-06-19 23:09:59.473 -06:00 [43] [INF] [0HMRH8FIJSO4I] <null>HTTP OPTIONS /cards/add responded 204 in 0.0810 ms
+2023-06-19 23:10:00.382 -06:00 [43] [INF] Request NewCard para TN8GMWROZJCE completada
+2023-06-19 23:10:00.385 -06:00 [43] [INF] [0HMRH8FIJSO4J] <admin>HTTP POST /cards/add responded 200 in 905.4926 ms
+2023-06-19 23:10:00.763 -06:00 [21] [INF] [0HMRH8FIJSO4I] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3474 ms
+2023-06-19 23:10:01.041 -06:00 [21] [INF] Request GetAll de cards completada
+2023-06-19 23:10:01.042 -06:00 [21] [INF] [0HMRH8FIJSO4J] <admin>HTTP GET /cards/get_all responded 200 in 192.3039 ms
+2023-06-19 23:12:59.704 -06:00 [47] [INF] [0HMRH8FIJSO4K] <null>HTTP OPTIONS /cards/add responded 204 in 0.0780 ms
+2023-06-19 23:12:59.883 -06:00 [63] [INF] Request NewCard para TC22PFIYJEXP completada
+2023-06-19 23:12:59.885 -06:00 [63] [INF] [0HMRH8FIJSO4L] <admin>HTTP POST /cards/add responded 200 in 172.6853 ms
+2023-06-19 23:13:00.294 -06:00 [65] [INF] [0HMRH8FIJSO4K] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4024 ms
+2023-06-19 23:13:00.556 -06:00 [63] [INF] Request GetAll de cards completada
+2023-06-19 23:13:00.558 -06:00 [63] [INF] [0HMRH8FIJSO4L] <admin>HTTP GET /cards/get_all responded 200 in 175.3276 ms
+2023-06-19 23:13:47.144 -06:00 [47] [INF] [0HMRH8FIJSO4K] <null>HTTP OPTIONS /cards/add responded 204 in 0.0561 ms
+2023-06-19 23:13:47.322 -06:00 [47] [INF] Request NewCard para MLALWI7Y3M6Z completada
+2023-06-19 23:13:47.325 -06:00 [47] [INF] [0HMRH8FIJSO4L] <admin>HTTP POST /cards/add responded 200 in 176.4037 ms
+2023-06-19 23:13:47.648 -06:00 [63] [INF] [0HMRH8FIJSO4K] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2771 ms
+2023-06-19 23:13:47.888 -06:00 [63] [INF] Request GetAll de cards completada
+2023-06-19 23:13:47.890 -06:00 [63] [INF] [0HMRH8FIJSO4L] <admin>HTTP GET /cards/get_all responded 200 in 184.2540 ms
+2023-06-19 23:15:16.234 -06:00 [64] [INF] [0HMRH8FIJSO4K] <null>HTTP OPTIONS /cards/add responded 204 in 0.0641 ms
+2023-06-19 23:15:17.136 -06:00 [18] [INF] Request NewCard para XCZXC257P2TW completada
+2023-06-19 23:15:17.138 -06:00 [18] [INF] [0HMRH8FIJSO4L] <admin>HTTP POST /cards/add responded 200 in 899.5050 ms
+2023-06-19 23:15:17.461 -06:00 [47] [INF] [0HMRH8FIJSO4K] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2957 ms
+2023-06-19 23:15:17.690 -06:00 [64] [INF] Request GetAll de cards completada
+2023-06-19 23:15:17.693 -06:00 [64] [INF] [0HMRH8FIJSO4L] <admin>HTTP GET /cards/get_all responded 200 in 176.8471 ms
+2023-06-19 23:17:13.570 -06:00 [64] [INF] [0HMRH8FIJSO4K] <null>HTTP OPTIONS /cards/add responded 204 in 0.0956 ms
+2023-06-19 23:17:13.986 -06:00 [12] [INF] Request NewCard para EFATHDSEUFNL completada
+2023-06-19 23:17:13.988 -06:00 [12] [INF] [0HMRH8FIJSO4L] <admin>HTTP POST /cards/add responded 200 in 412.5848 ms
+2023-06-19 23:17:14.299 -06:00 [12] [INF] [0HMRH8FIJSO4K] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3721 ms
+2023-06-19 23:17:14.526 -06:00 [47] [INF] Request GetAll de cards completada
+2023-06-19 23:17:14.527 -06:00 [47] [INF] [0HMRH8FIJSO4L] <admin>HTTP GET /cards/get_all responded 200 in 174.4697 ms
+2023-06-19 23:19:35.797 -06:00 [48] [INF] [0HMRH8FIJSO4M] <null>HTTP OPTIONS /cards/add responded 204 in 0.0611 ms
+2023-06-19 23:19:35.987 -06:00 [12] [INF] Request NewCard para CIN9ICOTKKJ5 completada
+2023-06-19 23:19:35.990 -06:00 [12] [INF] [0HMRH8FIJSO4N] <admin>HTTP POST /cards/add responded 200 in 183.7221 ms
+2023-06-19 23:19:36.284 -06:00 [12] [INF] [0HMRH8FIJSO4M] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3541 ms
+2023-06-19 23:19:36.592 -06:00 [64] [INF] Request GetAll de cards completada
+2023-06-19 23:19:36.595 -06:00 [64] [INF] [0HMRH8FIJSO4N] <admin>HTTP GET /cards/get_all responded 200 in 260.1401 ms
+2023-06-19 23:22:02.166 -06:00 [37] [INF] [0HMRH8FIJSO4O] <null>HTTP OPTIONS /cards/add responded 204 in 0.0729 ms
+2023-06-19 23:22:03.032 -06:00 [64] [INF] Request NewCard para 37LD3AIPFRG4 completada
+2023-06-19 23:22:03.034 -06:00 [64] [INF] [0HMRH8FIJSO4P] <admin>HTTP POST /cards/add responded 200 in 859.7017 ms
+2023-06-19 23:22:03.393 -06:00 [64] [INF] [0HMRH8FIJSO4O] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3152 ms
+2023-06-19 23:22:03.717 -06:00 [37] [INF] Request GetAll de cards completada
+2023-06-19 23:22:03.755 -06:00 [37] [INF] [0HMRH8FIJSO4P] <admin>HTTP GET /cards/get_all responded 200 in 299.1481 ms
+2023-06-19 23:24:45.969 -06:00 [44] [INF] [0HMRH8FIJSO4Q] <null>HTTP OPTIONS /cards/add responded 204 in 0.0852 ms
+2023-06-19 23:24:46.162 -06:00 [10] [INF] Request NewCard para XK7XSF63YT4V completada
+2023-06-19 23:24:46.166 -06:00 [10] [INF] [0HMRH8FIJSO4R] <admin>HTTP POST /cards/add responded 200 in 189.2757 ms
+2023-06-19 23:24:46.511 -06:00 [10] [INF] [0HMRH8FIJSO4Q] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3584 ms
+2023-06-19 23:24:46.841 -06:00 [10] [INF] Request GetAll de cards completada
+2023-06-19 23:24:46.844 -06:00 [10] [INF] [0HMRH8FIJSO4R] <admin>HTTP GET /cards/get_all responded 200 in 266.1069 ms
+2023-06-19 23:26:48.379 -06:00 [10] [INF] [0HMRH8FIJSO4Q] <null>HTTP OPTIONS /cards/add responded 204 in 0.0676 ms
+2023-06-19 23:26:48.558 -06:00 [44] [INF] Request NewCard para UKZCL8532USN completada
+2023-06-19 23:26:48.561 -06:00 [44] [INF] [0HMRH8FIJSO4R] <admin>HTTP POST /cards/add responded 200 in 176.7722 ms
+2023-06-19 23:26:49.996 -06:00 [10] [INF] [0HMRH8FIJSO4Q] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3230 ms
+2023-06-19 23:26:50.304 -06:00 [22] [INF] Request GetAll de cards completada
+2023-06-19 23:26:50.307 -06:00 [22] [INF] [0HMRH8FIJSO4R] <admin>HTTP GET /cards/get_all responded 200 in 263.9617 ms
+2023-06-19 23:28:29.914 -06:00 [55] [INF] [0HMRH8FIJSO4Q] <null>HTTP OPTIONS /cards/add responded 204 in 0.0819 ms
+2023-06-19 23:28:30.807 -06:00 [55] [INF] Request NewCard para EKX2IFV06XYE completada
+2023-06-19 23:28:30.810 -06:00 [55] [INF] [0HMRH8FIJSO4R] <admin>HTTP POST /cards/add responded 200 in 891.3378 ms
+2023-06-19 23:28:31.159 -06:00 [55] [INF] [0HMRH8FIJSO4Q] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2514 ms
+2023-06-19 23:28:31.504 -06:00 [55] [INF] Request GetAll de cards completada
+2023-06-19 23:28:31.506 -06:00 [55] [INF] [0HMRH8FIJSO4R] <admin>HTTP GET /cards/get_all responded 200 in 265.3333 ms
+2023-06-19 23:30:16.663 -06:00 [15] [INF] [0HMRH8FIJSO4Q] <null>HTTP OPTIONS /cards/add responded 204 in 0.1022 ms
+2023-06-19 23:30:16.874 -06:00 [35] [INF] Request NewCard para U25SQH0MT2HF completada
+2023-06-19 23:30:16.876 -06:00 [35] [INF] [0HMRH8FIJSO4R] <admin>HTTP POST /cards/add responded 200 in 207.4470 ms
+2023-06-19 23:30:17.173 -06:00 [44] [INF] [0HMRH8FIJSO4Q] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3107 ms
+2023-06-19 23:30:17.485 -06:00 [44] [INF] Request GetAll de cards completada
+2023-06-19 23:30:17.489 -06:00 [44] [INF] [0HMRH8FIJSO4R] <admin>HTTP GET /cards/get_all responded 200 in 263.1652 ms
+2023-06-19 23:32:01.209 -06:00 [44] [INF] [0HMRH8FIJSO4Q] <null>HTTP OPTIONS /cards/add responded 204 in 0.0475 ms
+2023-06-19 23:32:01.389 -06:00 [15] [INF] Request NewCard para RAJ5MNIOF2O4 completada
+2023-06-19 23:32:01.392 -06:00 [15] [INF] [0HMRH8FIJSO4R] <admin>HTTP POST /cards/add responded 200 in 177.8579 ms
+2023-06-19 23:32:01.660 -06:00 [44] [INF] [0HMRH8FIJSO4Q] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3080 ms
+2023-06-19 23:32:01.986 -06:00 [15] [INF] Request GetAll de cards completada
+2023-06-19 23:32:01.989 -06:00 [15] [INF] [0HMRH8FIJSO4R] <admin>HTTP GET /cards/get_all responded 200 in 278.1492 ms
+2023-06-19 23:37:59.396 -06:00 [20] [INF] [0HMRH8FIJSO4S] <null>HTTP OPTIONS /cards/add responded 204 in 0.1375 ms
+2023-06-19 23:38:00.280 -06:00 [20] [INF] Request NewCard para F4A6ODRHLKYK completada
+2023-06-19 23:38:00.283 -06:00 [20] [INF] [0HMRH8FIJSO4T] <admin>HTTP POST /cards/add responded 200 in 880.9589 ms
+2023-06-19 23:38:00.606 -06:00 [6] [INF] [0HMRH8FIJSO4S] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2891 ms
+2023-06-19 23:38:00.916 -06:00 [47] [INF] Request GetAll de cards completada
+2023-06-19 23:38:00.919 -06:00 [47] [INF] [0HMRH8FIJSO4T] <admin>HTTP GET /cards/get_all responded 200 in 262.3501 ms
+2023-06-19 23:40:05.969 -06:00 [23] [INF] [0HMRH8FIJSO4S] <null>HTTP OPTIONS /cards/add responded 204 in 0.0476 ms
+2023-06-19 23:40:06.152 -06:00 [6] [INF] Request NewCard para YNWH5OMKNSHZ completada
+2023-06-19 23:40:06.155 -06:00 [6] [INF] [0HMRH8FIJSO4T] <admin>HTTP POST /cards/add responded 200 in 181.2621 ms
+2023-06-19 23:40:06.505 -06:00 [6] [INF] [0HMRH8FIJSO4S] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2877 ms
+2023-06-19 23:40:06.891 -06:00 [6] [INF] Request GetAll de cards completada
+2023-06-19 23:40:06.893 -06:00 [6] [INF] [0HMRH8FIJSO4T] <admin>HTTP GET /cards/get_all responded 200 in 336.5160 ms
+2023-06-19 23:46:24.722 -06:00 [38] [INF] [0HMRH8FIJSO4U] <null>HTTP OPTIONS /cards/add responded 204 in 0.0792 ms
+2023-06-19 23:46:25.609 -06:00 [3] [INF] Request NewCard para WZ42D68C75XO completada
+2023-06-19 23:46:25.613 -06:00 [3] [INF] [0HMRH8FIJSO4V] <admin>HTTP POST /cards/add responded 200 in 883.4478 ms
+2023-06-19 23:46:26.593 -06:00 [28] [INF] [0HMRH8FIJSO4U] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3875 ms
+2023-06-19 23:46:27.022 -06:00 [19] [INF] Request GetAll de cards completada
+2023-06-19 23:46:27.026 -06:00 [19] [INF] [0HMRH8FIJSO4V] <admin>HTTP GET /cards/get_all responded 200 in 346.0486 ms
+2023-06-19 23:48:46.855 -06:00 [4] [INF] [0HMRH8FIJSO50] <null>HTTP OPTIONS /cards/add responded 204 in 0.0837 ms
+2023-06-19 23:48:47.075 -06:00 [4] [INF] Request NewCard para L5PI6ME1QQAV completada
+2023-06-19 23:48:47.079 -06:00 [4] [INF] [0HMRH8FIJSO51] <admin>HTTP POST /cards/add responded 200 in 217.2830 ms
+2023-06-19 23:48:47.381 -06:00 [38] [INF] [0HMRH8FIJSO50] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2903 ms
+2023-06-19 23:48:47.762 -06:00 [19] [INF] Request GetAll de cards completada
+2023-06-19 23:48:47.765 -06:00 [19] [INF] [0HMRH8FIJSO51] <admin>HTTP GET /cards/get_all responded 200 in 335.9969 ms
+2023-06-19 23:50:38.470 -06:00 [31] [INF] [0HMRH8FIJSO50] <null>HTTP OPTIONS /cards/add responded 204 in 0.0776 ms
+2023-06-19 23:50:38.649 -06:00 [20] [INF] Request NewCard para 4WZDYH3O26SW completada
+2023-06-19 23:50:38.652 -06:00 [20] [INF] [0HMRH8FIJSO51] <admin>HTTP POST /cards/add responded 200 in 177.2945 ms
+2023-06-19 23:50:39.403 -06:00 [20] [INF] [0HMRH8FIJSO50] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2735 ms
+2023-06-19 23:50:39.797 -06:00 [20] [INF] Request GetAll de cards completada
+2023-06-19 23:50:39.801 -06:00 [20] [INF] [0HMRH8FIJSO51] <admin>HTTP GET /cards/get_all responded 200 in 346.9038 ms
+2023-06-19 23:52:12.726 -06:00 [4] [INF] [0HMRH8FIJSO50] <null>HTTP OPTIONS /cards/add responded 204 in 0.0630 ms
+2023-06-19 23:52:13.609 -06:00 [6] [INF] Request NewCard para KSMJ8ANWSTAI completada
+2023-06-19 23:52:13.612 -06:00 [6] [INF] [0HMRH8FIJSO51] <admin>HTTP POST /cards/add responded 200 in 881.7606 ms
+2023-06-19 23:52:13.899 -06:00 [11] [INF] [0HMRH8FIJSO50] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3445 ms
+2023-06-19 23:52:14.296 -06:00 [11] [INF] Request GetAll de cards completada
+2023-06-19 23:52:14.299 -06:00 [11] [INF] [0HMRH8FIJSO51] <admin>HTTP GET /cards/get_all responded 200 in 346.4703 ms
+2023-06-20 00:10:29.009 -06:00 [46] [INF] [0HMRH8FIJSO52] <null>HTTP OPTIONS /cards/add responded 204 in 0.1054 ms
+2023-06-20 00:10:29.896 -06:00 [46] [INF] Request NewCard para X264BW9IQH5X completada
+2023-06-20 00:10:29.899 -06:00 [46] [INF] [0HMRH8FIJSO53] <admin>HTTP POST /cards/add responded 200 in 882.4461 ms
+2023-06-20 00:10:30.230 -06:00 [16] [INF] [0HMRH8FIJSO52] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2785 ms
+2023-06-20 00:10:30.664 -06:00 [41] [INF] Request GetAll de cards completada
+2023-06-20 00:10:30.668 -06:00 [16] [INF] [0HMRH8FIJSO53] <admin>HTTP GET /cards/get_all responded 200 in 356.6894 ms
+2023-06-20 00:13:42.920 -06:00 [36] [INF] [0HMRH8FIJSO54] <null>HTTP OPTIONS /cards/add responded 204 in 0.0589 ms
+2023-06-20 00:13:43.116 -06:00 [35] [INF] Request NewCard para WK67KAF5KMZG completada
+2023-06-20 00:13:43.118 -06:00 [35] [INF] [0HMRH8FIJSO55] <admin>HTTP POST /cards/add responded 200 in 190.7599 ms
+2023-06-20 00:13:43.420 -06:00 [63] [INF] [0HMRH8FIJSO54] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4304 ms
+2023-06-20 00:13:43.815 -06:00 [45] [INF] Request GetAll de cards completada
+2023-06-20 00:13:43.818 -06:00 [45] [INF] [0HMRH8FIJSO55] <admin>HTTP GET /cards/get_all responded 200 in 348.7109 ms
+2023-06-20 00:15:09.592 -06:00 [49] [INF] [0HMRH8FIJSO54] <null>HTTP OPTIONS /cards/add responded 204 in 0.0878 ms
+2023-06-20 00:15:09.819 -06:00 [35] [INF] Request NewCard para NVTO4XP0HEPX completada
+2023-06-20 00:15:09.822 -06:00 [35] [INF] [0HMRH8FIJSO55] <admin>HTTP POST /cards/add responded 200 in 190.0604 ms
+2023-06-20 00:15:10.206 -06:00 [45] [INF] [0HMRH8FIJSO54] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3366 ms
+2023-06-20 00:15:10.641 -06:00 [49] [INF] Request GetAll de cards completada
+2023-06-20 00:15:10.644 -06:00 [49] [INF] [0HMRH8FIJSO55] <admin>HTTP GET /cards/get_all responded 200 in 369.1011 ms
+2023-06-20 00:17:34.065 -06:00 [35] [INF] [0HMRH8FIJSO56] <null>HTTP OPTIONS /cards/add responded 204 in 0.0694 ms
+2023-06-20 00:17:34.935 -06:00 [72] [INF] Request NewCard para KWTE1A77HH2J completada
+2023-06-20 00:17:34.939 -06:00 [72] [INF] [0HMRH8FIJSO57] <admin>HTTP POST /cards/add responded 200 in 867.1412 ms
+2023-06-20 00:17:35.244 -06:00 [72] [INF] [0HMRH8FIJSO56] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3168 ms
+2023-06-20 00:17:35.653 -06:00 [72] [INF] Request GetAll de cards completada
+2023-06-20 00:17:35.658 -06:00 [72] [INF] [0HMRH8FIJSO57] <admin>HTTP GET /cards/get_all responded 200 in 356.0926 ms
+2023-06-20 00:19:08.678 -06:00 [67] [INF] [0HMRH8FIJSO56] <null>HTTP OPTIONS /cards/add responded 204 in 0.0438 ms
+2023-06-20 00:19:08.859 -06:00 [67] [INF] Request NewCard para A8CDT34YIBUH completada
+2023-06-20 00:19:08.863 -06:00 [67] [INF] [0HMRH8FIJSO57] <admin>HTTP POST /cards/add responded 200 in 179.3622 ms
+2023-06-20 00:19:09.165 -06:00 [64] [INF] [0HMRH8FIJSO56] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3649 ms
+2023-06-20 00:19:09.562 -06:00 [64] [INF] Request GetAll de cards completada
+2023-06-20 00:19:09.565 -06:00 [64] [INF] [0HMRH8FIJSO57] <admin>HTTP GET /cards/get_all responded 200 in 349.9070 ms
+2023-06-20 00:21:32.344 -06:00 [64] [INF] [0HMRH8FIJSO58] <null>HTTP OPTIONS /cards/add responded 204 in 0.0587 ms
+2023-06-20 00:21:32.528 -06:00 [64] [INF] Request NewCard para MN5XZPF8SJG2 completada
+2023-06-20 00:21:32.531 -06:00 [64] [INF] [0HMRH8FIJSO59] <admin>HTTP POST /cards/add responded 200 in 181.0164 ms
+2023-06-20 00:21:32.805 -06:00 [77] [INF] [0HMRH8FIJSO58] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2870 ms
+2023-06-20 00:21:33.210 -06:00 [71] [INF] Request GetAll de cards completada
+2023-06-20 00:21:33.213 -06:00 [71] [INF] [0HMRH8FIJSO59] <admin>HTTP GET /cards/get_all responded 200 in 355.5278 ms
+2023-06-20 00:23:19.508 -06:00 [71] [INF] [0HMRH8FIJSO58] <null>HTTP OPTIONS /cards/add responded 204 in 0.0995 ms
+2023-06-20 00:23:20.380 -06:00 [71] [INF] Request NewCard para DY9W55SQVXYN completada
+2023-06-20 00:23:20.382 -06:00 [71] [INF] [0HMRH8FIJSO59] <admin>HTTP POST /cards/add responded 200 in 868.3733 ms
+2023-06-20 00:23:20.664 -06:00 [71] [INF] [0HMRH8FIJSO58] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3610 ms
+2023-06-20 00:23:21.061 -06:00 [71] [INF] Request GetAll de cards completada
+2023-06-20 00:23:21.065 -06:00 [78] [INF] [0HMRH8FIJSO59] <admin>HTTP GET /cards/get_all responded 200 in 350.8978 ms
+2023-06-20 00:25:11.891 -06:00 [82] [INF] [0HMRH8FIJSO58] <null>HTTP OPTIONS /cards/add responded 204 in 0.0899 ms
+2023-06-20 00:25:12.074 -06:00 [82] [INF] Request NewCard para 5DU7WVULSHC0 completada
+2023-06-20 00:25:12.078 -06:00 [82] [INF] [0HMRH8FIJSO59] <admin>HTTP POST /cards/add responded 200 in 182.3129 ms
+2023-06-20 00:25:12.328 -06:00 [84] [INF] [0HMRH8FIJSO58] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2706 ms
+2023-06-20 00:25:12.720 -06:00 [84] [INF] Request GetAll de cards completada
+2023-06-20 00:25:12.723 -06:00 [84] [INF] [0HMRH8FIJSO59] <admin>HTTP GET /cards/get_all responded 200 in 358.1000 ms
+2023-06-20 00:27:52.284 -06:00 [88] [INF] [0HMRH8FIJSO5A] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4930 ms
+2023-06-20 00:27:52.703 -06:00 [92] [INF] Request GetAll de cards completada
+2023-06-20 00:27:52.706 -06:00 [92] [INF] [0HMRH8FIJSO5B] <admin>HTTP GET /cards/get_all responded 200 in 360.4329 ms
+2023-06-20 00:28:22.940 -06:00 [92] [INF] [0HMRH8FIJSO5A] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3336 ms
+2023-06-20 00:28:24.086 -06:00 [91] [INF] Request GetAll de cards completada
+2023-06-20 00:28:24.093 -06:00 [91] [INF] [0HMRH8FIJSO5B] <admin>HTTP GET /cards/get_all responded 200 in 1093.4511 ms
+2023-06-20 08:18:05.186 -06:00 [1] [INF] Inited
+2023-06-20 08:18:05.661 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-20 08:18:05.667 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-20 08:18:08.118 -06:00 [6] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 911.4085 ms
+2023-06-20 08:18:48.994 -06:00 [6] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 14.2906 ms
+2023-06-20 08:18:57.356 -06:00 [10] [INF] [0HMRHJ4L95MBG] <null>HTTP OPTIONS /login/Signin responded 204 in 0.9931 ms
+2023-06-20 08:19:01.042 -06:00 [11] [INF] [0HMRHJ4L95MBF] <admin>HTTP PUT /login/Signin responded 200 in 3681.1640 ms
+2023-06-20 08:19:01.306 -06:00 [11] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5312 ms
+2023-06-20 08:19:01.867 -06:00 [8] [INF] Request GetAll de cards completada
+2023-06-20 08:19:01.915 -06:00 [8] [INF] [0HMRHJ4L95MBF] <admin>HTTP GET /cards/get_all responded 200 in 568.2280 ms
+2023-06-20 08:19:06.673 -06:00 [18] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6835 ms
+2023-06-20 08:19:07.195 -06:00 [17] [INF] Request GetAll de cards completada
+2023-06-20 08:19:07.198 -06:00 [17] [INF] [0HMRHJ4L95MBF] <admin>HTTP GET /cards/get_all responded 200 in 484.6191 ms
+2023-06-20 08:19:25.762 -06:00 [11] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4233 ms
+2023-06-20 08:19:27.548 -06:00 [18] [INF] [0HMRHJ4L95MBF] <admin>HTTP GET /api/Planet responded 200 in 1751.2357 ms
+2023-06-20 08:19:36.686 -06:00 [19] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4342 ms
+2023-06-20 08:19:59.509 -06:00 [18] [INF] [0HMRHJ4L95MBG] <null>HTTP OPTIONS /login/Signin responded 204 in 0.1017 ms
+2023-06-20 08:19:59.603 -06:00 [18] [INF] [0HMRHJ4L95MBF] <admin>HTTP PUT /login/Signin responded 200 in 90.1825 ms
+2023-06-20 08:19:59.888 -06:00 [18] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5895 ms
+2023-06-20 08:20:18.087 -06:00 [11] [INF] [0HMRHJ4L95MBG] <null>HTTP OPTIONS /login/Signin responded 204 in 0.0900 ms
+2023-06-20 08:20:18.180 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador1>HTTP PUT /login/Signin responded 200 in 87.7533 ms
+2023-06-20 08:20:18.396 -06:00 [9] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3886 ms
+2023-06-20 08:20:21.481 -06:00 [9] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4044 ms
+2023-06-20 08:20:21.725 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/deckSize responded 200 in 182.9438 ms
+2023-06-20 08:20:21.923 -06:00 [17] [INF] Request GetCards para U-BFXY9BRHXV2R completada
+2023-06-20 08:20:21.927 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /Account/U-BFXY9BRHXV2R/cards responded 200 in 180.5941 ms
+2023-06-20 08:20:22.027 -06:00 [17] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:20:22.030 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 97.0967 ms
+2023-06-20 08:20:22.213 -06:00 [17] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:20:22.216 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 89.0932 ms
+2023-06-20 08:20:22.306 -06:00 [17] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:20:22.309 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 87.6173 ms
+2023-06-20 08:20:22.403 -06:00 [16] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:20:22.405 -06:00 [16] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 90.8654 ms
+2023-06-20 08:20:22.497 -06:00 [17] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:20:22.500 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 88.5229 ms
+2023-06-20 08:20:22.594 -06:00 [19] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:20:22.597 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 90.6320 ms
+2023-06-20 08:20:22.690 -06:00 [16] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:20:22.692 -06:00 [16] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 88.7204 ms
+2023-06-20 08:20:22.786 -06:00 [9] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:20:22.789 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 89.5592 ms
+2023-06-20 08:20:22.883 -06:00 [19] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:20:22.885 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 90.6096 ms
+2023-06-20 08:20:22.978 -06:00 [19] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:20:22.980 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 88.4988 ms
+2023-06-20 08:20:23.074 -06:00 [9] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:20:23.077 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 90.2084 ms
+2023-06-20 08:20:23.255 -06:00 [9] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:20:23.257 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 172.7830 ms
+2023-06-20 08:20:23.353 -06:00 [9] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:20:23.355 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 91.2557 ms
+2023-06-20 08:20:23.446 -06:00 [9] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:20:23.448 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 86.4010 ms
+2023-06-20 08:20:23.546 -06:00 [9] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:20:23.548 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 95.4806 ms
+2023-06-20 08:20:23.644 -06:00 [19] [INF] Request GetCards para MN5XZPF8SJG2 completada
+2023-06-20 08:20:23.647 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/MN5XZPF8SJG2 responded 200 in 92.0132 ms
+2023-06-20 08:20:23.739 -06:00 [19] [INF] Request GetCards para RAJ5MNIOF2O4 completada
+2023-06-20 08:20:23.741 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/RAJ5MNIOF2O4 responded 200 in 88.9472 ms
+2023-06-20 08:20:23.836 -06:00 [16] [INF] Request GetCards para EFATHDSEUFNL completada
+2023-06-20 08:20:23.840 -06:00 [16] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/EFATHDSEUFNL responded 200 in 90.8155 ms
+2023-06-20 08:20:23.951 -06:00 [19] [INF] Request GetDecksByUser para usuario U-BFXY9BRHXV2R completada
+2023-06-20 08:20:23.960 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Deck/User/U-BFXY9BRHXV2R responded 200 in 114.2117 ms
+2023-06-20 08:20:27.576 -06:00 [16] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4718 ms
+2023-06-20 08:20:27.710 -06:00 [21] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/deckSize responded 200 in 83.5798 ms
+2023-06-20 08:20:27.842 -06:00 [19] [INF] Request GetCards para U-XFN47Y1D7W4I completada
+2023-06-20 08:20:27.844 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /Account/U-XFN47Y1D7W4I/cards responded 200 in 106.9193 ms
+2023-06-20 08:20:28.004 -06:00 [19] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:20:28.007 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 91.0623 ms
+2023-06-20 08:20:28.101 -06:00 [16] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:20:28.103 -06:00 [16] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 89.5654 ms
+2023-06-20 08:20:28.309 -06:00 [17] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:20:28.312 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 91.9264 ms
+2023-06-20 08:20:28.408 -06:00 [19] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:20:28.412 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 88.6221 ms
+2023-06-20 08:20:28.504 -06:00 [21] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:20:28.507 -06:00 [21] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 89.5384 ms
+2023-06-20 08:20:28.599 -06:00 [17] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:20:28.601 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 88.1607 ms
+2023-06-20 08:20:28.695 -06:00 [19] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:20:28.697 -06:00 [19] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 89.0719 ms
+2023-06-20 08:20:28.788 -06:00 [17] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:20:28.792 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 88.6353 ms
+2023-06-20 08:20:28.882 -06:00 [17] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:20:28.885 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 88.1543 ms
+2023-06-20 08:20:29.092 -06:00 [11] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:20:29.094 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 170.8730 ms
+2023-06-20 08:20:29.187 -06:00 [11] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:20:29.189 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 87.3016 ms
+2023-06-20 08:20:29.280 -06:00 [11] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:20:29.283 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 88.4212 ms
+2023-06-20 08:20:29.375 -06:00 [17] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:20:29.377 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 88.2241 ms
+2023-06-20 08:20:29.469 -06:00 [11] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:20:29.472 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 88.5885 ms
+2023-06-20 08:20:29.562 -06:00 [18] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:20:29.565 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 88.5085 ms
+2023-06-20 08:20:29.657 -06:00 [17] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:20:29.660 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 89.4101 ms
+2023-06-20 08:20:29.787 -06:00 [9] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:20:29.790 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 91.5826 ms
+2023-06-20 08:20:29.883 -06:00 [17] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:20:29.886 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 90.6022 ms
+2023-06-20 08:20:29.995 -06:00 [11] [INF] Request GetDecksByUser para usuario U-XFN47Y1D7W4I completada
+2023-06-20 08:20:29.997 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Deck/User/U-XFN47Y1D7W4I responded 200 in 88.5901 ms
+2023-06-20 08:20:35.747 -06:00 [17] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3467 ms
+2023-06-20 08:20:35.889 -06:00 [17] [INF] Request GetNames de Decks para ususario U-XFN47Y1D7W4I completada
+2023-06-20 08:20:35.896 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Deck/Names/U-XFN47Y1D7W4I responded 200 in 102.5728 ms
+2023-06-20 08:20:37.732 -06:00 [9] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3158 ms
+2023-06-20 08:20:37.865 -06:00 [11] [INF] Request GetNames de Decks para ususario U-BFXY9BRHXV2R completada
+2023-06-20 08:20:37.868 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Deck/Names/U-BFXY9BRHXV2R responded 200 in 95.1130 ms
+2023-06-20 08:20:39.052 -06:00 [17] [INF] Request GetDeck para ususario D-d23fd475a479 completada
+2023-06-20 08:20:39.055 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Deck/D-d23fd475a479 responded 200 in 100.7894 ms
+2023-06-20 08:20:39.148 -06:00 [17] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:20:39.149 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 87.8543 ms
+2023-06-20 08:20:39.254 -06:00 [17] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:20:39.257 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 92.1056 ms
+2023-06-20 08:20:39.350 -06:00 [11] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:20:39.352 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 88.2291 ms
+2023-06-20 08:20:39.444 -06:00 [11] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:20:39.447 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 88.7473 ms
+2023-06-20 08:20:39.540 -06:00 [17] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:20:39.544 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 88.5295 ms
+2023-06-20 08:20:39.634 -06:00 [11] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:20:39.636 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 87.2347 ms
+2023-06-20 08:20:39.759 -06:00 [11] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:20:39.762 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 88.1437 ms
+2023-06-20 08:20:39.853 -06:00 [11] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:20:39.856 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 88.0108 ms
+2023-06-20 08:20:39.948 -06:00 [17] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:20:39.951 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 89.2875 ms
+2023-06-20 08:20:40.077 -06:00 [11] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:20:40.078 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 89.2187 ms
+2023-06-20 08:20:40.172 -06:00 [17] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:20:40.174 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 89.0812 ms
+2023-06-20 08:20:40.350 -06:00 [17] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:20:40.353 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 174.1473 ms
+2023-06-20 08:20:40.445 -06:00 [17] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:20:40.448 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 88.6613 ms
+2023-06-20 08:20:40.539 -06:00 [17] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:20:40.543 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 88.8277 ms
+2023-06-20 08:20:40.633 -06:00 [18] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:20:40.636 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 87.5292 ms
+2023-06-20 08:20:40.762 -06:00 [9] [INF] Request GetCards para RAJ5MNIOF2O4 completada
+2023-06-20 08:20:40.764 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/RAJ5MNIOF2O4 responded 200 in 89.8534 ms
+2023-06-20 08:20:40.859 -06:00 [9] [INF] Request GetCards para EFATHDSEUFNL completada
+2023-06-20 08:20:40.864 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/EFATHDSEUFNL responded 200 in 93.4446 ms
+2023-06-20 08:20:40.957 -06:00 [9] [INF] Request GetCards para MN5XZPF8SJG2 completada
+2023-06-20 08:20:40.960 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/MN5XZPF8SJG2 responded 200 in 89.6203 ms
+2023-06-20 08:21:09.120 -06:00 [17] [INF] [0HMRHJ4L95MBG] <null>HTTP OPTIONS /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 204 in 0.0783 ms
+2023-06-20 08:21:09.222 -06:00 [11] [INF] Request GetAccount para U-BFXY9BRHXV2R completada
+2023-06-20 08:21:09.504 -06:00 [11] [INF] Request SelectFavoriteDeck para usuario U-BFXY9BRHXV2R y deckD-d23fd475a479 completada
+2023-06-20 08:21:09.507 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP PUT /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 200 in 380.8780 ms
+2023-06-20 08:21:09.837 -06:00 [18] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3194 ms
+2023-06-20 08:21:10.291 -06:00 [15] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:21:12.667 -06:00 [18] [INF] Request GetDeck para ususario D-c10a86e2ec82 completada
+2023-06-20 08:21:12.670 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Deck/D-c10a86e2ec82 responded 200 in 766.0626 ms
+2023-06-20 08:21:12.763 -06:00 [17] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:21:12.765 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 88.2257 ms
+2023-06-20 08:21:12.859 -06:00 [17] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:21:12.862 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 90.0588 ms
+2023-06-20 08:21:12.954 -06:00 [17] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:21:12.957 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 89.0260 ms
+2023-06-20 08:21:13.053 -06:00 [17] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:21:13.055 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 92.2081 ms
+2023-06-20 08:21:13.178 -06:00 [18] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:21:13.181 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 87.3207 ms
+2023-06-20 08:21:13.272 -06:00 [17] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:21:13.274 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 87.1611 ms
+2023-06-20 08:21:13.366 -06:00 [9] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:21:13.369 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 89.2185 ms
+2023-06-20 08:21:13.461 -06:00 [18] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:21:13.463 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 87.6760 ms
+2023-06-20 08:21:13.554 -06:00 [23] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:21:13.557 -06:00 [23] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 87.8685 ms
+2023-06-20 08:21:13.730 -06:00 [18] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:21:13.734 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 171.1186 ms
+2023-06-20 08:21:13.825 -06:00 [23] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:21:13.828 -06:00 [23] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 88.0649 ms
+2023-06-20 08:21:13.921 -06:00 [17] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:21:13.924 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 90.1591 ms
+2023-06-20 08:21:14.049 -06:00 [18] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:21:14.052 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 88.8639 ms
+2023-06-20 08:21:14.144 -06:00 [18] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:21:14.147 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 89.1202 ms
+2023-06-20 08:21:14.242 -06:00 [9] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:21:14.246 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 88.5103 ms
+2023-06-20 08:21:14.340 -06:00 [18] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:21:14.344 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 91.3477 ms
+2023-06-20 08:21:14.470 -06:00 [17] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:21:14.472 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 89.0056 ms
+2023-06-20 08:21:14.566 -06:00 [17] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:21:14.570 -06:00 [17] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 89.7618 ms
+2023-06-20 08:21:17.190 -06:00 [9] [INF] [0HMRHJ4L95MBG] <null>HTTP OPTIONS /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 204 in 0.0399 ms
+2023-06-20 08:21:17.283 -06:00 [9] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:21:17.457 -06:00 [9] [INF] Request SelectFavoriteDeck para usuario U-XFN47Y1D7W4I y deckD-c10a86e2ec82 completada
+2023-06-20 08:21:17.461 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP PUT /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 200 in 265.1646 ms
+2023-06-20 08:21:17.711 -06:00 [9] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 2.6775 ms
+2023-06-20 08:21:17.835 -06:00 [15] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:21:23.646 -06:00 [15] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:21:23.649 -06:00 [15] [INF] Request IsWaiting completada
+2023-06-20 08:21:23.650 -06:00 [13] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:21:23.687 -06:00 [13] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP POST /api/Game/U-BFXY9BRHXV2R responded 200 in 13811.3891 ms
+2023-06-20 08:21:23.688 -06:00 [15] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP POST /api/Game/U-XFN47Y1D7W4I responded 200 in 5938.1275 ms
+2023-06-20 08:21:24.085 -06:00 [9] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.3176 ms
+2023-06-20 08:21:24.143 -06:00 [24] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 4.2217 ms
+2023-06-20 08:21:26.336 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 82.2280 ms
+2023-06-20 08:21:26.352 -06:00 [11] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:26.356 -06:00 [11] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3 responded 200 in 9.7156 ms
+2023-06-20 08:21:26.366 -06:00 [11] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:26.415 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3/U-BFXY9BRHXV2R responded 200 in 52.7790 ms
+2023-06-20 08:21:26.422 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 84.3834 ms
+2023-06-20 08:21:26.450 -06:00 [9] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:26.452 -06:00 [9] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3 responded 200 in 3.0624 ms
+2023-06-20 08:21:26.459 -06:00 [9] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:26.461 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3/U-XFN47Y1D7W4I responded 200 in 2.9457 ms
+2023-06-20 08:21:37.249 -06:00 [9] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:38.231 -06:00 [18] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.754 -06:00 [11] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.754 -06:00 [3] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.757 -06:00 [23] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/G-701d7c2c67b3/U-XFN47Y1D7W4I/initTurn responded 200 in 3527.5490 ms
+2023-06-20 08:21:41.760 -06:00 [24] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/G-701d7c2c67b3/U-BFXY9BRHXV2R/initTurn responded 200 in 4516.8006 ms
+2023-06-20 08:21:41.778 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP POST /api/Game/G-701d7c2c67b3/U-BFXY9BRHXV2R/Surrender responded 200 in 33.2541 ms
+2023-06-20 08:21:41.853 -06:00 [23] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.2952 ms
+2023-06-20 08:21:41.863 -06:00 [18] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.866 -06:00 [18] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3 responded 200 in 2.9517 ms
+2023-06-20 08:21:41.871 -06:00 [18] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.873 -06:00 [24] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3/U-XFN47Y1D7W4I responded 200 in 2.1189 ms
+2023-06-20 08:21:41.942 -06:00 [26] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.7751 ms
+2023-06-20 08:21:41.950 -06:00 [26] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.952 -06:00 [26] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3 responded 200 in 1.7104 ms
+2023-06-20 08:21:41.958 -06:00 [23] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:41.962 -06:00 [23] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3/U-BFXY9BRHXV2R responded 200 in 3.6237 ms
+2023-06-20 08:21:47.774 -06:00 [23] [INF] [0HMRHJ4L95MBF] <null>HTTP GET /swagger/index.html responded 200 in 92.2011 ms
+2023-06-20 08:21:47.880 -06:00 [18] [INF] [0HMRHJ4L95MBF] <null>HTTP GET /swagger/swagger-ui.css responded 200 in 35.5365 ms
+2023-06-20 08:21:47.888 -06:00 [32] [INF] [0HMRHJ4L95MBF] <null>HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 30.9623 ms
+2023-06-20 08:21:47.939 -06:00 [23] [INF] [0HMRHJ4L95MBF] <null>HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 82.0786 ms
+2023-06-20 08:21:48.323 -06:00 [29] [INF] [0HMRHJ4L95MBF] <null>HTTP GET /swagger/v1/swagger.json responded 200 in 172.7018 ms
+2023-06-20 08:21:49.323 -06:00 [29] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 84.9826 ms
+2023-06-20 08:21:49.362 -06:00 [32] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:49.365 -06:00 [32] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3 responded 200 in 3.0271 ms
+2023-06-20 08:21:49.372 -06:00 [23] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:49.375 -06:00 [32] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3/U-BFXY9BRHXV2R responded 200 in 2.5670 ms
+2023-06-20 08:21:52.348 -06:00 [29] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 91.5030 ms
+2023-06-20 08:21:52.358 -06:00 [33] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:52.366 -06:00 [33] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3 responded 200 in 8.8286 ms
+2023-06-20 08:21:52.377 -06:00 [29] [INF] Request GetGameRoomData para G-701d7c2c67b3 completada
+2023-06-20 08:21:52.380 -06:00 [34] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-701d7c2c67b3/U-XFN47Y1D7W4I responded 200 in 4.1530 ms
+2023-06-20 08:21:52.463 -06:00 [18] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5065 ms
+2023-06-20 08:21:54.766 -06:00 [32] [INF] [0HMRHJ4L95MBG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.2583 ms
+2023-06-20 08:22:12.045 -06:00 [32] [INF] Request GetAll de Accounts completada
+2023-06-20 08:22:12.070 -06:00 [32] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /Account responded 200 in 118.9343 ms
+2023-06-20 08:22:35.487 -06:00 [22] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/U-BFXY9BRHXV2R/IsInGame responded 404 in 97.3466 ms
+2023-06-20 08:22:44.254 -06:00 [22] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/U-BFXY9BRHXV2R/IsInGame responded 404 in 85.1275 ms
+2023-06-20 08:24:24.576 -06:00 [37] [INF] [0HMRHJ4L95MBF] <jugador2>HTTP GET /api/Game/U-BFXY9BRHXV2R/IsInGame responded 404 in 795.7229 ms
+2023-06-20 08:24:49.525 -06:00 [1] [INF] Inited
+2023-06-20 08:24:50.154 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-20 08:24:50.162 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-20 08:24:53.760 -06:00 [10] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1002.9669 ms
+2023-06-20 08:25:13.743 -06:00 [15] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /login/Signin responded 204 in 1.2703 ms
+2023-06-20 08:25:16.979 -06:00 [8] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /login/Signin responded 200 in 3228.1112 ms
+2023-06-20 08:25:20.007 -06:00 [16] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 2.8393 ms
+2023-06-20 08:25:21.787 -06:00 [15] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5121 ms
+2023-06-20 08:25:24.725 -06:00 [16] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.7518 ms
+2023-06-20 08:25:25.007 -06:00 [5] [INF] Request GetNames de Decks para ususario U-XFN47Y1D7W4I completada
+2023-06-20 08:25:25.017 -06:00 [5] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-XFN47Y1D7W4I responded 200 in 210.0826 ms
+2023-06-20 08:25:26.417 -06:00 [16] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8278 ms
+2023-06-20 08:25:26.625 -06:00 [16] [INF] Request GetNames de Decks para ususario U-BFXY9BRHXV2R completada
+2023-06-20 08:25:26.628 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-BFXY9BRHXV2R responded 200 in 136.5181 ms
+2023-06-20 08:25:41.308 -06:00 [17] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/U-BFXY9BRHXV2R/IsInGame responded 200 in 12004.3621 ms
+2023-06-20 08:26:14.711 -06:00 [8] [INF] Request GetDeck para ususario D-c10a86e2ec82 completada
+2023-06-20 08:26:14.717 -06:00 [8] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-c10a86e2ec82 responded 200 in 108.7429 ms
+2023-06-20 08:26:14.899 -06:00 [8] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:26:14.910 -06:00 [8] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 118.0128 ms
+2023-06-20 08:26:15.061 -06:00 [15] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:26:15.063 -06:00 [15] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 90.4883 ms
+2023-06-20 08:26:15.163 -06:00 [8] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:26:15.166 -06:00 [8] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 90.9676 ms
+2023-06-20 08:26:15.260 -06:00 [19] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:26:15.262 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 89.6662 ms
+2023-06-20 08:26:15.357 -06:00 [18] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:26:15.359 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 89.7326 ms
+2023-06-20 08:26:15.453 -06:00 [19] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:26:15.455 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 88.4953 ms
+2023-06-20 08:26:15.550 -06:00 [18] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:26:15.553 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 90.1057 ms
+2023-06-20 08:26:15.647 -06:00 [19] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:26:15.650 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 90.3874 ms
+2023-06-20 08:26:15.741 -06:00 [18] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:26:15.743 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 87.9319 ms
+2023-06-20 08:26:15.996 -06:00 [16] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:26:16.001 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 176.6720 ms
+2023-06-20 08:26:16.150 -06:00 [19] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:26:16.152 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 88.7979 ms
+2023-06-20 08:26:16.246 -06:00 [19] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:26:16.249 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 89.3095 ms
+2023-06-20 08:26:16.343 -06:00 [15] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:26:16.346 -06:00 [15] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 90.6406 ms
+2023-06-20 08:26:16.437 -06:00 [16] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:26:16.441 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 89.3129 ms
+2023-06-20 08:26:16.568 -06:00 [18] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:26:16.570 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 90.4304 ms
+2023-06-20 08:26:16.653 -06:00 [16] [INF] Request GetDeck para ususario D-d23fd475a479 completada
+2023-06-20 08:26:16.656 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-d23fd475a479 responded 200 in 95.2879 ms
+2023-06-20 08:26:16.750 -06:00 [18] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:26:16.752 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 88.6988 ms
+2023-06-20 08:26:16.847 -06:00 [16] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:26:16.849 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 91.8938 ms
+2023-06-20 08:26:16.975 -06:00 [18] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:26:16.977 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 89.1867 ms
+2023-06-20 08:26:17.069 -06:00 [19] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:26:17.072 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 88.8071 ms
+2023-06-20 08:26:17.165 -06:00 [16] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:26:17.168 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 89.5921 ms
+2023-06-20 08:26:17.273 -06:00 [18] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:26:17.276 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 100.5528 ms
+2023-06-20 08:26:17.345 -06:00 [21] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:26:17.348 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 770.3616 ms
+2023-06-20 08:26:17.370 -06:00 [23] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:26:17.372 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 89.5723 ms
+2023-06-20 08:26:17.474 -06:00 [19] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:26:17.475 -06:00 [22] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:26:17.476 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 89.6669 ms
+2023-06-20 08:26:17.478 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 87.9099 ms
+2023-06-20 08:26:17.573 -06:00 [16] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:26:17.575 -06:00 [22] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:26:17.576 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 92.4990 ms
+2023-06-20 08:26:17.577 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 87.8265 ms
+2023-06-20 08:26:17.704 -06:00 [23] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:26:17.706 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 89.6069 ms
+2023-06-20 08:26:17.797 -06:00 [15] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:26:17.801 -06:00 [15] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 88.9305 ms
+2023-06-20 08:26:17.896 -06:00 [23] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:26:17.899 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 92.4955 ms
+2023-06-20 08:26:17.990 -06:00 [22] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:26:17.993 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 86.9668 ms
+2023-06-20 08:26:18.086 -06:00 [16] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:26:18.089 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 90.0799 ms
+2023-06-20 08:26:18.189 -06:00 [22] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:26:18.192 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 96.3733 ms
+2023-06-20 08:26:18.321 -06:00 [21] [INF] Request GetCards para RAJ5MNIOF2O4 completada
+2023-06-20 08:26:18.326 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/RAJ5MNIOF2O4 responded 200 in 90.6651 ms
+2023-06-20 08:26:18.419 -06:00 [16] [INF] Request GetCards para EFATHDSEUFNL completada
+2023-06-20 08:26:18.422 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EFATHDSEUFNL responded 200 in 90.5876 ms
+2023-06-20 08:26:18.514 -06:00 [22] [INF] Request GetCards para MN5XZPF8SJG2 completada
+2023-06-20 08:26:18.517 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MN5XZPF8SJG2 responded 200 in 88.2439 ms
+2023-06-20 08:26:20.076 -06:00 [15] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 204 in 0.3659 ms
+2023-06-20 08:26:20.176 -06:00 [22] [INF] Request GetAccount para U-BFXY9BRHXV2R completada
+2023-06-20 08:26:20.410 -06:00 [22] [INF] Request SelectFavoriteDeck para usuario U-BFXY9BRHXV2R y deckD-d23fd475a479 completada
+2023-06-20 08:26:20.414 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 200 in 332.9242 ms
+2023-06-20 08:26:20.700 -06:00 [22] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6781 ms
+2023-06-20 08:26:20.852 -06:00 [14] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:26:23.415 -06:00 [23] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 204 in 0.1118 ms
+2023-06-20 08:26:23.508 -06:00 [22] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:26:23.682 -06:00 [22] [INF] Request SelectFavoriteDeck para usuario U-XFN47Y1D7W4I y deckD-c10a86e2ec82 completada
+2023-06-20 08:26:23.686 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 200 in 263.6248 ms
+2023-06-20 08:26:23.911 -06:00 [21] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4563 ms
+2023-06-20 08:26:24.038 -06:00 [24] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:26:24.237 -06:00 [24] [ERR] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-XFN47Y1D7W4I responded 500 in 286.6989 ms
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Stardeck.Logic.GameLogic.IsWaiting(String playerId) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Logic\GameLogic.cs:line 56
+   at Stardeck.Controllers.GameController.Post(String playerId) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Controllers\GameController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-06-20 08:26:24.322 -06:00 [24] [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Stardeck.Logic.GameLogic.IsWaiting(String playerId) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Logic\GameLogic.cs:line 56
+   at Stardeck.Controllers.GameController.Post(String playerId) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Controllers\GameController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-20 08:26:26.628 -06:00 [22] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5468 ms
+2023-06-20 08:26:26.800 -06:00 [21] [INF] Request GetNames de Decks para ususario U-XFN47Y1D7W4I completada
+2023-06-20 08:26:26.802 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-XFN47Y1D7W4I responded 200 in 128.9524 ms
+2023-06-20 08:26:31.741 -06:00 [20] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:26:31.744 -06:00 [20] [INF] Request IsWaiting completada
+2023-06-20 08:26:31.773 -06:00 [20] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-BFXY9BRHXV2R responded 200 in 11032.5721 ms
+2023-06-20 08:26:32.054 -06:00 [21] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4244 ms
+2023-06-20 08:26:34.346 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 93.9973 ms
+2023-06-20 08:26:34.359 -06:00 [21] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:26:34.362 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 6.4155 ms
+2023-06-20 08:26:34.372 -06:00 [23] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:26:34.408 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-BFXY9BRHXV2R responded 200 in 40.2422 ms
+2023-06-20 08:26:36.905 -06:00 [19] [INF] Request GetDeck para ususario D-c10a86e2ec82 completada
+2023-06-20 08:26:36.908 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-c10a86e2ec82 responded 200 in 88.7380 ms
+2023-06-20 08:26:36.999 -06:00 [18] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:26:37.001 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 87.7383 ms
+2023-06-20 08:26:37.094 -06:00 [19] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:26:37.096 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 89.6227 ms
+2023-06-20 08:26:37.187 -06:00 [18] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:26:37.189 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 87.1054 ms
+2023-06-20 08:26:37.315 -06:00 [18] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:26:37.317 -06:00 [18] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 89.0572 ms
+2023-06-20 08:26:37.409 -06:00 [22] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:26:37.411 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 88.5458 ms
+2023-06-20 08:26:37.503 -06:00 [21] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:26:37.506 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 87.4254 ms
+2023-06-20 08:26:37.598 -06:00 [22] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:26:37.600 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 89.0678 ms
+2023-06-20 08:26:37.693 -06:00 [21] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:26:37.703 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 96.3786 ms
+2023-06-20 08:26:37.796 -06:00 [23] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:26:37.799 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 90.5419 ms
+2023-06-20 08:26:38.011 -06:00 [21] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:26:38.014 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 175.9764 ms
+2023-06-20 08:26:38.107 -06:00 [23] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:26:38.109 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 88.1292 ms
+2023-06-20 08:26:38.203 -06:00 [21] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:26:38.205 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 88.9688 ms
+2023-06-20 08:26:38.298 -06:00 [22] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:26:38.301 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 90.2365 ms
+2023-06-20 08:26:38.394 -06:00 [16] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:26:38.396 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 88.0644 ms
+2023-06-20 08:26:38.490 -06:00 [21] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:26:38.492 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 88.0482 ms
+2023-06-20 08:26:38.586 -06:00 [16] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:26:38.589 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 89.7708 ms
+2023-06-20 08:26:38.687 -06:00 [23] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:26:38.690 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 93.7389 ms
+2023-06-20 08:26:38.785 -06:00 [16] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:26:38.788 -06:00 [16] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 91.9421 ms
+2023-06-20 08:26:39.955 -06:00 [22] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 204 in 0.0810 ms
+2023-06-20 08:26:40.055 -06:00 [19] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:26:40.227 -06:00 [19] [INF] Request SelectFavoriteDeck para usuario U-XFN47Y1D7W4I y deckD-c10a86e2ec82 completada
+2023-06-20 08:26:40.231 -06:00 [19] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 200 in 271.8386 ms
+2023-06-20 08:26:40.455 -06:00 [21] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5903 ms
+2023-06-20 08:26:40.491 -06:00 [23] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:26:40.494 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-XFN47Y1D7W4I responded 200 in 2.5900 ms
+2023-06-20 08:26:40.657 -06:00 [22] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4726 ms
+2023-06-20 08:26:43.309 -06:00 [22] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.3558 ms
+2023-06-20 08:26:43.319 -06:00 [21] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:26:43.320 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 1.9682 ms
+2023-06-20 08:26:43.327 -06:00 [23] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:26:43.338 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-XFN47Y1D7W4I responded 200 in 11.9040 ms
+2023-06-20 08:26:46.236 -06:00 [16] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:26:55.228 -06:00 [8] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:27:01.372 -06:00 [18] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:27:01.372 -06:00 [23] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:27:01.382 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-5717c3b0ddb8/U-XFN47Y1D7W4I/initTurn responded 200 in 6154.1855 ms
+2023-06-20 08:27:01.458 -06:00 [18] [ERR] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-5717c3b0ddb8/U-BFXY9BRHXV2R/initTurn responded 500 in 15226.9344 ms
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonConvert.SerializeObjectInternal(Object value, Type type, JsonSerializer jsonSerializer)
+   at Newtonsoft.Json.JsonConvert.SerializeObject(Object value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.SerializeObject(Object value, JsonSerializerSettings settings)
+   at Stardeck.Engine.GameRoom.GetPlayerData(String playerId) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Engine\GameRoom.cs:line 401
+   at Stardeck.Controllers.GameController.InitTurn(String idRoom, String idUser) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Controllers\GameController.cs:line 142
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-06-20 08:27:01.473 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 84.7986 ms
+2023-06-20 08:27:01.477 -06:00 [18] [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonConvert.SerializeObjectInternal(Object value, Type type, JsonSerializer jsonSerializer)
+   at Newtonsoft.Json.JsonConvert.SerializeObject(Object value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.SerializeObject(Object value, JsonSerializerSettings settings)
+   at Stardeck.Engine.GameRoom.GetPlayerData(String playerId) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Engine\GameRoom.cs:line 401
+   at Stardeck.Controllers.GameController.InitTurn(String idRoom, String idUser) in C:\Users\2001i\source\repos\rijegaro287\StarDeck\StarDeck\Controllers\GameController.cs:line 142
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-06-20 08:27:01.486 -06:00 [23] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:27:01.496 -06:00 [23] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 10.5437 ms
+2023-06-20 08:28:15.188 -06:00 [23] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:15.199 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-XFN47Y1D7W4I responded 200 in 21.9414 ms
+2023-06-20 08:28:15.275 -06:00 [15] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 109.4405 ms
+2023-06-20 08:28:15.289 -06:00 [21] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:15.291 -06:00 [21] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 3.0740 ms
+2023-06-20 08:28:15.330 -06:00 [29] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:15.341 -06:00 [29] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-BFXY9BRHXV2R responded 200 in 11.6132 ms
+2023-06-20 08:28:23.971 -06:00 [29] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:35.807 -06:00 [15] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:35.857 -06:00 [29] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:51.693 -06:00 [31] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/G-5717c3b0ddb8/U-BFXY9BRHXV2R/Surrender responded 200 in 26971.8214 ms
+2023-06-20 08:28:51.701 -06:00 [15] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:51.703 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-5717c3b0ddb8/U-BFXY9BRHXV2R/initTurn responded 200 in 27732.1331 ms
+2023-06-20 08:28:51.709 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-5717c3b0ddb8/U-XFN47Y1D7W4I/initTurn responded 200 in 15916.5972 ms
+2023-06-20 08:28:51.811 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 87.5104 ms
+2023-06-20 08:28:51.821 -06:00 [30] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:51.822 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 2.5884 ms
+2023-06-20 08:28:51.829 -06:00 [33] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:51.833 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-XFN47Y1D7W4I responded 200 in 4.1966 ms
+2023-06-20 08:28:51.899 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 85.6933 ms
+2023-06-20 08:28:51.910 -06:00 [30] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:51.911 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 2.0380 ms
+2023-06-20 08:28:51.918 -06:00 [31] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:51.923 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-BFXY9BRHXV2R responded 200 in 5.5924 ms
+2023-06-20 08:28:59.331 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 90.8233 ms
+2023-06-20 08:28:59.341 -06:00 [30] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:59.342 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 1.8510 ms
+2023-06-20 08:28:59.381 -06:00 [30] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:28:59.386 -06:00 [31] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-BFXY9BRHXV2R responded 200 in 5.6307 ms
+2023-06-20 08:29:01.322 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 93.1008 ms
+2023-06-20 08:29:01.329 -06:00 [32] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:29:01.330 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8 responded 200 in 1.7278 ms
+2023-06-20 08:29:01.336 -06:00 [27] [INF] Request GetGameRoomData para G-5717c3b0ddb8 completada
+2023-06-20 08:29:01.340 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-5717c3b0ddb8/U-XFN47Y1D7W4I responded 200 in 4.3689 ms
+2023-06-20 08:29:01.677 -06:00 [30] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6792 ms
+2023-06-20 08:29:04.426 -06:00 [33] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4684 ms
+2023-06-20 08:29:42.582 -06:00 [33] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.7648 ms
+2023-06-20 08:29:44.056 -06:00 [33] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4398 ms
+2023-06-20 08:29:45.280 -06:00 [33] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6200 ms
+2023-06-20 08:29:45.425 -06:00 [27] [INF] Request GetNames de Decks para ususario U-XFN47Y1D7W4I completada
+2023-06-20 08:29:45.435 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-XFN47Y1D7W4I responded 200 in 97.5668 ms
+2023-06-20 08:29:46.560 -06:00 [33] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6448 ms
+2023-06-20 08:29:46.688 -06:00 [27] [INF] Request GetNames de Decks para ususario U-BFXY9BRHXV2R completada
+2023-06-20 08:29:46.691 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-BFXY9BRHXV2R responded 200 in 91.1875 ms
+2023-06-20 08:29:48.173 -06:00 [32] [INF] Request GetDeck para ususario D-d23fd475a479 completada
+2023-06-20 08:29:48.176 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-d23fd475a479 responded 200 in 90.1427 ms
+2023-06-20 08:29:48.267 -06:00 [33] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:29:48.269 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 87.3587 ms
+2023-06-20 08:29:48.361 -06:00 [33] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:29:48.364 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 88.1311 ms
+2023-06-20 08:29:48.458 -06:00 [30] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:29:48.461 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 90.5693 ms
+2023-06-20 08:29:48.555 -06:00 [33] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:29:48.557 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 89.6389 ms
+2023-06-20 08:29:48.648 -06:00 [30] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:29:48.650 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 87.9513 ms
+2023-06-20 08:29:48.742 -06:00 [33] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:29:48.744 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 88.5992 ms
+2023-06-20 08:29:48.867 -06:00 [30] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:29:48.870 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 87.9449 ms
+2023-06-20 08:29:48.963 -06:00 [31] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:29:48.966 -06:00 [31] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 89.0619 ms
+2023-06-20 08:29:49.058 -06:00 [30] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:29:49.061 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 89.6563 ms
+2023-06-20 08:29:49.155 -06:00 [30] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:29:49.158 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 90.5516 ms
+2023-06-20 08:29:49.286 -06:00 [27] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:29:49.289 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 91.5444 ms
+2023-06-20 08:29:49.468 -06:00 [30] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:29:49.471 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 175.8082 ms
+2023-06-20 08:29:49.567 -06:00 [27] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:29:49.569 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 90.4065 ms
+2023-06-20 08:29:49.660 -06:00 [33] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:29:49.663 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 87.0864 ms
+2023-06-20 08:29:49.755 -06:00 [30] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:29:49.758 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 89.7511 ms
+2023-06-20 08:29:49.854 -06:00 [33] [INF] Request GetCards para RAJ5MNIOF2O4 completada
+2023-06-20 08:29:49.857 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/RAJ5MNIOF2O4 responded 200 in 93.1188 ms
+2023-06-20 08:29:50.036 -06:00 [32] [INF] Request GetCards para EFATHDSEUFNL completada
+2023-06-20 08:29:50.040 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EFATHDSEUFNL responded 200 in 175.3646 ms
+2023-06-20 08:29:50.145 -06:00 [31] [INF] Request GetCards para MN5XZPF8SJG2 completada
+2023-06-20 08:29:50.148 -06:00 [31] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MN5XZPF8SJG2 responded 200 in 101.1798 ms
+2023-06-20 08:29:51.304 -06:00 [31] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 204 in 0.1015 ms
+2023-06-20 08:29:51.396 -06:00 [31] [INF] Request GetAccount para U-BFXY9BRHXV2R completada
+2023-06-20 08:29:51.569 -06:00 [31] [INF] Request SelectFavoriteDeck para usuario U-BFXY9BRHXV2R y deckD-d23fd475a479 completada
+2023-06-20 08:29:51.571 -06:00 [31] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 200 in 259.9720 ms
+2023-06-20 08:29:51.812 -06:00 [27] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5773 ms
+2023-06-20 08:29:51.851 -06:00 [34] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:29:51.942 -06:00 [25] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:29:53.538 -06:00 [32] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:29:53.731 -06:00 [34] [INF] Request GetDeck para ususario D-c10a86e2ec82 completada
+2023-06-20 08:29:53.734 -06:00 [34] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-c10a86e2ec82 responded 200 in 90.6886 ms
+2023-06-20 08:29:53.828 -06:00 [33] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:29:53.830 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 87.7007 ms
+2023-06-20 08:29:53.922 -06:00 [30] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:29:53.924 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 88.5421 ms
+2023-06-20 08:29:54.016 -06:00 [35] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:29:54.019 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 88.5023 ms
+2023-06-20 08:29:54.166 -06:00 [35] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:29:54.168 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 86.9244 ms
+2023-06-20 08:29:54.261 -06:00 [35] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:29:54.262 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 87.7722 ms
+2023-06-20 08:29:54.354 -06:00 [35] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:29:54.357 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 88.7340 ms
+2023-06-20 08:29:54.460 -06:00 [35] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:29:54.462 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 87.4020 ms
+2023-06-20 08:29:54.556 -06:00 [34] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:29:54.559 -06:00 [34] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 91.1902 ms
+2023-06-20 08:29:54.653 -06:00 [33] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:29:54.656 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 90.2602 ms
+2023-06-20 08:29:54.828 -06:00 [33] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:29:54.831 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 168.9766 ms
+2023-06-20 08:29:54.927 -06:00 [32] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:29:54.929 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 91.5820 ms
+2023-06-20 08:29:55.054 -06:00 [30] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:29:55.057 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 88.7866 ms
+2023-06-20 08:29:55.139 -06:00 [30] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:29:55.151 -06:00 [32] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:29:55.153 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 89.0021 ms
+2023-06-20 08:29:55.279 -06:00 [30] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:29:55.282 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 88.5290 ms
+2023-06-20 08:29:55.375 -06:00 [27] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:29:55.378 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 89.6442 ms
+2023-06-20 08:29:55.474 -06:00 [30] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:29:55.477 -06:00 [30] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 91.7057 ms
+2023-06-20 08:29:55.571 -06:00 [35] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:29:55.574 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 91.2443 ms
+2023-06-20 08:29:55.667 -06:00 [27] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:29:55.669 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 88.9857 ms
+2023-06-20 08:29:56.719 -06:00 [32] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 204 in 0.1597 ms
+2023-06-20 08:29:56.734 -06:00 [27] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:29:56.811 -06:00 [32] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:29:56.987 -06:00 [32] [INF] Request SelectFavoriteDeck para usuario U-XFN47Y1D7W4I y deckD-c10a86e2ec82 completada
+2023-06-20 08:29:56.991 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 200 in 265.6345 ms
+2023-06-20 08:29:57.227 -06:00 [31] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4410 ms
+2023-06-20 08:29:57.266 -06:00 [34] [WRN] No se encontró al jugador U-XFN47Y1D7W4I en el Request CheckIfPlaying 
+2023-06-20 08:29:57.358 -06:00 [36] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:29:57.449 -06:00 [26] [WRN] No se encontró al jugador U-XFN47Y1D7W4I en el Request CheckIfPlaying 
+2023-06-20 08:29:58.328 -06:00 [30] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:30:03.286 -06:00 [26] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:30:03.289 -06:00 [26] [INF] Request IsWaiting completada
+2023-06-20 08:30:03.291 -06:00 [25] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:30:03.291 -06:00 [26] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-XFN47Y1D7W4I responded 200 in 6025.3250 ms
+2023-06-20 08:30:03.292 -06:00 [25] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-BFXY9BRHXV2R responded 200 in 11442.0798 ms
+2023-06-20 08:30:03.643 -06:00 [32] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6862 ms
+2023-06-20 08:30:03.712 -06:00 [32] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8635 ms
+2023-06-20 08:30:05.765 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 89.2734 ms
+2023-06-20 08:30:05.775 -06:00 [35] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:05.777 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 1.9437 ms
+2023-06-20 08:30:05.783 -06:00 [32] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:05.787 -06:00 [33] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-XFN47Y1D7W4I responded 200 in 4.3787 ms
+2023-06-20 08:30:06.204 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 85.7264 ms
+2023-06-20 08:30:06.212 -06:00 [34] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:06.213 -06:00 [34] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 1.7623 ms
+2023-06-20 08:30:06.219 -06:00 [33] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:06.223 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-BFXY9BRHXV2R responded 200 in 4.9746 ms
+2023-06-20 08:30:14.643 -06:00 [35] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:16.231 -06:00 [35] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.042 -06:00 [35] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.042 -06:00 [34] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.049 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-ad0eecbeaffb/U-BFXY9BRHXV2R/initTurn responded 200 in 18406.2066 ms
+2023-06-20 08:30:33.051 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-ad0eecbeaffb/U-XFN47Y1D7W4I/initTurn responded 200 in 16821.0613 ms
+2023-06-20 08:30:33.701 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 604.5339 ms
+2023-06-20 08:30:33.710 -06:00 [27] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.712 -06:00 [27] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 2.2922 ms
+2023-06-20 08:30:33.738 -06:00 [35] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.742 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-BFXY9BRHXV2R responded 200 in 5.0893 ms
+2023-06-20 08:30:33.789 -06:00 [34] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.5083 ms
+2023-06-20 08:30:33.797 -06:00 [32] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.798 -06:00 [32] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 1.8356 ms
+2023-06-20 08:30:33.804 -06:00 [34] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:33.810 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-XFN47Y1D7W4I responded 200 in 5.8128 ms
+2023-06-20 08:30:43.227 -06:00 [39] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:30:44.259 -06:00 [35] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:11.099 -06:00 [39] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:11.099 -06:00 [41] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:13.521 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/G-ad0eecbeaffb/U-XFN47Y1D7W4I/Surrender responded 200 in 25816.2936 ms
+2023-06-20 08:31:13.525 -06:00 [39] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-ad0eecbeaffb/U-BFXY9BRHXV2R/initTurn responded 200 in 30298.2702 ms
+2023-06-20 08:31:13.532 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-ad0eecbeaffb/U-XFN47Y1D7W4I/initTurn responded 200 in 29273.9368 ms
+2023-06-20 08:31:13.643 -06:00 [35] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 89.6997 ms
+2023-06-20 08:31:13.653 -06:00 [44] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:13.655 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 2.2332 ms
+2023-06-20 08:31:13.663 -06:00 [40] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:13.667 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-BFXY9BRHXV2R responded 200 in 4.3935 ms
+2023-06-20 08:31:13.731 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 84.9302 ms
+2023-06-20 08:31:13.739 -06:00 [40] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:13.741 -06:00 [40] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 2.6288 ms
+2023-06-20 08:31:13.748 -06:00 [43] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:13.753 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-XFN47Y1D7W4I responded 200 in 5.1963 ms
+2023-06-20 08:31:20.930 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.8685 ms
+2023-06-20 08:31:20.940 -06:00 [40] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:20.942 -06:00 [40] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 2.2826 ms
+2023-06-20 08:31:20.948 -06:00 [45] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:20.955 -06:00 [40] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-XFN47Y1D7W4I responded 200 in 7.8714 ms
+2023-06-20 08:31:23.274 -06:00 [45] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5177 ms
+2023-06-20 08:31:25.316 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.6836 ms
+2023-06-20 08:31:25.326 -06:00 [43] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:25.328 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb responded 200 in 2.1669 ms
+2023-06-20 08:31:25.335 -06:00 [43] [INF] Request GetGameRoomData para G-ad0eecbeaffb completada
+2023-06-20 08:31:25.340 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-ad0eecbeaffb/U-BFXY9BRHXV2R responded 200 in 5.6077 ms
+2023-06-20 08:31:28.534 -06:00 [44] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8976 ms
+2023-06-20 08:31:50.445 -06:00 [43] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 1.1250 ms
+2023-06-20 08:31:52.615 -06:00 [43] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4871 ms
+2023-06-20 08:32:00.728 -06:00 [41] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5192 ms
+2023-06-20 08:32:00.882 -06:00 [45] [INF] Request GetNames de Decks para ususario U-BFXY9BRHXV2R completada
+2023-06-20 08:32:00.884 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-BFXY9BRHXV2R responded 200 in 91.5098 ms
+2023-06-20 08:32:02.473 -06:00 [43] [INF] Request GetDeck para ususario D-d23fd475a479 completada
+2023-06-20 08:32:02.476 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-d23fd475a479 responded 200 in 90.4081 ms
+2023-06-20 08:32:02.568 -06:00 [43] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:32:02.570 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 86.9994 ms
+2023-06-20 08:32:02.665 -06:00 [44] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:32:02.669 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 92.5204 ms
+2023-06-20 08:32:02.762 -06:00 [45] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:32:02.765 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 87.9295 ms
+2023-06-20 08:32:02.891 -06:00 [41] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:32:02.895 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 91.8877 ms
+2023-06-20 08:32:02.994 -06:00 [44] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:32:02.998 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 96.7114 ms
+2023-06-20 08:32:03.093 -06:00 [44] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:32:03.095 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 91.1073 ms
+2023-06-20 08:32:03.191 -06:00 [41] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:32:03.194 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 91.9643 ms
+2023-06-20 08:32:03.289 -06:00 [43] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:32:03.292 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 90.3924 ms
+2023-06-20 08:32:03.418 -06:00 [41] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:32:03.422 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 89.3666 ms
+2023-06-20 08:32:03.515 -06:00 [41] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:32:03.518 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 89.5134 ms
+2023-06-20 08:32:03.611 -06:00 [44] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:32:03.613 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 90.0726 ms
+2023-06-20 08:32:03.792 -06:00 [41] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:32:03.794 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 174.0046 ms
+2023-06-20 08:32:03.887 -06:00 [41] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:32:03.889 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 88.8940 ms
+2023-06-20 08:32:03.986 -06:00 [44] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:32:03.990 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 93.5274 ms
+2023-06-20 08:32:04.080 -06:00 [45] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:32:04.083 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 87.0497 ms
+2023-06-20 08:32:04.177 -06:00 [44] [INF] Request GetCards para RAJ5MNIOF2O4 completada
+2023-06-20 08:32:04.179 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/RAJ5MNIOF2O4 responded 200 in 90.2997 ms
+2023-06-20 08:32:04.308 -06:00 [41] [INF] Request GetCards para EFATHDSEUFNL completada
+2023-06-20 08:32:04.310 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EFATHDSEUFNL responded 200 in 91.7333 ms
+2023-06-20 08:32:04.402 -06:00 [45] [INF] Request GetCards para MN5XZPF8SJG2 completada
+2023-06-20 08:32:04.404 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MN5XZPF8SJG2 responded 200 in 87.8270 ms
+2023-06-20 08:32:05.357 -06:00 [45] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5508 ms
+2023-06-20 08:32:05.485 -06:00 [45] [INF] Request GetNames de Decks para ususario U-XFN47Y1D7W4I completada
+2023-06-20 08:32:05.488 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/Names/U-XFN47Y1D7W4I responded 200 in 88.9854 ms
+2023-06-20 08:32:07.383 -06:00 [43] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 204 in 0.0790 ms
+2023-06-20 08:32:07.474 -06:00 [43] [INF] Request GetAccount para U-BFXY9BRHXV2R completada
+2023-06-20 08:32:07.647 -06:00 [43] [INF] Request SelectFavoriteDeck para usuario U-BFXY9BRHXV2R y deckD-d23fd475a479 completada
+2023-06-20 08:32:07.649 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 200 in 262.5401 ms
+2023-06-20 08:32:07.918 -06:00 [43] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5175 ms
+2023-06-20 08:32:07.926 -06:00 [40] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:32:08.016 -06:00 [38] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:32:09.453 -06:00 [44] [INF] Request GetDeck para ususario D-c10a86e2ec82 completada
+2023-06-20 08:32:09.455 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Deck/D-c10a86e2ec82 responded 200 in 88.8026 ms
+2023-06-20 08:32:09.547 -06:00 [43] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:32:09.550 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 87.8294 ms
+2023-06-20 08:32:09.609 -06:00 [44] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:32:09.641 -06:00 [43] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:32:09.644 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 88.5196 ms
+2023-06-20 08:32:09.735 -06:00 [44] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:32:09.738 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 87.8551 ms
+2023-06-20 08:32:09.828 -06:00 [43] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:32:09.830 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 85.8941 ms
+2023-06-20 08:32:09.922 -06:00 [44] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:32:09.925 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 89.2438 ms
+2023-06-20 08:32:10.016 -06:00 [41] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:32:10.018 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 87.6649 ms
+2023-06-20 08:32:10.110 -06:00 [43] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:32:10.112 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 88.2527 ms
+2023-06-20 08:32:10.205 -06:00 [45] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:32:10.208 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 89.8917 ms
+2023-06-20 08:32:10.300 -06:00 [43] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:32:10.303 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 88.5107 ms
+2023-06-20 08:32:10.483 -06:00 [41] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:32:10.485 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 174.5680 ms
+2023-06-20 08:32:10.583 -06:00 [43] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:32:10.586 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 94.0060 ms
+2023-06-20 08:32:10.683 -06:00 [43] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:32:10.685 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 92.9757 ms
+2023-06-20 08:32:10.779 -06:00 [44] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:32:10.781 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 89.7787 ms
+2023-06-20 08:32:10.873 -06:00 [43] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:32:10.875 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 88.2258 ms
+2023-06-20 08:32:10.967 -06:00 [44] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:32:10.970 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 89.3844 ms
+2023-06-20 08:32:11.065 -06:00 [45] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:32:11.067 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 90.4670 ms
+2023-06-20 08:32:11.160 -06:00 [44] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:32:11.164 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 90.4114 ms
+2023-06-20 08:32:11.260 -06:00 [44] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:32:11.263 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 90.6676 ms
+2023-06-20 08:32:11.928 -06:00 [41] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:32:12.604 -06:00 [44] [INF] [0HMRHJ8DNCLPL] <null>HTTP OPTIONS /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 204 in 0.0917 ms
+2023-06-20 08:32:12.695 -06:00 [44] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:32:12.866 -06:00 [44] [INF] Request SelectFavoriteDeck para usuario U-XFN47Y1D7W4I y deckD-c10a86e2ec82 completada
+2023-06-20 08:32:12.868 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP PUT /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 200 in 259.5782 ms
+2023-06-20 08:32:13.139 -06:00 [42] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5746 ms
+2023-06-20 08:32:13.179 -06:00 [43] [WRN] No se encontró al jugador U-XFN47Y1D7W4I en el Request CheckIfPlaying 
+2023-06-20 08:32:13.273 -06:00 [38] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:32:13.367 -06:00 [38] [WRN] No se encontró al jugador U-XFN47Y1D7W4I en el Request CheckIfPlaying 
+2023-06-20 08:32:13.523 -06:00 [45] [WRN] No se encontró al jugador U-BFXY9BRHXV2R en el Request CheckIfPlaying 
+2023-06-20 08:32:19.634 -06:00 [38] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:32:19.636 -06:00 [38] [INF] Request IsWaiting completada
+2023-06-20 08:32:19.637 -06:00 [46] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:32:19.638 -06:00 [38] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-XFN47Y1D7W4I responded 200 in 6459.0919 ms
+2023-06-20 08:32:19.639 -06:00 [46] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/U-BFXY9BRHXV2R responded 200 in 11714.3404 ms
+2023-06-20 08:32:19.994 -06:00 [42] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8096 ms
+2023-06-20 08:32:20.061 -06:00 [40] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4927 ms
+2023-06-20 08:32:22.119 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 84.8346 ms
+2023-06-20 08:32:22.164 -06:00 [37] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:22.167 -06:00 [37] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2 responded 200 in 3.7443 ms
+2023-06-20 08:32:22.174 -06:00 [45] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:22.179 -06:00 [42] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2/U-XFN47Y1D7W4I responded 200 in 5.1505 ms
+2023-06-20 08:32:22.304 -06:00 [42] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 85.6304 ms
+2023-06-20 08:32:22.316 -06:00 [45] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:22.317 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2 responded 200 in 1.7617 ms
+2023-06-20 08:32:22.323 -06:00 [45] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:22.330 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2/U-BFXY9BRHXV2R responded 200 in 7.0945 ms
+2023-06-20 08:32:30.370 -06:00 [45] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.546 -06:00 [42] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.606 -06:00 [41] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.606 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP POST /api/Game/G-aa891042a9d2/U-XFN47Y1D7W4I/Surrender responded 200 in 2887.8113 ms
+2023-06-20 08:32:34.645 -06:00 [42] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.650 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-aa891042a9d2/U-XFN47Y1D7W4I/initTurn responded 200 in 4280.3891 ms
+2023-06-20 08:32:34.657 -06:00 [51] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/G-aa891042a9d2/U-BFXY9BRHXV2R/initTurn responded 200 in 120.3816 ms
+2023-06-20 08:32:34.754 -06:00 [51] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 87.2570 ms
+2023-06-20 08:32:34.764 -06:00 [41] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.766 -06:00 [41] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2 responded 200 in 2.6169 ms
+2023-06-20 08:32:34.774 -06:00 [51] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.782 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2/U-XFN47Y1D7W4I responded 200 in 8.1742 ms
+2023-06-20 08:32:34.842 -06:00 [50] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.9589 ms
+2023-06-20 08:32:34.853 -06:00 [43] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.855 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2 responded 200 in 2.4728 ms
+2023-06-20 08:32:34.864 -06:00 [51] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:34.870 -06:00 [44] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2/U-BFXY9BRHXV2R responded 200 in 6.8916 ms
+2023-06-20 08:32:41.929 -06:00 [51] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 88.4044 ms
+2023-06-20 08:32:41.938 -06:00 [50] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:41.939 -06:00 [50] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2 responded 200 in 1.9657 ms
+2023-06-20 08:32:41.946 -06:00 [51] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:41.951 -06:00 [45] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2/U-XFN47Y1D7W4I responded 200 in 5.7282 ms
+2023-06-20 08:32:44.260 -06:00 [50] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.8338 ms
+2023-06-20 08:32:46.308 -06:00 [43] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 87.0639 ms
+2023-06-20 08:32:46.319 -06:00 [42] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:46.321 -06:00 [42] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2 responded 200 in 2.8478 ms
+2023-06-20 08:32:46.330 -06:00 [51] [INF] Request GetGameRoomData para G-aa891042a9d2 completada
+2023-06-20 08:32:46.335 -06:00 [42] [INF] [0HMRHJ8DNCLPK] <jugador2>HTTP GET /api/Game/getGameRoomData/G-aa891042a9d2/U-BFXY9BRHXV2R responded 200 in 5.2471 ms
+2023-06-20 08:32:49.475 -06:00 [50] [INF] [0HMRHJ8DNCLPL] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4512 ms
+2023-06-20 08:33:21.226 -06:00 [1] [INF] Inited
+2023-06-20 08:33:21.574 -06:00 [1] [INF] Now listening on: https://localhost:7212
+2023-06-20 08:33:21.578 -06:00 [1] [INF] Now listening on: http://localhost:5056
+2023-06-20 08:33:23.615 -06:00 [7] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 525.9267 ms
+2023-06-20 08:33:47.117 -06:00 [10] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 14.3382 ms
+2023-06-20 08:33:49.027 -06:00 [8] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 2.7953 ms
+2023-06-20 08:33:51.247 -06:00 [8] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5027 ms
+2023-06-20 08:33:52.953 -06:00 [15] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5223 ms
+2023-06-20 08:33:53.805 -06:00 [10] [INF] Request GetNames de Decks para ususario U-BFXY9BRHXV2R completada
+2023-06-20 08:33:53.805 -06:00 [8] [INF] Request GetNames de Decks para ususario U-XFN47Y1D7W4I completada
+2023-06-20 08:33:53.834 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Deck/Names/U-XFN47Y1D7W4I responded 200 in 2528.0295 ms
+2023-06-20 08:33:53.834 -06:00 [10] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Deck/Names/U-BFXY9BRHXV2R responded 200 in 833.9173 ms
+2023-06-20 08:33:54.802 -06:00 [7] [INF] Request GetDeck para ususario D-d23fd475a479 completada
+2023-06-20 08:33:54.810 -06:00 [7] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Deck/D-d23fd475a479 responded 200 in 136.2939 ms
+2023-06-20 08:33:54.933 -06:00 [7] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:33:54.952 -06:00 [7] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 132.8369 ms
+2023-06-20 08:33:55.050 -06:00 [8] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:33:55.054 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 92.0756 ms
+2023-06-20 08:33:55.146 -06:00 [5] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:33:55.149 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 89.1152 ms
+2023-06-20 08:33:55.241 -06:00 [5] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:33:55.244 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 89.2722 ms
+2023-06-20 08:33:55.337 -06:00 [8] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:33:55.340 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 88.8803 ms
+2023-06-20 08:33:55.437 -06:00 [8] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:33:55.439 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 91.5939 ms
+2023-06-20 08:33:55.533 -06:00 [5] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:33:55.537 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 90.4239 ms
+2023-06-20 08:33:55.632 -06:00 [8] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:33:55.635 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 88.9141 ms
+2023-06-20 08:33:55.727 -06:00 [16] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:33:55.730 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 88.7491 ms
+2023-06-20 08:33:55.823 -06:00 [8] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:33:55.825 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 89.4345 ms
+2023-06-20 08:33:55.921 -06:00 [5] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:33:55.923 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 90.9524 ms
+2023-06-20 08:33:56.130 -06:00 [5] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:33:56.135 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 172.9948 ms
+2023-06-20 08:33:56.259 -06:00 [8] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:33:56.262 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 90.3108 ms
+2023-06-20 08:33:56.355 -06:00 [17] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:33:56.357 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 88.5446 ms
+2023-06-20 08:33:56.452 -06:00 [17] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:33:56.454 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 88.8046 ms
+2023-06-20 08:33:56.550 -06:00 [17] [INF] Request GetCards para RAJ5MNIOF2O4 completada
+2023-06-20 08:33:56.552 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/RAJ5MNIOF2O4 responded 200 in 91.0906 ms
+2023-06-20 08:33:56.762 -06:00 [17] [INF] Request GetCards para EFATHDSEUFNL completada
+2023-06-20 08:33:56.764 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/EFATHDSEUFNL responded 200 in 172.9375 ms
+2023-06-20 08:33:56.856 -06:00 [10] [INF] Request GetCards para MN5XZPF8SJG2 completada
+2023-06-20 08:33:56.858 -06:00 [10] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/MN5XZPF8SJG2 responded 200 in 87.2682 ms
+2023-06-20 08:33:57.752 -06:00 [10] [INF] Request GetDeck para ususario D-c10a86e2ec82 completada
+2023-06-20 08:33:57.755 -06:00 [10] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Deck/D-c10a86e2ec82 responded 200 in 88.6238 ms
+2023-06-20 08:33:57.845 -06:00 [5] [INF] Request GetCards para WOSLVG9AX01W completada
+2023-06-20 08:33:57.849 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/WOSLVG9AX01W responded 200 in 87.5829 ms
+2023-06-20 08:33:57.940 -06:00 [17] [INF] Request GetCards para MLALWI7Y3M6Z completada
+2023-06-20 08:33:57.943 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/MLALWI7Y3M6Z responded 200 in 89.0195 ms
+2023-06-20 08:33:58.037 -06:00 [17] [INF] Request GetCards para TN8GMWROZJCE completada
+2023-06-20 08:33:58.040 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/TN8GMWROZJCE responded 200 in 90.4674 ms
+2023-06-20 08:33:58.133 -06:00 [16] [INF] Request GetCards para XCZXC257P2TW completada
+2023-06-20 08:33:58.135 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/XCZXC257P2TW responded 200 in 88.9159 ms
+2023-06-20 08:33:58.227 -06:00 [17] [INF] Request GetCards para UK3BJARGGC46 completada
+2023-06-20 08:33:58.229 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/UK3BJARGGC46 responded 200 in 87.8101 ms
+2023-06-20 08:33:58.320 -06:00 [5] [INF] Request GetCards para 0ZG1MTUC48KD completada
+2023-06-20 08:33:58.323 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/0ZG1MTUC48KD responded 200 in 87.6399 ms
+2023-06-20 08:33:58.425 -06:00 [16] [INF] Request GetCards para 3SQ525FY3XK4 completada
+2023-06-20 08:33:58.428 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/3SQ525FY3XK4 responded 200 in 98.5582 ms
+2023-06-20 08:33:58.520 -06:00 [17] [INF] Request GetCards para LOYVPV1BOHND completada
+2023-06-20 08:33:58.523 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/LOYVPV1BOHND responded 200 in 87.5141 ms
+2023-06-20 08:33:58.648 -06:00 [15] [INF] Request GetCards para XK7XSF63YT4V completada
+2023-06-20 08:33:58.651 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/XK7XSF63YT4V responded 200 in 89.0765 ms
+2023-06-20 08:33:58.827 -06:00 [10] [INF] Request GetCards para CIN9ICOTKKJ5 completada
+2023-06-20 08:33:58.830 -06:00 [10] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/CIN9ICOTKKJ5 responded 200 in 172.5838 ms
+2023-06-20 08:33:58.925 -06:00 [15] [INF] Request GetCards para UKZCL8532USN completada
+2023-06-20 08:33:58.928 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/UKZCL8532USN responded 200 in 90.9368 ms
+2023-06-20 08:33:59.021 -06:00 [16] [INF] Request GetCards para TC22PFIYJEXP completada
+2023-06-20 08:33:59.024 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/TC22PFIYJEXP responded 200 in 90.6514 ms
+2023-06-20 08:33:59.118 -06:00 [15] [INF] Request GetCards para IYUH76VGM2AO completada
+2023-06-20 08:33:59.122 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/IYUH76VGM2AO responded 200 in 90.5467 ms
+2023-06-20 08:33:59.214 -06:00 [16] [INF] Request GetCards para 3U7CZNYU0DOT completada
+2023-06-20 08:33:59.219 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/3U7CZNYU0DOT responded 200 in 90.6275 ms
+2023-06-20 08:33:59.313 -06:00 [15] [INF] Request GetCards para 37LD3AIPFRG4 completada
+2023-06-20 08:33:59.316 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/37LD3AIPFRG4 responded 200 in 89.3009 ms
+2023-06-20 08:33:59.412 -06:00 [5] [INF] Request GetCards para EKX2IFV06XYE completada
+2023-06-20 08:33:59.415 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/EKX2IFV06XYE responded 200 in 93.4323 ms
+2023-06-20 08:33:59.508 -06:00 [16] [INF] Request GetCards para YNWH5OMKNSHZ completada
+2023-06-20 08:33:59.511 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/YNWH5OMKNSHZ responded 200 in 89.4472 ms
+2023-06-20 08:33:59.607 -06:00 [17] [INF] Request GetCards para WZ42D68C75XO completada
+2023-06-20 08:33:59.610 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /cards/get/WZ42D68C75XO responded 200 in 92.1437 ms
+2023-06-20 08:34:02.420 -06:00 [16] [INF] [0HMRHJD68CSUG] <null>HTTP OPTIONS /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 204 in 0.4607 ms
+2023-06-20 08:34:02.550 -06:00 [16] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:34:02.784 -06:00 [16] [INF] Request SelectFavoriteDeck para usuario U-XFN47Y1D7W4I y deckD-c10a86e2ec82 completada
+2023-06-20 08:34:02.797 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP PUT /Account/U-XFN47Y1D7W4I/favorite/D-c10a86e2ec82 responded 200 in 371.7790 ms
+2023-06-20 08:34:03.052 -06:00 [16] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4264 ms
+2023-06-20 08:34:03.476 -06:00 [3] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:34:04.708 -06:00 [17] [INF] [0HMRHJD68CSUG] <null>HTTP OPTIONS /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 204 in 0.1098 ms
+2023-06-20 08:34:04.800 -06:00 [16] [INF] Request GetAccount para U-BFXY9BRHXV2R completada
+2023-06-20 08:34:04.974 -06:00 [16] [INF] Request SelectFavoriteDeck para usuario U-BFXY9BRHXV2R y deckD-d23fd475a479 completada
+2023-06-20 08:34:04.977 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP PUT /Account/U-BFXY9BRHXV2R/favorite/D-d23fd475a479 responded 200 in 263.1309 ms
+2023-06-20 08:34:05.231 -06:00 [15] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.7063 ms
+2023-06-20 08:34:05.364 -06:00 [16] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:34:11.003 -06:00 [7] [INF] Request CheckIfPlaying para U-BFXY9BRHXV2R completada
+2023-06-20 08:34:11.005 -06:00 [7] [INF] Request IsWaiting completada
+2023-06-20 08:34:11.006 -06:00 [3] [INF] Request CheckIfPlaying para U-XFN47Y1D7W4I completada
+2023-06-20 08:34:11.046 -06:00 [7] [INF] [0HMRHJD68CSUF] <jugador2>HTTP POST /api/Game/U-BFXY9BRHXV2R responded 200 in 5769.7307 ms
+2023-06-20 08:34:11.046 -06:00 [3] [INF] [0HMRHJD68CSUF] <jugador2>HTTP POST /api/Game/U-XFN47Y1D7W4I responded 200 in 7955.5062 ms
+2023-06-20 08:34:11.466 -06:00 [17] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.7386 ms
+2023-06-20 08:34:11.527 -06:00 [15] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.5150 ms
+2023-06-20 08:34:13.595 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 95.5893 ms
+2023-06-20 08:34:13.608 -06:00 [15] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:13.610 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64 responded 200 in 5.4139 ms
+2023-06-20 08:34:13.620 -06:00 [17] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:13.656 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64/U-XFN47Y1D7W4I responded 200 in 38.9778 ms
+2023-06-20 08:34:14.289 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 87.9216 ms
+2023-06-20 08:34:14.298 -06:00 [17] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:14.300 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64 responded 200 in 2.2448 ms
+2023-06-20 08:34:14.307 -06:00 [15] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:14.315 -06:00 [15] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64/U-BFXY9BRHXV2R responded 200 in 8.3591 ms
+2023-06-20 08:34:22.143 -06:00 [5] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:26.411 -06:00 [9] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:34.795 -06:00 [5] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:34.828 -06:00 [9] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/G-a70797c3bd64/U-XFN47Y1D7W4I/initTurn responded 200 in 12688.0545 ms
+2023-06-20 08:34:34.845 -06:00 [5] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:34.858 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/G-a70797c3bd64/U-BFXY9BRHXV2R/initTurn responded 200 in 1690.3580 ms
+2023-06-20 08:34:34.929 -06:00 [16] [INF] Request GetAccount para U-BFXY9BRHXV2R completada
+2023-06-20 08:34:34.951 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.3388 ms
+2023-06-20 08:34:34.960 -06:00 [9] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:34.962 -06:00 [9] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64 responded 200 in 2.5561 ms
+2023-06-20 08:34:34.969 -06:00 [7] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:34.976 -06:00 [18] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64/U-XFN47Y1D7W4I responded 200 in 7.4244 ms
+2023-06-20 08:34:35.019 -06:00 [16] [INF] Request GetAccount para U-XFN47Y1D7W4I completada
+2023-06-20 08:34:35.039 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.1551 ms
+2023-06-20 08:34:35.048 -06:00 [7] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:35.050 -06:00 [7] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64 responded 200 in 2.2757 ms
+2023-06-20 08:34:35.058 -06:00 [19] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:35.064 -06:00 [8] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64/U-BFXY9BRHXV2R responded 200 in 7.0225 ms
+2023-06-20 08:34:36.453 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP POST /api/Game/G-a70797c3bd64/U-XFN47Y1D7W4I/Surrender responded 200 in 10190.8183 ms
+2023-06-20 08:34:42.105 -06:00 [18] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 87.3481 ms
+2023-06-20 08:34:42.114 -06:00 [16] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:42.116 -06:00 [16] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64 responded 200 in 1.9521 ms
+2023-06-20 08:34:42.123 -06:00 [5] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:42.129 -06:00 [5] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64/U-XFN47Y1D7W4I responded 200 in 6.1888 ms
+2023-06-20 08:34:44.604 -06:00 [17] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.4961 ms
+2023-06-20 08:34:47.273 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Parameters/get/maxTurn responded 200 in 86.7234 ms
+2023-06-20 08:34:47.282 -06:00 [17] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:47.284 -06:00 [17] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64 responded 200 in 1.7431 ms
+2023-06-20 08:34:47.290 -06:00 [15] [INF] Request GetGameRoomData para G-a70797c3bd64 completada
+2023-06-20 08:34:47.295 -06:00 [18] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/getGameRoomData/G-a70797c3bd64/U-BFXY9BRHXV2R responded 200 in 6.1258 ms
+2023-06-20 08:34:49.617 -06:00 [17] [INF] [0HMRHJD68CSUG] <null>HTTP GET /api/Parameters/CardsType responded 200 in 0.6523 ms
+2023-06-20 08:35:09.095 -06:00 [21] [INF] [0HMRHJD68CSUF] <jugador2>HTTP GET /api/Game/U-BFXY9BRHXV2R/IsInGame responded 200 in 4050.8499 ms

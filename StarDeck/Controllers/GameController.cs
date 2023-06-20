@@ -77,9 +77,9 @@ namespace Stardeck.Controllers
         public async Task<IActionResult> IsInGame(string id)
         {
             var ingame = await GameLogic.IsInGame(id);
-            if (ingame is null)
+            if (ingame is not null)
             {
-                return Ok(KeyValuePair.Create("Founded", ingame));
+                return Ok(KeyValuePair.Create("inGame", ingame));
             }
 
             return NotFound(KeyValuePair.Create("Error", ingame));

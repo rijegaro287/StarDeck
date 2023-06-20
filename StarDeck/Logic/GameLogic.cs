@@ -226,7 +226,7 @@ namespace Stardeck.Logic
         {
             var Accounts = await MatchMackingContext.Accounts.ToListAsync();
             var account = Accounts.Find(x => x.Id == id);
-            return account is null ? null : account.isplaying;
+            return account?.isplaying;
         }
 
         public async Task<bool?> Surrender(string idRoom, string idUser)
