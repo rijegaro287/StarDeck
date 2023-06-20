@@ -1,6 +1,11 @@
 <div class="w-75 my-5 mx-auto">
   <div class="row">
-    <h1>Cartas en su colección</h1>
+    <div class="title">
+      <h1>Cartas en su colección</h1>
+      <span> <button class="info-button" mat-icon-button color="warn" (click)="cardInformation()">
+          <i class="bi bi-patch-question-fill"></i>
+        </button> </span>
+    </div>
     <p>Ha recibido 15 cartas aleatorias</p>
     <hr style="height:4px;border-width:0;color:rebeccapurple;background-color:rebeccapurple">
   </div>
@@ -16,7 +21,7 @@
 
   <div class="row">
     <div class="title">
-      <h1>Selección de cartas </h1>
+      <h1>Selección de cartas</h1>
       <span> <button class="info-button" mat-icon-button color="warn" (click)="cardInformation()">
           <i class="bi bi-patch-question-fill"></i>
         </button> </span>

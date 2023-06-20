@@ -44,4 +44,8 @@ export class GameService {
   surrender = (gameRoomID: string, playerID: string): Promise<any> => {
     return this.request.post(`${this.url}/${gameRoomID}/${playerID}/Surrender`, gameRoomID);
   }
+
+  isInGame(playerID: string): Promise<any> {
+    return this.request.get(`${this.url}/${playerID}/IsInGame`);
+  }
 }
