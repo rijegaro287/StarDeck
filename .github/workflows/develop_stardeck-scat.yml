@@ -21,8 +21,10 @@ jobs:
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
+      - name: ls
+        run: ls
       - name: move
-        run: cd /StarDeck
+        run: cd StarDeck
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
