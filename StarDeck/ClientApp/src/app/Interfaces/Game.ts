@@ -5,9 +5,9 @@ interface IGameRoom {
   roomid: string;
   player1: IPlayer;
   player2: IPlayer;
-  winner: null;
+  winner: string | null;
   bet: null;
-  turn: null;
+  turn: number;
   territories: IPlanet[];
   gamelog: IGameLog;
   firstToShow: { id: string; name: string; }
@@ -20,9 +20,9 @@ interface IGameLog {
 
 interface IPlayer {
   id: string;
-  Name: string;
+  name: string;
   nickname: string;
-  Avatar: number;
+  avatar: number;
   config: null;
   points: number;
   coins: number;
